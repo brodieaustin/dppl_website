@@ -135,36 +135,39 @@ new TWTR.Widget({
 		<TD>
   <!-- FEATURE IMAGE -->	
     <SPAN CLASS="featureSub">What's new in our library blogs?<br><br></SPAN>
-	<div style="float: left; width: 35%; ">
+	<div style="float: left; width: 28%; ">
 				<img border="0" src="../images/features/libraryblogsNEW2.jpg" align="left" hspace="6" alt="Library blogs!" width="150" height="100"></a><span class="T10"><br><br>
-					<div style="clear: both; padding: 10px;">
-						<strong><a href="http://kidding-around.blogspot.com/" class="link" title="Kidding Around Blog">Kidding Around</a></strong><br><br>
+					<div style="clear: both; padding: 30px 10px;">
 						<strong><a href="http://dpplplaintalk.blogspot.com/" class="link" title="Plain Talk Blog">Plain Talk</a></strong><br><br>
 						<strong><a href="http://positivelyestreet.blogspot.com" class="link" title="Positively Ellinwood Street Blog">Positively Ellinwood Street</a></strong><br><br>
+						<strong><a href="http://kidding-around.blogspot.com/" class="link" title="Kidding Around Blog">Kidding Around</a></strong><br><br>
 						<strong><a href="http://caudillclub.blogspot.com/" class="link" title="Caudill Club Blog">Caudill Club</strong> </a><br><br>
 					</div>
 				</div>
+				<div id="rss-content" style="float: left; width: 65%; margin-left: 15px; margin-top: 5px; padding: 5px 5px 5px 20px; border-left: 1px solid #e8e8e8; overflow-y: hidden; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10pt;">Loading...</div>
 				 <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
 				<script type="text/javascript">
-					
+					//Google Feeds API script to display RSS feeds as test
 					google.load("feeds", "1");
 					
 					function OnLoad() {
 					  // Create a feed control
-					  var feedControl = new google.feeds.FeedControl();
+						var feedControl = new google.feeds.FeedControl();
 					
 					  // Add two feeds.
-					  feedControl.addFeed("http://dppl.tumblr.com/rss", "Read more by DPPL staff:");
+						feedControl.addFeed("http://dpplplaintalk.blogspot.com/feeds/posts/default", "PlainTalk");
+						feedControl.addFeed("http://positivelyestreet.blogspot.com/feeds/posts/default?alt=rss", "Positively Ellinwood St");
+						feedControl.addFeed("http://kidding-around.blogspot.com/feeds/posts/default?alt=rss", "Kidding Around");
+						feedControl.addFeed("http://feed43.com/5583164584461834.xml", "Des Plaines Patch");
 
-					feedControl.setNumEntries(3)
+						feedControl.setNumEntries(1)
 					
 					  // Draw it.
-					  feedControl.draw(document.getElementById("content"));
+					  feedControl.draw(document.getElementById("rss-content"));
 					}
 				
 					google.setOnLoadCallback(OnLoad);
 				</script>
-				<div id="content" style="float: left; width: 55%; margin-left: 15px; margin-top: 15px; padding: 10px 5px 5px 20px; border-left: 1px solid #e8e8e8; overflow-y: hidden; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10pt;">Loading...</div>
 
 
 </TD>
