@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 
+use HTML::Entities ();
 use CGI::Carp qw(fatalsToBrowser);
 
 #The above line must appear as the FIRST thing in your script
@@ -7,17 +8,21 @@ use CGI::Carp qw(fatalsToBrowser);
 #############################################################
 # This snippet of code allows you to read information from a WWW form
 #############################################################
+$safe_chars = 'a-zA-Z0-9 ,-\/\(\)';
+
 ($junk, $recipient, $topic) = split("/",$ENV{'PATH_INFO'});
 $topic =~ s/\+/ /g;
 read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
 @pairs = split(/&/, $buffer);
-foreach $pair (@pairs)
-{
-($name, $value) = split(/=/, $pair);
-$value =~ tr/+/ /;
-$value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
-$value =~ s/~!/ ~!/g;
-$FORM{$name} = $value;
+foreach $pair (@pairs) {
+	($name, $value) = split(/=/, $pair);
+	$value =~ tr/+/ /;
+	$value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+	$value =~ s/~!/ ~!/g;
+	#I added this - BA
+	$value = HTML::Entities::decode($value);
+	$value =~ s/[^$safe_chars]//go;
+	$FORM{$name} = $value;
 }
 ##############################################################
 
