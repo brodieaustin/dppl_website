@@ -8,7 +8,7 @@ use CGI::Carp qw(fatalsToBrowser);
 #############################################################
 # This snippet of code allows you to read information from a WWW form
 #############################################################
-$safe_chars = 'a-zA-Z0-9 ,-\/\(\)';
+$safe_chars = 'a-zA-Z0-9 ,-\/\(\)@';
 
 ($junk, $recipient, $topic) = split("/",$ENV{'PATH_INFO'});
 $topic =~ s/\+/ /g;
@@ -82,9 +82,9 @@ PrintTag
 $mailprog = '/usr/sbin/sendmail';
 open (MAIL, ">/tmp/snd.$FIZZLE");
 print MAIL "Content-Type: text/html\; charset=\"iso-8859-1\"\n";
-print MAIL "From: Frank Schade <fschade\@dppl.org>\n";
+print MAIL "From: $APPNAME <$EMAIL>\n";
 #print MAIL "To: fschade\@dppl.org\n";
-print MAIL "To: baustin\@dppl.org\n";
+print MAIL "To: ckidd\@dppl.org\n";
 print MAIL "Subject: Employment Application\n\n";
 print MAIL "<html><head><style>\n";
 print MAIL "body {font-family: sans-serif; font-size: 9pt; width: 100%; margin: .25em; padding: .25em;}\n";
@@ -97,7 +97,7 @@ print MAIL "td.full {width: 90%; padding: 0;}\n";
 print MAIL "form {float: right; width: 40%;}\n";
 print MAIL "i {font-style: oblique;}\n";
 print MAIL "input {margin-left: 30px;}\n";
-print MAIL "</style></head><body><h1>Employement Application</h1>\n";
+print MAIL "</style></head><body><h1>Employment Application</h1>\n";
 print MAIL "<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate \"not applicable.\" Incomplete applications may be subject to rejection.</p>\n";
 print MAIL "<table><thead><tr><th colspan=\"2\">Personal Information</th></tr><thead>\n";
 print MAIL "<tbody><tr><td>Name (First, Last, MI): <b>$APPNAME</b></td><td>Date of Application: <b>$APPDATE</b></td></tr>\n";
