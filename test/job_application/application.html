@@ -6,56 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="profile" href="http://microformats.org/profile/hcard">
 	<style type="text/css">
-		body {width: 740px; margin: 1em auto; padding: 1em; font-family: sans-serif; font-size: 80%;}
-		#tools{position: fixed; top: 0; left: 0; width: 100%; padding: .15em; background-color: #000; color: #009899; z-index: 10;}
+		body {width: 740px; margin: 1em auto; padding: 1em; line-height: 120%; font-size: 90%; font-family: sans-serif; color: #000;}
+		#tools{position: fixed; top: 0; left: 0; width: 100%; background-color: #000; color: #009899; z-index: 10;}
 		#tools h1{float: left; text-transform: uppercase; color: #888; font-weight: normal; font-size: 1.2em; padding: .5em;}
-		#tools ul{list-style: none; float: right;}
-		#tools ul li{ display: inline-block;}
-		#tools ul li a{float: left; padding: .5em 2em; margin-right: 2em; background-color: #009899; color: #fff; text-decoration: none; font-weight: bold;}
+		#tools input[type="submit"], #tools input[type="button"]{display: block; float: right; padding: .7em 2em; margin: 1em 1em 1em 1.5em; border: 0; background-color: #009899; color: #fff; text-decoration: none; font-weight: 600;}
 		#main{margin-top: 5em; z-index: 5;}
 		#main img{width: 40%; float: left;}
-		#main div#address {float: right; width: 30%; margin-bottom: 3em; font-size: .9em; text-align: right;}
-		#main h1 {clear: both; padding-bottom: .7em; font-size: 1.2em; text-transform: uppercase; border-bottom: 1px solid #000; font-weight: bold;}
-		p.note {font-size: .9em; margin: 1em 0 2em 0;}
+		#main div#address {float: right; width: 40%; margin-bottom: 3em; font-size: .9em; text-align: right;}
+		#main h1 {clear: both; padding-bottom: .7em; font-size: 1.2em; text-transform: uppercase; border-bottom: 1px solid #000; font-weight: bold; color: #000;}
 		i {font-style: oblique;}
+		b {font-weight: bold;}
 		form {width: 100%;}
-		form div {margin-bottom: 1em; padding: .5em 0; clear: left;}
-		fieldset {border: 1px solid #000; margin-bottom: 2em; padding: 1em;}
-		legend {width: 98%; padding: .6em; background-color: #000; color: #fff; font-weight: bold; text-transform: uppercase;}
-		label, input, select {padding: .3em;}
+		fieldset {border: 1px solid #000;; margin-bottom: 2em; padding: 1em;}
+		legend {width: 98%; padding: .6em; background-color: #000; color: #fff; font-weight: 500; text-transform: uppercase;}
+		fieldset fieldset{border: 0; margin: 0; padding: 0;}
+		fieldset fieldset legend{border: none; margin: 0; padding: 0; background-color: #fff; color: #000; text-transform: none;}
+		form ol{list-style:none; margin: 0; padding: 0;}
+		label{display: inline-block; width: 25%; vertical-align: top;}
+		label.small{padding-left: 3.5em; width: 20%;}
+		input[type="text"], select{width: 70%;}
 		input:focus, textarea:focus, select:focus{background-color: #d2ece1;}
-		label {width: 20%; float: left;}
-		label.full {width: 100%;}
-		input {margin-right: 5px;}
-		input.text {width: 75%; padding: .3em;}
-		input.text-full {width: 95.5%; padding: .3em;}
-		input.text-small {width: 26%; float: left; margin-bottom: 1.5em;}
-		textarea {width: 95.5%; height: 5em; margin-top: .3em; resize: none; overflow: hidden;}
-		select {width: 70%;}
-		.options {width: 70%; margin: .25em 0 .5em 0; padding: .25em;}
-		.options label {float: none; margin-right: 1.4em; padding: 0;}
-		.options input {margin: .15em .2em .5em 1.5em; padding: 0;}
-		.no-float {float: none;}
-		p.label {font-weight: bold; margin: .45em 0; padding: 0 .3em;}
-		form table {width: 100%: border-collapse: collapse; font-size: .85em;}
-		form th {font-weight: bold; width: 20%; vertical-align: top;}
-		form td {vertical-align: middle; padding: 0;}
-		.center {text-align: center;}
-		.no-display{color: #fff; width: 100%;}
-		.active{background-color: #E6F5F0;}
-		@media only screen (max-width: 480px){
-		  body {width: 100%;}
-		}
+		input.small{width: 20.5% !important}
+		textarea{width: 69.7%; height: 5em; overflow: hidden; resize: none;}
+		.full{width: 95.5%; clear: left;}
+		.hidden{}
 	</style>
 </head>
 <body>
+<form METHOD="POST" ACTION="http://www.dppl.org/cgi-bin/testEmail.cgi">
 	<div id="tools">
 		<h1>Des Plaines Public Library</h1>
 		<div id="progressbar"></div>
-		<ul>
-			<li><a href="">Reset</a></li>
-			<li><a href="">Submit</a></li>
-		</ul>
+		<input type="submit" value="Submit" name="Submit" /></li>
+		<input type="button" value="Reset" name="Reset" />
 	</div>
 	<div id="main">
 		<img src="http://www.dppl.org/images/themes/River/logo.jpg" />
@@ -80,347 +63,580 @@
 		</div>
 		<h1>Employment Application</h1>
 		<p class="note">It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>
-		<form>
 			<fieldset>
 			<legend>Personal Information</legend>
-				<div>
-					<label for="app-date">Date of Application:</label>
-					<input type="text" class="text" name="app-date" />
-				</div>
-				<div>
-					<label for="app-name">Name (First, Last, MI)</label>
-					<input type="text" class="text" name="app-name" />
-				</div>
-				<p class="label">Current Address</p>
-				<div>
-					<label for="address-street">Street</label>
-					<input type="text" class="text" name="address-street" />
-				</div>
-				<div class="no-clear">
-					<label for="address-city">City</label>
-					<input type="text" class="text" name="address-city" />
-				</div>
-				<div class="no-clear">
-					<label for="address-state">State</label>
-					<input type="text" class="text" name="address-state" />
-				</div>
-				<div>
-					<label for="address-zip">Zip Code</label>
-					<input type="text" class="text" name="address-zip" />
-				</div>
-				<p class="label">Contact Information</p>
-				<div>
-					<label for="home-phone">Home Phone:</label>
-					<input type="text" class="text" name="home-phone" />
-				</div>
-				<div>
-					<label for="cell-phone">Cell Phone:</label>
-					<input type="text" class="text" name="cell-phone" />
-				</div>
-				<div>
-					<label for="email">Email Address:</label>
-					<input type="text" class="text" name="email" />
-				</div>
-			</fieldset>
+				<ol>
+					<li>
+						<label for="app-date">Date of Application:</label>
+						<input type="text" name="app-date" />
+					</li>
+					<li>
+						<label for="app-name">Name (First, Last, MI)</label>
+						<input type="text" name="app-name" />
+					</li>
+					<li>
+						<fieldset>
+							<legend><b>Current Address</b></legend>
+							<ol>
+								<li>
+									<label for="address-street">Street</label>
+									<input type="text" name="address-street" />
+								</li>
+								<li>
+									<label for="address-city">City</label>
+									<input type="text" name="address-city" />
+								</li>
+								<li>
+									<label for="address-state">State</label>
+									<input type="text" name="address-state" />
+								</li>
+								<li>
+									<label for="address-zip">Zip Code</label>
+									<input type="text" name="address-zip" />
+								</li>
+							</ol>
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<legend><b>Contact Information</b></legend>
+							<ol>
+								<li>
+									<label for="home-phone">Home Phone:</label>
+									<input type="text" name="home-phone" />
+								</li>
+								<li>
+									<label for="cell-phone">Cell Phone:</label>
+									<input type="text" name="cell-phone" />
+								</li>
+								<li>
+									<label for="email">Email Address:</label>
+									<input type="text" name="email" />
+								</li>
+							</ol>
+						</fieldset>
+					</li>
+				</ol>
+			</fieldset><!--closing tag for personal info fieldset-->
 			<fieldset>
 				<legend>Background Information</legend>
-				<div>
-					<label for="position">Position applying for:</label>
-					<select name="position">
-						<!--update positions with <option value="Job Name">Job Name</option>-->
-						<option label="none" value="None">None</option>
-						<optgroup label="Full Time">
-							<option value="Job 1">Job 1</option>
-							<option value="Job 2">Job 2</option>
-						</optgroup>
-						<optgroup label="Part Time">
-							<option value="Job 3">Job 3</option>
-						</optgroup>
-					</select>
-				</div>
-				<div>
-					<p class="label">Are you seeking (check appropriate):</p>
-					<div class="options">
-						<input type="radio" name="worktype" value="full-time" class="radio" />
-						<label>Full Time</label>
-						<input type="radio" name="worktype" value="part-time" />
-						<label>Part Time</label>
-					</div>
-				</div>
-				<div>
-					<label for="date-avail">Date available:</label>
-					<input type="text" class="text" name="date-avail" />
-				</div>
-				<div>
-					<p class="label">How were you referred to the Library?</p>
-					<div class="options">
-						<input type="radio" name="refer-type" value="lib-site" />
-						<label>Library Web Site</label>
-						<input type="radio" name="refer-type" value="newspaper" />
-						<label>Newspaper List</label>
-						<input type="radio" name="refer-type" value="other" />
-						<label>Other <i>(specify)</i></label>
-					</div>
-					<input type="text" class="text-full" name="refer-other" />
-				</div>
-				<div>
-					<p class="label">Are you at last 18 years of age?</p>
-					<div class="options">
-						<input type="radio" name="age" value="yes" />
-						<label>Yes</label>
-						<input type="radio" name="age" value="no" />
-						<label>No</label>
-					</div>
-				</div>
-				<div>
-					<p class="label">Are you legally eligible for employment in the U.S.?</p>
-					<div class="options">
-						<input type="radio" name="legal" value="yes"/>
-						<label>Yes</label>
-						<input type="radio" name="legal" value="no"/>
-						<label>No</label>
-					</div>
-				</div>
-				<div>
-					<p class="label">If the position you are applying for requires a driver's license, please advise if you have a valid driver's license:</p>
-					<div class="options">
-						<input type="radio" name="driver" value="yes"/>
-						<label>Yes</label>
-						<input type="radio" name="driver" value="no"/>
-						<label>No</label>
-					</div>
-					<label for="license-class">What class is your license?</label>
-					<input type="text" class="text-small" name="license-class" />
-					<label for="issue-state">Issuing State?</label>
-					<input type="text" class="text-small" name="issue-state" />
-				</div>
-				<div>
-					<p class="label">Have you ever been convicted of any violations of the law other than minor traffic violations?</p>
-					<div class="options">
-						<input type="radio" name="violations" value="yes"/>
-						<label>Yes</label>
-						<input type="radio" name="violations" value="no"/>
-						<label>No</label>
-					</div>
-					<label for="violations-explain" class="full">If you answered yes to the above, please explain:</label>
-					<input type="text" class="text-full" name="violations-explain" />
-				</div>
-				<div>
-					<p class="label">Were you previously employed by the Des Plaines Public Library?</p>
-					<div class="options">
-						<input type="radio" name="prev-employed" value="yes"/>
-						<label>Yes</label>
-						<input type="radio" name="prev-employed" value="no"/>
-						<label>No</label>
-					</div>
-					<label for="prev-department">If yes, what department?</label>
-					<input type="text" name="prev-department" class="text" />
-					<p>Date of employment?</p>
-					<div class="options">
-						<label>From</label>
-						<input type="text" class="text-small no-float" name="prev-from" />
-						<label>To</label>
-						<input type="text" class="text-small no-float" name="prev-to" />
-					</div>
-				</div>
-			</fieldset>
+					<ol>
+						<li>
+							<label for="position">Position applying for:</label>
+							<select name="position">
+								<!--update positions with <option value="Job Name">Job Name</option>-->
+								<option label="none" value="None">None</option>
+								<optgroup label="Full Time">
+									<option value="Job 1">Job 1</option>
+									<option value="Job 2">Job 2</option>
+								</optgroup>
+								<optgroup label="Part Time">
+									<option value="Job 3">Job 3</option>
+								</optgroup>
+							</select>
+						</li>
+						<li>
+							<fieldset>
+								<legend>Are you seeking (check appropriate):</legend>
+									<label><input type="radio" name="worktype" value="full-time" />Full Time</label>
+									<label><input type="radio" name="worktype" value="part-time" />Part Time</label>
+							</fieldset>
+						</li>
+						<li>
+							<label for="date-avail">Date available:</label>
+							<input type="text" name="date-avail" />
+						</li>
+						<li>
+							<fieldset>
+								<legend>How were you referred to the Library?</legend>
+									<label><input type="radio" name="refer-type" value="lib-site" />Library Web Site</label>
+									<label><input type="radio" name="refer-type" value="newspaper" />Newspaper List</label>
+									<label><input type="radio" name="refer-type" value="other" />Other</label>
+										<ol>
+											<li>
+												<label for="refer-other"><i>Please specify:</i></label>
+												<input type="text" name="refer-other" />
+											</li>
+										</ol>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend>Are you at least 18 years of age?</legend>
+									<label><input type="radio" name="age" value="yes" />Yes</label>
+									<label><input type="radio" name="age" value="no" />No</label>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend>Are you legally eligible for employment in the U.S.?</legend>
+									<label><input type="radio" name="legal" value="yes"/>Yes</label>
+									<label><input type="radio" name="legal" value="no"/>No</label>
+								</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend>If the position you are applying for requires a driver's license, please advise if you have a valid driver's license:</legend>
+									<label><input type="radio" name="driver" value="yes"/>Yes</label>
+									<label><input type="radio" name="driver" value="no"/>No</label>
+									<ol>
+										<li>
+											<label for="license-class">What class is your license?</label>
+											<input type="text" class="small" name="license-class" />
+											<label for="issue-state" class="small">Issuing State?</label>
+											<input type="text" class="small" name="issue-state" />
+										</li>
+									</ol>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend>Have you ever been convicted of any violations of the law other than minor traffic violations?</legend>
+									<label><input type="radio" name="violations" value="yes"/>Yes</label>
+									<label><input type="radio" name="violations" value="no"/>No</label>
+									<ol>
+										<li>
+											<label for="violations-explain" class="full">If you answered yes to the above, please explain:</label>
+											<input type="text" class="full" name="violations-explain" />
+										</li>
+									</ol>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend?Were you previously employed by the Des Plaines Public Library?</legend>
+									<label><input type="radio" name="prev-employed" value="yes"/>Yes</label>
+									<label><input type="radio" name="prev-employed" value="no"/>No</label>
+									<ol>
+										<li>
+											<label for="prev-department">If yes, what department?</label>
+											<input type="text" name="prev-department" />
+										</li>
+										<li>
+											<p>Date of employment</p>
+											<label>From</label>
+											<input type="text" class="small" name="prev-from" />
+											<label class="small">To</label>
+											<input type="text" class="small" name="prev-to" />
+										</li>
+									</ol>
+							</fieldset>
+						</li>
+					</li>
+				</ol>
+			</fieldset><!--clsoing tag for background info fieldset-->
 			<fieldset>
 				<legend>Education</legend>
-				<table>
-					<thead>
-						<tr>
-							<th>Name of school attended & location (include Address, City, State)</th>
-							<th>Course of Study:</th>
-							<th>Check last year completed:</th>
-							<th>Did you graduate?</th>
-							<th>List degree received</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<label for="high-school" class="full">High School:</label>
-								<textarea name="high-school"></textarea>
-							</td>
-							<td>
-								<label for="hs-study" class="no-display">HS Study</label>
-								<textarea name="hs-study"></textarea>
-							</td>
-							<td>
-								<div class="options no-float center">
-									<input type="radio" name="hs-years" value="1" />
-									<label>1</label>
-									<input type="radio" name="hs-years" value="2" />
-									<label>2</label>
-									<input type="radio" name="hs-years" value="3" />
-									<label>3</label>
-									<input type="radio" name="hs-years" value="4" />
-									<label>4</label>
-								</div>
-							</td>
-							<td>
-								<div class="options no-float center">
-									<label>Yes</label>
-									<input type="radio" name="hs-graduate" value="yes"/>
-									<label>No</label>
-									<input type="radio" name="hs-graduate" value="no"/>
-								</div>
-							</td>
-							<td>	
-								<label for="hs-degree" class="no-display">HS Degree</label>
-								<textarea name="hs-degree"></textarea>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label for="college" class="full">College/University:</label>
-								<textarea name="college"></textarea>
-							</td>
-							<td>
-								<label for="col-study" class="no-display">Col Study</label>
-								<textarea name="col-study"></textarea>
-							</td>
-							<td>
-								<div class="options no-float center">
-									<label>1</label>
-									<input type="radio" name="col-years" value="1" />
-									<label>2</label>
-									<input type="radio" name="col-years" value="2" />
-									<label>3</label>
-									<input type="radio" name="col-years" value="3" />
-									<label>4</label>
-									<input type="radio" name="col-years" value="4" />
-								</div>
-							</td>
-							<td>
-								<div class="options no-float center">
-									<label>Yes</label>
-									<input type="radio" name="col-graduate" value="yes"/>
-									<label>No</label>
-									<input type="radio" name="col-graduate" value="no"/>
-								</div>
-							</td>
-							<td>
-								<label for="col-degree" class="no-display">Col Degree</label>
-								<textarea name="col-degree"></textarea>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label for="grad-school" class="full">Graduate School:</label>
-								<textarea name="grad-school"></textarea>
-							</td>
-							<td>
-								<label for="grad-study" class="no-display">Grad Study</label>
-								<textarea name="grad-study"></textarea>
-							</td>
-							<td>
-								<div class="options no-float center">
-									<label>1</label>
-									<input type="radio" name="grad-years" value="1" />
-									<label>2</label>
-									<input type="radio" name="grad-years" value="2" />
-									<label>3</label>
-									<input type="radio" name="grad-years" value="3" />
-									<label>4</label>
-									<input type="radio" name="grad-years" value="4" />
-								</div>
-							</td>
-							<td>
-								<div class="options no-float center">
-									<label>Yes</label>
-									<input type="radio" name="grad-graduate" value="yes"/>
-									<label>No</label>
-									<input type="radio" name="grad-graduate" value="no"/>
-								</div>
-							</td>
-							<td>
-								<label for="grad-degree" class="no-display">Other Degree</label>
-								<textarea name="grad-degree"></textarea>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label for="other-school" class="full">Other (Specify):</label>
-								<textarea name="other-school"></textarea>
-							</td>
-							<td>
-								<label for="other-study" class="no-display">Other Study</label>
-								<textarea name="other-study"></textarea>
-							</td>
-							<td>
-								<div class="options no-float center">
-									<label>1</label>
-									<input type="radio" name="other-years" value="1" />
-									<label>2</label>
-									<input type="radio" name="other-years" value="2" />
-									<label>3</label>
-									<input type="radio" name="other-years" value="3" />
-									<label>4</label>
-									<input type="radio" name="other-years" value="4" />
-								</div>
-							</td>
-							<td>
-								<div class="options no-float center">
-									<label>Yes</label>
-									<input type="radio" name="other-graduate" value="yes"/>
-									<label>No</label>
-									<input type="radio" name="other-graduate" value="no"/>
-								</div>
-							</td>
-							<td>
-								<label for="other-degree" class="no-display">Grad Degree</label>
-								<textarea name="other-degree"></textarea>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</fieldset>
+				<ol>
+					<li>
+						<fieldset>
+							<legend><b>High School</b></legend>
+								<ol>
+									<li>
+										<label for="high-school">High School <i>(include name and address, city, state)</i></label>
+										<textarea name="high-school"></textarea>
+									</li>
+									<li>
+										<label for="hs-study">Course of Study</label>
+										<input type="text" name="hs-study" />
+									</li>
+									<li>
+										<fieldset>
+											<legend>Last year completed</legend><li>
+												<label><input type="radio" name="hs-years" value="1" />1</label>
+												<label><input type="radio" name="hs-years" value="2" />2</label>
+												<label><input type="radio" name="hs-years" value="3" />3</label>
+												<label><input type="radio" name="hs-years" value="4" />4</label>
+										</fieldset>
+									</li>
+									<li>
+										<fieldset>
+											<legend>Did you graduate?</legend>
+												<label><input type="radio" name="hs-graduate" value="yes"/>Yes</label>
+												<label><input type="radio" name="hs-graduate" value="no"/>No</label>
+										</fieldset>
+									</li>
+									<li>	
+										<label for="hs-degree" class="no-display">List degree received:</label>
+										<input type="text" name="hs-degree" />
+									</li>
+								</ol>
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<legend><b>College/University</b></legend>
+								<ol>
+									<li>
+										<label for="college">College/University <i>(include name and address, city, state)</i></label>
+										<textarea name="college"></textarea>
+									</li>
+									<li>
+										<label for="col-study">Course of study</label>
+										<input type="text" name="col-study" />
+									</li>
+									<li>
+										<fieldset>
+											<legend>Last year completed</legend>
+												<label><input type="radio" name="col-years" value="1" />1</label>
+												<label><input type="radio" name="col-years" value="2" />2</label>
+												<label><input type="radio" name="col-years" value="3" />3</label>
+												<label><input type="radio" name="col-years" value="4" />4</label>
+										</fieldset>
+									</li>
+									<li>
+										<fieldset>
+											<legend>Did you graduate?</legend>
+												<label><input type="radio" name="col-graduate" value="yes"/>Yes</label>
+												<label><input type="radio" name="col-graduate" value="no"/>No</label>
+											</legend>
+										</fieldset>
+									</li>
+									<li>
+										<label for="col-degree" class="no-display">Degree received</label>
+										<input type="text" name="col-degree" />
+									</li>
+								</ol>
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<legend><b>Graduate School</b></legend>
+								<ol>
+									<li>
+										<label for="grad-school">Graduate School <i>(include name and address, city, state)</i></label>
+										<textarea name="grad-school"></textarea>
+									</li>
+									<li>
+										<label for="grad-study" class="no-display">Course of study</label>
+										<input type="text" name="grad-study" />
+									</li>
+									<li>
+										<fieldset>
+											<legend>Last year completed</legend>
+												<label><input type="radio" name="grad-years" value="1" />1</label>
+												<label><input type="radio" name="grad-years" value="2" />2</label>
+												<label><input type="radio" name="grad-years" value="3" />3</label>
+												<label><input type="radio" name="grad-years" value="4" />4</label>
+										</fieldset>
+									</li>
+									<li>
+										<fieldset>
+											<legend>Did you graduate?</legend>
+												<label><input type="radio" name="grad-graduate" value="yes"/>Yes</label>
+												<label><input type="radio" name="grad-graduate" value="no"/>No</label>
+										</fieldset>
+									</li>
+									<li>
+										<label for="grad-degree" class="no-display">Degree received</label>
+										<input type="text" name="grad-degree" />
+									</li>
+								</ol>
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<legend><b>Other (Specify)</b></legend>
+								<ol>
+									<li>
+										<label for="other-school">Other (Specify) <i>(include name and address, city, state)</i></label>
+										<textarea name="other-school"></textarea>
+									</li>
+									<li>
+										<label for="other-study">Course of Study</label>
+										<input type="text" name="other-study" />
+									</li>
+									<li>
+										<fieldset>
+											<legend>Last year completed</legend>
+												<label><input type="radio" name="other-years" value="1" />1</label>
+												<label><input type="radio" name="other-years" value="2" />2</label>
+												<label><input type="radio" name="other-years" value="3" />3</label>
+												<label><input type="radio" name="other-years" value="4" />4</label>
+										</fieldset>
+									</li>
+									<li>
+										<fieldset>
+											<legend>Did you graduate?</legend>
+												<label><input type="radio" name="other-graduate" value="yes"/>Yes</label>
+												<label><input type="radio" name="other-graduate" value="no"/>No</label>
+										</fieldset>
+	
+									</li>
+									<li>
+										<label for="other-degree" class="no-display">Grad Degree</label>
+										<input type="text" name="other-degree" />
+									</li>
+								</ol>
+						</fieldset>
+				</ol>
+			</fieldset><!--closing tag for education fieldset-->
 			<fieldset>
 				<legend>Additional Job Related Qualifications</legend>
-				<div>
-					<p class="label">Do you hold any certifcations and/or licenses?</p>
-					<div class="options">
-						<label>Yes</label>
-						<input type="radio" name="license" value="yes"/>
-						<label>No</label>
-						<input type="radio" name="license" value="no"/>
-					</div>
-				</div>
-				<div>
-					<label for="license-list" class="full">If you answered yes to the above, please list:</label>
-					<textarea name="license-list"></textarea>
-				</div>
-				<div>
-					<label for="qualification" class="full">Please use the space below to summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, and/or experience which you feel should be considred in reviewing your application</label>
-					<textarea name="qualification"></textarea>
-				</div>
-			</fieldset>
+					<ol>
+						<li>
+							<fieldset>
+								<legend>Do you hold any certifcations and/or licenses?</legend>
+									<label><input type="radio" name="license" value="yes"/>Yes</label>
+									<label><input type="radio" name="license" value="no"/>No</label>
+									<ol>
+										<li>
+											<label for="license-list" class="full">If you answered yes to the above, please list:</label>
+											<textarea name="license-list" class="full"></textarea>
+										</li>
+									</ol>
+							</fieldset>
+						</li>
+						<li>
+							<label for="qualification" class="full">Please use this space to summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, and/or experience which you feel should be considred in reviewing your application</label>
+							<textarea name="qualification" class="full"></textarea>
+						</li>
+					</ol>
+			</fieldset><!--closing tag for job skills fieldset-->
 			<fieldset>
 				<legend>Employment History</legend>
-				<div>
-					<p class="label">Are you presently employed?</p>
-					<div class="options">
-						<label>Yes</label>
-						<input type="radio" name="employed" value="yes"/>
-						<label>No</label>
-						<input type="radio" name="employed" value="no"/>
-					</div>
-				</div>
-				<div>
-					<p class="label">If yes, may we contact your employer?</p>
-					<div class="options">
-						<label>Yes</label>
-						<input type="radio" name="contact-employer" value="yes"/>
-						<label>No</label>
-						<input type="radio" name="contact-employer" value="no"/>
-					</div>
-				</div>
-				<p class="note">List your present or most recent employer first. A resume will not substitute for completion of this portion of the application</p>
-				<div>
-					<label for="employer-one">Employer:</label>
-					<input type="text" class="text" name="employer-one" />
-				</div>
-		</form>
+					<ol>
+						<li>
+							<fieldset>
+								<legend>Are you presently employed?</legend>
+									<label><input type="radio" name="employed" value="yes"/>Yes</label>
+									<label><input type="radio" name="employed" value="no"/>No</label>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend>If yes, may we contact your employer?</legend>
+									<label><input type="radio" name="contact-employer" value="yes"/>Yes</label>
+									<label><input type="radio" name="contact-employer" value="no"/>No</label>
+							</fieldset>
+						</li>
+						<li>
+							<p class="note">List your present or most recent employer first. A resume will not substitute for completion of this portion of the application</p>
+							<fieldset>
+								<legend><span class="hidden">Employer One</span><legend>
+									<ol>
+										<li>
+											<label for="employer-one">Employer</label>
+											<input type="text" name="employer-one" />
+										</li>
+										<li>
+											<label for="employer-one-add">Address</label>
+											<textarea name="employer-one-add"></textarea>
+										</li>
+										<li>
+											<label for="employer-one-tel">Telephone</label>
+											<input type="text" name="employer-one-tel" />
+										</li>
+										<li>
+											<label for="employer-one-title">Your title</label>
+											<input type="text" name="employer-one-title" />
+										</li>
+										<li>
+											<label for="employer-one-super">Supervisor</label>
+											<input type="text" name="employer-one-super" />
+										</li>
+										<li>
+											<label for="employer-one-supertitle">Supervisor's Title</label>
+											<input type="text" name="employer-one-supertitle" />
+										</li>
+										<li>
+											<label for="employer-one-duties">Description of duties</label>
+											<textarea name="employer-one-duties"></textarea>
+										</li>
+										<li>
+											<fieldset>
+												<legend>Employed</legend>
+													<ol>
+														<li>
+															<label for="employer-one-from">From (mo/yr)</label>
+															<input type="text" name="employer-one-from" class="small" />
+															<label for="employer-one-to" class="small">To (mo/yr)</label>
+															<input type="text" name="employer-one-to" class="small" />
+														</li>
+													</ol>
+											</fieldset>
+										</li>
+										<li>
+											<label for="employer-one-salary">Last Salary</label>
+											<input type="text" name="employer-one-salary" />
+										</li>
+										<li>
+											<label for="employer-one-leaving">Reason for leaving</label>
+											<input type="text" name="employer-one-leaving" />
+										</li>
+									</ol>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend><span class="hidden">Employer Two</span><legend>
+									<ol>
+										<li>
+											<label for="employer-two">Employer</label>
+											<input type="text" name="employer-two" />
+										</li>
+										<li>
+											<label for="employer-two-add">Address</label>
+											<textarea name="employer-two-add"></textarea>
+										</li>
+										<li>
+											<label for="employer-two-tel">Telephone</label>
+											<input type="text" name="employer-two-tel" />
+										</li>
+										<li>
+											<label for="employer-two-title">Your title</label>
+											<input type="text" name="employer-two-title" />
+										</li>
+										<li>
+											<label for="employer-two-super">Supervisor</label>
+											<input type="text" name="employer-two-super" />
+										</li>
+										<li>
+											<label for="employer-two-supertitle">Supervisor's Title</label>
+											<input type="text" name="employer-two-supertitle" />
+										</li>
+										<li>
+											<label for="employer-two-duties">Description of duties</label>
+											<textarea name="employer-two-duties"></textarea>
+										</li>
+										<li>
+											<fieldset>
+												<legend>Employed</legend>
+													<ol>
+														<li>
+															<label for="employer-two-from">From (mo/yr)</label>
+															<input type="text" name="employer-two-from" class="small" />
+															<label for="employer-two-to" class="small">To (mo/yr)</label>
+															<input type="text" name="employer-two-to" class="small" />
+														</li>
+													</ol>
+											</fieldset>
+										</li>
+										<li>
+											<label for="employer-two-salary">Last Salary</label>
+											<input type="text" name="employer-two-salary" />
+										</li>
+										<li>
+											<label for="employer-two-leaving">Reason for leaving</label>
+											<input type="text" name="employer-two-leaving" />
+										</li>
+									</ol>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend><span class="hidden">Employer Three</span><legend>
+									<ol>
+										<li>
+											<label for="employer-three">Employer</label>
+											<input type="text" name="employer-three" />
+										</li>
+										<li>
+											<label for="employer-three-add">Address</label>
+											<textarea name="employer-three-add"></textarea>
+										</li>
+										<li>
+											<label for="employer-three-tel">Telephone</label>
+											<input type="text" name="employer-three-tel" />
+										</li>
+										<li>
+											<label for="employer-three-title">Your title</label>
+											<input type="text" name="employer-three-title" />
+										</li>
+										<li>
+											<label for="employer-three-super">Supervisor</label>
+											<input type="text" name="employer-three-super" />
+										</li>
+										<li>
+											<label for="employer-three-supertitle">Supervisor's Title</label>
+											<input type="text" name="employer-three-supertitle" />
+										</li>
+										<li>
+											<label for="employer-three-duties">Description of duties</label>
+											<textarea name="employer-three-duties"></textarea>
+										</li>
+										<li>
+											<fieldset>
+												<legend>Employed</legend>
+													<ol>
+														<li>
+															<label for="employer-three-from">From (mo/yr)</label>
+															<input type="text" name="employer-three-from" class="small" />
+															<label for="employer-three-to" class="small">To (mo/yr)</label>
+															<input type="text" name="employer-three-to" class="small" />
+														</li>
+													</ol>
+											</fieldset>
+										</li>
+										<li>
+											<label for="employer-three-salary">Last Salary</label>
+											<input type="text" name="employer-three-salary" />
+										</li>
+										<li>
+											<label for="employer-three-leaving">Reason for leaving</label>
+											<input type="text" name="employer-three-leaving" />
+										</li>
+									</ol>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset>
+								<legend><span class="hidden">Employer Four</span><legend>
+									<ol>
+										<li>
+											<label for="employer-four">Employer</label>
+											<input type="text" name="employer-four" />
+										</li>
+										<li>
+											<label for="employer-four-add">Address</label>
+											<textarea name="employer-four-add"></textarea>
+										</li>
+										<li>
+											<label for="employer-four-tel">Telephone</label>
+											<input type="text" name="employer-four-tel" />
+										</li>
+										<li>
+											<label for="employer-four-title">Your title</label>
+											<input type="text" name="employer-four-title" />
+										</li>
+										<li>
+											<label for="employer-four-super">Supervisor</label>
+											<input type="text" name="employer-four-super" />
+										</li>
+										<li>
+											<label for="employer-four-supertitle">Supervisor's Title</label>
+											<input type="text" name="employer-four-supertitle" />
+										</li>
+										<li>
+											<label for="employer-four-duties">Description of duties</label>
+											<textarea name="employer-four-duties"></textarea>
+										</li>
+										<li>
+											<fieldset>
+												<legend>Employed</legend>
+													<ol>
+														<li>
+															<label for="employer-four-from">From (mo/yr)</label>
+															<input type="text" name="employer-four-from" class="small" />
+															<label for="employer-four-to" class="small">To (mo/yr)</label>
+															<input type="text" name="employer-four-to" class="small" />
+														</li>
+													</ol>
+											</fieldset>
+										</li>
+										<li>
+											<label for="employer-four-salary">Last Salary</label>
+											<input type="text" name="employer-four-salary" />
+										</li>
+										<li>
+											<label for="employer-four-leaving">Reason for leaving</label>
+											<input type="text" name="employer-four-leaving" />
+										</li>
+									</ol>
+							</fieldset>
+						</li>
+					</ol>
+			</fieldset><!--closing tag for employment history fieldset-->
 	</div>
+</form>
 </body>
