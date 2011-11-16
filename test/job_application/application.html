@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="profile" href="http://microformats.org/profile/hcard">
 	<style type="text/css">
-		body {width: 740px; margin: 1em auto; padding: 1em; line-height: 120%; font-size: 90%; font-family: sans-serif; color: #000;}
+		body {width: 740px; margin: 1em auto; padding: 1em; line-height: 140%; font-size: 90%; font-family: sans-serif; color: #000;}
 		#tools{position: fixed; top: 0; left: 0; width: 100%; background-color: #000; color: #009899; z-index: 10;}
 		#tools h1{float: left; text-transform: uppercase; color: #888; font-weight: normal; font-size: 1.2em; padding: .5em;}
 		#tools input[type="submit"], #tools input[type="button"]{display: block; float: right; padding: .7em 2em; margin: 1em 1em 1em 1.5em; border: 0; background-color: #009899; color: #fff; text-decoration: none; font-weight: 600;}
@@ -16,20 +16,25 @@
 		#main h1 {clear: both; padding-bottom: .7em; font-size: 1.2em; text-transform: uppercase; border-bottom: 1px solid #000; font-weight: bold; color: #000;}
 		i {font-style: oblique;}
 		b {font-weight: bold;}
+		.note{font-style: oblique; margin-bottom: 1em;}
 		form {width: 100%;}
 		fieldset {border: 1px solid #000;; margin-bottom: 2em; padding: 1em;}
 		legend {width: 98%; padding: .6em; background-color: #000; color: #fff; font-weight: 500; text-transform: uppercase;}
-		fieldset fieldset{border: 0; margin: 0; padding: 0;}
-		fieldset fieldset legend{border: none; margin: 0; padding: 0; background-color: #fff; color: #000; text-transform: none;}
-		form ol{list-style:none; margin: 0; padding: 0;}
-		label{display: inline-block; width: 25%; vertical-align: top;}
+		fieldset fieldset{width: 100%; border: 0; margin: .5em 0 1em 0; padding: 0;}
+		fieldset fieldset legend{border:0; margin: 0; padding: 0 0 .25em 0; background-color: #fff; color: #000; text-transform: none;}
+		fieldset fieldset ol{margin-top: .35em;}
+		form ol{width: 100%; list-style:none; margin: 0; padding: 0;}
+		form ol li{margin-bottom: 1.55em;}
+		form p {margin:0; padding:0;}
+		label{display: inline-block; width: 20%; padding-top: .15em; vertical-align: top;}
 		label.small{padding-left: 3.5em; width: 20%;}
-		input[type="text"], select{width: 70%;}
+		input[type="text"], select, textarea{border: 1px solid #000; padding: .5em .25em;}
+		input[type="text"], textarea{width: 75%;}
+		select{width:76.15%;}
 		input:focus, textarea:focus, select:focus{background-color: #d2ece1;}
 		input.small{width: 20.5% !important}
-		textarea{width: 69.7%; height: 5em; overflow: hidden; resize: none;}
-		.full{width: 95.5%; clear: left;}
-		.hidden{}
+		textarea{height: 5em; overflow: hidden; resize: none;}
+		.full{width: 96.25%; clear: left;}
 	</style>
 </head>
 <body>
@@ -204,12 +209,12 @@
 						</li>
 						<li>
 							<fieldset>
-								<legend?Were you previously employed by the Des Plaines Public Library?</legend>
+								<legend>Were you previously employed by the Des Plaines Public Library?</legend>
 									<label><input type="radio" name="prev-employed" value="yes"/>Yes</label>
 									<label><input type="radio" name="prev-employed" value="no"/>No</label>
 									<ol>
 										<li>
-											<label for="prev-department">If yes, what department?</label>
+											<label for="prev-department" class="full">If yes, what department?</label>
 											<input type="text" name="prev-department" />
 										</li>
 										<li>
@@ -413,7 +418,7 @@
 						<li>
 							<p class="note">List your present or most recent employer first. A resume will not substitute for completion of this portion of the application</p>
 							<fieldset>
-								<legend><span class="hidden">Employer One</span><legend>
+								<legend><b>Employer One</b></legend>
 									<ol>
 										<li>
 											<label for="employer-one">Employer</label>
@@ -469,7 +474,7 @@
 						</li>
 						<li>
 							<fieldset>
-								<legend><span class="hidden">Employer Two</span><legend>
+								<legend><b>Employer Two</b></legend>
 									<ol>
 										<li>
 											<label for="employer-two">Employer</label>
@@ -525,7 +530,7 @@
 						</li>
 						<li>
 							<fieldset>
-								<legend><span class="hidden">Employer Three</span><legend>
+								<legend><b>Employer Three</b></legend>
 									<ol>
 										<li>
 											<label for="employer-three">Employer</label>
@@ -581,7 +586,7 @@
 						</li>
 						<li>
 							<fieldset>
-								<legend><span class="hidden">Employer Four</span><legend>
+								<legend><b>Employer Four</b></legend>
 									<ol>
 										<li>
 											<label for="employer-four">Employer</label>
