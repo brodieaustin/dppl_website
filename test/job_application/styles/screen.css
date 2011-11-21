@@ -52,7 +52,7 @@ body {
 
 #main h1 {
   clear: both;
-  padding-bottom: .7em;
+  padding-bottom: .4em;
   font-size: 1.2em;
   text-transform: uppercase;
   border-bottom: 1px solid #000;
@@ -66,8 +66,9 @@ b {
   font-weight: bold;}
 
 .note{
-  font-style: oblique;
-  margin-bottom: 1em;}
+  font-style: normal;
+  margin: .5em 1em 2em 2em;
+}
 
 form {
   width: 100%;}
