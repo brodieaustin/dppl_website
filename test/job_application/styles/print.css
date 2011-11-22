@@ -1,0 +1,38 @@
+@import url('screen.css');
+
+body{
+  width: 95%;
+  font-size: 70%;
+  line-height: 110%;
+}
+
+#tools{
+  display: none;
+}
+
+#main{
+  margin-top: 1em;
+}
+
+form ol{
+  list-style: none;
+}
+
+form ol li{
+  margin: 0 !important;
+  padding: 0;
+}
+
+fieldset{
+  border: 0;
+  maring: 0;
+}
+
+label, input{
+  padding: 0;
+}
+
+input{
+  border: 0;
+  border-bottom: 1px solid #000;
+}

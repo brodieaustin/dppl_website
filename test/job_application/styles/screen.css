@@ -57,18 +57,24 @@ body {
   text-transform: uppercase;
   border-bottom: 1px solid #000;
   font-weight: bold;
-  color: #000;}
+  color: #000;
+}
+
+#main h2{
+  font-size: 1.1em;
+  font-weight: bold;
+}
 
 i {
   font-style: oblique;}
 
 b {
   font-weight: bold;}
-
+  
 .note{
-  font-style: normal;
-  margin: .5em 1em 2em 2em;
-}
+   margin-top: .5em;
+   margin-bottom: 2em;
+ }
 
 form {
   width: 100%;}
