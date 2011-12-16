@@ -1,0 +1,20 @@
+table.taxes{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.taxes tr:nth-child(2n){
+  background-color: #f8f8f8;
+}
+
+table.taxes td{
+  padding: .4em .2em;
+}
+
+table.taxes td.form{
+  width: 25%;
+}
+
+table.taxes td.description{
+  width: 65%;
+}
