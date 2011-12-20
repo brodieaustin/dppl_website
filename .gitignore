@@ -1,0 +1,5 @@
+#Ignore to-process folder
+to-process/
+
+#Ignore robots.txt file
+robots.txt

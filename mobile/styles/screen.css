@@ -27,16 +27,16 @@ li a{
 }
 
 a{
-  color: #41ad49;
+  color: #da984a;
   font-weight: bold;
 }
 
 a:hover{
-  color: #666;
+  color: #da984a;
 }
 
 #header{
-  background-color: #41ad49;
+  background-color: #da984a;
   padding: .25em 1em;
 }
 
@@ -46,12 +46,12 @@ a:hover{
 
 #headline{
   padding: 1em 0 2em 0;
-  background: url('../images/smartscan-phone-web.jpg') no-repeat right -10px;
+  overflow: auto;
 }
 
 #headline h1{
   padding-top: .35em;
-  color: #41ad49;
+  color: #da984a;
   font-size: 2em;
   line-height: 1.15em;
 }
@@ -59,6 +59,11 @@ a:hover{
 #headline p{
   margin-top: .5em;
   color: #8F8F8F;
+}
+
+#headline img{
+  float: right;
+  width: 30%;
 }
 
 #main{
@@ -72,17 +77,22 @@ a:hover{
 
 #main h2{
   clear: both;
+  padding: .5em 1em 1em 1em;
   font-size: 1em;
-  padding: 1em;
-  background-color: #41ad49;
+  background-color: #da984a;
   color: #fff;
   font-size: .8em;
   line-height: 1.35em;
 }
 
+#main h2 a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
 #main h3{
   clear: both;
-  float: left;
   margin-bottom: 1em;
   padding-top: 2em;
   color: #666;
@@ -92,14 +102,36 @@ a:hover{
   
 }
 
+#main form{
+  padding: 1em 0 2em 0;
+}
+
+#main form label{
+  display: none;
+}
+
+#main form input{
+  float: left;
+}
+
+#main form input[type="text"]{
+  width: 50%;
+}
+
+#main form input[type="submit"]{
+  border: 1px solid #666;
+  padding: .15em .5em;
+}
+
 #main .logo{
   float: right;
   margin: 2em 0 0 1em;
   padding: .15em;
 }
 
-#main ol, main ul{
+#main ol, #main ul{
   line-height: 1.35em;
+  clear: both;
 }
 
 #main ol{
@@ -114,16 +146,28 @@ a:hover{
   padding-bottom: 1em;
 }
 #main ul {
-  border-bottom: solid 1px #ddd;
-  padding: .5em .5em 1em .5em;
+  padding: .5em 0;
   overflow: auto;
 }
 
 #main ul li {
-  float: left;
-  text-align: center;
   vertical-align: text-bottom;
-  padding: 0 .3em;
+  padding: 0 2em 1em 0;
+}
+
+#main ul li:last-child{
+  padding-bottom: 0;
+}
+
+#main div{
+  margin-bottom: .5em;
+  clear: both;
+}
+
+#main div span{
+  display: block;
+  padding: .15em 0;
+  font-style: normal;
 }
 
 #footer{
@@ -140,6 +184,10 @@ a:hover{
   body{
 	width: 100%;
 	background-color: #fff;
+  }
+  
+  #main form input[type="text"]{
+    width: 70%;
   }
 
 }
