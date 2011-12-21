@@ -3,7 +3,8 @@ table.taxes{
   border-collapse: collapse;
 }
 
-table.taxes tr:nth-child(2n){
+
+table.taxes tr:nth-child(odd){
   background-color: #f8f8f8;
 }
 
