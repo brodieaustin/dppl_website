@@ -1,0 +1,29 @@
+/*special style sheet for database listings*/
+
+div#db-list h3{
+    clear: both;
+	border-bottom: 1px solid #036
+}
+
+div#db-list h4{
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 10pt;
+}
+
+div.db{
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+div.db p{
+  float: left;
+  width: 60%;
+  font-size: 10pt;
+}
+
+div.db img{
+  float: right;
+}

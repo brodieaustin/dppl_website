@@ -29,6 +29,8 @@ li a{
 a{
   color: #da984a;
   font-weight: bold;
+  border-bottom: 1px dotted #B07224;
+  text-decoration: none;
 }
 
 a:hover{
@@ -89,6 +91,7 @@ a:hover{
   display: block;
   color: #fff;
   text-decoration: none;
+  border: 0;
 }
 
 #main h3{
