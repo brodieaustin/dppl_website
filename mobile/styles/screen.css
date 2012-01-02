@@ -105,6 +105,10 @@ a:hover{
   
 }
 
+#main p{
+  margin-bottom: .5em;
+}
+
 #main form{
   padding: .25em 0 2em 0;
 }
