@@ -2,23 +2,23 @@
 
 <html>
 <head>
-	<title>DES PLAINES PUBLIC LIBRARY - Welcome!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
-<meta name="description" content="Des Plaines Public Library Web site, featuring event and program listings, searchable catalog for books, movies and music, blogs, Facebook, Twitter, information for kids and teens, job seekers, parents, seniors, and adults of every age">
-<meta name="keywords" content="des plaines public library Illinois IL books movies DVDs CDs music events programs news directions services">
+	<title>DES PLAINES PUBLIC LIBRARY - Welcome!</title>
+	<meta name="description" content="Des Plaines Public Library Web site, featuring event and program listings, searchable catalog for books, movies and music, blogs, Facebook, Twitter, information for kids and teens, job seekers, parents, seniors, and adults of every age">
+	<meta name="keywords" content="des plaines public library Illinois IL books movies DVDs CDs music events programs news directions services">
 	<link rel="stylesheet" type="text/css" href="../css/standard.css" title="standard">
 	<link rel="alternate stylesheet" type="text/css" href="../css/medium.css" title="medium">
 	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
 	<link rel="dppl_sm_logo" href="http://www.dppl.org/images/logos/dppl_sm_logo.jpg"/>
-<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
-
+	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
 	<style type="text/css">
 		.gfc-resultsheader{border: 0 !important;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
 	</style>
-
+	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
 	<!--#include virtual="../js/styleswitcher.js"-->
 	
 	<!--#include virtual="../js/popup.js"-->
+	
 </head>
 
 <body>
@@ -85,6 +85,50 @@
 	</TD>
 </TR>
 </TABLE>
+<!--JS for google feeds API-->
+<script type="text/javascript">
+	//Google Feeds API script to display RSS feeds as test
+	google.load("feeds", "1");
+	
+	function OnLoad() {
+	  // Create a feed control
+	var feedControl = new google.feeds.FeedControl();
+	
+	  // Add two feeds.
+	feedControl.addFeed("http://dpplplaintalk.blogspot.com/feeds/posts/default", "PlainTalk");
+	feedControl.addFeed("http://positivelyestreet.blogspot.com/feeds/posts/default?alt=rss", "Positively Ellinwood St");
+	feedControl.addFeed("http://kidding-around.blogspot.com/feeds/posts/default?alt=rss", "Kidding Around");
+	feedControl.addFeed("http://feed43.com/5583164584461834.xml", "Des Plaines Patch");
+
+	feedControl.setNumEntries(1)
+	
+	  // Draw it.
+	  feedControl.draw(document.getElementById("rss-blogs"));
+	}
+	
+	google.setOnLoadCallback(OnLoad);
+</script>
+
+<script type="text/javascript">
+	//Google Feeds API script to display RSS feeds as test
+	google.load("feeds", "1");
+	    
+	function OnLoad() {
+	// Create a feed control
+	var feedControl = new google.feeds.FeedControl();
+	    
+	// Add two feeds.
+	feedControl.addFeed("http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=&lib=0&nd=30&feedtitle=Des+Plaines+Public+Library%3CBR%3ESchedule+of+Events&dm=rss2&LangType=0", "");
+
+	feedControl.setNumEntries(4)
+	    
+	// Draw it.
+	feedControl.draw(document.getElementById("rss-events"));
+	    }
+	
+	    google.setOnLoadCallback(OnLoad);
+</script>
+				
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
