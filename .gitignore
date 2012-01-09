@@ -3,3 +3,9 @@ to-process/
 
 #Ignore robots.txt file
 robots.txt
+
+# ignore OS generated files
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
