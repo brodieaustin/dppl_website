@@ -13,6 +13,7 @@
 	<style type="text/css">
 		.gfc-resultsheader{border: 0 !important;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
+		.gf-title a{color: #003366 !important;}
 	</style>
 	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
 	<!--#include virtual="../js/styleswitcher.js"-->
