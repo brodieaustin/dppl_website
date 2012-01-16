@@ -1,24 +1,49 @@
-<!-- //// [PAGE] Content Box-->		
-<TABLE WIDTH="635" CELLSPACING="0" CELLPADDING="0">
-<TR>
-	<TD CLASS="spacer_sm"><IMG SRC="../images/utils/feature_box_corner_TL.gif" WIDTH="5" HEIGHT="5" BORDER="0" ALT=""></TD>
-	<TD WIDTH="625" HEIGHT="5" NOWRAP BACKGROUND="../images/utils/feature_box_horizontal.gif"></TD>
-	<TD CLASS="spacer_sm"><IMG SRC="../images/utils/feature_box_corner_TR.gif" WIDTH="5" HEIGHT="5" BORDER="0" ALT=""></TD>
-</TR>
-<TR>
-	<TD WIDTH="5" HEIGHT="5" BACKGROUND="../images/utils/feature_box_vertical.gif"></TD>
-	<TD>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
 	
-	<TABLE WIDTH="100%" CELLPADDING="3" CELLSPACING="0">
-	<TR>
-		<TD>
- 			<div id="slides">
+	<title>Slides, A Slideshow Plugin for jQuery</title>
+	
+	<link rel="stylesheet" href="css/global.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="js/slides.min.jquery.js"></script>
+	<script>
+		$(function(){
+			// Set starting slide to 1
+			var startSlide = 1;
+			// Get slide number if it exists
+			if (window.location.hash) {
+				startSlide = window.location.hash.replace('#','');
+			}
+			// Initialize Slides
+			$('#slides').slides({
+				preload: true,
+				preloadImage: '../js/slides/img/loading.gif',
+				generatePagination: false,
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				// Get the starting slide
+				start: startSlide,
+				animationComplete: function(current){
+					// Set the slide number as a hash
+					window.location.hash = '#' + current;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div id="example">
+			<div id="slides">
 				<div class="slides_container">
 					<div class="slide">
 						<h1>First Slide</h1>
-						<img src="lego-2012.png" />
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-						<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=14905" class="link">Register for this event! &rsaquo;&rsaquo;&rsaquo;</a></p>
+						<p><a href="#4" class="link">Check out the fourth slide &rsaquo;</a></p>
 					</div>
 					<div class="slide">
 						<h1>Second Slide</h1>
@@ -51,52 +76,16 @@
 						<p><a href="#3" class="link">Check out the third slide &rsaquo;</a></p>
 					</div>
 				</div>
-				<a href="#" class="prev"><img src="..//js/slides/img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
-				<a href="#" class="next"><img src="..//js/slides/img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+				<a href="#" class="prev"><img src="img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+				<a href="#" class="next"><img src="img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
 			</div>
-			<div style="clear:both">&nbsp;</div>
-	 	</TD>
-	</TR> 
-	</TABLE>	
-	
-	</TD>
-	<TD WIDTH="5" HEIGHT="5" BACKGROUND="../images/utils/feature_box_vertical.gif"></TD>
-</TR>
-<TR>
-	<TD CLASS="spacer_sm"><IMG SRC="../images/utils/feature_box_corner_BL.gif" WIDTH="5" HEIGHT="5" BORDER="0" ALT=""></TD>
-	<TD WIDTH="625" HEIGHT="5" NOWRAP BACKGROUND="../images/utils/feature_box_horizontal.gif"></TD>
-	<TD CLASS="spacer_sm"><IMG SRC="../images/utils/feature_box_corner_BR.gif" WIDTH="5" HEIGHT="5" BORDER="0" ALT=""></TD>
-</TR>
-<TR>
-	<TD COLSPAN="3" CLASS="spacer_sm">&nbsp;</TD>
-</TR>
-</TABLE>
-<!-- //// Feature Box 02 -->
-<table width="635" cellspacing="0" cellpadding="0">
-<tr>
-                <td class="spacer_sm"><img src="../images/utils/feature_box_corner_TL.gif" width="5" height="5" border="0" alt="Line forming a box around page content"></td>
-                <td width="625" height="5" nowrap background="../images/utils/feature_box_horizontal.gif"></td>
-                <td class="spacer_sm"><img src="../images/utils/feature_box_corner_TR.gif" width="5" height="5" border="0" alt="Line forming a box around page content"></td>
-</tr>
-<tr>
-                <td width="5" height="5" background="../images/utils/feature_box_vertical.gif"></td>
-                <td>
-
-    <table width="100%" cellpadding="3" cellspacing="0">
-        <tr>
-            <td>
-		 
-  <!-- FEATURE CONTENT -->
-  				<h4>Library Blogs!</h4>
-				<div id="rss-blogs" style="float: left; width: 90%; margin-right: 15px; padding: 5px; border-right: 1px solid #c8c8c8; overflow-y: hidden; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10pt;">Loading...</div>
-			</td>
-			<td>
-				<h4>Upcoming Events</h4>
-					<div id="rss-events" style="float: left; width: 90%; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10pt;" >Loading...</div>
-			</td>
-		</tr> 
-		<tr>
-			<td colspan="2"><div style="padding: 5px; font-size: 8pt; border-top: 1px solid #c8c8c8;"><a href="http://dpplplaintalk.blogspot.com/" class="link">PlainTalk</a> | <a href="http://positivelyestreet.blogspot.com/" class="link">Positively Ellinwood Street</a> | <a href="http://kidding-around.blogspot.com/" class="link">Kidding Around</a> | <a href="http://caudillclub.blogspot.com/">Caudill Club</a></div>
-			</td>
-		</tr>
-	</table>
+			<img src="img/example-frame.png" width="739" height="341" alt="Example Frame" id="frame">
+		</div>
+		<div id="footer">
+			<p>For full instructions go to <a href="http://slidesjs.com" target="_blank">http://slidesjs.com</a>.</p>
+			<p>Slider design by Orman Clark at <a href="http://www.premiumpixels.com/" target="_blank">Premium Pixels</a>. You can donwload the source PSD at <a href="http://www.premiumpixels.com/clean-simple-image-slider-psd/" target="_blank">Premium Pixels</a></p>
+			<p>&copy; 2010 <a href="http://nathansearles.com" target="_blank">Nathan Searles</a>. All rights reserved. Slides is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache license</a>.</p>
+		</div>
+	</div>
+</body>
+</html>
