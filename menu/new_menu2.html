@@ -23,13 +23,14 @@
 	/* QuickMenu 0 */
 	
 	#qm0{
-	  padding: 10px 0;
+	  padding: 10px 2px;
+	  background-color: #f8f8f8;
 	}
 
 	/*"""""""" (MAIN) Items""""""""*/	
 	#qm0 a	
 	{	
-		padding:5px 4px 5px 5px;
+		padding:5px;
 		margin:0px 12px 0px 0px;
 		color:#003366;
 		font-family:Helvetica, Arial, sans-serif;
@@ -61,7 +62,7 @@
 	#qm0 div, #qm0 ul	
 	{	
 		padding:6px;
-		margin:-2px 0px 0px;
+		margin:10px 0px 0px;
 		background-color:#f8f8f8;
 	}
 
@@ -144,7 +145,7 @@
 	#qm0 .qmritem span	
 	{	
 		border-color:#003366;
-		background-color:#ffffff;
+		background-color:#c8c8c8;
 	}
 
 
@@ -193,14 +194,14 @@
 		var a = qmad.qm0 = new Object();
 
 		// Rounded Corners Add On
-		a.rcorner_size = 6;
-		a.rcorner_border_color = "#003366";
-		a.rcorner_bg_color = "#ffffff";
+		a.rcorner_size = 1;
+		a.rcorner_border_color = "#c8c8c8";
+		a.rcorner_bg_color = "#c8c8c8";
 		a.rcorner_apply_corners = new Array(false,true,true,true);
-		a.rcorner_top_line_auto_inset = true;
+		a.rcorner_top_line_auto_inset = false;
 
 		// Rounded Items Add On
-		a.ritem_size = 4;
+		a.ritem_size = 1;
 		a.ritem_apply = "main";
 		a.ritem_main_apply_corners = new Array(true,true,false,false);
 		a.ritem_show_on_actives = true;
