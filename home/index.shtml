@@ -5,7 +5,7 @@
 	<title>DES PLAINES PUBLIC LIBRARY - Welcome!</title>
 	<meta name="description" content="Des Plaines Public Library Web site, featuring event and program listings, searchable catalog for books, movies and music, blogs, Facebook, Twitter, information for kids and teens, job seekers, parents, seniors, and adults of every age">
 	<meta name="keywords" content="des plaines public library Illinois IL books movies DVDs CDs music events programs news directions services">
-	<link rel="stylesheet" href="../js/slides/css/global.css">
+	<!--<link rel="stylesheet" href="../js/slides/css/global.css">-->
 	<link rel="stylesheet" type="text/css" href="../css/standard.css" title="standard">
 	<link rel="alternate stylesheet" type="text/css" href="../css/medium.css" title="medium">
 	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
@@ -15,24 +15,44 @@
 		.gfc-resultsheader{border: 0 !important;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
 		.gf-title a{color: #003366 !important;}
+		#slides{width: 90%; z-index: 0;}
+		#slides img{float: right; margin-left: 10px;}
+		#slides p{width: 70%;}
+		#nav{clear: left; float: right; padding-top: 20px; }
+		#nav a { border: 1px solid #666; background: #c8c8c8; text-decoration: none; margin: 0 5px; padding: 3px 5px; color: #666;}
+		#nav a.activeSlide { background: #f8f8f8; }
+		#nav a:focus { outline: none; }
 	</style>
 	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script><!--replace with local jquery?-->
-	<script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="../js/slides/js/slides.min.jquery.js"></script>
+	<script src="../js/jquery-1.6.4.min.js"></script><!--replace with local jquery?-->
+	<!--<script type="text/javascript" src="../js/slides/js/slides.min.jquery.js"></script>-->
+	<script type="text/javascript" src="../js/cycle/jquery.cycle.all.js"></script>
 	<!--#include virtual="../js/styleswitcher.js"-->
 	
 	<!--#include virtual="../js/popup.js"-->
 	<!--functions for slider-->
-	<script>
+	<!--<script>
 		$(function(){
 			$('#slides').slides({
 				preload: true,
 				preloadImage: 'img/loading.gif',
 				play: 5000,
 				pause: 2500,
-				generatePagination: false,
+				generatePagination: true,
 				hoverPause: true
+			});
+		});
+	</script>-->
+	<script>
+		$(document).ready(function(){
+			$('#slides') 
+				.after('<div id="nav">') 
+				.cycle({ 
+					fx:     'scrollLeft', 
+					speed:  'slow', 
+					pager:  '#nav',
+					next:   '#next2', 
+				    prev:   '#prev2'
 			});
 		});
 	</script>
