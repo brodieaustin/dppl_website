@@ -1,5 +1,6 @@
 #Ignore to-process folder
 to-process/
+blogs/
 
 #Ignore robots.txt file
 robots.txt

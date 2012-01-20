@@ -28,7 +28,7 @@
 		#nav a:focus { outline: none; }
 	</style>
 	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
-	<script src="../js/jquery-1.6.4.min.js"></script><!--replace with local jquery?-->
+	<script src="../js/jquery-1.7.1.min.js"></script><!--replace with local jquery?-->
 	<script type="text/javascript" src="../js/cycle/jquery.cycle.all.js"></script>
 	<!--#include virtual="../js/styleswitcher.js"-->
 	
