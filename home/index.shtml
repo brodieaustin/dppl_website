@@ -12,12 +12,15 @@
 	<link rel="dppl_sm_logo" href="http://www.dppl.org/images/logos/dppl_sm_logo.jpg"/>
 	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
 	<style type="text/css">
+		body{font-family: Arial, sans-serif !important;}
 		.gfc-resultsheader{border: 0 !important;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
 		.gf-title a{color: #003366 !important;}
-		#slides{width: 95%; max-height: 300px; z-index: 0; margin: 0 20px;}
+		#slides{width: 575px; max-height: 300px; z-index: 0; margin: 0 20px;}
 		#slides div{display: none;}
 		#slides div.first{display: block;}
+		#slides h1{text-shadow: 1px 1px 1px #f8f8f8; padding-bottom: 10px;}
+		#slides p{line-height: 150%;}
 		#slides img{float: right; margin-left: 20px;}
 		#nav{clear: left; float: right; padding-top: 20px; margin-right: 20px;}
 		#nav a { border: 1px solid #666; background: #c8c8c8; text-decoration: none; margin: 0 5px; padding: 3px 5px; color: #666;}
