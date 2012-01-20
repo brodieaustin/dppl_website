@@ -195,6 +195,7 @@ A.link:visited {
 	text-decoration: underline;
 	font-style : normal;
     }
+	
 
 A.link:hover {
 	font-weight: bold;
@@ -203,7 +204,29 @@ A.link:hover {
 	background-color : #003366;
 	font-style : normal;
     }
+	
+#side-nav A.link {
+	font-weight: bold;
+	color: #003366;
+	text-decoration: underline;
+	font-style : normal;
+	}
 
+#side-nav A.link:visited {
+	font-weight: bold;
+	color: #003366;
+	text-decoration: underline;
+	font-style : normal;
+    }
+	
+
+#side-nav A.link:hover {
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color : #003366;
+	font-style : normal;
+    }
 	
 A.link_sm {
 	font-weight: bold;
