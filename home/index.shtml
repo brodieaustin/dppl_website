@@ -16,7 +16,7 @@
 		.gfc-resultsheader{border: 0 !important;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
 		.gf-title a{color: #003366 !important;}
-		#slides{width: 575px; max-height: 300px; z-index: 0; margin: 0 20px;}
+		#slides{width: 575px; max-height: 3250px; z-index: 0; margin: 0 20px;}
 		#slides div{display: none;}
 		#slides div.first{display: block;}
 		#slides h1{text-shadow: 1px 1px 1px #f8f8f8; padding-bottom: 10px;}
@@ -40,7 +40,8 @@
 				.after('<div id="nav">') 
 				.cycle({ 
 					fx:     'fade', 
-					speed:  '1000', 
+					speed:  '1000',
+					timeout: '3000',
 					pager:  '#nav',
 					next:   '#next2', 
 				    prev:   '#prev2'
