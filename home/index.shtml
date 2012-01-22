@@ -5,7 +5,6 @@
 	<title>DES PLAINES PUBLIC LIBRARY - Welcome!</title>
 	<meta name="description" content="Des Plaines Public Library Web site, featuring event and program listings, searchable catalog for books, movies and music, blogs, Facebook, Twitter, information for kids and teens, job seekers, parents, seniors, and adults of every age">
 	<meta name="keywords" content="des plaines public library Illinois IL books movies DVDs CDs music events programs news directions services">
-	<!--<link rel="stylesheet" href="../js/slides/css/global.css">-->
 	<link rel="stylesheet" type="text/css" href="../css/standard.css" title="standard">
 	<link rel="alternate stylesheet" type="text/css" href="../css/medium.css" title="medium">
 	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
@@ -15,7 +14,7 @@
 		.gfc-resultsheader{border: 0 !important;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
 		.gf-title a{color: #003366 !important;}
-		#slides{z-index: 0; margin: 0 20px;}
+		#slides{min-height: 250px; z-index: 0; margin: 0 20px;}
 		#slides div{display: none;}
 		#slides div.first{display: block;}
 		#slides h1{text-shadow: 1px 1px 1px #f8f8f8; padding-bottom: 10px;}
@@ -95,8 +94,7 @@
 	<TD WIDTH="130"><!--#include virtual="../utils/left_nav_River2.html"--></TD>
 	<TD WIDTH="5">&nbsp;&nbsp;&nbsp;</TD>
 	<TD WIDTH="649">
-
-<!-- //// CONTENT -->	
+<!--Content goes here-->
 	<!--#include virtual="../content/home-c/features.html"-->
 	
 <!-- //// VITAL INFO -->
