@@ -14,7 +14,7 @@
 		.gfc-resultsheader{border: 0 !important;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
 		.gf-title a{color: #003366 !important;}
-		#slides{min-height: 250px; z-index: 0; margin: 0 20px;}
+		#slides{height: 20%; min-height: 250px; z-index: 0; margin: 0 20px;}
 		#slides div{display: none;}
 		#slides div.first{display: block;}
 		#slides h1{text-shadow: 1px 1px 1px #f8f8f8; padding-bottom: 10px;}
