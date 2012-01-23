@@ -13,7 +13,7 @@
 	<style type="text/css">
 		.gfc-resultsheader{border: 0 !important;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
-		.gf-title a{font-weight: bold; color: #003366 !important;}
+		.gf-title a{color: #003366 !important;}
 	</style>
 	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
 	<!--#include virtual="../js/styleswitcher.js"-->
@@ -71,8 +71,8 @@
 	<!--#include virtual="../content/home-c/features.html"-->
 	
 <!-- //// VITAL INFO -->
-	<IMG SRC="../images/logos/dppl_logo_sm.jpg" WIDTH="80" HEIGHT="58" BORDER="0" ALIGN="LEFT" ALT="Small logo of the Des Plaines Public Library"><SPAN CLASS="footer"><!--#include
-	 virtual="../content/multi_use-c/vital_info2.html"--></SPAN>	
+	<IMG SRC="../images/logos/dppl_logo_sm.jpg" WIDTH="80" HEIGHT="58" BORDER="0" ALIGN="LEFT" ALT="Small logo of the Des Plaines Public Library"><SPAN CLASS="footer">
+	<!--#include virtual="../content/multi_use-c/vital_info2.html"--></SPAN>	
 
 <!-- //// COPYRIGHT -->					
 	&nbsp;<SPAN CLASS="copyright2"><!--#include virtual="../content/multi_use-c/copyright2.html"--></SPAN>
