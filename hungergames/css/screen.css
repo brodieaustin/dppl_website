@@ -1,0 +1,174 @@
+body{
+	width: 100%;
+	max-width: 119.9ems;
+	min-height: 600px;
+	margin: 0;
+	padding: 0;
+	color: #c8c8c8;
+	font-size: 62.5%;
+	font-family: Helvetica, Arial, sans-serif;
+	background: url('../images/fake_brick.png');
+}
+#page-container{
+	position: relative;
+	width: 95%;
+	min-height: 800px;
+	margin: 2em auto;
+	padding: 1em 2em;
+	background-color: #3D3C38;
+	background-color: rgba(61,60,56, .5);
+	overflow: auto;
+	border: 1px solid #080808;
+}
+#header{
+	padding: 0;
+}
+#header h1{
+	margin-top: 0;
+	color: #f8f8f8;
+	line-height: 1em;
+	text-shadow: 20px 20px 20px #080808;
+	font-size: 4.8em;
+	text-transform: uppercase;
+	font-family: 'Play', sans-serif;
+}
+#header #timer{
+	float: right;
+	padding-top: 1.5em;
+	font-size: 1.8em;
+	color: #666;
+	text-shadow: 1px 1px 1px #000;
+}
+#main{
+	width: 64.97%;
+	float: left;
+	margin-right: 1.6%;
+	padding: .25em 0;
+	font-size: 1.8em;
+	line-height: 1.5em;
+}
+#main h2, #main h3, #main h4{
+	color: #c88d17;
+	text-shadow: 1px 1px 1px #080808;
+	line-height: 1.1em;
+	padding: 0;
+	margin-top: 0;
+}
+#sidebar{
+	float: left;
+	width: 33.33%;
+	min-height: 604px;
+	background-color: #000;
+	background-color: rgba(0,0,0,.5);
+	border: 1px solid #080808;
+}
+#sidebar div{
+	width: 90%;
+	margin: 1em auto;
+	padding: 1em 0;
+	text-align: center;
+	border-bottom: 1px dotted #f8f8f8;
+}
+#sidebar div:last-child{
+  border: 0;
+}
+#sidebar img{
+  width: 60%;
+}
+#footer{
+	position: absolute;
+	bottom: 0;
+	clear: both;
+	margin-top: 2em;
+	padding: 1em 0;
+}
+/*for tabs*/
+.ui-tabs {
+	 position: relative;
+	padding: .2em;
+	zoom: 1;
+} /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav {
+	 margin: 0;
+	padding: .2em 0;
+}
+.ui-tabs .ui-tabs-nav li {
+	 list-style: none;
+	float: left;
+	position: relative;
+	top: 1px;
+	margin: 0 .2em 1px 0;
+	border-bottom: 0 !important;
+	padding: 0;
+	white-space: nowrap;
+	}
+.ui-tabs .ui-tabs-nav li a {
+	 float: left;
+	margin-right: .25em;
+	padding: .5em;
+	text-decoration: none;
+	background-color: #000;
+	color: #666;
+}
+.ui-tabs .ui-tabs-nav li a:hover{
+	background-color: #666;
+	color: #fff;
+}
+.ui-tabs .ui-tabs-nav li.ui-state-active a{
+	color: #fff;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+	 margin-bottom: 0;
+	padding-bottom: 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+	 cursor: text;
+	}
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+	 cursor: pointer;
+	} /* first selector in group seems obsolete, but required to overcome bug in Opera applying cur55sor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel {
+	 display: block;
+	min-height: 500px;
+	border-width: 0;
+	margin-top: 3em;
+	padding: 1em 1.4em;
+	background: none;
+	border: 1px solid #f8f8f8;
+}
+.ui-tabs .ui-tabs-hide {
+	 display: none !important;
+	}
+	
+@media screen and (max-width: 700px){
+  #page-container{
+    width: 98.9%;
+    margin: 0;
+	padding: 0;
+  }
+  #header #timer{
+    float: none;
+  }
+  #main{
+    float: none;
+	width: 100%;
+	margin-right: 0;
+	min-height: 0;
+   }
+   
+   #header h1{font-size: 4.0em;}
+   
+   #sidebar{
+     float: none;
+	 width: 100%;
+	 min-height: 0;
+	}
+	
+   #sidebar img{
+     width: 40%;
+    }
+	
+	#footer{
+	  position: relative;
+	}
+}
