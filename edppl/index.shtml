@@ -10,6 +10,9 @@
 	<!--#include virtual="../js/styleswitcher.js"-->
 	
 	<!--#include virtual="../js/popup.js"-->
+	<style type="text/css">
+		.icon-box a:hover img{background-color: #c1d72d;}
+	</style>
 </head>
 
 <body>
