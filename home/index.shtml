@@ -23,7 +23,7 @@
 		#slides div{display: none;}
 		#slides div.first{display: block;}
 		#slides h1{text-shadow: 1px 1px 1px #f8f8f8; padding-bottom: 10px;}
-		#slides p{line-height: 130%;}
+		#slides p{line-height: 130%; padding-top: 10px;}
 		#slides img{float: right;margin-left: 20px;}
 		#nav{clear: left; float: right; margin-top: 2em; margin-right: 20px; padding-top: .5em; padding-bottom: 4px;}
 		#nav a { border: 1px solid #666; background: #c8c8c8; text-decoration: none; margin: 0 5px; padding: 3px 5px; color: #666; *margin: 1px 5px;}
