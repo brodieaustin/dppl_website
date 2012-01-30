@@ -57,10 +57,12 @@ body{
 #sidebar{
 	float: left;
 	width: 33.33%;
-	min-height: 604px;
+	max-height: 541px;
+	margin-top: 6.5em;
 	background-color: #000;
 	background-color: rgba(0,0,0,.5);
 	border: 1px solid #080808;
+	overflow-y: scroll;
 }
 #sidebar div{
 	width: 90%;
@@ -74,6 +76,11 @@ body{
 }
 #sidebar img{
   width: 60%;
+}
+#sidebar a{
+  color: #f8f8f8;
+  border-bottom: 1px dotted #666;
+  text-decoration: none;
 }
 #footer{
 	position: absolute;
