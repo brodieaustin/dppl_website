@@ -11,6 +11,7 @@
 	
 	<!--#include virtual="../js/popup.js"-->
 	<style type="text/css">
+		img{border: 0;}
 		.icon-box a:hover img{background-color: #c1d72d;}
 	</style>
 </head>
