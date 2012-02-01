@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>dppl.org :: eDPPL</title>
+	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="../css/standard.css" title="standard">
 	<link rel="alternate stylesheet" type="text/css" href="../css/medium.css" title="medium">
 	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
