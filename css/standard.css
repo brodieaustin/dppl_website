@@ -20,14 +20,14 @@ font-size : 11pt;
 .T60 {
 	font-size : 60pt;
 	font-family :  'Dancing Script', cursive;
-	color : #003366;
+	color : #730140;
 	font-weight: normal;
 }
 
 .T44 {
 	font-size : 44pt;
 	font-family :  'Dancing Script', cursive;
-	color : #339999;
+	color : #730140;
 	font-weight: normal;
 }
 
@@ -358,14 +358,14 @@ font-family :  Verdana, Geneva, Arial, Helvetica, sans-serif;
 .featureHead {
 font-size : 16pt;
 font-family :  'Dancing Script', cursive;
-color : #339999;
+color : #cd0079;
 font-weight: bold;
 } 
 
 .featureSub {
 	font-size : 14pt;
 	font-family :  'Dancing Script', cursive;
-	color : #003366;
+	color : #730140;
 	font-weight: normal;
 } 
 
@@ -388,28 +388,28 @@ TD.how {
 H1 {
 font-size : 16pt;
 font-family :  'Dancing Script', cursive;
-color : #339999;
+color : #cd0079;
 font-weight: normal;
 } 
 
 H2 {
 	font-size : 14pt;
 	font-family :  'Dancing Script', cursive;
-	color : #003366;
+	color : #730140;
 	font-weight: normal;
 } 
 
 H3 {
 font-size : 13pt;
 font-family :  'Dancing Script', cursive;
-color : #003366;
+color : #730140;
 font-weight: normal;
 }
 
 H4 {
 font-size : 12pt;
 font-family :  'Dancing Script', cursive;
-color : #003366;
+color : #730140;
 font-weight: bold;
 }	
 
@@ -435,7 +435,6 @@ vertical-align : middle;
 }
 
 .search {
-	width: 333px;
 	font-family :  Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-weight : bold;
 	font-size : 12pt;
@@ -586,9 +585,9 @@ FONTSIZE SWITCHER
 
 .fontsizeSwitcher {
 position: absolute;
-width: 99%;
+width: 100%;
 top: 0;
-left: 0;
+right: 0;
 padding: 5px;
 font-family : Arial, Helvetica, sans-serif;
 font-size : 10pt;
@@ -597,6 +596,7 @@ font-weight : normal;
 color : #730140;
 background-color: #fff;
 border-bottom: 1px solid #730140;
+*border-bottom: 0;
 }
 
 .fontsizeSwitcher a{

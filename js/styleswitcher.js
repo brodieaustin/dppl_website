@@ -54,8 +54,8 @@ function readCookie(name) {
 //temporary image hack code
 function changeImage(){
   var img = document.getElementsByTagName("img")[1];
-  img.style.position = "absolute";
-  img.style.top = "36";
+  img.src="http://www.dppl.org/images/hearts/pink-logo.png";
+  img.style.height = "150";
 }
 
 window.onload = function(e) {
