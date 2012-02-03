@@ -51,10 +51,18 @@ function readCookie(name) {
   return null;
 }
 
+//temporary image hack code
+function changeImage(){
+  var img = document.getElementsByTagName("img")[1];
+  img.style.position = "absolute";
+  img.style.top = "36";
+}
+
 window.onload = function(e) {
   var cookie = readCookie("style");
   var title = cookie ? cookie : getPreferredStyleSheet();
   setActiveStyleSheet(title);
+  changeImage();
 }
 
 window.onunload = function(e) {

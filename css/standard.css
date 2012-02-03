@@ -7,7 +7,8 @@ GENERAL
 BODY {
 font-family :  Verdana, Geneva, Arial, Helvetica, sans-serif;
 font-size : 11pt;
-background:  url('../to-process/hearts4.jpg') repeat-x top left;
+background:  url('http://www.dppl.org/images/hearts/hearts.png') repeat-x top left;
+margin-top: 40px;
 }
 
 TABLE {
@@ -171,7 +172,7 @@ vertical-align : bottom;
 }
 
 .footer {
-	font-family:  'Dancing Script', cursive;
+	font-family:  Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	text-align : center;
 	vertical-align : middle;
@@ -434,10 +435,17 @@ vertical-align : middle;
 }
 
 .search {
+	width: 333px;
 	font-family :  Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-weight : bold;
 	font-size : 12pt;
-	background-image : url("../images/utils/search_bkgd.png");
+	/*background-image : url("../images/utils/search_bkgd.png");*/
+	background-color: #fff;
+	border: 1px solid #730140;
+}
+
+.search td{
+  color: #730140 !important;
 }
 
 /*
@@ -577,11 +585,22 @@ FONTSIZE SWITCHER
 */
 
 .fontsizeSwitcher {
+position: absolute;
+width: 99%;
+top: 0;
+left: 0;
+padding: 5px;
 font-family : Arial, Helvetica, sans-serif;
 font-size : 10pt;
 font-stretch : normal;
 font-weight : normal;
-color : #2B2B2B;
+color : #730140;
+background-color: #fff;
+border-bottom: 1px solid #730140;
+}
+
+.fontsizeSwitcher a{
+  color: #730140 !important;
 }
 
 A.standard {
