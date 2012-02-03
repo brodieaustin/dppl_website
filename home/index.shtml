@@ -149,7 +149,7 @@
 	var feedControl = new google.feeds.FeedControl();
 	    
 	// Add two feeds.
-	feedControl.addFeed("http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=Adult+Program+%2D+All%2C+Adult+Program+%2D+Author+Visit%2C+Adult+Program+%2D+Book+Discussion%2C+Adult+Program+%2D+Career%2C+Adult+Program+%2D+Computer+Class%2C+Adult+Program+%2D+Cooking%2FFood%2C+Adult+Program+%2D+Crafts%2C+Adult+Program+%2D+Cultural%2C+Adult+Program+%2D+Financial%2C+Adult+Program+%2D+Gardening%2C+Adult+Program+%2D+Genealogy%2C+Adult+Program+%2D+Government%2C+Adult+Program+%2D+Health%2C+Adult+Program+%2D+History%2C+Adult+Program+%2D+Parenting%2C+Adult+Program+%2D+Science%2C+Adult+Program+%2D+Special+Needs%2C+Adult+Program+%2D+Technology%2C+Adult+Program+%2D+Travel%2C+Adult+Program+%2D+Writing%2C+Adult+Program+%96+Film+Screening%2C+Adult+Program+%96+Performance%2C+Family+Program%2C+Open+Board+Meeting%2C+Teen+Program%2C+Youth+Program%2C+Youth+Program+%2D+Grade+School%2C+Youth+Program+%2D+Middle+School%2C+Youth+Program+%2D+Preschool&lib=0&nd=3&feedtitle=Des+Plaines+Public+Library%3CBR%3ESchedule+of+Events&dm=rss2&LangType=0", "");
+	feedControl.addFeed("http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=&lib=0&nd=3&feedtitle=Des+Plaines+Public+Library%3CBR%3ESchedule+of+Events&dm=rss2&LangType=0&fe=1", "");
 
 	feedControl.setNumEntries(10)
 	    
