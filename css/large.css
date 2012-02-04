@@ -2,9 +2,13 @@
 GENERAL
 */	
 
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script);
+
 BODY {
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family :  Verdana, Geneva, Arial, Helvetica, sans-serif;
 font-size : 15pt;
+background:  url('http://www.dppl.org/images/hearts/hearts.png') repeat-x top left;
+margin-top: 40px;
 }
 
 TABLE {
@@ -15,15 +19,15 @@ font-size : 15pt;
 
 .T60 {
 	font-size : 64pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-	color : #003366;
+	font-family :  'Dancing Script', cursive;
+	color : #730140;
 	font-weight: normal;
 }
 
 .T44 {
 	font-size : 48pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-	color : #339999;;
+	font-family :  'Dancing Script', cursive;
+	color : #730140;
 	font-weight: normal;
 }
 
@@ -330,15 +334,15 @@ font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
  
 .featureHead {
 font-size : 20pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-color : #339999;
+font-family :  'Dancing Script', cursive;
+	color : #730140;
 font-weight: bold;
 } 
 
 .featureSub {
 	font-size : 18pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-	color : #003366;
+	font-family :  'Dancing Script', cursive;
+	color : #730140;
 	font-weight: normal;
 } 
 
@@ -360,29 +364,29 @@ TD.how {
  
 H1 {
 font-size : 20pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-color : #339999;
+font-family :  'Dancing Script', cursive;
+	color : #730140;
 font-weight: normal;
 } 
 
 H2 {
 	font-size : 18pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-	color : #003366;
+	font-family :  'Dancing Script', cursive;
+	color : #730140;
 	font-weight: normal;
 } 
 
 H3 {
 font-size : 16pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-color : #003366;
+font-family :  'Dancing Script', cursive;
+	color : #730140;
 font-weight: normal;
 }
 
 H4 {
 font-size : 14pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-color : #003366;
+font-family :  'Dancing Script', cursive;
+	color : #730140;
 font-weight: bold;
 }	
 
@@ -393,7 +397,7 @@ SEARCH
 */		
 
 .search_copy_title {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family:  'Dancing Script', cursive;
 font-size: 13pt;
 text-align : left;
 vertical-align : middle;
@@ -407,11 +411,18 @@ text-align : left;
 vertical-align : middle;
 }
 
+
 .search {
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family :  Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-weight : bold;
 	font-size : 15pt;
-	background-image : url("../images/utils/search_bkgd.png");
+	/*background-image : url("../images/utils/search_bkgd.png");*/
+	background-color: #fff;
+	border: 1px solid #730140;
+}
+
+.search td{
+  color: #730140 !important;
 }
 
 /*
@@ -551,11 +562,23 @@ FONTSIZE SWITCHER
 */
 
 .fontsizeSwitcher {
+position: absolute;
+width: 100%;
+top: 0;
+right: 0;
+padding: 5px;
 font-family : Arial, Helvetica, sans-serif;
 font-size : 10pt;
 font-stretch : normal;
 font-weight : normal;
-color : #2B2B2B;
+color : #730140;
+background-color: #fff;
+border-bottom: 1px solid #730140;
+*border-bottom: 0;
+}
+
+.fontsizeSwitcher a{
+  color: #730140 !important;
 }
 
 A.standard {
