@@ -3,40 +3,41 @@ GENERAL
 */	
 
 BODY {
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 font-size : 11pt;
+margin-top: 3em;
 }
 
 TABLE {
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 font-size : 11pt;
 }
 
 
 .T60 {
 	font-size : 60pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: normal;
 }
 
 .T44 {
 	font-size : 44pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #339999;;
 	font-weight: normal;
 }
 
 .T14 {
 	font-size : 14pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: normal;
 } 
 
 .T14B {
 	font-size : 14pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: bold;
 	vertical-align : top;
@@ -44,7 +45,7 @@ font-size : 11pt;
 
 TD.Initials {
 	font-size : 14pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: bold;
 	vertical-align : top;
@@ -52,26 +53,26 @@ TD.Initials {
 
 .T13 {
 font-size : 13pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 color : #003366;
 font-weight: normal;
 }
 
 .T13B {
 font-size : 13pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 color : #003366;
 font-weight: bold;
 }
 
 
 .T10 {
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 font-size : 10pt;
 }
 
 .T10C {
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 font-size : 10pt;
 text-align : center;
 }
@@ -126,13 +127,13 @@ text-align : center;
 }
 
 TD.T10 {
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 font-size : 10pt;
 }
 
 TD.T14B {
 	font-size : 14pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: normal;
 	vertical-align : middle;
@@ -140,35 +141,35 @@ TD.T14B {
 } 
 
 TD.header_top {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 8pt;
 text-align : right;
 vertical-align : top;
 }
 
 TD.header_top_left {
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	text-align : left;
 	vertical-align : top;
 }
 	
 TD.header_bottom {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 8pt;
 text-align : right;
 vertical-align : bottom;
 }
 
 TD.header_bottom_left {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 8pt;
 text-align : left;
 vertical-align : bottom;
 }
 
 .footer {
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	text-align : center;
 	vertical-align : middle;
@@ -348,26 +349,26 @@ font-size : 11pt;
 
 TABLE.content {
 font-size : 11pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 }
  
 .featureHead {
 font-size : 16pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 color : #339999;
 font-weight: bold;
 } 
 
 .featureSub {
 	font-size : 14pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: normal;
 } 
 
 .featureSubSmCaps {
 	font-size : 8pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: bold;
 	font-variant : small-caps;
@@ -375,7 +376,7 @@ font-weight: bold;
 
 TD.how {
 	font-size : 9pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: bold;
 	vertical-align : top;
@@ -383,28 +384,28 @@ TD.how {
  
 H1 {
 font-size : 16pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 color : #339999;
 font-weight: normal;
 } 
 
 H2 {
 	font-size : 14pt;
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	color : #003366;
 	font-weight: normal;
 } 
 
 H3 {
 font-size : 13pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 color : #003366;
 font-weight: normal;
 }
 
 H4 {
 font-size : 12pt;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 color : #003366;
 font-weight: bold;
 }	
@@ -416,7 +417,7 @@ SEARCH
 */		
 
 .search_copy_title {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 9pt;
 text-align : left;
 vertical-align : middle;
@@ -424,14 +425,14 @@ font-variant : small-caps;
 }
 
 .search_copy {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 9pt;
 text-align : left;
 vertical-align : middle;
 }
 
 .search {
-	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family : Arial, Helvetica, sans-serif;
 	font-weight : bold;
 	font-size : 12pt;
 	background-image : url("../images/utils/search_bkgd.png");
@@ -442,21 +443,21 @@ COPYRIGHT
 */		
 
 .copyright {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 8pt;
 text-align : right;
 vertical-align : top;
 }
 
 .copyright2 {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 8pt;
 text-align : center;
 vertical-align : middle;
 }
 
 .brackets {
-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 8pt;
 color : Silver;
 }
@@ -512,7 +513,7 @@ font-size: 1pt;
 }
 
 .note {
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 font-size : 9pt;
 }
 
@@ -563,7 +564,7 @@ PROJECT SITE
 
 .complete {
 background-color : #7cfc00;
-font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family : Arial, Helvetica, sans-serif;
 font-weight : normal;
 font-size : 12pt;
 }
@@ -574,11 +575,18 @@ FONTSIZE SWITCHER
 */
 
 .fontsizeSwitcher {
+position: absolute;
+width: 100%;
+top: 0;
+right: 0;
+padding: 5px;
+padding-right: 18.61%;
 font-family : Arial, Helvetica, sans-serif;
 font-size : 10pt;
-font-stretch : normal;
 font-weight : normal;
-color : #2B2B2B;
+background-color: #fff;
+border-bottom: 1px solid #009898;
+*border-bottom: 0;
 }
 
 A.standard {
@@ -678,4 +686,57 @@ font-weight : bold;
 color: White;
 background-color : #660099;
 text-decoration : none;
+}
+
+/*trying out menu stuff*/
+div#catalog{
+  float: right;
+  width: 90%;
+  margin-top: 3.25em;
+}
+
+div#catalog ul{
+  padding-top: 1em;
+  padding-left: 1px;
+}
+
+div#catalog ul li{
+  display: inline;
+  float: left;
+  margin-bottom: .75em;
+  margin-right: 3.2em;
+}
+
+
+div#catalog #search-text{
+  float: left;
+  width: 80.22%;
+  margin: 0;
+  padding: 0;
+}
+
+div#catalog #search-text label{
+  display: none;
+}
+
+div#catalog #search-text input{
+  width: 99.27%;
+  padding: .5em 0;
+  border: 1px solid #303030;
+  color: #666 ;
+}
+
+div#catalog .submit-button{
+  float: left;
+  width: 20%;
+  padding: 0;
+}
+
+div#catalog .submit-button input{
+  width: 100%;
+  padding: .5em;
+  border: 1px solid #036;
+  background-color: #036;
+  color: #fff;
+  overflow: auto;
 }

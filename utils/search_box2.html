@@ -1,22 +1,11 @@
 <!--<form action="/ref/ibfullsearch2.html" method="post">-->
-<form action="http://www.dppl.org/cgi-bin/Search.pl" method="POST" name="catalog_search">
-<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="right" CLASS="search">
-	<TR>
-		<TD HEIGHT="10" CLASS="spacer_sm">&nbsp;</TD>
-		<TD WIDTH="269" HEIGHT="10" ALIGN="center" COLSPAN="3" CLASS="T8AWB"><DIV ALIGN="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search the <!--<a href="http://64.107.155.140/uhtbin/cgisirsi/x/DesPlaines/0/57/49?user_id=dpkibistro&password=ibistro" target="_self" CLASS="link_search">old--> catalog<!--</a>--></DIV></TD>
-		<TD HEIGHT="10" CLASS="spacer_sm">&nbsp;</TD>
-	</TR>
-		
-	<TR>
-		<TD CLASS="spacer_sm">&nbsp;</TD>
-		<TD HEIGHT="15" ALIGN="center" VALIGN="middle" COLSPAN="3" CLASS="T8AW"><input type="text" name="textfield" size=45></TD>
-		<TD CLASS="spacer_sm">&nbsp;</TD>
-	</TR>
-
-	<TR>
-		<TD HEIGHT="10"  CLASS="spacer_sm">&nbsp;</TD>	
-		<TD HEIGHT="10" ALIGN="center" VALIGN="middle" COLSPAN="3" CLASS="T8AW">&nbsp;<input type=radio name="index" value="Keyword"  checked="checked">Keyword&nbsp;&nbsp;<input type=radio name="index" value="Title">Title&nbsp;&nbsp;<input type=radio name="index" value="Author">Author&nbsp;&nbsp;<input type=radio name="index" value="Subject">Subject&nbsp;&nbsp;<INPUT TYPE="image" NAME="imageField" SRC="../images/utils/search2.png" ALIGN="middle" WIDTH="45" HEIGHT="15" BORDER="0"></TD>
-		<TD HEIGHT="10"  CLASS="spacer_sm">&nbsp;</TD>
-	</TR>
-</TABLE>
-<input type=hidden name="searchtype" value="keyword" checked="checked"></form>
+<div id="catalog">
+	<!--<ul>
+		<li><a href="http://dppl.bibliocommons.com" title="Library Catalog" class="link_xsm">myCatalog</a></li>
+		<li><a href="https://dppl.bibliocommons.com/user/login" title="Account Log in" class="link_xsm">Log in to My Account</a></li>
+	</ul>-->
+    <form action="http://www.dppl.org/cgi-bin/Search.pl" method="POST" name="catalog_search">
+        <div id="search-text"><label for"textfield">Search the catalog:</label><input type="text" name="textfield" value="Search the Catalog" onclick="this.value='';" /></div>
+        <div class="submit-button"><input type="submit" value="Search" /></div>
+    </form>
+</div>
