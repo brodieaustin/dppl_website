@@ -1,6 +1,8 @@
 table.taxes{
-  width: 100%;
+  width: 95%;
   border-collapse: collapse;
+  margin: 10px;
+  font-size: 10pt;
 }
 
 
