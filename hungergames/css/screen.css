@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Michroma);
+
 body{
 	width: 100%;
 	max-width: 119.9ems;
@@ -6,8 +8,11 @@ body{
 	padding: 0;
 	color: #c8c8c8;
 	font-size: 62.5%;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Verdana, sans-serif;
 	background: url('../images/fake_brick.png');
+}
+.italics{
+  font-style: oblique;
 }
 #page-container{
 	position: relative;
@@ -22,37 +27,70 @@ body{
 }
 #header{
 	padding: 0;
+	padding-top: 1em;
 }
 #header h1{
 	margin-top: 0;
-	color: #f8f8f8;
+	color: #fcaf3f;
 	line-height: 1em;
-	text-shadow: 20px 20px 20px #080808;
-	font-size: 4.8em;
+	text-shadow: 1px 1px 1px #000;
+	font-size: 3.6em;
 	text-transform: uppercase;
-	font-family: 'Play', sans-serif;
+	font-family: 'Michroma', sans-serif;
 }
 #header #timer{
 	float: right;
-	padding-top: 1.5em;
-	font-size: 1.8em;
+	padding-top: 1.4em;
+	font-size: 1.6em;
 	color: #666;
 	text-shadow: 1px 1px 1px #000;
+	text-align: right;
 }
 #main{
 	width: 64.97%;
 	float: left;
-	margin-right: 1.6%;
+	margin-right: 1.5%;
 	padding: .25em 0;
-	font-size: 1.8em;
-	line-height: 1.5em;
+	font-size: 1.4em;
+	line-height: 1.2em;
 }
 #main h2, #main h3, #main h4{
-	color: #c88d17;
+	color: #fcaf3f;
 	text-shadow: 1px 1px 1px #080808;
-	line-height: 1.1em;
+	line-height: 1.8em;
 	padding: 0;
-	margin-top: 0;
+	font-family: 'Michroma', sans-serif;
+	text-transform: uppercase;
+}
+#main div.container{
+  width: 90%;
+  margin: 0 auto;
+  background-color: #000;
+  text-align: center;
+  border: 1px solid #080808;
+}
+#main img{
+  width: 60%;
+}
+#main div#registration{
+  width: 90%;
+  overflow: auto;
+  background-color: #6b2110;
+  border: 1px solid #47160b;
+}
+  
+#main div#registration ul{
+  width: 20%;
+  float: left;
+  margin: 0;
+  margin-top: 1em;
+  margin-left: 1%;
+  padding:.5em;
+  list-style: none;
+  font-size: .8em;
+}
+#main div#registration ul li{
+  margin-bottom: 2em;
 }
 #sidebar{
 	float: left;
@@ -139,9 +177,9 @@ body{
 	min-height: 500px;
 	border-width: 0;
 	margin-top: 3em;
-	padding: 1em 1.4em;
+	padding: 1em 0;
 	background: none;
-	border: 1px solid #f8f8f8;
+	/*border: 1px solid #f8f8f8;*/
 }
 .ui-tabs .ui-tabs-hide {
 	 display: none !important;
