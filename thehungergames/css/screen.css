@@ -75,8 +75,8 @@ body{
 #main div#registration{
   width: 90%;
   overflow: auto;
-  background-color: #6b2110;
-  border: 1px solid #47160b;
+  background-color: rgba(0,0,0,.5);
+  border: 1px solid #080808;
 }
   
 #main div#registration ul{
@@ -96,18 +96,16 @@ body{
 	float: left;
 	width: 33.33%;
 	max-height: 541px;
-	margin-top: 6.5em;
-	background-color: #000;
-	background-color: rgba(0,0,0,.5);
-	border: 1px solid #080808;
-	overflow-y: scroll;
+	margin-top: 5.2em;
 }
 #sidebar div{
-	width: 90%;
+	width: 100%;
 	margin: 1em auto;
 	padding: 1em 0;
 	text-align: center;
-	border-bottom: 1px dotted #f8f8f8;
+	background-color: #000;
+	background-color: rgba(0,0,0,.5);
+	border: 1px solid #080808;
 }
 #sidebar div:last-child{
   border: 0;
@@ -199,6 +197,10 @@ body{
 	width: 100%;
 	margin-right: 0;
 	min-height: 0;
+   }
+   
+   #main div#registration{
+     width: 100%;
    }
    
    #header h1{font-size: 4.0em;}
