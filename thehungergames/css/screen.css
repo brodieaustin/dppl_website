@@ -63,11 +63,15 @@ body{
 	text-transform: uppercase;
 }
 #main div.container{
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  background-color: #000;
+  background-color: rgba(0,0,0,.4);
   text-align: center;
   border: 1px solid #080808;
+}
+#main div.container iframe{
+  width: 80%;
+  min-height: 400px;
 }
 #main img{
   width: 60%;
@@ -96,10 +100,10 @@ body{
 	float: left;
 	width: 33.33%;
 	max-height: 541px;
-	margin-top: 5.2em;
+	margin-top: 5.4em;
 }
 #sidebar div{
-	width: 100%;
+	width: 80%;
 	margin: 1em auto;
 	padding: 1em 0;
 	text-align: center;
@@ -111,7 +115,7 @@ body{
   border: 0;
 }
 #sidebar img{
-  width: 60%;
+  width: 70%;
 }
 #sidebar a{
   color: #f8f8f8;
@@ -189,8 +193,13 @@ body{
     margin: 0;
 	padding: 0;
   }
+  #header{
+    text-align: center;
+  }
   #header #timer{
     float: none;
+	margin-bottom: 1em;
+	text-align: center;
   }
   #main{
     float: none;
@@ -209,6 +218,10 @@ body{
      float: none;
 	 width: 100%;
 	 min-height: 0;
+	}
+	
+	#sidebar div{
+	  width: 100%;
 	}
 	
    #sidebar img{
