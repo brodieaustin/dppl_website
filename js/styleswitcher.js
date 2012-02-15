@@ -1,3 +1,11 @@
+<!--hacking in script and style for simpler jquery drop down nav-->
+	<script type="text/javascript" src="../js/jquery.dropdownPlain.js"></script>
+	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" media="screen, projection"/>
+	<!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="../css/menu/ie.css" media="screen" />
+    <![endif]-->
+    
+<!--beginning of styleswitcher-->
 <SCRIPT LANGUAGE="JavaScript">
 <!-- Begin
 

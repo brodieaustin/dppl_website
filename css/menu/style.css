@@ -1,0 +1,106 @@
+/*adapted from http://css-tricks.com/simple-jquery-dropdowns/*/
+
+div#navigation{
+  width: 100%;
+  min-height: 28px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: left;
+  overflow: visible;
+  background-color: #f8f8f8;
+  font-size: 14px;
+}
+div#navigation a{
+  text-decoration: none;
+}
+div#navigation ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+div#navigation ul li{
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 
+	LEVEL ONE
+*/
+ul.dropdown{
+  position: relative;
+z-index: 30;
+}
+ul.dropdown li{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  float: left;
+  zoom: 1;
+  background-color: #f8f8f8;
+}
+ul.dropdown a:hover{
+  color: #000;
+}
+ul.dropdown a:active{
+  color: #ffa500;
+}
+ul.dropdown li a{
+  display: block;
+  padding: 6px 12px;
+  border-right: 1px solid #c8c8c8;
+  color: #036;
+}
+ul.dropdown li:last-child a{
+  border-right: none;
+}
+
+ /* Doesn't work in IE */
+ul.dropdown li.hover, ul.dropdown li:hover{
+  background: #cde6ea;
+  color: black;
+  position: relative;
+}
+ul.dropdown li.hover a{
+  color: black;
+}
+
+/* 
+	LEVEL TWO
+*/
+ul.dropdown ul{
+ width: 220px;
+visibility: hidden;
+position: absolute;
+top: 100%;
+left: 0;
+
+}
+
+ul.dropdown ul li{
+  font-weight: normal;
+  background: #f8f8f8;
+  color: #666;
+  border-bottom: 1px solid #c8c8c8;
+  float: none;
+}
+
+									  
+/* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a{
+  border-right: none;
+  width: 100%;
+  display: inline-block;
+}
+
+/* 
+	LEVEL THREE
+*/
+ul.dropdown ul ul{
+  left: 100%;
+  top: 0;
+}
+ul.dropdown li:hover > ul{
+  visibility: visible;
+}
+
