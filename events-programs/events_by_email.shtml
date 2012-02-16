@@ -6,6 +6,7 @@
     <LINK HREF="../css/deafult_style.css" REL="stylesheet" TYPE="text/css">
 <link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
 	<!--#include virtual="../js/popup.js"-->
+	<!--#include virtual="../js/styleswitcher.js"-->
 </head>
 
 <body>
