@@ -3,15 +3,24 @@
 <html>
 <head>
 	<title>dppl.org :: EVENTS BY EMAIL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
-    <LINK HREF="../css/deafult_style.css" REL="stylesheet" TYPE="text/css">
-<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
-	<!--#include virtual="../js/popup.js"-->
+	<link rel="stylesheet" type="text/css" href="../css/standard.css" title="standard">
+	<link rel="alternate stylesheet" type="text/css" href="../css/medium.css" title="medium">
+	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
+	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
 	<!--#include virtual="../js/styleswitcher.js"-->
+	<!--#include virtual="../js/popup.js"-->
 </head>
 
 <body>
-<P ALIGN="right"><A HREF="javascript:popUp('events_by_email-p.shtml')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT=""> Printer-friendly page</A></P>
-
+<TABLE WIDTH="100%">
+	<TR>
+		<TD></TD>
+		<TD ALIGN="right" CLASS="fontsizeSwitcher">Text size: <a href="#" onclick="setActiveStyleSheet('standard'); return false;" CLASS="standard">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('medium'); return false;" CLASS="medium">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('large'); return false;" CLASS="large">&nbsp;A&nbsp;</a>&nbsp;&nbsp;&nbsp;<A HREF="javascript:popUp('events_by_email-p.shtml')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT="">Printer-friendly page</A></TD>
+	</TR>
+	<TR CLASS="spacer_xsm">
+		<TD>&nbsp;</TD>
+	</TR>
+</TABLE>
 <!-- //// PAGE CONTAINER - TOP -->
 <TABLE WIDTH="790" BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="center">
 <TR>
