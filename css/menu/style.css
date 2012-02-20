@@ -88,6 +88,7 @@ ul.dropdown ul li{
 									  
 /* IE 6 & 7 Needs Inline Block */
 ul.dropdown ul li a{
+  font-size: 12px ;
   border-right: none;
   width: 100%;
   display: inline-block;
