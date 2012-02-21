@@ -1,4 +1,5 @@
 <!--hacking in script and style for simpler jquery drop down nav-->
+	<script src="../js/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.dropdownPlain.js"></script>
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" media="screen, projection"/>
 	<!--[if lte IE 7]>
