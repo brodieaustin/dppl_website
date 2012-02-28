@@ -733,3 +733,32 @@ div#catalog input#search-catalog-button{
   background-color: #036;
   color: #fff;
 }
+
+/*styles for board meeting tables*/
+
+table.board{
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+table.board td, table.board th{
+  width: 22.73%;
+  border: 1px solid #000;
+  padding: .5em;
+  text-align: left;
+}
+table.board .view{
+  width: 68.19%;
+}
+table.board th{
+  font-weight: bold;
+  background-color: #c8c8c8;
+}
+table.board a.download{
+  background: url(../images/icons/download.gif) no-repeat center left;
+  padding-left: 20px;
+}
+table.board a.download:hover{
+  color: #666;
+  text-decoration: underline;
+}
