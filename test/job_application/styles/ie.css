@@ -1,0 +1,18 @@
+div#address{
+  margin: 0 !important;
+}
+
+fieldset{
+  position: relative;
+}
+
+fieldset legend {       
+position: relative;       
+left: -7px;       
+top: -0.75em;
+width: 90%;
+}    
+   
+form fieldset ol {       
+padding-top: 0.25em;    
+}
