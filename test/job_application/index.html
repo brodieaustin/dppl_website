@@ -11,16 +11,22 @@
 	<!--[if IE]>
 		<link href="css/ie.css" rel="stylesheet" type="text/css" />
 	<![endif]-->
-
-	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+	<!--<script src="js/jquery-1.7.1.min.js"></script>-->
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/jquery.form.js"></script>
 	<script type="text/javascript">
+		var RecaptchaOptions = {
+			theme : 'clean'
+		};
+		
 		$(document).ready(function(){
 			var tdate = Date();
 			var param = window.location.search.substring(1).split('=');
 			var pos = param[1]
 			$('input[name="app-date"]').val(tdate);
 			$('select[name="position"]').val(pos);
-			$('input[name="app-name"]').focus();
+			$('input[name="name"]').focus();
+			
 			$('input[name="reset"]').click(function(){
 				$(':input', 'form')
 					.not(':button, :submit, :reset, input[name="app-date"], select[name="position"]')
@@ -28,18 +34,56 @@
 					.removeAttr('checked')
 					.removeAttr('selected');
 				});
+				
+			$('#application').validate({
+				invalidHandler: function(form, validator) {
+					  var errors = validator.numberOfInvalids();
+					  if (errors) {
+						var message = errors == 1 ? 'You missed 1 field. It has been highlighted': 'You missed ' + errors + ' fields. They have been highlighted';
+						$('div.errors').html(message);
+						$('div.errors').show();
+					  } else {
+						$('div.errors').hide();
+					  }
+				},
+				submitHandler: function(form){
+					$(form).ajaxSubmit({
+						success: function(data){
+								$('div.errors').hide();
+								$('#application').hide();
+								
+								console.log(data);
+								
+								if (data.search("thank") != 0 ){
+									$('div.response').html(data).css({backgroundColor: 'green'}).slideDown(800).delay(5000);
+								}
+								else{
+									$('#application').fadeIn(1000);
+									$('div.response').html(data).css({backgroundColor: 'red'}).slideDown(800).delay(4000).slideUp(800);
+								}	
+								
+							},
+							failure: function(){
+								$('#application').hide();
+								$('div.response').html("Something went wrong. Please check your form and try again.").css({backgroundColor: 'red'}).fadeIn(1000);
+							}
+					});
+				}
+				});
+			
 		});
 	</script>
 </head>
 <body>
-	<div id="tools">
+	<div class="response"></div>		
+	<form action="mail.php" method="post" id="application" enctype="multipart/form-data">
+	<div id="header">
 		<h1>Des Plaines Public Library</h1>
 		<input type="button" value="Reset" name="reset" id="reset" />
 		<input type="button" value="Save" name="save" id="save" />
 	</div>
 	<div id="main">
 		<div class="response"></div>
-		<form action="mail.php" method="post" enctype="multipart/form-data" id="application">
 			<img src="http://www.dppl.org/images/themes/River/logo.jpg" alt="Des Plaines Public Library [logo]" />
 			<div id="address">
 				<h2>Des Plaines Public Library</h2>
@@ -61,7 +105,7 @@
 				</span>
 			</div>
 			<h1>Employment Application</h1>
-			<p class="note">It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>
+			<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>
 			<p><em>Required field (*)</em></p>
 			<div class="errors"></div>
 				<fieldset>
@@ -71,8 +115,8 @@
 						<input type="text" name="app-date" />
 					</div>
 					<div>
-						<label for="app-name">Full Name: <em>*</em></label>
-						<input type="text" name="app-name" />
+						<label for="name">Full Name: <em>*</em></label>
+						<input type="text" name="name" class="required" />
 					</div>
 					<div>
 						<fieldset>
@@ -95,7 +139,7 @@
 							</div>
 						</fieldset>
 					</div>
-					<div>
+					<div class="last">
 						<fieldset>
 						<legend><b>Contact Information</b></legend>
 							<div>
@@ -112,11 +156,11 @@
 				<fieldset>
 					<legend>Background Information</legend>
 					<div>
-						<label for="position">Position applying for: <em>*</em></label>
+						<label for="position">Position: <em>*</em></label>
 						<select name="position" class="required">
-							<!--update positions with <option value="Job%20Name">Job Name</option>-->
-							<option label="none" value="None">None</option>
-							<option value="Web%20Services%20Librarian">Web Services Librarian</option>
+							<!--update positions with <option value="Job Name">Job Name</option>-->
+							<option></option>
+							<option value="Web Services Librarian">Web Services Librarian</option>
 							<option value="Page">Page</option>
 						</select>
 					</div>
@@ -137,7 +181,7 @@
 							<label><input type="radio" name="refer-type" value="lib-site" />Library Web Site</label>
 							<label><input type="radio" name="refer-type" value="newspaper" />Newspaper List</label>
 							<label><input type="radio" name="refer-type" value="other" />Other</label>
-							<div>
+							<div class="clear">
 								<label for="refer-other"><i>Please specify:</i>:</label>
 								<input type="text" name="refer-other" />
 							</div>
@@ -162,11 +206,11 @@
 							<legend>If the position you are applying for requires a driver's license, please advise if you have a valid driver's license:</legend>
 							<label><input type="radio" name="driver" value="yes"/>Yes</label>
 							<label><input type="radio" name="driver" value="no"/>No</label>
-							<div>
+							<div class="clear">
 								<label for="license-class">What class is your license?</label>
-								<input type="text" class="small" name="license-class" />
+								<input type="text" class="small float" name="license-class" />
 								<label for="issue-state" class="small">Issuing State:</label>
-								<input type="text" class="small" name="issue-state" />
+								<input type="text" class="small float" name="issue-state" />
 							</div>
 						</fieldset>
 					</div>
@@ -175,27 +219,27 @@
 							<legend>Have you ever been convicted of any violations of the law other than minor traffic violations?</legend>
 							<label><input type="radio" name="violations" value="yes"/>Yes</label>
 							<label><input type="radio" name="violations" value="no"/>No</label>
-							<div>
-								<label for="violations-explain" class="full">If you answered yes to the above, please explain:</label>
+							<div class="clear">
+								<label for="violations-explain" class="full"><i>If you answered yes to the above, please explain:</i></label>
 								<input type="text" class="full" name="violations-explain" />
 							</div>
 						</fieldset>
 					</div>
-					<div>
+					<div class="last">
 						<fieldset>
 							<legend>Were you previously employed by the Des Plaines Public Library?</legend>
 							<label><input type="radio" name="prev-employed" value="yes"/>Yes</label>
 							<label><input type="radio" name="prev-employed" value="no"/>No</label>
-							<div>
-								<label for="prev-department" class="full">If yes, what department?</label>
-								<input type="text" name="prev-department" />
+							<div class="clear">
+								<label for="prev-department" class="full"><i>If yes, what department?</i></label>
+								<input type="text" name="prev-department" class="full" />
 							</div>
-							<div>
-								<p>Date of employment</p>
+							<div class="clear">
+								Date of employment<br />
 								<label>From:</label>
-								<input type="text" class="small" name="prev-from" />
+								<input type="text" class="small float" name="prev-from" />
 								<label class="small">To:</label>
-								<input type="text" class="small" name="prev-to" />
+								<input type="text" class="small float" name="prev-to" />
 							</div>
 						</fieldset>
 					</div>
@@ -301,7 +345,7 @@
 							</div>
 						</fieldset>
 					</div><!--closing div for grad school-->
-					<div>
+					<div class="last">
 						<fieldset>
 							<legend><b>Other (Specify)</b></legend>
 							<div>
@@ -342,8 +386,8 @@
 							<legend>Do you hold any certifcations and/or licenses?</legend>
 							<label><input type="radio" name="license" value="yes"/>Yes</label>
 							<label><input type="radio" name="license" value="no"/>No</label>
-							<div>
-								<label for="license-list" class="full">If you answered yes to the above, please list:</label>
+							<div class="clear">
+								<label for="license-list" class="full"><i>If you answered yes to the above, please list:</i></label>
 								<textarea name="license-list" class="full" rows="1" cols="1"></textarea>
 							</div>
 						</fieldset>
@@ -406,9 +450,9 @@
 									<legend>Employed</legend>
 									<div>
 										<label for="employer-one-from">From (mo/yr):</label>
-										<input type="text" name="employer-one-from" class="small" />
+										<input type="text" name="employer-one-from" class="small float" />
 										<label for="employer-one-to" class="small">To (mo/yr):</label>
-										<input type="text" name="employer-one-to" class="small" />
+										<input type="text" name="employer-one-to" class="small float" />
 									</div>
 								</fieldset>
 							</div>
@@ -458,9 +502,9 @@
 									<legend>Employed</legend>
 									<div>
 										<label for="employer-two-from">From (mo/yr):</label>
-										<input type="text" name="employer-two-from" class="small" />
+										<input type="text" name="employer-two-from" class="small float" />
 										<label for="employer-two-to" class="small">To (mo/yr):</label>
-										<input type="text" name="employer-two-to" class="small" />
+										<input type="text" name="employer-two-to" class="small float" />
 									</div>
 								</fieldset>
 							</div>
@@ -510,9 +554,9 @@
 									<legend>Employed</legend>
 									<div>
 										<label for="employer-three-from">From (mo/yr):</label>
-										<input type="text" name="employer-three-from" class="small" />
+										<input type="text" name="employer-three-from" class="small float" />
 										<label for="employer-three-to" class="small">To (mo/yr):</label>
-										<input type="text" name="employer-three-to" class="small" />
+										<input type="text" name="employer-three-to" class="small float" />
 									</div>
 								</fieldset>
 							</div>
@@ -562,9 +606,9 @@
 									<legend>Employed</legend>
 									<div>
 										<label for="employer-four-from">From (mo/yr):</label>
-										<input type="text" name="employer-four-from" class="small" />
+										<input type="text" name="employer-four-from" class="small float" />
 										<label for="employer-four-to" class="small">To (mo/yr):</label>
-										<input type="text" name="employer-four-to" class="small" />
+										<input type="text" name="employer-four-to" class="small float" />
 									</div>
 								</fieldset>
 							</div>
@@ -589,8 +633,10 @@
 						<label for="resumfile">Resume:</label>
 						<input type="file" id="resumefile" name="formfiles[]" />
 					</div>
-					<p class="note" id="filehelp">Attached files must be in one of the following formats: .doc, .docx, .pdf, .txt, and .rtf.</p>
-					<p class="note">Files also must be less than 1mb.</p>
+					<ul class="note" id="filehelp">
+						<li>Attached files must be in one of the following formats: .doc, .docx, .pdf, .txt, and .rtf.</li>
+						<li>Files also must be less than 1mb.</li>
+					</ul>
 			</fieldset><!--closing for for files fieldset-->
 			<p><strong>Please read the following carefully before agreeing below:</strong></p>
 			<div class="callout">
@@ -598,10 +644,8 @@
 				<p>I understand and agree that the Des Plaines Public Library is hereby authorized to make inquiries concerning my character, employment record and other matters concerning my possible employment. I further understand that such inquiries will include checking police records for convictions. I understand that I may request reasonable accommodations if needed, due to disability, in order to participate in the overall application process.</p>
 				<p>I understand the filing of this application or participation in an interview in no way constitutes an employment contract between the Des Plaines Public Library and me. I acknowledge the right of the Des Plaines Public Library to make changes in policy and benefits, where such policy and benefits are not specified, without notice and I understand that only written conditions as contained in an offer made to me by an authorized official will be honored by this organization. </p>
 				<p>I understand that any offer of employment, approved by the Library Director, either verbal or written, may be conditional upon the satisfactory completion of a drug screen, background check and physical exam. Should I become employed, I agree to conform to all rules and regulations of the Des Plaines Public Library. I understand that my employment with the Des Plaines Public Library will be at will and that I have the right to terminate my employment at any time and the Des Plaines Public Library retains the same right</p>
-			</div>
-			<div>
-				<label for="agreement">Do you agree? <em>*</em></label>
-				<select name="agreement" class="small" class="required">
+				<label for="agreement"><i>Do you agree?</i> <em>*</em></label>
+				<select name="agreement" class="small required">
 					<option></option>
 					<option>Yes</option>
 					<option>No</option>
@@ -610,7 +654,7 @@
 			<div>
 				<input type="submit" value="Submit" id="submit" />
 			</div>
-		</form>
 	</div>
+	</form>
 </body>
 </html>
