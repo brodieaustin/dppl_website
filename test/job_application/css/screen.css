@@ -161,6 +161,7 @@ div.callout{
 
 div.errors{
   color: red;
+  margin-bottom: 1em;
 }
 
 div.response{display: none; color: #fff; padding: 1em;}
@@ -239,7 +240,7 @@ form input:focus, form textarea:focus, form select:focus{
 }
 
 /*simple media query for small screens*/
-@media screen and (max-width: 700px){
+@media screen and (max-width: 760px){
 
   body{
     width: 95%;
@@ -251,7 +252,7 @@ form input:focus, form textarea:focus, form select:focus{
    
    #header input{
      float: none;
-     margin-left: 0;
+     margin-left: .37em;
    }
    
    form{
@@ -261,7 +262,7 @@ form input:focus, form textarea:focus, form select:focus{
    form label{
      width: 50%;
      float: none;
-     margin-bottom: 1.5em;
+     margin-bottom: 1em;
    }
    
    form input, form select, form textarea{
