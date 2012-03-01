@@ -5,16 +5,19 @@ body {
   line-height: 140%;
   font-size: 90%;
   font-family: sans-serif;
-  color: #000;}
+  color: #000;
+}
 
 #tools{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 97.8%;
+  padding: 0 1em;
   background-color: #000;
   color: #009899;
-  z-index: 10;}
+  z-index: 10;
+}
 
 #tools h1{
   float: left;
@@ -22,33 +25,43 @@ body {
   color: #888;
   font-weight: normal;
   font-size: 1.2em;
-  padding: .5em;}
+  margin-top: .6em;
+  padding: .5em;
+}
 
-#tools input[type="submit"], #tools input[type="button"]{
+input[type="submit"], #tools input[type="button"]{
   display: block;
   float: right;
   padding: .7em 2em;
   margin: 1em 1em 1em 1.5em;
-  border: 0;
   background-color: #009899;
   color: #fff;
   text-decoration: none;
-  font-weight: 600;}
+  font-weight: 600;
+  border: 1px solid #080808;
+}
+
+input#submit{
+  background-color: green;
+}
 
 #main{
   margin-top: 5em;
-  z-index: 5;}
+  z-index: 5;
+}
 
 #main img{
   width: 40%;
-  float: left;}
+  float: left;
+}
 
 #main div#address {
   float: right;
   width: 40%;
   margin-bottom: 3em;
   font-size: .9em;
-  text-align: right;}
+  text-align: right;
+}
 
 #main h1 {
   clear: both;
@@ -66,10 +79,16 @@ body {
 }
 
 i {
-  font-style: oblique;}
+  font-style: oblique;
+}
 
 b {
-  font-weight: bold;}
+  font-weight: bold;
+}
+
+strong{
+  font-weight: bold;
+}
   
 .note{
    margin-top: .5em;
@@ -77,12 +96,14 @@ b {
  }
 
 form {
-  width: 100%;}
+  width: 100%;
+}
 
 fieldset {
   border: 1px solid #000;;
   margin-bottom: 2em;
-  padding: 1em;}
+  padding: 1em;
+}
 
 legend {
   width: 98%;
@@ -90,13 +111,15 @@ legend {
   background-color: #000;
   color: #fff;
   font-weight: 500;
-  text-transform: uppercase;}
+  text-transform: uppercase;
+}
 
 fieldset fieldset{
   width: 100%;
   border: 0;
   margin: .5em 0 1em 0;
-  padding: 0;}
+  padding: 0;
+}
 
 fieldset fieldset legend{
   border:0;
@@ -104,46 +127,63 @@ fieldset fieldset legend{
   padding: 0 0 .25em 0;
   background-color: #fff;
   color: #000;
-  text-transform: none;}
+  text-transform: none;
+}
 
 fieldset fieldset ol{
-  margin-top: .35em;}
+  margin-top: .35em;
+}
 
-form ol{
-  width: 100%;
-  list-style:none;
-  margin: 0;
-  padding: 0;}
+form div{
+  margin-bottom: 1em;
+  padding: .25em 0;
+ }
+  
+form p{
+  margin-bottom: 1em;
+  line-height: 1.2em;
+}
 
-form ol li{
-  margin-bottom: 1.55em;}
+form em{
+  color: red;
+}
 
-form p {
-  margin:0;
-  padding:0;}
+form input[type=submit]{
+  margin-right: 0;
+}
 
 label{
   display: inline-block;
   width: 20%;
-  padding-top: .15em;
-  vertical-align: top;}
+  padding-top: .35em;
+  vertical-align: center;
+}
 
 label.small{
   padding-left: 3.5em;
-  width: 20%;}
+  width: 20%;
+}
 
 input[type="text"], select, textarea{
   border: 1px solid #000;
-  padding: .5em .25em;}
+  padding: .5em .25em;
+}
 
 input[type="text"], textarea{
-  width: 75%;}
+  width: 75%;
+}
 
 select{
-  width:76.15%;}
+  width:76.15%;
+}
+  
+select.small{
+  width: 20.5%;
+}
 
 input:focus, textarea:focus, select:focus{
-  background-color: #d2ece1;}
+  background-color: #d2ece1;
+}
 
 input.small{
   width: 20.5% !important}
@@ -151,8 +191,16 @@ input.small{
 textarea{
   height: 5em;
   overflow: hidden;
-  resize: none;}
+  resize: none;
+}
 
 .full{
   width: 96.25%;
-  clear: left;}
+  clear: left;
+}
+
+.callout{
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid #000;
+}
