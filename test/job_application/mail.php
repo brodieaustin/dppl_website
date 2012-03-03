@@ -51,6 +51,9 @@
 			//set the send TO address
 			$to = "baustin@dppl.org";
 			$mail->AddAddress($to, "Brodie Austin");
+			
+			$to = "brodie.austin@gmail.com";
+			$mail->AddAddress($to, "Brodie Austin");
 		
 			//$to = "ckidd@dppl.org";
 			//$mail->AddAddress($to, "Carol Kidd");
@@ -150,9 +153,6 @@
 			$employer_four_salary = strip_tags($_POST['employer-four-salary']);
 			$employer_four_leaving = strip_tags($_POST['employer-four-leaving']);
 			$agreement = strip_tags($_POST['agreement']);
-			
-			//$email = "brodie.austin@gmail.com";
-			//$name = "brodie";
 	
 			//uses php function to check if email valid (not a real email address, just a valid form)
 			if (filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -165,11 +165,10 @@
 				$mail->Subject = "A test email";
 	
 				//create a variable for the body (be sure to santize input)
-				$body = "test";
 				$body = '<html>';
 				$body .= '<head>';
 				$body .= '<style>';
-				$body .= '* {font-family: sans-serif; font-size: 9pt; margin: 0; padding: 0;}';
+				$body .= '*{font-family: sans-serif; font-size: 9pt; margin: 0; padding: 0;}';
 				$body .= 'body {width: 800px; margin: 1em; padding: 1em;}';
 				$body .= 'h1 {font-size: 12pt; text-transform: uppercase; border-bottom: 1px solid #000; padding-bottom: 15px; font-weight: bold;}';
 				$body .= 'p {font-size: 10pt; margin: 15px 5px;}';

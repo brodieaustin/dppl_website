@@ -21,17 +21,22 @@ strong{
   font-weight: bold;
 }
 
-input[type="submit"], input[type="button"]{
+input[type=submit], input[type=button]{
   display: block;
   float: right;
-  padding: .7em 2em;
+  padding: .7em 1.75em;
   margin: 1em 1em 1em 1.5em;
   background-color: #009899;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  border: 1px solid #080808;
+  border: 0;
   cursor: pointer;
+}
+
+input[type=button]:hover{
+  background-color: #daeee5;
+  color: #000;
 }
 
 /*header*/
@@ -184,7 +189,12 @@ form em{
 
 form input[type=submit]{
   margin-right: 0;
-  background-color: green;
+  background-color: #009900;
+}
+
+form input[type=submit]:hover{
+  background-color: #6AFB92;
+  color: #000;
 }
 
 /*labels*/
@@ -207,12 +217,12 @@ form label.error{
 }
 
 /*input*/
-form input[type="text"], form select, form textarea{
+form input[type=text], form select, form textarea{
   border: 1px solid #000;
   padding: .35em .25em;
 }
 
-form input[type="text"], form textarea{
+form input[type=text], form textarea{
   width: 78.8%;
 }
 form textarea{
