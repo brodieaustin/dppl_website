@@ -7,6 +7,7 @@ body {
   font-size: 90%;
   font-family: sans-serif;
   color: #000;
+  position: relative;
 }
 
 i {
@@ -24,7 +25,7 @@ strong{
 input[type=submit], input[type=button]{
   display: block;
   float: right;
-  padding: .7em 1.75em;
+  padding: .8em 1.75em;
   margin: 1em 1em 1em 1.5em;
   background-color: #009899;
   color: #fff;
@@ -57,7 +58,7 @@ div#header h1{
   color: #888;
   font-weight: normal;
   font-size: 1.2em;
-  margin-top: .6em;
+  margin: .6em 0;
   padding: .5em;
 }
 
@@ -169,7 +170,12 @@ div.errors{
   margin-bottom: 1em;
 }
 
-div.response{display: none; color: #fff; padding: 1em;}
+div.response{
+  display: none;
+  margin-top: 2.5em;
+  padding: 1em;
+  color: #fff;
+}
 
 div.clear{
   clear: both;
@@ -254,15 +260,22 @@ form input:focus, form textarea:focus, form select:focus{
 
   body{
     width: 95%;
+    overflow-x: hidden;
    }
    
    #header{
      padding-left: .6em !important;
    }
    
-   #header input{
+   #header input[type=button]{
      float: none;
-     margin-left: .37em;
+     width: 98%;
+     margin-left: auto;
+     margin-right: auto;
+   }
+   
+   div.response{
+     margin-top: 9em;
    }
    
    form{
@@ -281,6 +294,13 @@ form input:focus, form textarea:focus, form select:focus{
    
    form input[type=radio]{
      position: absolute;
+   }
+   
+   
+   form input#submit{
+ 	 float: none;
+     margin-left: auto;
+     margin-right: auto;
    }
    
    form label.small{

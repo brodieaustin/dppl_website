@@ -21,24 +21,23 @@
     //	die ("The reCAPTCHA wasn't entered correctly. Please try it again." . "(reCAPTCHA said: " . $resp->error . ")");
     //} 
     //else {
-    
     	//quick checks to make sure required fields have been set
-    	/*if (!isset($_POST['name'])){ 
+    	if (empty($_POST['name'])){ 
     		die("Please provide a name before submitting your application");
     	}
-    	elseif (!isset($_POST['email'])){ 
+    	elseif (empty($_POST['phone'])){ 
     		die("Please provide an email address before submitting your application");
     	}
-    	elseif (!isset($_POST('phone')){
+    	elseif (empty($_POST['email'])){
     		die("Please provide a primary phone number before submitting your application");
     	}
-    	elseif (!isset($_POST['position'])){
+    	elseif (empty($_POST['position'])){
     		die("Please select a position before submitting your application");
     	}
-    	elseif (!isset($_POST['agreement'])){
+    	elseif (empty($_POST['agreement'])){
     		die("Please respond to the application agreement before submitting your application");
     	}
-    	else{*/
+    	else{
 		
 			//set up mail object with phpmailer class
 			$mail = new PHPMailer();
@@ -60,7 +59,7 @@
 		
 			//set variables from form values. Probably better way to do this, but this works for now
 			$app_date = strip_tags($_POST['app-date']);
-			$position = strip_tags($_POST['position']);
+			$position = urldecode(strip_tags($_POST['position']));
 			$name = strip_tags($_POST['name']);
 			$address_street = strip_tags($_POST['address-street']);
 			$address_city = strip_tags($_POST['address-city']);
@@ -165,254 +164,259 @@
 				$mail->Subject = "A test email";
 	
 				//create a variable for the body (be sure to santize input)
-				$body = '<table style="width: 740px; margin: 0; padding: 0; border: 0; font-family: sans-serif; font-size: 11px;">';
+				$body = '<table style="width: 100%; margin: 0; padding: 0; border: 0; font-family: sans-serif; font-size: 12px;">';
 				$body .= '<tr>';
 				$body .= '<td>';
-				$body .= '<h1 style="font-size: 14px; text-transform: uppercase; border-bottom: 1px solid #000; padding-bottom: 15px;">Employment Application</h1>';
-				$body .= '<p style="margin: 15px 5px;">It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>';
-				$body .= '<table style="border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<h1 style="font-size: 14px; text-transform: uppercase; border-bottom: 1px solid #000; margin-bottom: 15px; padding-bottom: 5px;">Employment Application</h1>';
+				$body .= '<p style="margin-bottom: 10px; margin-right: 5px; margin-left: ">It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>';
+				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
-				$body .= '<th style="width: 712px; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="2">Personal Information</th>';
+				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="2">Background Information</th>';
 				$body .= '</tr>';
-				$body .= '<thead>';
+				$body .= '</thead>';
 				$body .= '<tbody>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Full Name: * <br /><span style="font-weight: normal">' . $name . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Date of Application <br /><span style="font-weight: normal">' . $app_date . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Full Name: * <br /><span style="font-weight: normal;">' . $name . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Date of Application <br /><span style="font-weight: normal;">' . $app_date . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td rowspan="3">Current Address (include Street, City, State, and Zip Code): <br /><span style="font-weight: normal">' . $address_street . '</span><br /><span style="font-weight: normal">' . $address_city . '</span>&nbsp;<span style="font-weight: normal">' . $address_state . '</span>&nbsp;<span style="font-weight: normal">' . $address_zip . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" rowspan="2">Current Address (include Street, City, State, and Zip Code): <br /><span style="font-weight: normal;">' . $address_street . '</span><br /><span style="font-weight: normal;">' . $address_city . '</span>&nbsp;<span style="font-weight: normal;">' . $address_state . '</span>&nbsp;<span style="font-weight: normal;">' . $address_zip . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Primary Phone: *<br /><span style="font-weight: normal;">' . $phone . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Primary Phone: *<br /><span style="font-weight: normal">' . $phone . '</span></td>';
-				$body .= '</tr>';
-				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Email Address:<br /><span style="font-weight: normal">' . $email . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Email Address:<br /><span style="font-weight: normal;">' . $email . '</span></td>';
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<table style="border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
-				$body .= '<th style="width: 712px; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="2">Background Information</th>';
+				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="2">Background Information</th>';
 				$body .= '</tr>';
-				$body .= '<thead>';
+				$body .= '</thead>';
 				$body .= '<tbody>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">Position applying for:<br /><span style="font-weight: normal">' . $position . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Position applying for:<br /><span style="font-weight: normal;">' . $position . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">Are you seeking (check appropriate):<br /><span style="font-weight: normal">' . $worktype . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Are you seeking (check appropriate):<br /><span style="font-weight: normal;">' . $worktype . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">Date available:<br /><span style="font-weight: normal">' . $date_avail . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Date available:<br /><span style="font-weight: normal;">' . $date_avail . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">How were you referred to the Library?<br /><span style="font-weight: normal">' . $refer_type . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">How were you referred to the Library?<br /><span style="font-weight: normal;">' . $refer_type . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Are you at last 18 years of age?<br /><span style="font-weight: normal">' . $age . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Are you legally eligible for employment in the U.S.?<br /><span style="font-weight: normal">' . $legal . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Are you at last 18 years of age?<br /><span style="font-weight: normal;">' . $age . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Are you legally eligible for employment in the U.S.?<br /><span style="font-weight: normal;">' . $legal . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">If the position you are applying for requires a driver\'s license, please advise if you have a valid driver\'s license:<br /><span style="font-weight: normal">' . $driver . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">If the position you are applying for requires a driver\'s license, please advise if you have a valid driver\'s license:<br /><span style="font-weight: normal;">' . $driver . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">What class is your license?<br /><span style="font-weight: normal">' . $license_class . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Issuing State:<br /><span style="font-weight: normal">' . $issue_state . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">What class is your license?<br /><span style="font-weight: normal;">' . $license_class . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Issuing State:<br /><span style="font-weight: normal;">' . $issue_state . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">Have you ever been convicted of any violations of the law other than minor traffic violations?<br /><span style="font-weight: normal">' . $violations . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Have you ever been convicted of any violations of the law other than minor traffic violations?<br /><span style="font-weight: normal;">' . $violations . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">If you answered yes to the above, please explain:<br /><span style="font-weight: normal">' . $violations_explain . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">If you answered yes to the above, please explain:<br /><span style="font-weight: normal;">' . $violations_explain . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">Were you previously employed by the Des Plaines Public Library?<br /><span style="font-weight: normal">' . $prev_employed . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Were you previously employed by the Des Plaines Public Library?<br /><span style="font-weight: normal;">' . $prev_employed . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">If yes, what department?<br /><span style="font-weight: normal">' . $prev_department . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Date of employment<br />From: <span style="font-weight: normal">' . $prev_from . '</span>&nbsp;To: <span style="font-weight: normal">' . $prev_to . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">If yes, what department?<br /><span style="font-weight: normal;">' . $prev_department . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Date of employment<br />From: <span style="font-weight: normal;">' . $prev_from . '</span>&nbsp;To: <span style="font-weight: normal;">' . $prev_to . '</span></td>';
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<table style="border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width:100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
-				$body .= '<th style="width: 712px; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;"  colspan="5">Education</th>';
+				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;"  colspan="5">Education</th>';
 				$body .= '</tr>';
-				$body .= '<thead>';
+				$body .= '</thead>';
 				$body .= '<tbody>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Name of School attended & location (include Address, City, State)</td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Course of Study:</td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Last year completed</td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Did you graduate?</td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">List degree received:</td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Name of School attended & location (include Address, City, State)</td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Course of Study:</td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Last year completed</td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Did you graduate?</td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">List degree received:</td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">High School:<br /><span style="font-weight: normal">' . $high_school . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $hs_study . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $hs_years . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $hs_graduate . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $hs_degree . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">High School:<br /><span style="font-weight: normal;">' . $high_school . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $hs_study . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $hs_years . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $hs_graduate . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $hs_degree . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">College/University:<br /><span style="font-weight: normal">' . $college . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $col_study . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $col_years . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $col_graduate . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $col_degree . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">College/University:<br /><span style="font-weight: normal;">' . $college . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $col_study . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $col_years . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $col_graduate . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $col_degree . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Graduate School:<br /><span style="font-weight: normal">' . $grad_school . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $grad_study . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $grad_years . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $grad_graduate . '</span</td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $grad_degree . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Graduate School:<br /><span style="font-weight: normal;">' . $grad_school . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $grad_study . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $grad_years . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $grad_graduate . '</span</td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $grad_degree . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Other (Specify):<br /><span style="font-weight: normal">' . $other_school . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $other_study . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $other_years . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $other_graduate . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal">' . $other_degree . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Other (Specify):<br /><span style="font-weight: normal;">' . $other_school . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $other_study . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $other_years . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $other_graduate . '</span></td>';
+				$body .= '<td style="width: 20%; vertical-align: text-top; border: 1px solid #000; padding: 5px;"><span style="font-weight: normal;">' . $other_degree . '</span></td>';
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<table style="border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
-				$body .= '<th style="width: 712px; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" >Additional Job Related Qualifications</th>';
+				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" >Additional Job Related Qualifications</th>';
 				$body .= '</tr>';
-				$body .= '<thead>';
+				$body .= '</thead>';
 				$body .= '<tbody>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Do you hold any certifcations and/or licenses?<br /><span style="font-weight: normal">' . $license . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Do you hold any certifcations and/or licenses?<br /><span style="font-weight: normal;">' . $license . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">If you answered yes to the above, please list:<br /><span style="font-weight: normal">' . $license_list . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">If you answered yes to the above, please list:<br /><span style="font-weight: normal;">' . $license_list . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Please use this space to summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, and/or experience which you feel should be considred in reviewing your application:<br /><span style="font-weight: normal">' . $qualification . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Please use this space to summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, and/or experience which you feel should be considred in reviewing your application:<br /><span style="font-weight: normal;">' . $qualification . '</span></td>';
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<table style="border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
-				$body .= '<th  style="width: 712px; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="5">Employment History</th>';
+				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="2">Employment History</th>';
 				$body .= '</tr>';
-				$body .= '<thead>';
+				$body .= '</thead>';
 				$body .= '<tbody>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Are you presently employed?<br /><span style="font-weight: normal">' . $employed . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">If yes, may we contact your employer?<br /><span style="font-weight: normal">' . $contact_employer . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Are you presently employed?<br /><span style="font-weight: normal;">' . $employed . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">If yes, may we contact your employer?<br /><span style="font-weight: normal;">' . $contact_employer . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">List your present or most recent employer first. A resume will not substitute for completion of this portion of the application</td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">List your present or most recent employer first. A resume will not substitute for completion of this portion of the application</td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Employer:<br /><span style="font-weight: normal">' . $employer_one . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Address:<br /><span style="font-weight: normal">' . $employer_one_add . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Employer One</td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Telephone:<br /><span style="font-weight: normal">' . $employer_one_tel . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Your title:<br /><span style="font-weight: normal">' . $employer_one_title . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Employer:<br /><span style="font-weight: normal;">' . $employer_one . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Address:<br /><span style="font-weight: normal;">' . $employer_one_add . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Supervisor:<br /><span style="font-weight: normal">' . $employer_one_super . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Supervisor\'s Title:<br /><span style="font-weight: normal">' . $employer_one_supertitle . '</span></td>';
-				$body .= '</tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">Description of duties:<br /><span style="font-weight: normal">' . $employer_one_duties . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Telephone:<br /><span style="font-weight: normal;">' . $employer_one_tel . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Your title:<br /><span style="font-weight: normal;">' . $employer_one_title . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Employed<br />From (mo/yr):<span style="font-weight: normal">' . $employer_one_from . '</span>&nbsp;To (mo/yr):<span style="font-weight: normal">' . $employer_one_to . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Last Salary:<br /><span style="font-weight: normal">' . $employer_one_salary . '</span>';
-				$body .= '<br />Reason for leaving: <span style="font-weight: normal">' . $employer_one_leaving . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Supervisor:<br /><span style="font-weight: normal;">' . $employer_one_super . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Supervisor\'s Title:<br /><span style="font-weight: normal;">' . $employer_one_supertitle . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">&nbsp;</td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Description of duties:<br /><span style="font-weight: normal;">' . $employer_one_duties . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Employer:<br /><span style="font-weight: normal">' . $employer_two . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Address:<br /><span style="font-weight: normal">' . $employer_two_add . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Employed<br />From (mo/yr):<span style="font-weight: normal;">' . $employer_one_from . '</span>&nbsp;To (mo/yr):<span style="font-weight: normal;">' . $employer_one_to . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Last Salary:<br /><span style="font-weight: normal;">' . $employer_one_salary . '</span><br />Reason for leaving: <span style="font-weight: normal;">' . $employer_one_leaving . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Telephone:<br /><span style="font-weight: normal">' . $employer_two_tel . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Your title:<br /><span style="font-weight: normal">' . $employer_two_title . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Employer Two</td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Supervisor:<br /><span style="font-weight: normal">' . $employer_two_super . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Supervisor\'s Title:<br /><span style="font-weight: normal">' . $employer_two_supertitle . '</span></td>';
-				$body .= '</tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">Description of duties:<br /><span style="font-weight: normal">' . $employer_two_duties . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Employer:<br /><span style="font-weight: normal;">' . $employer_two . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Address:<br /><span style="font-weight: normal;">' . $employer_two_add . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Employed<br />From (mo/yr):<span style="font-weight: normal">' . $employer_two_from . '</span>&nbsp;To (mo/yr):<span style="font-weight: normal">' . $employer_two_to . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Last Salary:<br /><span style="font-weight: normal">' . $employer_two_salary . '</span>';
-				$body .= '<br />Reason for leaving: <span style="font-weight: normal">' . $employer_two_leaving . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Telephone:<br /><span style="font-weight: normal;">' . $employer_two_tel . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Your title:<br /><span style="font-weight: normal;">' . $employer_two_title . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">&nbsp;</td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Supervisor:<br /><span style="font-weight: normal;">' . $employer_two_super . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Supervisor\'s Title:<br /><span style="font-weight: normal;">' . $employer_two_supertitle . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Employer:<br /><span style="font-weight: normal">' . $employer_three . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Address:<br /><span style="font-weight: normal">' . $employer_three_add . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Description of duties:<br /><span style="font-weight: normal;">' . $employer_two_duties . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Telephone:<br /><span style="font-weight: normal">' . $employer_three_tel . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Your title:<br /><span style="font-weight: normal">' . $employer_three_title . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Employed<br />From (mo/yr):<span style="font-weight: normal;">' . $employer_two_from . '</span>&nbsp;To (mo/yr):<span style="font-weight: normal;">' . $employer_two_to . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Last Salary:<br /><span style="font-weight: normal;">' . $employer_two_salary . '</span><br />Reason for leaving: <span style="font-weight: normal;">' . $employer_two_leaving . '</span></td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Supervisor:<br /><span style="font-weight: normal">' . $employer_three_super . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Supervisor\'s Title:<br /><span style="font-weight: normal">' . $employer_three_supertitle . '</span></td>';
-				$body .= '</tr>';
-				$body .= '<td style="width: 730px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;" colspan="2">Description of duties:<br /><span style="font-weight: normal">' . $employer_three_duties . '</span></td>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Employer Three</td>';
 				$body .= '</tr>';
 				$body .= '<tr>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Employed<br />From (mo/yr):<span style="font-weight: normal">' . $employer_three_from . '</span>&nbsp;To (mo/yr):<span style="font-weight: normal">' . $employer_three_to . '</span></td>';
-				$body .= '<td style="width: 351px; vertical-align: text-top; width: 50%; height: 20px; border: 1px solid #000; padding: 5px;">Last Salary:<br /><span style="font-weight: normal">' . $employer_three_salary . '</span>';
-				$body .= '<br />Reason for leaving: <span style="font-weight: normal">' . $employer_three_leaving . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Employer:<br /><span style="font-weight: normal;">' . $employer_three . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Address:<br /><span style="font-weight: normal;">' . $employer_three_add . '</span></td>';
+				$body .= '</tr>';
+				$body .= '<tr>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Telephone:<br /><span style="font-weight: normal;">' . $employer_three_tel . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Your title:<br /><span style="font-weight: normal;">' . $employer_three_title . '</span></td>';
+				$body .= '</tr>';
+				$body .= '<tr>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Supervisor:<br /><span style="font-weight: normal;">' . $employer_three_super . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Supervisor\'s Title:<br /><span style="font-weight: normal;">' . $employer_three_supertitle . '</span></td>';
+				$body .= '</tr>';
+				$body .= '<tr>';
+				$body .= '<td style="width: 100%; vertical-align: text-top; border: 1px solid #000; padding: 5px;" colspan="2">Description of duties:<br /><span style="font-weight: normal;">' . $employer_three_duties . '</span></td>';
+				$body .= '</tr>';
+				$body .= '<tr>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Employed<br />From (mo/yr):<span style="font-weight: normal;">' . $employer_three_from . '</span>&nbsp;To (mo/yr):<span style="font-weight: normal;">' . $employer_three_to . '</span></td>';
+				$body .= '<td style="width: 50%; vertical-align: text-top; border: 1px solid #000; padding: 5px;">Last Salary:<br /><span style="font-weight: normal;">' . $employer_three_salary . '</span><br />Reason for leaving: <span style="font-weight: normal;">' . $employer_three_leaving . '</span></td>';
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<p>Agreement: <span style="font-weight: normal">' . $agreement . '</span></p>';
+				$body .= '<p>Agreement: <span style="font-weight: normal;">' . $agreement . '</span></p>';
 				$body .= '</td>';
 				$body .= '</tr>';
 				$body .= '</table>';
 	
 				$mail->Body = $body;
-			
-				//deal with attachments here
-				//create an array for the files sent
-				/*$files = array();
+				
+				if (!empty($_FILES['formfiles'])){
+					//deal with attachments here
+					//create an array for the files sent
+					$files = array();
 	
-				//loop through files and build up array using key/values
-				foreach ($_FILES['formfiles'] as $k => $l){
-					foreach ($l as $i => $v){
-						if (!array_key_exists($i, $files))
-						$files[$i] = array();
-						$files[$i][$k] = $v;
+					//loop through files and build up array using key/values
+					foreach ($_FILES['formfiles'] as $k => $l){
+						foreach ($l as $i => $v){
+							if (!array_key_exists($i, $files))
+							$files[$i] = array();
+							$files[$i][$k] = $v;
+						}
 					}
+			
+					$fresponse = handleFiles($mail, $files);
+					$fresponse = strlen($fresponse) > 0 ? '<br />' . $fresponse : '';
+				
 				}
 			
-				$fresponse = handleFiles($mail, $files);
-				$fresponse = strlen($fresponse) > 0 ? '<br />' . $fresponse : '';*/
 	
 				//send the mail and test if it happened
 				if ($mail->Send()){
 					echo  "Thank you! Your form has been submited" . $fresponse;
 				}
 				else{
-					//echo $body . $fresponse;
-					echo "I'm sorry. Your message could not be sent due to an internal error. Please try again later.";
+					echo $body . $fresponse;
+					//echo "I'm sorry. Your message could not be sent due to an internal error. Please try again later.";
 				}
 			}
 			else{
 				die("Your email address was not formatted properly. Please provide a valid email address.");
 			}
-		//}
+		}
 	//}
 ?>
