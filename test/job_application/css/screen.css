@@ -83,7 +83,7 @@ div#main h2{
   font-weight: bold;
 }
 
-div#main img{
+div#main img#logo{
   width: 40%;
   float: left;
 }
@@ -260,7 +260,6 @@ form input:focus, form textarea:focus, form select:focus{
 
   body{
     width: 95%;
-    overflow-x: hidden;
    }
    
    #header{
@@ -268,10 +267,9 @@ form input:focus, form textarea:focus, form select:focus{
    }
    
    #header input[type=button]{
-     float: none;
-     width: 98%;
-     margin-left: auto;
-     margin-right: auto;
+     float: right;
+     width: 45.5%% !important;
+     margin-left: .2em;
    }
    
    div.response{
@@ -285,7 +283,7 @@ form input:focus, form textarea:focus, form select:focus{
    form label{
      width: 50%;
      float: none;
-     margin-bottom: 1em;
+     margin-bottom: .5em;
    }
    
    form input, form select, form textarea{

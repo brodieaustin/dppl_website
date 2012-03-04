@@ -11,16 +11,16 @@
 	$privatekey = "6LeiDM4SAAAAAClOOqtK8JtZSziXYYsl3474_l51";
 	
 	//create recaptcha request
-	//$resp = recaptcha_check_answer ($privatekey,
-    //                            $_SERVER["REMOTE_ADDR"],
-    //                            $_POST["recaptcha_challenge_field"],
-    //                            $_POST["recaptcha_response_field"]);
+	$resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["recaptcha_challenge_field"],
+                                $_POST["recaptcha_response_field"]);
     
-    //if (!$resp->is_valid) {
+    if (!$resp->is_valid) {
     	//What happens when the CAPTCHA was entered incorrectly
-    //	die ("The reCAPTCHA wasn't entered correctly. Please try it again." . "(reCAPTCHA said: " . $resp->error . ")");
-    //} 
-    //else {
+    	die ("The reCAPTCHA wasn't entered correctly. Please try it again." . "(reCAPTCHA said: " . $resp->error . ")");
+    } 
+    else {
     	//quick checks to make sure required fields have been set
     	if (empty($_POST['name'])){ 
     		die("Please provide a name before submitting your application");
@@ -418,5 +418,5 @@
 				die("Your email address was not formatted properly. Please provide a valid email address.");
 			}
 		}
-	//}
+	}
 ?>

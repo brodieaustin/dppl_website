@@ -63,15 +63,13 @@
 									$('div.response').html(data).css({backgroundColor: 'green'}).slideDown(800).delay(5000);
 								}
 								else{
-									console.log(data);
 									$('#application').fadeIn(1000);
 									$('div.response').html(data).css({backgroundColor: 'red'}).slideDown(800).delay(4000).slideUp(800);
 								}	
 								
 							},
 							failure: function(){
-								$('#application').hide();
-								$('div.response').html("Something went wrong. Please check your form and try again.").css({backgroundColor: 'red'}).fadeIn(1000);
+								$('div.response').html("Something went wrong. Please check your form and try again.").css({backgroundColor: 'red'}).slideDown(800).delay(4000).slideUp(800);
 							}
 					});
 				}
@@ -79,6 +77,9 @@
 			
 		});
 	</script>
+	<style type="text/css">
+		div#recaptcha_widget_div{border: 1px solid #000 !important; padding: 1em;}
+	</style>
 </head>
 <body>
 	<div class="response clear"></div>
@@ -89,7 +90,7 @@
 		<input type="button" value="Save" name="save" id="save" />
 	</div>
 	<div id="main">
-			<img src="http://www.dppl.org/images/themes/River/logo.jpg" alt="Des Plaines Public Library [logo]" />
+			<img src="http://www.dppl.org/images/themes/River/logo.jpg" alt="Des Plaines Public Library [logo]" id="logo" />
 			<div id="address">
 				<h2>Des Plaines Public Library</h2>
 				<address class="vcard">
@@ -654,6 +655,15 @@
 					<option></option>
 					<option>Yes</option>
 				</select>
+			</div>
+			<div>
+				<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LeiDM4SAAAAAAORQ-dm6Pt0mHliw_jwg3NBRpqm"></script>
+				<noscript>
+					<iframe src="http://www.google.com/recaptcha/api/noscript?k=6LeiDM4SAAAAAAORQ-dm6Pt0mHliw_jwg3NBRpqm" height="300" width="500" frameborder="0"></iframe><br>
+					<textarea name="recaptcha_challenge_field" rows="3" cols="40">
+					</textarea>
+					<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+				</noscript>
 			</div>
 			<div>
 				<input type="submit" value="Submit" id="submit" />
