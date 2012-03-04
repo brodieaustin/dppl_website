@@ -259,17 +259,21 @@ form input:focus, form textarea:focus, form select:focus{
 @media screen and (max-width: 760px){
 
   body{
-    width: 95%;
+    width: 90%;
    }
    
    #header{
      padding-left: .6em !important;
    }
    
+   #header h1{
+     width: 95.91%;
+   }
+   
    #header input[type=button]{
      float: right;
      width: 45.5%% !important;
-     margin-left: .2em;
+     margin-left: .15em;
    }
    
    div.response{

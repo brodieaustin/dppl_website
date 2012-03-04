@@ -79,6 +79,11 @@
 	</script>
 	<style type="text/css">
 		div#recaptcha_widget_div{border: 1px solid #000 !important; padding: 1em;}
+		
+		@media screen and (max-width: 760px){
+		  div#recaptcha_widget_div{border: 0 !important; padding: 0 !important; }
+		  img#recaptcha_logo, img#recaptcha_tagline{display: none;}
+		}
 	</style>
 </head>
 <body>
