@@ -23,8 +23,6 @@ strong{
 }
 
 input[type=submit], input[type=button]{
-  display: block;
-  float: right;
   padding: .8em 1.75em;
   margin: 1em 1em 1em 1.5em;
   background-color: #009899;
@@ -54,12 +52,17 @@ div#header{
 
 div#header h1{
   float: left;
+  width: 80%;
   text-transform: uppercase;
   color: #888;
   font-weight: normal;
   font-size: 1.2em;
   margin: .6em 0;
   padding: .5em;
+}
+
+div#header input[type=button]{
+  float: left;
 }
 
 /*main body*/
@@ -194,6 +197,7 @@ form em{
 }
 
 form input[type=submit]{
+  float: right;
   margin-right: 0;
   background-color: #009900;
 }
@@ -263,17 +267,20 @@ form input:focus, form textarea:focus, form select:focus{
    }
    
    #header{
-     padding-left: .6em !important;
+     padding-left: .1em !important;
+     padding-right: 0 !important;
    }
    
    #header h1{
-     width: 95.91%;
+     width:50% !important;
+     margin-top: .3em !important;
    }
    
    #header input[type=button]{
-     float: right;
-     width: 45.5%% !important;
-     margin-left: .15em;
+     margin-left: 0;
+     margin-right: 6px;
+     width: 20%;
+     padding: .6em;
    }
    
    div.response{
@@ -281,7 +288,7 @@ form input:focus, form textarea:focus, form select:focus{
    }
    
    form{
-     margin-top: 10.07em;
+     margin-top: 5em;
    }
    
    form label{
@@ -290,7 +297,7 @@ form input:focus, form textarea:focus, form select:focus{
      margin-bottom: .5em;
    }
    
-   form input, form select, form textarea{
+   form input[type=text], form select, form textarea{
      width: 98.65% !important;
    }
    
@@ -299,7 +306,7 @@ form input:focus, form textarea:focus, form select:focus{
    }
    
    
-   form input#submit{
+   form input[type=submit]{
  	 float: none;
      margin-left: auto;
      margin-right: auto;
