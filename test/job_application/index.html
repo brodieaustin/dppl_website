@@ -20,25 +20,35 @@
 		};
 		
 		$(document).ready(function(){
-			var today = new Date();
-			var y = today.getFullYear();
-			var m = today.getMonth() + 1;
-			var d = today.getDate();
+		
+			var storage = resumeForm();
+			console.log(storage);
 			
-			var param = window.location.search.substring(1).split('=');
-			var pos = param[1]
-			console.log(pos);
-			$('input[name="app-date"]').val(m + '/' + d + '/' + y);
-			$('select[name="position"]').val(pos);
-			$('input[name="name"]').focus();
+			if (storage == false){
+				var today = new Date();
+				var y = today.getFullYear();
+				var m = today.getMonth() + 1;
+				var d = today.getDate();
 			
-			$('input[name="reset"]').click(function(){
+				var param = window.location.search.substring(1).split('=');
+				var pos = param[1]
+				console.log(pos);
+				$('#app-date').val(m + '/' + d + '/' + y);
+				$('#position').val(pos);
+			}
+			
+			$('#name').focus();
+			
+			$('#reset').click(function(){
 				$(':input', 'form')
 					.not(':button, :submit, :reset, input[name="app-date"], select[name="position"]')
 					.val('')
 					.removeAttr('checked')
 					.removeAttr('selected');
-				});
+				localStorage.clear();
+			});
+				
+			$('#save').click(saveForm);
 				
 			$('#application').validate({
 				invalidHandler: function(form, validator) {
@@ -76,6 +86,63 @@
 				});
 			
 		});
+		
+		function resumeForm(){
+			if (localStorage.length > 0) {
+				var r = confirm("Do you want to resume your application?");
+			
+				if (r == true){
+					var f;
+					
+					for (var key in localStorage){
+						if ((key != null) || (key != "")){
+							//console.log(key, localStorage[key]);
+							f = document.getElementById(key);
+								if (f.type == "radio"){
+									f.checked = true;
+								}
+								else{
+									f.value = localStorage[key];
+								}
+						}
+					}
+					
+					return true;
+				}
+				else{
+					localStorage.clear();
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+		
+		function saveForm(){
+			console.log('save form function');
+			if (window["localStorage"]){
+				localStorage.clear();
+				var elems = document.getElementById("application").elements;
+				
+				for (i = 0; i < elems.length; i++){
+					if (elems[i].id=="recaptcha_challenge_field"){
+						i++;
+					}
+					else if ((elems[i].type=="radio") && (elems[i].checked == true)){
+						localStorage.setItem(elems[i].id, elems[i].value);
+					}
+					else if ((elems[i].value != "" ) && (elems[i].type != "button") && (elems[i].type != "submit") && (elems[i].type != "radio") && (elems[i].value != undefined)){
+						localStorage.setItem(elems[i].id, elems[i].value);
+					}
+				}
+				alert("Your application has been saved! When you use this browser again, you can resume your application.");
+			}
+			else{
+				alert("I'm sorry. Local storage is not avaible for your browser");
+			}
+		}
+		
 	</script>
 	<style type="text/css">
 		div#recaptcha_widget_div{border: 1px solid #000 !important; padding: 1em;}
@@ -91,8 +158,8 @@
 	<form action="mail.php" method="post" id="application" enctype="multipart/form-data">
 	<div id="header">
 		<h1>Des Plaines Public Library</h1>
-		<input type="button" value="Reset" name="reset" id="reset" />
 		<input type="button" value="Save" name="save" id="save" />
+		<input type="button" value="Reset" name="reset" id="reset" />
 	</div>
 	<div id="main">
 			<img src="http://www.dppl.org/images/themes/River/logo.jpg" alt="Des Plaines Public Library [logo]" id="logo" />
@@ -123,30 +190,30 @@
 					<legend>Personal Information</legend>
 					<div>
 						<label for="app-date">Date of Application:</label>
-						<input type="text" name="app-date" />
+						<input type="text" name="app-date" id="app-date" />
 					</div>
 					<div>
 						<label for="name">Full Name: <em>*</em></label>
-						<input type="text" name="name" class="required" />
+						<input type="text" name="name" id="name" class="required" />
 					</div>
 					<div>
 						<fieldset>
 							<legend><b>Current Address</b></legend>
 							<div>
 								<label for="address-street">Street:</label>
-								<input type="text" name="address-street" />
+								<input type="text" name="address-street" id="address-street" />
 							</div>
 							<div>
 								<label for="address-city">City:</label>
-								<input type="text" name="address-city" />
+								<input type="text" name="address-city" id="address-city" />
 							</div>
 							<div>
 								<label for="address-state">State:</label>
-								<input type="text" name="address-state" />
+								<input type="text" name="address-state" id="address-state" />
 							</div>
 							<div>
 								<label for="address-zip">Zip Code:</label>
-								<input type="text" name="address-zip" />
+								<input type="text" name="address-zip" id="address-zip" />
 							</div>
 						</fieldset>
 					</div>
@@ -155,11 +222,11 @@
 						<legend><b>Contact Information</b></legend>
 							<div>
 								<label for="phone">Primary Phone: <em>*</em></label>
-								<input type="text" name="phone" class="required" />
+								<input type="text" name="phone" id="phone" class="required" />
 							</div>
 							<div>
 								<label for="email">Email Address: <em>*</em></label>
-								<input type="text" name="email" class="email required"/>
+								<input type="text" name="email" id="email" class="email required"/>
 							</div>
 						</fieldset>
 					</div>
@@ -168,7 +235,7 @@
 					<legend>Background Information</legend>
 					<div>
 						<label for="position">Position: <em>*</em></label>
-						<select name="position" class="required">
+						<select name="position" id="position" class="required">
 							<!--update positions with <option value="Job Name">Job Name</option>-->
 							<option></option>
 							<option value="Web%20Services%20Librarian">Web Services Librarian</option>
@@ -178,79 +245,79 @@
 					<div>
 						<fieldset>
 							<legend>Are you seeking (check appropriate):</legend>
-							<label><input type="radio" name="worktype" value="full-time" />Full Time:</label>
-							<label><input type="radio" name="worktype" value="part-time" />Part Time:</label>
+							<label><input type="radio" name="worktype" id="worktype1" value="Full Time" />Full Time:</label>
+							<label><input type="radio" name="worktype" id="worktype2" value="Part Time" />Part Time:</label>
 						</fieldset>
 					</div>
 					<div>
 						<label for="date-avail">Date available:</label>
-						<input type="text" name="date-avail" />
+						<input type="text" name="date-avail" id="date-avail" />
 					</div>
 					<div>
 						<fieldset>
 							<legend>How were you referred to the Library?</legend>
-							<label><input type="radio" name="refer-type" value="lib-site" />Library Web Site</label>
-							<label><input type="radio" name="refer-type" value="newspaper" />Newspaper List</label>
-							<label><input type="radio" name="refer-type" value="other" />Other</label>
+							<label><input type="radio" name="refer-type" id="refer-type1" value="Library Web Site" />Library Web Site</label>
+							<label><input type="radio" name="refer-type" id="refer-type2" value="Newspaper" />Newspaper List</label>
+							<label><input type="radio" name="refer-type" id="refer-type3" value="Other" />Other</label>
 							<div class="clear">
 								<label for="refer-other"><i>Please specify:</i>:</label>
-								<input type="text" name="refer-other" />
+								<input type="text" name="refer-other" id="refer-other" />
 							</div>
 						</fieldset>
 					</div>
 					<div>
 						<fieldset>
 							<legend>Are you at least 18 years of age?</legend>
-							<label><input type="radio" name="age" value="yes" />Yes</label>
-							<label><input type="radio" name="age" value="no" />No</label>
+							<label><input type="radio" name="age" id="age1" value="Yes" />Yes</label>
+							<label><input type="radio" name="age" id="age2" value="No" />No</label>
 						</fieldset>
 					</div>
 					<div>
 						<fieldset class="break">
 							<legend>Are you legally eligible for employment in the U.S.?</legend>
-							<label><input type="radio" name="legal" value="yes"/>Yes</label>
-							<label><input type="radio" name="legal" value="no"/>No</label>
+							<label><input type="radio" name="legal" id="legal1" value="Yes"/>Yes</label>
+							<label><input type="radio" name="legal" id="legal2" value="No"/>No</label>
 						</fieldset>
 					</div>
 					<div>
 						<fieldset>
 							<legend>If the position you are applying for requires a driver's license, please advise if you have a valid driver's license:</legend>
-							<label><input type="radio" name="driver" value="yes"/>Yes</label>
-							<label><input type="radio" name="driver" value="no"/>No</label>
+							<label><input type="radio" name="driver" id="driver1" value="Yes"/>Yes</label>
+							<label><input type="radio" name="driver" id="driver2" value="No"/>No</label>
 							<div class="clear">
 								<label for="license-class">What class is your license?</label>
-								<input type="text" class="small float" name="license-class" />
+								<input type="text" class="small float" name="license-class" id="license-class" />
 								<label for="issue-state" class="small">Issuing State:</label>
-								<input type="text" class="small float" name="issue-state" />
+								<input type="text" class="small float" name="issue-state" id="issue-state" />
 							</div>
 						</fieldset>
 					</div>
 					<div>
 						<fieldset>
 							<legend>Have you ever been convicted of any violations of the law other than minor traffic violations?</legend>
-							<label><input type="radio" name="violations" value="yes"/>Yes</label>
-							<label><input type="radio" name="violations" value="no"/>No</label>
+							<label><input type="radio" name="violations" id="violations1" value="Yes"/>Yes</label>
+							<label><input type="radio" name="violations" id="violations2" value="No"/>No</label>
 							<div class="clear">
 								<label for="violations-explain" class="full"><i>If you answered yes to the above, please explain:</i></label>
-								<input type="text" class="full" name="violations-explain" />
+								<input type="text" class="full" name="violations-explain" id="violations-explain" />
 							</div>
 						</fieldset>
 					</div>
 					<div class="last">
 						<fieldset>
 							<legend>Were you previously employed by the Des Plaines Public Library?</legend>
-							<label><input type="radio" name="prev-employed" value="yes"/>Yes</label>
-							<label><input type="radio" name="prev-employed" value="no"/>No</label>
+							<label><input type="radio" name="prev-employed" id="prev-employed1" value="Yes"/>Yes</label>
+							<label><input type="radio" name="prev-employed" id="prev-employed2" value="No"/>No</label>
 							<div class="clear">
 								<label for="prev-department" class="full"><i>If yes, what department?</i></label>
-								<input type="text" name="prev-department" class="full" />
+								<input type="text" name="prev-department" id="prev-department" class="full" />
 							</div>
 							<div class="clear">
 								Date of employment<br />
-								<label>From:</label>
-								<input type="text" class="small float" name="prev-from" />
-								<label class="small">To:</label>
-								<input type="text" class="small float" name="prev-to" />
+								<label>From (m/y):</label>
+								<input type="text" class="small float" name="prev-from" id="prev-from" />
+								<label class="small">To (m/y):</label>
+								<input type="text" class="small float" name="prev-to" id="prev-to" />
 							</div>
 						</fieldset>
 					</div>
@@ -262,31 +329,31 @@
 							<legend><b>High School</b></legend>
 							<div>
 								<label for="high-school">High School <i>(include name and address, city, state)</i>:</label>
-								<textarea name="high-school" rows="1" cols="1"></textarea>
+								<textarea name="high-school" id="high-school" rows="1" cols="1"></textarea>
 							</div>
 							<div>
 								<label for="hs-study">Course of Study:</label>
-								<input type="text" name="hs-study" />
+								<input type="text" name="hs-study" id="hs-study" />
 							</div>
 							<div>
 								<fieldset>
 									<legend>Last year completed</legend>
-									<label><input type="radio" name="hs-years" value="1" />1</label>
-									<label><input type="radio" name="hs-years" value="2" />2</label>
-									<label><input type="radio" name="hs-years" value="3" />3</label>
-									<label><input type="radio" name="hs-years" value="4" />4</label>
+									<label><input type="radio" name="hs-years" id="hs-years1" value="1" />1</label>
+									<label><input type="radio" name="hs-years" id="hs-years2" value="2" />2</label>
+									<label><input type="radio" name="hs-years" id="hs-years3" value="3" />3</label>
+									<label><input type="radio" name="hs-years" id="hs-years4" value="4" />4</label>
 								</fieldset>
 							</div>
 							<div>
 								<fieldset>
 									<legend>Did you graduate?</legend>
-									<label><input type="radio" name="hs-graduate" value="yes"/>Yes</label>
-									<label><input type="radio" name="hs-graduate" value="no"/>No</label>
+									<label><input type="radio" name="hs-graduate" id="hs-graduate1" value="Yes"/>Yes</label>
+									<label><input type="radio" name="hs-graduate" id="hs-graduate2" value="No"/>No</label>
 								</fieldset>
 							</div>
 							<div>	
 								<label for="hs-degree" class="no-display">List degree received:</label>
-								<input type="text" name="hs-degree" />
+								<input type="text" name="hs-degree" id="hs-degree" />
 							</div>
 						</fieldset>
 					</div><!--closing div for high school-->
@@ -295,7 +362,7 @@
 							<legend><b>College/University</b></legend>
 							<div>
 								<label for="college">College/University <i>(include name and address, city, state)</i>:</label>
-									<textarea name="college" rows="1" cols="1"></textarea>
+									<textarea name="college" id="college" rows="1" cols="1"></textarea>
 							</div>
 							<div>
 								<label for="col-study">Course of study:</label>
@@ -304,17 +371,17 @@
 							<div>
 								<fieldset>
 									<legend>Last year completed</legend>
-									<label><input type="radio" name="col-years" value="1" />1</label>
-									<label><input type="radio" name="col-years" value="2" />2</label>
-									<label><input type="radio" name="col-years" value="3" />3</label>
-									<label><input type="radio" name="col-years" value="4" />4</label>
+									<label><input type="radio" name="col-years" id="col-years1" value="1" />1</label>
+									<label><input type="radio" name="col-years" id="col-years2" value="2" />2</label>
+									<label><input type="radio" name="col-years" id="col-years3" value="3" />3</label>
+									<label><input type="radio" name="col-years" id="col-years4" value="4" />4</label>
 								</fieldset>
 							</div>
 							<div>
 								<fieldset>
 									<legend>Did you graduate?</legend>
-									<label><input type="radio" name="col-graduate" value="yes"/>Yes</label>
-									<label><input type="radio" name="col-graduate" value="no"/>No</label>
+									<label><input type="radio" name="col-graduate" value="Yes"/>Yes</label>
+									<label><input type="radio" name="col-graduate" value="No"/>No</label>
 								</fieldset>
 							</div>
 							<div>
@@ -346,8 +413,8 @@
 							<div>
 								<fieldset>
 									<legend>Did you graduate?</legend>
-									<label><input type="radio" name="grad-graduate" value="yes"/>Yes</label>
-									<label><input type="radio" name="grad-graduate" value="no"/>No</label>
+									<label><input type="radio" name="grad-graduate" value="Yes"/>Yes</label>
+									<label><input type="radio" name="grad-graduate" value="No"/>No</label>
 								</fieldset>
 							</div>
 							<div>
@@ -379,8 +446,8 @@
 							<div>
 								<fieldset>
 									<legend>Did you graduate?</legend>
-									<label><input type="radio" name="other-graduate" value="yes"/>Yes</label>
-									<label><input type="radio" name="other-graduate" value="no"/>No</label>
+									<label><input type="radio" name="other-graduate" value="Yes"/>Yes</label>
+									<label><input type="radio" name="other-graduate" value="No"/>No</label>
 								</fieldset>
 							</div>
 							<div>
@@ -395,8 +462,8 @@
 					<div>
 						<fieldset>
 							<legend>Do you hold any certifcations and/or licenses?</legend>
-							<label><input type="radio" name="license" value="yes"/>Yes</label>
-							<label><input type="radio" name="license" value="no"/>No</label>
+							<label><input type="radio" name="license" value="Yes"/>Yes</label>
+							<label><input type="radio" name="license" value="No"/>No</label>
 							<div class="clear">
 								<label for="license-list" class="full"><i>If you answered yes to the above, please list:</i></label>
 								<textarea name="license-list" class="full" rows="1" cols="1"></textarea>
@@ -413,15 +480,15 @@
 					<div>
 						<fieldset>
 							<legend>Are you presently employed?</legend>
-							<label><input type="radio" name="employed" value="yes"/>Yes</label>
-							<label><input type="radio" name="employed" value="no"/>No</label>
+							<label><input type="radio" name="employed" value="Yes"/>Yes</label>
+							<label><input type="radio" name="employed" value="No"/>No</label>
 						</fieldset>
 					</div>
 					<div>
 						<fieldset>
 							<legend>If yes, may we contact your employer?</legend>
-							<label><input type="radio" name="contact-employer" value="yes"/>Yes</label>
-							<label><input type="radio" name="contact-employer" value="no"/>No</label>
+							<label><input type="radio" name="contact-employer" value="Yes"/>Yes</label>
+							<label><input type="radio" name="contact-employer" value="No"/>No</label>
 						</fieldset>
 					</div>
 					<div>
@@ -656,7 +723,7 @@
 				<p>I understand the filing of this application or participation in an interview in no way constitutes an employment contract between the Des Plaines Public Library and me. I acknowledge the right of the Des Plaines Public Library to make changes in policy and benefits, where such policy and benefits are not specified, without notice and I understand that only written conditions as contained in an offer made to me by an authorized official will be honored by this organization. </p>
 				<p>I understand that any offer of employment, approved by the Library Director, either verbal or written, may be conditional upon the satisfactory completion of a drug screen, background check and physical exam. Should I become employed, I agree to conform to all rules and regulations of the Des Plaines Public Library. I understand that my employment with the Des Plaines Public Library will be at will and that I have the right to terminate my employment at any time and the Des Plaines Public Library retains the same right</p>
 				<label for="agreement"><i>Do you agree?</i> <em>*</em></label>
-				<select name="agreement" class="small required">
+				<select name="agreement" id="agreement" class="small required">
 					<option></option>
 					<option>Yes</option>
 				</select>
