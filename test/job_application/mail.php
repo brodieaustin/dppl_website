@@ -159,6 +159,10 @@
 				//santize the email address first
 				$mail->From = filter_var($email, FILTER_SANITIZE_EMAIL);
 				$mail->FromName = $name;
+				
+				if ($_POST['send-copy'] == 'true'){
+					$mail->AddBCC($email);
+				}
 		
 				//add a subject
 				$mail->Subject = "A test email";
@@ -169,7 +173,7 @@
 				$body .= '<td>';
 				$body .= '<h1 style="font-size: 14px; text-transform: uppercase; border-bottom: 1px solid #000; margin-bottom: 15px; padding-bottom: 5px;">Employment Application</h1>';
 				$body .= '<p style="margin-bottom: 10px; margin-right: 5px; margin-left: ">It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>';
-				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-top: 10px; margin-bottom: 10px; font-family: sans-serif; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
 				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="2">Background Information</th>';
@@ -189,7 +193,7 @@
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-top: 10px; margin-bottom: 10px; font-family: sans-serif; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
 				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="2">Background Information</th>';
@@ -234,7 +238,7 @@
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<table style="width:100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width:100%; border-collapse: collapse; border: 1px solid #000; margin-top: 10px; margin-bottom: 10px; font-family: sans-serif; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
 				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;"  colspan="5">Education</th>';
@@ -278,7 +282,7 @@
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-top: 10px; margin-bottom: 10px; font-family: sans-serif; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
 				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" >Additional Job Related Qualifications</th>';
@@ -296,7 +300,7 @@
 				$body .= '</tr>';
 				$body .= '</tbody>';
 				$body .= '</table>';
-				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px; font-weight: bold; font-size: 10px;">';
+				$body .= '<table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-top: 10px; margin-bottom: 10px; font-family: sans-serif; font-weight: bold; font-size: 10px;">';
 				$body .= '<thead>';
 				$body .= '<tr>';
 				$body .= '<th style="width: 100%; padding: 5px; background-color: #000; text-transform: uppercase; color: #fff; text-align: left;" colspan="2">Employment History</th>';
