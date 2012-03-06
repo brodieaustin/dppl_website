@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body a {
+	color:#0066CC;
+	}
+
+.sitenav {
+	font-family: trebuchet ms;
+	font-size: 15px;
+	}
+	
+.sitenavaddy {
+	font-family: trebuchet ms;
+	font-size: 12px;
+	}
+
+.sitenavlinks li {
+	list-style-type: none;
+	display: inline;
+	margin: 0 15px 0 0;
+	padding: 0;
+	color: black;
+	}
+	
+.sitenavlinks a:link {
+	text-decoration: none;
+	color:#0066CC;
+	}
+.sitenavlinks a:visited {
+	text-decoration: none;
+	color:#0066CC;
+	}
+.sitenavlinks a:hover {
+	text-decoration: overline underline;
+	}
+
+
+.sitenavlinks ul {
+	padding: 0;
+	margin: 0;
+	}
+	
+.chalkboardlinks {
+	background-image:url(des_el/chalkboard2.png);
+	background-repeat:no-repeat;
+	vertical-align: top;
+	padding: 10px 0 0 14px;
+	color: white;
+	font-family: trebuchet ms;
+	font-size: 13px;
+	}
+
+.caudillclub {
+background-image:url(caudill/caudill_logo_2.gif);
+background-repeat:no-repeat;
+}
+	
+.chalkboardlinks a:link {
+	text-decoration: none;
+	color: white;
+	}
+	
+.chalkboardlinks a:visited {
+	text-decoration: none;
+	color: white;
+	}
+	
+.chalkboardlinks a:hover {
+	text-decoration: none;
+	color: #FFFF99;
+	font-weight: bold;
+	padding-left: 3px;
+	}
+	
+.contentbody {
+	font-family: trebuchet ms;
+	font-size: 14px;
+	padding-right: 20px;
+	}
+	
+.contentheader {
+	font-family: trebuchet ms;
+	font-size: 12px;
+	vertical-align: top;
+	padding: 20px 10px 0 0 ;
+	}
+	
+.teachersanchor {
+	font-size:14px;
+	font-weight: bold;
+	color: red;
+	}
+	
+.subtopic {
+	font-weight: bold;
+	color: purple;
+	}
+	
+.subtopic2 {
+	font-weight: bold;
+	color: black;
+	}
+	
+.headertitles {
+	font-weight: bold;
+	color: #003399;
+	font-size:18px;
+	}
+	
+.or_table_left {
+	border-top: 1px solid #bebebe;
+	border-left: 1px solid #bebebe;
+	border-bottom: 1px solid #bebebe;
+	padding: 1px;
+	}
+	
+.or_table_right {
+	border-top: 1px solid #bebebe;
+	border-right: 1px solid #bebebe;
+	border-bottom: 1px solid #bebebe;
+	padding: 1px;
+	}
+
+.or_table_click {
+	font-size: 13px;
+	}
+
+.databaselinks a:hover {
+	text-decoration: none;
+	color: #003366;
+	font-weight: bold;
+	}
+	
+/* TWITTER CSS */
+.twitter_title {
+	font-family: "Comic Sans MS", helvetica;
+	font-size: 14px;
+	font-weight: bold;
+}
+	
+#twitter_update_list {
+	font-family: "Comic Sans MS", helvetica;
+	font-size: 12px;
+	list-style-type: none;
+	padding: 0;
+	margin: 7;
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
