@@ -7,8 +7,12 @@
 	<link rel="alternate stylesheet" type="text/css" href="../css/medium.css" title="medium">
 	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
 	<style type="text/css">
+		.gfc-resultsRoot{margin-bottom: 10px !important;}
 		.gfc-resultsheader{border: 0 !important;}
+		.gfc-title{color: #000 !important; font-size: 1em;}
 		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
+		.gf-title a{color: #003366 !important;}
+		.gf-snippet{display: none !important;}
 	</style>
 	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
 	<!--#include virtual="../js/styleswitcher.js"-->
