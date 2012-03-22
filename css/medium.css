@@ -766,3 +766,8 @@ table.board a.download:hover{
   color: #666;
   text-decoration: underline;
 }
+
+a.download{
+  background: url(../images/icons/download.gif) no-repeat center left;
+  padding-left: 20px;
+}
