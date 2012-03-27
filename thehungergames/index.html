@@ -12,23 +12,13 @@
 	<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
 	<script type="text/javascript" src="js/jquery.countdown.min.js"></script>
 	<script type="text/javascript">
-			$(function(){
-	
-				// Tabs
-				$('#tabs').tabs();
-				
-				//hover states on the static widgets
-				$('#dialog_link, ul#icons li').hover(
-					function() { $(this).addClass('ui-state-hover'); }, 
-					function() { $(this).removeClass('ui-state-hover'); }
-				);
-				
+			/*$(function(){
 				var e = new Date(); 
 				e = new Date(2012, 3-1, 17); 
 				$('#timer').countdown({until: e, layout: '<b>{dn} {dl}, {hnn} {hl}, {mnn} {ml}, and {snn} {sl}</b> {desc}', description: 'until the event!'}
 				);
 				
-			});
+			});*/
 	</script>
 </head>
 
@@ -36,21 +26,24 @@
 	<div id="page-container">
 		<div id="header">
 			<h1>The Hunger Games</h1>
-			<div id="timer"></div>
+			<!--<div id="timer"></div>-->
 		</div>
 		<div id="main">
 			<div class="container">
-				<iframe src="http://www.youtube.com/embed/77-zHL4LSRA?rel=0" frameborder="0" allowfullscreen></iframe>
+				<iframe src="http://www.youtube.com/embed/2b6QroZAsdg?rel=0" frameborder="0" allowfullscreen></iframe>
 			</div>
-			<h2>You are required to represent your district at the 74th Hunger Games</h2>
-			<p>You and your teammates will compete in tests of your survival skills. Only one district will survive.</p>
-			<p>The games happen: 3.17.2012 | 4:00 PM 
+			<h2>District 7 triumphed in the 74th Hunger Games</h2>
+			<p>After two hours of fierce, grueling competition, the members of District 7 triumphed over the other 11 districts in the 74th Hunger Games. Relive the thrilling event with the video above, or the pictures to the right.</p>
 			<p><span class="italics">May the odds be ever in your favor.</span></p>
 		</div>
 		<div id="sidebar">
 			<div>
-				<h3>We have found the necessary number of tributes for the 74th Hunger Games</h3>
+				<h3>The 74th Hunger Games has ended</h3>
 				<p>Please check back for pictures and videos from the event.</p>
+			</div>
+			<div>
+				<h3>President Snow's message</h3>
+				<iframe src="http://www.youtube.com/embed/77-zHL4LSRA?rel=0" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 		<div id="footer">
