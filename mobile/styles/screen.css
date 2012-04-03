@@ -12,10 +12,10 @@ table { border-collapse:collapse;border-spacing:0; }
 
 /*Styles for page*/
 body{
-  width: 65%;
+  width: 100%;
   margin: 0 auto;
-  background-color: #f8f8f8;
   font-family: Helvetica, Arial, sans-serif;
+  background-color: #fff;
 }
 
 li a{
@@ -71,9 +71,6 @@ a:hover{
 #main{
   clear: both;
   padding: 0 1em 1em 1em;
-  background: #fff;
-  background: -moz-linear-gradient(top, #fff, #F8F8F8 );
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#F8F8F8));
   overflow: auto;
 }
 
@@ -178,7 +175,6 @@ a:hover{
 }
 
 #footer{
-  background-color: #F8F8F8;
   padding: .5em 1em;
 }
 
@@ -188,10 +184,6 @@ a:hover{
 }
 
 @media screen and (max-width: 600px){
-  body{
-	width: 100%;
-	background-color: #fff;
-  }
   
   #main form input[type="text"]{
     width: 70%;
