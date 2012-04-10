@@ -771,3 +771,42 @@ a.download{
   background: url(../images/icons/download.gif) no-repeat center left;
   padding-left: 20px;
 }
+
+/*special style sheet for database listings*/
+
+div#db-list h3{
+    clear: both;
+	border-bottom: 1px solid #036
+}
+
+div#db-list h4{
+  clear: both;
+  margin-top: 1em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 1em;
+}
+
+div.db{
+  overflow: auto;
+  margin-bottom: 2em;
+}
+
+div.db p{
+  float: left;
+  width: 60%;
+  font-size: 1em;
+}
+
+div.db img{
+  float: right;
+}
+
+div#db-list ul li{
+  padding-bottom: 4px;
+  line-height: 1.25em;
+}
+
+div#db-list a.link{
+  text-decoration: none;
+}
