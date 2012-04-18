@@ -47,7 +47,7 @@
 				var targetOffset = $target.offset().top;
 				$(this).click(function(event) {
 				  event.preventDefault();
-				  $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+				  $(scrollElem).animate({scrollTop: targetOffset}, 600, function() {
 					location.hash = target;
 				  });
 				});
@@ -79,12 +79,12 @@
 </head>
 <body>
 	<div id="container">
+		<div id="top"></div>
 		<div id="header">
 			<h1>Money Smart Week</h1>
 			<p>Des Plaines Public Library</p>
 			<p>April 21&ndash;28, 2012</p>
 		</div>
-		<div id="top"></div>
 		<div id="main">
 			<div id="calendar">
 				<div class="calendar-cell">
@@ -165,7 +165,7 @@
 			</div>
 			<div class="event">
 				<div class="photo"><img src="/images/reference/money-smart.png" /></div>
-				<h2>Money Smart Week Training Session</h2>
+				<h2>Money Smart Week Training Sessions</h2>
 				<p>Looking for more?</p>
 				<p>Morningstar Investment Research Center will present two training sessions to help you be a better investor. The sessions can be viewed directly from home!</p>
 				<p><a href="/reference/downloads/Morningstar%20Money%20Smart%20Week.pdf">Click here for details</a></p>
