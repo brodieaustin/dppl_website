@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Des Plaines Public Library | Money Smart Week</title>
+	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
+	<style>
+		body{background: #95adad; font-family: Georgia, serif;}
+		a{color: #024a32; border-bottom: 1px dotted #015835; text-decoration: none;}
+		a:hover{color: #888; border-bottom: 1px dotted #015835; text-decoration: none;}
+		a.up{display: block; height: 32px; background: url('glyphicons_218_circle_arrow_right.png') no-repeat center left; padding-left: 30px; border: 0; }
+		div#container{width: 80%; margin: 2em auto; padding: 1em; background-color: #f8f8f8; border: 1px solid #024a32;}
+		div#header{text-align: center; color: #024a32; font-size: 200%;}
+		div#header h1{text-shadow: 0 1px 1px #fff; margin-bottom: 0; text-transform: uppercase;}
+		div#header p{text-shadow: 0 1px 1px #fff;}
+		div#main, div#header{ width: 90%; margin: 0 auto;}
+		div#calendar{position: relative; float: left; width: 100%; margin: 1em 0 0 0 ; padding: 1em 0; border-top: 3px solid #3e8269; font-family: sans-serif;}
+		div#calendar .calendar-cell{position: relative; height: 7em; float: left; width: 11.7%; margin-right: .9%; margin-bottom: 1em; padding: .5em; background-color: #fff;}
+		div#calendar .last-cell{margin-right: 0;}
+		div#calendar p.calendar-date{margin-top: 0; margin-bottom: 2em; font-size: .6em;}
+		div#calendar p.calendar-event{font-size: .7em; }
+		div.event{clear: both; margin-top: 2em; border-top: 3px solid #3e8269; line-height: 1.5em}
+		div.event h2{text-shadow: 0 1px 1px #fff;}
+		div.event ul.details{list-style: none; padding-left: 0;}
+		div.event .photo {float: right; margin: 1em 0 1em 1em;}
+		div#footer{width: 90%; clear: both; margin: 2em auto 0 auto; border-top: 3px solid #3e8269; line-height: 1.5em}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		/*from http://css-tricks.com/snippets/jquery/smooth-scrolling/*/
+		$(document).ready(function() {
+		  function filterPath(string) {
+		  return string
+			.replace(/^\//,'')
+			.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+			.replace(/\/$/,'');
+		  }
+		  var locationPath = filterPath(location.pathname);
+		  var scrollElem = scrollableElement('html', 'body');
+
+		  $('a[href*=#]').each(function() {
+			var thisPath = filterPath(this.pathname) || locationPath;
+			if (  locationPath == thisPath
+			&& (location.hostname == this.hostname || !this.hostname)
+			&& this.hash.replace(/#/,'') ) {
+			  var $target = $(this.hash), target = this.hash;
+			  if (target) {
+				var targetOffset = $target.offset().top;
+				$(this).click(function(event) {
+				  event.preventDefault();
+				  $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+					location.hash = target;
+				  });
+				});
+			  }
+			}
+		  });
+
+		  // use the first element that is "scrollable"
+		  function scrollableElement(els) {
+			for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+			  var el = arguments[i],
+				  $scrollElement = $(el);
+			  if ($scrollElement.scrollTop()> 0) {
+				return el;
+			  } else {
+				$scrollElement.scrollTop(1);
+				var isScrollable = $scrollElement.scrollTop()> 0;
+				$scrollElement.scrollTop(0);
+				if (isScrollable) {
+				  return el;
+				}
+			  }
+			}
+			return [];
+		  }
+
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1>Money Smart Week</h1>
+			<p>Des Plaines Public Library</p>
+			<p>April 21&ndash;28, 2012</p>
+		</div>
+		<div id="top"></div>
+		<div id="main">
+			<div id="calendar">
+				<div class="calendar-cell">
+					<p class="calendar-date">22 - Sun</p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">23 - Mon</p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">24 - Tues</p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">25 - Wed</p>
+					<p class="calendar-event"><a href="#financial-exploitation">The Warning Signs of Financial Exploitation</a></p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">26 - Thurs</p>
+					<p class="calendar-event"><a href="#identity-theft">Identity Theft and Fraud</a></p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">27 - Fri</p>
+				</div>
+				<div class="calendar-cell last-cell">
+					<p class="calendar-date">28 - Sat</p>
+					<p class="calendar-event"><a href="#money-smart-kid">How to Raise a Money Smart Kid</a></p>
+					<p class="calendar-event"><a href="#angry-wallets">Angry Wallets</a></p>
+				</div>
+			</div>
+			<div class="event" id="financial-exploitation">
+				<div class="photo"><img src="http://www.peckbloom.com/images/ronald_webb.jpg" /></div>
+				<h2>The Warning Signs of Financial Exploitation</h2>
+				<ul class="details">
+					<li>Presented by Attorney Ron Webb</li>
+					<li>Wednesday, April 25</li>
+					<li>7 - 8:30 p.m.</li>
+				</ul>
+				<p>Financial exploitation was the leading type of elder abuse in 2011. What are the red flags to alert you someone may be preying on an older adult's accounts? Learn how you can report elder abuse to the proper authorities and the advanced planning techniques available to protect your older adult loved one from devastating financial exploitation. Peck Bloom, LLC was hired by the City of Chicago's Department on Aging to help re-write the Elder Abuse and Neglect Act and has years of experience combating elder abuse in the courtroom and training the public to protect themselves against abusers.</p>
+				<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=16191">Register here</a></p>
+				<p><a href="#top" class="up"></a></p>
+			</div>
+			<div class="event" id="identity-theft">
+				<h2>Identity Theft and Fraud</h2>
+				<ul class="details">
+					<li>Presented by Robert Dulski</li>
+					<li>Thursday, April 26</li>
+					<li>7 &ndash; 9 p.m.</li>
+				</ul>
+				<p>With residents struggling to make ends meet, Take Charge Illinois offers a Financial Workshop on Identity Theft and Fraud. Learn how to:</p>
+				<ul>
+					<li>Identify potential scams and frauds
+					<li>Protect and prepare yourself against Identity Theft</li>
+					<li>Address concerns if you have been a victim of Identity Theft</li>
+				</ul>
+				<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=16193">Register here</a></p>
+				<p><a href="#top" class="up"></a></p>
+			</div>
+			<div class="event" id="money-smart-kid">
+				<h2>How to Raise a Money Smart Kid</h2>
+				<ul class="details">
+					<li>Presented by Nancy Reiser</li>
+					<li>Saturday, April 28</li>
+					<li>10 &ndash; 11:30 a.m.</li>
+				</ul>
+				<p>A Piggy Bank Is Just The First Step - Giving your children or grandchildren a primer on money management skills can have a positive effect their entire lives. Invest your time today to benefit your family's future. During this seminar, you'll learn how to start teaching your child or grandchild about financial goal-setting, self-discipline and the basics of making wise money choices.</p>
+				<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=16190">Register here</a></p>
+				<p><a href="#top" class="up"></a></p>
+			</div>
+			<div class="event" id="angry-wallets">
+				<h2>Angry Wallets</h2>
+				<ul class="details">
+					<li>Presented by Adam Vernola</li>
+					<li>Saturday, April 28</li>
+					<li>2 &ndash; 4 p.m.</li>
+				<p>The Angry Wallets are here, and they hate careless spending! In a world of credit cards, e-checks, and online payments, it can be difficult to teach your kids the true value of spending money. Fear not, our Angry Wallets program is a real-life smartphone app inspired event for families with children grades 2-6.</p>
+				<p>You and your children will help the angry wallets solve real-life money puzzles, collect achievements, and win a special prize (while supplies last)!</p>
+				<p style="font-style: oblique;">This is a drop-in event, no registration is required.</p>
+				<p><a href="#top" class="up"></a></p>
+			</div>
+			<div class="event">
+				<div class="photo"><img src="/images/reference/money-smart.png" /></div>
+				<h2>Money Smart Week Training Session</h2>
+				<p>Looking for more?</p>
+				<p>Morningstar Investment Research Center will present two training sessions to help you be a better investor. The sessions can be viewed directly from home!</p>
+				<p><a href="/reference/downloads/Morningstar%20Money%20Smart%20Week.pdf">Click here for details</a></p>
+			</div>
+		</div>
+		<div id="footer">
+			<p>For more information, please call the reference desk at 847-376-2841.</p>
+			<p>Des Plaines Public Library, 2012</p>
+		</div>
+	</div>
+</body>
+	
