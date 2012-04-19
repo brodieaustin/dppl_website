@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SAMPLE FORM</title>
+<meta charset="UTF-8" />
+
+<style type="text/css">
+html{background-color: #e8e8e8;}
+		body{width: 80%; min-height: 600px; margin: 2em auto; background-color: #f8f8f8; border-color: #c8c8c8; padding: 2em 3em; font-family: Arial, sans-serif;}
+		h1{text-shadow: 0 4px 4px #fff; margin-bottom: 1em;}
+		div{margin: 0 0 1em 0;}
+		div#header, div#instructions, form {margin: 2em 0; padding: 2em 2em 1em 2em; background-color: #fff; border-radius: 5px;}
+		div#response{display: none; border-top: 1px dotted #000;}
+		div#response-text{margin: 1em 0; padding: .5em; border: 1px dotted #e8e8e8; border-bottom: 1px dotted #e8e8e8;}
+		input[type=text]{width: 55%;}
+		textarea{width: 98%; height: 200px;}
+		form div{clear: left; padding-top: 1em;}
+		form p{clear: both;}
+		label{display: block; width: 15%; float: left; clear: left; margin-bottom: .5em; line-height: 1.5em;}
+		label.wide{float: none; width: 80%;}
+		div p{margin-top: 0;}
+		ul li{margin-bottom: 1em; line-height: 1.25em;}
+		input[type=button], input[type=submit]{color: #333;	background-color: #f8f8f8;	font-weight: normal;	padding: 4px 7px;	border: 1px solid #c8c8c8;	border-radius: 4px;	-webkit-border-radius: 4px;	-moz-border-radius: 4px;	cursor: pointer;}
+		input[type=button]:hover, input[type=submit]:hover{background-color: #888; color: #fff;}
+</style>
+
+<script>
+	window.onload = function(){
+		var form = document.getElementById('example');
+		var response = document.getElementById('response');
+		var submit = document.getElementById('submit-form');
+		var text = '';
+		
+		submit.onclick = function(){
+			
+			function getWhy(){
+				for (i = 0; i < form.elements['why-internet'].length; i++){
+					if (form.elements['why-internet'][i].checked){
+						return form.elements['why-internet'][i].value;
+					}
+					else
+						return '';
+				}
+			};
+			
+			var why = getWhy();
+			
+			response.innerHTML = '';
+			response.style.display = 'block';
+			text = 'First Name: ' + form.elements['first-name'].value;
+			text = text + '<br />Last Name: ' + form.elements['last-name'].value;
+			text = text + '<br />City: ' + form.elements['city'].value;
+			text = text + "<br />Teacher's Name: " + form.elements['teacher-name'].value;
+			text = text + '<br /><br />Why do you want to use the Internet?<br /> ' + why;
+			text = text + "<br /><br />How did you learn about the class? <br /> " + form.elements['refer'].value;
+			text = text + '<br /><br />Oranges? ' + form.elements['oranges'].checked;
+			text = text + '<br />Pineapples? ' + form.elements['pineapple'].checked;
+			text = text + '<br />Peaches? ' + form.elements['peaches'].checked;
+			text = text + '<br />Blueberries? ' + form.elements['blueberries'].checked;
+			
+			response.innerHTML = text;
+			
+			return false;
+		};
+	};
+</script>
+
+
+</head>
+<body>
+
+<h1>Filling out forms</h1>
+	<div id="header">
+		<p><strong>Believe it or not, surfing the Net requires you to fill out a lot of forms!</strong></p>
+		<p>Some will be short forms that are easy to fill out. Others will be complicated and will require a lot of patience to complete.</p>
+	</div>
+<h2>Sample Form Exercise</h2>
+	<div id="instructions">
+		<p>Fill out this sample form.</p> 
+		<p>Start by typing inside the boxes. Click in the first box so that you see a blinking cursor. Move from box to box by clicking inside each box or just hit the <strong>Tab</strong> key.</p>
+		<p>This form also requires you to make multiple choice selections in three different ways.</p> 
+		<ul>
+			<li>The round circles are called <strong> radio buttons</strong>. Click inside the button to make your choice.</li>
+			<li>The box labeled &quot;Select&quot; is called a <strong>pull down menu</strong> or <strong>pull down box</strong>. Click on the box and a list appears. As you move your cursor up and down the list, the item underneath your cursor is highlighted. Click on your choice and and it moves up the list to appear in the box.</li>
+			<li>The next selection will be made by cliking in the <strong>check boxes</strong>. Unlike the <strong>radio buttons</strong>, the <strong>check boxes</strong> allow you to make more than one choice. You can also uncheck, or <strong>deselect</strong> your choices.</li>
+		</ul>
+		<p>When you are done, click on the <strong>Submit form</strong> button.</p> 
+	</div>
+	<form id="example" method=""  action="">
+		<div>
+			<label for="first-name">First Name:</label>
+			<input type="text" id="first-name" name="first-name" tabindex="1" />
+		</div>
+		<div>
+			<label for="last-name">Last Name:</label>
+			<input type="text" id="last-name" name="last-name" tabindex="2" />
+		</div>
+		<div>
+			<label for="city">City:</label>
+			<input type="text" id="city" name="city" tabindex="3" />
+		</div>
+		<div>
+			<label for="teacher-name">Teacher's name:</label>
+			<input type="text" id="teacher-name" name="teacher-name" tabindex="4" />
+		</div>
+		<div>
+		<p>Why do you want to use the Internet?</p>
+			<label for="why-internet-fun" class="wide"><input type="radio" id="why-internet-fun" name="why-internet" value="Mostly for fun" tabindex="5" />Mostly for fun</label>
+			<label for="why-internet-work" class="wide"><input type="radio" id="why-internet-work" name="why-internet" value="I have to learn for work" tabindex="6" />I have to learn for work</label>
+			<label for="why-internet-news" class="wide"><input type="radio" id="why-internet-news" name="why-internet" value="To get news and information" tabindex="7" />To get news and information</label>
+			<label for="why-internet-all" class="wide"><input type="radio" id="why-internet-all" name="why-internet" value="All of the above" tabindex="8" />All of the above</label>
+		</div>
+		<div>
+			<label for="refer" class="wide">How did you learn about this class?</label>
+			<select id="refer" name="refer" tabindex="9">
+				<option value='' selected="selected">--- Select ---</option>
+				<option value="Library newsletter">Library newsletter</option>
+				<option value="Poster or flyer in the library">Poster or flyer in the library</option>
+				<option value="A friend or relative told me">A friend or relative told me</option>
+				<option value="The library web site">The library web site</option>
+			</select>
+		</div>
+		<div>
+			<p>What kinds of fruit do you like?</p>
+			<label for="oranges" class="wide"><input type="checkbox" id="oranges" name="oranges" tabindex="10" />Oranges</label>
+			<label for="pineapple" class="wide"><input type="checkbox" id="pineapple" name="pineapple" tabindex="11" />Pineapple</label>
+			<label for="peaches" class="wide"><input type="checkbox" id="peaches" name="peaches" tabindex="12" />Peaches</label>
+			<label for="blueberries" class="wide"><input type="checkbox" id="blueberries" name="blueberries" tabindex="13" />blueberries</label>
+		</div>
+		<div>
+			<p>Press submit to see your answers below</p>
+			<input type="button" value="Submit" id="submit-form" tabindex="15" />
+		</div>
+		<div id="response"></div>
+	</form>
+	
+<h2>Some tips to remember:</h2>
+<ul>
+	<li>Most web sites will alert you if you make any errors or forget to fill out any part of the form.</li>
+	<li>Many of the forms you fill out will take you to a new page in the web site when you click <strong>Submit</strong> or press <strong>Enter</strong>. In our case your choices appear in the box at the bottom of the form.<li>Some forms have a <strong>Reset</strong> button that clears out everything you entered in the form.</li>
+</ul>
