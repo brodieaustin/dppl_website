@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background-color: #E2E2E2;
+	}
+
+body a {
+	color: #003366;
+	font-weight: bold;
+	}
+
+.sitenav {
+	font-family: trebuchet ms;
+	font-size: 15px;
+	}
+	
+.sitenavaddy {
+	font-family: trebuchet ms;
+	font-size: 12px;
+	}
+
+.sitenavlinks li {
+	list-style-type: none;
+	display: inline;
+	margin: 0 15px 0 0;
+	padding: 0;
+	color: black;
+	}
+	
+.sitenavlinks a:link {
+	text-decoration: none;
+	color: #333333;
+	}
+.sitenavlinks a:visited {
+	text-decoration: none;
+	color:#333333;
+	}
+.sitenavlinks a:hover {
+	font-weight: bold;
+	}
+
+
+.sitenavlinks ul {
+	padding: 0;
+	margin: 0;
+	}
+	
+.chalkboardlinks {
+	vertical-align: top;
+	padding: 55px 0 0 20px;
+	color: black;
+	font-family: trebuchet ms;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+.chalkboardlinks a:link {
+	text-decoration: none;
+	color: black;
+	}
+	
+.chalkboardlinks a:visited {
+	text-decoration: none;
+	color: black;
+	}
+	
+.chalkboardlinks a:hover {
+	text-decoration: none;
+	color: #474747;
+	font-weight: bold;
+	padding-left: 3px;
+	}
+	
+.contentbody {
+	font-family: trebuchet ms;
+	font-size: 14px;
+       font-weight: bold;
+	padding-right: 20px;
+	}
+	
+.contentheader {
+	font-family: trebuchet ms;
+	font-size: 16px;
+	font-weight: bold;
+	vertical-align: top;
+	padding: 0px 10px 0 0 ;
+	color: #003366;
+	}
+	
+.contentheader2 {
+	font-family: trebuchet ms;
+	font-size: 16px;
+	font-weight: normal;
+	vertical-align: top;
+	padding: 0px 10px 0 0 ;
+	color: #003366;
+	}
+	
+.teachersanchor {
+	font-size:16px;
+	font-weight: bold;
+	color: red;
+	}
+	
+.subtopic {
+	font-weight: bold;
+	color: #0066CC;
+	font-size: 17px;
+	}
+	
+.subtopic2 {
+	font-weight: bold;
+	color: black;
+	}
+	
+.headertitles {
+	font-weight: bolder;
+	color:  #339999;
+	font-size:30px;
+	}
+
+.SRCheadertitles {
+	font-weight: bolder;
+	color:  #5DFC0A;
+	font-size:30px;
+	}
+	
+.or_table_left {
+	border-top: 1px solid #bebebe;
+	border-left: 1px solid #bebebe;
+	border-bottom: 1px solid #bebebe;
+	padding: 5px;
+	}
+	
+.or_table_right {
+	border-top: 1px solid #bebebe;
+	border-right: 1px solid #bebebe;
+	border-bottom: 1px solid #bebebe;
+	padding: 5px;
+	}
+
+.or_table_click {
+	font-size: 13px;
+	}
+
+.stufftoread_table td {
+	border: 2px solid #c2c2c2;
+	padding: 5px;
+	}
+	
+.useitfromhome_button {
+	border: 1px solid #c2c2c2;
+	}
+	
+/* HOMEWORK HELP PAGE */
+	
+.T10C {
+	text-align: center;
+        font-weight: bold;
+	}
+
+/* En Espanol Page */
+
+.category_titles {
+	font-size: 16px;
+	color: #003366;
+	font-weight: bold;
+	}
+	
+/* Twitter */
+
+.twitter_box {
+	position: absolute;
+	left: 390px;
+	top: 6px;
+	width: 294px;
+	height: 87px;
+}
+
+.twitter_title {
+	font-family: "Comic Sans MS", helvetica;
+	font-size: 14px;
+	font-weight: bold;
+}
+	
+#twitter_update_list {
+	font-family: "Verdana", helvetica;
+	font-size: 13px;
+	list-style-type: none;
+	padding: 0;
+	margin: 7;
+}
+
+/*special style sheet for database listings*/
+
+div#db-list h3{
+    clear: both;
+	border-bottom: 1px solid #036
+}
+
+div#db-list h4{
+  clear: both;
+  margin-top: 1em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 1em;
+}
+
+div.db{
+  overflow: auto;
+  margin-bottom: 2em;
+}
+
+div.db p{
+  float: left;
+  width: 60%;
+  font-size: 1em;
+}
+
+div.db img{
+  float: right;
+}
+
+div#db-list ul li{
+  padding-bottom: 4px;
+  line-height: 1.25em;
+}
+
+div#db-list a.link{
+  text-decoration: none;
+}
