@@ -4,60 +4,64 @@
 	<title>Des Plaines Public Library | Taste</title>
 	<meta name="description" content="Taste theme for Summer 2012">
     <meta name="author" content="Des Plaines Public Library">
+	<link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
 	<style>
-		body{background: url('images/stripey-background.png') top left; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #fff; line-height: 1.25em; position: relative;}
-		a{display: block; padding: .5em; font-size: 80%; background: #9fc54d; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -moz-box-shadow: 1px 31px 1px #1d1d1d; -webkit-box-shadow: 1px 1px 1px #1d1d1d; box-shadow: 1px 1px 1px #1d1d1d; color: #fff; text-decoration: none; width: 40%; text-align: center; margin-top: 2em; cursor: pointer;}
+		body{background: url('images/stripey-background.png') top left; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #fff; line-height: 1.25em;}
+		a{display: block; padding: .5em; font-size: 80%; background: #9fc54d; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -moz-box-shadow: 1px 31px 1px #1d1d1d; -webkit-box-shadow: 1px 1px 1px #1d1d1d; box-shadow: 1px 1px 1px #1d1d1d; color: #fff; text-decoration: none; width: 60%; text-align: center; margin-top: 2em; cursor: pointer;}
 		a:hover{background-color: #c8c8c8;}
 		.hidden{display: none;}
-		div#header{position: fixed; top: 2%; left: 2%; width: 40%; }
-		div#header img.logo{width: 98%;}
-		div#content{float: right; width: 50%; margin-top: 2em; margin-bottom: 2em; margin-right: 1em; padding: .5em 1em; border: 6px solid #fff; background-color: #564c44;  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -moz-box-shadow: 3px 3px 4px #1d1d1d; -webkit-box-shadow: 3px 3px 4px #1d1d1d; box-shadow: 3px 3px 4px #1d1d1d; overflow: auto; }
-		div#content h2{color: #d8de3f; text-shadow: 0 1px 1px #000;}
+		div#container{width: 80%; margin: 0 auto; padding: 1em 3em; position: relative;}
+		div#header{float: left; width: 50%; margin-bottom: 2em;}
+		div#header img.logo{width: 100%;}
+		div.hero{float: left; width: 36.50982%; border: 3px dashed #8bc6ba; margin-top: 4em; margin-left: 3.47666%; padding: 1em 2em; border: 10px solid #564c44; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 120%; background-color: #8bc6ba; font-family: 'Gochi Hand', cursive;}
+		div#content{width: 95.58676%; margin-bottom: 2em;padding: .5em 1em; border: 6px solid #fff; background-color: #564c44;  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -moz-box-shadow: 3px 3px 4px #1d1d1d; -webkit-box-shadow: 3px 3px 4px #1d1d1d; box-shadow: 3px 3px 4px #1d1d1d; overflow: auto; }
+		div#content h2{color: #d8de3f; text-shadow: 0 1px 1px #000; clear: both;}
 		div#content h3{color: #8bc6ba;}
-		div#content div.hero{border: 3px dashed #8bc6ba;margin-top: 1em; padding: 1em 2em; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 120%;}
-		div#main div.info{position: relative; clear: both; min-height: 250px;}
-		div#main div.info img{float: left; width: 40%;}
-		div#main div.info .caption{float: right; width: 55%;}
+		div#main div.info{float: left; width: 33.333333%;position: relative; min-height: 250px;}
+		div#main div.info img{width: 80%; text-align: center;}
+		div#main div.info .caption{width: 85%;}
 	</style>
 </head>
 <body>
-	<div id="header">
-		<h1><span class="hidden">Taste! at the Des Plaines Public Library</span><img src="images/taste-logo.png" alt="Taste Logo" class="logo" /></h1>
-	</div>
-	<div id="content">
-		<div class="hero">
-			<p>There are so many tasty things to do this summer at the Des Plaines Public Library.</p>
-			<p>Whether you are learning about food at an event or reading books to win a prize, you can make your summer a little more delicious!</p>
+	<div id="container">
+		<div id="header">
+			<h1><span class="hidden">Taste! at the Des Plaines Public Library</span><img src="images/taste-logo.png" alt="Taste Logo" class="logo" /></h1>
 		</div>
-		<div id="main">
-			<h2>Summer Reading</h1>
-			<p>Ready for summer reading? Click the program icons below for more information!</p>
-			<div class="info">
-				<img src="images/kiwi.png" alt="Youth Summer Reading logo" />
-				<div class="caption">
-					<h3>Youth Summer Reading</h3>
-					<p>This is summer reading for kids. Read # hours and books and you're eligible for a prize!</p>
-					<p><a href="#">More information</a></p>
-				</div>
+		<div class="hero">
+				<p>There are so many tasty things to do this summer at the Des Plaines Public Library.</p>
+				<p>Whether you are learning about food at an event or reading books to win a prize, you can make your summer a little more delicious!</p>
 			</div>
-			<div class="info">
-				<img src="images/teen-src-logo.png" alt="Teen Summer Reading logo" />
-				<div class="caption">
-					<h3>Teen Summer Reading</h3>
-					<p>This is summer reading for teens. Read # hours and books and you're eligible for a prize!</p>
-					<p><a href="#">More information</a></p>
+		<div id="content">
+			<div id="main">
+				<h2>Summer Reading</h1>
+				<p>Ready for summer reading? Click the program icons below for more information!</p>
+				<div class="info">
+					<img src="images/kiwi.png" alt="Youth Summer Reading logo" />
+					<div class="caption">
+						<h3>Youth Summer Reading</h3>
+						<p>This is summer reading for kids. Read # hours and books and you're eligible for a prize!</p>
+						<p><a href="#">More information</a></p>
+					</div>
 				</div>
-			</div>
-			<div class="info">
-				<img src="images/adult-src-logo.png" alt="Adult Summer Reading logo" />
-				<div class="caption">
-					<h3>Adult Summer Reading</h3>
-					<p>This is summer reading for adults. Read # hours and books and you're eligible for a prize!</p>
-					<p><a href="#">More information</a></p>
+				<div class="info">
+					<img src="images/teen-src-logo.png" alt="Teen Summer Reading logo" />
+					<div class="caption">
+						<h3>Teen Summer Reading</h3>
+						<p>This is summer reading for teens. Read # hours and books and you're eligible for a prize!</p>
+						<p><a href="#">More information</a></p>
+					</div>
 				</div>
+				<div class="info">
+					<img src="images/adult-src-logo.png" alt="Adult Summer Reading logo" />
+					<div class="caption">
+						<h3>Adult Summer Reading</h3>
+						<p>This is summer reading for adults. Read # hours and books and you're eligible for a prize!</p>
+						<p><a href="#">More information</a></p>
+					</div>
+				</div>
+				<h2>Events</h2>
+					<p>Be sure to checkout our events calendar for "Taste" themed events throughout the summer</p>
 			</div>
-			<h2>Events</h2>
-				<p>Be sure to checkout our events calendar for "Taste" themed events throughout the summer</p>
 		</div>
 	</div>
 </body>
