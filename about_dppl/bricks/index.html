@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+	<title>Des Plaines Public Library | Plaza Bricks</title>
+	<style>
+		body{background-color: #f8f8f8; width: 70%; margin: 0 auto;}
+		div#header{margin-bottom: 2em;}
+		div#forms{float: left; width: 20%; margin-right: 4em;}
+		div#forms h2{margin-top: 0; clear: both;}
+		div#forms input[type="button"], div#forms input[type="submit"]{width: 4em; clear: right; margin-bottom: .5em; padding: .5em 1em; border-radius: 5px; background-color: #c8c8c8; color: #fff; border: 0; text-align: center; cursor: pointer;}
+		div#forms #search input[type=text]{border: 1px solid #c8c8c8; padding: .25em;}
+		div#forms input#search-button{width: 5em; float: right;}
+		div#forms input[type="button"]:hover{background-color: #888;}
+		table#results{float: left; width: 60%; margin-bottom: 2em;}
+		table#results th{text-align: left;}
+		div#help{display: none; width: 90%; margin: 2em auto; padding: 1em; border: 1px dotted #c8c8c8;}
+	</style>
+	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){ 
+			$.getJSON('bricks.php', function(data) {
+				  var items = [];
+
+				  $.each(data.bricks, function(key, val) {
+				  	items.push('<tr class="' + val.location + '"><td>' + val.inscription + '</td><td>' + val.location + '</td></tr>');
+				  });
+				  
+				  $('#results>tbody').append(items.join(' '));
+
+			});
+			$('#search').submit(function(){
+				var param = $('#search-term').val();
+				
+				$.getJSON('bricks.php', {
+							param: param,
+							type: 'search'
+						},
+						function(data) {
+							var items = [];
+						
+							console.log(data);
+						
+							$('#results>tbody').empty();
+
+							$.each(data.bricks, function(key, val) {
+							items.push('<tr class="' + val.location + '"><td>' + val.inscription + '</td><td>' + val.location + '</td></tr>');
+							});
+
+							$('#results>tbody').append(items.join(' '));
+
+					});
+				
+					return false;
+			
+			});
+			
+			$('#filters>input').click(function(){
+				var param = $(this).attr('id');
+				var type = $(this).attr('class');
+				
+				console.log(param, type);
+				
+				$.getJSON('bricks.php', {
+						param: param,
+						type: type
+					},
+					function(data) {
+						var items = [];
+						
+						console.log(data);
+						
+						$('#results>tbody').empty();
+
+						$.each(data.bricks, function(key, val) {
+						items.push('<tr class="' + val.location + '"><td>' + val.inscription + '</td><td>' + val.location + '</td></tr>');
+						});
+
+						$('#results>tbody').append(items.join(' '));
+
+				});
+				
+				return false;
+			});
+			
+			$('#show-help').click(function(){
+				if ($('#help').is(':visible')){
+					$('#help').slideUp(500);
+					$(this).html('Show help');
+				}
+				else{
+					$('#help').slideDown(500);
+					$(this).html('Hide help');
+				}
+			
+			});
+		}); 
+	</script>
+</head>
+<body>
+	<div id="header">
+		<h1>Library Plaza Bricks</h1>
+		<p><a href="#" id="show-help">Show help</a></p>
+	</div>
+	<div id="help">
+		<img src="http://www.dppl.org/images/about_dppl/BrickPillars.jpg" style="text-align: center;" />
+		<p>To find a brick on the library plaza, you can scroll through the list or use the searching and filtering options to the left. Once you have found your inscription, take note of the location in the second column. "P" stands for pillar and "FD" is front door. Face the library building, and start counting the pillars from left to right (1 through 9)  to find the general location of your brick. For example, P3 means your brick is in the area in front of the third pillar from the left. FP (which is not on the image) means your brick is by the flag pole.</p>
+	</div>
+	<div id="forms">
+		<form id="search">
+			<h2>Search</h2>
+				<input type="text" id="search-term" class="inscription" />
+				<input type="submit" id="search-button" class="inscription" value="Search" />
+		</form>
+		<form id="filters">
+			<h2>Filters</h2>
+				<h3>Locations</h3>
+					<input type="button" id="FD" class="location" value="FD" />
+					<input type="button" id="P1" class="location" value="P1" />
+					<input type="button" id="P2" class="location" value="P2" />
+					<input type="button" id="P3" class="location" value="P3" />
+					<input type="button" id="P4" class="location" value="P4" />
+					<input type="button" id="P5" class="location" value="P5" />
+					<input type="button" id="P6" class="location" value="P6" />
+					<input type="button" id="P7" class="location" value="P7" />
+					<input type="button" id="P8" class="location" value="P8" />
+					<input type="button" id="P9" class="location" value="P9" />
+				<h3>Alpha</h3>
+					<input type="button" id="A" class="inscription" value="A" />
+					<input type="button" id="B" class="inscription" value="B" />
+					<input type="button" id="C" class="inscription" value="C" />
+					<input type="button" id="D" class="inscription" value="D" />
+					<input type="button" id="E" class="inscription" value="E" />
+					<input type="button" id="F" class="inscription" value="F" />
+					<input type="button" id="G" class="inscription" value="G" />
+					<input type="button" id="H" class="inscription" value="H" />
+					<input type="button" id="I" class="inscription" value="I" />
+					<input type="button" id="J" class="inscription" value="J" />
+					<input type="button" id="K" class="inscription" value="K" />
+					<input type="button" id="L" class="inscription" value="L" />
+					<input type="button" id="M" class="inscription" value="M" />
+					<input type="button" id="N" class="inscription" value="N" />
+					<input type="button" id="O" class="inscription" value="O" />
+					<input type="button" id="P" class="inscription" value="P" />
+					<input type="button" id="Q" class="inscription" value="Q" />
+					<input type="button" id="R" class="inscription" value="R" />
+					<input type="button" id="S" class="inscription" value="S" />
+					<input type="button" id="T" class="inscription" value="T" />
+					<input type="button" id="U" class="inscription" value="U" />
+					<input type="button" id="V" class="inscription" value="V" />
+					<input type="button" id="W" class="inscription" value="W" />
+					<input type="button" id="X" class="inscription" value="X" />
+					<input type="button" id="Y" class="inscription" value="Y" />
+					<input type="button" id="Z" class="inscription" value="Z" />
+		</form>
+	</div>
+	<h2>Results</h2>
+	<table id="results">
+		<thead>
+			<tr><th>Inscription</th><th>Location</th></tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<div id="footer"></div>
+</body>
+</html>
