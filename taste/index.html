@@ -10,16 +10,16 @@
 		a:hover{color: #c8c8c8; border-bottom: 1px dotted #c8c8c8;}
 		a.button{display: block; width: 130px; padding: .5em 1em; font-size: 80%; border: 0; background: #9fc54d; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -moz-box-shadow: 1px 31px 1px #1d1d1d; -webkit-box-shadow: 1px 1px 1px #1d1d1d; box-shadow: 1px 1px 1px #1d1d1d; color: #fff; text-decoration: none; margin-top: 2em; cursor: pointer; text-shadow: 0 1px 1px #9fc54d;}
 		a.button:hover{background-color: #c8c8c8;}
-		hr {width: 90%; clear: both; border-top: 1px solid #fff; border-bottom: 1px solid #000; margin: 2em auto;}
+		hr {width: 100%; clear: both; border: 0; height: 2.5em;}
 		.hidden{display: none;}
 		div#container{width: 960px; margin: 0 auto;}
 		div#header{float: left; width: 488px; margin-bottom: 2em;}
 		div#header img.logo{width: 100%;}
 		div.hero{float: left; width: 332px; margin-top: 6em; margin-left: 4em; padding: 1em 2em; border: 6px solid #fff; background-color: #564c44;  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -moz-box-shadow: 3px 3px 4px #1d1d1d; -webkit-box-shadow: 3px 3px 4px #1d1d1d; box-shadow: 3px 3px 4px #1d1d1d; display: none;}
-		div#main{clear: both; width: 95.58676%; margin-bottom: 1em; padding: .5em 1em; border: 6px solid #fff; background-color: #564c44;  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -moz-box-shadow: 3px 3px 4px #1d1d1d; -webkit-box-shadow: 3px 3px 4px #1d1d1d; box-shadow: 3px 3px 4px #1d1d1d; overflow: auto;}
+		div#main{clear: both; width: 95.58676%; margin-bottom: 1em; padding: .5em 1em; border: 6px solid #fff; background: #564c44;  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -moz-box-shadow: 3px 3px 4px #1d1d1d; -webkit-box-shadow: 3px 3px 4px #1d1d1d; box-shadow: 3px 3px 4px #1d1d1d; position: relative; z-index: 50; overflow-y: auto; overflow-x: hidden;}
 		div#main h2{color: #d8de3f;}
 		div#main h3{color: #8bc6ba;}
-		div#main div.info{float: left; width: 33.333333%;position: relative;margin-bottom: 2em;}
+		div#main div.info{float: left; width: 33.333333%;position: relative;}
 		div#main div.info img{width: 80%; text-align: center;}
 		div#main div.info .caption{width: 85%;}
 	</style>
@@ -32,7 +32,8 @@
 		<div class="hero"></div>
 		<div id="main">
 			<h2>What are you hungry for?</h2>
-				<p>There are so many tasty things to do this summer at the <a href="http://www.dppl.org">Des Plaines Public Library</a>. Whether you are learning about food at an event or reading books to win a prize, you can make your summer a little more delicious!</p>
+				<img src="images/utensils.png" alt="utensils" style="position: absolute; top: -.5em; right: -1em; z-index: 10; width: 25%;" />
+				<p style="width: 70%;">There are so many tasty things to do this summer at the <a href="http://www.dppl.org">Des Plaines Public Library</a>. Whether you are learning about food at an event or reading books to win a prize, you can make your summer a little more delicious!</p>
 			<hr />
 			<h2>Summer Reading</h1>
 			<p>Ready for summer reading? Click the below for more information!</p>
@@ -62,8 +63,13 @@
 			</div>
 			<hr />
 			<h2>Events</h2>
-				<p>Be sure to check out events calendar for all of the tasty programming going on around the library this summer. There's plenty to keep your schedule full</p>
-				<p style="width: 30%;"><a href="http://calendar.dppl.org/evanced/lib/eventcalendar.asp" class="button">View events calendar</a></p>
+				<div class="info">
+					<img src="images/pan.png" alt="Pan" />
+				</div>
+				<div style="float: left; width: 60%;">
+					<p>Be sure to check out events calendar for all of the tasty programming going on around the library this summer. There's plenty to keep your schedule full</p>
+					<p style="width: 30%;"><a href="http://calendar.dppl.org/evanced/lib/eventcalendar.asp" class="button">View events calendar</a></p>
+				</div>
 		</div>
 	</div>
 </body>
