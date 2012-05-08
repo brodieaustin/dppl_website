@@ -3,9 +3,13 @@ GENERAL
 */	
 
 BODY {
+width: 800px;
+position: relative;
+margin: 0 auto;
+padding-top: 4em;
 font-family : Helvetica, Arial, sans-serif;
 font-size : 11pt;
-margin-top: 3em;
+
 }
 
 TABLE {
@@ -579,13 +583,11 @@ width: 100%;
 top: 0;
 right: 0;
 padding: 5px;
-padding-right: 18.61%;
 font-family : Helvetica, Arial, sans-serif;
 font-size : 10pt;
 font-weight : normal;
-background-color: #fff;
-border-bottom: 1px solid #009898;
-*border-bottom: 0;
+line-height: 2em;
+z-index: 50;
 }
 
 A.standard {
@@ -805,4 +807,16 @@ div#db-list ul li{
 
 div#db-list a.link{
   text-decoration: none;
+}
+
+#mobile{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: .5em;
+  font-size: 10pt;
+  background: url('../images/phone.png') no-repeat center left;
+  padding-left: 20px;
+  line-height: 2em;
+  z-index: 100;
 }

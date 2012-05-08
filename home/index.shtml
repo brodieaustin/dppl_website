@@ -57,7 +57,7 @@
 <TABLE WIDTH="100%">
 	<TR>
 		<TD></TD>
-		<TD ALIGN="right" CLASS="fontsizeSwitcher"><a href="../mobile" class="standard">DPPL Mobile/Phone</a> &nbsp;&nbsp;&nbsp;&nbsp;Text size: <a href="#" onclick="setActiveStyleSheet('standard'); return false;" CLASS="standard">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('medium'); return false;" CLASS="medium">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('large'); return false;" CLASS="large">&nbsp;A&nbsp;</a>&nbsp;&nbsp;&nbsp;<A HREF="javascript:popUp('index-p.shtml')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT="">Printer-friendly page</A></TD>
+		<TD ALIGN="right" CLASS="fontsizeSwitcher">Text size: <a href="#" onclick="setActiveStyleSheet('standard'); return false;" CLASS="standard">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('medium'); return false;" CLASS="medium">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('large'); return false;" CLASS="large">&nbsp;A&nbsp;</a>&nbsp;&nbsp;&nbsp;<A HREF="javascript:popUp('index-p.shtml')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT="">Printer-friendly page</A></TD>
 	</TR>
 	<TR CLASS="spacer_xsm">
 		<TD>&nbsp;</TD>
