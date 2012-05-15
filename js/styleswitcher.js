@@ -68,7 +68,7 @@ window.onload = function(e) {
   /*added to create boopsie/mobile app message*/
   var p = document.createElement('p');
   p.setAttribute('id', 'mobile');
-  p.innerHTML = 'Get DPPL on the go! <a href="#" class="link">Try our mobile app now!</a>';
+  p.innerHTML = 'Get DPPL on the go. <a href="#" class="link">Try our mobile app now!</a>';
   
   var first = document.body.firstChild;
   document.body.insertBefore(p, first);
