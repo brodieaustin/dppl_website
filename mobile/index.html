@@ -1,75 +1,100 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict //EN" "http://www.w3.org/TR/1999/PR-xhtml1-19991210/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>Des Plaines Public Library &#124; Mobile</title>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta name="author" content="Des Plaines Public Library" />
-		<link type="text/css" rel="stylesheet" href="css/screen.css" media="screen">
-		<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="author" content="Des Plaines Public Library" />
+	<link type="text/css" rel="stylesheet" href="css/screen.css" media="screen">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 </head>
 <body>
 	<div id="header">
-		<h1>Des Plaines Public Library</h1>
+		<a href="index.html"><h1><span class="hidden">Des Plaines Public Library</span></h1></a>
 	</div><!--closing div for header-->
-	<div id="main">
-		<div id="headline">
-			<h1>Welcome!</h1>
-			<p>How can we help?</p>
+	<div id="content">
+		<div class="hero">
+			<div class="image">
+				<img src="images/app_splash_360x360.png" />
+			</div>
+			<div class="text">
+				<h2>Our mobile app is here!</h2>
+				<a href="app.html" title="DPPL App" class="button">Learn more!</a>
+			</div>
 		</div>
-		<h2><a href="http://www.overdrive.com/software/omc/default.aspx">Get your eBooks and audiobook from MyMediaMall on the go! Click to download an Overdrive App for your phone.</a></h2>
-		<h3>Library Catalog</h3>
-			<div id="catalog">
-				<form action="/cgi-bin/Search.pl" method="POST" name="catalog_search">
-					<label for"textfield">Search the catalog:</label>
-					<input type="text" name="textfield" value="Search the Catalog" onclick="this.value='';" />
-					<input type="submit" value="Search" />
-				</form>
-				<ul>
-					<li><a href="http://dppl.bibliocommons.com" title="Library Catalog">Library Catalog</a></li>
-					<li><a href="https://dppl.bibliocommons.com/user/login" title="Account Log in">Log in to My Account</a></li>
-				</ul>
-			</div>
-		<h3>Text a Question</h3>
-			<p>Send a brief question to: <span class="vcard"><span class="tel"><a href="sms:8472208398" title="Text your question (rates apply)">(847) 220-8398</a></span></span></p>
-			<p><i>We will respond during normal business hours.</i></p>
-		<h3><span style="text-transform: none;">e</span>DPPL</h3>
-			<ul class="nofloat">
-				<li><a href="http://www.overdrive.com/software/omc/default.aspx">Overdrive Apps for Smartphones</a></li>
-			</ul>
-		<h3>Mobile Friendly Databases</h3>
-			<ul class="nofloat">
-				<li><a href="http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&profile=mobsmart">EbscoHost Mobile</a></li>
-				<li><a href="http://www.gale.cengage.com/apps/library/?grid=GIN53110">Gale Mobile Apps</a></li>
-				<li><a href="http://www.mangolanguages.com/libraries/products-overview/mango-mobile/">Mango Languages Mobile App</a></li>
-				<li><a href="http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&profile=novmob">NoveList Mobile</a></li>
-				<li><a href="http://vnweb.hwwilsonweb.com.ezproxy.dppl.org/hww/jumpstart.jhtml">Wilson OmniFile Select Plus</a></li>
-				<li><a href="http://www.worldbookonline.com.ezproxy.dppl.org/?subacct=7322">World Book Encyclopedia</a></li>
-			</ul>
-		<h3>Getting Here</h3>
+		<hr />
+			<h2>Apps and Databases</h2>
 			<div>
-				<div class="vcard">
-					<span class="adr">
-						<span class="street-address">1501 Ellinwood Street</span>
-						<span class="locality">Des Plaines, <abbr class="region" title="Illinois">IL</abbr></span>
-						<span class="postal-code">60016</span>
-						<span class="country-name">USA</span>
-					</span>
+				<div>
+					<h3>Mobile Apps</h3>
+						<ul data-role="listview" data-inset="true">
+							<li><a href="app.html">DPPL Mobile App</a></li>
+							<li><a href="http://www.overdrive.com/software/omc/default.aspx">Overdrive Apps for Smartphones</a></li>
+						</ul>
 				</div>
-				<span class="tel"><a href="tel:8478275551">(847) 827-5551</a></span>
+				<div>
+					<h3>Mobile Friendly Databases</h3>
+						<ul data-role="listview" data-inset="true">
+							<li><a href="http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&profile=mobsmart">EbscoHost Mobile</a></li>
+							<li><a href="http://www.gale.cengage.com/apps/library/?grid=GIN53110">Gale Mobile Apps</a></li>
+							<li><a href="http://www.mangolanguages.com/libraries/products-overview/mango-mobile/">Mango Languages Mobile App</a></li>
+							<li><a href="http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&profile=novmob">NoveList Mobile</a></li>
+							<li><a href="http://vnweb.hwwilsonweb.com.ezproxy.dppl.org/hww/jumpstart.jhtml">Wilson OmniFile Select Plus</a></li>
+							<li><a href="http://www.worldbookonline.com.ezproxy.dppl.org/?subacct=7322">World Book Encyclopedia</a></li>
+						</ul>
+				</div>
 			</div>
-		<h3>Hours</h3>
+		<hr />
+		<h2>Getting Here</h2>
 			<div>
-				<span class="days">Monday through Friday</span>
-				<span class="hours">9 a.m. &ndash; 9 p.m.</span>
-				<span class="days">Saturday</span>
-				<span class="hours">9 a.m. &ndash; 5 p.m.</span>
-				<span class="days">Sunday 
-				<span class="hours">1 p.m. &ndash; 5 p.m.</span>
+					<h3>Address</h3>
+					<div class="vcard">
+						<span class="adr">
+							<span class="street-address block">1501 Ellinwood Street</span>
+							<span class="locality block">Des Plaines, <abbr class="region" title="Illinois">IL</abbr></span>
+							<span class="postal-code block">60016</span>
+							<span class="country-name block">USA</span>
+						</span>
+					</div>
+				</div>
+				<div>
+					<h3>Hours</h3>
+					<dl>
+						<dt><span class="days">Monday through Friday</span></dt>
+						<dd><span class="hours">9 a.m. &ndash; 9 p.m.</span></dd>
+					</dl>
+					<dl>
+						<dt><span class="days">Saturday</span></dt>
+						<dd><span class="hours">9 a.m. &ndash; 5 p.m.</span></dd>
+					</dl>
+					<dl>
+						<dt><span class="days">Sunday</dt>
+						<dd><span class="hours">1 p.m. &ndash; 5 p.m.</span></dd>
+					</dl>
+				</div>
+			<hr />
+			<h2>Contact Us</h2>
+				<dl>
+					<dt>Call Us</dt>
+					<dd><span class="vcard"><span class="tel"><a href="tel:8478275551">(847) 827-5551</a></span></span></dd>
+				</dl>
+				<dl>
+					<dt>Text a Question</dt>
+					<dd><span class="vcard"><span class="tel"><a href="sms:8472208398" title="Text your question (rates apply)">(847) 220-8398</a></span></span></dd>
+					<dd>Send us a brief question. We will respond during normal business hours.</dd>
+				</dl>
+				<dl>
+					<dt>Send an email</dt>
+					<dd><a href="mailto:baustin@dppl.org?subject=Question about mobile services">Web Services Librarian</a></dd>
+				</dl>
 			</div>
-	</div>
+		</div>
+	</div><!-- end of content-->
 	<div id="footer">
-		<h1>Des Plaines Public Library</h1>
+		<p><a href="/">Des Plaines Public Library</a></p>
 	</div>
 </body>
 </html>

@@ -1,144 +1,72 @@
-/*Reset*/
-/* http://meyerweb.com/eric/tools/css/reset/ */
-/* v1.0 | 20080212 */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td { margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent; }
-body { line-height:1; }
-ul { list-style:none; }
-blockquote,q { quotes:none; }
-blockquote:before,blockquote:after,q:before,q:after { content:'';content:none; }
-ins { text-decoration:none; }
-del { text-decoration:line-through; }
-table { border-collapse:collapse;border-spacing:0; }
-
 /*Styles for page*/
-body{
-  width: 100%;
-  margin: 0 auto;
-  font-family: Helvetica, Arial, sans-serif;
-  background-color: #fff;
+
+html{
+  background-color: #f8f8f8;
 }
 
-li a{
-  text-decoration: none;
-}
+body{width: 100%; margin: 0; padding: 0; font-size: 125%; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #333;}
+
+li, p, blockquote, dt, dd{line-height: 1.45em;}
 
 .hidden{
-  display: none;
+  display: none !important;
 }
 
 a{
-  color: #da984a;
+  color: #00a89e;
   font-weight: bold;
-  border-bottom: 1px dotted #B07224;
   text-decoration: none;
 }
 
-a:hover{
-  color: #da984a;
+a:hover{color: #c8c8c8; border-bottom: 1px dotted #c8c8c8; }
+
+a.button{display: block; height: auto; width: 40%; padding: .5em; background-color: #00a89e; color: #fff; text-align: center; border-radius: 20px; box-shadow: 1px 1px 4px 0px #ddd;}
+
+a.button:hover{border: 0;}
+
+hr{clear: both; margin: 5% auto; border-top: 1px solid #ccc; border-bottom: 0;}
+
+span.block{display: block;}
+
+#header{width: 100%; 
+text-align: center; 
+background-color: #00a89e;
 }
 
-#header{
-  background-color: #da984a;
-  padding: .25em 1em;
+#header a{
+display: block;
+width: 50%;
+min-height: 60px;
+margin: 0 auto; 
+padding-bottom: 1em; 
+background: url('../images/banner_640x80.png') no-repeat center; 
+background-size: 100%;
 }
+
+#header a:hover{border: 0;}
 
 #header h1{
-  color: #fff;
+  margin: 0; 
+  padding: 0;
 }
 
-#headline{
-  padding: 1em 0 2em 0;
-  overflow: auto;
-}
+#content{margin: 3%; background: #fff; padding: 5%; border: 1px solid #ccc; border-radius: .6em; position: relative; overflow: hidden;}
 
-#headline h1{
-  padding-top: .35em;
-  color: #da984a;
-  font-size: 2em;
-  line-height: 1.15em;
-}
+/*hero unit*/
+#content div.hero .image{float: left; width: 40%; margin-bottom: 5%; margin-right: 6%; text-align: center;}
+#content div.hero .image img{display: block; width: 95%; min-width: 150px; max-width: 300px; margin-left: auto; margin-right: auto;}
+#content div.hero .text{float: left; width: 50%; margin-top: 5%;}
+#content div.hero h2{margin-top: 5%;}
+#content div.hero h3{margin-top: 10%; padding-bottom: .5em; text-transform: uppercase; font-size: 100%; font-weight: normal; border-bottom: 3px solid #C1D72E;}
 
-#headline p{
-  margin-top: .5em;
-  color: #8F8F8F;
-}
 
-#headline img{
+#content .logo{
   float: right;
-  width: 30%;
-}
-
-#main{
-  clear: both;
-  padding: 0 1em 1em 1em;
-  overflow: auto;
-}
-
-#main h2{
-  clear: both;
-  padding: .5em 1em 1em 1em;
-  font-size: 1em;
-  background-color: #da984a;
-  color: #fff;
-  font-size: .8em;
-  line-height: 1.35em;
-}
-
-#main h2 a{
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  border: 0;
-}
-
-#main h3{
-  clear: both;
-  margin-bottom: 1em;
-  padding-top: 2em;
-  color: #666;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.2em;
-  
-}
-
-#main p{
-  margin-bottom: .5em;
-}
-
-#main form{
-  padding: .25em 0 2em 0;
-}
-
-#main form label{
-  display: none;
-}
-
-#main form input{
-  float: left;
-}
-
-#main form input[type="text"]{
-  width: 50%;
-}
-
-#main form input[type="submit"]{
-  border: 1px solid #666;
-  padding: .15em .5em;
-}
-
-#main .logo{
-  float: right;
-  margin: 2em 0 0 1em;
+  margin: -2em 0 0 1em;
   padding: .15em;
 }
 
-#main ol, #main ul{
-  line-height: 1.35em;
-  clear: both;
-}
-
-#main ol{
+#content ol{
   clear: left;
   margin: 1em 0;
   padding-left: 1em;
@@ -146,47 +74,55 @@ a:hover{
   list-style-position: inside;
 }
 
-#main ol li{
+#content ol li{
   padding-bottom: 1em;
 }
-#main ul {
-  padding: .5em 0;
-  overflow: auto;
+
+#content ul li{
+  padding-bottom: 1em;
 }
 
-#main ul li {
-  vertical-align: text-bottom;
-  padding: 0 2em 1em 0;
-}
+#content dl dt, #content dl dd{display: inline; block;}
 
-#main ul li:last-child{
-  padding-bottom: 0;
-}
 
-#main div{
-  margin-bottom: .5em;
-  clear: both;
-}
+/*specific styles for content area*/
 
-#main div span{
-  display: block;
-  padding: .15em 0;
-  font-style: normal;
-}
+/*icon list on app page*/
+#content ul.icons{list-style: none; width: 80%; margin-left: auto; margin-right: auto; margin-top: 2em; padding: 0; }
+#content ul.icons li{height: 70px; margin-bottom: 1em; padding-bottom: 0; padding-left: 100px; line-height: 70px; vertical-align: middle; background-image: url('../images/app-icons.png'); background-repeat: repeat-y;}
+#content ul.icons li.account{background-position: 0px 0px;}
+#content ul.icons li.search{background-position: 0px -70px;}
+#content ul.icons li.edppl{background-position: 0px -140px;}
+#content ul.icons li.events{background-position: 0px -210px;}
+#content ul.icons li.connect{background-position: 0px -280px;}
+#content ul.icons p{display: inline-block; vertical-align: top; margin-left: 3%;}
+
+/*list with download links*/
+#content ul.downloads{list-style: none; padding: 0; padding-bottom: 5%;}
+#content ul.downloads li{float: left; width: 148px; height: 50px; padding-bottom: .5em; vertical-align: middle;}
+#content ul.downloads li p{display: none;}
+#content ul.downloads li a{display: block; height: 45px; width: auto; background-image: url('../images/app-stores.png'); background-repeat: repeat-y;}
+#content ul.downloads a:hover{border:0;}
+#content ul.downloads li a.ios{background-position: 0px 0px;}
+#content ul.downloads li a.android{background-position: 0px -45px;}
+#content ul.downloads li a.other{background-position: 0px -90px;}
+
+/*footer styles*/
 
 #footer{
-  padding: .5em 1em;
+  margin: 0 3%;
 }
 
-#footer h1{
+#footer p a{
   color: #666;
   font-size: .8em;
 }
 
-@media screen and (max-width: 600px){
-  
-  #main form input[type="text"]{
-    width: 70%;
-  }
-
+@media screen and (max-width: 700px){
+ a.button{width: 80% !important; margin: 0 auto;}
+ div#header a{width: 100%; margin: 0;}
+ div.hero h2{text-align: center;}
+ div.hero .image{float: none !important; width: 50% !important; margin-left: auto !important; margin-right: auto !important;}
+ div.hero .text{width: 100% !important; float: none !important; margin-top: 10%; }
+ #content dl dt, #content dl dd{display: block; width: 100%; margin-left: 0;}
 }

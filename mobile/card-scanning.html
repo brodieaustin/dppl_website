@@ -1,23 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict //EN" "http://www.w3.org/TR/1999/PR-xhtml1-19991210/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>Des Plaines Public Library &#124; Mobile &#124; Card Scanning</title>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta name="author" content="Des Plaines Public Library" />
-		<link type="text/css" rel="stylesheet" href="css/card.css" media="screen">
-		<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="author" content="Des Plaines Public Library" />
+	<link type="text/css" rel="stylesheet" href="css/screen.css" media="screen">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 </head>
 <body>
 	<div id="header">
-		<h1>Des Plaines Public Library</h1>
+		<a href="index.html"><span class="hidden">Des Plaines Public Library</span></h1></a>
 	</div><!--closing div for header-->
-	<div id="main">
-		<div id="headline">
-			<h1>Forgot your library card? No Problem!</h1>
-			<p>Now your smartphone can be your library card!</p>
+	<div id="content">
+		<div class="hero">
+			<div class="image">
+				<img src="images/smart-scan.png" />
+			</div>
+			<div class="text">
+				<h2>Forgot your library card? No Problem!</h2>
+				<p>Now your smartphone can be your library card!</p>
+			</div>
 		</div><!--closing div for headline-->
-		<h2>Just follow these steps to install CardStar or Keyring on your phone and add your library card.</h2>
+		<hr />
+		<p>Just follow these steps to install CardStar or Keyring on your phone and add your library card.</p>
 			<h3>Card Star</h3>
 				<img class="logo" src="images/cardstar.png" />
 				<ol>
@@ -28,13 +37,12 @@
 					<li>Enter your library card number in the "Card Number" box (Scanning your card will not work)</li>
 					<li>Touch the check mark in the upper corner to finish</li>
 				</ol>
-				<ul>
-					<li><a href="https://market.android.com/details?id=com.cardstar.android" title="CardStar Android App"><img src="images/android.png" alt="Android Marketplace [logo with link to Card star app]" /><span class="hidden">Android Marketplace</span></a></li>
-					<li><a href="http://itunes.apple.com/app/cardstar/id301460311?mt=8" title="CardStar iPhone App"><img src="images/iphone.jpg" alt="iPhone App Store [logo with link to Card Star app]" /><span class="hidden">iPhone</span></a></li>
+				<ul class="downloads">
+					<li><a href="http://itunes.apple.com/app/cardstar/id301460311?mt=8" title="CardStar Android App" class="ios" ><span class="hidden">iOS App Store</span></a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.cardstar.android" title="CardStar Android App" class="android"><span class="hidden">Google Play Store</span></a></li>
+					<li><a href="http://mycardstar.com/" title="CardStar Other Phone Apps" class="other"><span class="hidden">Other Platforms</span></a></li>
 				</ul>
-				<ul>
-					<li><a href="http://mycardstar.com/" title="CardStar Other Phone Apps">Download for Other Phones</a></li>
-				</ul>
+			<hr />
 			<h3>Key Ring</h3>
 				<img class="logo" src="images/keyring.png" />
 				<ol>
@@ -46,16 +54,14 @@
 					<li>Enter your barcode number in the "Barcode Number" box</li>
 					<li>Touch the "Create Card" button to finish</li>
 				</ol>
-				<ul>
-					<li><a href="market://search?q=pname:com.froogloid.kring.google.zxing.client.android" title="Keyring Android App"><img src="images/android.png" alt="Android Marketplace [logo with link to Card star app]" /><span class="hidden">Android Marketplace</span></a></li>
-					<li><a href="itms://itunes.apple.com/us/app/key-ring-reward-cards/id372547556?mt=8" title="Keyring iPhone App"><img src="images/iphone.jpg" alt="iPhone App Store [logo with link to Card Star app]" /><span class="hidden">iPhone</span></a></li>
-				</ul>
-				<ul>
-					<li><a href="http://keyringapp.com/download" title="Keyring Other Phone Apps">Download for Other Phones</a></li>
+				<ul class="downloads">
+					<li><a href="itms://itunes.apple.com/us/app/key-ring-reward-cards/id372547556?mt=8" title="Keyring Android App" class="ios" ><span class="hidden">iOS App Store</span></a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.froogloid.kring.google.zxing.client.android&hl=en" title="Keyring Android App" class="android"><span class="hidden">Google Play Store</span></a></li>
+					<li><a href="http://keyringapp.com/download" title="CardStar Other Phone Apps" class="other"><span class="hidden">Other Platforms</span></a></li>
 				</ul>
 	</div><!--closing div for main-->
 	<div id="footer">
-		<h1>Des Plaines Public Library</h1>
+		<p><a href="/" title="Des Plaines Public Library">Des Plaines Public Library</a></p>
 	</div>
 </body>
 </html>
