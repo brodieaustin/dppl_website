@@ -1,5 +1,11 @@
 <!--hacking in script and style for simpler jquery drop down nav-->
-	<script src="../js/jquery-1.7.1.min.js"></script>
+	<!--load jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+		    document.write(unescape('%3Cscript src="../js/jquery-1.7.1.min.js" %3E%3C/script%3E'));
+		}
+	</script>
 	<script type="text/javascript" src="../js/jquery.dropdownPlain.js"></script>
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" media="screen, projection"/>
 	<!--[if lte IE 7]>
