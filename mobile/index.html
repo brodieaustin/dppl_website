@@ -5,7 +5,7 @@
 	<title>Des Plaines Public Library &#124; Mobile</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="author" content="Des Plaines Public Library" />
-	<link type="text/css" rel="stylesheet" href="css/screen.css" media="screen">
+	<link rel="stylesheet" href="css/screen.css" media="screen">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -13,70 +13,85 @@
 </head>
 <body>
 	<div id="header">
-		<a href="index.html"><h1><span class="hidden">Des Plaines Public Library</span></h1></a>
+		<a href="index.html" class="banner"><h1><span class="hidden">Des Plaines Public Library</span></h1></a>
+		<div class="navbar">
+			<a class="nav-button" id="nav-button"><!--shamelessly stolen from Twitter bootstrap-->
+				<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+			</a>
+			<ul class="nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="app.html">Mobile App</a></li>
+				<li><a href="card-scanning.html">Card Scanning</a></li>
+				<li><a href="blogs.html">Blogs</a></li>
+			</ul>
+		</div>
 	</div><!--closing div for header-->
 	<div id="content">
 		<div class="hero">
 			<div class="image">
-				<img src="images/app_splash_360x360.png" />
+				<img src="images/boopsie-phone-shadow.png" />
 			</div>
 			<div class="text">
 				<h2>Our mobile app is here!</h2>
+				<p>Check your account, search for books, and more all from your smartphone or tablet!</p>
 				<a href="app.html" title="DPPL App" class="button">Learn more!</a>
 			</div>
 		</div>
 		<hr />
-			<h2>Apps and Databases</h2>
+		<blockquote>Tip: Check out our blogs to keep up with the library, learn about upcoming books, and get an inside peek at what we do.&nbsp;<a href="blogs.html" title="Blogs">Find out more...</a></blockquote>
+		<hr />
+			<h3>Apps and Databases</h3>
 			<div>
-				<div>
-					<h3>Mobile Apps</h3>
-						<ul data-role="listview" data-inset="true">
-							<li><a href="app.html">DPPL Mobile App</a></li>
-							<li><a href="http://www.overdrive.com/software/omc/default.aspx">Overdrive Apps for Smartphones</a></li>
-						</ul>
-				</div>
-				<div>
-					<h3>Mobile Friendly Databases</h3>
-						<ul data-role="listview" data-inset="true">
-							<li><a href="http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&profile=mobsmart">EbscoHost Mobile</a></li>
-							<li><a href="http://www.gale.cengage.com/apps/library/?grid=GIN53110">Gale Mobile Apps</a></li>
-							<li><a href="http://www.mangolanguages.com/libraries/products-overview/mango-mobile/">Mango Languages Mobile App</a></li>
-							<li><a href="http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&profile=novmob">NoveList Mobile</a></li>
-							<li><a href="http://vnweb.hwwilsonweb.com.ezproxy.dppl.org/hww/jumpstart.jhtml">Wilson OmniFile Select Plus</a></li>
-							<li><a href="http://www.worldbookonline.com.ezproxy.dppl.org/?subacct=7322">World Book Encyclopedia</a></li>
-						</ul>
-				</div>
+				<h4>Mobile Apps</h4>
+					<ul>
+						<li><a href="app.html">DPPL Mobile App</a></li>
+						<li><a href="card-scanning.html">SmartScan Your Library Card</a></li>
+						<li><a href="http://www.overdrive.com/software/omc/default.aspx">Overdrive Apps for Smartphones</a></li>
+					</ul>
+			</div>
+			<div>
+				<h4>Mobile Friendly Databases</h4>
+					<ul>
+						<li><a href="http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&profile=mobsmart">EbscoHost Mobile</a></li>
+						<li><a href="http://www.gale.cengage.com/apps/library/?grid=GIN53110">Gale Mobile Apps</a></li>
+						<li><a href="http://www.mangolanguages.com/libraries/products-overview/mango-mobile/">Mango Languages Mobile App</a></li>
+						<li><a href="http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&profile=novmob">NoveList Mobile</a></li>
+						<li><a href="http://vnweb.hwwilsonweb.com.ezproxy.dppl.org/hww/jumpstart.jhtml">Wilson OmniFile Select Plus</a></li>
+						<li><a href="http://www.worldbookonline.com.ezproxy.dppl.org/?subacct=7322">World Book Encyclopedia</a></li>
+					</ul>
 			</div>
 		<hr />
-		<h2>Getting Here</h2>
+			<h3>Getting Here</h3>
 			<div>
-					<h3>Address</h3>
-					<div class="vcard">
-						<span class="adr">
-							<span class="street-address block">1501 Ellinwood Street</span>
-							<span class="locality block">Des Plaines, <abbr class="region" title="Illinois">IL</abbr></span>
-							<span class="postal-code block">60016</span>
-							<span class="country-name block">USA</span>
-						</span>
-					</div>
+				<h4>Address</h4>
+				<div class="vcard">
+					<span class="adr">
+						<span class="street-address block">1501 Ellinwood Street</span>
+						<span class="locality block">Des Plaines, <abbr class="region" title="Illinois">IL</abbr></span>
+						<span class="postal-code block">60016</span>
+						<span class="country-name block">USA</span>
+					</span>
 				</div>
-				<div>
-					<h3>Hours</h3>
-					<dl>
-						<dt><span class="days">Monday through Friday</span></dt>
-						<dd><span class="hours">9 a.m. &ndash; 9 p.m.</span></dd>
-					</dl>
-					<dl>
-						<dt><span class="days">Saturday</span></dt>
-						<dd><span class="hours">9 a.m. &ndash; 5 p.m.</span></dd>
-					</dl>
-					<dl>
-						<dt><span class="days">Sunday</dt>
-						<dd><span class="hours">1 p.m. &ndash; 5 p.m.</span></dd>
-					</dl>
-				</div>
-			<hr />
-			<h2>Contact Us</h2>
+			</div>
+			<div>
+				<h4>Hours</h4>
+				<dl>
+					<dt><span class="days">Monday through Friday</span></dt>
+					<dd><span class="hours">9 a.m. &ndash; 9 p.m.</span></dd>
+				</dl>
+				<dl>
+					<dt><span class="days">Saturday</span></dt>
+					<dd><span class="hours">9 a.m. &ndash; 5 p.m.</span></dd>
+				</dl>
+				<dl>
+					<dt><span class="days">Sunday</dt>
+					<dd><span class="hours">1 p.m. &ndash; 5 p.m.</span></dd>
+				</dl>
+			</div>
+		<hr />
+			<h3>Contact Us</h3>
 				<dl>
 					<dt>Call Us</dt>
 					<dd><span class="vcard"><span class="tel"><a href="tel:8478275551">(847) 827-5551</a></span></span></dd>
@@ -96,5 +111,22 @@
 	<div id="footer">
 		<p><a href="/">Des Plaines Public Library</a></p>
 	</div>
+	<!--load scripts here, including jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+		    document.write(unescape('%3Cscript src="../js/jquery-1.7.1.min.js" %3E%3C/script%3E'));
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('#nav-button').click(function(){
+				$('.nav').slideToggle();
+				
+				return false;
+			});
+		
+		});
+	</script>
 </body>
 </html>

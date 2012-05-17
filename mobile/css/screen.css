@@ -4,9 +4,18 @@ html{
   background-color: #f8f8f8;
 }
 
-body{width: 100%; margin: 0; padding: 0; font-size: 125%; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #333;}
+body{
+  width: 100%; 
+  margin: 0;
+  margin-top: 100px; 
+  padding: 0;
+  font-size: 125%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  color: #333;}
 
 li, p, blockquote, dt, dd{line-height: 1.45em;}
+
+blockquote{padding: 1em; background-color: #333; color: #fff;}
 
 .hidden{
   display: none !important;
@@ -14,13 +23,12 @@ li, p, blockquote, dt, dd{line-height: 1.45em;}
 
 a{
   color: #00a89e;
-  font-weight: bold;
   text-decoration: none;
 }
 
-a:hover{color: #c8c8c8; border-bottom: 1px dotted #c8c8c8; }
+a:hover{color: #aaa; border-bottom: 1px dotted #aaa; }
 
-a.button{display: block; height: auto; width: 40%; padding: .5em; background-color: #00a89e; color: #fff; text-align: center; border-radius: 20px; box-shadow: 1px 1px 4px 0px #ddd;}
+a.button{display: block; width: 30%; height: auto; padding: .5em 1em; background-color: #00a89e; color: #fff; text-align: center; border-radius: 10px; box-shadow: 2px 4px 4px 0px #ddd;}
 
 a.button:hover{border: 0;}
 
@@ -28,29 +36,87 @@ hr{clear: both; margin: 5% auto; border-top: 1px solid #ccc; border-bottom: 0;}
 
 span.block{display: block;}
 
-#header{width: 100%; 
-text-align: center; 
-background-color: #00a89e;
+#header{
+  width: 100%; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center; 
+  background-color: #00a89e;
+  z-index: 100;
+  border-bottom: 1px solid #aaa;
 }
 
 #header a{
-display: block;
-width: 50%;
-min-height: 60px;
-margin: 0 auto; 
-padding-bottom: 1em; 
-background: url('../images/banner_640x80.png') no-repeat center; 
-background-size: 100%;
+  display: block;
+  margin: 0 auto;  
 }
 
-#header a:hover{border: 0;}
+#header a.banner{
+  width: 50%;
+  min-height: 60px;
+  padding-bottom: 1em;
+  background: url('../images/banner_640x80.png') no-repeat center; 
+  background-size: 100%;
+}
+
+#header a.banner:hover{border: 0;}
 
 #header h1{
   margin: 0; 
   padding: 0;
 }
 
-#content{margin: 3%; background: #fff; padding: 5%; border: 1px solid #ccc; border-radius: .6em; position: relative; overflow: hidden;}
+#header .nav{
+  display: none;
+}
+
+#header .nav-button{
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  display: block;
+  width: 70px
+  height: 50px;
+  padding: .2em .3em;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: #333;
+  cursor: pointer;
+}
+
+#header .nav-button .icon-bar{
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 3px 5px;
+  background-color: #ddd;
+  border-radius: 1px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+#header ul.nav{
+  width: 100%;
+  margin: 0;
+  padding: 1em 0;
+  background-color: #333;
+  text-align: left;
+}
+
+#header ul.nav li a{
+  color: #fff;
+  padding: .5em 1em;
+}
+
+#header ul.nav li a:hover{
+  background-color: #ddd;
+  border: 0;
+}
+
+#content{margin: 2% 3%; background: #fff; padding: 5%; border: 1px solid #ccc; border-radius: .6em; position: relative; overflow: hidden; z-index: 50;}
+
+#content h2{font-size: 200%;}
+#content h4{color: #aaa;}
 
 /*hero unit*/
 #content div.hero .image{float: left; width: 40%; margin-bottom: 5%; margin-right: 6%; text-align: center;}
@@ -89,13 +155,13 @@ background-size: 100%;
 
 /*icon list on app page*/
 #content ul.icons{list-style: none; width: 80%; margin-left: auto; margin-right: auto; margin-top: 2em; padding: 0; }
-#content ul.icons li{height: 70px; margin-bottom: 1em; padding-bottom: 0; padding-left: 100px; line-height: 70px; vertical-align: middle; background-image: url('../images/app-icons.png'); background-repeat: repeat-y;}
+#content ul.icons li{height: 70px; margin-bottom: 1em; padding-bottom: 0; padding-left: 100px; line-height: 70px;vertical-align: middle; background-image: url('../images/app-icons.png'); background-repeat: repeat-y;}
 #content ul.icons li.account{background-position: 0px 0px;}
 #content ul.icons li.search{background-position: 0px -70px;}
 #content ul.icons li.edppl{background-position: 0px -140px;}
 #content ul.icons li.events{background-position: 0px -210px;}
 #content ul.icons li.connect{background-position: 0px -280px;}
-#content ul.icons p{display: inline-block; vertical-align: top; margin-left: 3%;}
+#content ul.icons p{display: inline-block; vertical-align: middle;}
 
 /*list with download links*/
 #content ul.downloads{list-style: none; padding: 0; padding-bottom: 5%;}
@@ -119,10 +185,14 @@ background-size: 100%;
 }
 
 @media screen and (max-width: 700px){
+ body{margin-top: 80px;}
  a.button{width: 80% !important; margin: 0 auto;}
- div#header a{width: 100%; margin: 0;}
+ blockquote{margin-left: 0; margin-right: 0;}
+ div#header a.banner{width: 90%; margin: 0; padding-bottom: 0;}
  div.hero h2{text-align: center;}
  div.hero .image{float: none !important; width: 50% !important; margin-left: auto !important; margin-right: auto !important;}
  div.hero .text{width: 100% !important; float: none !important; margin-top: 10%; }
  #content dl dt, #content dl dd{display: block; width: 100%; margin-left: 0;}
+ #content ul.icons {width: 100%;}
+ #content ul.icons li{ line-height: 120%;}
 }

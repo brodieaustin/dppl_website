@@ -5,7 +5,7 @@
 	<title>Des Plaines Public Library &#124; App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="author" content="Des Plaines Public Library" />
-	<link type="text/css" rel="stylesheet" href="css/screen.css" media="screen">
+	<link rel="stylesheet" href="css/screen.css" media="screen">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -13,7 +13,20 @@
 </head>
 <body>
 	<div id="header">
-		<a href="index.html"><h1><span class="hidden">Des Plaines Public Library</span></h1></a>
+		<a href="index.html" class="banner"><h1><span class="hidden">Des Plaines Public Library</span></h1></a>
+		<div class="navbar">
+			<a class="nav-button" id="nav-button"><!--shamelessly stolen from Twitter bootstrap-->
+				<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+			</a>
+			<ul class="nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="app.html">Mobile App</a></li>
+				<li><a href="card-scanning.html">Card Scanning</a></li>
+				<li><a href="blogs.html">Blogs</a></li>
+			</ul>
+		</div>
 	</div><!--closing div for header-->
 	<div id="content">
 		<div class="hero">
@@ -25,20 +38,20 @@
 				<p>Say "hello" to our mobile app. It's fast, convenient, and let's you stay connected with DPPL on the go.</p>
 				<h3>Download it now!</h3>
 				<ul class="downloads">
-					<li><a href="" class="ios"><span class="hidden">iOS App Store</span></a></li>
-					<li><a href="" class="android"><span class="hidden">Google Play Store</span></a></li>
-					<li><a href="" class="other"><span class="hidden">Other Platforms</span></a></li>
+					<li><a href="" title="iOS App Store" class="ios"><span class="hidden">iOS App Store</span></a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.bredir.boopsie.dppl" title="Google Play Store" class="android"><span class="hidden">Google Play Store</span></a></li>
+					<li><a href="http://dppl.boopsie.com" title="Other Phones Apps" class="other"><span class="hidden">Other Phones</span></a></li>
 				</ul>
 			</div>
 		</div>
 		<hr />
 			<h3>What can you do with the app?</h3>
 			<ul class="icons">
-				<li class="account">Renew books</li>
-				<li class="search">Search the catalog</li>
-				<li class="edppl">Download eBooks</li>
-				<li class="events">See upcoming events</li>
-				<li class="connect">Get help</li>
+				<li class="account"><p>Renew books</p></li>
+				<li class="search"><p>Search the catalog</p></li>
+				<li class="edppl"><p>Download eBooks</p></li>
+				<li class="events"><p>See upcoming events</p></li>
+				<li class="connect"><p>Get help</p></li>
 			</ul>
 		<hr />
 		<h3>About the app</h3>
@@ -46,11 +59,28 @@
 			<p>The DPPL app also allows you to stay connected with the library. You can see upcoming events, read our Twitter feed, check us out on Facebook, and read our blogs.</p>
 			<p>If you need help, call us, text us, or email us right from the app!</p>
 		<hr />
-		<h3>Questions?</h3>
+		<h3>Have questions?</h3>
 			<p>Contact the <a href="mailto:baustin@dppl.org?subject=DPPL Mobile App">Web Services Librarian.</a></p>
 	</div><!--end of content-->
 	<div id="footer">
 		<p><a href="/">Des Plaines Public Library</a></p>
 	</div>
+	<!--load scripts here, including jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+		    document.write(unescape('%3Cscript src="../js/jquery-1.7.1.min.js" %3E%3C/script%3E'));
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('#nav-button').click(function(){
+				$('.nav').slideToggle();
+				
+				return false;
+			});
+		
+		});
+	</script>
 </body>
 </html>

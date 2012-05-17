@@ -5,7 +5,7 @@
 	<title>Des Plaines Public Library &#124; Mobile &#124; Card Scanning</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="author" content="Des Plaines Public Library" />
-	<link type="text/css" rel="stylesheet" href="css/screen.css" media="screen">
+	<link rel="stylesheet" href="css/screen.css" media="screen">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -13,7 +13,20 @@
 </head>
 <body>
 	<div id="header">
-		<a href="index.html"><span class="hidden">Des Plaines Public Library</span></h1></a>
+		<a href="index.html" class="banner"><h1><span class="hidden">Des Plaines Public Library</span></h1></a>
+		<div class="navbar">
+			<a class="nav-button" id="nav-button"><!--shamelessly stolen from Twitter bootstrap-->
+				<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+			</a>
+			<ul class="nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="app.html">Mobile App</a></li>
+				<li><a href="card-scanning.html">Card Scanning</a></li>
+				<li><a href="blogs.html">Blogs</a></li>
+			</ul>
+		</div>
 	</div><!--closing div for header-->
 	<div id="content">
 		<div class="hero">
@@ -38,9 +51,9 @@
 					<li>Touch the check mark in the upper corner to finish</li>
 				</ol>
 				<ul class="downloads">
-					<li><a href="http://itunes.apple.com/app/cardstar/id301460311?mt=8" title="CardStar Android App" class="ios" ><span class="hidden">iOS App Store</span></a></li>
-					<li><a href="https://play.google.com/store/apps/details?id=com.cardstar.android" title="CardStar Android App" class="android"><span class="hidden">Google Play Store</span></a></li>
-					<li><a href="http://mycardstar.com/" title="CardStar Other Phone Apps" class="other"><span class="hidden">Other Platforms</span></a></li>
+					<li><a href="http://itunes.apple.com/app/cardstar/id301460311?mt=8" title="iOS App Store" class="ios" ><span class="hidden">iOS App Store</span></a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.cardstar.android" title="Goole Play Store" class="android"><span class="hidden">Google Play Store</span></a></li>
+					<li><a href="http://mycardstar.com/" title="Other Phone Apps" class="other"><span class="hidden">Other Phones</span></a></li>
 				</ul>
 			<hr />
 			<h3>Key Ring</h3>
@@ -55,13 +68,30 @@
 					<li>Touch the "Create Card" button to finish</li>
 				</ol>
 				<ul class="downloads">
-					<li><a href="itms://itunes.apple.com/us/app/key-ring-reward-cards/id372547556?mt=8" title="Keyring Android App" class="ios" ><span class="hidden">iOS App Store</span></a></li>
-					<li><a href="https://play.google.com/store/apps/details?id=com.froogloid.kring.google.zxing.client.android&hl=en" title="Keyring Android App" class="android"><span class="hidden">Google Play Store</span></a></li>
-					<li><a href="http://keyringapp.com/download" title="CardStar Other Phone Apps" class="other"><span class="hidden">Other Platforms</span></a></li>
+					<li><a href="itms://itunes.apple.com/us/app/key-ring-reward-cards/id372547556?mt=8" title="iOS App Store" class="ios" ><span class="hidden">iOS App Store</span></a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.froogloid.kring.google.zxing.client.android&hl=en" title="Google Play Store" class="android"><span class="hidden">Google Play Store</span></a></li>
+					<li><a href="http://keyringapp.com/download" title="Other Phone Apps" class="other"><span class="hidden">Other Phones</span></a></li>
 				</ul>
 	</div><!--closing div for main-->
 	<div id="footer">
 		<p><a href="/" title="Des Plaines Public Library">Des Plaines Public Library</a></p>
 	</div>
+	<!--load scripts here, including jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+		    document.write(unescape('%3Cscript src="../js/jquery-1.7.1.min.js" %3E%3C/script%3E'));
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('#nav-button').click(function(){
+				$('.nav').slideToggle();
+				
+				return false;
+			});
+		
+		});
+	</script>
 </body>
 </html>

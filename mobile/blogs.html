@@ -1,48 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict //EN" "http://www.w3.org/TR/1999/PR-xhtml1-19991210/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>Des Plaines Public Library &#124; Mobile</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="author" content="Des Plaines Public Library" />
-	<link type="text/css" rel="stylesheet" href="css/screen.css" media="screen">
-	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
+	<link rel="stylesheet" href="css/screen.css" media="screen">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	<style>
+		div#blogs{margin: 5% 0;}
+		div.entry{max-height: 400px; margin-bottom: 1em; padding: 1em; border: 1px solid #ccc; border-radius: 10px; overflow: hidden;}
+		div.entry img{display: none;}
+		div.entry a{color: #00a89e !important;}
+		div.entry div.feed-title{font-weight: bold; color: #aaa;}
+		div.entry div.entry-content{margin-top: 1em; font-size: 80%; line-height: 1.5em;}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<a href="index.html" class="banner"><h1><span class="hidden">Des Plaines Public Library</span></h1></a>
+		<div class="navbar">
+			<a class="nav-button" id="nav-button"><!--shamelessly stolen from Twitter bootstrap-->
+				<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+			</a>
+			<ul class="nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="app.html">Mobile App</a></li>
+				<li><a href="card-scanning.html">Card Scanning</a></li>
+				<li><a href="blogs.html">Blogs</a></li>
+			</ul>
+		</div>
+	</div><!--closing div for header-->
+	<div id="content">
+		<div class="hero">
+			<h2>Blogs</h2>
+			<p>Here is a taste of the things we are writing on the web. Like what you see? Click the article title to read more and subscribe to our blogs for regular updates!</p>
+		</div>
+		<hr />
+		<blockquote>Tip: Subscribe to a feed using a reader like Google Reader and have updated content delivered to you!</blockquote>
+		<hr />
+		<div id="blogs"></div>
+	</div>
+	<div id="footer">
+		<p><a href="/" title="Des Plaines Public Library">Des Plaines Public Library</a></p>
+	</div>
+	<!--load scripts here, including jquery from Google cdn, with local fallback-->
 	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
 	<script src="js/feeds.js" type="text/javascript"></script>
-	<script src="../s/jquery-1.7.1.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+		    document.write(unescape('%3Cscript src="../js/jquery-1.7.1.min.js" %3E%3C/script%3E'));
+		}
+	</script>
 	<script>
 	google.load("feeds", "1");
 	google.setOnLoadCallback(drawBlogs);
 	
 	$(document).ready(function(){
+		$('#nav-button').click(function(){
+				$('.nav').slideToggle();
+				
+				return false;
+			});
+	
 		$('#blogs').hide();
 		$('#blogs').fadeIn(2000);
 		$('#blog-list').fadeIn(2000);
 		
 	});
 	</script>
-	<style type="text/css">
-		#headline{background: url('images/blogs.png') no-repeat center right;}
-		div#blogs{margin: 1em 0;}
-		div.entry{padding-bottom: 3em; padding: 1em 0; border-bottom: 10px solid #f8f8f8;}
-		div.entry div.feed-title{font-weight: bold; color: #8F8F8F;}
-		div.entry div.entry-content{margin-top: 1em; font-size: .75em; line-height: 1.5em;}
-	</style>
-</head>
-<body>
-	<div id="header">
-		<h1>Des Plaines Public Library</h1>
-	</div><!--closing div for header-->
-	<div id="main">
-		<div id="headline">
-			<h1>Blogs</h1>
-			<p>Here is a sample of some of the things we are writing on the web.</p>
-		</div>
-		<h2>Tip: Subscribe to a feed using a reader like Google Reader and have updated content delivered to you!</h2>
-		<div id="blogs"></div>
-	</div>
-	<div id="footer">
-		<h1>Des Plaines Public Library</h1>
-	</div>
 </body>
 </html>
