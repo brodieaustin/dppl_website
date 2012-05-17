@@ -579,14 +579,16 @@ FONTSIZE SWITCHER
 
 .fontsizeSwitcher {
 position: absolute;
-width: 100%;
+width: 770px;
 top: 0;
 right: 0;
-padding: 5px;
+padding: 5px 10px;
+padding-right: 10px;
 font-family : Helvetica, Arial, sans-serif;
 font-size : 10pt;
 font-weight : normal;
 line-height: 2em;
+ box-shadow: 0 3px 2px -2px #ccc;
 z-index: 50;
 }
 
@@ -812,7 +814,7 @@ div#db-list a.link{
 #mobile{
   position: absolute;
   top: 0;
-  left: 0;
+  left: 20px;
   margin-top: .5em;
   font-size: 10pt;
   background: url('../images/phone.png') no-repeat center left;
