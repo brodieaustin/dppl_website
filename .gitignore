@@ -1,6 +1,7 @@
 #Ignore folders
 to-process/
 blogs/
+mobile/images/
 
 #Ignore robots.txt file
 robots.txt
