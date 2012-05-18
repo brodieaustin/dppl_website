@@ -825,3 +825,77 @@ div#db-list a.link{
   line-height: 2em;
   z-index: 100;
 }
+
+/*side navigation styles*/
+#side-nav{
+ font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: #inherit;
+}
+
+#side-nav small{display: block; padding-top: 2px; font-size: .7em; color: #888;}
+
+#side-nav ul{
+  margin: 2px 0 14px 0;
+  padding: 0 0 7px 0;
+  list-style: none;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+#side-nav ul.last{
+  border-bottom: 0;
+}
+
+
+#side-nav ul li{
+  margin: 10px 0;
+  padding: 0;
+}
+
+#side-nav ul li a{
+  text-decoration: none !important;
+  padding: 0;
+  display: block;
+  width: 100%;
+  color: #036;
+}
+
+#side-nav ul li a.button{
+  display: block;
+  width: auto;
+  height: auto;
+  padding: .5em 1em;
+  background-color: #00a89e;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px 0px #ddd;
+}
+
+#side-nav ul li a.button:hover{
+  background-color: #036;
+ }
+
+#side-nav ul.social a{
+  background: url('/images/icons/social-media-icons.png');
+  background-repeat: no-repeat;
+  line-height: 16px;
+  padding-left: 24px;
+}
+
+#side-nav ul.social a.facebook{
+	background-position: 0px 0px;
+}
+
+#side-nav ul.social a.twitter{
+	background-position: 0px -16px;
+}
+
+#side-nav ul.social a.tumblr{
+	background-position: 0px -32px;
+}
+
+#side-nav ul.social a.rss{
+	background-position: 0px -48px;
+}
