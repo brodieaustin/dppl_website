@@ -7,6 +7,7 @@
 		}
 	</script>
 	<script type="text/javascript" src="../js/jquery.dropdownPlain.js"></script>
+	<script type="text/javascript" src="../js/jquery.search.js"></script>
 	<link rel="stylesheet" href="../css/menu/style.css" type="text/css" media="screen, projection"/>
 	<!--[if lte IE 7]>
         <link rel="stylesheet" type="text/css" href="../css/menu/ie.css" media="screen" />
