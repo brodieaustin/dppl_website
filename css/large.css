@@ -690,51 +690,58 @@ background-color : #660099;
 text-decoration : none;
 }
 
-/*trying out menu stuff*/
-div#catalog{
-  float: right;
-  width: 90%;
-  margin-top: 3.5em;
-}
-
-div#catalog ul{
-  padding-top: 1em;
-  padding-left: 1px;
-}
-
-div#catalog ul li{
-  display: inline;
+/*search*/
+div#search{
+  width: 350px;
   float: left;
-  margin-bottom: .75em;
-  margin-right: 3.2em;
+  margin-top: 3.5em;
+  margin-left: 34px;
 }
 
-div#catalog label{
+div#search label{
   display: none;
 }
 
-div#catalog input#search-catalog-text{
-  display: block;
+div#search select#search-type{
+  display: inline-block;
   float: left;
-  width: 75.94%;
-  margin: 0 5px; 
+  width: 80px;
+  height: 26px;
+  margin: 0; 
   padding: 4px;
   *padding: 0; /*ie hack*/
-  border: 1px solid #303030;
+  background-color: #f8f8f8;
+   border: 1px solid #c8c8c8;
+  color: #999;
+}
+
+div#search input#search-text{
+  display: inline-block;
+  float: left;
+  width: 180px;
+  height:26px;
+  margin: 0 6px 0 0; 
+  padding: 4px;
+  *padding: 0; /*ie hack*/
+  border: 1px solid #c8c8c8;
+  border-left: 0;
   color: #666;
 }
 
-div#catalog input#search-catalog-button{
-  display: block;
+div#search input.search-button{
+  display: inline-block;
   float: left;
-  width: 20%;
-  min-height: 26px;
+  width: 80px;
+  height: 26px;
+  line-height: 26px;
+  vertical-align: middle;
   margin: 0; 
-  padding: 2px 4px 4px 4px;
+  padding: 0 4px 4px 4px;
   border: 0;
   *padding: 0; /*ie hack*/
   background-color: #036;
   color: #fff;
+   cursor: pointer;
 }
 
 /*styles for board meeting tables*/
