@@ -1,11 +1,11 @@
-<!--<form action="/ref/ibfullsearch2.html" method="post">-->
-<div id="catalog">
-	<!--<ul>
-		<li><a href="http://dppl.bibliocommons.com" title="Library Catalog" class="link_xsm">myCatalog</a></li>
-		<li><a href="https://dppl.bibliocommons.com/user/login" title="Account Log in" class="link_xsm">Log in to My Account</a></li>
-	</ul>-->
-    <form action="http://www.dppl.org/cgi-bin/Search.pl" method="POST" name="catalog_search" id="catalog-search">
-        <label for"textfield">Search the catalog:</label><input type="text" name="textfield" value="Search the catalog for..." onclick="this.value='';" id="search-catalog-text"/>
-        <input type="submit" value="Search" id="search-catalog-button" /></div>
+<div id="search">
+	<noscript>This search function requires that Javascript is enabled. Please go to your brower's option and turn Javascript on before searching</noscript>
+    <form name="search" id="search-form" style="width: 100%; text-align: left;">
+    	<select id="search-type" name="search-type" style="float: left;">
+    		<option value="catalog">Catalog</option>
+    		<option value="site">Site</option>
+    	</select>
+        <input type="text" name="search-text" value="Search for..." id="search-text" style="float: left;" />
+        <input type="submit" value="Search" class="submit-button" />
     </form>
 </div>
