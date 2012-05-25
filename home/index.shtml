@@ -147,7 +147,7 @@
 	var feedControl = new google.feeds.FeedControl();
 	    
 	// Add two feeds.
-	feedControl.addFeed("http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=&lib=0&nd=4&feedtitle=Des+Plaines+Public+Library%3CBR%3ESchedule+of+Events&dm=rss2&LangType=0&fe=1", "");
+	feedControl.addFeed("http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=&lib=0&nd=10&feedtitle=Des+Plaines+Public+Library%3CBR%3ESchedule+of+Events&dm=rss2&LangType=0&fe=1", "");
 
 	feedControl.setNumEntries(10)
 	    
