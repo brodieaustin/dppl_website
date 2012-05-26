@@ -5,6 +5,9 @@ blogs/
 #Ignore robots.txt file
 robots.txt
 
+#ignore htaccess files
+.htaccess
+
 # ignore OS generated files
 .DS_Store*
 ehthumbs.db
