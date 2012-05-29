@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>404 | Des Plaines Public Library</title>
+	<style>
+		body{width: 70%; min-height: 250px; margin: 2em auto; padding: 1em 2em; border: 1px solid #399; font-family: Helvetica, Arial, sans-serif;}
+		#search{margin: 3em;}
+	</style>
+</head>
+<body>
+<h1>Uh, oh</h1>
+<p>We're sorry that you didn't find what you were looking for. Try searching for it instead...</p>
+<div id="search">
+	<noscript>This search function requires that Javascript is enabled. Please go to your brower's option and turn Javascript on before searching</noscript>
+    <form name="search" id="search-form" style="width: 100%; text-align: left;">
+    	<select id="search-type" name="search-type" style="float: left;">
+			<option value="site">Site</option>
+    		<option value="catalog">Catalog</option>
+    	</select>
+        <input type="text" name="search-text" value="Search for..." id="search-text" style="float: left;" />
+        <input type="submit" value="Search" class="submit-button" />
+    </form>
+</div>
+<p>You can also <a href="mailto:baustin@dppl.org?subject=Website Help">email the Web Services Librarian</a> for help</p>
+<!--load jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+		    document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js" %3E%3C/script%3E'));
+		}
+	</script>
+	<script type="text/javascript" src="js/jquery.search.js"></script>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-2123354-11");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+	</script>
+</body>
+</html>
