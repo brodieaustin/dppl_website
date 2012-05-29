@@ -902,3 +902,27 @@ div#db-list a.link{
 #side-nav ul.social a.rss{
 	background-position: 0px -48px;
 }
+
+/*slides / home page stuff*/
+#rss-blogs .gfc-resultsRoot{margin-bottom: 10px !important;}
+.gfc-resultsheader{border: 0 !important;}
+.gfc-title{color: #000 !important; font-size: 1em;}
+.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
+.gf-title a{color: #003366 !important;}
+#rss-events .gfc-result{ padding: 5px;}
+#rss-events .gfc-result:nth-child(odd){background-color: #f8f8f8 !important;}
+#rss-blogs .gf-snippet{display: none !important;}
+#slide-container{position: relative; height: 350px; overflow: hidden;}
+#slides{min-height: 250px; z-index: 0; margin: 0 20px 20px 20px; font-size: 100%; *margin: 0px;}
+#slides div{display: none;}
+#slides div.first{display: block;}
+#slides h1{text-shadow: 1px 1px 1px #f8f8f8; margin-top: 1em; padding-bottom: 10px;}
+#slides p{line-height: 130%; padding-top: 10px;}
+#slides img{float: right;margin-left: 20px;}
+#nav{position: absolute; width: 100px; bottom: 20px; left: 50%; margin-left: -50px; text-align: center;}
+a.slide-dir{text-decoration: none; color: #111 !important;}
+a#prev2{display: block;position: absolute; bottom: 20px; left: 225px;}
+a#next2{display: block;position: absolute; bottom: 20px; right: 225px;}
+#nav a{text-decoration: none; font-weight: normal; margin: 0 5px; padding: 3px 5px; color: #111; *margin: 1px 5px;}
+#nav a.activeSlide { font-weight: bold; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; background-color: #f8f8f8; *background-color: none;}
+#nav a:focus { outline: none; }
