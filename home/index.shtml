@@ -10,26 +10,6 @@
 	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
 	<link rel="dppl_sm_logo" href="http://www.dppl.org/images/logos/dppl_sm_logo.jpg"/>
 	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
-	<style type="text/css">
-		#rss-blogs .gfc-resultsRoot{margin-bottom: 10px !important;}
-		.gfc-resultsheader{border: 0 !important;}
-		.gfc-title{color: #000 !important; font-size: 1em;}
-		.gf-author, .gf-spacer, .gf-relativePublishedDate{display:none !important;}
-		.gf-title a{color: #003366 !important;}
-		#rss-events .gfc-result{ padding: 5px;}
-		#rss-events .gfc-result:nth-child(odd){background-color: #f8f8f8 !important;}
-		#rss-blogs .gf-snippet{display: none !important;}
-		#slides{min-height: 250px; z-index: 0; margin: 0 20px 20px 20px; font-size: 100%; *margin: 0px;}
-		#slides div{display: none;}
-		#slides div.first{display: block;}
-		#slides h1{text-shadow: 1px 1px 1px #f8f8f8; margin-top: 1em; padding-bottom: 10px;}
-		#slides p{line-height: 130%; padding-top: 10px;}
-		#slides img{float: right;margin-left: 20px;}
-		#nav{clear: left; float: right; margin-top: 2em; margin-right: 20px; padding-top: .5em; padding-bottom: 4px;}
-		#nav a { border: 1px solid #666; background: #c8c8c8; text-decoration: none; margin: 0 5px; padding: 3px 5px; color: #666; *margin: 1px 5px;}
-		#nav a.activeSlide { background: #f8f8f8; }
-		#nav a:focus { outline: none; }
-	</style>
 	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
 	<script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js" type="text/javascript"></script>
 	<!--#include virtual="../js/styleswitcher.js"-->
