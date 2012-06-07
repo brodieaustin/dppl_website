@@ -3,6 +3,7 @@
 
 body {
 	background-color: #E2E2E2;
+	font-family: Helvetica, Arial, sans-serif;
 	}
 
 body a {
@@ -53,7 +54,7 @@ body a {
 	font-family: trebuchet ms;
 	font-size: 15px;
 	line-height: 20px;
-	}
+	} 
 	
 .chalkboardlinks a:link {
 	text-decoration: none;
@@ -67,9 +68,9 @@ body a {
 	
 .chalkboardlinks a:hover {
 	text-decoration: none;
-	color: #474747;
+	background-color: #474747;
+	color: #fff;
 	font-weight: bold;
-	padding-left: 3px;
 	}
 	
 .contentbody {
