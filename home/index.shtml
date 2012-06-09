@@ -16,6 +16,7 @@
 	<!--#include virtual="../js/popup.js"-->
 	<!--functions for slider-->
 	<script type="text/javascript" src="../js/cycle/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="../js/jquery.addFeed.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#slides') 
@@ -29,6 +30,8 @@
 					next:   '#next2', 
 				    prev:   '#prev2'
 			});
+			
+			$('#rss-events').addFeed().slideDown(500);
 		});
 	</script>
 </head>
@@ -117,27 +120,7 @@
 	}
 	
 	google.setOnLoadCallback(OnLoad);
-</script>
-<script type="text/javascript">
-	//Google Feeds API script to display RSS feeds as test
-	google.load("feeds", "1");
-	    
-	function OnLoad() {
-	// Create a feed control
-	var feedControl = new google.feeds.FeedControl();
-	    
-	// Add two feeds.
-	feedControl.addFeed("http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=&lib=0&nd=10&feedtitle=Des+Plaines+Public+Library%3CBR%3ESchedule+of+Events&dm=rss2&LangType=0&fe=1", "");
-
-	feedControl.setNumEntries(10)
-	    
-	// Draw it.
-	feedControl.draw(document.getElementById("rss-events"));
-	    }
-	
-	    google.setOnLoadCallback(OnLoad);
-</script>
-				
+</script>		
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
