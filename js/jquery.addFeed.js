@@ -16,13 +16,13 @@
 	
 		var $this = $(this);
 	
-		$.getJSON('http://www.dppl.org/tools/feedtojson.php?jsoncallback=?', {url: settings.url}, function(data){
+		$.getJSON('/tools/feedtojson.php?jsoncallback=?', {url: settings.url}, function(data){
 			$.each(data.item, function(index) {
 				if (settings.feed_type == 'events'){
 					if (i < settings.num_items){
 						endtime = 
 						div = div + '<div class="feed-item" id="' + data.item[index].id + '">'
-							+ '<div class="feed-title"><a href="' + data.item[index].link + '">' + data.item[index].title + '</a></div>'
+							+ '<div class="feed-title"><a href="' + data.item[index].link + '" class="link_sm">' + data.item[index].title + '</a></div>'
 							+ '<div class="feed-dates">' + data.item[index].date + '</div>'
 							+ '<div class="feed-times">' + data.item[index].time + ((data.item[index].endtime != 'All Day')?'&nbsp;&ndash;&nbsp;' + data.item[index].endtime:'') + '</div>'
 							+'</div>';
@@ -31,6 +31,7 @@
 				}
 			});
 			
+			$('.load').fadeOut(500);
 			$this.append(div);
 			
 		});
