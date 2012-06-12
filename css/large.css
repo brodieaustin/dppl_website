@@ -927,3 +927,13 @@ a#next2{display: block;position: absolute; bottom: 20px; right: 225px;}
 #nav a{text-decoration: none; font-weight: normal; margin: 0 5px; padding: 3px 5px; color: #111; *margin: 1px 5px;}
 #nav a.activeSlide { font-weight: bold; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; background-color: #f8f8f8; *background-color: none;}
 #nav a:focus { outline: none; }
+
+
+/*styling for jquery feed box*/
+/*events*/
+#events{overflow-x: hide; overflow-y: scroll; border: 1px solid #c8c8c8; margin: 1em auto 2em auto; font-size: 14pt;}
+#events .feed-item{ padding: 5px; border-bottom: 1px solid #f8f8f8;}
+#events .feed-item:nth-child(odd){background-color: #f8f8f8 !important;}
+#events .feed-title a{margin-top: 2px; margin-bottom: 2px; font-weight: normal;}
+#events .feed-times{margin-bottom: 4px;}
+.load{width: 100%; height: 100%; background: url('../images/ajax-loader.gif') no-repeat 50% 50%;}
