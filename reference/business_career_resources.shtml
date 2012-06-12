@@ -13,7 +13,14 @@
 	<!--#include virtual="../js/styleswitcher.js"-->
 	
 	<!--#include virtual="../js/popup.js"-->
-	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
+	<script type="text/javascript" src="../js/jquery.addFeed.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#events').addFeed({
+				'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=Adult+Program+-+Career%2C+Adult+Program+-+Computer+Class%2C+Adult+Program+-+Financial&lib=0&nd=30&dm=exml'
+			}).fadeIn(500);
+		});
+	</script>
 </head>
 
 <body>
