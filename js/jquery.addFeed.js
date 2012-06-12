@@ -6,7 +6,7 @@
 	var settings = $.extend({
 		'feed_type' : 'events',
 		'num_items' : 10,
-		'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=5&fe=1',
+		'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=3&fe=1',
 	}, options);
 	
 	var div = '';
