@@ -120,13 +120,13 @@
 				
 					var baseurl = 'https://api.bibliocommons.com/v1/';
 					var url  = baseurl + 'lists/' + lid + '?library=dppl&api_key=' + key;
-					console.log(url);
 					
 					var i = 0;
 				
 					$.getJSON(url + '&callback=?', function(data){
 							var items = data.list.list_items;
 							var len = data.list.item_count;
+							var item;
 							
 							$('#list').empty();
 							$('#list').append('<h2>' + data.list.name + '</h2>');
