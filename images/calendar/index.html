@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Calendar Image Uploader | DPPL</title>
+	<meta charset="UTF-8" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+			document.write(unescape('%3Cscript src="/js/jquery-1.7.1.min.js" %3E%3C/script%3E'));
+		}
+	</script>
+	<script src="/js/jquery.validate.min.js"></script>
+	<script src="/js/jquery.form.js"></script>
+	<script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
+	<style media="screen">
+		html{background-color: #e8e8e8;}
+		body{width: 80%; margin: 2.5336% auto; background-color: #f8f8f8; border-color: #c8c8c8; padding: 2.5336% 3.80047% 1.26682% 3.80047%; font-family: Arial, sans-serif;}
+		h1{text-shadow: 0 4px 4px #fff; margin-bottom: 1em;}
+		div{margin: 0 0 1em 0;}
+		div#header, div#instructions, form, div#response{margin: 3.16831% 0; padding: 1.58415% 3.16831% 1.58415% 3.16831%; background-color: #fff; border-radius: 5px;}
+		form{padding-bottom: 2em;}
+		div#response-text{margin: 1em 0; padding: .5em; border: 1px dotted #e8e8e8; border-bottom: 1px dotted #e8e8e8;}
+		input[type=text]{width: 55%;}
+		input[type=password]{width: 55%;}
+		textarea{width: 98%; height: 200px;}
+		form div{clear: left; padding-top: 1em;}
+		form p{clear: both;}
+		label{display: block; width: 15%; float: left; clear: left; margin-bottom: .5em; line-height: 1.5em;}
+		label.wide{float: none; width: 80%;}
+		ul li{margin-bottom: 1em; line-height: 1.25em;}
+		input[type=button], input[type=submit]{color: #333;	background-color: #f8f8f8;	font-weight: normal;	padding: 4px 7px;	border: 1px solid #c8c8c8;	border-radius: 4px;	-webkit-border-radius: 4px;	-moz-border-radius: 4px;	cursor: pointer;}
+		input[type=button]:hover, input[type=submit]:hover{background-color: #888; color: #fff;}
+		input[type=submit]{float: right;}
+		div.errors{color: red;margin-bottom: 1em;}
+		label.error{position: relative; left: 15%; width: 80%; color: red;}
+		i{color: red;}
+		.tip{position: relative; left: 72%; top: -2.3em; width: 20%; color: #bbb;}
+		@media screen and (max-width: 600px){
+			label{float: none;}
+			input[type=text]{width: 98%;}
+			input[type=password]{width: 98%;}
+			.tip{left: 0; top: 0; width: 98%;}
+		}
+
+	</style>
+
+<script>
+	$(document).ready(function(){
+		$('div.errors').hide();
+		$('#response').hide();
+		
+		$('#password').blur(function(){
+			var val = $(this).val();
+			var hash = CryptoJS.MD5(val);
+			$(this).val(hash);
+			
+			return false;
+		});
+		
+		$('#upload-form').validate({
+			invalidHandler: function(form, validator) {
+				  var errors = validator.numberOfInvalids();
+				  if (errors) {
+					var message = errors == 1 ? 'You missed 1 field. It has been highlighted': 'You missed ' + errors + ' fields. They have been highlighted';
+					$('div.errors').html(message);
+					$('div.errors').show();
+				  } else {
+					$('div.errors').hide();
+				  }
+			},
+			submitHandler: function(form){
+				$(form).ajaxSubmit({
+					success: function(data){
+							$('#header').hide();
+							$('div.errors').hide();
+							$('#upload-form').hide();
+							
+							if (data.indexOf("http") != -1 ){
+								var img = '';
+								$('div#response').html('<p><img src="' + data + '" style="width: 20%; border: 5px solid #ddd;" ></p><p>Copy this link:<span style="margin-left: 1em;"><b>' + data + '</b></span></p>').show();
+							}
+							else{
+								$('#upload-form').show();
+								$('div.errors').html(data).show();
+							}	
+							
+						},
+						failure: function(){
+							$('div.errors').html("Something went wrong. Please check your form and try again.").show();
+						}
+				});
+			}
+			});
+			
+	});
+</script>
+
+
+</head>
+<body>
+
+<h1>Calendar Image Uploader</h1>
+	<div id="header">
+		<p>Use this form to upload an image to the web that can be used for an Evanced calendar listing.</p>
+	</div>
+	<!--<div id="instructions">
+	</div>-->
+	<form id="upload-form" method="post"  action="images.php" enctype="multipart/form-data">
+		<div class="errors"></div>
+		<div>
+			<label for="password">Password:<i>*</i></label>
+			<input type="password" id="password" name="password" tabindex="2" class="required" /><p class="tip">Think evanced</p>
+		</div>
+		<div>	
+			<label for="file">File:<i>*</i></label>
+			<input type="file" id="file" name="file" tabindex="2" class="required" />
+		</div>
+		<div>
+			<input type="submit" value="Submit" tabindex="3" />
+		</div>
+	</form>
+	<div id="response"></div>
