@@ -14,10 +14,10 @@
 	<script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
 	<style media="screen">
 		html{background-color: #e8e8e8;}
-		body{width: 80%; margin: 2.5336% auto; background-color: #f8f8f8; border-color: #c8c8c8; padding: 2.5336% 3.80047% 1.26682% 3.80047%; font-family: Arial, sans-serif;}
+		body{width: 80%; margin: 2.5336% auto; background-color: #f8f8f8; border-color: #c8c8c8; padding: 2.5336% 3.80047% 1.26682% 3.80047%; font-family: Arial, sans-serif; z-index: 50;}
 		h1{text-shadow: 0 4px 4px #fff; margin-bottom: 1em;}
-		div{margin: 0 0 1em 0;}
-		div#header, div#instructions, form, div#response{margin: 3.16831% 0; padding: 1.58415% 3.16831% 1.58415% 3.16831%; background-color: #fff; border-radius: 5px;}
+		div{margin: 0;}
+		div.container{margin: 3.16831% 0; padding: 1.58415% 3.16831% 1.58415% 3.16831%; background-color: #fff; border-radius: 5px;}
 		form{padding-bottom: 2em;}
 		div#response-text{margin: 1em 0; padding: .5em; border: 1px dotted #e8e8e8; border-bottom: 1px dotted #e8e8e8;}
 		input[type=text]{width: 55%;}
@@ -28,18 +28,36 @@
 		label{display: block; width: 15%; float: left; clear: left; margin-bottom: .5em; line-height: 1.5em;}
 		label.wide{float: none; width: 80%;}
 		ul li{margin-bottom: 1em; line-height: 1.25em;}
-		input[type=button], input[type=submit]{color: #333;	background-color: #f8f8f8;	font-weight: normal;	padding: 4px 7px;	border: 1px solid #c8c8c8;	border-radius: 4px;	-webkit-border-radius: 4px;	-moz-border-radius: 4px;	cursor: pointer;}
-		input[type=button]:hover, input[type=submit]:hover{background-color: #888; color: #fff;}
+		input[type=button], input[type=submit]{color: #333;	background-color: #e8e8e8; font-weight: normal; padding: .5em 1em;	border: 0; border-radius: 4px;	-webkit-border-radius: 4px;	-moz-border-radius: 4px;	cursor: pointer; font-size: .9em;}
+		input[type=button]:hover, input[type=submit]:hover{background-color: #ddd;}
 		input[type=submit]{float: right;}
 		div.errors{color: red;margin-bottom: 1em;}
 		label.error{position: relative; left: 15%; width: 80%; color: red;}
 		i{color: red;}
-		.tip{position: relative; left: 72%; top: -2.3em; width: 20%; color: #bbb;}
+		.tip{position: relative; left: 72%; top: -2.4em; width: 20%; color: #aaa;}
+		ul.no-style{list-style: none; padding-left: 0;}
+		ul.year-list{padding-bottom: 1em;}
+		ul.year-list li{display: inline-block; float: left; width: 8%; margin-right: 1.26682%; padding: .5em 1em; background-color: #e8e8e8; text-align: center; border-radius: 5px; font-size: .9em;}
+		ul.year-list li a{color: #333; text-decoration: none; }
+		ul.year-list li:hover{background-color: #ddd; cursor: pointer; }
+		div#file-list{width: 60%; height: 80%; margin: 2em auto; overflow-y: scroll; z-index: 100; border: 10px solid #ddd;}
+		div#file-list dl{clear: both; border-bottom: 3px solid #ddd; overflow: auto;}
+		div#file-list dt{width: 60%; font-weight: bold; margin-bottom: 1em;}
+		div#file-list dd{margin-left: 0;}
+		div#file-list dl dd.image{float: right; margin: -2em 0 1em 1em; padding: 1em; width: 20%;}
+		div#file-list dl dd.image img{width:100%; border: 5px solid #ddd}
+		div#files{background-color: #f8f8f8; position: absolute; top: 0; left: 0; height: 100%; width: 100%;}
+		#close{position: absolute; top: 2.5em; right: 3em; padding: .5em 1em; background-color: #e8e8e8; text-align: center; border-radius: 5px; font-size: .9em;}
+		a#close{color: #333; text-decoration: none; }
+		#close:hover{background-color: #ddd; cursor: pointer;}
+		div.load{background: url('ajax-loader.gif') no-repeat 2% 50% ; height: 20px;}
 		@media screen and (max-width: 600px){
 			label{float: none;}
 			input[type=text]{width: 98%;}
 			input[type=password]{width: 98%;}
 			.tip{left: 0; top: 0; width: 98%;}
+			ul.year-list{padding-bottom: 0;}
+			ul.year-list li{display: block; float: none; width: 93%;}
 		}
 
 	</style>
@@ -48,6 +66,48 @@
 	$(document).ready(function(){
 		$('div.errors').hide();
 		$('#response').hide();
+		$('#files').hide();
+		
+		var i;
+		var first_year = 2012;
+		var i = first_year;
+		
+		var now = new Date;
+		var current_year = now.getFullYear();
+		var year_list;
+		
+		year_list = '<li><a href="' + first_year + '" class="year" id="' + first_year + '">' + i + '</a></li>';
+		
+		for (i = first_year; i < current_year; i++){
+			console.log(i);
+			console.log(year_list);
+			year_list = '<li><a href="' + i + '" class="year" id="' + i + '">' + i + '</a></li>' + year_list;
+		}
+		
+		$('#years').append('<ul class="year-list no-style">' + year_list + '</ul>');
+		
+		$('.year').click(function(){
+			var val = $(this).attr('id');
+			
+			$.ajax({
+				type : 'GET',
+				url : 'listfiles.php',
+				data : {dir : val},
+				dataType : 'html',
+				success: function(data) {
+					$('#file-list').html(data)
+					$('#files').fadeIn(500);
+				  }
+			});
+			
+			return false;
+		});
+		
+		$('#close').click(function(){
+			$('#files').fadeOut(500);
+			
+			return false;
+		});
 		
 		$('#password').blur(function(){
 			var val = $(this).val();
@@ -69,18 +129,19 @@
 				  }
 			},
 			submitHandler: function(form){
+				$('#header').hide();
+				$('div.errors').hide();
+				$('#upload-container').hide();
+				$('div#response').show();
 				$(form).ajaxSubmit({
 					success: function(data){
-							$('#header').hide();
-							$('div.errors').hide();
-							$('#upload-form').hide();
-							
 							if (data.indexOf("http") != -1 ){
 								var img = '';
-								$('div#response').html('<p><img src="' + data + '" style="width: 20%; border: 5px solid #ddd;" ></p><p>Copy this link:<span style="margin-left: 1em;"><b>' + data + '</b></span></p>').show();
+								$('div#response').html('<p><img src="' + data + '" style="width: 20%; border: 5px solid #ddd;" ></p><p>Copy this link:<span style="margin-left: 1em;"><b>' + data + '</b></span></p>').delay(500).fadeIn(500);
+								$('div.load').fadeOut(500);
 							}
 							else{
-								$('#upload-form').show();
+								$('#upload-container').show();
 								$('div.errors').html(data).show();
 							}	
 							
@@ -100,23 +161,35 @@
 <body>
 
 <h1>Calendar Image Uploader</h1>
-	<div id="header">
+	<div id="header" class="container">
 		<p>Use this form to upload an image to the web that can be used for an Evanced calendar listing.</p>
 	</div>
 	<!--<div id="instructions">
 	</div>-->
-	<form id="upload-form" method="post"  action="images.php" enctype="multipart/form-data">
-		<div class="errors"></div>
-		<div>
-			<label for="password">Password:<i>*</i></label>
-			<input type="password" id="password" name="password" tabindex="2" class="required" /><p class="tip">Think evanced</p>
-		</div>
-		<div>	
-			<label for="file">File:<i>*</i></label>
-			<input type="file" id="file" name="file" tabindex="2" class="required" />
-		</div>
-		<div>
-			<input type="submit" value="Submit" tabindex="3" />
-		</div>
-	</form>
-	<div id="response"></div>
+	<div class="container" id="upload-container">
+		<form id="upload-form" method="post"  action="images.php" enctype="multipart/form-data">
+			<div class="errors"></div>
+			<div>
+				<label for="password">Password:<i>*</i></label>
+				<input type="password" id="password" name="password" tabindex="2" class="required" /><p class="tip">Think evanced</p>
+			</div>
+			<div>	
+				<label for="file">File:<i>*</i></label>
+				<input type="file" id="file" name="file" tabindex="2" class="required" />
+			</div>
+			<div style="padding-bottom: 1em;">
+				<input type="submit" value="Submit" tabindex="3" />
+			</div>
+		</form>
+	</div>
+	<div id="response" class="container"><div class="load"></div></div>
+	<div class="container">
+		<p>Need to peek back in time? View previously uploaded files by year.</p>
+		<div id="years" style="padding-bottom: 1em;"></div>
+	</div>
+	<div id="files">
+		<div><a href="javascript: void(0)" id="close">Close</a></div>
+		<div id="file-list" class="container"></div>
+	</div>
+</body>
+</html>

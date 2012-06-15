@@ -1,7 +1,7 @@
 <?php
 //http://www.w3schools.com/php/php_file_upload.asp
 
-	if ($_POST["password"] != md5('password')){
+	if ($_POST["password"] != '4d7d719ac0cf3d78ea8a94701913fe47'){
 		die("I'm sorry. You didn't provide the correct password. Please try again.");
 	}
 	else{
@@ -11,7 +11,7 @@
 		|| ($_FILES["file"]["type"] == "image/pjpeg")
 		|| ($_FILES["file"]["type"] == "image/png")
 		|| ($_FILES["file"]["type"] == "image/x-png"))
-		&& ($_FILES["file"]["size"] < 500000)){
+		&& ($_FILES["file"]["size"] < 1000000)){
 		  if ($_FILES["file"]["error"] > 0){
 			echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
 		  }
@@ -27,7 +27,7 @@
 				$file_name = strtolower($file_name);
 
 				if (file_exists($dir . $file_name)){
-				  die($file_name . " already exists. ");
+				  die("http://www.dppl.org/images/calendar/" . $dir . $file_name);
 				}
 				else{
 				  move_uploaded_file($_FILES["file"]["tmp_name"], $dir . $file_name);
