@@ -76,12 +76,10 @@
 		var current_year = now.getFullYear();
 		var year_list;
 		
-		year_list = '<li><a href="' + first_year + '" class="year" id="' + first_year + '">' + i + '</a></li>';
+		year_list = '<li><a href="javascript: void(0)" class="year" id="' + first_year + '">' + i + '</a></li>';
 		
 		for (i = first_year; i < current_year; i++){
-			console.log(i);
-			console.log(year_list);
-			year_list = '<li><a href="' + i + '" class="year" id="' + i + '">' + i + '</a></li>' + year_list;
+			year_list = '<li><a href="javascript: void(0)" class="year" id="' + i + '">' + i + '</a></li>' + year_list;
 		}
 		
 		$('#years').append('<ul class="year-list no-style">' + year_list + '</ul>');
@@ -162,7 +160,11 @@
 
 <h1>Calendar Image Uploader</h1>
 	<div id="header" class="container">
-		<p>Use this form to upload an image to the web that can be used for an Evanced calendar listing.</p>
+		<p>Use this form to upload an image to the web that can be used for an Evanced calendar listing. Please note the following restrictions:</p>
+		<ul>
+			<li>You can only upload image files (jpeg, png, and gif)</li>
+			<li>Images must be less than 1 MB.</li>
+		</ul>
 	</div>
 	<!--<div id="instructions">
 	</div>-->
