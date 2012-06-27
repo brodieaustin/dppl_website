@@ -5,6 +5,7 @@ http://www.dppl.org/about_dppl/computers_and_wifi.shtml
 http://www.dppl.org/about_dppl/des_plaines_community.shtml
 http://www.dppl.org/about_dppl/directions.shtml
 http://www.dppl.org/about_dppl/directors_board_of_trustees.shtml
+http://www.dppl.org/about_dppl/donate.shtml
 http://www.dppl.org/about_dppl/dppl_arts_architecture.shtml
 http://www.dppl.org/about_dppl/DPvolunteer.shtml
 http://www.dppl.org/about_dppl/hours.shtml
@@ -17,6 +18,7 @@ http://www.dppl.org/about_dppl/sister_library.shtml
 http://www.dppl.org/about_dppl/vision_and_belief_statements.shtml
 http://www.dppl.org/about_dppl/volunteer.shtml
 http://www.dppl.org/about_dppl/friends_of_the_library.html
+http://www.dppl.org/edppl/index.shtml
 http://www.dppl.org/events-programs/book_discussion_groups.shtml
 http://www.dppl.org/events-programs/computer_classes.shtml
 http://www.dppl.org/events-programs/events.shtml
