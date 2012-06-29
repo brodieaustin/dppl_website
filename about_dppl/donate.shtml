@@ -2,11 +2,7 @@
 
 <html>
 <head>
-	<title>EVENTS LISTING - Des Plaines Public Library</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="description" content="Des Plaines Public Library events and programs, free entertainment, instruction and enrichment for all ages and interests">
-<meta name="keywords" content="des plaines public library Illinois IL events programs music classes instruction theatre lectures free entertainment movies children adults teens">
-	<link rel="stylesheet" type="text/css" href="../css/standard.css" title="standard">
+	<title>dppl.org :: How do I... DONATE / GET INVOLVED? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
 	<link rel="stylesheet" type="text/css" href="../css/standard.css" title="standard">
 	<link rel="alternate stylesheet" type="text/css" href="../css/medium.css" title="medium">
 	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
@@ -14,26 +10,19 @@
 	<!--#include virtual="../js/styleswitcher.js"-->
 	
 	<!--#include virtual="../js/popup.js"-->
-	<script type="text/javascript" src="../js/jquery.addFeed.js"></script>
-	<script>
-		$(document).ready(function(){
-			
-			$('#events').addFeed().fadeIn(500);
-		});
-	</script>
-
 </head>
 
 <body>
 <TABLE WIDTH="100%">
 	<TR>
 		<TD></TD>
-		<TD ALIGN="right" CLASS="fontsizeSwitcher">Text size: <a href="#" onclick="setActiveStyleSheet('standard'); return false;" CLASS="standard">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('medium'); return false;" CLASS="medium">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('large'); return false;" CLASS="large">&nbsp;A&nbsp;</a>&nbsp;&nbsp;&nbsp;<A HREF="javascript:popUp('events-p.shtml')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT="">Printer-friendly page</A></TD>
+		<TD ALIGN="right" CLASS="fontsizeSwitcher">Text size: <a href="#" onclick="setActiveStyleSheet('standard'); return false;" CLASS="standard">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('medium'); return false;" CLASS="medium">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('large'); return false;" CLASS="large">&nbsp;A&nbsp;</a>&nbsp;&nbsp;&nbsp;<A HREF="javascript:popUp('donate-p.shtml')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT="">Printer-friendly page</A></TD>
 	</TR>
 	<TR CLASS="spacer_xsm">
 		<TD>&nbsp;</TD>
 	</TR>
 </TABLE> 
+
 
 <!-- //// PAGE CONTAINER - TOP -->
 <TABLE WIDTH="790" BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="center">
@@ -71,7 +60,7 @@
 	<TD WIDTH="649">
 
 <!-- //// CONTENT -->	
-	<!--#include virtual="../content/events_programs-c/events.html"-->
+	<!--#include virtual="../content/about_dppl-c/donate.html"-->
 	
 <!-- //// VITAL INFO -->
 	<IMG SRC="../images/logos/dppl_logo_sm.jpg" WIDTH="42" HEIGHT="33" BORDER="0" ALIGN="LEFT" ALT=""><SPAN CLASS="footer"><!--#include
@@ -98,6 +87,7 @@ var pageTracker = _gat._getTracker("UA-2123354-11");
 pageTracker._initData();
 pageTracker._trackPageview();
 </script>
+
 
 
 </body>

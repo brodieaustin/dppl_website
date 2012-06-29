@@ -765,7 +765,9 @@ table.board th{
   background-color: #c8c8c8;
 }
 table.board a.download{
+  display: block;
   background: url(../images/icons/download.gif) no-repeat center left;
+  margin-bottom: 6px;
   padding-left: 20px;
 }
 table.board a.download:hover{
