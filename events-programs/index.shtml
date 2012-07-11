@@ -28,7 +28,7 @@
 <TABLE WIDTH="100%">
 	<TR>
 		<TD></TD>
-		<TD ALIGN="right" CLASS="fontsizeSwitcher">Text size: <a href="#" onclick="setActiveStyleSheet('standard'); return false;" CLASS="standard">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('medium'); return false;" CLASS="medium">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('large'); return false;" CLASS="large">&nbsp;A&nbsp;</a>&nbsp;&nbsp;&nbsp;<A HREF="javascript:popUp('events-p.shtml')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT="">Printer-friendly page</A></TD>
+		<TD ALIGN="right" CLASS="fontsizeSwitcher">Text size: <a href="#" onclick="setActiveStyleSheet('standard'); return false;" CLASS="standard">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('medium'); return false;" CLASS="medium">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('large'); return false;" CLASS="large">&nbsp;A&nbsp;</a>&nbsp;&nbsp;&nbsp;<A HREF="javascript:popUp('index-p.shtml')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT="">Printer-friendly page</A></TD>
 	</TR>
 	<TR CLASS="spacer_xsm">
 		<TD>&nbsp;</TD>
@@ -71,7 +71,7 @@
 	<TD WIDTH="649">
 
 <!-- //// CONTENT -->	
-	<!--#include virtual="../content/events_programs-c/section-page.html"-->
+	<!--#include virtual="../content/events_programs-c/section_page.html"-->
 	
 <!-- //// VITAL INFO -->
 	<IMG SRC="../images/logos/dppl_logo_sm.jpg" WIDTH="42" HEIGHT="33" BORDER="0" ALIGN="LEFT" ALT=""><SPAN CLASS="footer"><!--#include
