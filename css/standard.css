@@ -12,6 +12,13 @@ font-size : 11pt;
 
 }
 
+hr{
+  border-top: 1px solid #c8c8c8;
+  border-bottom: 0;
+  width: 90%;
+  margin: 1em auto;
+}
+
 TABLE {
 font-family : Helvetica, Arial, sans-serif;
 font-size : 11pt;
