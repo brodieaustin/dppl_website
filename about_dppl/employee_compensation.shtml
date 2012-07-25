@@ -1,96 +1,24 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--#include virtual="/includes/html.html"-->
+	<title>Employee Compensation | DPPL</title>
 
-<html>
-<head>
-	<title>dppl.org :: Employee Compensation</title>
-	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="../css/standard.css" title="standard">
-	<link rel="alternate stylesheet" type="text/css" href="../css/medium.css" title="medium">
-	<link rel="alternate stylesheet" type="text/css" href="../css/large.css" title="large">
-	
-	<!--#include virtual="../js/styleswitcher.js"-->
-	
-	<!--#include virtual="../js/popup.js"-->
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+
 </head>
-
 <body>
-<TABLE WIDTH="100%">
-	<TR>
-		<TD></TD>
-		<TD ALIGN="right" CLASS="fontsizeSwitcher">Text size: <a href="#" onclick="setActiveStyleSheet('standard'); return false;" CLASS="standard">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('medium'); return false;" CLASS="medium">&nbsp;A&nbsp;</a>&nbsp;<a href="#" onclick="setActiveStyleSheet('large'); return false;" CLASS="large">&nbsp;A&nbsp;</a>&nbsp;&nbsp;&nbsp;<A HREF="javascript:popUp('[PRINT_PAGE]')" CLASS="link_sm" TITLE="Print this page"><IMG SRC="../images/utils/print.jpg" WIDTH="18" HEIGHT="16" BORDER="0" ALIGN="ABSMIDDLE" TITLE="Print this page" ALT="">Printer-friendly page</A></TD>
-	</TR>
-	<TR CLASS="spacer_xsm">
-		<TD>&nbsp;</TD>
-	</TR>
-</TABLE> 
-
-<!-- //// PAGE CONTAINER - TOP -->
-<TABLE WIDTH="790" BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="center">
-<TR>
-	<TD>
-	
-<!-- //// PAGE HEADER -->	
-<TABLE WIDTH="784" BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="center">
-<TR>
-	<TD ALIGN="left" ROWSPAN="2"><A HREF="../home/index.shtml" TITLE="HOME"><IMG SRC="../images/themes/River/logo.jpg" WIDTH="400" HEIGHT="117"
-	 BORDER="0" ALT=""></A></TD>
-	<TD CLASS="header_bottom_left" WIDTH="384"><!--#include virtual="../utils/search_box2.html"--></TD>
-</TR>
-<TR>
-	<TD CLASS="header_bottom_left"><!--#include virtual="../utils/how_do_i_menu2.html"--></TD>
-</TR>
-<TR>
-	<TD COLSPAN="2" CLASS="spacer_sm">&nbsp;</TD>
-</TR>
-
-<!-- //// MAIN MENU -->
-<TR>
-	<TD COLSPAN="2" ALIGN="center"><!--#include virtual="../menu/new_menu2.html"--></TD>
-</TR>
-<TR>
-	<TD COLSPAN="2" CLASS="spacer_sm">&nbsp;</TD>
-</TR>
-</TABLE>
-
-<BR>
-	
-<TABLE WIDTH="784" BORDER="0" CELLSPACING="0" CELLPADDING="0" ALIGN="center">
-<TR>
-
-<!-- //// LEFT NAV -->	
-	<TD WIDTH="130"><!--#include virtual="../utils/left_nav_River2.html"--></TD>
-	<TD WIDTH="5">&nbsp;&nbsp;&nbsp;</TD>
-	<TD WIDTH="649">
-
-<!-- //// CONTENT -->	
-	<!--#include virtual="../content/about_dppl-c/employee_compensation.html"-->
-	
-<!-- //// VITAL INFO -->
-	<IMG SRC="../images/logos/dppl_logo_sm.jpg" WIDTH="42" HEIGHT="33" BORDER="0" ALIGN="LEFT" ALT=""><SPAN CLASS="footer"><!--#include
-	 virtual="../content/multi_use-c/vital_info2.html"--></SPAN>	
-
-<!-- //// COPYRIGHT -->					
-	&nbsp;<SPAN CLASS="copyright2"><!--#include virtual="../content/multi_use-c/copyright2.html"--></SPAN>
-
-	</TD>
-</TR>
-</TABLE>	
-
-	
-<!-- //// PAGE CONTAINER - BOTTOM -->	
-	</TD>
-</TR>
-</TABLE>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2123354-11");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
-
-&nbsp;
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<!--#include virtual="../content/about_dppl-c/employee_compensation.html"-->
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
 </body>
 </html>

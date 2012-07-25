@@ -6,7 +6,7 @@
 	var settings = $.extend({
 		'feed_type' : 'events',
 		'num_items' : 10,
-		'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=3&fe=1'
+		'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=5&fe=1'
 	}, options);
 	
 	var div = '';
@@ -20,7 +20,6 @@
 			$.each(data.item, function(index) {
 				if (settings.feed_type == 'events'){
 					if (i < settings.num_items){
-						endtime = 
 						div = div + '<div class="feed-item" id="' + data.item[index].id + '">'
 							+ '<div class="feed-title"><a href="' + data.item[index].link + '" class="link_sm">' + data.item[index].title + '</a></div>'
 							+ '<div class="feed-dates">' + data.item[index].date + '</div>'

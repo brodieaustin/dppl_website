@@ -1,0 +1,67 @@
+<!--doctype and html element-->
+	<!--#include virtual="/includes/html.html"-->
+	<title>Search | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+	<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" /> 
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<div style="width: 618px; min-height: 700px;margin-bottom: 1em; padding: 10px;">
+		<h1>Search Results</h1>
+		<div id="cse" style="width: 100%; position: relative; left: -1em;">Can't find something? Enter what you are looking for in the search box at the bottom of the page. Your results will appear on this page.</div>
+		</div>
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+	<!--Google search scripts-->
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en'});
+	  google.setOnLoadCallback(function() {
+		var customSearchOptions = {};
+		var orderByOptions = {};
+		orderByOptions['keys'] = [{label: 'Relevance', key: ''},{label: 'Date', key: 'date'}];
+		customSearchOptions['enableOrderBy'] = true;
+		customSearchOptions['orderByOptions'] = orderByOptions;
+		customSearchOptions['adoptions'] = {'layout': 'noTop'};
+		var customSearchControl = new google.search.CustomSearchControl(
+		  '004973249237684720588:WMX-2073442296', customSearchOptions);
+		customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+		var options = new google.search.DrawOptions();
+		options.setAutoComplete(true);
+		options.enableSearchResultsOnly(); 
+		customSearchControl.draw('cse', options);
+		function parseParamsFromUrl() {
+		  var params = {};
+		  var parts = window.location.search.substr(1).split('\x26');
+		  for (var i = 0; i < parts.length; i++) {
+		    var keyValuePair = parts[i].split('=');
+		    var key = decodeURIComponent(keyValuePair[0]);
+		    params[key] = keyValuePair[1] ?
+		        decodeURIComponent(keyValuePair[1].replace(/\+/g, ' ')) :
+		        keyValuePair[1];
+		  }
+		  return params;
+		}
+
+		var urlParams = parseParamsFromUrl();
+		var queryParamName = "q";
+		if (urlParams[queryParamName]) {
+		  customSearchControl.execute(urlParams[queryParamName]);
+		}
+	  }, true);
+	</script>
+	
+</body>
+</html>

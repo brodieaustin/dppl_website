@@ -1,0 +1,67 @@
+	<!--#include virtual="/includes/html.html"-->
+	<title>Home | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<!--#include virtual="/content/home-c/features.html"-->
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+	<script  src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
+	<script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"></script>
+	<!--functions for slider-->
+	<script src="/js/cycle/jquery.cycle.all.js"></script>
+	<script src="/js/jquery.addFeed.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#slides') 
+				.after('<div id="nav">') 
+				.cycle({ 
+					fx:     'scrollLeft', 
+					speed:  '2000',
+					timeout: '4000',
+					pause:	'1',
+					pager:  '#nav',
+					next:   '#next2', 
+				    prev:   '#prev2'
+			});
+			
+			$('#events').addFeed().fadeIn(500);
+		});
+	</script>
+	<script>
+		//Google Feeds API script to display RSS feeds as test
+		google.load("feeds", "1");
+	
+		function OnLoad() {
+		  // Create a feed control
+		var feedControl = new google.feeds.FeedControl();
+	
+		  // Add two feeds.
+		feedControl.addFeed("http://dpplplaintalk.blogspot.com/feeds/posts/default", "PlainTalk");
+		feedControl.addFeed("http://positivelyestreet.blogspot.com/feeds/posts/default?alt=rss", "Positively Ellinwood St");
+		feedControl.addFeed("http://kidding-around.blogspot.com/feeds/posts/default?alt=rss", "Kidding Around");
+		feedControl.addFeed("http://feed43.com/5583164584461834.xml", "Des Plaines Patch");
+
+		feedControl.setNumEntries(1)
+	
+		  // Draw it.
+		  feedControl.draw(document.getElementById("rss-blogs"));
+		}
+	
+		google.setOnLoadCallback(OnLoad);
+	</script>
+</body>
+</html>

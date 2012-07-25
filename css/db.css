@@ -27,3 +27,8 @@ div.db p{
 div.db img{
   float: right;
 }
+
+div#db-list ul li{
+  padding-bottom: 4px;
+  line-height: 18px;
+}

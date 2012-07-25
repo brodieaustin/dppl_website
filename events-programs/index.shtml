@@ -20,12 +20,5 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<script type="text/javascript" src="../js/jquery.addFeed.js"></script>
-	<script>
-		$(document).ready(function(){
-			
-			$('#events').addFeed().fadeIn(500);
-		});
-	</script>
 </body>
 </html>

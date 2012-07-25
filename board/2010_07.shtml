@@ -1,0 +1,24 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>Board Minutes [7-20-2010]  | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<!--#include virtual="../content/board-c/2010_07.html"-->
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+</body>
+</html>
