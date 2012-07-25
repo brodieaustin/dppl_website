@@ -954,3 +954,6 @@ ul.board{
 ul.board li{
   padding-bottom: .5em;
 }
+
+#taste{display: block; width: 130px; height: 70px; background: url('/images/themes/River/taste-logo-small.png') no-repeat top left;}
+#taste:hover{background: url('/images/themes/River/taste-logo-small-stripe.png') no-repeat top left;}
