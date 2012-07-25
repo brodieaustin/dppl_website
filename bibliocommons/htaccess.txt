@@ -1,1 +1,0 @@
-Redirect /bibliocommons http://dppl.bibliocommons.com/
