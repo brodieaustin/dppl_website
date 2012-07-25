@@ -16,6 +16,12 @@ font-family : Helvetica, Arial, sans-serif;
 font-size : 15pt;
 }
 
+hr{
+  border-top: 1px solid #c8c8c8;
+  border-bottom: 0;
+  width: 90%;
+  margin: 1em auto;
+}
 
 .T60 {
 	font-size : 64pt;
@@ -402,14 +408,14 @@ H3 {
 font-size : 16pt;
 font-family : Helvetica, Arial, sans-serif;
 color : #003366;
-font-weight: normal;
+font-weight: bold;
 }
 
 H4 {
 font-size : 14pt;
 font-family : Helvetica, Arial, sans-serif;
 color : #003366;
-font-weight: bold;
+font-weight: normal;
 }	
 
 
@@ -939,3 +945,12 @@ a#next2{display: block;position: absolute; bottom: 20px; right: 225px;}
 #events .feed-title a{margin-top: 2px; margin-bottom: 2px; font-weight: normal;}
 #events .feed-times{margin-bottom: 4px;}
 .load{width: 100%; height: 100%; background: url('../images/ajax-loader.gif') no-repeat 50% 50%;}
+
+ul.board{
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.board li{
+  padding-bottom: .5em;
+}

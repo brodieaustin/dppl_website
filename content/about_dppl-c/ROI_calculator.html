@@ -1,0 +1,443 @@
+<table cellpadding="0" cellspacing="0" width="635">
+ <tr>
+  <td class="spacer_sm">
+   <img alt="" border="0" height="5" src="../images/utils/feature_box_corner_TL.gif" width="5"/>
+  </td>
+  <td background="../images/utils/feature_box_horizontal.gif" height="5" nowrap="nowrap" width="625">
+  </td>
+  <td class="spacer_sm">
+   <img alt="" border="0" height="5" src="../images/utils/feature_box_corner_TR.gif" width="5"/>
+  </td>
+ </tr>
+ <tr>
+  <td background="../images/utils/feature_box_vertical.gif" height="5" width="5">
+  </td>
+  <td>
+   <table cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+     <td>
+      <!-- CONTENT HEADLINE -->
+      <h1>
+       Library Value Calculator
+      </h1>
+      <span class="spacer_sm">
+       <br/>
+       <br/>
+      </span>
+      <!-- CONTENT BODY -->
+      <div>
+       <p>
+        <span class="t10">
+         How much is the Des Plaines Public Library worth to you and your community?
+        </span>
+       </p>
+       <p>
+        How much would you pay out-of-pocket for your library services?
+       </p>
+       <ul>
+        <li>
+         Enter in the left hand column the number of times per visit you or your family use each service.
+        </li>
+        <li>
+         Estimated retail value of each service will be calculated on the right.
+        </li>
+        <li>
+         Total value of your library use per visit is shown at the bottom of the worksheet.
+        </li>
+        <li>
+         <strong>
+          Tip
+         </strong>
+         : Tab between entries and do not use commas.
+        </li>
+       </ul>
+       <form action="" id="calculator" method="post" name="calculator">
+        <table cellspacing="0" height="600" id="tbstriped" summary="A javascript driven calculator to determine estimated retail value for a variety of library services" width="90%">
+         <caption style="color:#ffffff; background-color:#003366">
+          <strong>
+           Value of Library Services
+          </strong>
+         </caption>
+         <tbody>
+          <tr>
+           <th scope="col">
+            Input Your Use
+           </th>
+           <th scope="col">
+            Library Services
+           </th>
+           <th scope="col">
+            Value of Services
+           </th>
+          </tr>
+          <tr>
+           <td>
+            <input id="books" name="books" onchange="doCalculator()" size="5" tabindex="1" type="text"/>
+           </td>
+           <td>
+            <label for="books">
+             Adult Books Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="booksResult">
+             $
+             <input id="booksResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="yabooks" name="yabooks" onchange="doCalculator()" size="5" tabindex="2" type="text"/>
+           </td>
+           <td>
+            <label for="books">
+             Young Adult Books Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="yabooksResult">
+             $
+             <input id="yabooksResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="kidsbooks" name="kidsbooks" onchange="doCalculator()" size="5" tabindex="3" type="text"/>
+           </td>
+           <td>
+            <label for="kidsbooks">
+             Kids' Books Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="kidsResult">
+             $
+             <input id="kidsResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="manga" name="manga" onchange="doCalculator()" size="5" tabindex="4" type="text"/>
+           </td>
+           <td>
+            <label for="manga">
+             Manga Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="mangaResult">
+             $
+             <input id="mangaResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="anime" name="anime" onchange="doCalculator()" size="5" tabindex="5" type="text"/>
+           </td>
+           <td>
+            <label for="anime">
+             Anime Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="animeResult">
+             $
+             <input id="animeResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="movie" name="movie" onchange="doCalculator()" size="5" tabindex="6" type="text"/>
+           </td>
+           <td>
+            <label for="movie">
+             Movies Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="movieResult">
+             $
+             <input id="movieResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="movies" name="music" onchange="doCalculator()" size="5" tabindex="7" type="text"/>
+           </td>
+           <td>
+            <label for="music">
+             Music CDs Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="musicResult">
+             $
+             <input id="musicResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="audiobooks" name="audiobooks" onchange="doCalculator()" size="5" tabindex="8" type="text"/>
+           </td>
+           <td>
+            <label for="audiobooks">
+             Audio Books Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="audiobooksResult">
+             $
+             <input id="audiobooksResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="ebooks" name="ebooks" onchange="doCalculator()" size="5" tabindex="9" type="text"/>
+           </td>
+           <td>
+            <label for="ebooks">
+             Electronic Books Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="ebooksResult">
+             $
+             <input id="ebooksResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="eaudiobooks" name="eaudiobooks" onchange="doCalculator()" size="5" tabindex="10" type="text"/>
+           </td>
+           <td>
+            <label for="eaudiobooks">
+             Electronic Audio Books Borrowed
+            </label>
+           </td>
+           <td>
+            <label for="eaudiobooksResult">
+             $
+             <input id="eaudiobooksResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="magazineuse" name="magazineuse" onchange="doCalculator()" size="5" tabindex="11" type="text"/>
+           </td>
+           <td>
+            <label for="magazineuse">
+             Newspaper/Magazine Use In Library
+            </label>
+           </td>
+           <td>
+            <label for="magazineuseResult">
+             $
+             <input id="magazineuseResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="magazinecheck" name="magazinecheck" onchange="doCalculator()" size="5" tabindex="12" type="text"/>
+           </td>
+           <td>
+            <label for="magazinecheck">
+             Magazines Checked Out
+            </label>
+           </td>
+           <td>
+            <label for="magazinecheckResult">
+             $
+             <input id="magazinecheckResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="ill" name="ill" onchange="doCalculator()" size="5" tabindex="13" type="text"/>
+           </td>
+           <td>
+            <label for="ill">
+             Interlibrary Loan (WorldCat)
+            </label>
+           </td>
+           <td>
+            <label for="illResult">
+             $
+             <input id="illResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="adultprogram" name="adultprogram" onchange="doCalculator()" size="5" tabindex="16" type="text"/>
+           </td>
+           <td>
+            <label for="adultprogram">
+             Adult Programs and Classes Attended
+            </label>
+           </td>
+           <td>
+            <label for="adultprogramResult">
+             $
+             <input id="adultprogramResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="childrensprogram" name="childrensprogram" onchange="doCalculator()" size="5" tabindex="17" type="text"/>
+           </td>
+           <td>
+            <label for="childrensprogram">
+             Children's Programs Attended
+            </label>
+           </td>
+           <td>
+            <label for="childrensprogramResult">
+             $
+             <input id="childrensprogramResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="computerhours" name="computerhours" onchange="doCalculator()" size="5" tabindex="18" type="text"/>
+           </td>
+           <td>
+            <label for="computerhours">
+             Hours of Computer Use
+            </label>
+            (i.e. Internet, MS Word, etc.)
+           </td>
+           <td>
+            <label for="computerhoursResult">
+             $
+             <input id="computerhoursResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="newsarticles" name="newsarticles" onchange="doCalculator()" size="5" tabindex="19" type="text"/>
+           </td>
+           <td>
+            <label for="newsarticles">
+             Newspapers/Magazines Viewed Online
+            </label>
+           </td>
+           <td>
+            <label for="newsarticlesResult">
+             $
+             <input id="newsarticlesResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="databases" name="databases" onchange="doCalculator()" size="5" tabindex="20" type="text"/>
+           </td>
+           <td>
+            <label for="databases">
+             Use of Other Databases (Reference USA, online encyclopedias, etc.)
+            </label>
+           </td>
+           <td>
+            <label for="databasesResult">
+             $
+             <input id="databasesResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input id="reference" name="reference" onchange="doCalculator()" size="5" tabindex="21" type="text"/>
+           </td>
+           <td>
+            <label for="reference">
+             Reference Questions Asked
+            </label>
+           </td>
+           <td>
+            <label for="referenceResult">
+             $
+             <input id="referenceResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+          <tr>
+           <td colspan="3">
+            <hr/>
+           </td>
+          </tr>
+          <tr>
+           <td align="center" colspan="2">
+            <input onclick="doCalculator()" tabindex="22" type="button" value="Calculate The Value of Your Library Use"/>
+            <span class="button">
+             <input type="reset" value="Clear Form"/>
+            </span>
+           </td>
+           <td>
+            <label for="totalResult">
+             $
+             <input id="totalResult" name="totalResult" size="5" type="text" value="0.00"/>
+            </label>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </form>
+       <script type="text/javascript">
+        //&lt;![CDATA[//function doCalculator(){        var booksValue = document.calculator.books.value * 15.00;        document.getElementById("booksResult").value = booksValue.toFixed(2);        var yabooksValue = document.calculator.yabooks.value * 15.00;        document.getElementById("yabooksResult").value = yabooksValue.toFixed(2);        var kidsValue = document.calculator.kidsbooks.value * 8.00;        document.getElementById("kidsResult").value = kidsValue.toFixed(2);        var mangaValue = document.calculator.manga.value * 10.00;        document.getElementById("mangaResult").value = mangaValue.toFixed(2);        var animeValue = document.calculator.anime.value * 20.00;        document.getElementById("animeResult").value = animeValue.toFixed(2);        var movieValue = document.calculator.movie.value * 15.00;        document.getElementById("movieResult").value = movieValue.toFixed(2);        var musicValue = document.calculator.music.value * 15.00;        document.getElementById("musicResult").value = musicValue.toFixed(2);        var audiobooksValue = document.calculator.audiobooks.value * 40.00;        document.getElementById("audiobooksResult").value = audiobooksValue.toFixed(2);        var ebooksValue = document.calculator.ebooks.value * 15.00;        document.getElementById("ebooksResult").value = ebooksValue.toFixed(2);        var eaudiobooksValue = document.calculator.eaudiobooks.value * 11.00;        document.getElementById("eaudiobooksResult").value = eaudiobooksValue.toFixed(2);                var magazineuseValue = document.calculator.magazineuse.value * 2.00;        document.getElementById("magazineuseResult").value = magazineuseValue.toFixed(2);var magazinecheckValue = document.calculator.magazinecheck.value * 4.00;        document.getElementById("magazinecheckResult").value = magazinecheckValue.toFixed(2);        var illValue = document.calculator.ill.value * 25.00;        document.getElementById("illResult").value = illValue.toFixed(2);        var adultprogramValue = document.calculator.adultprogram.value * 37.50;        document.getElementById("adultprogramResult").value = adultprogramValue.toFixed(2);        var childrensprogramValue = document.calculator.childrensprogram.value * 37.50;        document.getElementById("childrensprogramResult").value = childrensprogramValue.toFixed(2);        var computerhoursValue = document.calculator.computerhours.value * 4.00;        document.getElementById("computerhoursResult").value = computerhoursValue.toFixed(2);        var newsarticlesValue = document.calculator.newsarticles.value * 1.00;        document.getElementById("newsarticlesResult").value = newsarticlesValue.toFixed(2);        var databasesValue = document.calculator.databases.value * 15.00;        document.getElementById("databasesResult").value = databasesValue.toFixed(2);        var referenceValue = document.calculator.reference.value * 7.00;        document.getElementById("referenceResult").value = referenceValue.toFixed(2);        var totalValue = (document.calculator.booksResult.value*1)+(document.calculator.yabooksResult.value*1)+(document.calculator.kidsResult.value*1)+(document.calculator.mangaResult.value*1)+(document.calculator.animeResult.value*1)+(document.calculator.audiobooksResult.value*1)+(document.calculator.ebooksResult.value*1)+(document.calculator.eaudiobooksResult.value*1)+(document.calculator.musicResult.value*1)+(document.calculator.magazineuseResult.value*1)+(document.calculator.magazinecheckResult.value*1)+(document.calculator.illResult.value*1)+(document.calculator.adultprogramResult.value*1)+(document.calculator.childrensprogramResult.value*1)+(document.calculator.computerhoursResult.value*1)+(document.calculator.newsarticlesResult.value*1)+(document.calculator.databasesResult.value*1)+(document.calculator.referenceResult.value*1)+(document.calculator.movieResult.value*1);document.getElementById("totalResult").value = totalValue.toFixed(2);}//]]&gt;
+       </script>
+       <noscript>
+        <p>
+         Sorry, JavaScript must be supported to use this calculator.
+        </p>
+       </noscript>
+       <!--        <a href="/calexplantion.htm">How these figures were calculated</a> -->
+       <br/>
+       <strong>
+        Comments? Questions?
+       </strong>
+       <br/>
+       <p>
+        We'd love to hear from you! You can
+        <a class="link" href="http://www.dppl.org/about_dppl/contact_us.shtml">
+         contact us in person, by email, by phone or even text message.
+        </a>
+       </p>
+      </div>
+     </td>
+    </tr>
+   </table>
+  </td>
+  <td background="../images/utils/feature_box_vertical.gif" height="5" width="5">
+  </td>
+ </tr>
+ <tr>
+  <td class="spacer_sm">
+   <img alt="" border="0" height="5" src="../images/utils/feature_box_corner_BL.gif" width="5"/>
+  </td>
+  <td background="../images/utils/feature_box_horizontal.gif" height="5" nowrap="nowrap" width="625">
+  </td>
+  <td class="spacer_sm">
+   <img alt="" border="0" height="5" src="../images/utils/feature_box_corner_BR.gif" width="5"/>
+  </td>
+ </tr>
+ <tr>
+  <td class="spacer_sm" colspan="3">
+   &nbsp;
+  </td>
+ </tr>
+</table>
