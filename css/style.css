@@ -611,6 +611,16 @@ ul.dropdown li:hover > ul{
   margin: 1em;
 }
 
+#content h1{
+  margin-bottom: 1.5em;
+  line-height: 1.25em;
+}
+
+#content ul.board{
+  list-style: none;
+  padding-left: 0;
+}
+
 
 /*slides*/
 #slide-container{
@@ -635,6 +645,7 @@ ul.dropdown li:hover > ul{
 #slides h1{
   font-size: 1.6em;
   margin-top: 2px;
+  margin-bottom: .5em;
   padding-bottom: 0;
   text-shadow: 1px 1px 1px #fff;
   border: 0;
@@ -1073,7 +1084,11 @@ SPACERS
 */	
 
 .spacer_xlg,  .spacer_lg,  .spacer_md_lg,  .spacer_md,  .spacer_md_sm,  .spacer_sm_md,  .spacer_sm,  .spacer_sm_xsm,  .spacer_xsm {
-	font-size: 0;
+	display: block; height: 0; width: 0; line-height: 0;
+}
+
+.spacer_xlg br,  .spacer_lg br,  .spacer_md_lg br,  .spacer_md br,  .spacer_md_sm br,  .spacer_sm_md br,  .spacer_sm br,  .spacer_sm_xsm br,  .spacer_xsm  br{
+  display: none;
 }
 
 @media print{
