@@ -31,11 +31,14 @@ h2 {
 } 
 
 h3 {
-  font-size : 1.5em;
-  color : #003366;
-  font-weight: normal;
-  margin-top: 1.5em;
+  font-size : 1em;
+  color : #000;
+  font-weight: bold;
+  margin-top: 2.5em;
+  margin-bottom: .5em;
 }
+
+h3 a{font-weight: bold !important;}
 
 h4 {
   font-size : 1em;
@@ -256,6 +259,14 @@ input[type=submit]:hover, input[type=button]:hover{
   height: 100%;
   background: url('../images/ajax-loader.gif') no-repeat 50% 50%;
 }
+
+ul.no-style{
+  list-style: none; padding-left: 0;
+}
+
+ul.no-style li{
+  padding-bottom: .5em;
+ }
 
 /*header styles*/
 
@@ -620,6 +631,21 @@ ul.dropdown li:hover > ul{
   list-style: none;
   padding-left: 0;
 }
+
+/*trying out modded styles for page layouts*/
+div.main{float: left; width: 32.615384em;  padding-right: 10px; margin-bottom: 2em;}
+div.inset{float: left; width: 14.923076em; margin-left: 10px;}
+div.inset .container{margin-bottom: 1em; padding: .5em 1em; border: 1px solid #c8c8c8;}
+div.inset .container img{width: 100%; margin: 0 !important;}
+div.icon{background: url('read-watch-listen-icons.png') no-repeat;}
+div.read{background-position: right 0px; height: 150px;}
+div.watch{background-position: left -150px; height: 150px;}
+div.listen{background-position: right -300px; height: 150px;}
+div.entry{padding: 0;}
+div.feed-title{font-weight: bold;}
+div.entry-title{font-weight: normal; margin-top: .5em; margin-bottom: .5em; padding: 0 0 1em 0;}
+div.entry-title a{text-decoration: none; color: #000;}
+div.entry-content{display: none;}
 
 
 /*slides*/
