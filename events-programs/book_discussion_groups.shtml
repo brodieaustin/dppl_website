@@ -14,7 +14,7 @@
 	<!--#include virtual="/includes/side-navigation.html"-->
 	<!--main content-->
 	<div id="content">
-		<!--#include virtual="../content/events_programs-c/book_discussion_groups-NEW.html"-->
+		<!--#include virtual="../content/events_programs-c/book_discussion_groups.html"-->
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->

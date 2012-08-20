@@ -31,11 +31,14 @@ h2 {
 } 
 
 h3 {
-  font-size : 1.5em;
-  color : #003366;
-  font-weight: normal;
-  margin-top: 1.5em;
+  font-size : 1em;
+  color : #000;
+  font-weight: bold;
+  margin-top: 2.5em;
+  margin-bottom: .5em;
 }
+
+h3 a{font-weight: bold !important;}
 
 h4 {
   font-size : 1em;
@@ -234,12 +237,16 @@ input[type=text]{
 }
 
 input[type=submit], input[type=button]{
-  padding: 2px 1px;
+  padding: 2px;
   cursor: pointer;
 }
 
 input[type=submit]:hover, input[type=button]:hover{
 	background-color: #c8c8c8;
+}
+
+input[type=checkbox]{
+  margin: 0 4px;
 }
 
 /*reusable classes*/
@@ -256,6 +263,14 @@ input[type=submit]:hover, input[type=button]:hover{
   height: 100%;
   background: url('../images/ajax-loader.gif') no-repeat 50% 50%;
 }
+
+ul.no-style{
+  list-style: none; padding-left: 0;
+}
+
+ul.no-style li{
+  padding-bottom: .5em;
+ }
 
 /*header styles*/
 
@@ -611,6 +626,40 @@ ul.dropdown li:hover > ul{
   margin: 1em;
 }
 
+#content h1{
+  margin-bottom: 1.5em;
+  line-height: 1.25em;
+}
+
+#content .headline h1{
+  margin-bottom: .5em;
+}
+
+#content ul.board{
+  list-style: none;
+  padding-left: 0;
+}
+
+/*trying out modded styles for page layouts*/
+div.main{float: left; width: 32.615384em;  padding-right: 10px; margin-bottom: 2em;}
+div.inset{float: left; width: 14.923076em; margin-left: 10px;}
+div.inset .container{margin-bottom: 1em; padding: .5em 1em; border: 1px solid #c8c8c8;}
+div.inset .container img{width: 100%; margin: 0 !important;}
+div.icon{background: url('/images/read-watch-listen/read-watch-listen-icons.png') no-repeat;}
+div.read{background-position: right 0px; height: 150px;}
+div.watch{background-position: left -150px; height: 150px;}
+div.listen{background-position: right -300px; height: 150px;}
+div.entry{padding: 0;}
+div.feed-title{font-weight: bold;}
+div.entry-title{font-weight: normal; margin-top: .5em; margin-bottom: .5em; padding: 0 0 1em 0;}
+div.entry-title a{text-decoration: none; color: #000;}
+div.entry-content{display: none;}
+
+div#list{min-height: 270px; width: 100%; margin: 0 auto; text-align: center; background-color: #eee;}
+.list-title{text-align: center; font-weight: bold; margin-bottom: 1em;}
+.list-item{float: left; width: 12.692307em; height: 240px; padding: .5em; text-align: center; display: none; font-size: 90%;}
+.list-item a{display: block; margin-top: 3%; text-decoration: none;}
+.list-item img{height: 200px; border: 3px solid #fff; margin: 0 !important;}
 
 /*slides*/
 #slide-container{
@@ -619,7 +668,7 @@ ul.dropdown li:hover > ul{
   margin: 0 auto;
   padding-top: 1em;
   position: relative;
-  background: url('http://www.dppl.org/taste/images/stripey-background.png') top left;
+  background: url('/taste/images/stripey-background.png') top left;
 }
 
 #slides{
@@ -635,6 +684,7 @@ ul.dropdown li:hover > ul{
 #slides h1{
   font-size: 1.6em;
   margin-top: 2px;
+  margin-bottom: .5em;
   padding-bottom: 0;
   text-shadow: 1px 1px 1px #fff;
   border: 0;
@@ -802,7 +852,7 @@ table.board th{
 }
 table.board a.download{
   display: block;
-  background: url(../images/icons/download.gif) no-repeat center left;
+  background: url(/images/icons/download.gif) no-repeat center left;
   margin-bottom: 6px;
   padding-left: 20px;
 }
@@ -812,7 +862,7 @@ table.board a.download:hover{
 }
 
 a.download{
-  background: url(../images/icons/download.gif) no-repeat center left;
+  background: url(/images/icons/download.gif) no-repeat center left;
   padding-left: 20px;
 }
 
@@ -844,6 +894,7 @@ div.db p{
 
 div.db img{
   float: right;
+  margin: 0 !important;
 }
 
 div#db-list ul li{
@@ -1073,7 +1124,11 @@ SPACERS
 */	
 
 .spacer_xlg,  .spacer_lg,  .spacer_md_lg,  .spacer_md,  .spacer_md_sm,  .spacer_sm_md,  .spacer_sm,  .spacer_sm_xsm,  .spacer_xsm {
-	font-size: 0;
+	display: block; height: 0; width: 0; line-height: 0;
+}
+
+.spacer_xlg br,  .spacer_lg br,  .spacer_md_lg br,  .spacer_md br,  .spacer_md_sm br,  .spacer_sm_md br,  .spacer_sm br,  .spacer_sm_xsm br,  .spacer_xsm  br{
+  display: none;
 }
 
 @media print{
