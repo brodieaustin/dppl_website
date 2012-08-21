@@ -196,6 +196,8 @@ body a {
 
 /*special style sheet for database listings*/
 
+/*special style sheet for database listings*/
+
 div#db-list h3{
     clear: both;
 	border-bottom: 1px solid #036
@@ -217,18 +219,22 @@ div.db{
 div.db p{
   float: left;
   width: 60%;
-  font-size: 1em;
+  margin-top: .2em;
 }
 
 div.db img{
   float: right;
+  width: 30%;
+  margin: 0 !important;
+  border: 5px solid #eee;
+  border-radius: .5em;
+}
+
+div.db img.no-border{
+  border: 0;
 }
 
 div#db-list ul li{
   padding-bottom: 4px;
   line-height: 1.25em;
-}
-
-div#db-list a.link{
-  text-decoration: none;
 }
