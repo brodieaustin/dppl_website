@@ -665,9 +665,10 @@ div#list{min-height: 270px; width: 100%; margin: 0 auto; text-align: center; bac
   height: 24.285714em; /*340px at 14px*/
   width: 100%;
   margin: 0 auto;
-  padding-top: 1em;
+  padding-top: 2.5em;
+  padding-bottom: 1em;
   position: relative;
-  background: #e0922f url('/images/themes/together/together-stripe.png') repeat-x bottom right;;
+  background: #e0922f url('/images/themes/together/together-stripe.png') repeat-x bottom right;
 }
 
 #slides{
