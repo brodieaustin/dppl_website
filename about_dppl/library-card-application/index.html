@@ -9,33 +9,41 @@
 	<![endif]-->
 	<style>
 		html{background-color: #eee;}
-		body{width: 638px; padding: 5px; margin: 1em auto; background-color: #fff; border: 1px solid #c8c8c8; font-family: sans-serif; overflow-y: scroll;}
+		body{width: 638px; padding: 5px; margin: 1em auto; background-color: #fff; border: 1px solid #c8c8c8; font-family: sans-serif; font-size: 13px; overflow-y: scroll;}
 		h2{font-size: 100%; margin-top: .5em;}
 		p{line-height: 1.5em;}
-		.section{position: relative; min-height: 30%; padding: .5em 1em;}
-		hr{clear: both; margin: 1em 0; border: 0; border-top: 1px solid #eee; height: 1px;}
-		#map-wrapper{position: relative; width: 596px; min-height: 400px; margin: 1em 0; padding: 0; border: 5px solid #eee; background-color: #transparent;}
+		.section{position: relative; padding: .5em 1em;}
+		hr{border: 0; border-top: 1px solid #eee; height: 1px;}
+		#map-wrapper{clear: both; position: relative; width: 596px; min-height: 400px; margin: 1em 0; padding: 0; border: 5px solid #eee; background-color: #transparent;}
 		#map{position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 50;}
-		.button{display: inline-block; width: auto; height: 1.8em; line-height: 1.8em; padding: 0 1em; background-color: blue; border-radius: 5px; color: #fff; text-decoration: none; vertical-align: middle; text-align: center; cursor: pointer;}
+		.button{display: inline-block; width: auto; height: 2em; line-height: 2em; padding: 0 1em; border: 0; background-color: blue; color: #fff; text-decoration: none; vertical-align: middle; text-align: center; cursor: pointer;}
 		.button:hover{background-color: #c8c8c8; color: #333;}
 		.right{ float: right;}
-		form{width: 573px; margin-top: 1em; padding: 1em; border: 1px solid #c8c8c8; background-color: #fff;}
-		form p{font-size: 90%;}
-		form fieldset{margin-bottom: 1em; padding: 0; padding-bottom: 1em; border: 0; background-color: #fff; border-bottom: 1px solid #eee; }
-		form fieldset div{clear: left; margin-bottom: .5em;}
-		label, input, textarea, select{font-size: 90%; height: 1.5em; line-height: 1.5em; vertical-align: middle; outline: 0; border: 0; border: 1px solid #c8c8c8;}
+		form{width: 100%; margin: 0; padding: 0 0 1em 0; background-color: #fff;}
+		form p{margin-top: 0; font-size: 100%;}
+		form fieldset{margin-bottom: 1em; padding: 0; padding-bottom: 1em; border: 0; background-color: #fff;}
+		form div{clear: left; margin-bottom: .5em;}
+		label, input, textarea, select{height: 1.5em; line-height: 1.5em; vertical-align: middle; outline: 0; border: 0; border: 1px solid #c8c8c8;}
 		label{display: block; width: 22%; float: left; padding-right: .5em; border: 0;}
 		label.wide{width: 100%;}
 		input[type=text]{width: 50%;}
 		input[type=text].wide{width: 80%;}
 		input[type=radio]{margin-top: 0; vertical-align: top; margin-right: .5em;}
 		input[type=button], input[type=submit]{border: 0;}
-		.row{text-align: center;}
+		input[type=submit]:hover{background-color: #c8c8c8 !important; color: #333 !important;}
+		.row{text-align: center; padding-bottom: .5em;}
 		.load{position: absolute; display: none; width: 100%;  height: 100%;  background: #fff url('../../images/ajax-loader.gif') no-repeat 50% 50%; z-index: 100;}
-		.no-borders{border: 0;}
 		.card-app{display: none;}
 		.response{display: none; font-size: 90%;}
-	</style>
+		.clear:after {
+			 visibility: hidden;
+			 display: block;
+			 font-size: 0;
+			 content: " ";
+			 clear: both;
+			 height: 0;
+			 }	
+     </style>
 </head>
 <body>
 	<div class="section no-borders" id="begin">
@@ -50,12 +58,26 @@
 		<h2>Step 1: Are you eligible?</h2>
 		<form id="eligibility-form" class="no-borders">
 			<div>
-				<label for="eligibility-address">Enter your address:</label>
-				<input type="text" id="eligibility-address" name="eligibility-address" style="min-width: 50%;" />
-				<input type="submit" value="Check" id="submit-eligibility" name="submit-eligibility" class="button" />
+				<p>Enter your address:</p>
+				<div>
+					<label for="eligibility-street">Street:</label>
+					<input type="text" id="eligibility-street" name="eligibility-street" />
+				</div>
+				<div>
+					<label for="eligibility-city">City:</label>
+					<input type="text" id="eligibility-city" name="eligibility-city" />
+				</div>
+				<div>
+					<label for="eligibility-zip">Zip code:</label>
+					<input type="text" id="eligibility-zip" name="eligibility-zip" />
+				</div>
+				<div>
+					<input type="submit" value="Check" id="submit-eligibility" name="submit-eligibility" class="button right" />
+				</div>
 			</div>
 			<div class="response" id="eligibility-response"></div>
 		</form>
+		<div class="clear"></div>
 		<div id="map-wrapper">
 			<div class="load"></div>
 			<div id="map"></div>
@@ -65,16 +87,18 @@
 			<div><a href="#application" class="button scroll right">Fill out application</a></div>
 		</div>
 	</div>
+	<div class="clear"></div>
 	<hr />
 	<div class="section" id="application">
-		<h2>Step 2: Complete the application</h2>
-		<p>Select which form you would like to fill out below. Please note that a parent or guardian must be present to pick up a library card for a child</p>
+		<h2>Step 2: Choose an application</h2>
+		<p>Select which form you would like to fill out below. Please note that a parent or guardian must be present to pick up a library card for a child.</p>
 		<p><em>This information is sent to library staff only and will not be shared with third parties</em></p>
 		<div class="row">
-			<a href="#application-adult" class="button show">Adult</a>
-			<a href="#application-child" class="button show">Child</a>
+			<a href="#application-adult" class="button scroll show">Adult</a>
+			<a href="#application-child" class="button scroll show">Child</a>
 		</div>
-		<form id="application-adult" method=""  action="" class="card-app">
+		<hr />
+		<form id="application-adult" method="post"  action="response.php" class="card-app">
 			<h3>Adult application</h3>
 			<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
 			<fieldset>
@@ -161,7 +185,7 @@
 				</div>
 			</fieldset>
 		</form>
-		<form id="application-child" method=""  action="" class="card-app">
+		<form id="application-child" method="post"  action="response.php" class="card-app">
 			<h3>Children's application</h3>
 			<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
 			<fieldset>
@@ -237,7 +261,7 @@
 			</fieldset>
 			<fieldset>
 				<div>
-					<input type="submit" value="Submit" class="button right" />
+					<input type="but" value="Submit" class="button right" />
 				</div>
 			</fieldset>
 		</form>
@@ -255,12 +279,20 @@
 		$(document).ready(function(){
 			var height = $(window).height();
 			$('.section').height(height);
+			
+			$('#eligibility-street').focus(function(){
+				$(this).val('');
+				$('#eligibility-city').val('');
+				$('#eligibility-zip').val('');
+			});
+			
 			$('#eligibility-form').submit(function(){
 				$('#eligibility-response').empty().hide();
 				$('.load').fadeIn('500');
-				var address = $('#eligibility-address').val();
+				var address = $('#eligibility-street').val() + ' '  + $('#eligibility-city').val() + ' ' + $('#eligibility-zip').val();
+				console.log(address);
 				
-				var url = 'http://nominatim.openstreetmap.org/search?q=' + address + '&format=json&addressdetails=1';
+				var url = 'http://nominatim.openstreetmap.org/search?q=' + $.trim(address) + '&format=json&addressdetails=1';
 				
 				$.getJSON(url, function(data){
 					if (data.length != 0){
