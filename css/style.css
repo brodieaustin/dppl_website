@@ -300,20 +300,23 @@ ul.no-style li{
   border-bottom: 1px solid #c8c8c8;
 }
 
+#header #tools a{text-decoration: none;}
+
 /*font-size*/
 
 #header #tools #font-size{
   position: absolute;
   top: 2px;
-  right: 15em;
+  right: 17em;
   padding-top: .4em;
   width: auto;
   vertical-align: bottom;
+  z-index: 100;
 }
 
 
 #font-size p{
-  width: 5em;
+  width: 3.5em;
   float: left;
   margin: 0;
   padding-top: 0;
@@ -356,19 +359,55 @@ a.medium {
 }
 
 a.large {
-font-size : 20px;
+font-size : 18px;
 }
 
-/*how do i menu*/
-#header #tools #how-do-i{
+/*tools links*/
+#header #tools .tools{
   position: absolute;
-  top: 0;
-  right: 2px;
+  top: 2px; 
+  right: 0; 
+  margin-top: 0; 
+  padding-top: .4em; 
+  list-style: none; 
+  z-index: 50;
 }
 
-#how-do-i select#menu{
-  width: 12.85em;
+#header #tools .tools li{
+  display: inline-block;
+  margin-left: 1em;
 }
+
+#header #tools .tools .how-do-i-links{
+  display: none; 
+  position: absolute;
+  top: 2.25em; 
+  right: 0; 
+  padding: 1em; 
+  list-style: none; 
+  background: #fff; 
+  border: 1px solid #c8c8c8; 
+  z-index: 150;
+}
+
+#header #tools .tools .how-do-i-links li{
+  margin-bottom: .25em;
+}
+
+#tools li.hover a{
+  color: #777;
+}
+
+#tools li.hover ul li a{
+  color: #036;
+}
+
+#tools li.hover ul li a:hover{
+  color: #777;
+}
+
+
+/*Search*/
 
 #search{
   position: absolute;
