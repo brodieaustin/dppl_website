@@ -40,10 +40,10 @@
 			
 			$('#events').addFeed().fadeIn(500);
 			
-			$('.how-do-i').bind('click', function(){
-				$(this).toggleClass('hover');
+			$('.how-do-i').click(function(){
 				$('.how-do-i-links').toggle();
 			});
+			
 		});
 	</script>
 	<script>
