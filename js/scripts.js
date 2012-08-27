@@ -1,3 +1,14 @@
+/*how do i list*/
+$(function(){
+	$('.how-do-i').click(function(){
+			if ($('.how-do-i-links').is(':visible') == false){
+				$('.how-do-i-links').show(0).delay(5000).hide(0);
+			}
+			else{
+				$('.how-do-i-links').hide();
+			}
+		});
+});
 /*search box funcationality*/
 $(function(){	
 	$('#search').show();
