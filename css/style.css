@@ -219,10 +219,11 @@ img{
 }
 
 input, select{
-  margin: 0;
-  padding: 1px;
+  width: auto;
   height: 2em;
-  line-height: 1em;
+  margin: 0;
+  padding: 0 .15384615em;
+  line-height: 2em;
   font-family: inherit;
   font-size: 1em;
   vertical-align: middle;
@@ -232,13 +233,13 @@ input, select{
 }
 
 input[type=text]{
-  height: 1.7em;
-  border: 1px solid #aaa;
+  height: 1.9em;
+  line-height: 1.9em;
 }
 
 input[type=submit], input[type=button]{
-  padding: 2px;
   cursor: pointer;
+  padding: 0 .46153846em;
 }
 
 input[type=submit]:hover, input[type=button]:hover{
@@ -261,7 +262,7 @@ input[type=checkbox]{
 .load{
   width: 100%;
   height: 100%;
-  background: url('../images/ajax-loader.gif') no-repeat 50% 50%;
+  background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
 }
 
 ul.no-style{
@@ -276,8 +277,7 @@ ul.no-style li{
 
 #header{
   width: 100%;
-  min-height: 180px;
-  background-color: #fff;
+  height: 180px;
   position: relative;
 }
 
@@ -285,35 +285,39 @@ ul.no-style li{
   width: 15.3846153em;
   float: left;
   margin-right: 1.53846em;
-  margin-top: 2em;
+  margin-top: 1.7em;
   margin-bottom: 0;
 }
 
 #header #tools{
   position: absolute;
-  top: 5px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 2.4em;
+  height: 2.5em;
   line-height: 1.5em;
   z-index: 50;
   border-bottom: 1px solid #c8c8c8;
+  background-color: #fff;
 }
+
+#header #tools a{text-decoration: none;}
 
 /*font-size*/
 
 #header #tools #font-size{
   position: absolute;
-  top: 2px;
-  right: 15em;
+  top: 4px;
+  right: 17em;
   padding-top: .4em;
   width: auto;
   vertical-align: bottom;
+  z-index: 100;
 }
 
 
 #font-size p{
-  width: 5em;
+  width: 3.5em;
   float: left;
   margin: 0;
   padding-top: 0;
@@ -356,19 +360,55 @@ a.medium {
 }
 
 a.large {
-font-size : 20px;
+font-size : 18px;
 }
 
-/*how do i menu*/
-#header #tools #how-do-i{
+/*tools links*/
+#header #tools .tools{
   position: absolute;
-  top: 0;
-  right: 2px;
+  top: 4px; 
+  right: 2px; 
+  margin-top: 0; 
+  padding-top: .4em; 
+  list-style: none; 
+  z-index: 50;
 }
 
-#how-do-i select#menu{
-  width: 12.85em;
+#header #tools .tools li{
+  display: inline-block;
+  margin-left: 1em;
 }
+
+#header #tools .tools .how-do-i-links{
+  display: none; 
+  position: absolute;
+  top: 2.25em; 
+  right: 0; 
+  padding: 1em; 
+  list-style: none; 
+  background: #fff; 
+  border: 1px solid #c8c8c8; 
+  z-index: 150;
+}
+
+#header #tools .tools .how-do-i-links li{
+  margin-bottom: .25em;
+}
+
+#tools li.hover a{
+  color: #777;
+}
+
+#tools li.hover ul li a{
+  color: #036;
+}
+
+#tools li.hover ul li a:hover{
+  color: #777;
+}
+
+
+/*Search*/
 
 #search{
   position: absolute;
@@ -386,16 +426,8 @@ div#search label{
   display: none;
 }
 
-div#search select#search-type{
-  width: 6em;
-}
-
 div#search input#search-text{
   width: 18em;
-}
-
-div#search input.submit-button{
-  width: 4.28em;
 }
 
 /*navigation*/
@@ -404,7 +436,7 @@ div#search input.submit-button{
 div#navigation{
   width: 100%;
   height: 2.5em;
-  margin: 4px 0 1em 0;
+  margin: 0 0 1em 0;
   padding: 0;
   text-align: left;
   overflow: visible;
@@ -576,15 +608,17 @@ ul.dropdown li:hover > ul{
 }
 
 #side-nav ul li a.button{
-  display: block;
+  display: inline-block;
   width: auto;
-  height: auto;
-  padding: .5em 1em;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 1em;
   background-color: #00a89e;
   color: #fff;
+  vertical-align: middle;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 2px 2px 2px 0px #ddd;
+  border-radius: .5em;
+  box-shadow: 1px 1px 1px 0px #ddd;
 }
 
 #side-nav ul li a.button:hover{
@@ -664,21 +698,21 @@ div#list{min-height: 270px; width: 100%; margin: 0 auto; text-align: center; bac
 /*slides*/
 #slide-container{
   height: 24.285714em; /*340px at 14px*/
-  width: 638px;
+  width: 100%;
   margin: 0 auto;
-  padding-top: 1em;
+  padding-top: 2em;
   position: relative;
-  background: url('/taste/images/stripey-background.png') top left;
+  background-color: #e0922f;
 }
 
 #slides{
   position: relative;
   width: 618px;
   height: 20em; /*280px at 14px*/
-  margin: 10px;  
+  margin: 10px auto;  
   z-index: 0;
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(34, 25, 25, .5);
+  /*box-shadow: 0 1px 3px rgba(34, 25, 25, .5);*/
 }
 
 #slides h1{
@@ -751,14 +785,13 @@ a#next2{
   padding: 3px 5px;
   color: #111;
   *margin: 1px 5px;
-  text-shadow: 1px 1px 1px #fff;
+  text-shadow: 1px 1px 1px #aaa;
 }
 
 #nav a.activeSlide {
-  font-weight: bold;
-  background-color: #00a89e;;
+  background-color: #e9ae4a;
   color: #fff;
-  text-shadow: 0px 0px 0px;
+  text-shadow: 0;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
