@@ -16,6 +16,12 @@ td{vertical-align: top; background-image: none !important;}
 
 .spacer_sm img{display: none !important;}
 
+/*things to hide if JS isn't enables*/
+
+.no-js #search, .no-js #value-counter, .no-js #font-size, .no-js #events{
+  display: none;
+}
+
 /*basic page elments*/
 h1 {
   font-size : 2em;
@@ -265,6 +271,8 @@ input[type=checkbox]{
   background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
 }
 
+.warning{background-color: #FCF8E3; margin-bottom: 2px; padding: 4px 6px;}
+
 ul.no-style{
   list-style: none; padding-left: 0;
 }
@@ -301,6 +309,7 @@ ul.no-style li{
 }
 
 #header #tools a{text-decoration: none;}
+
 
 /*font-size*/
 
@@ -406,6 +415,16 @@ font-size : 18px;
 #tools li.hover ul li a:hover{
   color: #777;
 }
+
+/*value counter*/
+#value-counter{
+  position: absolute; 
+  top: 8px; 
+  left: 0; 
+  width: 60%;
+}
+
+#counter{font-weight: bold;}
 
 
 /*Search*/
@@ -957,18 +976,18 @@ div#db-list ul li{
   padding-top: 1em;
 }
 
-#footer #address, #footer #hours, #footer #contact{
+#footer .section{
   float: left;
-  width: 27.5%;
+  width: 22.4%;
   height: 120px;
-  margin-left: 5px;
-  padding:  5px 20px;
+  margin-right: 26px;
+  padding:  5px 0;
   border-right: 1px solid #c8c8c8;
 }
 
-
-#footer #contact{
+#footer .last{
   border: 0;
+  margin-right: 0;
 }
 
 #footer span{
