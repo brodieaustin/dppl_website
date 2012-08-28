@@ -1,0 +1,30 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>Library Savings | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<h1>Library Savings</h1>
+		<div style="float: right;"><img src="http://1.bp.blogspot.com/-H0LLGgJ5G5Y/TrBU1uJmTDI/AAAAAAAAAC8/teyuIn3vnxA/s1600/libcard.png" /></div>
+		<h2>Did you know?</h2>
+		<p>We circulate nearly 927,813 items every year. That's an average of 2450 items per day! Just think, with your DPPL card, you can get access to all fo these materials and so many savings!</p>
+		<p>Fill our our <a href="ROI-calcualator.shtml">"return on investment" calculator</a> to find out how valuable the library is to you. Are you missing out on these great deals? Then fill out <a href="library-card-application/">our online library card application</a> to get started.</p>
+		<h2>How is this calculated?</h2>
+		<p>The total represents the average cost of materials that circulate each day. We calculated the average cost using our circulation figures from 2011 and averaged prices for types of items. The total resets at midnight.</p>
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+</body>
+</html>
