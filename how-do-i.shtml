@@ -1,0 +1,43 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>How Do I? | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<h1>How Do I?</h1>
+		<p>Need to solve a problem quickly? Here are some of the common things people using the library need to do.</p>
+		<ul>
+			<li><a href="/about_dppl/jobs.shtml">Apply for jobs at the Library</a></li>
+			<li><a href="/about_dppl/contact_us.shtml">Contact the library</a></li>
+			<li><a href="/about_dppl/donate.shtml">Donate to the library</a></li>
+			<li><a href="/edppl/">Download ebooks or music</a></li>
+			<li><a href="/about_dppl/library_cards_policies.shtml">Get a library card</a></li>
+			<li><a href="/about_dppl/directions.shtml">Get directions/parking info</a></li>
+			<li><a href="/special_services/proctoring.shtml">Have a test/exam proctored</a></li>
+			<li><a href="https://dppl.bibliocommons.com/user/login">Renew items online</a></li>
+			<li><a href="/events-programs/index.shtml">Register for events</a></li>
+			<li><a href="/about_dppl/public_meeting_rooms.shtml">Reserve public meeting rooms</a></li>
+			<li><a href="http://64.107.155.140/UpdateEmailFormDPK.cgi">Sign up for e-mail hold notifications</a></li>
+			<li><a href="/features/eforward_sign_up.shtml">Sign up for the newsletter</a></li>
+			<li><a href="/events-programs/events_by_email.shtml">Sign up for event notifications</a></li>
+			<li><a href="/about_dppl/computers_and_wifi.shtml">Use the computers/Wi-Fi</a></li>
+			<li><a href="https://dppl.bibliocommons.com/user/login">View My Account</a></li>
+			<li><a href="/about_dppl/volunteer.shtml">Volunteer at the library</a></li>
+		</ul>
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+</body>
+</html>
