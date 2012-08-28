@@ -581,7 +581,6 @@ ul.dropdown li:hover > ul{
   width: 10em;
   float: left;
   margin-right: 1.5384615em;
-  font-weight: bold;
   color: inherit;
 }
 
@@ -599,7 +598,7 @@ ul.dropdown li:hover > ul{
 }
 
 #side-nav ul li{
-  margin: 10px 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 
