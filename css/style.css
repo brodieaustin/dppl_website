@@ -83,6 +83,25 @@ a.no-style{
  text-decoration: none;
 }
 
+a.button{
+  display: block;
+  width: auto;
+  height: 2em;
+  line-height: 2em;
+  margin: .5em 0;
+  padding: 0 .5em;
+  background-color: #00a89e;
+  color: #fff !important;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: .5em;
+  box-shadow: 1px 1px 1px 0px #ddd;
+}
+
+a.button:hover{
+  background-color: #555;
+ }
+
 /*
 a.link {
 	font-weight: normal;
@@ -297,6 +316,32 @@ ul.no-style li{
   margin-bottom: 0;
 }
 
+#header .theme{
+  display: block;
+  position: absolute; 
+  top: 8px; 
+  left: 0; 
+  font-weight: bold; 
+  color: #e0922f;
+}
+
+#header .theme:hover{
+  background-color: #e0922f;
+  color: #fff;
+}
+
+#header .theme ul{
+  margin: 0;
+  padding-left: .5em;
+  list-style: none;
+}
+
+#header .theme li{
+  display: block;
+  float: left;
+  margin-right: .5em;
+}
+
 #header #tools{
   position: absolute;
   top: 0;
@@ -375,10 +420,10 @@ font-size : 18px;
 /*tools links*/
 #header #tools .tools{
   position: absolute;
-  top: 4px; 
+  top: 8px; 
   right: 2px; 
   margin-top: 0; 
-  padding-top: .4em; 
+  padding-top: 0; 
   list-style: none; 
   z-index: 50;
 }
@@ -415,17 +460,6 @@ font-size : 18px;
 #tools li.hover ul li a:hover{
   color: #777;
 }
-
-/*value counter*/
-#value-counter{
-  position: absolute; 
-  top: 8px; 
-  left: 0; 
-  width: 60%;
-}
-
-#counter{font-weight: bold;}
-
 
 /*Search*/
 
@@ -625,32 +659,15 @@ ul.dropdown li:hover > ul{
   text-decoration: none;
 }
 
-#side-nav ul li a.button{
-  display: inline-block;
-  width: auto;
-  height: 2em;
-  line-height: 2em;
-  padding: 0 1em;
-  background-color: #00a89e;
-  color: #fff;
-  vertical-align: middle;
+.savings-counter{
   text-align: center;
-  border-radius: .5em;
-  box-shadow: 1px 1px 1px 0px #ddd;
 }
-
-#side-nav ul li a.button:hover{
-  background-color: #555;
- }
  
-#side-nav #taste{
-  display: block; 
-  width: 130px; 
-  height: 70px; 
-  background: url('/images/themes/River/taste-logo-small.png') no-repeat top left;
-}
-#side-nav #taste:hover{
-  background: url('/images/themes/River/taste-logo-small-stripe.png') no-repeat top left;
+#counter{
+  display: block;
+  margin: .5em 0;
+  font-size: 150%;
+  font-weight: bold;
 }
 
 /*content*/
@@ -663,7 +680,7 @@ ul.dropdown li:hover > ul{
   border: 1px solid #c8c8c8;
   padding: 5px;
   overflow: hidden;
-  background-color: #fff;
+  background: #fff;
 }
 
 #content table{
@@ -730,7 +747,7 @@ div#list{min-height: 270px; width: 100%; margin: 0 auto; text-align: center; bac
   margin: 10px auto;  
   z-index: 0;
   background-color: #fff;
-  /*box-shadow: 0 1px 3px rgba(34, 25, 25, .5);*/
+  box-shadow: 0 1px 3px rgba(34, 25, 25, .5);
 }
 
 #slides h1{
