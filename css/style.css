@@ -298,7 +298,6 @@ ul.no-style li{
   line-height: 1.5em;
   z-index: 50;
   border-bottom: 1px solid #c8c8c8;
-  background-color: #fff;
 }
 
 #header #tools a{text-decoration: none;}
@@ -310,6 +309,7 @@ ul.no-style li{
   top: 4px;
   right: 17em;
   padding-top: .4em;
+  padding-right: 1em;
   width: auto;
   vertical-align: bottom;
   z-index: 100;
@@ -376,7 +376,7 @@ font-size : 18px;
 
 #header #tools .tools li{
   display: inline-block;
-  margin-left: 1em;
+  margin-left: 1.2em;
 }
 
 #header #tools .tools .how-do-i-links{
@@ -701,7 +701,7 @@ div#list{min-height: 270px; width: 100%; margin: 0 auto; text-align: center; bac
   margin: 0 auto;
   padding-top: 2em;
   position: relative;
-  background-color: #e0922f;
+  background: #e0922f;
 }
 
 #slides{
