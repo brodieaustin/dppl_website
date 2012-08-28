@@ -1,5 +1,6 @@
 /*how do i list*/
 $(function(){
+	$('.how-do-i > a').attr('href', 'javascript:void(0)');
 	$('.how-do-i').click(function(){
 			if ($('.how-do-i-links').is(':visible') == false){
 				$('.how-do-i-links').show(0).delay(5000).hide(0);
