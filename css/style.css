@@ -46,6 +46,12 @@ h4 {
   font-weight: bold;
 }
 
+h5{
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+}
+
 /*LINKS*/	
 
 a[href] {
@@ -237,7 +243,9 @@ input[type=text]{
 }
 
 input[type=submit], input[type=button]{
-  padding: 2px;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 8px;
   cursor: pointer;
 }
 
@@ -391,11 +399,11 @@ div#search select#search-type{
 }
 
 div#search input#search-text{
-  width: 18em;
+  width: 17em;
 }
 
 div#search input.submit-button{
-  width: 4.28em;
+  /*width: 4.28em;*/
 }
 
 /*navigation*/
