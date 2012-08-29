@@ -436,12 +436,14 @@ font-size : 18px;
 #header #tools .tools .how-do-i-links{
   display: none; 
   position: absolute;
-  top: 2.25em; 
-  right: 0; 
+  top: 2.1em; 
+  right: -2px; 
   padding: 1em; 
   list-style: none; 
   background: #fff; 
-  border: 1px solid #c8c8c8; 
+  border-left: 1px solid #c8c8c8; 
+  border-right: 1px solid #c8c8c8; 
+  border-bottom: 1px solid #c8c8c8; 
   z-index: 150;
 }
 
