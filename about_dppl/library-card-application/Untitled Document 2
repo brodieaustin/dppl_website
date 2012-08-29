@@ -1,0 +1,129 @@
+		<div style="float: right; width: 30%;">
+			<h4>Am I eligible?</h4>
+			<p>Any resident of incorporated Des Plaines can apply for a card. Rosemont residents and other non-Des Plaines residents should consult our <a href="library_cards_policies.shtml">library cards and policies page</a> for information about non-resident cards.</p>
+			<p>Aren't sure if you are eligible? <a href="" class="view-eligibility-check">Click here to check</a></p>
+			<div class="eligibility-check">
+				<form id="eligibility-form" style="float: left; width: 40%; margin-right: 40px;">
+					<div>
+						<p>Enter your address:</p>
+						<div>
+							<label for="eligibility-street">Street:</label>
+							<input type="text" id="eligibility-street" name="eligibility-street" />
+						</div>
+						<div>
+							<label for="eligibility-city">City:</label>
+							<input type="text" id="eligibility-city" name="eligibility-city" />
+						</div>
+						<div>
+							<label for="eligibility-zip">Zip code:</label>
+							<input type="text" id="eligibility-zip" name="eligibility-zip" />
+						</div>
+						<div>
+							<input type="button" value="Check" id="submit-eligibility" name="submit-eligibility" class="right" />
+						</div>
+					</div>
+					<div class="response" id="eligibility-response"></div>
+				</form>
+				<div id="map-wrapper">
+					<div class="load"></div>
+					<div id="map"></div>
+				</div>
+				<div class="clear">
+					<p>Is the marker inside the blue shape? If so, you can proceed with your application. Please note that library staff may still need to verify your address.</p>
+				</div>
+				<div><a href="#application" class="scroll right">Fill out application</a></div>
+			</div>
+		</div>
+			<p>Are you under AGE or a parent? Fill out the <a href="child.shtml">Children's application</a>. <em>Please note that a parent or guardian must be present to pick up a library card for a child.</em></p>
+			<form id="application-adult" method="post"  action="response.php" class="card-app">
+				<h3>Adult application</h3>
+				<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
+				<fieldset>
+					<div>
+						<label for="adult-last-name">Last Name</label>
+						<input type="text" id="adult-last-name" name="adult-last-name" tabindex="1" />
+					</div>
+					<div>
+						<label for="adult-first-name">First Name</label>
+						<input type="text" id="adult-first-name" name="adult-first-name" tabindex="2" />
+					</div>
+					<div>
+						<label for="adult-middle-initial">Middle Initial</label>
+						<input type="text" id="adult-middle-initial" name="adult-middle-initial" tabindex="3" />
+					</div>
+					<fieldset>
+						<div>
+							<label for="adult-gender-male"><input type="radio" id="adult-gender-male" name="adult-gender" tabindex="4" />Male</label>
+						</div>
+						<div>
+							<label for="adult-gender-female"><input type="radio" id="adult-gender-female" name="adult-gender" tabindex="5" />Female</label>
+						</div>
+					</fieldset>
+					<div>
+						<label for="adult-address">Address</label>
+						<input type="text" id="adult-address" name="adult-address" tabindex="6" />
+					</div>
+					<div>
+						<label for="adult-apartment">Apartment</label>
+						<input type="text" id="adult-apartment" name="adult-apartment" tabindex="7" />
+					</div>
+					<div>
+						<label for="adult-city">City</label>
+						<input type="text" id="adult-city" name="adult-city" tabindex="8" />
+					</div>
+					<div>
+						<label for="adult-zipcode">Zip</label>
+						<input type="text" id="adult-zipcode" name="adult-zipcode" tabindex="9" />
+					</div>
+					<div>
+						<label for="adult-home-phone">Phone</label>
+						<input type="text" id="adult-home-phone" name="adult-home-phone" tabindex="10" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<div>
+						<label for="adult-employer">Employed by</label>
+						<input type="text" id="adult-employer" name="adult-employer" tabindex="11" />
+					</div>
+					<div>
+						<label for="adult-employer-address">Address</label>
+						<input type="text" id="adult-employer-address" name="adult-employer-address" tabindex="12" />
+					</div>
+					<div>
+						<label for="adult-employer-city">City</label>
+						<input type="text" id="adult-employer-city" name="adult-employer-city" tabindex="13" />
+					</div>
+					<div>
+						<label for="adult-employer-zip">Zip</label>
+						<input type="text" id="adult-employer-zip" name="adult-employer-zip" tabindex="14" />
+					</div>
+					<div>
+						<label for="adult-work-phone">Work</label>
+						<input type="text" id="adult-work-phone" name="adult-work-phone" tabindex="15" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<div>
+						<label for="adult-drivers-license">Driver's License #</label>
+						<input type="text" id="adult-drivers-license" name="adult-drivers-license" tabindex="16" />
+					</div>
+					<div>
+						<label for="adult-date-of-birth">Date of Birth</label>
+						<input type="text" id="adult-date-of-birth" name="adult-date-of-birth" tabindex="17" />
+					</div>
+					<div>
+						<label for="adult-primary-language" class="wide">Primary Language Spoken at Home</label>
+						<input type="text" id="adult-primary-language" name="adult-primary-language" tabindex="18" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<p><em>This information is sent to library staff only and will not be shared with third parties</em></p>
+					<div>
+						<input type="submit" value="Submit" class="button right" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="section no-borders" id="end">
+			<p class="response" id="application-response"></p>
+		</div>
