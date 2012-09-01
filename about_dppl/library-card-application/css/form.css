@@ -1,0 +1,162 @@
+/*eligiblity check window*/
+.eligibility-check{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95%;
+  padding: 10px;
+  background-color: #fff;
+  border: 10px solid #c8c8c8;
+  z-index: 200;
+}
+
+.eligibility-check h4{
+  margin: 0 0 .5em 0;
+}
+
+#map-wrapper{
+  position: relative;
+  float: left;
+  width: 53%;
+  min-height: 400px;
+  margin: .5em 0 1em 0;
+  padding: 0;
+  border: 5px solid #eee;
+  background-color: transparent;
+}
+
+#map{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+#map img{
+  margin: 0 !important;
+}
+
+/*general form bits*/
+#content form p{
+  margin-top: 0;
+  font-size: 100%;
+}
+
+#content form em{
+  color: red;
+}
+
+#content form fieldset{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+}
+
+#content form fieldset legend{
+  margin: 0;
+  margin-bottom: .5em;
+  padding: 0;
+  font-style: oblique;
+}
+
+#content form div{
+  clear: left;
+  margin-bottom: .5em;
+}
+
+#content form div.challenge-image{
+    margin-bottom: 1.25em;
+   background-color: #fff;
+   padding: 10px 0;
+}
+
+#content form div.challenge-image img{
+  width: 60%;
+}
+
+#content label, #content input[type=text], #content textarea, #content select{
+  height: 1.5em;
+  line-height: 1.5em;
+  vertical-align: middle;
+  outline: 0;
+  border: 0;
+  border: 1px solid #c8c8c8;
+}
+
+#content label{
+  display: block;
+  padding-right: .5em;
+  border: 0;
+}
+
+#content input[type=text]{
+  width: 99%;
+}
+
+#content input[type=radio]{
+  margin-top: 0;
+  vertical-align: top;
+  margin-right: .5em;
+}
+
+/*general use classes*/
+
+.load{
+  position: absolute;
+  display: none;
+  width: 100%;
+   height: 100%;
+   background: #fff url('../../images/ajax-loader.gif') no-repeat 50% 50%;
+  z-index: 100;
+}
+
+.right{
+  float: right;
+}
+
+.response{
+  display: none;
+}
+
+.close-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 4px;
+  font-size: 150%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+.callout{
+   margin: 1em;
+  padding: 1em;
+   background-color: #eee;
+}
+
+.big{
+  font-size: 180%;
+  margin: 0;
+}
+
+div.errors{
+   color: red;
+   margin-bottom: 1em;
+}
+
+.error{
+  color: red;
+}
+
+/*fallbacks for no-js*/
+.no-js .eligibility-question{display: none;}
+
