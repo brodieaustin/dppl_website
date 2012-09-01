@@ -3,36 +3,7 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-	<link rel="stylesheet" href="leaflet/leaflet.css" />
-	<!--[if lte IE 8]>
-		<link rel="stylesheet" href="leaflet/leaflet.ie.css" />
-	<![endif]-->
-	<style>
-		.right{float: right;}
-		.eligibility-check{display: none; position: absolute; top: 0; left: 0; width: 95%; padding: 10px; background-color: #fff; border: 10px solid #c8c8c8; z-index: 200;}
-		.eligibility-check h3{margin: 0 0 .5em 0;}
-		#map-wrapper{position: relative; float: left; width: 53%; min-height: 400px; margin: 1.5em 0 1em 0; padding: 0; border: 5px solid #eee; background-color: transparent;}
-		#map{position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 50;}
-		#map img{margin: 0 !important;}
-		#content form{width: 98%; margin: 0 auto; padding: .5em 0; background-color: #fff;}
-		#content form p{margin-top: 0; font-size: 100%;}
-		#content form fieldset{margin: 0; padding: 0; padding-bottom: 1em; border: 0; background-color: #fff;}
-		#content form div{clear: left; margin-bottom: .5em;}
-		#content label, #content input[type=text], #content textarea, #content select{height: 1.5em; line-height: 1.5em; vertical-align: middle; outline: 0; border: 0; border: 1px solid #c8c8c8;}
-		#content label{display: block; padding-right: .5em; border: 0;}
-		#content label.wide{width: 100%;}
-		#content input[type=text]{width: 100%;}
-		#content input[type=text].wide{width: 80%;}
-		#content input[type=radio]{margin-top: 0; vertical-align: top; margin-right: .5em;}
-		.row{text-align: center; padding-bottom: .5em;}
-		.load{position: absolute; display: none; width: 100%;  height: 100%;  background: #fff url('../../images/ajax-loader.gif') no-repeat 50% 50%; z-index: 100;}
-		.response{display: none; font-size: 90%;}	
-		.close-button{position: absolute; top: 0; right: 0; padding: 2px 4px; font-size: 150%; font-weight: bold; cursor: pointer;}
-		.close-button:hover{background-color: #333; color: #fff;}
-		form div.challenge-image{  margin-bottom: 1.25em;  background-color: #fff;  padding: 10px 0;}
-		form div.challenge-image img{width: 60%;}
-		div.callout{  margin: 1em 0;  padding: 1em;   background-color: #e8e8e8;}
-     </style>
+	<link rel="stylesheet" href="css/form.css" />
 </head>
 <body>
 	<!--header-->
@@ -43,268 +14,175 @@
 	<!--#include virtual="/includes/side-navigation.html"-->
 	<!--main content-->
 	<div id="content">
+		<p class="response" id="application-response"></p>
 		<h1>Library Card Application</h1>
-			<p>Thank you for applying for a DPPL library card. This form will help jump start your application process. Determine if you are eligible for a card. After that, you will fill out and submit the application. Come to the library to pick up your card. That's it!</p>
-			<p>Parents can fill our our <a href="child.html">Child's card application</a> for children in 8th grade or younger.</p>
-		<hr />
-		<div class="main">
-			<h2 style="margin-top: 0;">Am I Eligible?</h2>
-			<p>Any resident of incorporated Des Plaines can apply for a card. Rosemont residents and other non-Des Plaines residents should consult our <a href="library_cards_policies.shtml">library cards and policies page</a> for information about non-resident cards.</p>
-			<p><strong>Aren't sure if you are eligible?</strong></p>
-			<p><a href="" class="view-eligibility-check">Click here to check</a></p>
+		<div class="card-application">
+				<h2>Adult Card</h2>
+				<p>Thank you for applying for a DPPL library card. This form will help jump start your application process. Determine if you are eligible for a card. After that, you will fill out and submit the application. Come to the library with a valid ID and pick up your card. That's it!</p>
+				<p>Need a refresher about our library card policies and lending rules? Check out our <a href="../library_cards_policies.shtml">policies page</a> for more details</p>
+				<h3>Other applications</h3>
+				<p>We also have the following applications that can be filled out:</p>
+				<ul>
+					<li><a href="child.shtml">Application for children in 8th grade or younger</a></li>
+					<li style="margin-top: .5em;"><a href="es.shtml">Applications in Spanish</a></li>
+				</ul>
+			<hr />
+			<h3>Am I Eligible?</h3>
+				<p>Any resident of incorporated Des Plaines can apply for a card. Rosemont residents and other non-Des Plaines residents should consult our <a href="library_cards_policies.shtml">library cards and policies page</a> for information about non-resident cards.</p>
+				<div class="callout" id="eligibility-question">
+					<p><strong>Aren't sure if you are eligible?</strong></p>
+					<p><a href="" class="view-eligibility-check">Click here to check</a></p>
+				</div>
 			<div class="eligibility-check">
-				<h3>Check your eligibility</h3>
+				<h4>Check your eligibility</h4>
 				<div class="close-button close">X</div>
-				<form id="eligibility-form" style="float: left; width: 40%; margin-right: 40px;">
-					<fieldset>
-						<legend>Enter your address:</legend>
-						<div>
-							<label for="eligibility-street">Street:</label>
-							<input type="text" id="eligibility-street" name="eligibility-street" />
-						</div>
-						<div>
-							<label for="eligibility-city">City:</label>
-							<input type="text" id="eligibility-city" name="eligibility-city" />
-						</div>
-						<div>OR</div>
-						<div>
-							<label for="eligibility-zip">Zip code:</label>
-							<input type="text" id="eligibility-zip" name="eligibility-zip" />
-						</div>
-					</fieldset>
-					<fieldset>
-						<div>
-							<input type="button" value="Check" id="submit-eligibility" name="submit-eligibility" class="right" />
-						</div>
-					</fieldset>
-					<div class="response" id="eligibility-response"></div>
-				</form>
+				<div style="float: left; width: 40%; margin-right: 40px;">
+					<form id="eligibility-form" >
+						<fieldset>
+							<legend>Enter your address...</legend>
+							<div>
+								<label for="eligibility-street">Street:</label>
+								<input type="text" id="eligibility-street" name="eligibility-street" />
+							</div>
+							<div>
+								<label for="eligibility-city">City:</label>
+								<input type="text" id="eligibility-city" name="eligibility-city" />
+							</div>
+							<div style="margin-top: 1em;">OR</div>
+							<div>
+								<label for="eligibility-zip">Zip code:</label>
+								<input type="text" id="eligibility-zip" name="eligibility-zip" />
+							</div>
+						</fieldset>
+						<fieldset>
+							<div>
+								<input type="button" value="Check" id="submit-eligibility" name="submit-eligibility" class="right" />
+							</div>
+						</fieldset>
+					</form>
+					<div class="response callout" id="eligibility-response"></div>
+				</div>
 				<div id="map-wrapper">
 					<div class="load"></div>
 					<div id="map"></div>
 				</div>
-				<div class="clear">
-					<p>Is the marker inside the blue shape? If so, you can proceed with your application. Please note that library staff may still need to verify your address.</p>
-				</div>
 			</div><!--end of eligiblity check-->
-		</div>
-		<div class="inset">
-			<div class="container">
-				<h4>Library Card Policies</h4>
-				<p>Need a refresher about our library card policies and lending rules? Check out our policies page for more details</p>
-				<p><a href="../library_cards_policies.shtml">Learn more</a></p>
-			</div>
-		</div>
-		<hr />
-		<h2>Adult Application</h2>
-		<form id="application-adult" method="post"  action="response.php" class="card-app">
-			<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
-			<fieldset>
-				<div>
-					<label for="adult-last-name">Last Name</label>
-					<input type="text" id="adult-last-name" name="adult-last-name" tabindex="1" />
-				</div>
-				<div>
-					<label for="adult-first-name">First Name</label>
-					<input type="text" id="adult-first-name" name="adult-first-name" tabindex="2" />
-				</div>
-				<div>
-					<label for="adult-middle-initial">Middle Initial</label>
-					<input type="text" id="adult-middle-initial" name="adult-middle-initial" tabindex="3" />
-				</div>
+			<hr />
+			<form id="application" method="post"  action="mail.php">
+				<h3>Complete the Application</h3>
+				<p><em>Required field (*)</em></p>
+				<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
+				<div class="errors"></div>
+				<input type="hidden" name="application-type" id="application-type" value="Adult" />
+				<input type="hidden" name="application-eligibility" id="application-eligibility" value="" />
 				<fieldset>
 					<div>
-						<label for="adult-gender-male"><input type="radio" id="adult-gender-male" name="adult-gender" tabindex="4" />Male</label>
+						<label for="last-name">Last Name:<em>*</em></label>
+						<input type="text" id="last-name" name="last-name" class="required" tabindex="1" />
 					</div>
 					<div>
-						<label for="adult-gender-female"><input type="radio" id="adult-gender-female" name="adult-gender" tabindex="5" />Female</label>
+						<label for="first-name">First Name:<em>*</em></label>
+						<input type="text" id="first-name" name="first-name" class="required" tabindex="2" />
+					</div>
+					<div>
+						<label for="middle-initial">Middle Initial:</label>
+						<input type="text" id="middle-initial" name="middle-initial" tabindex="3" />
+					</div>
+					<fieldset>
+						<div>
+							<label for="gender-male"><input type="radio" id="gender-male" name="gender" tabindex="4" value="Male" />Male</label>
+						</div>
+						<div>
+							<label for="gender-female"><input type="radio" id="gender-female" name="gender" tabindex="5" value="Female" />Female</label>
+						</div>
+					</fieldset>
+					<div>
+						<label for="address">Address:<em>*</em></label>
+						<input type="text" id="address" name="address" class="required" tabindex="6" />
+					</div>
+					<div>
+						<label for="apartment">Apartment:</label>
+						<input type="text" id="apartment" name="apartment" tabindex="7" />
+					</div>
+					<div>
+						<label for="city">City:</label>
+						<input type="text" id="city" name="city" tabindex="8" />
+					</div>
+					<div>
+						<label for="zipcode">Zip:</label>
+						<input type="text" id="zipcode" name="zipcode" tabindex="9" />
+					</div>
+					<div>
+						<label for="home-phone">Phone:<em>*</em></label>
+						<input type="text" id="home-phone" name="home-phone" class="required" tabindex="10" />
+					</div>				
+				</fieldset>
+				<fieldset>
+					<div>
+						<label for="employer">Employed by:</label>
+						<input type="text" id="employer" name="employer" tabindex="11" />
+					</div>
+					<div>
+						<label for="employer-address">Address:</label>
+						<input type="text" id="employer-address" name="employer-address" tabindex="12" />
+					</div>
+					<div>
+						<label for="employer-city">City:</label>
+						<input type="text" id="employer-city" name="employer-city" tabindex="13" />
+					</div>
+					<div>
+						<label for="employer-zip">Zip:</label>
+						<input type="text" id="employer-zip" name="employer-zip" tabindex="14" />
+					</div>
+					<div>
+						<label for="work-phone">Work:</label>
+						<input type="text" id="work-phone" name="work-phone" tabindex="15" />
 					</div>
 				</fieldset>
-				<div>
-					<label for="adult-address">Address</label>
-					<input type="text" id="adult-address" name="adult-address" tabindex="6" />
-				</div>
-				<div>
-					<label for="adult-apartment">Apartment</label>
-					<input type="text" id="adult-apartment" name="adult-apartment" tabindex="7" />
-				</div>
-				<div>
-					<label for="adult-city">City</label>
-					<input type="text" id="adult-city" name="adult-city" tabindex="8" />
-				</div>
-				<div>
-					<label for="adult-zipcode">Zip</label>
-					<input type="text" id="adult-zipcode" name="adult-zipcode" tabindex="9" />
-				</div>
-				<div>
-					<label for="adult-home-phone">Phone</label>
-					<input type="text" id="adult-home-phone" name="adult-home-phone" tabindex="10" />
-				</div>
-			</fieldset>
-			<fieldset>
-				<div>
-					<label for="adult-employer">Employed by</label>
-					<input type="text" id="adult-employer" name="adult-employer" tabindex="11" />
-				</div>
-				<div>
-					<label for="adult-employer-address">Address</label>
-					<input type="text" id="adult-employer-address" name="adult-employer-address" tabindex="12" />
-				</div>
-				<div>
-					<label for="adult-employer-city">City</label>
-					<input type="text" id="adult-employer-city" name="adult-employer-city" tabindex="13" />
-				</div>
-				<div>
-					<label for="adult-employer-zip">Zip</label>
-					<input type="text" id="adult-employer-zip" name="adult-employer-zip" tabindex="14" />
-				</div>
-				<div>
-					<label for="adult-work-phone">Work</label>
-					<input type="text" id="adult-work-phone" name="adult-work-phone" tabindex="15" />
-				</div>
-			</fieldset>
-			<fieldset>
-				<div>
-					<label for="adult-drivers-license">Driver's License #</label>
-					<input type="text" id="adult-drivers-license" name="adult-drivers-license" tabindex="16" />
-				</div>
-				<div>
-					<label for="adult-date-of-birth">Date of Birth</label>
-					<input type="text" id="adult-date-of-birth" name="adult-date-of-birth" tabindex="17" />
-				</div>
-				<div>
-					<label for="adult-primary-language" class="wide">Primary Language Spoken at Home</label>
-					<input type="text" id="adult-primary-language" name="adult-primary-language" tabindex="18" />
-				</div>
-			</fieldset>
-			<fieldset>
-				<p><em>This information is sent to library staff only and will not be shared with third parties</em></p>
-				<div id="challenge" class="callout">
-					<p><strong>Please answer the question below:</strong></p>
-					<div class="challenge-image">
-						<img src="http://www.dppl.org/youth/science-expo/registration/images/challenge.png" alt="challenge image">
+				<fieldset>
+					<div>
+						<label for="drivers-license">Driver's License #:</label>
+						<input type="text" id="drivers-license" name="drivers-license" tabindex="16" />
 					</div>
 					<div>
-						<label for="challenge-response">Your response: <em>*</em> &nbsp;</label>
-						<input type="text" name="challenge-response" id="challenge-response" tabindex="16" class="required">
+						<label for="date-of-birth">Date of Birth:</label>
+						<input type="text" id="date-of-birth" name="date-of-birth" tabindex="17" />
 					</div>
-				</div>
-				<div>
-					<input type="submit" value="Submit" class="button right" />
-				</div>
-			</fieldset>
-		</form>
-		<p class="response" id="application-response"></p>
+					<div>
+						<label for="primary-language" class="wide">Primary Language Spoken at Home:</label>
+						<input type="text" id="primary-language" name="primary-language" tabindex="18" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<div id="challenge" class="callout">
+						<p><strong>Please answer the question below:</strong></p>
+						<div class="challenge-image">
+							<img src="images/challenge.png" alt="challenge image">
+						</div>
+						<div>
+							<label for="challenge-response">Your response: <em>*</em> &nbsp;</label>
+							<input type="text" name="challenge-response" id="challenge-response" tabindex="20" class="required">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div>
+						<input type="submit" value="Submit" class="button right" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<hr />
+		<h3>Questions?</h3>
+			<p>If you have questions about applying for a library card or are having problems using the application, please send an email to <a href="mailto:librarycards@dppl.org">librarycards@dppl.org</a>.</p>
 	</div><!--end of content-->
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<script src="leaflet/leaflet.js"></script>
-	<script src="http://maps.stamen.com/js/tile.stamen.js"></script>
-	<script>
-
-		$(document).ready(function(){
-		
-			$('.view-eligibility-check').click(function(){
-				var top = $(document).scrollTop();
-				console.log(top);
-				$('.eligibility-check').css('top', top + "px");
-				$('.eligibility-check').show();
-					// initialize the map on the "map" div
-				
-
-				// create a CloudMade tile layer (or use other provider of your choice)
-				var cloudmade = new L.TileLayer('http://{s}.tile.cloudmade.com/009e38ae4f16468b82a353bc9accf305/1714/256/{z}/{x}/{y}.png', {
-					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-					maxZoom: 16
-				});
-
-				// add the CloudMade layer to the map set the view to a given center and zoom
-				map.addLayer(cloudmade).setView(new L.LatLng(42.033889, -87.899722), 12);
-		
-				//set up coordinates for DP shape
-				var p1 = new L.LatLng(42.080, -87.893),
-					p2 = new L.LatLng(42.081, -87.907),
-					p3 = new L.LatLng(42.066, -87.907),
-					p4 = new L.LatLng(42.066, -87.921),
-					p5 = new L.LatLng(42.049, -87.921),
-					p6 = new L.LatLng(42.048, -87.940),
-					p7 = new L.LatLng(42.009, -87.940),
-					p8 = new L.LatLng(42.010, -87.885),
-					p9 = new L.LatLng(41.999, -87.884),
-					p10 = new L.LatLng(41.996, -87.873),
-					p11 = new L.LatLng(41.996, -87.863),
-					p12 = new L.LatLng(42.039, -87.869),
-					p13 = new L.LatLng(42.053, -87.869),
-					p14 = new L.LatLng(42.055, -87.888),
-					polygonPoints = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14];
-
-				var polygon = new L.Polygon(polygonPoints);
-				map.addLayer(polygon);
-				
-				return false;
-			});
-			
-			$('.close').click(function(){
-				$(this).parent().hide();
-				
-				return false;
-			});
-			
-			$('#eligibility-street').focus(function(){
-				$(this).val('');
-				$('#eligibility-city').val('');
-				$('#eligibility-zip').val('');
-			});
-			
-			$('#submit-eligibility').click(function(){
-				$('#eligibility-response').empty().hide();
-				$('.load').fadeIn('500');
-				var address = $('#eligibility-street').val() + ' '  + $('#eligibility-city').val() + ' ' + $('#eligibility-zip').val();
-				console.log(address);
-				
-				var url = 'http://nominatim.openstreetmap.org/search?q=' + $.trim(address) + '&format=json&addressdetails=1';
-				
-				$.getJSON(url, function(data){
-					if (data.length != 0){
-						console.log(data[0]);
-						addMarker(data[0].lat, data[0].lon);
-						$('#map').focus();
-					}
-					else{
-					 $('#eligibility-response').html('Sorry, that location was not found').css('color', 'red').show();
-					}
-					$('.load').fadeOut('500');
-				
-				});
-				
-				
-				return false;
-			});
-			
-			$('.scroll').click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-			});
-			
-			var map = new L.Map('map');
-			var marker = new L.Marker();
-			
-			function addMarker(lat, lng){
-					map.closePopup();
-			
-					console.log(lat, lng);
-			
-					var latlng = new L.LatLng(lat, lng, name);
-			
-					marker.setLatLng(latlng);
-			
-					marker.addTo(map)
-					map.setView(latlng, 12);
-				};
-			
-		});
-	</script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBLKwhTM04J7cC57MB-odRUIvTs_58ybfA&sensor=false"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/jquery.form.js"></script>
+	<script src="js/scripts.js"></script>
 </body>
 </html>
