@@ -99,6 +99,7 @@ $(function(){
 	var date1 = Date.today().at('0:00:00');
 	var p = .000442;
 
+	/*$('#content').before('');*/
 	
 	setInterval(function(){
 		var date2 = new Date();

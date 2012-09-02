@@ -304,7 +304,7 @@ ul.no-style li{
 
 #header{
   width: 100%;
-  height: 180px;
+  height: 170px;
   position: relative;
 }
 
@@ -488,7 +488,8 @@ div#search input#search-text{
 div#navigation{
   width: 100%;
   height: 2.5em;
-  margin: 0 0 1em 0;
+  /*margin: 0 0 1em 0;*/
+  margin: 0;
   padding: 0;
   text-align: left;
   overflow: visible;
@@ -632,11 +633,12 @@ ul.dropdown li:hover > ul{
 #side-nav{
   width: 10em;
   float: left;
+  margin-top: 1em;
   margin-right: 1.5384615em;
   color: inherit;
 }
 
-#side-nav small{display: block; padding-top: 2px; font-size: .7em; color: #888;}
+#side-nav small{display: block; padding-top: 2px; font-size: .7em; color: #777;}
 
 #side-nav ul{
   margin: 2px 0 14px 0;
@@ -659,15 +661,32 @@ ul.dropdown li:hover > ul{
 }
 
 .savings-counter{
+  position: relative;
+  float: right;
+  width: 49.076923em;
+  height: 6em;
+  margin: 0;
+  padding: 0 6px;
   text-align: center;
+  background: url('/images/side-navigation/woman-dppl-card.jpg') no-repeat right top;
+}
+
+.savings-counter div{
+  position: absolute; 
+  top: 30%; 
+  margin-top: -15%; 
+  width: 50%; 
+  margin: 0; 
+  line-height: 1em;
 }
  
-/*#counter{
+#counter{
   display: block;
-  margin: .5em 0;
-  font-size: 150%;
+  margin-bottom: .5em;
+  padding-right: 2em;
+  font-size: 2em;
   font-weight: bold;
-}*/
+}
 
 /*content*/
 
