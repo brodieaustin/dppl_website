@@ -312,14 +312,14 @@ ul.no-style li{
   width: 15.3846153em;
   float: left;
   margin-right: 1.53846em;
-  margin-top: 1.7em;
+  margin-top: 1.5em;
   margin-bottom: 0;
 }
 
 #header .theme{
   display: block;
   position: absolute; 
-  top: 8px; 
+  top: 0; 
   left: 0; 
   font-weight: bold; 
   color: #e0922f;
@@ -347,10 +347,11 @@ ul.no-style li{
   top: 0;
   left: 0;
   width: 100%;
-  height: 2.5em;
-  line-height: 1.5em;
+  height: 2.307692308em;
+  line-height: 2.307692308em;
   z-index: 50;
   border-bottom: 1px solid #c8c8c8;
+  vertical-align: middle;
 }
 
 #header #tools a{text-decoration: none;}
@@ -360,12 +361,10 @@ ul.no-style li{
 
 #header #tools #font-size{
   position: absolute;
-  top: 4px;
-  right: 17em;
-  padding-top: .4em;
+  top: 0;
+  right: 19em;
   padding-right: 1em;
   width: auto;
-  vertical-align: bottom;
   z-index: 100;
 }
 
@@ -387,7 +386,6 @@ ul.no-style li{
 #font-size ul li{
   display: inline;
   margin-left: 1em;
-  padding-top .1em;
   text-align: center;
   vertical-align: baseline;
   line-height: 1em;
@@ -400,9 +398,7 @@ ul.no-style li{
 }
 
 #font-size ul li a:hover{
-  font-weight: bold;
-  color: #777;
-  border-bottom : 2px solid #c8c8c8;
+  background-color: #eee;
 }
 
 a.standard {
@@ -420,8 +416,8 @@ font-size : 18px;
 /*tools links*/
 #header #tools .tools{
   position: absolute;
-  top: 8px; 
-  right: 2px; 
+  top: 0; 
+  right: -2px; 
   margin-top: 0; 
   padding-top: 0; 
   list-style: none; 
@@ -431,43 +427,44 @@ font-size : 18px;
 #header #tools .tools li{
   display: inline-block;
   margin-left: 1.2em;
+  padding: 0 .25em;
+}
+
+#header #tools .tools .how-do-i{
+  position: relative;
+}
+
+#header #tools .tools .how-do-i:hover{
+  background-color: #eee;
+}
+
+#header #tools .tools .how-do-i:hover ul{
+  display: block;
 }
 
 #header #tools .tools .how-do-i-links{
-  display: none; 
+  display: none;
   position: absolute;
-  top: 2.1em; 
-  right: -2px; 
-  padding: 1em; 
+  width: 18em;
+  top: 2.307692308em; 
+  right: 0;
+  line-height: 2em;
+  padding: 1em 0 1em .5em; 
   list-style: none; 
   background: #fff; 
-  border-left: 1px solid #c8c8c8; 
-  border-right: 1px solid #c8c8c8; 
-  border-bottom: 1px solid #c8c8c8; 
+  border: 1px solid #c8c8c8;  
   z-index: 150;
 }
 
 #header #tools .tools .how-do-i-links li{
-  margin-bottom: .25em;
-}
-
-#tools li.hover a{
-  color: #777;
-}
-
-#tools li.hover ul li a{
-  color: #036;
-}
-
-#tools li.hover ul li a:hover{
-  color: #777;
+  display: block;
 }
 
 /*Search*/
 
 #search{
   position: absolute;
-  top: 55%;
+  top: 50%;
   right: 0;
   width: 29.2307em;
   height: 2.1538461em;
@@ -665,12 +662,12 @@ ul.dropdown li:hover > ul{
   text-align: center;
 }
  
-#counter{
+/*#counter{
   display: block;
   margin: .5em 0;
   font-size: 150%;
   font-weight: bold;
-}
+}*/
 
 /*content*/
 
