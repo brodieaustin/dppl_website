@@ -304,7 +304,7 @@ ul.no-style li{
 
 #header{
   width: 100%;
-  height: 170px;
+  height: 180px;
   position: relative;
 }
 
@@ -572,20 +572,16 @@ visibility: hidden;
 position: absolute;
 top: 100%;
 left: 0;
-
+border: 1px solid #c8c8c8;
 }
 
 ul.dropdown ul li{
   font-weight: normal;
-  background: #f8f8f8;
-  color: #666;
-  border-top: 1px solid #c8c8c8;
+  background: #fff;
+  /*color: #666;*/
   float: none;
 }
 
-ul.dropdown ul li.last{
-  border-bottom: 1px solid #c8c8c8;
-}
 
 ul.dropdown li.hover ul li a{
   color: #333;
@@ -755,7 +751,7 @@ div#list{min-height: 270px; width: 100%; margin: 0 auto; text-align: center; bac
   margin: 0 auto;
   padding-top: .5em;
   position: relative;
-  background: #e0922f;
+  background: #e0922f /*url('/images/themes/together/together-stripe.png') repeat-x bottom*/;
 }
 
 #slides{
@@ -769,10 +765,11 @@ div#list{min-height: 270px; width: 100%; margin: 0 auto; text-align: center; bac
 }
 
 #slides h1{
-  font-size: 1.6em;
   margin-top: 2px;
   margin-bottom: .5em;
   padding-bottom: 0;
+  font-size: 1.6em;
+  color: #a32431;
   text-shadow: 1px 1px 1px #fff;
   border: 0;
 }
@@ -1013,16 +1010,25 @@ div#db-list ul li{
 
 #footer .section{
   float: left;
-  width: 30%;
+  width: 21.6%;
   height: 120px;
   margin-right: 26px;
   padding:  5px 0;
   border-right: 1px solid #c8c8c8;
+  position: relative;
 }
 
 #footer .last{
   border: 0;
   margin-right: 0;
+}
+
+#footer #address{
+  width: 50%;
+}
+
+#footer #address .map{
+  position: absolute; top: 0; right: 1em;
 }
 
 #footer span{
