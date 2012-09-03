@@ -1,5 +1,5 @@
 /*eligiblity check window*/
-.eligibility-check{
+/*.eligibility-check{
   display: none;
   position: absolute;
   top: 0;
@@ -9,6 +9,17 @@
   background-color: #fff;
   border: 10px solid #c8c8c8;
   z-index: 200;
+}*/
+
+
+.no-js .eligibility-check{
+  display: none;
+}
+
+.eligibility-check{
+  background-color: #fff;
+  min-height: 400px;
+  overflow: hidden;
 }
 
 .eligibility-check h4{
@@ -18,7 +29,7 @@
 #map-wrapper{
   position: relative;
   float: left;
-  width: 53%;
+  width: 54%;
   min-height: 400px;
   margin: .5em 0 1em 0;
   padding: 0;
@@ -138,9 +149,10 @@
 }
 
 .callout{
-   margin: 1em;
-  padding: 1em;
+   margin: 1.5em 1em;
+   padding: 1em;
    background-color: #eee;
+   overflow: hidden;
 }
 
 .big{

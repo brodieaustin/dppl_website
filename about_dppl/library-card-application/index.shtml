@@ -14,10 +14,10 @@
 	<!--#include virtual="/includes/side-navigation.html"-->
 	<!--main content-->
 	<div id="content">
-		<p class="response" id="application-response"></p>
 		<h1>Library Card Application</h1>
+		<p class="response" id="application-response"></p>
 		<div class="card-application">
-				<h2>Adult Card</h2>
+			<h2>Adult Card</h2>
 				<p>Thank you for applying for a DPPL library card. This form will help jump start your application process. Determine if you are eligible for a card. After that, you will fill out and submit the application. Come to the library with a valid ID and pick up your card. That's it!</p>
 				<p>Need a refresher about our library card policies and lending rules? Check out our <a href="../library_cards_policies.shtml">policies page</a> for more details</p>
 				<h3>Other applications</h3>
@@ -29,49 +29,51 @@
 			<hr />
 			<h3>Am I Eligible?</h3>
 				<p>Any resident of incorporated Des Plaines can apply for a card. Rosemont residents and other non-Des Plaines residents should consult our <a href="library_cards_policies.shtml">library cards and policies page</a> for information about non-resident cards.</p>
-				<div class="callout" id="eligibility-question">
-					<p><strong>Aren't sure if you are eligible?</strong></p>
-					<p><a href="" class="view-eligibility-check">Click here to check</a></p>
-				</div>
-			<div class="eligibility-check">
-				<h4>Check your eligibility</h4>
-				<div class="close-button close">X</div>
-				<div style="float: left; width: 40%; margin-right: 40px;">
-					<form id="eligibility-form" >
-						<fieldset>
-							<legend>Enter your address...</legend>
-							<div>
-								<label for="eligibility-street">Street:</label>
-								<input type="text" id="eligibility-street" name="eligibility-street" />
-							</div>
-							<div>
-								<label for="eligibility-city">City:</label>
-								<input type="text" id="eligibility-city" name="eligibility-city" />
-							</div>
-							<div style="margin-top: 1em;">OR</div>
-							<div>
-								<label for="eligibility-zip">Zip code:</label>
-								<input type="text" id="eligibility-zip" name="eligibility-zip" />
-							</div>
-						</fieldset>
-						<fieldset>
-							<div>
-								<input type="button" value="Check" id="submit-eligibility" name="submit-eligibility" class="right" />
-							</div>
-						</fieldset>
-					</form>
-					<div class="response callout" id="eligibility-response"></div>
-				</div>
-				<div id="map-wrapper">
-					<div class="load"></div>
-					<div id="map"></div>
-				</div>
-			</div><!--end of eligiblity check-->
+				<noscript>
+					<div class="callout">
+						<h4>Aren't sure if you are eligible?</h4>
+						<p>If you live inside the blue shape on the map, then you are eligible for a library card.</p>
+						<div style="text-align: center;">
+							<img src="images/dppl-no-js-map.png" />
+						</div>
+					</div>
+				</noscript>
+				<div class="callout group">
+					<h4>Aren't sure if you are eligible?</h4>
+					<p>If you live inside the blue shape on the map, then you are eligible for a library card. If you aren't sure, enter you address below to find out.</p>
+					<div class="eligibility-check">
+						<div style="float: left; width: 38%; margin-right: 15px; padding: 10px 5px 10px 10px; background-color: #fff;">
+							<form id="eligibility-form" >
+								<fieldset>
+									<legend>Enter your address...</legend>
+									<div>
+										<label for="eligibility-street">Street:</label>
+										<input type="text" id="eligibility-street" name="eligibility-street" />
+									</div>
+									<div>
+										<label for="eligibility-zip">Zip code:</label>
+										<input type="text" id="eligibility-zip" name="eligibility-zip" />
+									</div>
+								</fieldset>
+								<fieldset>
+									<div>
+										<input type="button" value="Check" id="submit-eligibility" name="submit-eligibility" class="right" />
+									</div>
+								</fieldset>
+							</form>
+							<div class="response callout" id="eligibility-response"></div>
+						</div>
+						<div id="map-wrapper">
+							<div class="load"></div>
+							<div id="map"></div>
+						</div>
+					</div><!--end of eligiblity check-->
+				</div><!--end of eligibility-wrapper"-->
 			<hr />
 			<form id="application" method="post"  action="mail.php">
 				<h3>Complete the Application</h3>
-				<p><em>Required field (*)</em></p>
 				<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
+				<p><em>Required field (*)</em></p>
 				<div class="errors"></div>
 				<input type="hidden" name="application-type" id="application-type" value="Adult" />
 				<input type="hidden" name="application-eligibility" id="application-eligibility" value="" />
@@ -88,14 +90,14 @@
 						<label for="middle-initial">Middle Initial:</label>
 						<input type="text" id="middle-initial" name="middle-initial" tabindex="3" />
 					</div>
-					<fieldset>
-						<div>
-							<label for="gender-male"><input type="radio" id="gender-male" name="gender" tabindex="4" value="Male" />Male</label>
-						</div>
-						<div>
-							<label for="gender-female"><input type="radio" id="gender-female" name="gender" tabindex="5" value="Female" />Female</label>
-						</div>
-					</fieldset>
+					<div>
+						<label for="gender-male"><input type="radio" id="gender-male" name="gender" tabindex="4" value="Male" />Male</label>
+					</div>
+					<div>
+						<label for="gender-female"><input type="radio" id="gender-female" name="gender" tabindex="5" value="Female" />Female</label>
+					</div>
+				</fieldset>
+				<fieldset>
 					<div>
 						<label for="address">Address:<em>*</em></label>
 						<input type="text" id="address" name="address" class="required" tabindex="6" />
