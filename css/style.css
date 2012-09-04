@@ -324,6 +324,7 @@ ul.no-style li{
   width: 100%;
   height: 180px;
   position: relative;
+  z-index: 1000;
 }
 
 #header h1{
@@ -367,7 +368,7 @@ ul.no-style li{
   width: 100%;
   height: 2.307692308em;
   line-height: 2.307692308em;
-  z-index: 50;
+  z-index: 1000;
   border-bottom: 1px solid #c8c8c8;
   vertical-align: middle;
 }
@@ -439,11 +440,12 @@ font-size : 18px;
   margin-top: 0; 
   padding-top: 0; 
   list-style: none; 
-  z-index: 50;
+  z-index: 3000;
 }
 
 #header #tools .tools li{
-  display: inline-block;
+  display: block;
+  float: left;
   margin-left: 1.2em;
   padding: 0 .25em;
 }
@@ -471,11 +473,11 @@ font-size : 18px;
   list-style: none; 
   background: #fff; 
   border: 1px solid #c8c8c8;  
-  z-index: 150;
+  z-index: 5000;
 }
 
 #header #tools .tools .how-do-i-links li{
-  display: block;
+  float: none;
 }
 
 /*Search*/
@@ -497,7 +499,7 @@ div#search label{
 }
 
 div#search input#search-text{
-  width: 17em;
+  width: 16.5em;
 }
 
 /*navigation*/
@@ -689,7 +691,10 @@ ul.dropdown li:hover > ul{
 .savings-counter div{
   position: absolute; 
   top: 30%; 
+  left: 0;
+  float: none;
   margin-top: -15%; 
+  padding-top: 4px;
   width: 50%; 
   margin: 0; 
   line-height: 1em;
@@ -1029,7 +1034,7 @@ div#db-list ul li{
 
 #footer .section{
   float: left;
-  width: 21.6%;
+  width: 21.5%;
   height: 120px;
   margin-right: 26px;
   padding:  5px 0;
