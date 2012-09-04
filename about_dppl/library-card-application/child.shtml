@@ -1,0 +1,183 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>Library Card Application | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+	<link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<h1>Library Card Application</h1>
+		<p class="response" id="application-response"></p>
+		<div class="card-application">
+			<h2>Child's Card</h2>
+				<p>You are about to fill out an application for a child's card. Use this form for children in 8th grade or younger. <em>A parent or guardian must be present to pick up the completed library card.</em></p>
+				<p>Need a refresher about our library card policies and lending rules? Check out our <a href="../library_cards_policies.shtml">policies page</a> for more details</p>
+			<h3>Other applications:</h3>
+				<ul>
+					<li><a href="index.shtml">Application for adults</a></li>
+					<li style="margin-top: .5em;"><a href="adult-es.shtml">Applications in Spanish</a></li>
+				</ul>
+			<hr />
+			<h3>Am I Eligible?</h3>
+				<p>Any resident of incorporated Des Plaines can apply for a card. Rosemont residents and other non-Des Plaines residents should consult our <a href="library_cards_policies.shtml">library cards and policies page</a> for information about non-resident cards.</p>
+				<noscript>
+					<div class="callout">
+						<h4>Aren't sure if you are eligible?</h4>
+						<p>If you live inside the blue shape on the map, then you are eligible for a library card.</p>
+						<div style="text-align: center;">
+							<img src="images/dppl-no-js-map.png" />
+						</div>
+					</div>
+				</noscript>
+				<div class="callout group">
+					<h4>Aren't sure if you are eligible?</h4>
+					<p>If you live inside the blue shape on the map, then you are eligible for a library card. If you aren't sure, enter you address below to find out.</p>
+					<div class="eligibility-check">
+						<div style="float: left; width: 38%; margin-right: 15px; padding: 10px 5px 10px 10px; background-color: #fff;">
+							<form id="eligibility-form" >
+								<fieldset>
+									<legend>Enter your address...</legend>
+									<div>
+										<label for="eligibility-street">Street:</label>
+										<input type="text" id="eligibility-street" name="eligibility-street" />
+									</div>
+									<div>
+										<label for="eligibility-zip">Zip code:</label>
+										<input type="text" id="eligibility-zip" name="eligibility-zip" />
+									</div>
+								</fieldset>
+								<fieldset>
+									<div>
+										<input type="button" value="Check" id="submit-eligibility" name="submit-eligibility" class="right" />
+									</div>
+								</fieldset>
+							</form>
+							<div class="response callout" id="eligibility-response"></div>
+						</div>
+						<div id="map-wrapper">
+							<div class="load"></div>
+							<div id="map"></div>
+						</div>
+					</div><!--end of eligiblity check-->
+				</div><!--end of eligibility-wrapper"-->
+			<hr />
+			<form id="application" method="post"  action="mail.php">
+				<h3>Complete the application</h3>
+				<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
+				<p><strong>A parent or guardian must be present to pick up the completed library card.</strong></p>
+				<p><em>Required field (*)</em></p>
+				<div class="errors"></div>
+				<input type="hidden" name="application-type" id="application-type" value="Child" />
+				<input type="hidden" name="application-eligibility" id="application-eligibility" value="" />
+				<fieldset>
+					<div>
+						<label for="last-name">Last Name:<em>*</em></label>
+						<input type="text" id="last-name" name="last-name" class="required" tabindex="1" />
+					</div>
+					<div>
+						<label for="first-name">First Name:<em>*</em></label>
+						<input type="text" id="first-name" name="first-name" class="required" tabindex="2" />
+					</div>
+					<div>
+						<label for="middle-initial">Middle Initial:</label>
+						<input type="text" id="middle-initial" name="middle-initial" tabindex="3" />
+					</div>
+					<div>
+						<label for="gender-male"><input type="radio" id="gender-male" name="gender" tabindex="4" />Male</label>
+					</div>
+					<div>
+						<label for="gender-female"><input type="radio" id="gender-female" name="gender" tabindex="5" />Female</label>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div>
+						<label for="address">Address:<em>*</em></label>
+						<input type="text" id="address" name="address" class="required" tabindex="6" />
+					</div>
+					<div>
+						<label for="apartment">Apartment:</label>
+						<input type="text" id="apartment" name="apartment" tabindex="7" />
+					</div>
+					<div>
+						<label for="city">City:</label>
+						<input type="text" id="city" name="city" tabindex="8" />
+					</div>
+					<div>
+						<label for="zipcode">Zip:</label>
+						<input type="text" id="zipcode" name="zipcode" tabindex="9" />
+					</div>
+					<div>
+						<label for="home-phone">Phone:<em>*</em></label>
+						<input type="text" id="home-phone" name="home-phone" class="required" tabindex="10" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<div>
+						<label for="school">School:</label>
+						<input type="text" id="school" name="school" tabindex="11" />
+					</div>
+					<div>
+						<label for="grade">Grade:</label>
+						<input type="text" id="grade" name="grade" tabindex="12" />
+					</div>
+					<div>
+						<label for="date-of-birth">Date of Birth:</label>
+						<input type="text" id="date-of-birth" name="date-of-birth" tabindex="13" />
+					</div>
+					<div>
+						<label for="primary-language" class="wide">Primary Language Spoken at Home:</label>
+						<input type="text" id="primary-language" name="primary-language" tabindex="14" />
+					</div>
+				</fieldset>
+				<fieldset style="margin-top: 1em;">
+					<legend>I am aware there are no age restrictions on borrowing library material and I accept the responsiblity for my child's selection of materials.</legend>
+					<div>
+						<label for="parent-name" class="wide">Parent's Printed Name:</label>
+						<input type="text" id="parent-name" name="parent-name" tabindex="15" />
+					</div>
+					<div>
+						<label for="parent-drivers-license" class="wide">Driver's License #:</label>
+						<input type="text" id="parent-drivers-license" name="parent-drivers-license" tabindex="16" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<div id="challenge" class="callout">
+						<p><strong>Please answer the question below:</strong></p>
+						<div class="challenge-image">
+							<img src="images/challenge.png" alt="challenge image">
+						</div>
+						<div>
+							<label for="challenge-response">Your response: <em>*</em> &nbsp;</label>
+							<input type="text" name="challenge-response" id="challenge-response" tabindex="17" class="required">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div>
+						<input type="submit" value="Submit" class="button right" />
+					</div>
+				</fieldset>
+			</form>
+		</div><!--closing div for card application-->
+		<hr />
+		<h3>Questions?</h3>
+			<p>If you have questions about applying for a library card or are having problems using the application, please send an email to <a href="mailto:librarycards@dppl.org">librarycards@dppl.org</a>.</p>
+	</div><!--end of content-->
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBLKwhTM04J7cC57MB-odRUIvTs_58ybfA&sensor=false"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/jquery.form.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>

@@ -52,6 +52,12 @@ h4 {
   font-weight: bold;
 }
 
+h5{
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+}
+
 /*LINKS*/	
 
 a[href] {
@@ -235,7 +241,7 @@ hr{
   width: 98% !important;
   border: 0;
   border-top: 1px solid #c8c8c8;
-  margin: 1em auto;
+  margin: 2em auto 1em auto;
   padding: 0;
 }
 
@@ -263,8 +269,10 @@ input[type=text]{
 }
 
 input[type=submit], input[type=button]{
-  cursor: pointer;
+  height: 2em;
+  line-height: 2em;
   padding: 0 .46153846em;
+  cursor: pointer;
 }
 
 input[type=submit]:hover, input[type=button]:hover{
@@ -479,7 +487,7 @@ div#search label{
 }
 
 div#search input#search-text{
-  width: 18em;
+  width: 17em;
 }
 
 /*navigation*/

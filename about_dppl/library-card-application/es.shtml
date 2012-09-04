@@ -1,0 +1,28 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>Library Card Application | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+	<link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+	
+	</div><!--end of content-->
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBLKwhTM04J7cC57MB-odRUIvTs_58ybfA&sensor=false"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/jquery.form.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
