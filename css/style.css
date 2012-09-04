@@ -16,6 +16,12 @@ td{vertical-align: top; background-image: none !important;}
 
 .spacer_sm img{display: none !important;}
 
+/*things to hide if JS isn't enables*/
+
+.no-js #search, .no-js #value-counter, .no-js #font-size, .no-js #events{
+  display: none;
+}
+
 /*basic page elments*/
 h1 {
   font-size : 2em;
@@ -44,6 +50,12 @@ h4 {
   font-size : 1em;
   color : #003366;
   font-weight: bold;
+}
+
+h5{
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
 }
 
 /*LINKS*/	
@@ -76,6 +88,25 @@ a.no-style{
  font-weight: normal;
  text-decoration: none;
 }
+
+a.button{
+  display: block;
+  width: auto;
+  height: 2em;
+  line-height: 2em;
+  margin: .5em 0;
+  padding: 0 .5em;
+  background-color: #00a89e;
+  color: #fff !important;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: .5em;
+  box-shadow: 1px 1px 1px 0px #ddd;
+}
+
+a.button:hover{
+  background-color: #555;
+ }
 
 /*
 a.link {
@@ -210,7 +241,7 @@ hr{
   width: 98% !important;
   border: 0;
   border-top: 1px solid #c8c8c8;
-  margin: 1em auto;
+  margin: 2em auto 1em auto;
   padding: 0;
 }
 
@@ -219,10 +250,11 @@ img{
 }
 
 input, select{
-  margin: 0;
-  padding: 1px;
+  width: auto;
   height: 2em;
-  line-height: 1em;
+  margin: 0;
+  padding: 0 .15384615em;
+  line-height: 2em;
   font-family: inherit;
   font-size: 1em;
   vertical-align: middle;
@@ -232,12 +264,14 @@ input, select{
 }
 
 input[type=text]{
-  height: 1.7em;
-  border: 1px solid #aaa;
+  height: 1.9em;
+  line-height: 1.9em;
 }
 
 input[type=submit], input[type=button]{
-  padding: 2px;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 .46153846em;
   cursor: pointer;
 }
 
@@ -261,8 +295,10 @@ input[type=checkbox]{
 .load{
   width: 100%;
   height: 100%;
-  background: url('../images/ajax-loader.gif') no-repeat 50% 50%;
+  background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
 }
+
+.warning{background-color: #FCF8E3; margin-bottom: 2px; padding: 4px 6px;}
 
 ul.no-style{
   list-style: none; padding-left: 0;
@@ -276,8 +312,7 @@ ul.no-style li{
 
 #header{
   width: 100%;
-  min-height: 180px;
-  background-color: #fff;
+  height: 180px;
   position: relative;
 }
 
@@ -285,35 +320,65 @@ ul.no-style li{
   width: 15.3846153em;
   float: left;
   margin-right: 1.53846em;
-  margin-top: 2em;
+  margin-top: 1.5em;
   margin-bottom: 0;
+}
+
+#header .theme{
+  display: block;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  font-weight: bold; 
+  color: #e0922f;
+}
+
+#header .theme:hover{
+  background-color: #e0922f;
+  color: #fff;
+}
+
+#header .theme ul{
+  margin: 0;
+  padding-left: .5em;
+  list-style: none;
+}
+
+#header .theme li{
+  display: block;
+  float: left;
+  margin-right: .5em;
 }
 
 #header #tools{
   position: absolute;
-  top: 5px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 2.4em;
-  line-height: 1.5em;
+  height: 2.307692308em;
+  line-height: 2.307692308em;
   z-index: 50;
   border-bottom: 1px solid #c8c8c8;
+  vertical-align: middle;
 }
+
+#header #tools a{text-decoration: none;}
+
 
 /*font-size*/
 
 #header #tools #font-size{
   position: absolute;
-  top: 2px;
-  right: 15em;
-  padding-top: .4em;
+  top: 0;
+  right: 19em;
+  padding-right: 1em;
   width: auto;
-  vertical-align: bottom;
+  z-index: 100;
 }
 
 
 #font-size p{
-  width: 5em;
+  width: 3.5em;
   float: left;
   margin: 0;
   padding-top: 0;
@@ -329,7 +394,6 @@ ul.no-style li{
 #font-size ul li{
   display: inline;
   margin-left: 1em;
-  padding-top .1em;
   text-align: center;
   vertical-align: baseline;
   line-height: 1em;
@@ -342,9 +406,7 @@ ul.no-style li{
 }
 
 #font-size ul li a:hover{
-  font-weight: bold;
-  color: #777;
-  border-bottom : 2px solid #c8c8c8;
+  background-color: #eee;
 }
 
 a.standard {
@@ -356,23 +418,61 @@ a.medium {
 }
 
 a.large {
-font-size : 20px;
+font-size : 18px;
 }
 
-/*how do i menu*/
-#header #tools #how-do-i{
+/*tools links*/
+#header #tools .tools{
   position: absolute;
-  top: 0;
-  right: 2px;
+  top: 0; 
+  right: -2px; 
+  margin-top: 0; 
+  padding-top: 0; 
+  list-style: none; 
+  z-index: 50;
 }
 
-#how-do-i select#menu{
-  width: 12.85em;
+#header #tools .tools li{
+  display: inline-block;
+  margin-left: 1.2em;
+  padding: 0 .25em;
 }
+
+#header #tools .tools .how-do-i{
+  position: relative;
+}
+
+#header #tools .tools .how-do-i:hover{
+  background-color: #eee;
+}
+
+#header #tools .tools .how-do-i:hover ul{
+  display: block;
+}
+
+#header #tools .tools .how-do-i-links{
+  display: none;
+  position: absolute;
+  width: 18em;
+  top: 2.307692308em; 
+  right: 0;
+  line-height: 2em;
+  padding: 1em 0 1em .5em; 
+  list-style: none; 
+  background: #fff; 
+  border: 1px solid #c8c8c8;  
+  z-index: 150;
+}
+
+#header #tools .tools .how-do-i-links li{
+  display: block;
+}
+
+/*Search*/
 
 #search{
   position: absolute;
-  top: 55%;
+  top: 50%;
   right: 0;
   width: 29.2307em;
   height: 2.1538461em;
@@ -386,16 +486,8 @@ div#search label{
   display: none;
 }
 
-div#search select#search-type{
-  width: 6em;
-}
-
 div#search input#search-text{
-  width: 18em;
-}
-
-div#search input.submit-button{
-  width: 4.28em;
+  width: 17em;
 }
 
 /*navigation*/
@@ -404,7 +496,8 @@ div#search input.submit-button{
 div#navigation{
   width: 100%;
   height: 2.5em;
-  margin: 4px 0 1em 0;
+  /*margin: 0 0 1em 0;*/
+  margin: 0;
   padding: 0;
   text-align: left;
   overflow: visible;
@@ -487,20 +580,16 @@ visibility: hidden;
 position: absolute;
 top: 100%;
 left: 0;
-
+border: 1px solid #c8c8c8;
 }
 
 ul.dropdown ul li{
   font-weight: normal;
-  background: #f8f8f8;
-  color: #666;
-  border-top: 1px solid #c8c8c8;
+  background: #fff;
+  /*color: #666;*/
   float: none;
 }
 
-ul.dropdown ul li.last{
-  border-bottom: 1px solid #c8c8c8;
-}
 
 ul.dropdown li.hover ul li a{
   color: #333;
@@ -548,12 +637,12 @@ ul.dropdown li:hover > ul{
 #side-nav{
   width: 10em;
   float: left;
+  margin-top: 1em;
   margin-right: 1.5384615em;
-  font-weight: bold;
   color: inherit;
 }
 
-#side-nav small{display: block; padding-top: 2px; font-size: .7em; color: #888;}
+#side-nav small{display: block; padding-top: 2px; font-size: .7em; color: #777;}
 
 #side-nav ul{
   margin: 2px 0 14px 0;
@@ -567,7 +656,7 @@ ul.dropdown li:hover > ul{
 }
 
 #side-nav ul li{
-  margin: 10px 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 
@@ -575,30 +664,32 @@ ul.dropdown li:hover > ul{
   text-decoration: none;
 }
 
-#side-nav ul li a.button{
-  display: block;
-  width: auto;
-  height: auto;
-  padding: .5em 1em;
-  background-color: #00a89e;
-  color: #fff;
+.savings-counter{
+  position: relative;
+  float: right;
+  width: 49.076923em;
+  height: 6em;
+  margin: 0;
+  padding: 0 6px;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 2px 2px 2px 0px #ddd;
+  background: url('/images/side-navigation/woman-dppl-card.jpg') no-repeat right top;
 }
 
-#side-nav ul li a.button:hover{
-  background-color: #555;
- }
- 
-#side-nav #taste{
-  display: block; 
-  width: 130px; 
-  height: 70px; 
-  background: url('/images/themes/River/taste-logo-small.png') no-repeat top left;
+.savings-counter div{
+  position: absolute; 
+  top: 30%; 
+  margin-top: -15%; 
+  width: 50%; 
+  margin: 0; 
+  line-height: 1em;
 }
-#side-nav #taste:hover{
-  background: url('/images/themes/River/taste-logo-small-stripe.png') no-repeat top left;
+ 
+#counter{
+  display: block;
+  margin-bottom: .5em;
+  padding-right: 2em;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 /*content*/
@@ -611,7 +702,7 @@ ul.dropdown li:hover > ul{
   border: 1px solid #c8c8c8;
   padding: 5px;
   overflow: hidden;
-  background-color: #fff;
+  background: #fff;
 }
 
 #content table{
@@ -664,28 +755,29 @@ div#list{min-height: 270px; width: 100%; margin: 0 auto; text-align: center; bac
 /*slides*/
 #slide-container{
   height: 24.285714em; /*340px at 14px*/
-  width: 638px;
+  width: 100%;
   margin: 0 auto;
-  padding-top: 1em;
+  padding-top: .5em;
   position: relative;
-  background: url('/taste/images/stripey-background.png') top left;
+  background: #e0922f /*url('/images/themes/together/together-stripe.png') repeat-x bottom*/;
 }
 
 #slides{
   position: relative;
   width: 618px;
   height: 20em; /*280px at 14px*/
-  margin: 10px;  
+  margin: 10px auto;  
   z-index: 0;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(34, 25, 25, .5);
 }
 
 #slides h1{
-  font-size: 1.6em;
   margin-top: 2px;
   margin-bottom: .5em;
   padding-bottom: 0;
+  font-size: 1.6em;
+  color: #a32431;
   text-shadow: 1px 1px 1px #fff;
   border: 0;
 }
@@ -751,14 +843,13 @@ a#next2{
   padding: 3px 5px;
   color: #111;
   *margin: 1px 5px;
-  text-shadow: 1px 1px 1px #fff;
+  text-shadow: 1px 1px 1px #aaa;
 }
 
 #nav a.activeSlide {
-  font-weight: bold;
-  background-color: #00a89e;;
+  background-color: #e9ae4a;
   color: #fff;
-  text-shadow: 0px 0px 0px;
+  text-shadow: 0;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
@@ -925,18 +1016,27 @@ div#db-list ul li{
   padding-top: 1em;
 }
 
-#footer #address, #footer #hours, #footer #contact{
+#footer .section{
   float: left;
-  width: 27.5%;
+  width: 21.6%;
   height: 120px;
-  margin-left: 5px;
-  padding:  5px 20px;
+  margin-right: 26px;
+  padding:  5px 0;
   border-right: 1px solid #c8c8c8;
+  position: relative;
 }
 
-
-#footer #contact{
+#footer .last{
   border: 0;
+  margin-right: 0;
+}
+
+#footer #address{
+  width: 50%;
+}
+
+#footer #address .map{
+  position: absolute; top: 0; right: 1em;
 }
 
 #footer span{

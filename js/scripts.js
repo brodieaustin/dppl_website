@@ -94,3 +94,21 @@ $(function(){
 		return null;
 	}
 });
+/*value counter*/
+$(function(){
+	var date1 = Date.today().at('0:00:00');
+	var p = .000442;
+
+	/*$('#content').before('');*/
+	
+	setInterval(function(){
+		var date2 = new Date();
+		var amount = (date2 - date1) * p;
+		
+		$('#counter').html('$' + numberWithCommas(amount.toFixed(2)));
+	}, 1000);
+	
+	function numberWithCommas(x) {
+	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+});

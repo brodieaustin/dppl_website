@@ -39,6 +39,7 @@
 			});
 			
 			$('#events').addFeed().fadeIn(500);
+			
 		});
 	</script>
 	<script>
