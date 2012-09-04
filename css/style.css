@@ -683,6 +683,7 @@ ul.dropdown li:hover > ul{
   padding: 0 6px;
   text-align: center;
   background: url('/images/features/2012/library-card-month/woman-dppl-card.jpg') no-repeat right top;
+  overflow: hidden;
 }
 
 .savings-counter div{
