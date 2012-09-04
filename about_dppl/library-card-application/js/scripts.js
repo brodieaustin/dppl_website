@@ -236,6 +236,8 @@
 							
 					    	$(response_div).html('<h4 class="big">Inside</h4><p>Your address appears to be <strong>inside</strong> the blue shape on the map. You should be eligible for a card. Library staff will review your application to be sure.</p><p><a href="#application" class="scroll">Proceed to the application</a></p>');
 					    	$('#application-eligibility').val('Eligible');
+					    	$('#address').val($('#eligibility-street').val());
+					    	$('#zipcode').val($('#eligibility-zip').val());
 					    }
 					    else{
 					    	markerOptions.title = "You are not eligible!";
@@ -244,6 +246,8 @@
 					    	$(response_div).html('<h4 class="big">Outside</h4><p>Your address seems to be <strong>outside</strong> the blue shape. You don\'t appear to be eligible for a library card. If feel this is an error, you may fill out the application. Library staff will review your application. You can consult our policies page for information about <a href="../library_cards_policies.shtml#non-resident">non-resident cards</a>.</p><p><a href="#application" class="scroll">Proceed to the application</a></p>');
 					    	$('#application').before('<p class="error">Please be aware that you may not be eligible for a library card. Library staff will review your application. You can continue with the application or consult our library card policies page for more information about <a href="../library_cards_policies.shtml#non-resident">non-resident cards</a>.</p>');
 					    	$('#application-eligibility').val('Not Eligible');
+					    	$('#address').val($('#eligibility-street').val());
+					    	$('#zipcode').val($('#eligibility-zip').val());
 					    }
 					    
 					    marker.setOptions(markerOptions);

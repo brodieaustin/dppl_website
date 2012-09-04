@@ -14,13 +14,13 @@
 	<!--#include virtual="/includes/side-navigation.html"-->
 	<!--main content-->
 	<div id="content">
-	
+		<h1>Library Card Application in Spanish</h1>
 	</div><!--end of content-->
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBLKwhTM04J7cC57MB-odRUIvTs_58ybfA&sensor=false"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCLgbMZSIbs_YOdy2BVi-ry_yxF3moojeY&sensor=false"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/jquery.form.js"></script>
 	<script src="js/scripts.js"></script>

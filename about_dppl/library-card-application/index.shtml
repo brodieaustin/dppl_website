@@ -24,7 +24,7 @@
 				<p>We also have the following applications that can be filled out:</p>
 				<ul>
 					<li><a href="child.shtml">Application for children in 8th grade or younger</a></li>
-					<li style="margin-top: .5em;"><a href="es.shtml">Applications in Spanish</a></li>
+					<li style="margin-top: .5em;"><a href="#">Applications in Spanish</a> <em>(coming soon)</em></li>
 				</ul>
 			<hr />
 			<h3>Am I Eligible?</h3>
@@ -182,7 +182,7 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBLKwhTM04J7cC57MB-odRUIvTs_58ybfA&sensor=false"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB_a837CV5vqZjRzW3ErJIV2fWiWSl8Txw&sensor=false"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/jquery.form.js"></script>
 	<script src="js/scripts.js"></script>
