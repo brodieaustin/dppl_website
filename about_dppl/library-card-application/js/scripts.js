@@ -44,9 +44,9 @@
 						success: function(data){
 								$('div.errors').hide();
 								$('.card-application').hide();
-							
+								
 								if (data.search("Thank") == 0 ){
-									$('#application-response').html(data).fadeIn(600);
+									$('#application-response').html(data).css({color: 'black'}).fadeIn(600);
 								}
 								else{
 									$('.card-application').fadeIn(1000);

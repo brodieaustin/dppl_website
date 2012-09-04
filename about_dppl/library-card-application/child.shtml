@@ -18,7 +18,14 @@
 		<p class="response" id="application-response"></p>
 		<div class="card-application">
 			<h2>Child's Card</h2>
-				<p>You are about to fill out an application for a child's card. Use this form for children in 8th grade or younger. <em>A parent or guardian must be present to pick up the completed library card.</em></p>
+				<p>You are about to fill out an application for a child's card. Use this form for children in 8th grade or younger. To get your library card, we just need you to do the following:</p>
+				<ul class="instructions">
+					<li>Determine if you are eligible for a card.</li>
+					<li>Fill out and submit the application</li>
+					<li>Come to the library <strong>48 hours later</strong> with a valid ID and pick up your card</li>
+					<li><em>A parent or guardian must be present to pick up the completed library card.</em></li>
+				</ul>
+				
 				<p>Need a refresher about our library card policies and lending rules? Check out our <a href="../library_cards_policies.shtml">policies page</a> for more details</p>
 			<h3>Other applications:</h3>
 				<ul>
@@ -99,19 +106,15 @@
 				</fieldset>
 				<fieldset>
 					<div>
-						<label for="address">Address:<em>*</em></label>
+						<label for="address">Address (include apartment or unit number):<em>*</em></label>
 						<input type="text" id="address" name="address" class="required" tabindex="6" />
-					</div>
-					<div>
-						<label for="apartment">Apartment:</label>
-						<input type="text" id="apartment" name="apartment" tabindex="7" />
 					</div>
 					<div>
 						<label for="city">City:</label>
 						<input type="text" id="city" name="city" tabindex="8" />
 					</div>
 					<div>
-						<label for="zipcode">Zip:</label>
+						<label for="zipcode">Zip:<em>*</em></label>
 						<input type="text" id="zipcode" name="zipcode" tabindex="9" />
 					</div>
 					<div>
@@ -129,7 +132,7 @@
 						<input type="text" id="grade" name="grade" tabindex="12" />
 					</div>
 					<div>
-						<label for="date-of-birth">Date of Birth:</label>
+						<label for="date-of-birth">Date of Birth:<em>*</em></label>
 						<input type="text" id="date-of-birth" name="date-of-birth" tabindex="13" />
 					</div>
 					<div>
@@ -140,13 +143,14 @@
 				<fieldset style="margin-top: 1em;">
 					<legend>I am aware there are no age restrictions on borrowing library material and I accept the responsiblity for my child's selection of materials.</legend>
 					<div>
-						<label for="parent-name" class="wide">Parent's Printed Name:</label>
-						<input type="text" id="parent-name" name="parent-name" tabindex="15" />
+						<label for="parent-name" class="wide">Parent's Printed Name:<em>*</em></label>
+						<input type="text" id="parent-name" name="parent-name" class="required" tabindex="15" />
 					</div>
 					<div>
-						<label for="parent-drivers-license" class="wide">Driver's License #:</label>
-						<input type="text" id="parent-drivers-license" name="parent-drivers-license" tabindex="16" />
+						<label for="parent-drivers-license" class="wide">Driver's License #:<em>*</em></label>
+						<input type="text" id="drivers-license" name="drivers-license" class="required" tabindex="16" />
 					</div>
+					<input type="hidden" id="parent-signature" name="parent-signature" value="" />
 				</fieldset>
 				<fieldset>
 					<div id="challenge" class="callout">

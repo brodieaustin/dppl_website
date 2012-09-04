@@ -114,7 +114,22 @@
   margin-right: .5em;
 }
 
+#content #application div{
+  padding: 0 6px;
+}
+
+#content #application fieldset{
+  margin-bottom: 2em !important;
+}
+
 /*general use classes*/
+
+.instructions{
+  padding-bottom: 1em;
+}
+.instructions li{
+  margin-bottom: .5em;
+}
 
 .load{
   position: absolute;
