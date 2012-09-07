@@ -18,12 +18,17 @@
 		<p class="response" id="application-response"></p>
 		<div class="card-application">
 			<h2>Adult Card</h2>
-				<p>Thank you for applying for a DPPL library card. This form will help jump start your application process. To get your library card, we just need you to do the following:</p>
+				<p>Thank you for applying for a new DPPL library card. This form will help jump start your application process. To get your new library card, we just need you to do the following:</p>
 				<ul class="instructions">
 					<li>Determine if you are eligible for a card.</li>
-					<li>Fill out and submit the application</li>
-					<li>Come to the library <strong>48 hours later</strong> with a valid ID and pick up your card</li>
+					<li>Fill out and submit the application.</li>
+					<li>Come to the library <strong>3 days later</strong> with a valid ID and pick up your card.</li>
+					<li>Cards will be held for <strong>1 month</strong>.</li>
 				</ul>
+				<div class="callout">
+					<h4>Do you have a lost or expired card?</h4>
+					<p>Please come to the library to replace or renew your card.</p>
+				</div>
 				<p>Need a refresher about our library card policies and lending rules? Check out our <a href="../library_cards_policies.shtml">policies page</a> for more details</p>
 				<h3>Other applications</h3>
 				<p>We also have the following applications that can be filled out:</p>
@@ -37,15 +42,15 @@
 				<noscript>
 					<div class="callout">
 						<h4>Aren't sure if you are eligible?</h4>
-						<p>If you live inside the blue shape on the map, then you are eligible for a library card.</p>
+						<p>If you live inside the blue area on the map, then you are eligible for a library card.</p>
 						<div style="text-align: center;">
 							<img src="images/dppl-no-js-map.png" />
 						</div>
 					</div>
 				</noscript>
-				<div class="callout group">
+				<div class="callout group eligibility">
 					<h4>Aren't sure if you are eligible?</h4>
-					<p>If you live inside the blue shape on the map, then you are eligible for a library card. If you aren't sure, enter you address below to find out.</p>
+					<p>If you live inside the blue area on the map, then you are eligible for a library card. If you aren't sure, enter you address below to find out.</p>
 					<div class="eligibility-check">
 						<div style="float: left; width: 38%; margin-right: 15px; padding: 10px 5px 10px 10px; background-color: #fff;">
 							<form id="eligibility-form" >

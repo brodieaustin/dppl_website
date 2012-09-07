@@ -18,14 +18,18 @@
 		<p class="response" id="application-response"></p>
 		<div class="card-application">
 			<h2>Child's Card</h2>
-				<p>You are about to fill out an application for a child's card. Use this form for children in 8th grade or younger. To get your library card, we just need you to do the following:</p>
+				<p>You are about to fill out an application for a new child's library card. Use this application for children in 8th grade or younger. To get your new library card, we just need you to do the following:</p>
 				<ul class="instructions">
 					<li>Determine if you are eligible for a card.</li>
-					<li>Fill out and submit the application</li>
-					<li>Come to the library <strong>48 hours later</strong> with a valid ID and pick up your card</li>
-					<li><em>A parent or guardian must be present to pick up the completed library card.</em></li>
+					<li>Fill out and submit the application.</li>
+					<li>Come to the library <strong>3 days later</strong> with a valid ID and pick up your card.</li>
+					<li>Cards will be held for <strong>1 month</strong>.</li>
+					<li><em>The child's parent or guardian must be present to pick up the completed library card.</em></li>
 				</ul>
-				
+				<div class="callout">
+					<h4>Do you have a lost or expired card?</h4>
+					<p>Please come to the library to replace or renew your card.</p>
+				</div>
 				<p>Need a refresher about our library card policies and lending rules? Check out our <a href="../library_cards_policies.shtml">policies page</a> for more details</p>
 			<h3>Other applications:</h3>
 				<ul>
@@ -38,15 +42,15 @@
 				<noscript>
 					<div class="callout">
 						<h4>Aren't sure if you are eligible?</h4>
-						<p>If you live inside the blue shape on the map, then you are eligible for a library card.</p>
+						<p>If you live inside the blue area on the map, then you are eligible for a library card.</p>
 						<div style="text-align: center;">
 							<img src="images/dppl-no-js-map.png" />
 						</div>
 					</div>
 				</noscript>
-				<div class="callout group">
+				<div class="callout group eligibility">
 					<h4>Aren't sure if you are eligible?</h4>
-					<p>If you live inside the blue shape on the map, then you are eligible for a library card. If you aren't sure, enter you address below to find out.</p>
+					<p>If you live inside the blue area on the map, then you are eligible for a library card. If you aren't sure, enter you address below to find out.</p>
 					<div class="eligibility-check">
 						<div style="float: left; width: 38%; margin-right: 15px; padding: 10px 5px 10px 10px; background-color: #fff;">
 							<form id="eligibility-form" >
@@ -79,7 +83,7 @@
 			<form id="application" method="post"  action="mail.php">
 				<h3>Complete the application</h3>
 				<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
-				<p><strong>A parent or guardian must be present to pick up the completed library card.</strong></p>
+				<p><strong>The child's parent or guardian must be present to pick up the completed library card.</strong></p>
 				<p><em>Required field (*)</em></p>
 				<div class="errors"></div>
 				<input type="hidden" name="application-type" id="application-type" value="Child" />

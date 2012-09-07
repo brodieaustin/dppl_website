@@ -105,13 +105,13 @@
 				//send the mail and test if it happened
 				if ($mail->Send()){
 					if ($type == 'Adult'){
-						echo  "Thank you! Your form has been submitted. Give us 24 hours before you come to pick up your library card. Be sure to bring your photo ID and proof of address when you come. We're excited to meet you!";
+						echo  "Thank you! Your form has been submitted. Give us <strong>3 days</strong> before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring your photo ID and proof of current address when you come. We're excited to meet you!";
 					}
 					elseif ($type == 'Child'){
-						echo "Thank you! Your form has been submitted. Give us 24 hours before you come to pick up your library card. Be sure to bring your photo ID and proof of address when you come. Remember that a parent or guardian must be present to get the card. We're excited to meet you!";
+						echo "Thank you! Your form has been submitted. Give us <strong>3 days</strong> before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring a photo ID and proof of current address when you come. Remember that the child's parent or guardian must be present to get the card. We're excited to meet you!";
 					}
 					else{
-					 	echo "Thank you! Your form has been submitted. Give us 24 hours before you come to pick up your library card. Be sure to bring your photo ID and proof of address when you come.";
+					 	echo "Thank you! Your form has been submitted. Give us 3 days before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring your photo ID and proof of current address when you come.";
 					 }
 				}
 				else{
