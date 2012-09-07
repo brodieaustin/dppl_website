@@ -17,11 +17,13 @@
 		<h1>Library Savings</h1>
 		<!--<div style="float: right;"><img src="http://placehold.it/250x188" /></div>-->
 		<h2>Did you know?</h2>
-		<p>We circulate nearly 927,813 items every year. That's an average of 2450 items per day! Just think, with your DPPL card, you can get access to all fo these materials and so many savings!</p>
+		<p>We circulate nearly 1,000,000 items every year. That's an average of 2700 items per day! Just think, with your DPPL card, you can get access to all fo these materials and so many savings!</p>
 		<p>Are you missing out on these great deals? Then fill out <a href="library-card-application/">our online library card application</a> to get started.</p>
 		<h3>How is this calculated?</h3>
 		<p>The total represents the average cost of materials that circulate each day. We calculated the average cost using our circulation figures from 2011 and averaged prices for types of items. The total resets at midnight.</p>
 		<p>Fill our our <a href="ROI-calcualator.shtml">"return on investment" calculator</a> to find out how valuable the library is to <em>you</em>.</p>
+		<h2>More...</h2>
+		<p>Learn about the other ways that having a DPPL library card gets you <a href="/events-programs/library-card-month.html">access to the best deals in town</a>.</p>
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
