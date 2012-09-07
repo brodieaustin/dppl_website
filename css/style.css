@@ -289,7 +289,7 @@ input[type=checkbox]{
 /*reusable classes*/
 .callout{
    margin: 1.5em 1em;
-   padding: 1em;
+   padding: .5em 1em 1em 1em;
    background-color: #eee;
    overflow: hidden;
 }
@@ -684,27 +684,26 @@ ul.dropdown li:hover > ul{
   margin: 0;
   padding: 0 6px;
   text-align: center;
-  background: url('/images/features/2012/library-card-month/woman-dppl-card.jpg') no-repeat right top;
+  background: url('http://dppl.org/images/features/2012/library-card-month/woman-dppl-card.jpg') no-repeat right top;
   overflow: hidden;
 }
 
 .savings-counter div{
   position: absolute; 
-  top: 30%; 
+  top: 20%; 
   left: 0;
   float: none;
-  margin-top: -15%; 
+  margin-top: -10%; 
   padding-top: 4px;
-  width: 50%; 
+  width: 60%; 
   margin: 0; 
   line-height: 1em;
+  font-size: 110%;
 }
+
+.savings-counter a{display: block; margin-top: .7em;}
  
 #counter{
-  display: block;
-  margin-bottom: .5em;
-  padding-right: 2em;
-  font-size: 2em;
   font-weight: bold;
 }
 
