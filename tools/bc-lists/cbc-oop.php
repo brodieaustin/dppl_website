@@ -9,13 +9,13 @@
 	
 	//create new user
 	$user = new User('84339150');
-	$lists = $user->getUserLists($baseurl, $key, $dir, 'lists-' + today + '.json');
+	$lists = $user->getUserLists($baseurl, $key, $dir, $today . '.json');
 	
-	//echo $lists;
+	writeJSON($lists, $dir, $today . '.json');
 	
 	$jarray = jsonToArray($lists);
 	
-	var_dump($jarray);
+	$user->getUserListIDS($jarray);
 	
 	//helper functions
 	function writeJSON($json, $dir, $file_name){

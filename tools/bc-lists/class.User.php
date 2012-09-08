@@ -25,7 +25,10 @@
 		
 		public function getUserLists($baseurl, $key, $dir, $file_name){
 			//check if file has been saved
+			echo $file_name;
+			echo file_exists($dir . $file_name);
 			if (file_exists($dir . $file_name)){
+				echo 'it already exists<br />';
 				$json = file_get_contents($dir . $file_name);
 			}
 			else{
@@ -39,7 +42,7 @@
 		
 		public function getUserListIDs($jarray){
 			foreach ($jarray['lists'] as $list){
-				echo $list['id'];
+				echo $list['id'] . '<br />';
 			}
 		}
 	
