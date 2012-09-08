@@ -74,6 +74,11 @@
 	   font-weight: bold;
 	}
 	
+	.no-style{
+	  list-style: none;
+	  padding: 0;
+	}
+	
 	dl.prizes dt{float: left; margin-right: .5em; font-style: oblique;}
 
 	/*grid tweaks*/
@@ -87,7 +92,7 @@
 	   border-bottom: .2em solid #e9ae4a;
 	}
 	.header h1{
-	  width: 35%;
+	  width: 30%;
 	}
 	
 	.event-date{
@@ -161,7 +166,7 @@
 	
 	.content table{
 	   width: 100%;
-	   margin: 0 0 1em 0;
+	   margin: 0 0 3em 0;
 	   padding: 1em;
 	   border-collapse: collapse;
 	}
@@ -172,7 +177,7 @@
 	.content table th, .content table td{
 	   text-align: left;
 	   line-height: 1.2em;
-	   padding: .8em 3% .2em 0;
+	   padding: .8em 3% .5em 0;
 	   border-bottom: 2px solid #eee;
 	}
 	.content table th{
@@ -193,8 +198,9 @@
 	   text-align: center;
 	}
 	.hero p{
-	   padding: .5em 3em;
+	   padding: .5em 4em;
 	   line-height: 1.4em;
+	   font-size: 140%;
 	}
 	.themes ul{
 	  list-style: none;
@@ -209,12 +215,32 @@
 	.contest h3{
 	   color: #fff;
 	}
-	.organizers{
-	   font-size: 90%;
+	.schedule .time{
+	   width: 15%;
 	}
-	.organizers dt{
-	   font-weight: bold;
-	   margin-top: 1em;
+	.schdedule .event{
+	  width: 55%;
+	}
+	.schedule .place{
+	  width: 30%;
+	}
+	.schedule .note{
+	  display: block;
+	  margin-top: .5em;
+	  font-size: 90%;
+	  color: #777;
+	  font-style: oblique;
+	}
+	#arts-council{
+		margin-top: 2em;
+	}
+	.organizers, .directors{
+	   font-size: 90%;
+	   list-style: none;
+	}
+	.organizers li, .directors li{
+	  display: inline-block;
+	  margin-right: 1em;
 	}
 	.sidebar{
 	   margin-top: 1em;
@@ -235,7 +261,6 @@
 	/*footer*/
 	.footer{
 	   background-color: #202020;
-	   font-size: 80%;
 	}
 	.footer h3{
 	   color: #888888;
@@ -245,7 +270,7 @@
 	   line-height: 1.2em;
 	}
 	.footer p.attribution{
-	   padding-top: 2em;
+	   padding-top: 1em;
 	}
 
 @media screen and (max-width: 1024px){
