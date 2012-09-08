@@ -1,4 +1,3 @@
-/*GENERAL*/	
 
 BODY {
   width: 61.53846153em;
@@ -469,15 +468,31 @@ font-size : 18px;
   top: 2.307692308em; 
   right: 0;
   line-height: 2em;
-  padding: 1em 0 1em .5em; 
+  padding: 0; 
   list-style: none; 
   background: #fff; 
   border: 1px solid #c8c8c8;  
   z-index: 5000;
+  overflow: hidden;
 }
 
 #header #tools .tools .how-do-i-links li{
   float: none;
+  margin: 0;
+  padding: 0;
+}
+
+#header #tools .tools .how-do-i-links li a{
+  display: inline-block;
+  width: 100%;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 .5em;
+}
+
+#header #tools .tools .how-do-i-links li a:hover{
+  background-color: #eee;
+  color: #333;
 }
 
 /*Search*/
@@ -617,6 +632,8 @@ ul.dropdown ul li a{
   border-right: none;
   width: 100%;
   display: inline-block;
+  height: 2em;
+  line-height: 2em;
   font-weight: normal;
   color: #333;
 }
@@ -748,6 +765,8 @@ ul.dropdown li:hover > ul{
 
 /*trying out modded styles for page layouts*/
 div.main{float: left; width: 32.615384em;  padding-right: 10px; margin-bottom: 2em;}
+div.main h3{margin-bottom: 0;}
+div.main p{margin-top: .2em;}
 div.inset{float: left; width: 14.923076em; margin-left: 10px;}
 div.inset .container{margin-bottom: 1em; padding: .5em 1em; border: 1px solid #c8c8c8;}
 div.inset .container img{width: 100%; margin: 0 !important;}
