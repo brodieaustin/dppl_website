@@ -1,8 +1,8 @@
 	var map;
-		var geocoder;
-		var dp;
-		var marker;
-		var counter = 0;
+	var geocoder;
+	var dp;
+	var marker;
+	var counter = 0;
 		
 		$(document).ready(function(){
 		
@@ -44,9 +44,9 @@
 						success: function(data){
 								$('div.errors').hide();
 								$('.card-application').hide();
-							
+								
 								if (data.search("Thank") == 0 ){
-									$('#application-response').html(data).fadeIn(600);
+									$('#application-response').html(data).css({color: 'black'}).fadeIn(600);
 								}
 								else{
 									$('.card-application').fadeIn(1000);
@@ -234,7 +234,8 @@
 							markerOptions.title = "You are eligible!";
 							markerOptions.icon = 'https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=home|008000';
 							
-					    	$(response_div).html('<h4 class="big">Inside</h4><p>Your address appears to be <strong>inside</strong> the blue shape on the map. You should be eligible for a card. Library staff will review your application to be sure.</p><p><a href="#application" class="scroll">Proceed to the application</a></p>');
+					    	$(response_div).html('<h4 class="big">Inside</h4><p>Your address appears to be <strong>inside</strong> the blue area on the map. You should be eligible for a card. Library staff will review your application to be sure.</p><p><a href="#application" class="scroll">Proceed to the application</a></p>');
+							$('#application').show();
 					    	$('#application-eligibility').val('Eligible');
 					    	$('#address').val($('#eligibility-street').val());
 					    	$('#zipcode').val($('#eligibility-zip').val());
@@ -243,11 +244,8 @@
 					    	markerOptions.title = "You are not eligible!";
 					    	markerOptions.icon = 'https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=home|FF0000';
 					    	
-					    	$(response_div).html('<h4 class="big">Outside</h4><p>Your address seems to be <strong>outside</strong> the blue shape. You don\'t appear to be eligible for a library card. If feel this is an error, you may fill out the application. Library staff will review your application. You can consult our policies page for information about <a href="../library_cards_policies.shtml#non-resident">non-resident cards</a>.</p><p><a href="#application" class="scroll">Proceed to the application</a></p>');
-					    	$('#application').before('<p class="error">Please be aware that you may not be eligible for a library card. Library staff will review your application. You can continue with the application or consult our library card policies page for more information about <a href="../library_cards_policies.shtml#non-resident">non-resident cards</a>.</p>');
-					    	$('#application-eligibility').val('Not Eligible');
-					    	$('#address').val($('#eligibility-street').val());
-					    	$('#zipcode').val($('#eligibility-zip').val());
+					    	$(response_div).html('<h4 class="big">Outside</h4><p>Your address appears to be <strong>outside</strong> the blue area. Please call 847-376-2788 to confirm your eligibility <em>before</em> applying for a library card.</p>');
+					    	$('#application').hide();
 					    }
 					    
 					    marker.setOptions(markerOptions);

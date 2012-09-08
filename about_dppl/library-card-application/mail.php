@@ -6,6 +6,8 @@
 	$response = '';
 	$fresponse = '';
 	
+	$type = strip_tags($_POST['application-type']);
+	
 	if(empty($_POST['challenge-response'])){
 		die("Please fill out the application form!");
 	}
@@ -21,11 +23,22 @@
     	elseif (empty($_POST['address'])){ 
     		die("Please provide an address before submitting your application");
     	}
+		elseif (empty($_POST['zipcode'])){ 
+    		die("Please provide a zipcode before submitting your application");
+    	}
 		elseif (empty($_POST['home-phone'])){
     		die("Please provide a primary phone number before submitting your application");
     	}
+		elseif (empty($_POST['date-of-birth'])){
+    		die("Please provide a date of birth before submitting your application");
+    	}
+		elseif (($type == 'Child') && (empty($_POST['parent-name']))){
+			die("Please provide a parent's name before submitting your application");
+		}
+		elseif (($type == 'Child') && empty($_POST['drivers-license'])){
+			die("Please provide a drivers license before submitting your application");
+		}
     	else{
-    		$type = strip_tags($_POST['application-type']);
 		
 			//set up mail object with phpmailer class
 			$mail = new PHPMailer();
@@ -61,10 +74,11 @@
 				$body = '<table><tbody>';
 	
 				foreach ($_POST as $key=>$value){
-					$body .= '<tr><td>' . makeLabel(strip_tags($key)) . ':</td><td>' . strip_tags($value) . '</td></tr>';
-				}
+					 $body .= '<tr><td>' . makeLabel(strip_tags($key)) . ':</td><td>' . strip_tags($value) . '</td></tr>';
+				 }
 
 				$body .= '</tbody></table>';
+				
 	
 				$mail->Body = $body;
 				
@@ -91,13 +105,13 @@
 				//send the mail and test if it happened
 				if ($mail->Send()){
 					if ($type == 'Adult'){
-						echo  "Thank you! Your form has been submitted. Give us 24 hours before you come to pick up your library card. Be sure to bring your photo ID and proof of address when you come. We're excited to meet you!";
+						echo  "Thank you! Your form has been submitted. Give us <strong>3 days</strong> before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring your photo ID and proof of current address when you come. We're excited to meet you!";
 					}
 					elseif ($type == 'Child'){
-						echo "Thank you! Your form has been submitted. Give us 24 hours before you come to pick up your library card. Be sure to bring your photo ID and proof of address when you come. Remember that a parent or guardian must be present to get the card. We're excited to meet you!";
+						echo "Thank you! Your form has been submitted. Give us <strong>3 days</strong> before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring a photo ID and proof of current address when you come. Remember that the child's parent or guardian must be present to get the card. We're excited to meet you!";
 					}
 					else{
-					 	echo "Thank you! Your form has been submitted. Give us 24 hours before you come to pick up your library card. Be sure to bring your photo ID and proof of address when you come.";
+					 	echo "Thank you! Your form has been submitted. Give us 3 days before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring your photo ID and proof of current address when you come.";
 					 }
 				}
 				else{
