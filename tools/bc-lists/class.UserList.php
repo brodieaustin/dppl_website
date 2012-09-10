@@ -13,8 +13,9 @@
 		public function getID(){
 			return $this->id;
 		}
-		public function getUserList($baseurl, $key){
-			$url = $baseurl . 'list/' . $this->id . '?key=' . $key;
+		
+		public function getUserList($baseurl, $key, $library){
+			$url = $baseurl . 'list/' . $this->id . '?library=' . $library . '&key=' . $key;
 			
 			return $url;
 		}
