@@ -1,4 +1,3 @@
-/*GENERAL*/	
 
 BODY {
   width: 61.53846153em;
@@ -766,6 +765,8 @@ ul.dropdown li:hover > ul{
 
 /*trying out modded styles for page layouts*/
 div.main{float: left; width: 32.615384em;  padding-right: 10px; margin-bottom: 2em;}
+div.main h3{margin-bottom: 0;}
+div.main p{margin-top: .2em;}
 div.inset{float: left; width: 14.923076em; margin-left: 10px;}
 div.inset .container{margin-bottom: 1em; padding: .5em 1em; border: 1px solid #c8c8c8;}
 div.inset .container img{width: 100%; margin: 0 !important;}

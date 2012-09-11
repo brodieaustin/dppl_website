@@ -94,21 +94,54 @@ $(function(){
 		return null;
 	}
 });
-/*value counter*/
+/*counter*/
 $(function(){
-	var date1 = Date.today().at('9:00:00');
-	var p = .000442;
+	//get today's day and create variables;
+	var day = Date.today().getDay();
+	var open_time;		
+	var close_time;
 
-	/*$('#content').before('');*/
-	
-	setInterval(function(){
-		var date2 = new Date();
-		var amount = (date2 - date1) * p;
+
+	//based on the day set open end closing times. default is M-F times
+	switch(day){
+		case(6):
+			open_time = Date.today().at('9:00:00');
+			close_time = Date.today().at('17:00:00');
+			break;
+		case(7):
+			open_time = Date.today().at('13:00:00');
+			close_time = Date.today().at('17:00:00');
+			break;
+		default:
+			open_time = Date.today().at('9:00:00');
+			close_time = Date.today().at('21:00:00');
+			break;
+	} 
+
+	//set now with new JS date (not using date.js here)
+	var now = new Date();
+
+	console.log(now, open_time, close_time);
+	console.log(Date.compare(now, open_time));
+	console.log(Date.compare(now, close_time));
+
+	//Using date.js compare method to figure out if current time is less than opening
+	//or greater than closing. If not, proceed with function. If so, insert generic text.
+	if ((Date.compare(now, open_time) == 1) && (Date.compare(now, close_time) == -1)){
 		
-		$('#counter').html('$' + numberWithCommas(amount.toFixed(2)));
-	}, 1000);
+		$('.savings-counter > div').html('DPPL users have saved <span id="counter"></span> so far today. <a href="/about_dppl/library-savings.shtml">Learn how!</a>');
+		
+		var p = .000442;
+
+		setInterval(function(){
+				var now = new Date();
+				var amount = (now - open_time) * p;
 	
+				$('#counter').html('$' + numberWithCommas(amount.toFixed(2)));
+		}, 1000);
+	}
+
 	function numberWithCommas(x) {
-	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 });
