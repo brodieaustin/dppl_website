@@ -1,0 +1,331 @@
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+
+	/*basic tags*/
+	body{
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	   font-size: 100%;
+	   color: #202020;
+	}
+	body.sub-page .header{
+	  background: url('../images/des-arts-logo-short.png') no-repeat left top;
+	 }
+	 
+	h1{line-height: 1.2em;}
+	 
+	h2{
+	   font-size: 120%;
+	   margin: .5em 0 .5em 0;
+	}
+	h3{
+	   font-size: 100%;
+	   margin: .2em 0 .5em 0;
+	   color: #888;
+	}
+	p, ul, dl{
+	   margin-bottom: 1.2em;
+	    line-height: 1.4em;
+	}
+
+	/*links*/
+	a{
+	   color: inherit;
+	}
+	a:hover{
+	   background-color: #888888;
+	   color: #202020;
+	   text-decoration: none;
+	}
+	a.no-hover{
+	   background-color: transparent !important;
+	}
+	.button{
+	   display: inline-block;
+	   height: 2em;
+	   line-height: 2em;
+	   width: auto;
+	   padding: 0 1em;
+	   color: #fff;
+	   cursor: pointer;
+	   text-decoration: none;
+	}
+	.button:hover{
+	   background-color: #888888;
+	   color: #fff;
+	}
+	.button-orange{
+	   background-color: #f15a2a;
+	}
+	.button-yellow{
+	   background-color: #fcaf3f;
+	}
+
+	/*reusable classes*/
+	.hidden{
+	   display: none;
+	}
+	.clear{
+	   clear: both;
+	}
+	.callout{
+	   display: block;
+	   margin-bottom: .1em;
+	   font-size: 180%;
+	   color: #be1f2e;
+	   font-weight: bold;
+	}
+	
+	.no-style{
+	  list-style: none;
+	  padding: 0;
+	}
+
+	/*grid tweaks*/
+	.container{
+	   padding-top: 1em;
+	   padding-bottom: 1em;
+	}
+	
+	.row{margin-top: 1em;  margin-bottom: 1em;}
+
+	/*header*/
+	.header{
+	   padding-top: 2em;
+	   border-bottom: 2px solid #fcaf3f;
+	}
+	
+	.event-date{
+	   clear: both;
+	   text-align: center;
+	   margin-bottom: 0;
+	}
+
+	/*navigation*/
+	
+	.navigation{
+	    margin:0;
+	    padding: 0;
+		background-color: #202020;
+		overflow: hidden;
+	}
+	
+	.navigation p{color: #888; height 2em; line-height: 2em; }
+	
+	.navigation a{
+	  text-decoration: none;
+	 }
+	
+	.navigation .row{height: 2em; margin-top: 0; margin-bottom: 0; position: relative;}
+	
+	.nav{
+	   position: absolute;
+	   top: 0;
+	   right: 0;
+	   height: auto;
+	   list-style: none;
+	   overflow: visible;
+	}
+	.nav li{
+	   float: left;
+	   margin-left: 3em;
+	}
+	.nav li.active{
+	   background-color: #888888;
+	}
+	.nav li a{
+	   display: block;
+	  height: 2em;
+	  line-height: 2em;
+	  padding: 0 .5em;
+	  vertical-align: middle;
+	   text-align: center;
+	   color: #fff;
+	}
+	.nav li a:hover{
+	   background-color: transparent;
+	}
+	.nav li:hover, navigation li.active:hover{
+	   background-color: #f15a2a;
+	   color: #fff;
+	   cursor: pointer;
+	}
+
+
+	/*content*/
+
+	.content h2{
+	   color: #f15a2a
+	}
+	
+	.content ul{
+	  list-style-type: none;
+	}
+	
+	.content ul li{
+	  margin-bottom: .5em;
+	}
+	
+	.content table{
+	   width: 100%;
+	   margin: 0 0 3em 0;
+	   padding: 1em;
+	   border-collapse: collapse;
+	   border-bottom:  2px solid #fff;
+	}
+	.content table thead{
+	   border-bottom:  1px solid #fff;
+	   
+	}
+	.content table tbody{
+	   background-color: #fff;
+	}
+	.content table tbody tr:nth-of-type(odd) { 
+	  background: #f8f8f8; 
+	}
+	.content table th, .content table td{
+	   text-align: left;
+	   line-height: 1.2em;
+	   padding: .8em 3% .5em 0;
+	   border-bottom: 1px solid #f8f8f8;
+	}
+	.content table th{
+	   vertical-align: bottom;
+	}
+	.content table td{
+	   vertical-align: top;
+	}
+	
+	.content table td.time{
+	  padding-left: 6px;
+	}
+
+	/*special content classes*/
+	.hero{
+	   margin: 3em 2em;
+	   padding: 2em;
+	   background-color: #fcaf3f;
+	   text-align: center;
+	   overflow: hidden;
+	}
+	.hero p{
+	   padding: 0;
+	   line-height: 1.4em;
+	}
+	.contest{
+	   background-color: #f15a2a;
+	}
+	.contest h2{
+	   color: #fff;
+	}
+	.themes .callout{
+	  text-align: center; margin-top: 2em; font-size: 120%;
+	}
+	.schedule .time{
+	   width: 15%;
+	}
+	.schdedule .event{
+	  width: 55%;
+	}
+	.schedule .place{
+	  width: 30%;
+	}
+	.schedule .note{
+	  display: block;
+	  margin-top: .2em;
+	  margin-bottom: .2em;
+	  color: #777;
+	}
+	.about-icons{
+	  margin-bottom: 1em;
+	  overflow: hidden;
+	}
+	#arts-council{
+		margin-top: 2em;
+	}
+	.organizers, .directors{
+	   font-size: 90%;
+	   list-style: none;
+	}
+	.organizers li, .directors li{
+	  display: inline-block;
+	  width: 45%;
+	  margin-right: 1em;
+	}
+	.sidebar{
+	   margin-top: .5em;
+	}
+	.sidebar h3{
+	   border-bottom: 2px solid #f15a2a;
+	   margin-top: 2em;
+	   padding-bottom: .2em;
+	   
+	}
+	
+	.sidebar h3.first{
+	  margin-top: 0;
+	}
+
+	/*footer*/
+	.footer{
+	   background-color: #202020;
+	}
+	.footer h3{
+	   color: #888888;
+	}
+	.footer p{
+	   color: #fff;
+	   line-height: 1.2em;
+	}
+	.footer p.attribution{
+	   padding-top: 0;
+	   margin-bottom: 2em;
+	}
+	
+	.addthis_toolbox a:hover{background-color: transparent !important;}
+
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body.sub-page .header{background-position: center top; background-size: 100%;}
+	body.sub-page .header h1{text-align: center;}
+	ul{list-style: none;}
+	.event-date{margin-top: 2em;}
+	.callout{display: inline; font-size: 100%;}
+	.header h1{width: 100%;}
+	.navigation{padding-top:6px;}
+	.navigation p{text-align: center; height: auto; line-height: 1.2em !important; margin-bottom: 0;}
+	.navigation .row{height: auto;}
+	.nav{position: static; border-top: 3px solid #eee;}
+	.nav li{float: none; width: 100%; margin-left: 0; border-bottom:1px dotted #eee; }
+	.nav li.active{color: #202020;}
+	.hero{margin: 1.5em 0 0;}
+	.hero p{padding: 0;}
+	.about-icons{display: none;}
+	.content table thead{position: absolute; left: -9999px; margin-left: -9999px;}
+	.content table tbody tr:nth-of-type(odd) {background: transparent; }
+	.content table td, .content table tr, .content table tbody{display: block; width: 100% !important;}
+	.content table td{border: 0; !important;}
+	.content table td.time{margin-top: 1em;font-weight: bold; background-color: #eee;}
+	.sidebar {background-color: #eee; padding-top: .5em; padding-bottom: 1em;}
+	.sidebar p, .sidebar dl{line-height: 1.1em; margin-bottom: 1em;}
+	.footer{font-size: 100%;}
+
+}
+
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/*	.logo {
+		background: url(logo2x.jpg) no-repeat;
+		background-size: 212px 303px;
+	}*/
+
+}
