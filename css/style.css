@@ -450,12 +450,12 @@ font-size : 18px;
   padding: 0 .25em;
 }
 
-#header #tools .tools .how-do-i{
-  position: relative;
+#header #tools .tools li:hover{
+  background-color: #eee;
 }
 
-#header #tools .tools .how-do-i:hover{
-  background-color: #eee;
+#header #tools .tools .how-do-i{
+  position: relative;
 }
 
 #header #tools .tools .how-do-i:hover ul{
@@ -469,15 +469,31 @@ font-size : 18px;
   top: 2.307692308em; 
   right: 0;
   line-height: 2em;
-  padding: 1em 0 1em .5em; 
+  padding: 0; 
   list-style: none; 
   background: #fff; 
   border: 1px solid #c8c8c8;  
   z-index: 5000;
+  overflow: hidden;
 }
 
 #header #tools .tools .how-do-i-links li{
   float: none;
+  margin: 0;
+  padding: 0;
+}
+
+#header #tools .tools .how-do-i-links li a{
+  display: inline-block;
+  width: 100%;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 .5em;
+}
+
+#header #tools .tools .how-do-i-links li a:hover{
+  background-color: #eee;
+  color: #333;
 }
 
 /*Search*/
@@ -485,7 +501,7 @@ font-size : 18px;
 #search{
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -1.5em;
   width: 29.2307em;
   height: 2.1538461em;
   margin: 0;
@@ -617,6 +633,8 @@ ul.dropdown ul li a{
   border-right: none;
   width: 100%;
   display: inline-block;
+  height: 2em;
+  line-height: 2em;
   font-weight: normal;
   color: #333;
 }
