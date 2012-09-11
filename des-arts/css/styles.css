@@ -222,13 +222,13 @@
 	  text-align: center; margin-top: 2em; font-size: 120%;
 	}
 	.schedule .time{
-	   width: 15%;
+	   width: 20%;
 	}
 	.schdedule .event{
 	  width: 55%;
 	}
 	.schedule .place{
-	  width: 30%;
+	  width: 25%;
 	}
 	.schedule .note{
 	  display: block;
@@ -328,4 +328,16 @@
 		background-size: 212px 303px;
 	}*/
 
+}
+
+@media only print{
+	* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
+	body{font-size: 13px;}
+	.hidden{display: block;}
+	.navigation, .event-date, .hero, img, .addthis_toolbox{display: none;}
+	.header h1{margin: 0; padding: 0;}
+	.footer{border-top: 2px solid #fcaf3f;}
+	.row{margin: 0;}
+	a{text-decoration: none !important;}
+	.schedule .note{font-style: oblique;}
 }
