@@ -40,7 +40,10 @@
 			
 			$('#events').addFeed().fadeIn(500);
 			
+			
+			
 		});
+		
 	</script>
 	<script>
 		//Google Feeds API script to display RSS feeds as test

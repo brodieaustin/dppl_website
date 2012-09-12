@@ -70,29 +70,23 @@ $(function(){
 
 		return false;
 	});
-
-	function createCookie(name,value,days) {
-		if (days) {
-			var date = new Date();
-			date.setTime(date.getTime()+(days*24*60*60*1000));
-			var expires = "; expires="+date.toGMTString();
-		}
-		else expires = "";
+});
+$(function(){
+	if (isMobile.any() == false){
+		var mobile_cookie = readCookie('mobile_banner');
 		
-		document.cookie = name+"="+value+expires+"; path=/";
-	};
-
-	function readCookie(name) {
-		var nameEQ = name + "=";
-		var ca = document.cookie.split(';');
-		for(var i=0;i < ca.length;i++) {
-			var c = ca[i];
-			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		if (!(mobile_cookie)){
+			$('#mobile-alert').slideDown();
+			$('body').css('paddingTop', '2.5em');
 		}
-			
-		return null;
-	}
+	};
+	
+	$('#mobile-alert .close').click(function(){
+		$(this).parent().hide();
+		$('body').css('paddingTop', '0');
+		document.cookie = 'mobile_banner=closed;;path=/';
+	});
+	
 });
 /*counter*/
 $(function(){
@@ -145,3 +139,44 @@ $(function(){
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 });
+
+function createCookie(name,value,days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		}
+		else expires = "";
+		
+		document.cookie = name+"="+value+expires+"; path=/";
+	};
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+		
+	return null;
+}
+
+var isMobile = {
+		Android: function() {
+			return navigator.userAgent.match(/Android/i) ? true : false;
+		},
+		BlackBerry: function() {
+			return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+		},
+		iOS: function() {
+			return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+		},
+		Windows: function() {
+			return navigator.userAgent.match(/IEMobile/i) ? true : false;
+		},
+		any: function() {
+			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+		}
+	};
