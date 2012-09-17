@@ -101,10 +101,9 @@
 						<input type="text" id="middle-initial" name="middle-initial" tabindex="3" />
 					</div>
 					<div>
-						<label for="gender-male"><input type="radio" id="gender-male" name="gender" tabindex="4" value="Male" />Male</label>
-					</div>
-					<div>
-						<label for="gender-female"><input type="radio" id="gender-female" name="gender" tabindex="5" value="Female" />Female</label>
+						<label>Gender:<em>*</em></label>
+						<label for="gender-male"><input type="radio" id="gender-male" name="gender" tabindex="4" value="Male" class="required" />Male</label>
+						<label for="gender-female"><input type="radio" id="gender-female" name="gender" tabindex="5" value="Female" class="required" />Female</label>
 					</div>
 				</fieldset>
 				<fieldset>
@@ -123,42 +122,46 @@
 					<div>
 						<label for="home-phone">Phone:<em>*</em></label>
 						<input type="text" id="home-phone" name="home-phone" class="required" tabindex="9" />
-					</div>				
+					</div>	
+					<div>
+						<label for="email-address">Email Address:</em></label>
+						<input type="text" id="email-address" name="email-address" tabindex="10" />
+					</div>			
 				</fieldset>
 				<fieldset>
 					<div>
 						<label for="employer">Employed by:</label>
-						<input type="text" id="employer" name="employer" tabindex="10" />
+						<input type="text" id="employer" name="employer" tabindex="11" />
 					</div>
 					<div>
 						<label for="employer-address">Address:</label>
-						<input type="text" id="employer-address" name="employer-address" tabindex="11" />
+						<input type="text" id="employer-address" name="employer-address" tabindex="12" />
 					</div>
 					<div>
 						<label for="employer-city">City:</label>
-						<input type="text" id="employer-city" name="employer-city" tabindex="12" />
+						<input type="text" id="employer-city" name="employer-city" tabindex="13" />
 					</div>
 					<div>
 						<label for="employer-zip">Zip:</label>
-						<input type="text" id="employer-zip" name="employer-zip" tabindex="13" />
+						<input type="text" id="employer-zip" name="employer-zip" tabindex="14" />
 					</div>
 					<div>
 						<label for="work-phone">Work:</label>
-						<input type="text" id="work-phone" name="work-phone" tabindex="14" />
+						<input type="text" id="work-phone" name="work-phone" tabindex="15" />
 					</div>
 				</fieldset>
 				<fieldset>
 					<div>
 						<label for="drivers-license">Driver's License #:</label>
-						<input type="text" id="drivers-license" name="drivers-license" tabindex="15" />
+						<input type="text" id="drivers-license" name="drivers-license" tabindex="16" />
 					</div>
 					<div>
 						<label for="date-of-birth">Date of Birth:<em>*</em></label>
-						<input type="text" id="date-of-birth" name="date-of-birth" class="required" tabindex="6" />
+						<input type="text" id="date-of-birth" name="date-of-birth" class="required" tabindex="17" />
 					</div>
 					<div>
 						<label for="primary-language" class="wide">Primary Language Spoken at Home:</label>
-						<input type="text" id="primary-language" name="primary-language" tabindex="17" />
+						<input type="text" id="primary-language" name="primary-language" tabindex="18" />
 					</div>
 				</fieldset>
 				<fieldset>
@@ -169,13 +172,13 @@
 						</div>
 						<div>
 							<label for="challenge-response">Your response: <em>*</em> &nbsp;</label>
-							<input type="text" name="challenge-response" id="challenge-response" tabindex="18" class="required">
+							<input type="text" name="challenge-response" id="challenge-response" tabindex="19" class="required">
 						</div>
 					</div>
 				</fieldset>
 				<fieldset>
 					<div>
-						<input type="submit" value="Submit" class="button right" tabindex="19" />
+						<input type="submit" value="Submit" class="button right" tabindex="20" />
 					</div>
 				</fieldset>
 			</form>
