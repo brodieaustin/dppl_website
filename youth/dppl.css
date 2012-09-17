@@ -1,18 +1,23 @@
 @charset "UTF-8";
 /* CSS Document */
 
+body{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  background-color: #ffefcd;
+  margin: 0;
+}
+
 body a {
 	color:#0066CC;
+	
 	}
 
-.sitenav {
-	font-family: trebuchet ms;
-	font-size: 15px;
+.sitenav 
+	clear: both;
 	}
 	
 .sitenavaddy {
-	font-family: trebuchet ms;
-	font-size: 12px;
 	}
 
 .sitenavlinks li {
@@ -40,48 +45,44 @@ body a {
 	padding: 0;
 	margin: 0;
 	}
-	
-.chalkboardlinks {
-	background-image:url(des_el/chalkboard2.png);
-	background-repeat:no-repeat;
-	vertical-align: top;
-	padding: 10px 0 0 14px;
-	color: white;
-	font-family: trebuchet ms;
-	font-size: 13px;
-	}
 
 .caudillclub {
 background-image:url(caudill/caudill_logo_2.gif);
 background-repeat:no-repeat;
 }
 	
-.chalkboardlinks a:link {
-	text-decoration: none;
+.chalkboardlinks {
+	background: url(des_el/chalkboard2.png) no-repeat;
+	vertical-align: top;
+	padding: 18px 0 0 12px;
 	color: white;
+	
 	}
+	
+.chalkboardlinks a{
+	text-decoration: none;
+	color: #fff;
+	}
+
+.chalkboardlinks a:hover {
+	background-color: #FFFF99;
+	color: #333 !important;
+}
 	
 .chalkboardlinks a:visited {
 	text-decoration: none;
-	color: white;
+	color: #fff;
 	}
 	
-.chalkboardlinks a:hover {
-	text-decoration: none;
-	color: #FFFF99;
-	font-weight: bold;
-	padding-left: 3px;
-	}
+
 	
 .contentbody {
-	font-family: trebuchet ms;
-	font-size: 14px;
 	padding-right: 20px;
 	}
 	
+	.contentbody p{line-height: 16px;}
+	
 .contentheader {
-	font-family: trebuchet ms;
-	font-size: 12px;
 	vertical-align: top;
 	padding: 20px 10px 0 0 ;
 	}
@@ -123,7 +124,7 @@ background-repeat:no-repeat;
 	}
 
 .or_table_click {
-	font-size: 13px;
+	
 	}
 
 .databaselinks a:hover {
@@ -135,18 +136,23 @@ background-repeat:no-repeat;
 /* TWITTER CSS */
 .twitter_title {
 	font-family: "Comic Sans MS", helvetica;
-	font-size: 14px;
+	
 	font-weight: bold;
 }
 	
 #twitter_update_list {
 	font-family: "Comic Sans MS", helvetica;
-	font-size: 12px;
+	
 	list-style-type: none;
 	padding: 0;
 	margin: 7;
-
+}
 	
+.no-style{list-style: none; padding:0;}
+
+.columns{width: 100%; margin: 0; padding: 0;}
+.columns .col{float: left; width: 40%; margin-right: 5%;}
+.columns .last {margin-right: 0;}
 	
 	
 	

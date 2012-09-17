@@ -449,12 +449,12 @@ font-size : 18px;
   padding: 0 .25em;
 }
 
-#header #tools .tools .how-do-i{
-  position: relative;
+#header #tools .tools li:hover{
+  background-color: #eee;
 }
 
-#header #tools .tools .how-do-i:hover{
-  background-color: #eee;
+#header #tools .tools .how-do-i{
+  position: relative;
 }
 
 #header #tools .tools .how-do-i:hover ul{
@@ -500,7 +500,7 @@ font-size : 18px;
 #search{
   position: absolute;
   top: 50%;
-  right: -1em;
+  right: -1.5em;
   width: 29.2307em;
   height: 2.1538461em;
   margin: 0;

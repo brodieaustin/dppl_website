@@ -121,10 +121,6 @@ $(function(){
 	//set now with new JS date (not using date.js here)
 	var now = new Date();
 
-	console.log(now, open_time, close_time);
-	console.log(Date.compare(now, open_time));
-	console.log(Date.compare(now, close_time));
-
 	//Using date.js compare method to figure out if current time is less than opening
 	//or greater than closing. If not, proceed with function. If so, insert generic text.
 	if ((Date.compare(now, open_time) == 1) && (Date.compare(now, close_time) == -1)){
