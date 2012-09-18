@@ -29,6 +29,9 @@
 		elseif (empty($_POST['home-phone'])){
     		die("Please provide a primary phone number before submitting your application");
     	}
+    	elseif (empty($_POST['gender'])){
+    		die("Please provide your gender before submitting your application");
+    	}
 		elseif (empty($_POST['date-of-birth'])){
     		die("Please provide a date of birth before submitting your application");
     	}

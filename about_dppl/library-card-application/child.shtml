@@ -102,9 +102,8 @@
 						<input type="text" id="middle-initial" name="middle-initial" tabindex="3" />
 					</div>
 					<div>
+						<label>Gender:<em>*</em></label>
 						<label for="gender-male"><input type="radio" id="gender-male" name="gender" tabindex="4" />Male</label>
-					</div>
-					<div>
 						<label for="gender-female"><input type="radio" id="gender-female" name="gender" tabindex="5" />Female</label>
 					</div>
 				</fieldset>
@@ -115,15 +114,19 @@
 					</div>
 					<div>
 						<label for="city">City:</label>
-						<input type="text" id="city" name="city" tabindex="8" />
+						<input type="text" id="city" name="city" tabindex="7" />
 					</div>
 					<div>
 						<label for="zipcode">Zip:<em>*</em></label>
-						<input type="text" id="zipcode" name="zipcode" tabindex="9" />
+						<input type="text" id="zipcode" name="zipcode" tabindex="8" />
 					</div>
 					<div>
 						<label for="home-phone">Phone:<em>*</em></label>
-						<input type="text" id="home-phone" name="home-phone" class="required" tabindex="10" />
+						<input type="text" id="home-phone" name="home-phone" class="required" tabindex="9" />
+					</div>
+					<div>
+						<label for="email-address">Email Address:</em></label>
+						<input type="text" id="email-address" name="email-address" tabindex="10" />
 					</div>
 				</fieldset>
 				<fieldset>

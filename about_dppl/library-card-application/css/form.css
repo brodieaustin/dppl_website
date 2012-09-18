@@ -24,6 +24,7 @@
 }
 
 #content form div{
+  position: relative;
   clear: left;
   margin-bottom: .5em;
 }
@@ -59,8 +60,8 @@
 
 #content input[type=radio]{
   margin-top: 0;
-  vertical-align: top;
   margin-right: .5em;
+  height: 1em !important;
 }
 
 #content #application div{
@@ -167,7 +168,8 @@ div.errors{
    margin-bottom: 1em;
 }
 
-.error{
+label.error{
+  float: right;
   color: red;
 }
 
