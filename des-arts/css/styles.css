@@ -27,7 +27,17 @@
 	   margin-bottom: 1.2em;
 	    line-height: 1.4em;
 	}
-
+	
+	code{
+	  display: block;
+	  margin-bottom: 1em;
+	  padding: 1em .5em;
+	  background-color: #eee;
+	  border-left: 5px solid #c8c8c8;
+	  word-break: break-all;
+	  word-wrap: break-word;
+	}
+	
 	/*links*/
 	a{
 	   color: inherit;
@@ -236,10 +246,15 @@
 	  margin-bottom: .2em;
 	  color: #777;
 	}
-	.about-icons{
-	  margin-bottom: 1em;
-	  overflow: hidden;
+	.about-badge{
+	  float: left;
+	  width: 60%;
 	}
+	.about-badge-image{
+	  float: left;
+	  width: 28%;
+	  margin-left: 5%;
+	 }
 	#arts-council{
 		margin-top: 2em;
 	}
@@ -304,7 +319,6 @@
 	.nav li.active{color: #202020;}
 	.hero{margin: 1.5em 0 0;}
 	.hero p{padding: 0;}
-	.about-icons{display: none;}
 	.content table thead{position: absolute; left: -9999px; margin-left: -9999px;}
 	.content table tbody tr:nth-of-type(odd) {background: transparent; }
 	.content table td, .content table tr, .content table tbody{display: block; width: 100% !important;}
@@ -312,6 +326,8 @@
 	.content table td.time{margin-top: 1em;font-weight: bold; background-color: #eee;}
 	.sidebar {background-color: #eee; padding-top: .5em; padding-bottom: 1em;}
 	.sidebar p, .sidebar dl{line-height: 1.1em; margin-bottom: 1em;}
+	.about-badge{float: none; width: 98%;}
+	.about-badge-image{float: none; width: 50%;}
 	.footer{font-size: 100%;}
 
 }
@@ -336,8 +352,10 @@
 	.hidden{display: block;}
 	.navigation, .event-date, .hero, img, .addthis_toolbox{display: none;}
 	.header h1{margin: 0; padding: 0;}
+	.sub-page .header h1:before{content: 'Des Arts: '}
 	.footer{border-top: 2px solid #fcaf3f;}
 	.row{margin: 0;}
 	a{text-decoration: none !important;}
 	.schedule .note{font-style: oblique;}
+	.about-badge{float: none;}
 }
