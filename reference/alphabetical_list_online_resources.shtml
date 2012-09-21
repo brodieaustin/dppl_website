@@ -15,10 +15,33 @@
 	<!--main content-->
 	<div id="content">
 		<!--#include virtual="../content/reference-c/alphabetical_list_online_resources.html"-->
+		<!--#include virtual="../content/reference-c/inset.html"-->
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<script>
+		$(document).ready(function(){
+			$('.filter').css('display', 'inline-block');
+			
+			$('.filter').click(function(){
+				var filter_type = $(this).attr('id');
+				
+				if ($(this).hasClass('active') == false){
+					$('#db-list ul li').hide();
+					$('#db-list .' + filter_type).parent().show();
+					$(this).addClass('active');
+				}
+				else{
+					$('#db-list ul li').show();
+					$('#db-list .' + filter_type).parent().show();
+					$(this).removeClass('active');
+				}
+				
+				return false;
+			});
+		});
+	</script>
 </body>
 </html>
