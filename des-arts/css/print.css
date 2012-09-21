@@ -1,0 +1,15 @@
+* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
+body{width: 100%; font-size: 13px;}
+@page { margin: 1cm; }
+thead { display: table-header-group; } /* h5bp.com/t */
+.hidden{display: block;}
+.navigation, .event-date, .hero, img, .addthis_toolbox{display: none;}
+.header h1{margin: 0; padding: 0;}
+.sub-page .header h1:before{content: 'Des Arts: '}
+.footer{border-top: 2px solid #fcaf3f;}
+.row{margin: 0;}
+a{text-decoration: none !important;}
+.schedule .note{font-style: oblique;}
+.schedule .filters{display: none;}
+.about-badge{float: none;}
+.button{display: none;}
