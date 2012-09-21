@@ -90,6 +90,9 @@
 	  list-style: none;
 	  padding: 0;
 	}
+	.active{
+	   background-color: #888888;
+	}
 
 	/*grid tweaks*/
 	.container{
@@ -140,9 +143,6 @@
 	.nav li{
 	   float: left;
 	   margin-left: 3em;
-	}
-	.nav li.active{
-	   background-color: #888888;
 	}
 	.nav li a{
 	   display: block;
@@ -252,11 +252,11 @@
 	  margin-bottom: .2em;
 	  color: #777;
 	}
-	.about-badge{
+	.des-arts-badge{
 	  float: left;
 	  width: 60%;
 	}
-	.about-badge-image{
+	.des-arts-badge-image{
 	  float: left;
 	  width: 28%;
 	  margin-left: 5%;
@@ -330,8 +330,8 @@
 	.content table td.time{margin-top: 1em;font-weight: bold; background-color: #eee;}
 	.sidebar {padding-top: .5em; padding-bottom: 1em;}
 	.sidebar p, .sidebar dl{line-height: 1.1em; margin-bottom: 1em;}
-	.about-badge{float: none; width: 98%;}
-	.about-badge-image{float: none; width: 50%;}
+	.des-arts-badge{float: none; width: 98%;}
+	.des-arts-badge-image{float: none; width: 50%;}
 	.footer{font-size: 100%;}
 
 }
@@ -348,22 +348,4 @@
 		background-size: 212px 303px;
 	}*/
 
-}
-
-@media only print{
-	* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
-	body{width: 100%; font-size: 13px;}
-	@page { margin: 0.5cm; }
-	thead { display: table-header-group; } /* h5bp.com/t */
-	.hidden{display: block;}
-	.navigation, .event-date, .hero, img, .addthis_toolbox{display: none;}
-	.header h1{margin: 0; padding: 0;}
-	.sub-page .header h1:before{content: 'Des Arts: '}
-	.footer{border-top: 2px solid #fcaf3f;}
-	.row{margin: 0;}
-	a{text-decoration: none !important;}
-	.schedule .note{font-style: oblique;}
-	.schedule .filters{display: none;}
-	.about-badge{float: none;}
-	.button{display: none;}
 }

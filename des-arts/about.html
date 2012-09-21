@@ -18,6 +18,7 @@
 	
 	<!-- Your styles -->
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen, print" />
+	<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
@@ -35,7 +36,7 @@
 				<ul class="nav">
 					<li><a href="schedule.html">Schedule</a></li>
 					<li><a href="contest.html">Contest</a></li>
-					<li><a href="about.html">About</a></li>
+					<li><a href="about.html" class="active">About</a></li>
 				</ul>
 			</div>
 		</div>
@@ -58,16 +59,18 @@
 				<p>Learn more about the <a href="schedule.html">weekend's events</a>, the <a href="contest.html">visual art competition</a>, and the <a href="#arts-council">Des Plaines Arts Council</a>.</p>
 				<h4>Promote Des Arts on your site!</h4>
 				
-				<p>Just copy the code below and place it somewhere on your website. Feel free to change it to make it work for your site!</p>		
-					<code class="about-badge">
-					&lt;div class=&quot;des-arts-badge&quot; style=&quot;width: 250px; height: 270px; padding: 10px; border: 3px solid orange; text-align: center; font-size: 13px;&quot;&gt;
-						&lt;a href=&quot;http://dppl.org/des-arts&quot; style=&quot;text-decoration: none; background-color: transparent !important;&quot;&gt;
-							&lt;img src=&quot;http://dppl.org/des-arts/images/des-arts-logo.png&quot; style=&quot;width: 100%;&quot;&gt;
-							&lt;p&gt;October 19th, 20th, and 21st at the &lt;br /&gt;Des Plaines Public Library&lt;/p&gt;
-							&lt;/a&gt;
-					&lt;/div&gt;
-					</code>
-					<div class="about-badge-image">
+				<p>Just copy the code below and place it somewhere on your website. Feel free to change it to make it work for your site!</p>	
+					<div class="des-arts-badge">
+						<code id="badge-text">
+						&lt;div class=&quot;des-arts-badge&quot; style=&quot;width: 250px; height: 270px; padding: 10px; border: 3px solid orange; text-align: center; font-size: 13px;&quot;&gt;
+							&lt;a href=&quot;http://dppl.org/des-arts&quot; style=&quot;text-decoration: none; background-color: transparent !important;&quot;&gt;
+								&lt;img src=&quot;http://dppl.org/des-arts/images/des-arts-logo.png&quot; style=&quot;width: 100%;&quot;&gt;
+								&lt;p&gt;October 19th, 20th, and 21st at the &lt;br /&gt;Des Plaines Public Library&lt;/p&gt;
+								&lt;/a&gt;
+						&lt;/div&gt;
+						</code>
+					</div>
+					<div class="des-arts-badge-image">
 						<img src="images/des-arts-badge.png" style="width: 100%;" />
 					</div>
 			</div>
