@@ -29,13 +29,13 @@
 				var filter_type = $(this).attr('id');
 				
 				if ($(this).hasClass('active') == false){
-					$('#db-list ul li').hide();
-					$('#db-list .' + filter_type).parent().show();
+					$('#db-list .db').hide();
+					$('#db-list .' + filter_type).parent().parent().show();
 					$(this).addClass('active');
 				}
 				else{
-					$('#db-list ul li').show();
-					$('#db-list .' + filter_type).parent().show();
+					$('#db-list .db').show();
+					$('#db-list .' + filter_type).parent().parent().show();
 					$(this).removeClass('active');
 				}
 				
