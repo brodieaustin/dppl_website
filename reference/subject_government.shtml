@@ -20,5 +20,13 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<script type="text/javascript" src="../js/jquery.addFeed.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#events').addFeed({
+				'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=et=Adult+Program+%2D+Government&lib=0&nd=30&dm=exml'
+			}).fadeIn(500);
+		});
+	</script>
 </body>
 </html>
