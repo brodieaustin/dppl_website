@@ -24,7 +24,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#events').addFeed({
-				'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=et=Adult+Program+%2D+Government&lib=0&nd=30&dm=exml'
+				'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?ag=&et=Adult+Program+%2D+Government&lib=0&nd=30&dm=exml'
 			}).fadeIn(500);
 		});
 	</script>
