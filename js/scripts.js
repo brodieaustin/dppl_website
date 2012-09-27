@@ -70,29 +70,28 @@ $(function(){
 
 		return false;
 	});
-
-	function createCookie(name,value,days) {
-		if (days) {
-			var date = new Date();
-			date.setTime(date.getTime()+(days*24*60*60*1000));
-			var expires = "; expires="+date.toGMTString();
-		}
-		else expires = "";
+});
+$(function(){
+	//try to detect if mobile browser is being used using isMobile function (see below)
+	if (isMobile.any() == true){
+		//look for mobile_banner cookie, if user closes message we don't want it appearing again
+		//during that session
+		var mobile_cookie = readCookie('mobile_banner');
 		
-		document.cookie = name+"="+value+expires+"; path=/";
-	};
-
-	function readCookie(name) {
-		var nameEQ = name + "=";
-		var ca = document.cookie.split(';');
-		for(var i=0;i < ca.length;i++) {
-			var c = ca[i];
-			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		//if the cookie does not exist, show message
+		if (!(mobile_cookie)){
+			$('#mobile-alert').slideDown();
+			$('body').css('paddingTop', '2.5em');
 		}
-			
-		return null;
-	}
+	};
+	
+	//handler for the close button
+	$('#mobile-alert .close').click(function(){
+		$(this).parent().hide();
+		$('body').css('paddingTop', '0');
+		createCookie('mobile_banner','closed');
+	});
+	
 });
 /*counter*/
 $(function(){
@@ -141,3 +140,44 @@ $(function(){
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 });
+
+function createCookie(name,value,days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		}
+		else expires = "";
+		
+		document.cookie = name+"="+value+expires+"; path=/";
+	};
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+		
+	return null;
+}
+
+var isMobile = {
+		Android: function() {
+			return navigator.userAgent.match(/Android/i) ? true : false;
+		},
+		BlackBerry: function() {
+			return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+		},
+		iOS: function() {
+			return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+		},
+		Windows: function() {
+			return navigator.userAgent.match(/IEMobile/i) ? true : false;
+		},
+		any: function() {
+			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+		}
+	};
