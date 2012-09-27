@@ -76,7 +76,7 @@ $(function(){
 	if (isMobile.any() == true){
 		//look for mobile_banner cookie, if user closes message we don't want it appearing again
 		//during that session
-		var mobile_cookie = readCookie('mobile_banner');
+		var mobile_cookie = readCookie('mobile_alert');
 		
 		//if the cookie does not exist, show message
 		if (!(mobile_cookie)){
@@ -85,11 +85,15 @@ $(function(){
 		}
 	};
 	
+	$('#mobile-alert a').click(function(){
+		createCookie('mobile_alert','clicked', 60);
+	});
+	
 	//handler for the close button
 	$('#mobile-alert .close').click(function(){
 		$(this).parent().hide();
 		$('body').css('paddingTop', '0');
-		createCookie('mobile_banner','closed');
+		createCookie('mobile_alert','closed');
 	});
 	
 });
