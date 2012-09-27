@@ -1123,6 +1123,16 @@ ul.social a.rss{
 	background-position: 0px -48px;
 }
 
+#mobile-alert{
+display: none; position: absolute; top: 0; left: 0; width: 100%; height: 2em;  line-height: 2em; padding: 0; background-color: #eee; z-index: 5000; text-align: left;
+}
+
+#mobile-alert a{display: block; width: 100%; display: relative; text-decoration: none;}
+
+#mobile-alert p {margin: 0 0 0 10px;}
+
+#mobile-alert .close{position: absolute; top: 0; right: 10px; font-weight: bold; cursor: pointer;}
+
 /*leftovers*/
 
 /*resuable font-size classes almost all overriden with 1em*/

@@ -72,19 +72,24 @@ $(function(){
 	});
 });
 $(function(){
-	if (isMobile.any() == false){
+	//try to detect if mobile browser is being used using isMobile function (see below)
+	if (isMobile.any() == true){
+		//look for mobile_banner cookie, if user closes message we don't want it appearing again
+		//during that session
 		var mobile_cookie = readCookie('mobile_banner');
 		
+		//if the cookie does not exist, show message
 		if (!(mobile_cookie)){
 			$('#mobile-alert').slideDown();
 			$('body').css('paddingTop', '2.5em');
 		}
 	};
 	
+	//handler for the close button
 	$('#mobile-alert .close').click(function(){
 		$(this).parent().hide();
 		$('body').css('paddingTop', '0');
-		document.cookie = 'mobile_banner=closed;;path=/';
+		createCookie('mobile_banner','closed');
 	});
 	
 });
