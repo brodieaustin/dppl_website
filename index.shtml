@@ -13,7 +13,7 @@
 	<!--#include virtual="/includes/side-navigation.html"-->
 	<!--main content-->
 	<div id="content">
-		<!--#include virtual="/content/home-c/features.html"-->
+		<!--#include virtual="/content/home.html"-->
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
