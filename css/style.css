@@ -551,8 +551,7 @@ display: none; position: absolute; top: 0; left: 0; width: 100%; height: 2em;  l
 div#navigation{
   width: 100%;
   height: 2.5em;
-  /*margin: 0 0 1em 0;*/
-  margin: 0;
+  margin: 0 0 1em 0;
   padding: 0;
   text-align: left;
   overflow: visible;
@@ -688,18 +687,30 @@ ul.dropdown li:hover > ul{
  display: inline; width: 100%; 
 } 
 
+/*banner ad, with nav include*/
+.ad-banner{
+  display: none;
+  position: relative;
+  float: right;
+  width: 49.076923em;
+  height: 6em;
+  margin: 0;
+  padding: 0 6px;
+  text-align: center;
+  background: #fff;
+  overflow: hidden;
+}
 
 /*side navigation*/
 
 #side-nav{
   width: 10em;
   float: left;
-  margin-top: 1em;
   margin-right: 1.5em;
   color: inherit;
 }
 
-#side-nav small{display: block; padding-top: 2px; font-size: .7em; color: #777;}
+#side-nav small{display: block; padding-top: 2px; font-size: .9em; color: #777;}
 
 #side-nav ul{
   margin: 2px 0 14px 0;
@@ -719,37 +730,6 @@ ul.dropdown li:hover > ul{
 
 #side-nav ul li a{
   text-decoration: none;
-}
-
-.savings-counter{
-  position: relative;
-  float: right;
-  width: 49.076923em;
-  height: 6em;
-  margin: 0;
-  padding: 0 6px;
-  text-align: center;
-  background: url('http://dppl.org/images/features/2012/library-card-month/woman-dppl-card.jpg') no-repeat right top;
-  overflow: hidden;
-}
-
-.savings-counter div{
-  position: absolute; 
-  top: 20%; 
-  left: 0;
-  float: none;
-  margin-top: -10%; 
-  padding-top: 4px;
-  width: 60%; 
-  margin: 0; 
-  line-height: 1em;
-  font-size: 110%;
-}
-
-.savings-counter a{display: block; margin-top: .7em;}
- 
-#counter{
-  font-weight: bold;
 }
 
 /*content*/
