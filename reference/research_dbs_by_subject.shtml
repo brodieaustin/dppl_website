@@ -4,9 +4,14 @@
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
 	<style>
-		#content a {text-decoration: none !important;}
-		#content a:visited{text-decoration: none !important;}
-		#content img{margin: 0;}
+		.subjects{width: 100%; padding: 0; margin: 1em 0; overflow: hidden;}
+		.subject a{position: relative; float: left; width: 20.42483%; margin: 1em; border: 1px solid #c8c8c8;  color: #333; border-radius: .5em;} 
+		.subject .icon{padding-bottom: 2em; text-align: center;}
+		.icon img{margin: 0 !important;}
+		.subject .label{position: absolute; width: 100%; bottom: 0; left: 0;}
+		.subject p{margin: 0; padding: 4px; font-size: 90%; text-align: center;}
+		.subject a:hover{background-color: #eee; border-color: #eee;}
+		.subject a:visited{color: #333;}
 	</style>
 </head>
 <body>
