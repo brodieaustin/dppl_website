@@ -57,31 +57,31 @@ h5{
   color: #333;
 }
 
-/*LINKS*/	
+/*LINKS*/  
 
 a[href] {
-	font-weight: normal;
-	color: #003366;
-	text-decoration: underline;
-	font-style : normal;
-	}
+  font-weight: normal;
+  color: #003366;
+  text-decoration: underline;
+  font-style : normal;
+  }
 
 a[href]:visited {
-	font-weight: normal;
-	color: #003366;
-	text-decoration: underline;
-	font-style : normal;
+  font-weight: normal;
+  color: #003366;
+  text-decoration: underline;
+  font-style : normal;
     }
-	
+  
 
 a[href]:hover {
-	font-weight: normal;
-	color: #555;
-	text-decoration: inherit;
-/*	background-color : #003366;*/
-	font-style : normal;
-    }	
-	
+  font-weight: normal;
+  color: #555;
+  text-decoration: inherit;
+/*  background-color : #003366;*/
+  font-style : normal;
+    }  
+  
 a.no-style{
  font-style: normal;
  font-weight: normal;
@@ -114,102 +114,102 @@ a.button:hover{
 
 /*
 a.link {
-	font-weight: normal;
-	color: #003366;
-	text-decoration: underline;
-	font-style : normal;
-	}
+  font-weight: normal;
+  color: #003366;
+  text-decoration: underline;
+  font-style : normal;
+  }
 
 a.link:visited {
-	font-weight: normal;
-	color: #336699;
-	text-decoration: underline;
-	font-style : normal;
+  font-weight: normal;
+  color: #336699;
+  text-decoration: underline;
+  font-style : normal;
     }
-	
+  
 
 a.link:hover {
-	font-weight: normal;
-	color: #aaa;
-	text-decoration: none;
-	font-style : normal;
+  font-weight: normal;
+  color: #aaa;
+  text-decoration: none;
+  font-style : normal;
     }
-	
+  
 a.link_sm {
-	font-weight: normal;
-	font-size: 1em;
-	color: #003366;
-	text-decoration: underline;
-	font-style : normal;
-	}
+  font-weight: normal;
+  font-size: 1em;
+  color: #003366;
+  text-decoration: underline;
+  font-style : normal;
+  }
 
 a.link_sm:visited {
-	font-weight: normal;
-	font-size: 1em;
-	color: #336699;
-	text-decoration: underline;
-	font-style : normal;
+  font-weight: normal;
+  font-size: 1em;
+  color: #336699;
+  text-decoration: underline;
+  font-style : normal;
     }
 
 a.link_sm:hover {
-	font-weight: normal;
-	font-size: 1em;
-	color: #c8c8c8;
-	text-decoration: underline;
-	font-style : normal;
+  font-weight: normal;
+  font-size: 1em;
+  color: #c8c8c8;
+  text-decoration: underline;
+  font-style : normal;
     }
-	
+  
 a.link_sm_no_underline {
-	font-weight: bold;
-	font-size: .1em;
-	color: #003366;
-	text-decoration: none;
-	font-style : normal;
-	}
+  font-weight: bold;
+  font-size: .1em;
+  color: #003366;
+  text-decoration: none;
+  font-style : normal;
+  }
 a.link_search {
-	font-weight: bold;
-	font-size: .1em;
-	color: #FFFFFF;
-	text-decoration: underline;
-	font-style : normal;
-	}
+  font-weight: bold;
+  font-size: .1em;
+  color: #FFFFFF;
+  text-decoration: underline;
+  font-style : normal;
+  }
 
 a.link_search:hover {
-	font-weight: bold;
-	font-size: .8333em;
-	color: #003366;
-	text-decoration: none;
-	background-color : #FFFFFF;
-	font-style : normal;
-    }	
+  font-weight: bold;
+  font-size: .8333em;
+  color: #003366;
+  text-decoration: none;
+  background-color : #FFFFFF;
+  font-style : normal;
+    }  
 
 
 a.link_xsm {
-	font-weight: normal;
-	font-size: 1em;
-	color: #003366;
-	text-decoration: underline;
-	font-style : normal;
-	}
+  font-weight: normal;
+  font-size: 1em;
+  color: #003366;
+  text-decoration: underline;
+  font-style : normal;
+  }
 
 a.link_xsm:visited {
-	font-weight: bold;
-	font-size: 1em;
-	color: #336699;
-	text-decoration: underline;
-	font-style : normal;
+  font-weight: bold;
+  font-size: 1em;
+  color: #336699;
+  text-decoration: underline;
+  font-style : normal;
     }
 
 a.link_xsm:hover {
-	font-weight: bold;
-	font-size: 1em;
-	color: #FFFFFF;
-	text-decoration: none;
-	background-color : #003366;
-	font-style : normal;
+  font-weight: bold;
+  font-size: 1em;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color : #003366;
+  font-style : normal;
     }
 */
-	
+  
 a.info{
     position:relative; /*this is the key*/
     z-index:24;
@@ -220,18 +220,18 @@ a.info:hover  { z-index:25; background-color:#FFF }
 a.info span  { display: none }
 
 a.info:hover span  {
-	/*the span will display just on :hover state*/
-	display:block;
-	position:absolute;
-	top:2em;
-	left:2em;
-	width:15em;
-	border: 1px solid #FF9933;
-	background-color: #FFFFFF;
-	color:#000;
-	font-size: .6666em;
-	text-decoration: none;
-	text-align: left
+  /*the span will display just on :hover state*/
+  display:block;
+  position:absolute;
+  top:2em;
+  left:2em;
+  width:15em;
+  border: 1px solid #FF9933;
+  background-color: #FFFFFF;
+  color:#000;
+  font-size: .6666em;
+  text-decoration: none;
+  text-align: left
 }
 
 address{
@@ -280,7 +280,7 @@ input[type=submit], input[type=button]{
 }
 
 input[type=submit]:hover, input[type=button]:hover{
-	background-color: #c8c8c8;
+  background-color: #c8c8c8;
 }
 
 input[type=checkbox]{
@@ -573,7 +573,7 @@ div#navigation ul li{
 }
 
 
-/* 	LEVEL ONE*/
+/*   LEVEL ONE*/
 ul.dropdown{
   position: relative;
 z-index: 30;
@@ -627,7 +627,7 @@ ul.dropdown li.hover a{
   color: #fff;
 }
 
-/* 	LEVEL TWO*/
+/*   LEVEL TWO*/
 ul.dropdown ul{
  width: 15.71em;
 visibility: hidden;
@@ -653,7 +653,7 @@ ul.dropdown li.hover ul li a:hover{
   color: #fff;
 }
 
-									  
+                    
 /* IE 6 & 7 Needs Inline Block */
 ul.dropdown ul li a{
   border-right: none;
@@ -674,7 +674,7 @@ ul.dropdown ul li a:visited{
   font-weight: normal;
 }
 
-/* 	LEVEL THREE*/
+/*   LEVEL THREE*/
 ul.dropdown ul ul{
   left: 100%;
   top: 0;
@@ -710,7 +710,7 @@ ul.dropdown li:hover > ul{
   color: inherit;
 }
 
-#side-nav small{display: block; padding-top: 2px; font-size: .9em; color: #777;}
+#side-nav small{display: block; padding-top: 2px; font-size: .8em; color: #777;}
 
 #side-nav ul{
   margin: 2px 0 14px 0;
@@ -772,52 +772,52 @@ ul.dropdown li:hover > ul{
 }
 
 #content .headline h1.automotive{
-	background: url('/images/reference/subject-icons/automotive.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/automotive.png') no-repeat right -.5em;
 }
 #content .headline h1.books-and-lit{
-	background: url('/images/reference/subject-icons/books-and-lit.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/books-and-lit.png') no-repeat right -.5em;
 }
 #content .headline h1.business-and-careers{
-	background: url('/images/reference/subject-icons/business-and-careers.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/business-and-careers.png') no-repeat right -.5em;
 }
 #content .headline h1.computer{
-	background: url('/images/reference/subject-icons/computer.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/computer.png') no-repeat right -.5em;
 }
 #content .headline h1.consumer-information{
-	background: url('/images/reference/subject-icons/consumer-information.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/consumer-information.png') no-repeat right -.5em;
 }
 #content .headline h1.encyclopedia{
-	background: url('/images/reference/subject-icons/encyclopedia.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/encyclopedia.png') no-repeat right -.5em;
 }
 #content .headline h1.genealogy{
-	background: url('/images/reference/subject-icons/genealogy.png') no-repeat right -10px;
+  background: url('/images/reference/subject-icons/genealogy.png') no-repeat right -10px;
 }
 #content .headline h1.government{
-	background: url('/images/reference/subject-icons/government.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/government.png') no-repeat right -.5em;
 }
 #content .headline h1.health-and-medicine{
-	background: url('/images/reference/subject-icons/health-and-medicine.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/health-and-medicine.png') no-repeat right -.5em;
 }
 #content .headline h1.history-and-geography{
-	background: url('/images/reference/subject-icons/history-and-geography.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/history-and-geography.png') no-repeat right -.5em;
 }
 #content .headline h1.business-and-careers{
-	background: url('/images/reference/subject-icons/business-and-careers.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/business-and-careers.png') no-repeat right -.5em;
 }
 #content .headline h1.language-esl{
-	background: url('/images/reference/subject-icons/language-esl.png') no-repeat right -.5em;
-}	
+  background: url('/images/reference/subject-icons/language-esl.png') no-repeat right -.5em;
+}  
 #content .headline h1.law-and-legal-forms{
-	background: url('/images/reference/subject-icons/law-and-legal-forms.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/law-and-legal-forms.png') no-repeat right -.5em;
 }
 #content .headline h1.magazines{
-	background: url('/images/reference/subject-icons/magazines.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/magazines.png') no-repeat right -.5em;
 }
 #content .headline h1.newspapers{
-	background: url('/images/reference/subject-icons/newspapers.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/newspapers.png') no-repeat right -.5em;
 }
 #content .headline h1.tutoring{
-	background: url('/images/reference/subject-icons/tutoring.png') no-repeat right -.5em;
+  background: url('/images/reference/subject-icons/tutoring.png') no-repeat right -.5em;
 }
 
 #content ul.board{
@@ -1133,8 +1133,8 @@ a.download{
 
 div#db-list h3{
     clear: both;
-	background-color: #eee;
-	padding: 4px;
+  background-color: #eee;
+  padding: 4px;
 }
 
 div#db-list h4{
@@ -1258,19 +1258,23 @@ ul.social a{
 }
 
 ul.social a.facebook{
-	background-position: 0px 0px;
+  background-position: 0px 0px;
 }
 
 ul.social a.twitter{
-	background-position: 0px -16px;
+  background-position: 0px -16px;
 }
 
 ul.social a.tumblr{
-	background-position: 0px -32px;
+  background-position: 0px -32px;
 }
 
 ul.social a.rss{
-	background-position: 0px -48px;
+  background-position: 0px -48px;
+}
+
+ul.social a.pinterest{
+  background-position: 0px -64px;
 }
 
 
@@ -1278,23 +1282,23 @@ ul.social a.rss{
 
 /*resuable font-size classes almost all overriden with 1em*/
 .T14 {
-	font-size : 1.1666em;
-	color : #003366;
-	font-weight: normal;
+  font-size : 1.1666em;
+  color : #003366;
+  font-weight: normal;
 } 
 
 .T14B {
-	font-size : 1.1666em;
-	color : #003366;
-	font-weight: bold;
-	vertical-align : top;
+  font-size : 1.1666em;
+  color : #003366;
+  font-weight: bold;
+  vertical-align : top;
 } 
 
 TD.Initials {
-	font-size : 1.1666em;
-	color : #003366;
-	font-weight: bold;
-	vertical-align : top;
+  font-size : 1.1666em;
+  color : #003366;
+  font-weight: bold;
+  vertical-align : top;
 } 
 
 .T13 {
@@ -1320,43 +1324,43 @@ text-align : center;
 }
 
 .T10A {
-	font-size : 1em;
-	font-weight : normal;
+  font-size : 1em;
+  font-weight : normal;
 }
 
 .T10AC {
-	font-size : 1em;
-	font-weight : normal;
-	text-align : center;
+  font-size : 1em;
+  font-weight : normal;
+  text-align : center;
 }
 
 .T9A {
-	font-size : 1em;
-	font-weight : normal;
+  font-size : 1em;
+  font-weight : normal;
 }
 
 .T8A {
-	font-size : 1em;
-	font-weight : normal;
+  font-size : 1em;
+  font-weight : normal;
 }
 
 .T8AW {
-	font-size : 1em;
-	font-weight : normal;
-	color : #FFFFFF;
+  font-size : 1em;
+  font-weight : normal;
+  color : #FFFFFF;
 }
 
 .T8AWB {
-	font-size : 1em;
-	font-weight : bold;
-	color : #FFFFFF;
+  font-size : 1em;
+  font-weight : bold;
+  color : #FFFFFF;
 
 }
 
 .T8AWS {
-	font-size : 1em;
-	font-weight : bold;
-	color : #FFFFFF;
+  font-size : 1em;
+  font-weight : bold;
+  color : #FFFFFF;
 
 
 }
@@ -1366,17 +1370,17 @@ font-size : 1em;
 }
 
 TD.T14B {
-	font-size : 1.1666em;
-	color : #003366;
-	font-weight: normal;
-	vertical-align : middle;
-	text-align : center;
+  font-size : 1.1666em;
+  color : #003366;
+  font-weight: normal;
+  vertical-align : middle;
+  text-align : center;
 } 
 
-	
+  
 /*
 FEATURES
-*/		
+*/    
 
  
 .featureHead {
@@ -1386,33 +1390,33 @@ font-weight: bold;
 } 
 
 .featureSub {
-	font-size : 1.1666em;
-	color : #003366;
-	font-weight: normal;
+  font-size : 1.1666em;
+  color : #003366;
+  font-weight: normal;
 } 
 
 .featureSubSmCaps {
-	font-size : .6666em;
-	color : #003366;
-	font-weight: bold;
-	font-variant : small-caps;
+  font-size : .6666em;
+  color : #003366;
+  font-weight: bold;
+  font-variant : small-caps;
 } 
 
 TD.how {
-	font-size : .75em;
-	color : #003366;
-	font-weight: bold;
-	vertical-align : top;
-} 	
+  font-size : .75em;
+  color : #003366;
+  font-weight: bold;
+  vertical-align : top;
+}   
 
 
-	
+  
 /*
 SPACERS
-*/	
+*/  
 
 .spacer_xlg,  .spacer_lg,  .spacer_md_lg,  .spacer_md,  .spacer_md_sm,  .spacer_sm_md,  .spacer_sm,  .spacer_sm_xsm,  .spacer_xsm {
-	display: block; height: 0; width: 0; line-height: 0;
+  display: block; height: 0; width: 0; line-height: 0;
 }
 
 .spacer_xlg br,  .spacer_lg br,  .spacer_md_lg br,  .spacer_md br,  .spacer_md_sm br,  .spacer_sm_md br,  .spacer_sm br,  .spacer_sm_xsm br,  .spacer_xsm  br{
