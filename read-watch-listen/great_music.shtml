@@ -80,7 +80,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#list').bcList({
-				'list_id' : '108885041'
+				'list_id' : '132580151'
 			}, function(){
 				$('#list').cycle({ 
 							fx:     'scrollVert', 
