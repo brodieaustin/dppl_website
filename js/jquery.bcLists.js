@@ -14,6 +14,7 @@
 	
 	var baseurl = 'https://api.bibliocommons.com/v1/';
 	var url  = baseurl + 'lists/' + settings.list_id + '?library=dppl&api_key=' + settings.key;
+	console.log(url);
 	
 	var div = '';
 	var i = 0;
@@ -35,39 +36,44 @@
 				});
 		
 				item = items[i]['title'];
-			
-				a = $('<a>', {
-					'href': item_url = item['details_url'],
-				});
 				
-				console.log(item['format']['id']);
+				console.log(item);
+				
+				if (item){
+					item_url = item['details_url'];
+			
+					a = $('<a>', {
+						'href': item_url
+					});
+					
+					//console.log(item['format']['id']);
 
-				if (item['isbns']){
-					isbn = 'http://www.syndetics.com/index.aspx?isbn=' + item['isbns'][0] + '/MC.GIF&client=847-342-5300&type=xw12&oclc='
-				}
-				else{
-					if (item['format']['id'] == 'MUSIC_CD'){
-						isbn = 'http://opl.bibliocommons.com/images/default_covers/icon-music-cd.png';
+					if (item['isbns']){
+						isbn = 'http://www.syndetics.com/index.aspx?isbn=' + item['isbns'][0] + '/MC.GIF&client=847-342-5300&type=xw12&oclc='
 					}
-					else if (item['format']['id'] == 'DVD'){
-						isbn = 'http://opl.bibliocommons.com/images/default_covers/icon-movie-alldiscs.png';
+					else{
+						if (item['format']['id'] == 'MUSIC_CD'){
+							isbn = 'http://opl.bibliocommons.com/images/default_covers/icon-music-cd.png';
+						}
+						else if (item['format']['id'] == 'DVD'){
+							isbn = 'http://opl.bibliocommons.com/images/default_covers/icon-movie-alldiscs.png';
+						}
 					}
+					
+					img = $('<img>',{
+						'class': 'bookjacket',
+						'src' : isbn
+					});
+				
+				
+					a.append(img);
+					
+					a.append('<p>' + item['title'] + '</p>');
+					
+					div.append(a);
+					
+					$this.append(div);
 				}
-				
-				img = $('<img>',{
-					'class': 'bookjacket',
-					'src' : isbn
-				});
-			
-			
-				a.append(img);
-				
-				a.append('<p>' + item['title'] + '</p>');
-				
-				div.append(a);
-				
-				$this.append(div);
-				
 			}
 			
 			if(typeof callback == 'function'){
