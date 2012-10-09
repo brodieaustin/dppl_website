@@ -28,6 +28,11 @@ h1 {
   font-weight: bold;
 } 
 
+h1 small{
+  font-size: .7em;
+  color: #888;
+}
+
 h2 {
   font-size : 1.5em;
   color : #003366;
@@ -242,9 +247,9 @@ address{
 hr{
   display: block;
   height: 1px;
-  width: 98% !important;
+  width: 90% !important;
   border: 0;
-  border-top: 1px solid #c8c8c8;
+  border-top: 1px solid #eee;
   margin: 2em auto 1em auto;
   padding: 0;
 }
@@ -944,7 +949,7 @@ div#list{
   box-shadow: 0 1px 3px rgba(34, 25, 25, .5);
 }
 
-#slides h1{
+#slides h2{
   margin-top: 2px;
   margin-bottom: .5em;
   padding-bottom: 0;
@@ -1131,8 +1136,14 @@ a.download{
 
 /*special style sheet for database listings*/
 
+#db-list{
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 div#db-list h3{
-    clear: both;
+  clear: both;
   background-color: #eee;
   padding: 4px;
 }
@@ -1183,6 +1194,57 @@ div#db-list .no-style{
   background-color: #FCF8E3;
   color: #C09853;
 }
+
+/*styles for edppl page*/
+
+
+.edppl-icon-link{
+  display: block;
+  float: left; 
+  width: 21.78683%;  
+  margin: 10px; 
+  padding: 0; 
+  text-align: center;
+  text-decoration: none !important;
+}
+
+.edppl-icon-link:hover{
+  background-color: #c1d82f;
+}
+
+.edppl-heading-icon{
+  float: left; 
+  width: 30%; 
+  margin-right: 5%;
+}
+
+.edppl-heading-icon img{
+  width: 100%;
+  margin: 0 !important;
+}
+
+.edppl-text{
+  float: left;
+  width: 65%;
+}
+
+.edppl-text h3{
+  padding-bottom: .3em; 
+  border-bottom: 2px solid #c1d82f;
+}
+
+.edppl-product-image{
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  width: 70%; 
+  padding: 5px
+}
+
+.edppl-product-image img{
+  width: 100%;
+  margin: 0 !important;
+}
+
 
 /*footer*/
 
