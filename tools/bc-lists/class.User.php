@@ -28,8 +28,7 @@
 		}
 		
 		public function getUserInfo($baseurl, $key){
-			$url = $baseurl . 'users/' . $this->id . '?library=' . $this->library . '&key=' . $key;
-			
+			$url = $baseurl . 'users/' . $this->id . '?library=' . $this->library . '&api_key=' . $key;
 			return $url;
 		}
 		

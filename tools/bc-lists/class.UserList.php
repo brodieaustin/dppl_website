@@ -14,10 +14,19 @@
 			return $this->id;
 		}
 		
-		public function getUserList($baseurl, $key, $library){
-			$url = $baseurl . 'list/' . $this->id . '?library=' . $library . '&key=' . $key;
+		public function getUserList($baseurl, $key, $library, $dir, $file_name){
+			if (file_exists($dir . $file_name)){
+				echo 'it already exists<br />';
+				$json = file_get_contents($dir . $file_name);
+			}
+			else{
+				$url = $baseurl . 'lists/' . $this->id . '?library=' . $library . '&api_key=' . $key;
+				$json = file_get_contents($url) or die('nope');
 			
-			return $url;
+				sleep(3);
+			}
+			return $json;
+			
 		}
 	}
 ?>

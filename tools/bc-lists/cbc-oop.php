@@ -9,7 +9,7 @@
 	$today = date("Y-m-d");
 	
 	//create new user
-	$user = new User('84339150', 'dppl');
+	$user = new User('84339150', $library);
 	$lists = $user->getUserLists($baseurl, $key, $dir, $today . '.json');
 	
 	writeJSON($lists, $dir, $today . '.json');
@@ -19,13 +19,9 @@
 	$list_ids = array();
 	$list_ids = $user->getUserListIDS($jarray, $list_ids);
 	
-	var_dump($list_ids);
-	
-	echo $user->getLibrary();
-	
 	foreach ($list_ids as $list_id){
 		$list = new UserList($list_id);
-		echo $list->getUserList($baseurl, $key, $user->getLibrary()) . '<br />';
+		writeJSON($list->getUserList($baseurl, $key, $user->getLibrary(), $dir, $list->getID() . '.json'), $dir, $list->getID() . '.json');
 	}
 	
 	//helper functions
