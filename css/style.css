@@ -29,6 +29,7 @@ h1 {
 } 
 
 h1 small{
+  display: block;
   font-size: .7em;
   color: #888;
 }
@@ -756,6 +757,7 @@ ul.dropdown li:hover > ul{
 
 #content p, #content li, #content td{
   line-height: 1.35em;
+  margin-bottom: .5em;
 }
 
 #content img{
