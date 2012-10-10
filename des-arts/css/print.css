@@ -9,7 +9,9 @@ thead { display: table-header-group; } /* h5bp.com/t */
 .footer{border-top: 2px solid #fcaf3f;}
 .row{margin: 0;}
 a{text-decoration: none !important;}
-.schedule .note{font-style: oblique;}
+.schedule .description{font-style: oblique;}
 .schedule .filters{display: none;}
 .about-badge{float: none;}
 .button{display: none;}
+.page-break{width: 0; height: 0; page-break-after: always;}
+.content table td.time{padding-left: 0;}

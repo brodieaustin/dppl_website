@@ -246,7 +246,7 @@
 	.schedule .place{
 	  width: 25%;
 	}
-	.schedule .note{
+	.schedule .description{
 	  display: block;
 	  margin-top: .5em;
 	  margin-bottom: .5em;
