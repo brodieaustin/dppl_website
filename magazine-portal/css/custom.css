@@ -1,7 +1,7 @@
 body {
   padding-top: 60px;  /* 60px to make the container go all the way to the bottom of the topbar */
   overflow-y: scroll;
-  background: url('../img/newsprint.png') no-repeat center center fixed;
+  background: url('../img/newsprint2.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -11,22 +11,28 @@ body.home{padding-bottom: 60px;}
 
 .load{
   display: inline-block;
-  width: 28px; 
-  height: 28px; 
+  width: 24px; 
+  height: 24px; 
   background: url('../img/ajax-loader.gif') no-repeat center center
 }
 
 h1{
   color: #ee1c25;
-  font-size: 80px;
+  font-size: 78px;
   line-height: 1em;
 }
 .content{
  background-color: #fff;
-  padding: 29px;
+  padding: 0 20px 20px 20px;
 }
 .row-fluid{
-  padding: 10px 0 10px 0;
+  padding: 8px 0;
+}
+.carousel{
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 .content img{
   width: 98%;
@@ -41,8 +47,7 @@ iframe{
   min-height: 800px;
 }
 #headlines{
-  min-height: 30px;
-  margin-top: 2em;
+  min-height: 26px;
   overflow: visible;
   vertical-align: middle;
 }
