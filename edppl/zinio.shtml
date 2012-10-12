@@ -20,5 +20,20 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<script>
+		$(document).ready(function(){
+			$('#magazine-list').hide();
+			$('#show-magazines').click(function(){
+				if ($('#magazine-list').is(':visible') == false){
+					$('#magazine-list').show();
+					$(this).html('Hide the list');
+				}
+				else{
+					$('#magazine-list').hide();
+					$(this).html('View the list');
+				}
+			});
+		});
+	</script>
 </body>
 </html>

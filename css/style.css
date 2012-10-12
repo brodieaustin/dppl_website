@@ -1296,6 +1296,19 @@ div#db-list .no-style{
   text-align: center;
 }
 
+#magazine-list{
+  list-style: none;
+  padding: 1em;
+  background-color: #eee;
+  -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 20px;
+}
+
+#magazine-list li{
+  display: block;
+}
 
 /*footer*/
 
