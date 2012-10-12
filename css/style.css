@@ -300,6 +300,10 @@ input[type=checkbox]{
    overflow: hidden;
 }
 
+.callout iframe{
+  margin-top: .5em;
+}
+
 .clear{
   clear: both;
 }
@@ -1174,6 +1178,10 @@ div.db img{
   margin: 0 !important;
   border: 5px solid #eee;
   border-radius: .5em;
+}
+
+div.db .callout{
+  margin-left: 0 !important;
 }
 
 div.db img.no-border{
