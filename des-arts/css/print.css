@@ -2,11 +2,16 @@
 body{width: 100%; font-size: 13px;}
 @page { margin: 1cm; }
 thead { display: table-header-group; } /* h5bp.com/t */
-.hidden{display: block;}
-.navigation, .event-date, .hero, img, .addthis_toolbox{display: none;}
+.hidden, .print{display: block;}
+.screen{display: none;}
+.attribution{margin-top: 1em;}
+.navigation, .event-date, .hero, img, code, .addthis_toolbox{display: none;}
 .header h1{margin: 0; padding: 0;}
-.sub-page .header h1:before{content: 'Des Arts: '}
+.header .logo{width: 30%; margin-bottom: 1em;}
+.header .logo img{display: block !important; width: 100%;}
 .footer{border-top: 2px solid #fcaf3f;}
+.footer .presented-by, .footer .sponsor{float: left; width: 50%;}
+.footer img{display: block !important; width: 100%;}
 .row{margin: 0;}
 a{text-decoration: none !important;}
 .schedule .description{font-style: oblique;}

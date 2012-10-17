@@ -93,6 +93,8 @@
 	.active{
 	   background-color: #888888;
 	}
+	
+	.print{display: none;}
 
 	/*grid tweaks*/
 	.container{
@@ -290,16 +292,14 @@
 	   background-color: #202020;
 	}
 	.footer h3{
-	   color: #888888;
+	   color: #888;
 	}
 	.footer p{
 	   color: #fff;
 	   line-height: 1.2em;
 	}
-	.footer p.attribution{
-	   padding-top: 0;
-	   margin-bottom: 2em;
-	}
+	
+	.footer a.image{background-color: transparent !important;}
 	
 	.addthis_toolbox a:hover{background-color: transparent !important;}
 
