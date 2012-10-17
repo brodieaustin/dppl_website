@@ -14,6 +14,7 @@
 	<!--main content-->
 	<div id="content">
 		<!--#include virtual="../content/read_watch_listen-c/section_page.html"-->
+		<!--#include virtual="../content/read_watch_listen-c/inset.html"-->
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->

@@ -15,6 +15,7 @@
 	<!--main content-->
 	<div id="content">
 		<!--#include virtual="../content/read_watch_listen-c/great_music.html"-->
+		<!--#include virtual="../content/read_watch_listen-c/inset.html"-->
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
@@ -79,6 +80,7 @@
 	</script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$('.list').show();
 			$('#list').bcList({
 				'list_id' : '132580151'
 			}, function(){
