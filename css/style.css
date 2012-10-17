@@ -771,6 +771,11 @@ ul.dropdown li:hover > ul{
   line-height: 1.25em;
 }
 
+#content .vevent{
+  margin-top: .5em;
+  margin-bottom: 2em;
+}
+
 #content .headline h1{
   margin-bottom: .5em;
 }
@@ -829,11 +834,6 @@ ul.dropdown li:hover > ul{
   background: url('/images/reference/subject-icons/tutoring.png') no-repeat right -.5em;
 }
 
-#content ul.board{
-  list-style: none;
-  padding-left: 0;
-}
-
 div.main{
   float: left;
   width: 32.615384em;
@@ -866,6 +866,8 @@ div.inset .container img{
 div.inset .container #events{
   width: 100% !important;
 }
+div.inset .list{display: none;}
+
 div.read-watch-listen-icon{
   background: url('/images/read-watch-listen/read-watch-listen-icons.png') no-repeat;
 }
@@ -1111,7 +1113,7 @@ table.board{
 }
 table.board td, table.board th{
   width: 22.73%;
-  border: 1px solid #000;
+  border: 1px solid #c8c8c8;
   padding: .5em;
   text-align: left;
 }
@@ -1120,7 +1122,7 @@ table.board .view{
 }
 table.board th{
   font-weight: bold;
-  background-color: #c8c8c8;
+  background-color: #eee;
 }
 table.board a.download{
   display: block;
