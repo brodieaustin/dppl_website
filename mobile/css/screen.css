@@ -28,9 +28,25 @@ a{
 
 a:hover{color: #aaa; border-bottom: 1px dotted #aaa; }
 
-a.button{display: block; width: 30%; height: auto; padding: .5em 1em; background-color: #00a89e; color: #fff; text-align: center; border-radius: 10px; box-shadow: 2px 4px 4px 0px #ddd;}
+a.button{
+  display: inline-block;
+  width: auto;
+  height: 2em;
+  line-height: 2em;
+  margin: .5em 0;
+  padding: 0 1em;
+  background-color: #00a89e;
+  color: #fff !important;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: .5em;
+  box-shadow: 1px 1px 1px 0px #ddd;
+  text-decoration: none;
+}
 
-a.button:hover{border: 0;}
+a.button:hover{
+  background-color: #555;
+ }
 
 hr{clear: both; margin: 5% auto; border-top: 1px solid #ccc; border-bottom: 0;}
 
@@ -57,7 +73,7 @@ span.block{display: block;}
   min-height: 60px;
   padding-bottom: 1em;
   background: url('../images/banner_640x80.png') no-repeat center; 
-  background-size: 100%;
+  background-size: 90%;
 }
 
 #header a.banner:hover{border: 0;}
@@ -73,12 +89,12 @@ span.block{display: block;}
 
 #header .nav-button{
   position: absolute;
-  top: 20px;
-  right: 5px;
+  top: 15px;
+  right: 10px;
   display: block;
   width: 70px
   height: 50px;
-  padding: .2em .3em;
+  padding: .2em;
   border: 1px solid #000;
   border-radius: 4px;
   background-color: #333;
@@ -131,6 +147,9 @@ span.block{display: block;}
   margin: -2em 0 0 1em;
   padding: .15em;
 }
+
+#content .ad {min-height: 400px; padding: 0; background:  url('/images/edppl/zinio-ipad.jpg') no-repeat right .5em;}
+#content .ad .text{background: rgb(255, 255, 255); background: rgba(255, 255, 255, .9); width: 60%;}
 
 #content ol{
   clear: left;
@@ -186,7 +205,7 @@ span.block{display: block;}
 
 @media screen and (max-width: 700px){
  body{margin-top: 80px;}
- a.button{width: 80% !important; margin: 0 auto;}
+ a.button{width: 90% !important; margin: 0 auto;}
  blockquote{margin-left: 0; margin-right: 0;}
  div#header a.banner{width: 90%; margin: 0; padding-bottom: 0;}
  div.hero h2{text-align: center;}
@@ -195,4 +214,6 @@ span.block{display: block;}
  #content dl dt, #content dl dd{display: block; width: 100%; margin-left: 0;}
  #content ul.icons {width: 100%;}
  #content ul.icons li{ line-height: 120%;}
+ #content .ad{background-position: center top;}
+ #content .ad .text{width: 100%;}
 }
