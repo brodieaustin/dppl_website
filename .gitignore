@@ -13,6 +13,13 @@ robots.txt
 ehthumbs.db
 Icon?
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
 #ignore these files too
 62d2a33c15f9.html
+*.pdf
+*.old
+*.bak
+*.temp
+*.tmp
