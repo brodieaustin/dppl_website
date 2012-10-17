@@ -22,7 +22,15 @@
 	<!--#include virtual="/includes/scripts.html"-->
 	<script>
 		$(document).ready(function(){
+			var url = window.location.href;
+			
 			$('#magazine-list').hide();
+			
+			if (url.search('#magazine-list') > 0){
+				$('#magazine-list').show();
+				$('#show-magazines').html('Hide the list');
+			}
+			
 			$('#show-magazines').click(function(){
 				if ($('#magazine-list').is(':visible') == false){
 					$('#magazine-list').show();
