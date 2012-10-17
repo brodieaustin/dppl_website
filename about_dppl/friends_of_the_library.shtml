@@ -3,7 +3,13 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-
+	<style>
+		#flickr_badge_uber_wrapper{background-color: #eee;}
+		#flickr_badge_wrapper{margin-left: -5px;}
+		.flickr_badge_image img{width: 100px !important; border: 5px solid #fff;}
+		dl#officers dt{font-weight: bold;}
+		dl#officers dd{margin-left: 0; margin-bottom: .8em;}
+	</style>
 </head>
 <body>
 	<!--header-->
