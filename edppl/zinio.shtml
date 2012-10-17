@@ -1,0 +1,47 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>Zinio | eDPPL | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+
+</head>
+<body class="edppl">
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<!--#include virtual="../content/edppl-c/zinio.html"-->
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+	<script>
+		$(document).ready(function(){
+			var url = window.location.href;
+			
+			$('#magazine-list').hide();
+			
+			if (url.search('#magazine-list') > 0){
+				$('#magazine-list').show();
+				$('#show-magazines').html('Hide the list');
+			}
+			
+			$('#show-magazines').click(function(){
+				if ($('#magazine-list').is(':visible') == false){
+					$('#magazine-list').show();
+					$(this).html('Hide the list');
+				}
+				else{
+					$('#magazine-list').hide();
+					$(this).html('View the list');
+				}
+			});
+		});
+	</script>
+</body>
+</html>

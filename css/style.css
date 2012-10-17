@@ -29,6 +29,7 @@ h1 {
 } 
 
 h1 small{
+  display: block;
   font-size: .7em;
   color: #888;
 }
@@ -560,7 +561,8 @@ display: none; position: absolute; top: 0; left: 0; width: 100%; height: 2em;  l
 div#navigation{
   width: 100%;
   height: 2.5em;
-  margin: 0 0 1em 0;
+  /*margin: 0 0 1em 0;*/
+  margin: 0;
   padding: 0;
   text-align: left;
   overflow: visible;
@@ -698,7 +700,6 @@ ul.dropdown li:hover > ul{
 
 /*banner ad, with nav include*/
 .ad-banner{
-  display: none;
   position: relative;
   float: right;
   width: 49.076923em;
@@ -706,8 +707,43 @@ ul.dropdown li:hover > ul{
   margin: 0;
   padding: 0 6px;
   text-align: center;
-  background: #fff;
+  background: url('/images/edppl/zinio-ipad.jpg') no-repeat right top;
   overflow: hidden;
+}
+
+.ad-banner a{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 6em;
+  overflow: hidden;
+}
+
+.ad-banner div{
+  position: absolute; 
+  top: 20%; 
+  left: 0;
+  float: none;
+  margin-top: -10%; 
+  padding-top: 4px;
+  width: 55%; 
+  margin: 0; 
+  line-height: 1em;
+  font-size: 110%;
+}
+
+.ad-banner p{
+  margin: 0;
+}
+
+.ad-banner .headline{
+  color: #dd3039;
+  font-weight: bold;
+}
+
+.ad-banner .link{
+  margin-top: .5em;
+  font-size: .9em;
 }
 
 /*side navigation*/
@@ -715,6 +751,7 @@ ul.dropdown li:hover > ul{
 #side-nav{
   width: 10em;
   float: left;
+  margin-top: 1em;
   margin-right: 1.5em;
   color: inherit;
 }
@@ -760,6 +797,7 @@ ul.dropdown li:hover > ul{
 
 #content p, #content li, #content td{
   line-height: 1.35em;
+  margin-bottom: .5em;
 }
 
 #content img{
@@ -1219,7 +1257,8 @@ div#db-list .no-style{
 }
 
 .edppl-icon-link:hover{
-  background-color: #c1d82f;
+  background-color: #eee;
+  border-radius: 5px;
 }
 
 .edppl-heading-icon{
@@ -1246,15 +1285,36 @@ div#db-list .no-style{
 .edppl-product-image{
   float: left; 
   margin: 10px 10px 10px 0; 
-  width: 70%; 
-  padding: 5px
+  width: 60%; 
+  padding: 5px;
 }
 
 .edppl-product-image img{
   width: 100%;
   margin: 0 !important;
+  background-color: #fff;
 }
 
+.edppl-callout{
+  float: right; 
+  width: 40%; 
+  padding-top: 1em; 
+  text-align: center;
+}
+
+#magazine-list{
+  list-style: none;
+  padding: 1em;
+  background-color: #eee;
+  -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 20px;
+}
+
+#magazine-list li{
+  display: block;
+}
 
 /*footer*/
 

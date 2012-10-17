@@ -196,15 +196,21 @@ body a {
 
 /*special style sheet for database listings*/
 
-/*special style sheet for database listings*/
+#db-list{
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
 
 div#db-list h3{
-    clear: both;
-	border-bottom: 1px solid #036
+  clear: both;
+  border-bottom: 3px solid #eee;
+  padding: 4px;
 }
 
 div#db-list h4{
   clear: both;
+  width: 60%;
   margin-top: 1em;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -234,7 +240,22 @@ div.db img.no-border{
   border: 0;
 }
 
-div#db-list ul li{
-  padding-bottom: 4px;
-  line-height: 1.25em;
+div#db-list .no-style{
+  padding-left: 6px;
 }
+
+.library-only{
+  width: auto;
+  display: inline-block;
+  margin-left: .5em; 
+  padding: 2px 6px;
+  font-size: 85%;
+  font-weight: normal;
+  background-color: #FCF8E3;
+  color: #C09853;
+}
+
+.favorite{display: inline-block; width: 1em; height: 1em; background: url('/images/icons/star.png') no-repeat right top; padding: 0 2px;}
+
+.ad {height: 400px; padding: 0; background:  url('/images/edppl/zinio-ipad.jpg') no-repeat right .5em;}
+.ad .text{background: rgb(255, 255, 255); background: rgba(255, 255, 255, .9); width: 40%;}
