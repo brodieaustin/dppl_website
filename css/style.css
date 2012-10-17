@@ -707,10 +707,6 @@ ul.dropdown li:hover > ul{
   overflow: hidden;
 }
 
-.ad-banner:hover{
-  background-position: right -5.5em;
-}
-
 .ad-banner a{
   text-decoration: none;
   display: block;
