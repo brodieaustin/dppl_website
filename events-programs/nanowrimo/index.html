@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>NaNoWriMo | DPPL</title>
+	<meta name="description" content="Come write in the library for National Novel Writing Month (NaNoWriMo) and keep track of much we've written along the way!">
+	<meta name="author" content="Des Plaines Public Library">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<style>
+		body{margin-top: 2em; background-color: #a3dce6; font: 20px/28px Georgia, "Droid Serif", serif;; color:  #54301a;}
+		header{margin-top: 1em;}
+		h1, h2, h3, h4, h5, h6 {color: #54301a; font-weight: bold;}
+		blockquote, blockquote p{font-style: normal; border: 0;}
+		blockquote cite:before { content: ""; }
+		img{width: 100%;}
+		small{display: block;}
+		hr{border: 0; background-color: white; height: 5px;}
+		.word-count{font-size: 80px; font-weight: bold; color: #fff;line-height: 1.1em; }
+		.large {font-size: 160px;}
+		.button{background: white !important;}
+	</style>
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<!-- Delete everything in this .container and get started on your own site! -->
+
+	<div class="container">
+		<div class="row">
+			<div class="five columns alpha logo">
+				<img src="images/nano_logo.png" />
+			</div>
+			<div class="ten columns omega offset-by-one">
+				<header>
+					<h1><abbr title="National Novel Writing Month">NaNoWriMo</abbr> Write-Ins <small class="subheader">Come write with us!</small></h1>
+					<p>Every Tuesday evening in November from 6:00 p.m. to 9:00 p.m.</p>
+					<p>Bring your laptop and the urge to write.</p>
+					<p>We'll provide a place to write, snacks, and prizes.</p>
+					<p><small><a href="#what-is-nanowrimo">Learn more about NaNoWriMo</a></small></p>
+				</header>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="eleven columns offset-by-one alpha">
+				<h2>So far we've written:</h2>
+				<div class="words"><span class="word-count large" id="group-word-count"></span> words</div>
+			</div>
+			<div class="four columns omega">
+				<img src="images/participant-180x180-2.jpg" style="float: right;"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="seven columns offset-by-one">
+				<h3>So far, Chicagoland has written:</h3>
+				<div class="words"><span class="word-count" id="region-word-count"></span> words</div>
+			</div>
+			<div class="seven columns offset-by-one">
+				<h3>And all <abbr title="National Novel Writing Month">NaNoWriMo</abbr> participants have written:</h3>
+				<div class="words"><span class="word-count" id="nano-word-count"></span> words</div>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="sixteen columns" id="what-is-nanowrimo">
+				<h3>Wait! What is <abbr title="National Novel Writing Month">NaNoWriMo</abbr>?</h3>
+				<p><abbr title="National Novel Writing Month">NaNoWriMo</abbr> stand for National Novel Writing Month. Every November, <abbr title="National Novel Writing Month">NaNoWriMo</abbr> encourages writers and aspiring writers to draft a 50,000 word novel in one month. Yep, that's about 1600 words a day.</p>
+				<p>Can you write a good novel in a month? Not really, but that's not the point of <abbr title="National Novel Writing Month">NaNoWriMo</abbr>. The point is to set aside your inhibitions and just write with that deadline staring you in the face. It's also an excuse to meet up with other people writing their novels and write together.</p>
+				<p>Does this sound like fun? Good, so <a href="http://nanowrimo.org">go to their website, sign up</a>, and come to the library for our write-ins. And don't forget to have fun!</p>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="sixteen columns">
+				<blockquote>
+					<p id="quote"></p>
+					<cite>Quotation from <a href="http://www.iheartquotes.com/">I <em>♥</em> Quotes</a></cite>
+				</blockquote>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<footer>
+				<div class="six columns offset-by-five">
+					<img src="images/dppl-logo-reversed.png" />
+				</div>
+			</footer>
+		</div>
+
+	</div><!-- container -->
+
+
+<!-- End Document
+================================================== -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
+	<script>
+		$(document).ready(function(){
+			$.getJSON('wordcount.json', function(data){
+				console.log(data);
+				$('#group-word-count').html(data.wordcount);
+			});
+		
+			$.ajax({
+				type : 'GET',
+				url : 'data.php?url=' + encodeURIComponent('http://www.nanowrimo.org/wordcount_api/wcregion/usa-illinois-chicago'), 
+				dataType : 'xml',
+				success: function(data){
+					var count = $(data).find('region_wordcount').text();
+					$('#region-word-count').html(Math.floor(count));
+				}
+			});
+			
+			$.ajax({
+				type : 'GET',
+				url : 'data.php?url=' + encodeURIComponent('http://www.nanowrimo.org/wordcount_api/wcstatssummary'), 
+				dataType : 'xml',
+				success: function(data){
+					var count = $(data).find('region_wordcount').text();
+					$('#nano-word-count').html(Math.floor(count));
+				}
+			});
+		
+			$.getJSON('data.php?url=' + encodeURIComponent('http://www.iheartquotes.com/api/v1/random?source=literature&max_lines=4&format=json'), function(data){
+				$('#quote').html(data.quote);
+			});
+			
+		});
+	</script>
+</body>
+</html>
