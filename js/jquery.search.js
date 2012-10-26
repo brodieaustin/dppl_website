@@ -17,7 +17,7 @@ $(function(){
 			baseurl = 'http://dppl.bibliocommons.com/search?t=smart&search_category=keyword&q={param}&commit=Search';
 		}
 		else if (type == 'site'){
-			baseurl = '/home/search.shtml?q={param}';
+			baseurl = '/search.shtml?q={param}';
 		}
 		
 		var param = $('#search-text').val()
