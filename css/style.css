@@ -640,7 +640,7 @@ ul.dropdown li.hover a{
 
 /*   LEVEL TWO*/
 ul.dropdown ul{
- width: 15.71em;
+ width: 17em;
 visibility: hidden;
 position: absolute;
 top: 100%;
@@ -751,7 +751,7 @@ ul.dropdown li:hover > ul{
 #side-nav{
   width: 10em;
   float: left;
-  margin-top: 1em;
+  margin-top: 6em;
   margin-right: 1.5em;
   color: inherit;
 }
@@ -803,6 +803,8 @@ ul.dropdown li:hover > ul{
 #content img{
   margin: 0 1em 1em 1em;
 }
+
+#content img.gs-image{margin: 0;}
 
 #content h1{
   margin-bottom: 1em;
@@ -1570,9 +1572,11 @@ SPACERS
   h2, h3 { page-break-after: avoid; }
   /*stuff I've added for DPPl site*/
   body{width: 100%;}
-  #header, #navigation, #search, #side-nav, #footer{display: none;}
+  #header, #navigation, .ad-banner, #search, #side-nav, #footer{display: none;}
   #content{border: 0; width: 100%;}
   .spacer_sm img{display: none !important;}
+  .db h4, .db p{width: 100%;}
+  .db img{display: none;}
 }
 
 
