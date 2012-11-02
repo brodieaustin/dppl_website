@@ -14,6 +14,7 @@
 	<!--#include virtual="/includes/side-navigation.html"-->
 	<!--main content-->
 	<div id="content">
+		<!--#include virtual="/includes/survey.html"-->
 		<!--#include virtual="../content/reference-c/research_dbs_a-z.html"-->
 		<!--#include virtual="../content/reference-c/inset.html"-->
 	</div>
