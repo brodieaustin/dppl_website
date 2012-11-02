@@ -41,6 +41,11 @@
 		img{width: 100%;}
 		small{display: block;}
 		hr{border: 0; background-color: white; height: 5px;}
+		.columns hr{height: 2px;}
+		.badge{margin-bottom: 40px; text-align: center; background-color: #f8f6c6; padding: 10px 0;}
+		.badge img{width: 180px !important;}
+		.sidebar{background-color: #f8f6c6; padding: 10px;}
+		.words{margin-bottom: 40px;}
 		.word-count{display: block; font-size: 60px; font-weight: bold; color: #fff;line-height: 1.1em; }
 		.large {font-size: 160px;}
 		.button{background: white !important;}
@@ -57,10 +62,10 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="five columns alpha logo">
+			<div class="five columns logo">
 				<img src="images/nano_logo.png" />
 			</div>
-			<div class="ten columns omega offset-by-one">
+			<div class="ten columns offset-by-one">
 				<header>
 					<h1><abbr title="National Novel Writing Month">NaNoWriMo</abbr> Write-Ins <small class="subheader">Come write with us!</small></h1>
 					<p>Every Tuesday evening in November from 6:00 p.m. to 9:00 p.m.</p>
@@ -72,25 +77,27 @@
 		</div>
 		<hr />
 		<div class="row">
-			<div class="twelve columns alpha">
+			<div class="eleven columns">
 				<h2>So far we've written:</h2>
 				<div class="words"><span class="word-count large" id="group-word-count"></span> words</div>
-			</div>
-			<div class="four columns omega">
-				<img src="images/participant-180x180-2.jpg" style="float: right;"/>
-			</div>
-		</div>
-		<div class="row">
-			<div class="eight columns alpha">
 				<h3>Chicagoland has written:</h3>
 				<div class="words"><span class="word-count" id="region-word-count"></span> words</div>
-			</div>
-			<div class="eight columns omega">
 				<h3>All of <abbr title="National Novel Writing Month">NaNoWriMo</abbr> has written:</h3>
 				<div class="words"><span class="word-count" id="nano-word-count"></span> words</div>
 			</div>
+			<div class="five columns">
+				<div class="badge">
+					<img src="images/participant-180x180-2.jpg" />
+				</div>
+				<div class="sidebar">
+					<img src="images/mystery-novel.jpg" />
+					<h4>Need to read more!?</h4>
+					<p>The library staff is writing a group mystery novel in honor of NaNoWriMo. You can read along as we write.</p>
+					<p><a href="http://bit.ly/libmystery">Read it now</a></p>
+				</div>
+			</div>
 		</div>
-		<hr />
+		<hr />	
 		<div class="row">
 			<div class="sixteen columns" id="what-is-nanowrimo">
 				<h3>Wait! What is <abbr title="National Novel Writing Month">NaNoWriMo</abbr>?</h3>
