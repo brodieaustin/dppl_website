@@ -41,7 +41,7 @@
 		img{width: 100%;}
 		small{display: block;}
 		hr{border: 0; background-color: white; height: 5px;}
-		.word-count{font-size: 80px; font-weight: bold; color: #fff;line-height: 1.1em; }
+		.word-count{display: block; font-size: 60px; font-weight: bold; color: #fff;line-height: 1.1em; }
 		.large {font-size: 160px;}
 		.button{background: white !important;}
 	</style>
@@ -146,7 +146,7 @@
 				url : 'data.php?url=' + encodeURIComponent('http://www.nanowrimo.org/wordcount_api/wcstatssummary'), 
 				dataType : 'xml',
 				success: function(data){
-					var count = $(data).find('region_wordcount').text();
+					var count = $(data).find('site_wordcount').text();
 					$('#nano-word-count').html(Math.floor(count));
 				}
 			});
