@@ -3,15 +3,6 @@
 <head>
 	<title>Calendar Image Uploader | DPPL</title>
 	<meta charset="UTF-8" />
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-	<script>
-		if(typeof jQuery === 'undefined') {
-			document.write(unescape('%3Cscript src="/js/jquery-1.7.1.min.js" %3E%3C/script%3E'));
-		}
-	</script>
-	<script src="/js/jquery.validate.min.js"></script>
-	<script src="/js/jquery.form.js"></script>
-	<script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
 	<style media="screen">
 		html{background-color: #e8e8e8;}
 		body{width: 80%; margin: 2.5336% auto; background-color: #f8f8f8; border-color: #c8c8c8; padding: 2.5336% 3.80047% 1.26682% 3.80047%; font-family: Arial, sans-serif; z-index: 50;}
@@ -62,7 +53,54 @@
 
 	</style>
 
-<script>
+</head>
+<body>
+
+<h1>Calendar Image Uploader</h1>
+	<div id="header" class="container">
+		<p>Use this form to upload an image to the web that can be used for an Evanced calendar listing. Please note the following restrictions:</p>
+		<ul>
+			<li>You can only upload image files (jpeg, png, and gif)</li>
+			<li>Images must be less than 1 MB.</li>
+		</ul>
+	</div>
+	<!--<div id="instructions">
+	</div>-->
+	<div class="container" id="upload-container">
+		<form id="upload-form" method="post"  action="images.php" enctype="multipart/form-data">
+			<div class="errors"></div>
+			<div>
+				<label for="password">Password:<i>*</i></label>
+				<input type="password" id="password" name="password" tabindex="2" class="required" /><p class="tip">Think evanced</p>
+			</div>
+			<div>	
+				<label for="file">File:<i>*</i></label>
+				<input type="file" id="file" name="file" tabindex="2" class="required" />
+			</div>
+			<div style="padding-bottom: 1em;">
+				<input type="submit" value="Submit" tabindex="3" />
+			</div>
+		</form>
+	</div>
+	<div id="response" class="container"><div class="load"></div></div>
+	<div class="container">
+		<p>Need to peek back in time? View previously uploaded files by year.</p>
+		<div id="years" style="padding-bottom: 1em;"></div>
+	</div>
+	<div id="files">
+		<div><a href="javascript: void(0)" id="close">Close</a></div>
+		<div id="file-list" class="container"></div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+			document.write(unescape('%3Cscript src="/js/jquery-1.8.2.min.js" %3E%3C/script%3E'));
+		}
+	</script>
+	<script src="/js/jquery.validate.min.js"></script>
+	<script src="/js/jquery.form.js"></script>
+	<script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
+	<script>
 	$(document).ready(function(){
 		$('div.errors').hide();
 		$('#response').hide();
@@ -153,45 +191,5 @@
 			
 	});
 </script>
-
-
-</head>
-<body>
-
-<h1>Calendar Image Uploader</h1>
-	<div id="header" class="container">
-		<p>Use this form to upload an image to the web that can be used for an Evanced calendar listing. Please note the following restrictions:</p>
-		<ul>
-			<li>You can only upload image files (jpeg, png, and gif)</li>
-			<li>Images must be less than 1 MB.</li>
-		</ul>
-	</div>
-	<!--<div id="instructions">
-	</div>-->
-	<div class="container" id="upload-container">
-		<form id="upload-form" method="post"  action="images.php" enctype="multipart/form-data">
-			<div class="errors"></div>
-			<div>
-				<label for="password">Password:<i>*</i></label>
-				<input type="password" id="password" name="password" tabindex="2" class="required" /><p class="tip">Think evanced</p>
-			</div>
-			<div>	
-				<label for="file">File:<i>*</i></label>
-				<input type="file" id="file" name="file" tabindex="2" class="required" />
-			</div>
-			<div style="padding-bottom: 1em;">
-				<input type="submit" value="Submit" tabindex="3" />
-			</div>
-		</form>
-	</div>
-	<div id="response" class="container"><div class="load"></div></div>
-	<div class="container">
-		<p>Need to peek back in time? View previously uploaded files by year.</p>
-		<div id="years" style="padding-bottom: 1em;"></div>
-	</div>
-	<div id="files">
-		<div><a href="javascript: void(0)" id="close">Close</a></div>
-		<div id="file-list" class="container"></div>
-	</div>
 </body>
 </html>
