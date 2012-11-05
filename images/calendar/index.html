@@ -37,11 +37,11 @@
 		div#file-list dd{margin-left: 0;}
 		div#file-list dl dd.image{float: right; margin: -2em 0 1em 1em; padding: 1em; width: 20%;}
 		div#file-list dl dd.image img{width:100%; border: 5px solid #ddd}
-		div#files{background-color: #f8f8f8; position: absolute; top: 0; left: 0; height: 100%; width: 100%;}
+		div#files{display: none; background-color: #f8f8f8; position: absolute; top: 0; left: 0; height: 100%; width: 100%;}
 		#close{position: absolute; top: 2.5em; right: 3em; padding: .5em 1em; background-color: #e8e8e8; text-align: center; border-radius: 5px; font-size: .9em;}
 		a#close{color: #333; text-decoration: none; }
 		#close:hover{background-color: #ddd; cursor: pointer;}
-		div.load{background: url('ajax-loader.gif') no-repeat 2% 50% ; height: 20px;}
+		div.load{display: none; position: absolute; top: 20%; left: 50%; height: 100px; width: 100px; background: #eee url('/images/ajax-loader.gif') no-repeat center center ; z-index: 200; border-radius: 5px; }
 		@media screen and (max-width: 600px){
 			label{float: none;}
 			input[type=text]{width: 98%;}
@@ -57,6 +57,7 @@
 <body>
 
 <h1>Calendar Image Uploader</h1>
+	<div class="load"></div>
 	<div id="header" class="container">
 		<p>Use this form to upload an image to the web that can be used for an Evanced calendar listing. Please note the following restrictions:</p>
 		<ul>
@@ -104,7 +105,6 @@
 	$(document).ready(function(){
 		$('div.errors').hide();
 		$('#response').hide();
-		$('#files').hide();
 		
 		var i;
 		var first_year = 2012;
@@ -123,6 +123,7 @@
 		$('#years').append('<ul class="year-list no-style">' + year_list + '</ul>');
 		
 		$('.year').click(function(){
+			$('.load').fadeIn();
 			var val = $(this).attr('id');
 			
 			$.ajax({
@@ -131,7 +132,8 @@
 				data : {dir : val},
 				dataType : 'html',
 				success: function(data) {
-					$('#file-list').html(data)
+					$('#file-list').html(data);
+					$('.load').fadeOut();
 					$('#files').fadeIn(500);
 				  }
 			});
@@ -165,6 +167,7 @@
 				  }
 			},
 			submitHandler: function(form){
+				$('.load').fadeIn();
 				$('#header').hide();
 				$('div.errors').hide();
 				$('#upload-container').hide();
@@ -174,7 +177,7 @@
 							if (data.indexOf("http") != -1 ){
 								var img = '';
 								$('div#response').html('<p><img src="' + data + '" style="width: 20%; border: 5px solid #ddd;" ></p><p>Copy this link:<span style="margin-left: 1em;"><b>' + data + '</b></span></p>').delay(500).fadeIn(500);
-								$('div.load').fadeOut(500);
+								$('.load').fadeOut();
 							}
 							else{
 								$('#upload-container').show();
