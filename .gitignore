@@ -1,7 +1,8 @@
 #Ignore folders
 to-process/
-blogs/
 test/
+images/
+teen/images/
 
 #Ignore robots.txt file
 robots.txt
