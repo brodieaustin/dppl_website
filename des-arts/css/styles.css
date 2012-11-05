@@ -286,6 +286,16 @@
 	.sidebar h3.first{
 	  margin-top: 0;
 	}
+	
+	/*styles for events page and photo*/
+	.winners-list{clear: both; margin-bottom: 2em; overflow: hidden;}
+	.winners-list dt{clear: left; float: left; font-weight: bold;}
+	.winners-list dd{float: left; margin-left: 1em;}
+	.photo{display: none; width: 23.24561%; margin: 10px;}
+	.photo a {display: block; padding: 10px; background-color: #eee;}
+	.photo a:hover{background-color: #ddd;}
+	.fancybox-nav:hover, .fancybox-close:hover{background-color: transparent;}
+	.load{display: block; background: url('../js/fancybox/fancybox_loading.gif') no-repeat center center; height: 100px; width: 100px; margin: auto; background-color: #202020; border-radius: 5px; }
 
 	/*footer*/
 	.footer{
@@ -319,7 +329,7 @@
 	.navigation p{text-align: center; height: auto; line-height: 1.2em !important; margin-bottom: 1.5em;}
 	.navigation .row{height: auto;}
 	.nav{position: static;}
-	.nav li{width: 31.5%; margin-left: 2px; margin-right: 2px; background-color: #888;}
+	.nav li{width: auto; margin-left: 2px; margin-right: 2px; margin-top: 4px; background-color: #888;}
 	.nav li:last-child{border-right: 0;}
 	.nav li.active{color: #202020;}
 	.hero{margin: 1.5em 0 0;}
@@ -333,6 +343,7 @@
 	.sidebar p, .sidebar dl{line-height: 1.1em; margin-bottom: 1em;}
 	.des-arts-badge{float: none; width: 98%;}
 	.des-arts-badge-image{float: none; width: 50%;}
+	.photo{width: 100%; margin: 10px 0;}
 	.footer{font-size: 100%;}
 
 }
