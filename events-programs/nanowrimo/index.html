@@ -135,7 +135,7 @@
 		$(document).ready(function(){
 			$.getJSON('wordcount.json', function(data){
 				console.log(data);
-				$('#group-word-count').html(data.wordcount);
+				$('#group-word-count').html(numberWithCommas(data.wordcount));
 			});
 		
 			$.ajax({
@@ -144,7 +144,7 @@
 				dataType : 'xml',
 				success: function(data){
 					var count = $(data).find('region_wordcount').text();
-					$('#region-word-count').html(Math.floor(count));
+					$('#region-word-count').html(numberWithCommas(Math.floor(count)));
 				}
 			});
 			
@@ -154,7 +154,7 @@
 				dataType : 'xml',
 				success: function(data){
 					var count = $(data).find('site_wordcount').text();
-					$('#nano-word-count').html(Math.floor(count));
+					$('#nano-word-count').html(numberWithCommas(Math.floor(count)));
 				}
 			});
 		
@@ -163,6 +163,9 @@
 			});
 			
 		});
+		function numberWithCommas(x) {
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
 	</script>
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
    mathiasbynens.be/notes/async-analytics-snippet -->
