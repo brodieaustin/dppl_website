@@ -19,7 +19,7 @@
 	
 	$data =  '{"wordcount": "' . $count . '"}';
 	
-	echo $data;
+	#echo $data;
 	
 	$fh = fopen('wordcount.json', 'w');
 	fwrite($fh, $data);
