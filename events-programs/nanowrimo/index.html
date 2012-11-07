@@ -49,6 +49,7 @@
 		.word-count{display: block; font-size: 60px; font-weight: bold; color: #fff;line-height: 1.1em; }
 		.large {font-size: 160px;}
 		.button{background: white !important;}
+		.load{width: 1em; height: 1em; background: url('/images/ajax-loader.gif') no-repeat center center ; z-index: 200; border-radius: 5px; }
 	</style>
 </head>
 <body>
@@ -79,11 +80,11 @@
 		<div class="row">
 			<div class="eleven columns">
 				<h2>So far we've written:</h2>
-				<div class="words"><span class="word-count large" id="group-word-count"></span> words</div>
+				<div class="words"><span class="word-count large" id="group-word-count"><div class="load"></div></span> words</div>
 				<h3>Chicagoland has written:</h3>
-				<div class="words"><span class="word-count" id="region-word-count"></span> words</div>
+				<div class="words"><span class="word-count" id="region-word-count"><div class="load"></div></span> words</div>
 				<h3>All of <abbr title="National Novel Writing Month">NaNoWriMo</abbr> has written:</h3>
-				<div class="words"><span class="word-count" id="nano-word-count"></span> words</div>
+				<div class="words"><span class="word-count" id="nano-word-count"><div class="load"></div></span> words</div>
 			</div>
 			<div class="five columns">
 				<div class="badge">
