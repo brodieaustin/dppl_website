@@ -21,7 +21,7 @@
 	
 	#echo $data;
 	
-	$fh = fopen('wordcount.json', 'w');
+	$fh = fopen(dirname(__FILE__) . '/wordcount.json', 'w');
 	fwrite($fh, $data);
 	fclose($fh);
 
