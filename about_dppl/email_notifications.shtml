@@ -7,7 +7,10 @@
 		#email-notification{margin-top: 2em;}
 		#email-notification div{clear: both; margin-bottom: 1em; margin-left: 1em;}
 		label{display: block; float: left; width: 15em;}
+		label.checkbox{width: 100%; padding-bottom: 1em;}
 		.buttons{margin-top: 2em; text-align: center;}
+		.load{display: none; width: 2em; height: 2em;}
+		.response{display: none;}
 	</style>
 </head>
 <body>
@@ -24,7 +27,9 @@
 		</div>
 		<p>Enter your library card, password, and email adddress to get notifications about your library card sent to you.</p>
 		<hr />
-		<form method="POST" action="http://64.107.155.132:8080/cgi-bin/UpdateEmail.cgi" id="email-notification">
+		<div class="response"><p><a href="javascript:void(0);" id="edit-form">Edit the form</a></p></div>
+		<div class="load"></div>
+		<form method="POST" action="email_notifications.php" id="email-notification">
 			<div>
 				<label>Card Number:</label>
 				<input type="text" name="BARCODE" size="25" maxlength="25" value="">
@@ -41,6 +46,9 @@
 			  <label>Re-enter Email Address:</label>
 			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="">
 			 </div>
+			 <div>
+			 	<label class="checkbox"><input type="checkbox" name="newsletter" />I would like to receive the library's weekly newsletter</label>
+			 </div>
 			<p class="callout">The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account. If requested, receipts will also be sent to your email address. Email addresses are kept confidential. Please be aware that information in the messages will be viewable by all individuals who have access to this email account. You may change your decision about how you wish to receive notification of a hold (email or phone) at any time by contacting Circulation. If your email address changes, please update your record as soon as possible by repeating this process or contacting the Circulation Desk. By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p>
 			<div class="buttons">
 				<input type="submit" value="Submit"> 
@@ -55,8 +63,21 @@
 	<script>
 		$(document).ready(function(){
 			$('#email-notification').submit(function(e){
-				window.open('', 'formpopup', 'width=400,height=400,resizeable,scrollbars');
-				this.target = 'formpopup';
+				$(this).hide();
+				$('.load').show();
+				//window.open('', 'formpopup', 'width=400,height=400,resizeable,scrollbars');
+				//this.target = 'formpopup';
+				$.post('email_notifications.php', $(this).serialize(), function(data){
+					//console.log(data);
+					$('.response').prepend('<p>' + data + '</p>').show();;
+					$('.load').hide();
+				});
+				return false;
+			});
+			
+			$('#edit-form').click(function(){
+				$('.response').hide();
+				$('#email-notification').show();
 			});
 		});
 		
