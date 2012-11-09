@@ -278,14 +278,14 @@ input[type=text]{
   line-height: 1.9em;
 }
 
-input[type=submit], input[type=button]{
+input[type=submit], input[type=button], input[type=reset]{
   height: 2em;
   line-height: 2em;
   padding: 0 .46153846em;
   cursor: pointer;
 }
 
-input[type=submit]:hover, input[type=button]:hover{
+input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover{
   background-color: #c8c8c8;
 }
 
