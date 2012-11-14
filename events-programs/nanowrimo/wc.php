@@ -2,7 +2,7 @@
 	#get user counts then save to wordcount.json. run as chron every hour
 	
 	$users = array('brodieaustin', 'miriya-martell', 'grampaajt99', 'julia-christina', 'lorienquin', 
-		'noemad', 'jennyjenn', 'ellieo', 'danae-maridakis', 'blossoming-bookworm', 'sinister-infant');
+		'noemad', 'jennyjenn', 'ellieo', 'danae-maridakis', 'blossoming-bookworm', 'sinister-infant', 'catb');
 		
 	$baseurl = 'http://www.nanowrimo.org/wordcount_api/wc/';
 	$url = '';
