@@ -1087,7 +1087,7 @@ a#next2{
 
 /*blog feed styles*/
 #rss-blogs .gfc-resultsRoot{
-  margin-bottom: 10px !important;
+  margin-bottom: .5em; !important;
 }
 
 .gfc-resultsHeader{
@@ -1569,12 +1569,13 @@ SPACERS
   thead { display: table-header-group; } /* h5bp.com/t */
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
+  @page { margin: 1cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
   /*stuff I've added for DPPl site*/
-  body{width: 100%;}
+  body{width: 99%;}
   #header, #navigation, .ad-banner, #search, #side-nav, #footer{display: none;}
+  .button{display: none !important;}
   #content{border: 0; width: 100%;}
   .spacer_sm img{display: none !important;}
   .db h4, .db p{width: 100%;}
