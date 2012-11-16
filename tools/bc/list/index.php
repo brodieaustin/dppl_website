@@ -2,7 +2,10 @@
 
 	//require key and list class
 	require('keys.php');
+	require('helpers.php');
+	require('class.BC.php');
 	require('class.BCList.php');
+	require('class.BCUser.php');
 	
 	//variables
 	$baseurl = 'https://api.bibliocommons.com/v1/';
@@ -12,8 +15,15 @@
 	$params = array();
 	$params = getParams($_SERVER['PATH_INFO']);
 	
+	//var_dump($params);
 	
-	//check if GET params have been passed, die if not
+	$bc = new BC($params['library'], $params['api_key']);
+	//echo $bc;
+	
+	$list = new BCList($params['id']);
+	
+	
+	/*//check if params have been passed, die if not
 	if (!isset($params['api_key'])){
 		die('You must provide an api key!');
 	}
@@ -34,22 +44,6 @@
 				echo $_GET['jsoncallback'] . '(' . $json . ')';
 			}
 		}
-	}
-	
-	//Function to created associative array from url params
-	function getParams($path){
-		$url_elements = explode('/', $path);
-		array_shift($url_elements);
-
-		$params = array();
-
-		for ($i = 0; $i < count($url_elements); $i++){
-			if ($i % 2 == 0){
-				$params[$url_elements[$i]] = $url_elements[($i + 1)];
-			}
-		}
-	
-		return $params;
-	}
+	}*/
 	
 ?>

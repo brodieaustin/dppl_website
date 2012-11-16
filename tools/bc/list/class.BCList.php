@@ -6,12 +6,12 @@
 			$this->id = $id;
 		}
 		
-		public function setID($id){
-			$this->id = $id;
+		public function __toString(){
+			var_dump($this);
 		}
 		
-		public function getID(){
-			return $this->id;
+		public function setID($id){
+			$this->id = $id;
 		}
 		
 		public function getList($baseurl, $key, $library, $dir, $file_name){
@@ -39,7 +39,6 @@
 	
 			fclose($fh);
 		}
+		
 	}
-	
-	
 ?>
