@@ -133,21 +133,6 @@ background-repeat:no-repeat;
 	font-weight: bold;
 	}
 	
-/* TWITTER CSS */
-.twitter_title {
-	font-family: "Comic Sans MS", helvetica;
-	
-	font-weight: bold;
-}
-	
-#twitter_update_list {
-	font-family: "Comic Sans MS", helvetica;
-	
-	list-style-type: none;
-	padding: 0;
-	margin: 7;
-}
-	
 .no-style{list-style: none; padding:0;}
 
 .columns{width: 100%; margin: 0; padding: 0;}
@@ -155,12 +140,7 @@ background-repeat:no-repeat;
 .columns .last {margin-right: 0;}
 	
 	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	

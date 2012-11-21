@@ -1,0 +1,23 @@
+#events .feed-item{
+   padding: 5px !important;
+  border-bottom: 1px solid #f8f8f8 !important;
+}
+
+#events .feed-item:nth-child(odd){
+  background-color: #f8f8f8 !important;
+}
+
+#events .feed-title a{
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+  font-weight: normal !important;
+}
+
+#events .feed-times{
+  margin-bottom: 4px !important;
+}
+
+#blog .feed-title{font-size: 18px; line-height: 18px; margin-top: 2px; margin-bottom: 12px; font-weight: bold;}
+#blog .entry-title{margin-bottom: 4px;}
+
+.timeline .e-entry-title{font-size: 13px !important;}
