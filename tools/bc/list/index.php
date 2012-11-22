@@ -20,10 +20,7 @@
 	$bc = new BC($params['library'], $params['api_key']);
 	//echo $bc;
 	
-	$list = new BCList($params['id']);
-	
-	
-	/*//check if params have been passed, die if not
+	//check if params have been passed, die if not
 	if (!isset($params['api_key'])){
 		die('You must provide an api key!');
 	}
@@ -32,9 +29,19 @@
 	}
 	else{
 		if (!isset($params['id'])){
-			die('You must provide a list ID!');
+			die('You must provide an ID!');
 		}
 		else{
+			switch ($params['op']){
+				case 'updateLists':
+					$user = new BCUser($params['id']);
+					$lists = $user->G
+					
+						$list = new BCList($params['id']);
+				
+				case 'getList':
+					
+			}
 			//if all params clear, create new list instance, get list, and respond as JSONP
 			$list = new BCList($params['id']);
 			$json = $list->getList($baseurl, $params['api_key'], $params['library'], $dir, $list->getID() . '.json');
@@ -44,6 +51,6 @@
 				echo $_GET['jsoncallback'] . '(' . $json . ')';
 			}
 		}
-	}*/
+	}
 	
 ?>

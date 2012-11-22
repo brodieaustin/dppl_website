@@ -37,7 +37,9 @@
 			}
 			
 			return $id_array;
-		}	
+		}
+		
+		public function saveUserLists($baseurl, $key, $library)	
 	
 	}
 ?>
