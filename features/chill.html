@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<style>
+		html{background-color: #faefc3 ;}
+		body{width: 960px; margin: 0 auto; background: url('/images/themes/chill/chill-page-background.png') no-repeat left top; font: 18px/24px Optima, 'Lucida Sans', sans-serif; color: #333;}
+		a.button{font-size: 16px; display: inline-block; width: auto; height: 2em; line-height: 2em; margin: .5em 0; padding: 0 .5em; background-color: #00A89E; color: white !important; vertical-align: middle; text-align: center; border-radius: .5em; box-shadow: 1px 1px 1px 0px #DDD; text-decoration: none;}
+		a.button:hover{background-color: #555;}
+		.page{margin-left: 320px; width: 640px;}
+		.headline h1{color: #00a99f; font-size: 54px; line-height: 120%; text-shadow: 1px 1px 1px #fff;}
+		.headline .callout{font-weight: bold; text-transform: uppercase; color: #F05163;}
+		.content{overflow: hidden;}
+		.idea{float: left; width: 264px;  margin: 0 9px 18px 9px; padding: 9px;  background-color: #fff;border: 10px solid #d3de25;}
+		.idea img{width: 100%;}
+		
+	</style>
+	<script src="/js/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+	<div class="page">
+		<div class="headline">
+			<h1>We can help you work, learn, play, and <span class="callout">chill</span> this winter!</h1>
+		</div>
+		<div class="content">
+			<div class="idea">
+				<img src="/images/themes/chill/ideas/chill-book-sale.png" />
+				<p>Get great deals on books at the Friends' book sale on Saturday, December 1st starting at 9:30 a.m.</p>
+			</div>
+			<div class="idea">
+				<img src="/images/themes/chill/ideas/chill-consumer-reports.png" />
+				<p>Use Consumer Reports and be a save money.</p>
+				<a href="http://ezproxy.dppl.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621&group=main&profile=crcro" class="button">Get started!</a>
+			</div>
+			<div class="idea">
+				<img src="/images/themes/chill/ideas/chill-frosty.jpg" />
+				<p>Celebrate the holidays at Frosty's Winter Wonderland on December 16th.</p>
+				<a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=18752" class="button">Learn more!</a>
+			</div>
+			<div class="idea">
+				<img src="/images/themes/chill/ideas/girl-ipad.png" />
+				<p>Read eBooks and magazines on your tablet from home.</p>
+				<a href="/edppl/" class="button">Learn more!</a>
+			</div>
+			<div class="idea">
+				<img src="/images/themes/chill/ideas/chill-out-and-read.png" />
+				<p>Stay tuned for more information about our Winter Reading Clubs for kids, teens, and adults.</p>
+			</div>
+		</div>
+		<div class="footer">
+		</div>
+	</div>
+	<!--load jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.8.2.min.js"><\/script>')</script>
+	<script src="/js/snowfall.min.jquery.js"></script>
+	<script src="/js/jquery.masonry.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(document).snowfall({flakeCount : 250, round : true, minSize: 2, maxSize:7});
+			$('.content').imagesLoaded(function(){
+				$(this).masonry();
+			});
+		});
+	</script>
+	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+   mathiasbynens.be/notes/async-analytics-snippet -->
+	<!--<script>
+		var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>-->
+</body>
+</html
