@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<style media="screen">
 		html{background-color: #e8e8e8;}
-		body{width: 80%; margin: 2.5336% auto; background-color: #f8f8f8; border-color: #c8c8c8; padding: 2.5336% 3.80047% 1.26682% 3.80047%; font-family: Arial, sans-serif; z-index: 50;}
+		body{width: 80%; position: relative; margin: 2.5336% auto; background-color: #f8f8f8; border-color: #c8c8c8; padding: 2.5336% 3.80047% 1.26682% 3.80047%; font-family: Arial, sans-serif; z-index: 50;}
 		h1{text-shadow: 0 4px 4px #fff; margin-bottom: 1em;}
 		div{margin: 0;}
 		div.container{margin: 3.16831% 0; padding: 1.58415% 3.16831% 1.58415% 3.16831%; background-color: #fff; border-radius: 5px;}
@@ -42,6 +42,9 @@
 		a#close{color: #333; text-decoration: none; }
 		#close:hover{background-color: #ddd; cursor: pointer;}
 		div.load{display: none; position: absolute; top: 20%; left: 50%; height: 100px; width: 100px; background: #eee url('/images/ajax-loader.gif') no-repeat center center ; z-index: 200; border-radius: 5px; }
+		#again{display: none; position: absolute; right: 3.80047%; top: 3em;} 
+		.button{display: inline-block; margin-right: 1.26682%; padding: .5em 1em; background-color: #e8e8e8; text-align: center; border-radius: 5px; font-size: .9em; color: #333; text-decoration: none; cursor: pointer;}
+		.button:hover{background-color: #ddd;}
 		@media screen and (max-width: 600px){
 			label{float: none;}
 			input[type=text]{width: 98%;}
@@ -57,6 +60,7 @@
 <body>
 
 <h1>Calendar Image Uploader</h1>
+	<a href="javascript:void(0)" id="again" class="button">Upload again</a>
 	<div class="load"></div>
 	<div id="header" class="container">
 		<p>Use this form to upload an image to the web that can be used for an Evanced calendar listing. Please note the following restrictions:</p>
@@ -68,7 +72,7 @@
 	<!--<div id="instructions">
 	</div>-->
 	<div class="container" id="upload-container">
-		<form id="upload-form" method="post"  action="images.php" enctype="multipart/form-data">
+		<form id="upload-form" method="post"  action="upload.php" enctype="multipart/form-data">
 			<div class="errors"></div>
 			<div>
 				<label for="password">Password:<i>*</i></label>
@@ -128,7 +132,7 @@
 			
 			$.ajax({
 				type : 'GET',
-				url : 'listfiles.php',
+				url : 'list.php',
 				data : {dir : val},
 				dataType : 'html',
 				success: function(data) {
@@ -178,10 +182,12 @@
 								var img = '';
 								$('div#response').html('<p><img src="' + data + '" style="width: 20%; border: 5px solid #ddd;" ></p><p>Copy this link:<span style="margin-left: 1em;"><b>' + data + '</b></span></p>').delay(500).fadeIn(500);
 								$('.load').fadeOut();
+								$('#again').show();
 							}
 							else{
 								$('#upload-container').show();
 								$('div.errors').html(data).show();
+								$('.load').fadeOut();
 							}	
 							
 						},
@@ -190,6 +196,18 @@
 						}
 				});
 			}
+			});
+			
+			$('#again').click(function(){
+				$('div#response').hide();
+				$('#header, #upload-container').show();
+				$('#upload-form').find(':input').each(function(){
+					if (this.type != 'submit'){
+						$(this).val('');
+					}
+				});
+			
+				return false;
 			});
 			
 	});
