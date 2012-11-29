@@ -3,9 +3,7 @@
 	//require key and list class
 	require('keys.php');
 	require('helpers.php');
-	require('class.BC.php');
 	require('class.BCList.php');
-	require('class.BCUser.php');
 	
 	//variables
 	$baseurl = 'https://api.bibliocommons.com/v1/';
@@ -16,9 +14,6 @@
 	$params = getParams($_SERVER['PATH_INFO']);
 	
 	//var_dump($params);
-	
-	$bc = new BC($params['library'], $params['api_key']);
-	//echo $bc;
 	
 	//check if params have been passed, die if not
 	if (!isset($params['api_key'])){
@@ -32,19 +27,9 @@
 			die('You must provide an ID!');
 		}
 		else{
-			switch ($params['op']){
-				case 'updateLists':
-					$user = new BCUser($params['id']);
-					$lists = $user->G
-					
-						$list = new BCList($params['id']);
-				
-				case 'getList':
-					
-			}
 			//if all params clear, create new list instance, get list, and respond as JSONP
 			$list = new BCList($params['id']);
-			$json = $list->getList($baseurl, $params['api_key'], $params['library'], $dir, $list->getID() . '.json');
+			$json = $list->getList($baseurl, $params['api_key'], $params['library'], $dir, $list->id . '.json');
 		
 			if ($json){
 				header('Content-Type: application/json; charset=UTF-8');
