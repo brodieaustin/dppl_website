@@ -1,7 +1,8 @@
 <?php
 //http://www.w3schools.com/php/php_file_upload.asp
-
-	if ($_POST["password"] != '4d7d719ac0cf3d78ea8a94701913fe47'){
+	require_once('password.php');
+	
+	if ($_POST["password"] != $password){
 		die("I'm sorry. You didn't provide the correct password. Please try again.");
 	}
 	else{
