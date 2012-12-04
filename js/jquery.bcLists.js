@@ -8,13 +8,15 @@
 		'display_fields' : 'minimal',
 		'show_title' : true,
 		'num_items' : 0,
-		'list_id' : '113135461'
+		'output' : 'html',
+		'list_id' : '113135461',
+		'library' : 'dppl'
 		
 	}, options);
 	
-	var baseurl = 'https://api.bibliocommons.com/v1/';
-	var url  = baseurl + 'lists/' + settings.list_id + '?library=dppl&api_key=' + settings.key;
-	console.log(url);
+	var baseurl = (window.location.host == 'dppl.org'?'/tools/bc/list/':'http://dppl.org/tools/bc/list/');
+	var url  = baseurl + 'id/' + settings.list_id + '/library/' + settings.library + '/api_key/' + settings.key;
+	//console.log(url);
 	
 	var div = '';
 	var i = 0;
@@ -23,7 +25,7 @@
 	
 		var $this = $(this);
 	
-		$.getJSON(url + '&callback=?', function(data){
+		$.getJSON(url + '?jsoncallback=?', function(data){
 			if (settings.show_title == true){
 				$this.before('<div class="list-title">' + data.list.name + '</div>');
 			}
@@ -37,7 +39,7 @@
 		
 				item = items[i]['title'];
 				
-				console.log(item);
+				//console.log(item);
 				
 				if (item){
 					item_url = item['details_url'];
@@ -72,7 +74,16 @@
 					
 					div.append(a);
 					
-					$this.append(div);
+					switch (settings.output){
+						case 'html':
+							$this.append(div);
+							break;
+						case 'text':
+							console.log(div[0].outerHTML);
+							$this.text($this.text() + div[0].outerHTML);
+							break;
+					}
+
 				}
 			}
 			
