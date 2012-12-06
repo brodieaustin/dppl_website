@@ -40,22 +40,6 @@
 	
 	$result = $matches['message'];
 	
-	if (isset($_POST['newsletter'])){
-		
-		$url = 'http://localhost/dppl_website/tools/cc/newsletter.php';
-		curl_setopt($ch,CURLOPT_URL, $url);
-		curl_setopt($ch,CURLOPT_POST, count($fields));
-		curl_setopt($ch,CURLOPT_POSTFIELDS, $query_string);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-		
-		$response = curl_exec($ch);
-		preg_match("/Error [0-9]+: (?'error'[a-zA-Z0-0@. ]+)/", $response, $matches);
-		
-		$result = $result. '<br />' . ($matches['error']?$matches['error']:$response);
-		
-		curl_close($ch);
-	}
-	
 	echo $result;
 	
 ?>
