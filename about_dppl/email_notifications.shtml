@@ -51,8 +51,8 @@
 			 </div>
 			<p class="callout">The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account. If requested, receipts will also be sent to your email address. Email addresses are kept confidential. Please be aware that information in the messages will be viewable by all individuals who have access to this email account. You may change your decision about how you wish to receive notification of a hold (email or phone) at any time by contacting Circulation. If your email address changes, please update your record as soon as possible by repeating this process or contacting the Circulation Desk. By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p>
 			<div class="buttons">
-				<input type="submit" value="Submit"> 
-				<input type="reset" value="Clear Form"> 
+				<input type="reset" value="Clear Form">
+				<input type="submit" value="Submit">  
 			</div>
 		</form>
 	</div>
