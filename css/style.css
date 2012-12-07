@@ -278,12 +278,12 @@ input, select{
 
 select{padding: 0;}
 
-input[type=text]{
+input[type=text], input[type=password]{
   padding: 0 4px;
   height: 1.9em;
 }
 
-input[type=submit], input[type=button]{
+input[type=submit], input[type=button], input[type=reset]{
   padding: 0 4px;
   cursor: pointer;
   background-color: #e6e6e6;
@@ -293,7 +293,7 @@ input[type=submit], input[type=button]{
   -moz-border-radius: 4px;
 }
 
-input[type=submit]:hover, input[type=button]:hover{
+input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover{
   background-color: #aaa;
 }
 
