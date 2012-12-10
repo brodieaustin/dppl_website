@@ -894,6 +894,15 @@ ul.dropdown li:hover > ul{
   background: url('/images/reference/subject-icons/tutoring.png') no-repeat right -.5em;
 }
 
+#content table.schedule{
+  width: 80%; 
+  margin: 5px 20px;
+}
+
+#content table.schedule td{
+  width: 20%;
+}
+
 div.main{
   float: left;
   width: 32.615384em;
