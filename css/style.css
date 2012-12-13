@@ -903,6 +903,25 @@ ul.dropdown li:hover > ul{
   width: 20%;
 }
 
+#content .blogs-container{
+  position: relative; 
+  width: 28em; 
+  height: 25.285714em; 
+  float: left;
+  margin-left: 10px; 
+  margin-right: 20px; 
+  margin-bottom: 10px;
+}
+
+#content .events-container{
+  position: relative; 
+  float: left;
+  width: 18em; 
+  margin-right: 10px;
+  margin-bottom: 10px; 
+  
+}
+
 div.main{
   float: left;
   width: 32.615384em;
