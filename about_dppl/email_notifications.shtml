@@ -25,15 +25,15 @@
 	<div id="content">
 		<div class="headline">
 			<h1>Email Notifications</h1>
+			<p>Enter your library card, password, and email adddress to get notifications about your library card sent to you.</p>
 		</div>
-		<p>Enter your library card, password, and email adddress to get notifications about your library card sent to you.</p>
 		<hr />
 		<div class="response"><p><a href="javascript:void(0);" id="edit-form">Edit the form</a></p></div>
 		<div class="load"></div>
 		<form method="POST" action="/tools/email_notifications.php" id="email-notification">
 			<div>
 				<label>Card Number:</label>
-				<input type="text" name="BARCODE" size="25" maxlength="25" value="" />
+				<input type="text" name="BARCODE" size="25" maxlength="25" value="" autocomplete="off" />
 			</div>
 			<div>
 				<label>Password:</label>
@@ -47,7 +47,12 @@
 			  <label>Re-enter Email Address:</label>
 			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" />
 			 </div>
-			<div class="callout"><p>The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account. If requested, receipts will also be sent to your email address. Email addresses are kept confidential. Please be aware that information in the messages will be viewable by all individuals who have access to this email account. You may change your decision about how you wish to receive notification of a hold (email or phone) at any time by contacting Circulation. If your email address changes, please update your record as soon as possible by repeating this process or contacting the Circulation Desk. By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p></div>
+			<div class="callout">
+				<p>The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account, and inform you of upcoming library events and services. If requested, receipts will also be sent to your email address. <em>Email addresses are kept confidential.</em></p>
+				<p> Please be aware that information in the messages will be viewable by all individuals who have access to this email account.</p>
+				<p>You may change your decision about how you wish to receive notification of a hold (email or phone) at any time by contacting Circulation. If your email address changes, please update your record as soon as possible by repeating this process or contacting the Circulation Desk.</p>
+			</div>
+			<div><p>By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p></div>
 			<div class="buttons">
 				<input type="reset" value="Clear Form" />
 				<input type="submit" value="Submit" />  
