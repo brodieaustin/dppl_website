@@ -66,22 +66,16 @@
 	<script>
 		$(document).ready(function(){
 			$('#email-notification').submit(function(e){
+				$(this)[0].reset()
 				$(this).hide();
 				$('.load').show();
-				//window.open('', 'formpopup', 'width=400,height=400,resizeable,scrollbars');
-				//this.target = 'formpopup';
 				$.post('/tools/email_notifications.php', $(this).serialize(), function(data){
-					//console.log(data);
 					$('.response').prepend('<p>' + data + '</p>').show();
 					$('.load').hide();
 				});
 				return false;
 			});
 			
-			$('#edit-form').click(function(){
-				$('.response').hide();
-				$('#email-notification').show();
-			});
 		});
 		
 	</script>
