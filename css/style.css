@@ -273,7 +273,7 @@ input, select{
   vertical-align: middle;
   outline: 0;
   overflow: hidden;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
 }
 
 select{padding: 0;}
@@ -562,6 +562,10 @@ div#search label{
 
 div#search input#search-text{
   width: 16.5em;
+}
+
+div#search input[type=submit]{
+	border-radius: 0;
 }
 
 /*mobile alert styles*/
@@ -1409,16 +1413,16 @@ div#db-list .no-style{
   position: absolute; top: 0; right: 1em;
 }
 
-#footer span{
+#footer span, span.hours{
   display: block;
   line-height: 1.5em;
 }
 
-#footer span.locality, #footer span.region, #footer span.postal-code{
-  display: inline-block;
+span.locality, span.region, span.postal-code{
+  display: inline-block !important;
 }
 
-#footer span.hours{
+span.hours{
   margin-bottom: .5em;
 }
 

@@ -28,7 +28,7 @@
 			<p>Enter your library card, password, and email adddress to get notifications about your library card sent to you.</p>
 		</div>
 		<hr />
-		<div class="response"><p><a href="javascript:void(0);" id="edit-form">Edit the form</a></p></div>
+		<div class="response"></div>
 		<div class="load"></div>
 		<form method="POST" action="/tools/email_notifications.php" id="email-notification">
 			<div>
@@ -41,11 +41,11 @@
 			</div>
 			<div>
 				<label>Email Address:</label>
-				<input type="text" name="EMAIL1" size="25" maxlength="100" value="" />
+				<input type="text" name="EMAIL1" size="25" maxlength="100" value="" autocomplete="off" />
 			</div>
 			<div>
 			  <label>Re-enter Email Address:</label>
-			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" />
+			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" autocomplete="off" />
 			 </div>
 			<div class="callout">
 				<p>The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account, and inform you of upcoming library events and services. If requested, receipts will also be sent to your email address. <em>Email addresses are kept confidential.</em></p>
@@ -72,7 +72,7 @@
 				//this.target = 'formpopup';
 				$.post('/tools/email_notifications.php', $(this).serialize(), function(data){
 					//console.log(data);
-					$('.response').prepend('<p>' + data + '</p>').show();;
+					$('.response').prepend('<p>' + data + '</p>').show();
 					$('.load').hide();
 				});
 				return false;
