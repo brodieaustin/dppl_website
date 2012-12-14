@@ -273,7 +273,7 @@ input, select{
   vertical-align: middle;
   outline: 0;
   overflow: hidden;
-  border: 1px solid #aaa;
+  border: 1px solid #ddd;
 }
 
 select{padding: 0;}
