@@ -8,8 +8,8 @@
 		#email-notification div{clear: both; margin-bottom: 1em; margin-left: 1em;}
 		label{display: block; float: left; width: 15em;}
 		label.checkbox{width: 100%; padding-bottom: 1em;}
-		.buttons{margin-top: 2em; margin-right: left: -2em; text-align: center;}
-		.buttons input{margin-right: 2em;}
+		.buttons{margin-top: 2em; margin-left: 4em !important; text-align: center;}
+		.buttons input{margin-right: 6em;}
 		.load{display: none; width: 2em; height: 2em;}
 		.response{display: none;}
 	</style>
@@ -66,10 +66,11 @@
 	<script>
 		$(document).ready(function(){
 			$('#email-notification').submit(function(e){
-				$(this)[0].reset()
 				$(this).hide();
 				$('.load').show();
 				$.post('/tools/email_notifications.php', $(this).serialize(), function(data){
+					console.log(data);
+					$('#email-notification')[0].reset()
 					$('.response').prepend('<p>' + data + '</p>').show();
 					$('.load').hide();
 				});
