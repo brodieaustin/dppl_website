@@ -1,0 +1,25 @@
+html{background: #111 url('../img/des-plaines-book.jpg') no-repeat center center fixed; webkit-background-size: cover;	-moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+body{width: 960px; margin: 0 auto; overflow: hidden; font-size: 24px; line-height: 1.4em; font-family: 'Vollkorn', 'Times New Roman', Times serif; color: #fff;}
+h1,h2,h3, blockquote{text-shadow: 1px 1px 1px #333;}
+h1{color: #ff6633; font-size: 48px; line-height: 1.2em; }
+h2{color: #ff6633; font-size: 22px; line-height: 1.2em;}
+blockquote{margin-left: 0; color: #aaa; font-style: oblique;}
+a{color: #ccc;}
+a:hover{background-color: #333; color: #fff; text-decoration: none;}
+a.image:hover{background-color: transparent;}
+.content-wrap{position: fixed; top: 0; width: 100%; min-height: 600px; padding-bottom: 1em; }
+.headline {padding: 10px; font-size: 16px;}
+.content{}
+.main{float: left; width: 600px; margin-right: 30px; padding: 0 10px;}
+.jacket{float: left; width: 300px; margin-top: 30px;}
+.promotions{clear: both; margin-left: -10px;font-size: 16px; line-height:  1.25em; overflow: hidden;}
+.promotions div{float: left; width: 290px; margin: 10px 0 10px 10px; padding: 10px;}
+.promotions h2{margin-bottom: 0;}
+.promotions iframe{margin-top: 16px;}
+.footer{overflow: hidden; font-size: 14px;}
+.footer ul{list-style: none; padding: 0;}
+.footer ul li{display: block; float: left; color: #ddd;}
+.footer ul.partners{float: left;}
+.footer ul.partners li{margin: 0 40px 0 10px;}
+.footer ul.publisher{float: right;}
+.footer ul.publisher li{margin: 0 10px;}
