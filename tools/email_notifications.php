@@ -4,13 +4,13 @@
 	$result;
 	
 	if (empty($_POST['BARCODE'])){
-		die('Please enter your library card number!');
+		die('Please enter your library card number! Refresh the page to start over.');
 	}
 	elseif (empty($_POST['PASSWORD'])){
-		die('Please enter your library card number!');
+		die('Please enter your password! Refresh the page to start over.');
 	}
 	elseif (empty($_POST['EMAIL1'])){
-		die('Please enter your library card number!');
+		die('Please enter your email address! Refresh the page to start over.');
 	}
 	else{
 	
