@@ -1447,24 +1447,28 @@ ul.social a{
   padding-left: 24px;
 }
 
-ul.social a.facebook{
+ul.social a.rss{
   background-position: 0px 0px;
 }
 
-ul.social a.twitter{
+ul.social a.facebook{
   background-position: 0px -16px;
 }
 
-ul.social a.tumblr{
+ul.social a.twitter{
   background-position: 0px -32px;
 }
 
-ul.social a.rss{
+ul.social a.tumblr{
   background-position: 0px -48px;
 }
 
 ul.social a.pinterest{
   background-position: 0px -64px;
+}
+
+ul.social a.youtube{
+  background-position: 0px -80px;
 }
 
 
