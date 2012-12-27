@@ -10,22 +10,21 @@
 	}, options);
 	
 	var div = '';
-	var i = 0;
 	
 	return this.each(function() {
 	
 		var $this = $(this);
 	
 		$.getJSON('/tools/feedtojson.php?jsoncallback=?', {url: settings.url}, function(data){
-			$.each(data.item, function(index) {
+			console.log(data);
+			$.each(data.item, function(i) {
 				if (settings.feed_type == 'events'){
 					if (i < settings.num_items){
-						div = div + '<div class="feed-item" id="' + data.item[index].id + '">'
-							+ '<div class="feed-title"><a href="' + data.item[index].link + '" class="link_sm">' + data.item[index].title + '</a></div>'
-							+ '<div class="feed-dates">' + data.item[index].date + '</div>'
-							+ '<div class="feed-times">' + data.item[index].time + ((data.item[index].endtime != 'All Day')?'&nbsp;&ndash;&nbsp;' + data.item[index].endtime:'') + '</div>'
+						div = div + '<div class="feed-item" id="' + data.item[i].id + '">'
+							+ '<div class="feed-title"><a href="' + data.item[i].link + '" class="link_sm">' + data.item[i].title + '</a></div>'
+							+ '<div class="feed-dates">' + data.item[i].date + '</div>'
+							+ '<div class="feed-times">' + data.item[i].time + ((data.item[i].endtime != 'All Day')?'&nbsp;&ndash;&nbsp;' + data.item[i].endtime:'') + '</div>'
 							+'</div>';
-						i++;
 					}
 				}
 			});

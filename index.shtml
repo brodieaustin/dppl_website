@@ -38,7 +38,7 @@
 				    prev:   '#prev2'
 			});
 			
-			$('#events').addFeed().fadeIn(500);
+			$('#events').addFeed({url: 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=10&fe=1'}).fadeIn(500);
 			
 			
 			
