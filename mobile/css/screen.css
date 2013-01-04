@@ -149,7 +149,7 @@ span.block{display: block;}
 }
 
 #content .ad {min-height: 400px; padding: 0; background:  url('/images/edppl/zinio-ipad.jpg') no-repeat right .5em;}
-#content .ad .text{background: rgb(255, 255, 255); background: rgba(255, 255, 255, .9); width: 60%;}
+#content .ad .text{width: 60%;}
 
 #content ol{
   clear: left;
@@ -214,6 +214,6 @@ span.block{display: block;}
  #content dl dt, #content dl dd{display: block; width: 100%; margin-left: 0;}
  #content ul.icons {width: 100%;}
  #content ul.icons li{ line-height: 120%;}
- #content .ad{background-position: center top;}
+ #content .ad{background: transparent;}
  #content .ad .text{width: 100%;}
 }
