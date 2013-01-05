@@ -20,6 +20,7 @@
 		.no-js .noscript{display: block;}
 		.js .noscript{display: block;}
 		#image-map{position: absolute; top: 0; left: 0;}
+		.entry{float: left; width: 263px; margin-bottom: 10px; margin-right: 10px; overflow: hidden;}
 	</style>
 	<script src="/js/modernizr-2.5.3.min.js"></script>
 	<script>AC_FL_RunContent = 0;</script>
@@ -30,10 +31,11 @@
 	<!--background/page wrapper-->
 	<div class="page-wrap">
 		<!--banner-->
-		<div id="banner" style="background: #fff url('/images/features/2013/wrc-chill-small.png') no-repeat 10px 10px; height: 120px; margin: 10px; padding: 20px; border-radius: 5px; padding-left: 210px;">
+		<div id="banner" style="width: 610px; background: #fff url('/images/features/2013/wrc-chill-small.png') no-repeat 10px 10px; height: 140px; margin: 10px; padding: 20px; border-radius: 5px; padding-left: 210px;">
 			<h3 style="margin-top: 0;color: #00a79d;">Join the Winter Reading Club 2013</h3>
 			<p style="font-weight: bold;">January 5th through February 24th</p>
-			<p>Sign up for the Winter Reading Club on January 5th at the library or online. Read for 16 hours to complete the program. Prize drawings will be held weekly.</p>
+			<p>Sign up for the Winter Reading Club on January 5th at the library or online. Read for 16 hours to complete the program. Prize drawings will be held weekly. <i>In partnership with the Chicago Wolves and the Alliant Credit Union Foundation.</i></p>
+		<p><a href="http://calendar.dppl.org/evanced/sr/">Learn more</a></p>
 		</div>
 		<!--animated movie-->
 		<div class="homepage-header" style="height: 546px; position: relative; margin: 10px; padding: 0; border: 10px solid #fff; background-color: #fff; border-radius: 5px; overflow: hidden;">
@@ -72,7 +74,9 @@
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	<!--blog post-->
 		<div style="float: left; width: 820px;  margin: 0 10px 10px; padding: 10px; background-color: #fff; border-radius: 5px; overflow: hidden; ">
+			<h1 style="font-size: 18px; line-height: 18px; margin-top: 2px;" >From our blog...</h1>
 			<div id="blog"></div>
+			<p style="clear: both; margin-top: 10px; padding-top: 10px; border-top: 1px solid #e8e8e8"><a href="http://dpplplaintalk.blogspot.com/">Read more!</a></p>
 		</div>
 	<!--footer-->
 		<div class="footer" style="padding-top: 10px; text-align: center; clear: both;">
@@ -119,26 +123,27 @@
 				
 				for (i = 0; i < feeds.length; i ++){
 						var feed = new google.feeds.Feed(feeds[i]);
-						feed.setNumEntries(1);
+						feed.setNumEntries(3);
 						feed.load(function(result){
 							if (!result.error){
 								//console.log(result.feed.title);
 								for (var i = 0; i < result.feed.entries.length; i++){
 									var entry = result.feed.entries[i];
+									//console.log(entry);
 									
 									var div = document.createElement("div");
 									div.setAttribute('class', 'entry');
 									
-									var feedtitle = document.createElement("div");
-									feedtitle.setAttribute('class', 'feed-title');
-									feedtitle.appendChild(document.createTextNode(result.feed.title));
+									//var feedtitle = document.createElement("div");
+									//feedtitle.setAttribute('class', 'feed-title');
+									//feedtitle.appendChild(document.createTextNode(result.feed.title));
 									
-									div.appendChild(feedtitle);
+									//div.appendChild(feedtitle);
 									
 									var title = document.createElement("div");
 									title.setAttribute('class', 'entry-title');
 									
-									console.log(entry.title);
+									//console.log(entry.title);
 									
 									var link = document.createElement("a");
 									link.setAttribute('href', entry.link);
@@ -146,12 +151,12 @@
 									
 									title.appendChild(link);
 									
-									//var content = document.createElement("div");
-									//content.setAttribute('class', 'entry-content');
-									//content.appendChild(document.createTextNode(entry.content + "..."));
+									var content = document.createElement("div");
+									content.setAttribute('class', 'entry-content');
+									content.appendChild(document.createTextNode(entry.contentSnippet));
 									
 									div.appendChild(title);
-									//div.appendChild(content);
+									div.appendChild(content);
 									container.appendChild(div);
 								}
 							}
