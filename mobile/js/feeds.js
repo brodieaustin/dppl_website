@@ -33,7 +33,7 @@
 							
 							var content = document.createElement("div");
 							content.setAttribute('class', 'entry-content');
-							content.innerHTML = entry.content;
+							content.innerHTML = entry.contentSnippet;
 							
 							div.appendChild(title);
 							div.appendChild(content);
