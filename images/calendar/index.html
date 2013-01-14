@@ -74,13 +74,13 @@
 	<div class="container" id="upload-container">
 		<form id="upload-form" method="post"  action="upload.php" enctype="multipart/form-data">
 			<div class="errors"></div>
-			<div>
-				<label for="password">Password:<i>*</i></label>
-				<input type="password" id="password" name="password" tabindex="2" class="required" /><p class="tip">Think evanced</p>
-			</div>
 			<div>	
 				<label for="file">File:<i>*</i></label>
 				<input type="file" id="file" name="file" tabindex="2" class="required" />
+			</div>
+			<div>
+				<label for="password">Password:<i>*</i></label>
+				<input type="password" id="password" name="password" tabindex="2" class="required" /><p class="tip">Think evanced</p>
 			</div>
 			<div style="padding-bottom: 1em;">
 				<input type="submit" value="Submit" tabindex="3" />
@@ -112,15 +112,12 @@
 		
 		var i;
 		var first_year = 2012;
-		var i = first_year;
 		
 		var now = new Date;
 		var current_year = now.getFullYear();
-		var year_list;
+		var year_list = '';
 		
-		year_list = '<li><a href="javascript: void(0)" class="year" id="' + first_year + '">' + i + '</a></li>';
-		
-		for (i = first_year; i < current_year; i++){
+		for (i = first_year; i < current_year + 1; i++){
 			year_list = '<li><a href="javascript: void(0)" class="year" id="' + i + '">' + i + '</a></li>' + year_list;
 		}
 		
