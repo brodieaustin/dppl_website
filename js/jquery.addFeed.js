@@ -16,7 +16,7 @@
 		var $this = $(this);
 	
 		$.getJSON('/tools/feedtojson.php?jsoncallback=?', {url: settings.url}, function(data){
-			console.log(data);
+			//console.log(data);
 			$.each(data.item, function(i) {
 				if (settings.feed_type == 'events'){
 					if (i < settings.num_items){

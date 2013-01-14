@@ -98,30 +98,6 @@ $(function(){
 	
 });
 
-//function to add event tracker to certain links
-$(function(){
-	if (_gaq){
-		//set category
-		//var c= 'Database-Promotions';
-		//set action from date
-		var d = new Date();
-		var y = d.getFullYear();
-		var month_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-		var m = month_names[d.getMonth()];
-		var a = y + '-' + m;
-		//set label from location path
-		var l = window.location.pathname;
-		//find each link with "track" class and add tracking event
-		$('.track').each(function(){
-			var c = $(this).attr('data-ga-category');
-			$(this).click(function(){
-				_gaq.push(['_trackEvent', c, a, l]);
-			}).addClass('tracking');
-		});
-	}
-
-});
-
 function createCookie(name,value,days) {
 		if (days) {
 			var date = new Date();
