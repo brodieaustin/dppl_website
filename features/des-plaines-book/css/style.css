@@ -1,5 +1,5 @@
 html{background: #111 url('../img/des-plaines-book.jpg') no-repeat center center fixed; webkit-background-size: cover;	-moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-body{width: 960px; margin: 0 auto; overflow: hidden; font-size: 24px; line-height: 1.4em; font-family: 'Vollkorn', 'Times New Roman', Times serif; color: #fff;}
+body{width: 960px; margin: 0 auto; font-size: 24px; line-height: 1.4em; font-family: 'Vollkorn', 'Times New Roman', Times serif; color: #fff;}
 h1,h2,h3, blockquote{text-shadow: 1px 1px 1px #333;}
 h1{color: #ff6633; font-size: 48px; line-height: 1.2em; }
 h2{color: #ff6633; font-size: 22px; line-height: 1.2em;}
