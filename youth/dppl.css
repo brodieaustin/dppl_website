@@ -139,12 +139,12 @@ background-repeat:no-repeat;
 	
 .no-style{list-style: none; padding:0;}
 
-.columns{width: 100%; margin: 0; padding: 0;}
-.columns .col{float: left; width: 40%; margin-right: 5%;}
+.columns{width: 100%; margin: 0; padding: 0; overflow: hidden;}
+.columns .col{float: left; width: 45%; margin-right: 5%;}
 .columns .last {margin-right: 0;}
 	
-	
-
+dl.book-list{margin-top: 0;}
+dl.book-list dd{margin-left: 0; margin-bottom: 1.5em;}
 	
 	
 	
