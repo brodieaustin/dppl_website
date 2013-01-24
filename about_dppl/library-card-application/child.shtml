@@ -173,7 +173,7 @@
 				</fieldset>
 				<fieldset>
 					<div>
-						<input type="submit" value="Submit" class="button right" />
+						<input type="submit" value="Submit" class="button right track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" />
 					</div>
 				</fieldset>
 			</form>
