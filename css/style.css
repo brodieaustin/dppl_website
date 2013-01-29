@@ -1222,20 +1222,15 @@ table.board th{
   font-weight: bold;
   background-color: #eee;
 }
-table.board a.download{
+a.download{
   display: block;
   background: url(/images/icons/download.gif) no-repeat center left;
   margin-bottom: 6px;
   padding-left: 20px;
 }
-table.board a.download:hover{
+a.download:hover{
   color: #666;
   text-decoration: underline;
-}
-
-a.download{
-  background: url(/images/icons/download.gif) no-repeat center left;
-  padding-left: 20px;
 }
 
 /*special style sheet for database listings*/
