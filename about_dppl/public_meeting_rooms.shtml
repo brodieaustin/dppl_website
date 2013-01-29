@@ -20,5 +20,25 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<script>
+		window.onload = function(){
+			var f = document.getElementById('meeting-form');
+			var r = document.getElementById('response');
+			
+			f.elements['accept-policy'].onchange = function(){
+				r.innerHTML = '';
+			}
+			
+			f.onsubmit = function(){
+				if (f.elements['accept-policy'].checked == true){
+					window.location = 'http://calendar.dppl.org/evanced/lib/roomrequest.asp';
+				}
+				else{
+					r.innerHTML = 'You must agree to the policy before proceeding!';
+				}
+				return false;
+			}
+		}
+	</script>
 </body>
 </html>
