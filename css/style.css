@@ -587,7 +587,8 @@ display: none; position: absolute; top: 0; left: 0; width: 100%;background-color
 div#navigation{
   width: 100%;
   height: 2.5em;
-  margin: 0 0 1em 0;
+  /*margin: 0 0 1em 0;*/
+  margin: 0;
   padding: 0;
   text-align: left;
   overflow: visible;
@@ -729,11 +730,11 @@ ul.dropdown li:hover > ul{
   position: relative;
   float: right;
   width: 49.076923em;
-  height: 6em;
+  height: 8em;
   margin: 0;
   padding: 0 6px;
   text-align: center;
-  background: url('/images/edppl/zinio-ipad.jpg') no-repeat right top;
+  background: url('/to-process/new-world-cinema-banner.png') no-repeat right center;
   overflow: hidden;
 }
 
@@ -763,9 +764,11 @@ ul.dropdown li:hover > ul{
 }
 
 .ad-banner .headline{
-  color: #dd3039;
+  color: #333;
   font-weight: bold;
 }
+
+.ad-banner .headline small{display: block; color: #888;}
 
 .ad-banner .link{
   margin-top: .5em;
