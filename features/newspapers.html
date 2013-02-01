@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>We &hearts; Newspapers | DPPL</title>
+	<style>
+		header, footer, article, section{display: block;}
+		body{width: 960px; margin: 0 auto; font: 24px/30px 'Optima LT Std', 'Lucida Sans', sans-serif; color: #00a89e;} 
+		header, article, footer{text-align: center;}
+		h1{color: #ea2339; font-size: 100px;}
+		small{display: block; margin-top: .5em; color: #888; font-style: oblique;}
+		a.button{font-size: 16px; display: inline-block; width: auto; height: 2em; line-height: 2em; margin: .5em 0; padding: 0 .5em; background-color: #888; color: white !important; vertical-align: middle; text-align: center; border-radius: .5em; box-shadow: 1px 1px 1px 0px #DDD; text-decoration: none;}
+		a.button:hover{background-color: #555;}
+		article{margin: 1em 3em 0 3em; padding-bottom: 1em; position: relative; overflow: hidden;}
+		article p{font-weight: bold;}
+		.banner{min-height: 272px;}
+		#papers-links{margin: 0; list-style: none;}
+		#papers-links a{display: block; width: 150px; height: 70px; padding: 40px 0; font-weight: bold; color: #ea2339; text-decoration: none;}
+		#papers-links a:hover{color: #888;}
+		#nyt{position: absolute; top: 60px; left: 30px;}
+		#lpd{position: absolute; top: 35px; left: 240px;}
+		#trib{position: absolute; top: 50px; left: 440px;}
+		#wsj{position: absolute; top: 80px; left: 640px;}
+		#papers-info{position: relative; width: 100%; height: 212px; }
+		.info{display: none; position: absolute; top: 0; left: 0;}
+		.first{display: block; margin-top: 3em;}
+		figure{background-color: #fff; overflow: hidden; text-align: left;}
+		figure img{float: left; width: 200px; margin-right: 33px; padding: 5px; border: 1px solid #ddd; border-radius: 5px;}
+		figure figcaption{float: left; width: 491px; font-size: 18px; }
+		figure figcaption p{font-weight: normal; color: #888;}
+		.caption-title{display: block; font-weight: bold; color: #00a89e;}
+		footer img, footer img a{border: 0;}
+	</style>
+	<!--shiv for styling html5 elements-->
+	<script src="/js/html5shiv.js"></script>
+</head>
+<body>
+	<header>
+		<h1>We &hearts; Newspapers</h1>
+	</header>
+	<article>
+		<div class="banner">
+			<img src="/images/features/2013/newspapers/newspapers-hearts-banner.jpg" alt="Newspaper hearts with text" />
+		</div>
+		<ul id="papers-links">
+			<li><a href="http://ezproxy.dppl.org/login?url=http://search.proquest.com/hnpnewyorktimes?accountid=34048" id="nyt" class="track" data-ga-category="Database-Promotions" data-ga-action="2013-February">New York Times</a>
+			</li>
+			<li><a href="http://ezproxy.dppl.org/login?url=http://library.pressdisplay.com" id="lpd" class="track" data-ga-category="Database-Promotions" data-ga-action="2013-February">Library Press Display</a></li>
+			<li><a href="http://ezproxy.dppl.org/login?url=http://search.proquest.com/hnpchicagotrib?accountid=34048" id="trib" class="track" data-ga-category="Database-Promotions" data-ga-action="2013-February">Chicago Tribune</a></li>
+			<li><a href="http://ezproxy.dppl.org/login?url=http://search.proquest.com/wallstreetjournal?accountid=34048" id="wsj" class="track" data-ga-category="Database-Promotions" data-ga-action="2013-February">Wall Street Journal</a></li>
+		</ul>
+		<section id="papers-info">
+			<p class="info first">Free, easy online access to newspapers from the U.S. and around the world, 1849 to the present. <small>Select a resource to get started.</small></p>
+			<figure class="info" id="nyt-info">
+				<img src="/images/features/2013/newspapers/nyt.png" />
+				<figcaption>
+					<p><span class="caption-title">Historical New York Times Archive </span>Covers 1851-2009. Great for  genealogists, students, and history buffs. </p>
+				</figcaption>
+			</figure>
+			<figure class="info" id="lpd-info">
+				<img src="/images/features/2013/newspapers/lpd.png" />
+				<figcaption>
+					<p><span class="caption-title">Library Press Display </span>Get current news from papers around the world.</p>
+				</figcaption>
+			</figure>
+			<figure class="info" id="trib-info">
+				<img src="/images/features/2013/newspapers/trib.png" />
+				<figcaption>
+					<p><span class="caption-title">Historical Chicago Tribune Archive </span>Covers 1849-1989. Great for  genealogists, students, and history buffs.</p>
+				</figcaption>
+			</figure>
+			<figure class="info" id="wsj-info">
+				<img src="/images/features/2013/newspapers/wsj.png" />
+				<figcaption>
+					<p><span class="caption-title">Wall Street Journal </span>Comprehensive coverage back to 1984 is available from the world's leading financial newspaper.</p>
+				</figcaption>
+			</figure>
+		</section>
+	</article>
+	<footer>
+		<div>
+			<a href="/"><img src="/images/features/2013/newspapers/pink-dppl-logo.png" alt="DPPL logo in pink" /></a>
+		</div>
+	</footer>
+	<!--load jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.8.2.min.js"><\/script>')</script>
+	<script src="/js/jquery.gaEvents.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#papers-links li a').hover(
+				function(){
+					var f = $(this).attr('id') + '-info';
+					$('.info').hide();
+					$('#' + f).fadeIn('fast');
+				},
+				function(){
+					$('.info').hide();
+					$('.first').fadeIn('fast');
+				}
+			);
+		});
+	</script>
+<!--Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+   mathiasbynens.be/notes/async-analytics-snippet -->
+<script>
+	var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>

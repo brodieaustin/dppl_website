@@ -63,6 +63,9 @@ h5{
   color: #333;
 }
 
+dl dt{margin-top: 1em;padding-bottom: .5em; font-weight: bold;}
+dl dd{margin-left: 0; padding-bottom: .5em; }
+
 /*LINKS*/  
 
 a[href] {
@@ -95,12 +98,12 @@ a.no-style{
 }
 
 a.button{
-  display: inline-block;
+  display: inline-block !important;
   width: auto;
   height: 2em;
   line-height: 2em;
   margin: .5em 0;
-  padding: 0 .5em;
+  padding: 0 .5em !important;
   background-color: #00a89e;
   color: #fff !important;
   vertical-align: middle;
@@ -111,7 +114,7 @@ a.button{
 }
 
 a.button:hover{
-  background-color: #aaa;
+  background-color: #aaa !important;
  }
  
  a.filter{display: none; background-color: #fcaf3f;}
@@ -734,7 +737,7 @@ ul.dropdown li:hover > ul{
   margin: 0;
   padding: 0 6px;
   text-align: center;
-  background: url('/to-process/new-world-cinema-banner.png') no-repeat right center;
+  background: url('/images/edppl/new-world-cinema-banner.jpg') no-repeat right center;
   overflow: hidden;
 }
 
@@ -744,6 +747,7 @@ ul.dropdown li:hover > ul{
   width: 100%;
   height: 6em;
   overflow: hidden;
+  color: #62472d;
 }
 
 .ad-banner div{
@@ -764,11 +768,10 @@ ul.dropdown li:hover > ul{
 }
 
 .ad-banner .headline{
-  color: #333;
+  color: #62472d;
   font-weight: bold;
+  line-height: 1.3em;
 }
-
-.ad-banner .headline small{display: block; color: #888;}
 
 .ad-banner .link{
   margin-top: .5em;
@@ -780,7 +783,7 @@ ul.dropdown li:hover > ul{
 #side-nav{
   width: 10em;
   float: left;
-  margin-top: 0;
+  margin-top: 1em;
   margin-right: 1.5em;
   color: inherit;
 }
@@ -799,12 +802,18 @@ ul.dropdown li:hover > ul{
 }
 
 #side-nav ul li{
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   padding: 0;
 }
 
 #side-nav ul li a{
+  display: block;
+  padding: 2px;
   text-decoration: none;
+}
+
+#side-nav ul li a:hover{
+  background-color: #eee;;
 }
 
 /*content*/
@@ -1168,7 +1177,6 @@ a#next2{
 
 .gf-title a{
   color: #003366 !important;
-  text-decoration: none !important;
 }
 
 #rss-blogs .gf-snippet{
@@ -1301,6 +1309,14 @@ div#db-list .no-style{
   color: #C09853;
 }
 
+/*styles for lists*/
+dl.resources-list dt{margin-top: 2em; font-weight: normal;}
+
+/*loan policies table*/
+#loan-policies{margin: 2em 0; text-align: left;}
+#loan-policies th, #loan-policies td{padding: 4px;}
+
+
 /*styles for edppl page*/
 
 
@@ -1373,6 +1389,16 @@ div#db-list .no-style{
 #magazine-list li{
   display: block;
 }
+
+/*styles for google site search results page*/
+.gsc-control-cse .gs-spelling,
+.gsc-control-cse .gs-result .gs-title,
+.gsc-control-cse .gs-result .gs-title * {
+  font-size: 1em !important;
+}
+
+.gsc-result{padding: 1em 0 !important;}
+
 
 /*footer*/
 
