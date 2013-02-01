@@ -1,9 +1,13 @@
 <!--#include virtual="/includes/html.html"-->
-	<title>Books In World Languages At Dppl  | DPPL</title>
+	<title>World Language Book| DPPL</title>
 
 	<!--meta, link, styles, and modernizer link in head file-->
+	<meta name="google-translate-customization" content="2dcf53f3b71bddd9-45c54857f96a95cb-ga6e91f2a2b75e3ce-8"></meta>
 	<!--#include virtual="/includes/head.html"-->
-
+	<style>
+		.translate{min-width: 142px; min-height: 70px; float: right; margin-top: 0}
+		.translate img{margin: 0 !important;}
+	</style>
 </head>
 <body>
 	<!--header-->
@@ -20,5 +24,11 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<script type="text/javascript">
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'de,es,fr,gu,hi,it,ko,pl,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-2123354-11'}, 'google_translate_element');
+	}
+	</script>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
