@@ -63,6 +63,9 @@ h5{
   color: #333;
 }
 
+dl dt{margin-top: 1em;padding-bottom: .5em; font-weight: bold;}
+dl dd{margin-left: 0; padding-bottom: .5em; }
+
 /*LINKS*/  
 
 a[href] {
@@ -95,12 +98,12 @@ a.no-style{
 }
 
 a.button{
-  display: inline-block;
+  display: inline-block !important;
   width: auto;
   height: 2em;
   line-height: 2em;
   margin: .5em 0;
-  padding: 0 .5em;
+  padding: 0 .5em !important;
   background-color: #00a89e;
   color: #fff !important;
   vertical-align: middle;
@@ -111,7 +114,7 @@ a.button{
 }
 
 a.button:hover{
-  background-color: #aaa;
+  background-color: #aaa !important;
  }
  
  a.filter{display: none; background-color: #fcaf3f;}
@@ -587,7 +590,8 @@ display: none; position: absolute; top: 0; left: 0; width: 100%;background-color
 div#navigation{
   width: 100%;
   height: 2.5em;
-  margin: 0 0 1em 0;
+  /*margin: 0 0 1em 0;*/
+  margin: 0;
   padding: 0;
   text-align: left;
   overflow: visible;
@@ -729,11 +733,11 @@ ul.dropdown li:hover > ul{
   position: relative;
   float: right;
   width: 49.076923em;
-  height: 6em;
+  height: 8em;
   margin: 0;
   padding: 0 6px;
   text-align: center;
-  background: url('/images/edppl/zinio-ipad.jpg') no-repeat right top;
+  background: url('/images/edppl/new-world-cinema-banner.jpg') no-repeat right center;
   overflow: hidden;
 }
 
@@ -743,6 +747,7 @@ ul.dropdown li:hover > ul{
   width: 100%;
   height: 6em;
   overflow: hidden;
+  color: #62472d;
 }
 
 .ad-banner div{
@@ -763,8 +768,9 @@ ul.dropdown li:hover > ul{
 }
 
 .ad-banner .headline{
-  color: #dd3039;
+  color: #62472d;
   font-weight: bold;
+  line-height: 1.3em;
 }
 
 .ad-banner .link{
@@ -777,7 +783,7 @@ ul.dropdown li:hover > ul{
 #side-nav{
   width: 10em;
   float: left;
-  margin-top: 0;
+  margin-top: 1em;
   margin-right: 1.5em;
   color: inherit;
 }
@@ -796,12 +802,18 @@ ul.dropdown li:hover > ul{
 }
 
 #side-nav ul li{
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   padding: 0;
 }
 
 #side-nav ul li a{
+  display: block;
+  padding: 2px;
   text-decoration: none;
+}
+
+#side-nav ul li a:hover{
+  background-color: #eee;;
 }
 
 /*content*/
@@ -1165,7 +1177,6 @@ a#next2{
 
 .gf-title a{
   color: #003366 !important;
-  text-decoration: none !important;
 }
 
 #rss-blogs .gf-snippet{
@@ -1222,20 +1233,15 @@ table.board th{
   font-weight: bold;
   background-color: #eee;
 }
-table.board a.download{
+a.download{
   display: block;
   background: url(/images/icons/download.gif) no-repeat center left;
   margin-bottom: 6px;
   padding-left: 20px;
 }
-table.board a.download:hover{
+a.download:hover{
   color: #666;
   text-decoration: underline;
-}
-
-a.download{
-  background: url(/images/icons/download.gif) no-repeat center left;
-  padding-left: 20px;
 }
 
 /*special style sheet for database listings*/
@@ -1302,6 +1308,14 @@ div#db-list .no-style{
   background-color: #FCF8E3;
   color: #C09853;
 }
+
+/*styles for lists*/
+dl.resources-list dt{margin-top: 2em; font-weight: normal;}
+
+/*loan policies table*/
+#loan-policies{margin: 2em 0; text-align: left;}
+#loan-policies th, #loan-policies td{padding: 4px;}
+
 
 /*styles for edppl page*/
 
@@ -1375,6 +1389,16 @@ div#db-list .no-style{
 #magazine-list li{
   display: block;
 }
+
+/*styles for google site search results page*/
+.gsc-control-cse .gs-spelling,
+.gsc-control-cse .gs-result .gs-title,
+.gsc-control-cse .gs-result .gs-title * {
+  font-size: 1em !important;
+}
+
+.gsc-result{padding: 1em 0 !important;}
+
 
 /*footer*/
 

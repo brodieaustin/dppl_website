@@ -258,5 +258,10 @@ div#db-list .no-style{
 
 .favorite{display: inline-block; width: 1em; height: 1em; background: url('/images/icons/star.png') no-repeat right top; padding: 0 2px;}
 
-.ad {height: 400px; padding: 0; background:  url('/images/edppl/zinio-ipad.jpg') no-repeat right .5em;}
-.ad .text{background: rgb(255, 255, 255); background: rgba(255, 255, 255, .9); width: 40%;}
+.ad{background-color: #eee; padding: 1em 1em 2em 1em; overflow: hidden;}
+.ad .image{float: left; width: 45%; margin-top: 1em; margin-right: 5%; padding: 2%; background-color: #fff;}
+.ad .image img{width: 100%; max-width: 290px; }
+.ad .text{float: left; width: 45%;}
+
+a.button{display: inline-block; padding: 4px 8px; background-color: #339999; color: #fff; text-decoration: none;}
+a.button:hover{background-color: #888;}

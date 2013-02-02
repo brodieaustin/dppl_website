@@ -148,15 +148,17 @@
       </b>
       </p>
 <p>
-      <form action="http://calendar.dppl.org/evanced/lib/roomrequest.asp" id="form1" method="post" name="form1" onsubmit="return validateForm1()">
+      <form action="" id="meeting-form" name="meeting-form" class="callout" style="background-color: #f8f8f8;" >
        <div style="text-align: center">
-        <input id="accept" name="accept" onclick="clickedAccept()" tabindex="1" type="checkbox" value="No"/>
-        &nbsp;I accept
+		<noscript class="warning">We're sorry, but you must have JavaScript enabled to proceed</noscript>
+		<p><strong>Do you agree to the meeting room use policy?</strong></p>
+		<label for="accept-policy"><input id="accept-policy" name="accept-policy" tabindex="1" type="checkbox" />I agree</label>
+		<span id="response" style="display: block; color: red;"></span>
        </div>
-       <div class="callout">
+       <p class="note">
         When you click Submit (below), you will be taken to the Room Request page. Select the month, the date, the room and the time. Then click Continue, and complete the Contact Information.
-       </div>
-       <div style="text-align: center">
-        <input name="B1" tabindex="2" type="submit" value="Submit"/>
+       </p>
+       <div style="margin-top: 2em; text-align: center">
+        <input  tabindex="2" type="submit" value="Submit" />
        </div>
       </form>
