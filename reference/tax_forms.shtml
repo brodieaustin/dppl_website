@@ -1,9 +1,23 @@
 <!--#include virtual="/includes/html.html"-->
-	<title>Tax Forms At The Des Plaines Public Library | DPPL</title>
+	<title>Tax Forms | DPPL</title>
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-
+	<style>
+		body{overflow-y: scroll;}
+		#tax-form-search{margin-bottom: 1em; padding: 1em; border-top: 1px solid #c8c8c8; border-bottom: 1px solid #c8c8c8;}
+		.no-js #tax-form-search{display: none;}
+		form#tax-form-search label{margin-right: 1em;}
+		.taxes{width: 100%; border-collapse: collapse;}
+		.taxes th{text-align: left;}
+		.taxes td{padding: .5em .5em .5em 0; border-bottom: 1px solid #eee;}
+		.tax-form-type{padding: 1.5em 0 !important; font-weight: bold; color: #888;}
+		.form{width: 15%;}
+		.status, .links{width: 20%;}
+		.description{width: 45%;}
+		.download{background: transparent !important; padding-left: 0 !important;}
+		#noresults{display: none;}
+	</style>
 </head>
 <body>
 	<!--header-->
@@ -20,5 +34,20 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<script src="/js/jquery.quicksearch.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('input#tax-forms-search-input').quicksearch('table tbody tr', {
+				'noResults' : 'tr#noresults'
+			});
+			
+			$('#clear-form').click(function(){
+				$('#tax-forms-search-input').val('');
+				$('table tbody tr').show();
+				return false;
+				
+			});
+		});
+	</script>
 </body>
 </html>
