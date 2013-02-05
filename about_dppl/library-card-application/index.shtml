@@ -178,7 +178,7 @@
 				</fieldset>
 				<fieldset>
 					<div>
-						<input type="submit" value="Submit" class="button right" tabindex="20" />
+						<input type="submit" value="Submit" class="button right track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="20" />
 					</div>
 				</fieldset>
 			</form>
@@ -194,6 +194,7 @@
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB_a837CV5vqZjRzW3ErJIV2fWiWSl8Txw&sensor=false"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/jquery.form.js"></script>
+	<script type="text/javascript" src="/js/jquery.gaEvents.js"></script>
 	<script src="js/scripts.js"></script>
 </body>
 </html>

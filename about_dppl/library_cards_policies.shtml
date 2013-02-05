@@ -3,7 +3,6 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-
 </head>
 <body>
 	<!--header-->
