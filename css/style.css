@@ -848,7 +848,7 @@ ul.dropdown li:hover > ul{
 
 #content p, #content li, #content td{
   line-height: 1.35em;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
 }
 
 #content img{
@@ -1674,9 +1674,14 @@ SPACERS
   #header, #navigation, .ad-banner, #search, #side-nav, #footer{display: none;}
   .button{display: none !important;}
   #content{border: 0; width: 100%;}
+  #content .main{width: 100%;}
+  #content .inset{width: 100%; border-top: 1px solid #000;}
+  #content .inset .container{border: 0;}
+  #content .inset .container img{display: none;}
   .spacer_sm img{display: none !important;}
   .db h4, .db p{width: 100%;}
   .db img{display: none;}
+  .buttons{display: none;}
 }
 
 
