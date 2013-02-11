@@ -338,6 +338,19 @@ input[type=checkbox]{
 
 .favorite{display: inline-block; width: 1em; height: 1em; background: url('/images/icons/star.png') no-repeat right top; padding: 0 2px;}
 
+.new{
+  padding: 2px 4px;
+  text-transform: uppercase;
+  background-color: red;
+  font-size: .9em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.new:after{
+  content: 'new';
+}
+
 ul.no-style{
   list-style: none; padding-left: 0;
 }
