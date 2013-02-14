@@ -15,14 +15,15 @@
       
       <!-- BEGIN: Constant Contact HTML for OptIn Tag  -->
 	  <h2>Sign up</h2>
-      <form action="http://ui.constantcontact.com/roving/d.jsp" id="ccoptin" method="post" name="ccoptin" target="_blank">
-       <label>Enter your Email address:
-          <input name="ea" size="25" type="text"/>
-          <input name="m" type="hidden" value="1098465457358"/>
-          <input name="p" type="hidden" value="oi"/>
-          <input name="go" type="submit" value="Go"/>
+	  <div class="response">
+	    <div class="response-message"></div>
+	  </div>
+	  <div class="load"></div>
+      <form action="/tools/cc/newsletter.php" method="post" id="newsletter">
+       <label>Enter your Email address:</label>
+          <input type="text" name="email_address" id="email-address" />
+          <input type="submit" value="Sign up" />
       </form>
-      <!-- End: Constant Contact HTML for OptIn Tag -->
       <div class="callout">
 		<p>Privacy is important to us; therefore, the Des Plaines Public Library will not sell, rent, or give anyone your email address or any other information you may provide.&nbsp; You must be 13 or older to subscribe to the E-newsletter.</p>
 	  </div>
