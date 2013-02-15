@@ -8,7 +8,7 @@
 		#email-notification div{clear: both; margin-bottom: 1em; margin-left: 1em;}
 		label{display: block; float: left; width: 15em;}
 		label.checkbox{width: 100%; padding-bottom: 1em;}
-		.buttons{margin-top: 2em; margin-left: 4em !important; text-align: center;}
+		.buttons{margin-top: 2em; margin-left: 3em !important; text-align: center;}
 		.buttons input{margin-right: 6em;}
 		.load{display: none; width: 2em; height: 2em;}
 		.response{display: none;}
@@ -28,9 +28,12 @@
 			<p>Enter your library card, password, and email adddress to get notifications about your library card sent to you.</p>
 		</div>
 		<hr />
-		<div class="response"></div>
+		<div class="response">
+		    <div class="response-message"></div>
+		    <p><a href="javascript:void(0);" id="edit-form">Edit the form</a></p>
+		</div>
 		<div class="load"></div>
-		<form method="POST" action="/tools/email_notifications.php" id="email-notification">
+		<form method="POST" action="/tools/ccs/email_notifications.php" id="email-notification">
 			<div>
 				<label>Card Number:</label>
 				<input type="text" name="BARCODE" size="25" maxlength="25" value="" autocomplete="off" />
@@ -46,6 +49,9 @@
 			<div>
 			  <label>Re-enter Email Address:</label>
 			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" autocomplete="off" />
+			 </div>
+			<div>
+			 	<label class="checkbox"><input type="checkbox" name="newsletter" checked="checked" />I would like to receive the library's weekly newsletter</label>
 			 </div>
 			<div class="callout">
 				<p>The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account, and inform you of upcoming library events and services. If requested, receipts will also be sent to your email address. <em>Email addresses are kept confidential.</em></p>
@@ -68,13 +74,19 @@
 			$('#email-notification').submit(function(e){
 				$(this).hide();
 				$('.load').show();
-				$.post('/tools/email_notifications.php', $(this).serialize(), function(data){
-					console.log(data);
+				console.log($(this).serialize());
+				$.post('/tools/ccs/email_notifications.php', $(this).serialize(), function(data){
 					$('#email-notification')[0].reset()
-					$('.response').prepend('<p>' + data + '</p>').show();
+					$('.response-message').html(data);
+					$('.response').show();
 					$('.load').hide();
 				});
 				return false;
+			});
+			$('#edit-form').click(function(){
+			    $('.response-message').html('');
+				$('.response').hide();
+				$('#email-notification').show();
 			});
 			
 		});
