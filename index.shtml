@@ -54,10 +54,9 @@
 		var feedControl = new google.feeds.FeedControl();
 	
 		  // Add two feeds.
-		feedControl.addFeed("http://dpplplaintalk.blogspot.com/feeds/posts/default", "PlainTalk");
+		feedControl.addFeed("http://dpplplaintalk.blogspot.com/feeds/posts/default?alt=rss", "PlainTalk");
 		feedControl.addFeed("http://positivelyestreet.blogspot.com/feeds/posts/default?alt=rss", "Positively Ellinwood St");
 		feedControl.addFeed("http://kidding-around.blogspot.com/feeds/posts/default?alt=rss", "Kidding Around");
-		feedControl.addFeed("http://feed43.com/5583164584461834.xml", "Des Plaines Patch");
 
 		feedControl.setNumEntries(1)
 	
