@@ -9,6 +9,9 @@ robots.txt
 #ignore htaccess files
 .htaccess
 
+#ingnore php config files
+config.php
+
 # ignore OS generated files
 .DS_Store*
 ehthumbs.db
