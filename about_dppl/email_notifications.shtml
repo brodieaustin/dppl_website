@@ -51,7 +51,7 @@
 			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" autocomplete="off" />
 			 </div>
 			<div>
-			 	<label class="checkbox"><input type="checkbox" name="newsletter" />I would like to receive the library's weekly newsletter</label>
+			 	<label class="checkbox"><input type="checkbox" name="newsletter" checked="checked" />I would like to receive the library's weekly newsletter</label>
 			 </div>
 			<div class="callout">
 				<p>The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account, and inform you of upcoming library events and services. If requested, receipts will also be sent to your email address. <em>Email addresses are kept confidential.</em></p>
@@ -74,8 +74,8 @@
 			$('#email-notification').submit(function(e){
 				$(this).hide();
 				$('.load').show();
+				console.log($(this).serialize());
 				$.post('/tools/ccs/email_notifications.php', $(this).serialize(), function(data){
-					console.log(data);
 					$('#email-notification')[0].reset()
 					$('.response-message').html(data);
 					$('.response').show();

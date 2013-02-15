@@ -20,28 +20,29 @@
 				die('Please provide an email address!');
 			}
 			
-			$Contact = new Contact();
-			$Contact->emailAddress = $email;
+			if (filter_var($email, FILTER_VALIDATE_EMAIL)){
 			
-			$search = $ConstantContact->searchContactsByEmail($email);
+			    $Contact = new Contact();
+			    $Contact->emailAddress = $email;
 			
-			if ($search == false){
-			    $Contact->optInSource = 'ACTION_BY_CONTACT';
-		        $Contact->lists = $lists;
-		        
-			    $NewContact = $ConstantContact->addContact($Contact);
+			    $search = $ConstantContact->searchContactsByEmail($email);
+			
+			    if ($search == false){
+			        $Contact->optInSource = 'ACTION_BY_CONTACT';
+		            $Contact->lists = $lists;
+		            
+			        $NewContact = $ConstantContact->addContact($Contact);
 		
-			    if($NewContact){
-				    echo 'Your email address was added to our newsletter.';
+			        if($NewContact){
+				        echo 'Your email address was added to our newsletter. You will receive a confirmation email shortly.';
+			        }
+			        else{
+				        echo 'Something went wrong. Your email was not added';
+			        }
 			    }
 			    else{
-				    echo $email . ' not added';
+			        echo 'You are already signed up for the newsletter.';
 			    }
-			}
-			else{
-			    echo 'You are already signed up for the newsletter.';
-			}
-			
 		}
 		else{
 			echo 'No data to post!';
