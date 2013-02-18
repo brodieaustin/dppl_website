@@ -115,6 +115,7 @@ a.button{
 
 a.button:hover{
   background-color: #aaa !important;
+  text-decoration: none;
  }
  
  a.filter{display: none; background-color: #fcaf3f;}
