@@ -3,7 +3,6 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-
 </head>
 <body>
 	<!--header-->
@@ -14,7 +13,7 @@
 	<!--#include virtual="/includes/side-navigation.html"-->
 	<!--main content-->
 	<div id="content">
-		<!--#include virtual="{c-page}"-->
+		<!--#include virtual="{content}"-->
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
