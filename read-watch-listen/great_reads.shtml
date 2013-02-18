@@ -81,7 +81,7 @@
 		$(document).ready(function(){
 			$('.list').show();
 			$('#list').bcList({
-				'list_id' : '147114181'
+				'list_id' : '153499881'
 			}, function(){
 				$('#list').cycle({ 
 							fx:     'scrollVert', 
