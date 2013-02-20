@@ -1,9 +1,21 @@
 <!--#include virtual="/includes/html.html"-->
-	<title>{title} | DPPL</title>
+	<title>Homebound Application | DPPL</title>
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-
+	<style>
+		form{margin: 2em 0 1em 0; padding: .5em;}
+		form div{margin-bottom: 1.5em;}
+		form fieldset{margin: 1em 0 2em 0; padding: 2em 1em; background-color: #eee; border: 0; overflow: hidden;}
+		form fieldset legend{width: 100%; margin-left: -1em; padding: 1em 1em 0 1em; background-color: #eee; font-weight: bold;}
+		form label{display: block; width: 100%; margin-bottom: 3px; }
+		form input[type=text]{width: 50%}
+		form input.small{width: 25%;}
+		form textarea{width: 99%; min-height: 100px; border: 1px solid #ccc;}
+		form em{font-weight: bold; color: red;}
+		form .errors, form .error{display: block; margin: 2px 0; color: red;}
+		.load{display: none; width: 2em; height: 2em;}
+	</style>
 </head>
 <body>
 	<!--header-->
@@ -20,5 +32,27 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<script src="/js/jquery.validate.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#homebound-application').validate({
+				invalidHandler: function(form, validator) {
+					  var errors = validator.numberOfInvalids();
+					  if (errors) {
+						var message = errors == 1 ? 'You missed 1 field. It has been highlighted': 'You missed ' + errors + ' fields. They have been highlighted';
+						$('div.errors').html(message);
+						$('div.errors').show();
+					  } else {
+						$('div.errors').hide();
+					  }
+				},
+				submitHandler: function(form){
+					$('.load').show();
+					$(form).hide();
+					$('.response').html('<p>Yo</p>');
+				}
+			});
+		});
+	</script>
 </body>
 </html>

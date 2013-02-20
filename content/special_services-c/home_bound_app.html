@@ -1,47 +1,68 @@
-<table cellpadding="0" cellspacing="0" width="635">
- <tr>
-  <td class="spacer_sm">
-   <img alt="" border="0" height="5" src="../images/utils/feature_box_corner_TL.gif" width="5"/>
-  </td>
-  <td background="../images/utils/feature_box_horizontal.gif" height="5" nowrap="nowrap" width="625">
-  </td>
-  <td class="spacer_sm">
-   <img alt="" border="0" height="5" src="../images/utils/feature_box_corner_TR.gif" width="5"/>
-  </td>
- </tr>
- <tr>
-  <td background="../images/utils/feature_box_vertical.gif" height="5" width="5">
-  </td>
-  <td>
-   <table cellpadding="3" cellspacing="0" width="100%">
-    <tr>
-     <td>
-      <!-- CONTENT HEADLINE -->
-      <!-- CONTENT BODY -->
-      <iframe frameborder="0" height="1127" marginheight="0" marginwidth="0" src="https://spreadsheets.google.com/embeddedform?formkey=dGxmVWlfN2xGeWMtSzdNTnB6MnJ4TEE6MQ" width="760">
-       Loading...
-      </iframe>
-      <!-- CONTENT END -->
-     </td>
-    </tr>
-   </table>
-  </td>
-  <td background="../images/utils/feature_box_vertical.gif" height="5" width="5">
-  </td>
- </tr>
- <tr>
-  <td class="spacer_sm">
-   <img alt="" border="0" height="5" src="../images/utils/feature_box_corner_BL.gif" width="5"/>
-  </td>
-  <td background="../images/utils/feature_box_horizontal.gif" height="5" nowrap="nowrap" width="625">
-  </td>
-  <td class="spacer_sm">
-   <img alt="" border="0" height="5" src="../images/utils/feature_box_corner_BR.gif" width="5"/>
-  </td>
- </tr>
- <tr>
-  <td class="spacer_sm" colspan="3">
-   &nbsp;
-  </td>
- </tr>
-</table>
+<div class="headline">
+	<h1>Homebound Delivery Service <small>Application</small></h1>
+	<p>Are you interested in our homebound deliver service? Fill out the application below. We will review your application and get back to you in {DAYS} days.</p>
+</div>
+<hr />
+<div class="response"><div class="load"></div></div>
+<form id="homebound-application" class="application" method="post"  action="">
+	<p>I wish to apply for the Homebound Delivery Service from the Des Plaines Public Library, which serves residents of the city of Des Plaines who cannot make it to the library.</p>
+	<div class="errors"></div>
+	<p class="note"><em>*</em> Required field</p>
+	<div>
+		<label for="last-name">Last Name <em>*</em></label>
+		<input type="text" id="last-name" name="last-name" class="required" tabindex="1" />
+	</div>
+	<div>
+		<label for="first-name">First Name <em>*</em></label>
+		<input type="text" id="first-name" name="first-name" class="required" tabindex="2" />
+	</div>
+	<div>
+		<label for="address">Address <em>*</em></label>
+		<input type="text" id="address" name="address" class="required" tabindex="3" />
+	</div>
+	<div>
+		<label for="city">City <em>*</em></label>
+		<input type="text" id="city" name="city" class="required" tabindex="4" />
+	</div>
+	<div>
+		<label for="zip-code">Zip Code <em>*</em></label>
+		<input type="text" id="zip-code" name="zip-code" class="required small" tabindex="5" />
+	</div>
+	<div>
+		<label for="phone-number">Phone Number <em>*</em></label>
+		<input type="text" id="phone-number" name="phone-number" class="required small" tabindex="6" />
+	</div>
+	<div>
+		<label for="library-card">Do you have a library card?</label>
+		<select id="library-card" name="library-card" tabindex="7" default="No">
+			<option>No</option>
+			<option>Yes</option>
+		</select>
+	</div>
+	<div>
+		<label for="library-card-number">If you have a library card enter it here:</label>
+		<input type="text" id="library-card-number" name="library-card-number" tabindex="8" placeholder="Begins with 21468" />
+	</div>
+	<div>
+		<label for="condition">Condition that makes homebound delivery service necessary <em>*</em></label>
+		<textarea id="condition" name="condition" class="required" tabindex="8"></textarea>
+	</div>
+	<div>
+		<label for="contact">Neighbor friend or next of kin - please include person&apos;s name and phone number <em>*</em></label>
+		<textarea id="contact" name="contact" class="required" tabindex="9"></textarea>
+	</div>
+	<fieldset>
+		<legend>By applying for this service, I give my permission for Des Plaines Public Library personnel to use my library card to check out materials for me</legend>
+		<div>
+			<label for="agreement-name">Type your full name here if you agree to these terms. <em>*</em></label>
+			<input type="text" id="agreement-name" name="agreement-name" class="required" tabindex="11" />
+		</div>
+		<div>
+			<label for="agreement-date">Today&apos; date <em>*</em></label>
+			<input type="text" id="agreement-date" name="agreement-date" class="required" tabindex="12" />
+		</div>
+	</fieldset>
+	<div class="buttons">
+		<input type="submit" name="submit" value="Submit" />
+	</div>
+</form>
