@@ -4,7 +4,7 @@
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
 	<style>
-		form{margin: 2em 0 1em 0; padding: .5em;}
+		form{margin: 1em 0; padding: .5em;}
 		form div{margin-bottom: 1.5em;}
 		form fieldset{margin: 1em 0 2em 0; padding: 2em 1em; background-color: #eee; border: 0; overflow: hidden;}
 		form fieldset legend{width: 100%; margin-left: -1em; padding: 1em 1em 0 1em; background-color: #eee; font-weight: bold;}
@@ -13,7 +13,8 @@
 		form input.small{width: 25%;}
 		form textarea{width: 99%; min-height: 100px; border: 1px solid #ccc; font-family: inherit;}
 		form em{font-weight: bold; color: red;}
-		form .errors, form .error{display: block; margin: 2px 0; color: red;}
+		form .errors, form label.error{display: block; margin: 2px 0; color: red;}
+		form input.error, form textarea.error, form select.error{border-color: #333;}
 		.load{display: none; width: 2em; height: 2em;}
 	</style>
 </head>
@@ -33,7 +34,7 @@
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
 	<script src="/js/jquery.validate.min.js"></script>
-	<!--<script>
+	<script>
 		$(document).ready(function(){
 			$('#homebound-application').validate({
 				invalidHandler: function(form, validator) {
@@ -48,13 +49,14 @@
 				},
 				submitHandler: function(form){
 					$('.load').show();
+					$(form).hide();
 					console.log($(form).serialize());
-					$.post('/tools/mail/mail.php', $(form).serialize(), function(data){
+					$.post('http://dppl.org/tools/mail/send.php', $(form).serialize(), function(data){
 					    $('.response').html(data);
 					});
 				}
 			});
 		});
-	</script>-->
+	</script>
 </body>
 </html>

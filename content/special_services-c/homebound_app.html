@@ -1,20 +1,19 @@
 <div class="headline">
 	<h1>Homebound Delivery Service <small>Application</small></h1>
-	<p>Are you interested in our homebound deliver service? Fill out the application below. We will review your application and get back to you in {DAYS} days.</p>
+	<p>Are you interested in receiving library materials through our homebound deliver service? Submit the application below and a librarian will contact you to review your application.</p>
 </div>
 <hr />
 <div class="response"><div class="load"></div></div>
-<form id="homebound-application" class="application" method="post"  action="/tools/form/test.php">
+<form id="homebound-application" class="application" method="post"  action="http://dppl.org/tools/form/send.php">
 	<p>I wish to apply for the Homebound Delivery Service from the Des Plaines Public Library, which serves residents of the city of Des Plaines who cannot make it to the library.</p>
 	<div class="errors"></div>
 	<p class="note"><em>*</em> Required field</p>
 	<!--some environment variables to pass to the form handler-->
 	<input type="hidden" name="form-id" id="form-id" value="homebound-application" />
-	<input type="hidden" name="template" id="template" value="homebound-application.txt" />
-	<input type="hidden" name="subject" id="subject" value="Homebound Delivery Application" />
+	<input type="hidden" name="subject" id="subject" value="Homebound Delivery Application for {name}" />
 	<input type="hidden" name="recipients" id="recipients" value="{'Brodie Austin':'baustin@dppl.org'}" />
-	<input type="hidden" name="email" id="email" value="helpdppl.org" />
-	<input type="hidden" name="challenge-response" id="challenge-respones" value="16" />
+	<input type="hidden" name="email" id="email" value="help@dppl.org" />
+	<input type="hidden" name="challenge-response" id="challenge-response" value="16" />
 	<div>
 		<label for="last-name">Last Name <em>*</em></label>
 		<input type="text" id="last-name" name="last-name-req" class="required" tabindex="1" />
@@ -56,7 +55,7 @@
 	</div>
 	<div>
 		<label for="contact">Neighbor friend or next of kin - please include person&apos;s name and phone number <em>*</em></label>
-		<textarea id="contact" name="contact" class="required-req" tabindex="9"></textarea>
+		<textarea id="contact" name="contact" class="contact-req" tabindex="9"></textarea>
 	</div>
 	<fieldset>
 		<legend>By applying for this service, I give my permission for Des Plaines Public Library personnel to use my library card to check out materials for me</legend>
