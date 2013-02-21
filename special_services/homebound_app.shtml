@@ -11,7 +11,7 @@
 		form label{display: block; width: 100%; margin-bottom: 3px; }
 		form input[type=text]{width: 50%}
 		form input.small{width: 25%;}
-		form textarea{width: 99%; min-height: 100px; border: 1px solid #ccc;}
+		form textarea{width: 99%; min-height: 100px; border: 1px solid #ccc; font-family: inherit;}
 		form em{font-weight: bold; color: red;}
 		form .errors, form .error{display: block; margin: 2px 0; color: red;}
 		.load{display: none; width: 2em; height: 2em;}
@@ -26,14 +26,14 @@
 	<!--#include virtual="/includes/side-navigation.html"-->
 	<!--main content-->
 	<div id="content">
-		<!--#include virtual="../content/special_services-c/home_bound_app.html"-->
+		<!--#include virtual="../content/special_services-c/homebound_app.html"-->
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
 	<script src="/js/jquery.validate.min.js"></script>
-	<script>
+	<!--<script>
 		$(document).ready(function(){
 			$('#homebound-application').validate({
 				invalidHandler: function(form, validator) {
@@ -48,11 +48,13 @@
 				},
 				submitHandler: function(form){
 					$('.load').show();
-					$(form).hide();
-					$('.response').html('<p>Yo</p>');
+					console.log($(form).serialize());
+					$.post('/tools/mail/mail.php', $(form).serialize(), function(data){
+					    $('.response').html(data);
+					});
 				}
 			});
 		});
-	</script>
+	</script>-->
 </body>
 </html>
