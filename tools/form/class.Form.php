@@ -6,6 +6,7 @@
         var $sender;
         var $sender_name;
         var $recipients;
+        var $subject;
         var $template;
         var $template_dir;
         var $body;
@@ -27,7 +28,8 @@
             
             if ($this->has_fields() == true){     
                 $this->set_sender();
-                $this->set_recipients();      
+                $this->set_recipients(); 
+                $this->set_subject();     
                 $this->set_template();
                 $this->set_body();
             }
@@ -62,14 +64,13 @@
 		
 		public function set_sender(){
 		    if ($this->has_fields() == true){
-		        if ($this->fields['name']){
+		        if ($this->fields['name-req']){
 		            $this->sender_name = $this->fields['name'];
 		        }
-		        elseif ($this->fields['last-name']){
-		            $this->sender_name = $this->fields['first-name'] . ' ' . $this->fields['last-name'];
+		        elseif ($this->fields['last-name-req']){
+		            $this->sender_name = $this->fields['first-name-req'] . ' ' . $this->fields['last-name-req'];
 		        }
 		        
-		        $this->sender_name = $this->fields['first-name'] . ' ' . $this->fields['last-name'];   
 		        $this->sender = filter_var($this->fields['email'], FILTER_SANITIZE_EMAIL);
 		        
 		        if (!filter_var($this->sender, FILTER_VALIDATE_EMAIL)){
@@ -84,9 +85,15 @@
             }		
 		}
 		
+		public function set_subject(){
+		    if ($this->has_fields() == true){
+		        $this->subject = str_replace('{name}', $this->sender_name, $this->fields['subject']);
+		    }
+		}
+		
 		public function set_template(){
 		    if ($this->has_fields() == true){
-		        $this->template = file_get_contents($this->template_dir . $this->fields['template']);
+		        $this->template = file_get_contents($this->template_dir . $this->id . '.txt');
 		    }
 		}
 		

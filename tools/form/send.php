@@ -1,109 +1,77 @@
 <?php
-
+    require_once('config.php');
+    require_once('class.Challenge.php');
     require_once('class.Form.php');
 	require_once('class.phpmailer.php');
-	//require_once('files.php');
+    require_once('files.php');
 	
-	$response = '';
+    $response = '';
 	$fresponse = '';
 	
 	if (!empty($_POST)){
 	
-	    if(empty($_POST['challenge-response'])){
-		    die("Please answer the form challenge.");
-	    }
-        elseif ($_POST['challenge-response'] != "16") {
-        	//What happens when the challenge was entered incorrectly
-        	die ("I'm sorry. The challenge question wasn't answered correctly. Please try it again.");
-        } 
-        else {
-            $form = new Form($_POST('form-id'));
-            $form->process_form();
+	    $form = new Form($_POST['form-id']);
+        $form->process_form($_POST);
 	
-		    //set up mail object with phpmailer class
-		    $mail = new PHPMailer();
+	    $challenge = new Challenge($challenge);
+	    $challenge->verify($form->fields['challenge-response']);
+            
+	
+	    //set up mail object with phpmailer class
+	    $mail = new PHPMailer();
 
-		    //make mail object an html mail object
-		    $mail->IsMail();
-		    $mail->CharSet="utf-8";
-		    $mail->IsHTML(true);
-		
-		    //set the sender's email address (sometimes passed as hidden field from form)
-		    $email = strip_tags($_POST['email']);
-
-		    //set the send TO address
-		    //$to = "baustin@dppl.org";
-		    //$mail->AddAddress($to, "Brodie Austin");
-		
-		    $recipients = json_decode(str_replace('\'', '"', strip_tags($_POST['recipients'])));
-		    var_dump($recipients);
-		
-		    foreach($recipients as $key => $val){
-		        $to = $val;
-		        $mail->AddAddress($to, $key);
-		    }
-
-		    //uses php function to check if email valid (not a real email address, just a valid form)
-		    if (filter_var($email, FILTER_VALIDATE_EMAIL)){
-                
-                //try to catch any other bad stuff in email address
-                $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-                
-			    $mail->From = $email;
-			
-			    if ($_POST['send-copy'] == 'true'){
-				    $mail->AddBCC($email);
-			    }
-			
-			    //add a subject
-			    $mail->Subject = strip_tags($_POST['subject']);
-
-			    //create a variable for the body (be sure to santize input)
-			    $template = strip_tags($_POST['template']);
-			    $body = file_get_contents('templates/' . $template);
-			
-			    foreach($_POST as $key => $val){
-			        $body = str_replace('{' . $key . '}', nl2br(strip_tags($val)), $body);
-			    }
-			
-			    echo $body;
-			
-
-			    /*$mail->Body = $body;
-			
-			    if (!empty($_FILES['formfiles'])){
-				    //deal with attachments here
-				    //create an array for the files sent
-				    $files = array();
-
-				    //loop through files and build up array using key/values
-				    foreach ($_FILES['formfiles'] as $k => $l){
-					    foreach ($l as $i => $v){
-						    if (!array_key_exists($i, $files))
-						    $files[$i] = array();
-						    $files[$i][$k] = $v;
-					    }
-				    }
-		
-				    $fresponse = handleFiles($mail, $files);
-				    $fresponse = strlen($fresponse) > 0 ? '<br />' . $fresponse : '';
-			
-			    }
+	    //make mail object an html mail object
+	    $mail->IsMail();
+	    $mail->CharSet="utf-8";
+	    $mail->IsHTML(true);
 		
 
-			    //send the mail and test if it happened
-			    if ($mail->Send()){
-				    echo  "Thank you! Your form has been submitted.";
-			    }
-			    else{
-				    echo "I'm sorry. Your message could not be sent due to an internal error. Please try again later.";
-			    }*/
-		    }
-		    else{
-			    die("Your email address was not formatted properly. Please provide a valid email address.");
-		    }
+	    //set the send TO address
+	    foreach ($form->recipients as $key => $value){
+	        //$key = name; $value = email address
+	        $to = $value;
+	        $mail->AddAddress($to, $key);
 	    }
-	}
+		    
+        $mail->From = $form->sender;
+		
+        if ($_POST['send-copy'] == 'true'){
+            $mail->AddBCC($form->sender);
+        }
+		
+        //add a subject
+       $mail->Subject = $form->subject;
+        
+        //set mail body from form body
+       $mail->Body = $form->body;
+			
+		//deal with attachments here
+	   if (!empty($_FILES['formfiles'])){
+		    
+		    //create an array for the files sent
+		    $files = array();
+
+		    //loop through files and build up array using key/values
+		    foreach ($_FILES['formfiles'] as $k => $l){
+			    foreach ($l as $i => $v){
+				    if (!array_key_exists($i, $files))
+				    $files[$i] = array();
+				    $files[$i][$k] = $v;
+			    }
+		    }
+
+		    $fresponse = handleFiles($mail, $files);
+		    $fresponse = strlen($fresponse) > 0 ? '<br />' . $fresponse : '';
+	    }//closes file if
+		
+	    //send the mail and test if it happened
+	    if ($mail->Send()){
+		    echo  "Thank you! Your form has been submitted.";
+	    }
+	    else{
+		    echo "I'm sorry. Your message could not be sent due to an internal error. Please try again later.";
+	    }
+    }//closes post if	    
     else{
         die('Please complete the form before submitting.');
     }

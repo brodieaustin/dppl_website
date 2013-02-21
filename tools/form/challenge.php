@@ -1,0 +1,3 @@
+<?php
+    $challenge = '16';
+?>
