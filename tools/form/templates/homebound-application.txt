@@ -1,0 +1,53 @@
+<table style="width: 100%;">
+<tr>
+	<td>Last Name</td>
+	<td>{last-name-req}</td>
+</tr>
+<tr>
+	<td>First Name</td>
+	<td>{first-name-req}</td>
+</tr>
+<tr>
+	<td>Address</td>
+	<td>{address-req}</td>
+</tr>
+<tr>
+	<td>City</td>
+	<td>{city-req}</td>
+</tr>
+<tr>
+	<td>Zip Code</td>
+	<td>{zip-code-req}</td>
+</tr>
+<tr>
+	<td>Phone Number</td>
+	<td>{phone-number-req}</td>
+</tr>
+<tr>
+	<td>Do you have a library card?</td>
+	<td>{library-card}</td>
+</tr>
+<tr>
+	<td>If you have a library card enter it here:</td>
+	<td>{library-card-number}</td>
+</tr>
+<tr>
+	<td>Condition that makes homebound delivery service necessary</td>
+	<td>{condition}</td>
+</tr>
+<tr>
+	<td>Neighbor friend or next of kin - please include person&apos;s name and phone number</td>
+	<td>{contact}</td>
+</tr>
+<tr>
+    <td colspan="2"><strong>Agreement</strong></td>
+</tr>
+<tr>
+	<td>Type your full name here if you agree to these terms.</td>
+	<td>{agreement-name-req}</td>
+</tr>
+<tr>
+	<td>Today&apos; date</td>
+	<td>{agreement-date-req}</td>
+</tr>
+</table>
