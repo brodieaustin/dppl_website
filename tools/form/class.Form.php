@@ -2,6 +2,8 @@
 
     class Form{
         var $id;
+        var $config;
+        var $config_dir;
         var $fields;
         var $sender;
         var $sender_name;
@@ -12,8 +14,11 @@
         var $body;
         
         
-        public function __construct($id, $template_dir='templates/'){
+        public function __construct($id, $config_dir='configs/', $template_dir='templates/'){
             $this->id = $id;
+            if($config_dir){
+                $this->config_dir = $config_dir;
+            }
             if($template_dir){
                 $this->template_dir = $template_dir;
             }
@@ -23,7 +28,17 @@
 			var_dump($this);
 		}
 		
+		public function set_config(){
+		    $fh = file_get_contents($this->config_dir . $this->id . '.json');
+		    $json = json_decode($fh, true);
+		    
+		    if ($json){
+		        $this->config = $json;
+		    }
+		}
+		
 		public function process_form($post){
+		    $this->set_config();
             $this->set_fields($post);
             
             if ($this->has_fields() == true){     
@@ -46,7 +61,7 @@
 		}
 		
 		public function check_required_field($key, $val){
-		    if (stripos($key, "-req") !== false){
+		    if ($this->config['fields'][$key] !== false){
 	                if (empty($val)){
 	                    die('You did not complete a required field. Please double check the form and resubmit.');
 	                }
@@ -64,11 +79,11 @@
 		
 		public function set_sender(){
 		    if ($this->has_fields() == true){
-		        if ($this->fields['name-req']){
+		        if ($this->fields['name']){
 		            $this->sender_name = $this->fields['name'];
 		        }
-		        elseif ($this->fields['last-name-req']){
-		            $this->sender_name = $this->fields['first-name-req'] . ' ' . $this->fields['last-name-req'];
+		        elseif ($this->fields['last-name']){
+		            $this->sender_name = $this->fields['first-name'] . ' ' . $this->fields['last-name'];
 		        }
 		        
 		        $this->sender = filter_var($this->fields['email'], FILTER_SANITIZE_EMAIL);
@@ -93,7 +108,7 @@
 		
 		public function set_template(){
 		    if ($this->has_fields() == true){
-		        $this->template = file_get_contents($this->template_dir . $this->id . '.txt');
+		        $this->template = file_get_contents($this->template_dir . $this->config['template']);
 		    }
 		}
 		
@@ -101,7 +116,7 @@
 		    if ($this->has_fields() == true){
 		        $this->body = $this->template;
 		        foreach($this->fields as $key => $val){
-			        $this->body = str_replace('{' . $key . '}', nl2br(strip_tags($val)), $this->body);
+			        $this->body = str_replace('{' . $key . '}', $val, $this->body);
 			    }
 		    }    
 		}

@@ -1,0 +1,23 @@
+{
+	"id": "homebound-application",
+	"subject": "Homebound Application",
+	"template": "homebound-application.txt",
+	"recipients": [{
+		"name": "Brodie Austin",
+		"email": "baustin@dppl.org"
+	}],
+	"fields": {
+		"city": true,
+		"last-name": true,
+		"zip-code": true,
+		"agreement-date": true,
+		"contact": true,
+		"library-card": true,
+		"agreement-name": true,
+		"address": true,
+		"library-card-number": true,
+		"phone-number": true,
+		"first-name": true,
+		"condition": true
+	}
+}
