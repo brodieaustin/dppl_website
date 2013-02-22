@@ -357,7 +357,6 @@ ul.no-style{
 }
 
 ul.no-style li{
-  padding-bottom: .5em;
  }
 
  ul.buttons{
@@ -370,6 +369,11 @@ ul.buttons li{
    float: left;
    margin-left: .5em;
    margin-bottom: 0 !important;
+}
+
+ul.tight li{
+  margin-bottom: 0 !important;
+  padding-bottom: 2px;
 }
 
 /*header styles*/
