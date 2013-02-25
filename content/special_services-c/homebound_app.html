@@ -34,42 +34,54 @@
 		<input type="text" id="phone-number" name="phone-number" class="required small" tabindex="6" />
 	</div>
 	<div>
+		<label for="email">Email Address</label>
+		<input type="text" id="email" name="email" tabindex="7" />
+	</div>
+	<div>
+		<label for="communication-preference">What is your preferred method of communication? <em>*</em></label>
+		<select id="communication-preference" name="communication-preference" class="required" tabindex="8">
+		    <option>Choose one</option>
+			<option>Phone</option>
+			<option>Email</option>
+		</select>
+	</div>
+	<div>
 		<label for="library-card">Do you have a library card?</label>
-		<select id="library-card" name="library-card" tabindex="7" default="No">
+		<select id="library-card" name="library-card" tabindex="9" default="No">
 			<option>No</option>
 			<option>Yes</option>
 		</select>
 	</div>
 	<div>
 		<label for="library-card-number">If you have a library card enter it here:</label>
-		<input type="text" id="library-card-number" name="library-card-number" tabindex="8" placeholder="Begins with 21468" autocomplete="off" />
+		<input type="text" id="library-card-number" name="library-card-number" tabindex="10" placeholder="Begins with 21468" autocomplete="off" />
 	</div>
 	<div>
 		<label for="condition">Condition that makes homebound delivery service necessary <em>*</em></label>
-		<textarea id="condition" name="condition" class="required" tabindex="8"></textarea>
+		<textarea id="condition" name="condition" class="required" tabindex="11"></textarea>
 	</div>
 	<div>
 		<label for="contact">Neighbor friend or next of kin - please include person&apos;s name and phone number <em>*</em></label>
-		<textarea id="contact" name="contact" class="contact" tabindex="9"></textarea>
+		<textarea id="contact" name="contact" class="contact" tabindex="12"></textarea>
 	</div>
 	<fieldset class="callout">
 		<legend>By applying for this service, I give my permission for Des Plaines Public Library personnel to use my library card to check out materials for me</legend>
 		<div>
 			<label for="agreement-name">Type your full name here if you agree to these terms. <em>*</em></label>
-			<input type="text" id="agreement-name" name="agreement-name" class="required" tabindex="11" />
+			<input type="text" id="agreement-name" name="agreement-name" class="required" tabindex="13" />
 		</div>
 		<div>
 			<label for="agreement-date">Today&apos; date <em>*</em></label>
-			<input type="text" id="agreement-date" name="agreement-date" class="required" tabindex="12" />
+			<input type="text" id="agreement-date" name="agreement-date" class="required" tabindex="14" />
 		</div>
 	</fieldset>
 	<fieldset class="callout">
 			<iframe id="challenge-image" src="/tools/sc/captcha.php"></iframe>
 			<label>Enter the text that you see in the image above:<em>*</em></label>
-			<input type="text" id="challenge-response" name="challenge-response" class="required" tabindex="13" />
+			<input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="15" />
 	</fieldset>
 	<div class="buttons">
-		<input type="submit" name="submit" value="Submit" tabindex="14" autocomplete="off" />
+		<input type="submit" name="submit" value="Submit" tabindex="16" />
 	</div>
 </form>
 <div class="response"><div class="load"></div></div>
