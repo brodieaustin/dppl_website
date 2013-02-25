@@ -6,7 +6,6 @@
         var $config_dir;
         var $fields;
         var $sender;
-        var $sender_name;
         var $recipients;
         var $subject;
         var $template;
@@ -79,30 +78,37 @@
 		
 		public function set_sender(){
 		    if ($this->has_fields() == true){
-		        if ($this->fields['name']){
-		            $this->sender_name = $this->fields['name'];
+		        //check if sender set in config, otherwise use post values
+		        if ($this->config['sender']){
+		            $this->sender['name'] = $this->config['sender']['name'];
+		            $this->sender['email'] = filter_var($this->config['sender']['email'], FILTER_SANITIZE_EMAIL);
 		        }
-		        elseif ($this->fields['last-name']){
-		            $this->sender_name = $this->fields['first-name'] . ' ' . $this->fields['last-name'];
-		        }
-		        
-		        $this->sender = filter_var($this->fields['email'], FILTER_SANITIZE_EMAIL);
-		        
-		        if (!filter_var($this->sender, FILTER_VALIDATE_EMAIL)){
-		            die('Please provide a valid email address (example@example.com)');
+		        else{
+		            if ($this->fields['name']){
+		                $this->sender['name'] = $this->fields['name'];
+		            }
+		            elseif ($this->fields['last-name']){
+		                $this->sender['name'] = $this->fields['first-name'] . ' ' . $this->fields['last-name'];
+		            }
+		            
+		            $this->sender['email'] = filter_var($this->fields['email'], FILTER_SANITIZE_EMAIL);
+		            
+		            if (!filter_var($this->sender, FILTER_VALIDATE_EMAIL)){
+		                die('Please provide a valid email address (example@example.com)');
+		            }
 		        }
 		    }
 		}
 		
 		public function set_recipients(){
             if ($this->has_fields() == true){
-		        $this->recipients = json_decode(str_replace('\'', '"', $this->fields['recipients']));
+		        $this->recipients = $this->config['recipients'];
             }		
 		}
 		
 		public function set_subject(){
 		    if ($this->has_fields() == true){
-		        $this->subject = str_replace('{name}', $this->sender_name, $this->fields['subject']);
+		        $this->subject = str_replace('{name}', $this->sender_name, $this->config['subject']);
 		    }
 		}
 		

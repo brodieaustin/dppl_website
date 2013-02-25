@@ -2,9 +2,17 @@
 	"id": "homebound-application",
 	"subject": "Homebound Application",
 	"template": "homebound-application.txt",
+	"sender" : {
+	    "name" : "Help",
+	    "email" : "help@dppl.org"
+	},
 	"recipients": [{
 		"name": "Brodie Austin",
 		"email": "baustin@dppl.org"
+    },
+	{
+	    "name" : "David Whittingham",
+	    "email" : "dwhittingham@dppl.org"
 	}],
 	"fields": {
 		"city": true,
@@ -12,10 +20,10 @@
 		"zip-code": true,
 		"agreement-date": true,
 		"contact": true,
-		"library-card": true,
+		"library-card": false,
 		"agreement-name": true,
 		"address": true,
-		"library-card-number": true,
+		"library-card-number": false,
 		"phone-number": true,
 		"first-name": true,
 		"condition": true

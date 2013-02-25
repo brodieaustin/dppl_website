@@ -1,5 +1,6 @@
 <?php
-    require_once('config.php');
+    session_start();
+   
     require_once('class.Challenge.php');
     require_once('class.Form.php');
 	require_once('class.phpmailer.php');
@@ -13,7 +14,7 @@
 	    $form = new Form($_POST['form-id']);
         $form->process_form($_POST);
 	
-	    $challenge = new Challenge($challenge);
+	    $challenge = new Challenge($_SESSION['captcha']['code']);
 	    $challenge->verify($form->fields['challenge-response']);
             
 	
@@ -27,13 +28,12 @@
 		
 
 	    //set the send TO address
-	    foreach ($form->recipients as $key => $value){
-	        //$key = name; $value = email address
-	        $to = $value;
-	        $mail->AddAddress($to, $key);
+	    for ($i = 0; $i < count($form->recipients); $i++){
+	        $mail->AddAddress($form->recipients[$i]['email'], $form->recipients[$i]['name']);
 	    }
 		    
-        $mail->From = $form->sender;
+        $mail->From = $form->sender['email'];
+        $mail->FromName = $form->sender['name'];
 		
         if ($_POST['send-copy'] == 'true'){
             $mail->AddBCC($form->sender);
