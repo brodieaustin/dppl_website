@@ -3,40 +3,35 @@
 	<p>Are you interested in receiving library materials through our homebound deliver service? Submit the application below and a librarian will contact you to review your application.</p>
 </div>
 <hr />
-<div class="response"><div class="load"></div></div>
-<form id="homebound-application" class="application" method="post"  action="/tools/form/test.php">
+<form id="homebound-application" class="application" method="post"  action="/tools/f/send.php">
 	<p>I wish to apply for the Homebound Delivery Service from the Des Plaines Public Library, which serves residents of the city of Des Plaines who cannot make it to the library.</p>
 	<div class="errors"></div>
 	<p class="note"><em>*</em> Required field</p>
 	<!--some environment variables to pass to the form handler-->
 	<input type="hidden" name="form-id" id="form-id" value="homebound-application" />
-	<!--<input type="hidden" name="subject" id="subject" value="Homebound Delivery Application for {name}" />
-	<input type="hidden" name="recipients" id="recipients" value="{'Brodie Austin':'baustin@dppl.org'}" />-->
-	<input type="hidden" name="email" id="email" value="help@dppl.org" />
-	<input type="hidden" name="challenge-response" id="challenge-response" value="16" />
 	<div>
 		<label for="last-name">Last Name <em>*</em></label>
-		<input type="text" id="last-name" name="last-name-req" class="required" tabindex="1" />
+		<input type="text" id="last-name" name="last-name" class="required" tabindex="1" />
 	</div>
 	<div>
 		<label for="first-name">First Name <em>*</em></label>
-		<input type="text" id="first-name" name="first-name-req" class="required" tabindex="2" />
+		<input type="text" id="first-name" name="first-name" class="required" tabindex="2" />
 	</div>
 	<div>
 		<label for="address">Address <em>*</em></label>
-		<input type="text" id="address" name="address-req" class="required" tabindex="3" />
+		<input type="text" id="address" name="address" class="required" tabindex="3" />
 	</div>
 	<div>
 		<label for="city">City <em>*</em></label>
-		<input type="text" id="city" name="city-req" class="required" tabindex="4" value="Des Plaines" />
+		<input type="text" id="city" name="city" class="required" tabindex="4" value="Des Plaines" />
 	</div>
 	<div>
 		<label for="zip-code">Zip Code <em>*</em></label>
-		<input type="text" id="zip-code" name="zip-code-req" class="required small" tabindex="5" />
+		<input type="text" id="zip-code" name="zip-code" class="required small" tabindex="5" />
 	</div>
 	<div>
 		<label for="phone-number">Phone Number <em>*</em></label>
-		<input type="text" id="phone-number" name="phone-number-req" class="required small" tabindex="6" />
+		<input type="text" id="phone-number" name="phone-number" class="required small" tabindex="6" />
 	</div>
 	<div>
 		<label for="library-card">Do you have a library card?</label>
@@ -47,28 +42,34 @@
 	</div>
 	<div>
 		<label for="library-card-number">If you have a library card enter it here:</label>
-		<input type="text" id="library-card-number" name="library-card-number" tabindex="8" placeholder="Begins with 21468" />
+		<input type="text" id="library-card-number" name="library-card-number" tabindex="8" placeholder="Begins with 21468" autocomplete="off" />
 	</div>
 	<div>
 		<label for="condition">Condition that makes homebound delivery service necessary <em>*</em></label>
-		<textarea id="condition" name="condition" class="required-req" tabindex="8"></textarea>
+		<textarea id="condition" name="condition" class="required" tabindex="8"></textarea>
 	</div>
 	<div>
 		<label for="contact">Neighbor friend or next of kin - please include person&apos;s name and phone number <em>*</em></label>
-		<textarea id="contact" name="contact" class="contact-req" tabindex="9"></textarea>
+		<textarea id="contact" name="contact" class="contact" tabindex="9"></textarea>
 	</div>
-	<fieldset>
+	<fieldset class="callout">
 		<legend>By applying for this service, I give my permission for Des Plaines Public Library personnel to use my library card to check out materials for me</legend>
 		<div>
 			<label for="agreement-name">Type your full name here if you agree to these terms. <em>*</em></label>
-			<input type="text" id="agreement-name" name="agreement-name-req" class="required" tabindex="11" />
+			<input type="text" id="agreement-name" name="agreement-name" class="required" tabindex="11" />
 		</div>
 		<div>
 			<label for="agreement-date">Today&apos; date <em>*</em></label>
-			<input type="text" id="agreement-date" name="agreement-date-req" class="required" tabindex="12" />
+			<input type="text" id="agreement-date" name="agreement-date" class="required" tabindex="12" />
 		</div>
 	</fieldset>
+	<fieldset class="callout">
+			<iframe id="challenge-image" src="/tools/sc/captcha.php"></iframe>
+			<label>Enter the text that you see in the image above:<em>*</em></label>
+			<input type="text" id="challenge-response" name="challenge-response" class="required" tabindex="13" />
+	</fieldset>
 	<div class="buttons">
-		<input type="submit" name="submit" value="Submit" />
+		<input type="submit" name="submit" value="Submit" tabindex="14" autocomplete="off" />
 	</div>
 </form>
+<div class="response"><div class="load"></div></div>
