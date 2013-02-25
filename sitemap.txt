@@ -8,9 +8,11 @@ http://dppl.org/about_dppl/directors_board_of_trustees.shtml
 http://dppl.org/about_dppl/donate.shtml
 http://dppl.org/about_dppl/dppl_arts_architecture.shtml
 http://dppl.org/about_dppl/DPvolunteer.shtml
+http://dppl.org/about_dppl/email_notifications.shtml
 http://dppl.org/about_dppl/hours.shtml
 http://dppl.org/about_dppl/index.shtml
 http://dppl.org/about_dppl/jobs.shtml
+http://dppl.org/about_dppl/library-card-application/
 http://dppl.org/about_dppl/library_cards_policies.shtml
 http://dppl.org/about_dppl/locations.shtml
 http://dppl.org/about_dppl/public_meeting_rooms.shtml
@@ -19,6 +21,10 @@ http://dppl.org/about_dppl/vision_and_belief_statements.shtml
 http://dppl.org/about_dppl/volunteer.shtml
 http://dppl.org/about_dppl/friends_of_the_library.html
 http://dppl.org/edppl/index.shtml
+http://dppl.org/edppl/freegal.shtml
+http://dppl.org/edppl/mymediamall.shtml
+http://dppl.org/edppl/new-world-cinema.shtml
+http://dppl.org/edppl/zinio.shtml
 http://dppl.org/events-programs/book_discussion_groups.shtml
 http://dppl.org/events-programs/computer_classes.shtml
 http://dppl.org/events-programs/events.shtml
@@ -26,12 +32,12 @@ http://dppl.org/events-programs/events_by_email.shtml
 http://dppl.org/features/eforward.shtml
 http://dppl.org/features/eforward_sign_up.shtml
 http://dppl.org/features/en_espanol.shtml
+http://dppl.org/mobile/
 http://dppl.org/read-watch-listen/contact_r-w-l.shtml
 http://dppl.org/read-watch-listen/great_movies.shtml
 http://dppl.org/read-watch-listen/great_music.shtml
 http://dppl.org/read-watch-listen/great_reads.shtml
 http://dppl.org/read-watch-listen/index.shtml
-http://dppl.org/reference/tax_forms.shtml
 http://dppl.org/reference/community_computer_classes.shtml
 http://dppl.org/reference/elected_officials.shtml
 http://dppl.org/reference/index.shtml
@@ -53,8 +59,9 @@ http://dppl.org/reference/subject_law.shtml
 http://dppl.org/reference/subject_magazines.shtml
 http://dppl.org/reference/subject_newspapers.shtml
 http://dppl.org/reference/subject_sports.shtml
+http://dppl.org/reference/tax_forms.shtml
 http://dppl.org/special_services/assistive_technology.shtml
-http://dppl.org/special_services/home_bound_app.shtml
+http://dppl.org/special_services/homebound_app.shtml
 http://dppl.org/special_services/homebound_delivery.shtml
 http://dppl.org/special_services/index.shtml
 http://dppl.org/starting_place/seniors.shtml
