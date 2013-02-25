@@ -1,0 +1,83 @@
+<table style="width: 100%; font-family: sans-serif; font-size: 13px;">
+<tr>
+	<td><b>Last Name</b></td>
+</tr>
+<tr>
+	<td>{last-name}</td>
+</tr>
+<tr>
+	<td><b>First Name</b></td>
+</tr>
+<tr>
+	<td>{first-name}</td>
+</tr>
+<tr>
+	<td><b>Address</b></td>
+</tr>
+<tr>
+	<td>{address}</td>
+</tr>
+<tr>
+	<td><b>City</b></td>
+</tr>
+<tr>
+	<td>{city}</td>
+</tr>
+<tr>
+	<td><b>Zip Code</b></td>
+</tr>
+<tr>
+	<td>{zip-code}</td>
+</tr>
+<tr>
+	<td><b>Phone Number</b></td>
+</tr>
+<tr>
+	<td>{phone-number}</td>
+</tr>
+<tr>
+	<td><b>Email Address</b></td>
+</tr>
+<tr>
+	<td>{email}</td>
+</tr>
+<tr>
+	<td><b>What is your preferred method of communication?</b></td>
+</tr>
+<tr>
+	<td>{communication-preference}</td>
+</tr>
+<tr>
+	<td><b>If you have a library card enter it here:</b></td>
+</tr>
+<tr>
+	<td>{library-card-number}</td>
+</tr>
+<tr>
+	<td><b>Condition that makes homebound delivery service necessary</b></td>
+</tr>
+<tr>
+	<td>{condition}</td>
+</tr>
+<tr>
+	<td><b>Neighbor friend or next of kin - please include person's name and phone number</b></td>
+</tr>
+<tr>
+	<td>{contact}</td>
+</tr>
+<tr>
+    <td><i>Agreement</i></td>
+</tr>
+<tr>
+	<td><b>Type your full name here if you agree to these terms.</b></td>
+</tr>
+<tr>
+	<td>{agreement-name}</td>
+</tr>
+<tr>
+	<td><b>Today's date</b></td>
+</tr>
+<tr>
+	<td>{agreement-date}</td>
+</tr>
+</table>
