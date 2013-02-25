@@ -9,11 +9,10 @@
     $form = new Form($_POST['form-id']);
     $form->process_form($_POST);  
     
-    echo count($form->recipients);
-    
      //set the send TO address
      //var_dump($form->recipients);
-	   echo $form->sender;
-	   echo $form->sender_name;
-    
+     
+     echo $form->sender['email'];
+     echo $form->sender['name'];
+
 ?>

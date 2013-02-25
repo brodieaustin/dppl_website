@@ -2,30 +2,36 @@
 	"id": "homebound-application",
 	"subject": "Homebound Application",
 	"template": "homebound-application.txt",
-	"sender" : {
-	    "name" : "Help",
-	    "email" : "help@dppl.org"
+	"sender": {
+	    "name": "Forms",
+	    "email": "forms@dppl.org"
 	},
 	"recipients": [{
 		"name": "Brodie Austin",
 		"email": "baustin@dppl.org"
     },
 	{
-	    "name" : "David Whittingham",
-	    "email" : "dwhittingham@dppl.org"
+	    "name": "David Whittingham",
+	    "email": "dwhittingham@dppl.org"
+	},
+	{
+	    "name": "Joel Sawyer",
+	    "email": "jsawyer@dppl.org"
 	}],
 	"fields": {
-		"city": true,
 		"last-name": true,
-		"zip-code": true,
-		"agreement-date": true,
-		"contact": true,
-		"library-card": false,
-		"agreement-name": true,
-		"address": true,
-		"library-card-number": false,
-		"phone-number": true,
 		"first-name": true,
-		"condition": true
+		"address": true,
+		"city": true,
+		"zip-code": true,
+		"phone-number": true,
+		"email": false,
+		"communication-preference": true,
+		"library-card": false,
+		"library-card-number": false,
+		"condition": true,
+		"contact": true,
+		"agreement-name": true,
+		"agreement-date": true	
 	}
 }

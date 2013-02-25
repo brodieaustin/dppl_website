@@ -78,26 +78,26 @@
 		
 		public function set_sender(){
 		    if ($this->has_fields() == true){
-		        //check if sender set in config, otherwise use post values
-		        if ($this->config['sender']){
-		            $this->sender['name'] = $this->config['sender']['name'];
-		            $this->sender['email'] = filter_var($this->config['sender']['email'], FILTER_SANITIZE_EMAIL);
-		        }
-		        else{
-		            if ($this->fields['name']){
-		                $this->sender['name'] = $this->fields['name'];
-		            }
-		            elseif ($this->fields['last-name']){
-		                $this->sender['name'] = $this->fields['first-name'] . ' ' . $this->fields['last-name'];
-		            }
-		            
+		        //check if sender, otherwise use config values
+		        if (!empty($this->fields['email'])){
 		            $this->sender['email'] = filter_var($this->fields['email'], FILTER_SANITIZE_EMAIL);
 		            
-		            if (!filter_var($this->sender, FILTER_VALIDATE_EMAIL)){
-		                die('Please provide a valid email address (example@example.com)');
-		            }
-		        }
-		    }
+	                if ($this->fields['name']){
+	                    $this->sender['name'] = $this->fields['name'];
+	                }
+	                elseif ($this->fields['last-name']){
+	                    $this->sender['name'] = $this->fields['first-name'] . ' ' . $this->fields['last-name'];
+	                }
+	            }
+	            else{
+	                $this->sender['name'] = $this->config['sender']['name'];
+		            $this->sender['email'] = filter_var($this->config['sender']['email'], FILTER_SANITIZE_EMAIL);
+	            }
+
+	            if (!filter_var($this->sender['email'], FILTER_VALIDATE_EMAIL)){
+	                die('Please provide a valid email address (example@example.com)');
+	            }
+	        }
 		}
 		
 		public function set_recipients(){

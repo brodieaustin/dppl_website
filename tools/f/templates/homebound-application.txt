@@ -36,10 +36,16 @@
 	<td>{phone-number}</td>
 </tr>
 <tr>
-	<td><b>Do you have a library card?</b></td>
+	<td><b>Email Address</b></td>
 </tr>
 <tr>
-	<td>{library-card}</td>
+	<td>{email}</td>
+</tr>
+<tr>
+	<td><b>What is your preferred method of communication?</b></td>
+</tr>
+<tr>
+	<td>{communication-preference}</td>
 </tr>
 <tr>
 	<td><b>If you have a library card enter it here:</b></td>
@@ -54,7 +60,7 @@
 	<td>{condition}</td>
 </tr>
 <tr>
-	<td><b>Neighbor friend or next of kin - please include person&apos;s name and phone number</b></td>
+	<td><b>Neighbor friend or next of kin - please include person's name and phone number</b></td>
 </tr>
 <tr>
 	<td>{contact}</td>
@@ -69,7 +75,7 @@
 	<td>{agreement-name}</td>
 </tr>
 <tr>
-	<td><b>Today&apos; date</b></td>
+	<td><b>Today's date</b></td>
 </tr>
 <tr>
 	<td>{agreement-date}</td>
