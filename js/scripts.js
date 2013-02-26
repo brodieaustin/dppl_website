@@ -81,7 +81,6 @@ $(function(){
 		//if the cookie does not exist, show message
 		if (!(mobile_cookie)){
 			$('#mobile-alert').slideDown();
-			$('body').css('paddingTop', '2.5em');
 		}
 	};
 	
