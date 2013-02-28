@@ -1,0 +1,35 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>DPPL Writing Group | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+	<style>
+		#event{background-color: #fff; margin: 1em 0; padding: .5em;}
+		.callout h3{margin-top: 1em;}
+	</style>
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+		<!--#include virtual="/content/events_programs-c/writing-group.html"-->
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+	<script src="/js/jquery.addFeed.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#event').addFeed({url: 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?&et=Adult+Program+-+Writing&kw=writing+group&nd=60&dm=exml', num_items: 1}).fadeIn(500);	
+		});
+		
+	</script>
+
+</body>
+</html>
