@@ -330,7 +330,9 @@ input[type=checkbox]{
 .first{margin-top: 0;}
 
 .load{
+  min-width: 16px;
   width: 100%;
+  min-height: 16px;
   height: 100%;
   background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
 }
@@ -1335,8 +1337,10 @@ div#db-list .no-style{
 dl.resources-list dt{margin-top: 2em; font-weight: normal;}
 
 /*loan policies table*/
-#loan-policies{margin: 2em 0; text-align: left;}
+#loan-policies{margin: 2em 0; padding: 4px; text-align: center; border-collapse: collapse;}
+#loan-policies tbody tr:nth-child(even){background-color: #f9f9f9;}
 #loan-policies th, #loan-policies td{padding: 4px;}
+#loan-policies .material-type{width: 40%; text-align: left;}
 
 
 /*styles for edppl page*/
