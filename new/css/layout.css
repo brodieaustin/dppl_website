@@ -18,17 +18,19 @@
 ================================================== */
 body{font-family: Optima, 'Optima LT Std', 'Lucida Sans', sans-serif;}
 h1, h2, h3, h4, h5, h6 {font-family: Optima, 'Optima LT Std', 'Lucida Sans', sans-serif;}
-.header{margin: 40px 0 20px 0;}
-.header img{float: right; width: 280px; margin: 1em; }
+.header{margin-bottom: 40px; background-color: #1ca89d;}
+.header h1{height: 300px; margin-bottom: 0; background:  url('../img/dppl-cut-out.png') no-repeat center center;}
+.header h1 img{width: 30%; max-width: 426px; margin: 6px; }
+.header .hidden{margin-left: -99999px;}
 .header small{display: block; color: #888;}
 .article blockquote.callout{
   padding-left: 0;
   font-size: 28px;
   line-height: 30px;
-  color: #00a99f;
+  color: #1ca89d;
   border: 0;
 }
-.links h4{font-size: 17px; border-bottom: 1px solid #ddd;}
+.links h5{font-size: 17px; margin-bottom: 14px; border-bottom: 1px solid #ddd;}
 .aside h4{border-bottom: 2px solid #ddd}
 .footer{margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;}
 
