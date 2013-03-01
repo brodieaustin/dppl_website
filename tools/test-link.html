@@ -19,7 +19,7 @@
 	<form id="make-link">
 		<div>
 			<label for="link-text">Paste a link here:</label>
-			<input type="text" id="link_text" name="link_text" style="width: 100%;" />
+			<input type="text" id="link-text" name="link-text" style="width: 100%;" />
 		</div>
 		<input type="submit" class="button" value="Make Link" />
 	</form>
@@ -29,15 +29,16 @@
 			var form = document.getElementById('make-link');
 			
 			form.onsubmit = function(){
-				console.log(form.elements['link_text'].value);
+				//console.log(form.elements['link_text'].value);
 				var result = document.getElementsByClassName('result')[0];
-				var l = 'http://ezproxy.dppl.org/login?url=' + form.elements['link_text'].value;
+				var l = 'http://ezproxy.dppl.org/login?url=' + form.elements['link-text'].value;
 				
-				console.log(l);
+				//console.log(l);
 				
 				var a = document.createElement('a');
 				a.href = l;
 				a.innerHTML = l;
+				a.target = '_blank';
 				
 				result.innerHTML = '';
 				result.appendChild(a);
