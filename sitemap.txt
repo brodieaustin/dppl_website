@@ -33,6 +33,7 @@ http://dppl.org/features/eforward.shtml
 http://dppl.org/features/eforward_sign_up.shtml
 http://dppl.org/features/en_espanol.shtml
 http://dppl.org/mobile/
+http://dppl.org/new/
 http://dppl.org/read-watch-listen/contact_r-w-l.shtml
 http://dppl.org/read-watch-listen/great_movies.shtml
 http://dppl.org/read-watch-listen/great_music.shtml
