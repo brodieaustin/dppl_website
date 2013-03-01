@@ -2,7 +2,7 @@
 				
 	function drawBlogs(){
 		var container = document.getElementById("blogs");
-		var feeds = ['http://dpplplaintalk.blogspot.com/feeds/posts/default','http://positivelyestreet.blogspot.com/feeds/posts/default','http://kidding-around.blogspot.com/feeds/posts/default','http://feed43.com/5583164584461834.xml'];
+		var feeds = ['http://dpplplaintalk.blogspot.com/feeds/posts/default','http://positivelyestreet.blogspot.com/feeds/posts/default','http://kidding-around.blogspot.com/feeds/posts/default'];
 		
 		for (i = 0; i < feeds.length; i ++){
 				var feed = new google.feeds.Feed(feeds[i]);
