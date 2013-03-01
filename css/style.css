@@ -122,6 +122,18 @@ a.button:hover{
  
 .right{float: right;}
 
+a.download{
+  display: block;
+  background: url(/images/icons/download.gif) no-repeat center left;
+  margin-bottom: 6px;
+  padding-left: 20px;
+}
+a.download:hover{
+  color: #666;
+  text-decoration: underline;
+}
+
+
 /*
 a.link {
   font-weight: normal;
@@ -352,6 +364,14 @@ input[type=checkbox]{
 
 .new:after{
   content: 'new';
+}
+
+.label{display: inline-block; width: 10em; font-weight: bold;}
+
+/*microformats*/
+.fn, .org, .street-address{display: block !important;}
+.locality, .region, .postal-code{
+  display: inline-block !important;
 }
 
 ul.no-style{
@@ -1237,37 +1257,6 @@ width: 17.85em;
   margin-bottom: 4px;
 }
 
-/*styles for board meeting tables*/
-
-table.board{
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #000;
-}
-table.board td, table.board th{
-  width: 22.73%;
-  border: 1px solid #c8c8c8;
-  padding: .5em;
-  text-align: left;
-}
-table.board .view{
-  width: 68.19%;
-}
-table.board th{
-  font-weight: bold;
-  background-color: #eee;
-}
-a.download{
-  display: block;
-  background: url(/images/icons/download.gif) no-repeat center left;
-  margin-bottom: 6px;
-  padding-left: 20px;
-}
-a.download:hover{
-  color: #666;
-  text-decoration: underline;
-}
-
 /*special style sheet for database listings*/
 
 #db-list{
@@ -1336,12 +1325,17 @@ div#db-list .no-style{
 /*styles for lists*/
 dl.resources-list dt{margin-top: 2em; font-weight: normal;}
 
-/*loan policies table*/
-#loan-policies{margin: 2em 0; padding: 4px; text-align: center; border-collapse: collapse;}
-#loan-policies tbody tr:nth-child(even){background-color: #f9f9f9;}
-#loan-policies th, #loan-policies td{padding: 4px;}
-#loan-policies .material-type{width: 40%; text-align: left;}
+/*styles for tables with info and downloads*/
+.info{margin: 2em 0; padding: 4px; text-align: center; border-collapse: collapse;}
+.info tbody tr:nth-child(even){background-color: #f9f9f9;}
+.info th, .info td{padding: 4px;}
+.info .info-label{width: 40%; text-align: left;}
 
+.board{text-align: left !important;}
+
+.board .view{
+  width: 78%;
+}
 
 /*styles for edppl page*/
 
@@ -1470,9 +1464,6 @@ dl.resources-list dt{margin-top: 2em; font-weight: normal;}
   line-height: 1.5em;
 }
 
-span.locality, span.region, span.postal-code{
-  display: inline-block !important;
-}
 
 span.hours{
   margin-bottom: .5em;
