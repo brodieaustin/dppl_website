@@ -590,25 +590,29 @@ font-size : 18px;
 #search{
   position: absolute;
   top: 50%;
-  right: -1.5em;
-  width: 29.2307em;
+  right: 0;
+  /*width: 29.2307em;*/
   height: 2.1538461em;
   margin: 0;
   padding: 0;
   font-size: inherit;
   font-family: inherit;
 }
+#search-form label{line-height: 2em; font-weight: bold; vertical-align: bottom;}
 
-div#search label{
-  display: none;
+#search-form fieldset{display: inline-block; padding: 0; border: 1px solid #c8c8c8; border-radius: 0 4px 4px 0;}
+
+#search-form #search-type{border: 0;}
+
+#search-form input#search-text{
+  width: 15.5em;
+  border: 0;
 }
 
-div#search input#search-text{
-  width: 16.5em;
-}
-
-div#search input[type=submit]{
-	border-radius: 0;
+#search-form input[type=submit]{
+  border: 0;
+  border-left: 1px solid #c8c8c8;
+  border-radius: 0;
 }
 
 /*mobile alert styles*/

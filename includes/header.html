@@ -56,12 +56,15 @@
 	</div><!--closing div for tools-->
 	<div id="search">
 	<form name="search" id="search-form">
-		<select id="search-type" name="search-type">
-			<option value="catalog">Catalog</option>
-			<option value="site">Site</option>
-		</select>
-		<input type="text" name="search-text" value="Search for..." id="search-text" />
-		<input type="submit" value="Search" class="submit-button" />
+		<label>Search</label>
+		<fieldset>
+			<select id="search-type" name="search-type">
+				<option value="catalog">Catalog</option>
+				<option value="site">Site</option>
+			</select>
+			<input type="text" name="search-text" placeholder="for books, movies, etc..." id="search-text" />
+			<input type="submit" value="Search" class="submit-button" />
+		</fieldset>
 	</form>
 </div><!--closing div for search-->
 </div><!--closing div for header-->
