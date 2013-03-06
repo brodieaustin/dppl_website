@@ -2,11 +2,19 @@
 $(function(){	
 	$('#search').show();
 	
-	$('#search-text').focus(function(){
-				$(this).val('');
-				return false;
-			});
-			
+	$('#search-type').change(function(){
+		var placeholder;
+		switch ($(this).val()){
+			case 'catalog':
+				placeholder = 'for books, movies, more...';
+				break;
+			case 'site':
+				placeholder = 'for library information...';
+				break;
+		}
+		$('#search-text').attr('placeholder', placeholder);
+	});
+	
 	$('#search-form').submit(function(){
 		var type = $('#search-type').val();
 		//console.log(type);
