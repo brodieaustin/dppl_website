@@ -981,6 +981,8 @@ ul.dropdown li:hover > ul{
   margin-bottom: 10px;
 }
 
+div#rss-blogs{height: 19.230769em;}
+
 #content .events-container{
   position: relative; 
   float: left;
