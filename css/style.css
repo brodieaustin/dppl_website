@@ -282,7 +282,7 @@ input, select{
   width: auto;
   height: 2em;
   margin: 0;
-  padding: 2px 4px;
+  /*padding: 2px 4px;*/
   line-height: 2em;
   font-family: inherit;
   font-size: 1em;
@@ -292,7 +292,8 @@ input, select{
   border: 1px solid #ccc;
 }
 
-select{padding: 0;}
+select{height: auto; line-height: auto;}
+
 
 input[type=text], input[type=password]{
   padding: 0 4px;
@@ -591,28 +592,33 @@ font-size : 18px;
   position: absolute;
   top: 50%;
   right: 0;
-  /*width: 29.2307em;*/
   height: 2.1538461em;
   margin: 0;
   padding: 0;
   font-size: inherit;
   font-family: inherit;
 }
-#search-form label{line-height: 2em; font-weight: bold; vertical-align: bottom;}
 
 #search-form fieldset{display: inline-block; padding: 0; border: 1px solid #c8c8c8; border-radius: 0 4px 4px 0;}
+
+#search-form label{font-weight: bold; vertical-align: middle; }
+
+
 
 #search-form #search-type{border: 0;}
 
 #search-form input#search-text{
   width: 15.5em;
   border: 0;
+  border-left: 1px solid #ccc;
 }
 
 #search-form input[type=submit]{
   border: 0;
   border-left: 1px solid #c8c8c8;
   border-radius: 0;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 /*mobile alert styles*/
