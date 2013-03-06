@@ -51,7 +51,7 @@
 									var title = document.createElement("div");
 									title.setAttribute('class', 'entry-title');
 									
-									console.log(entry.title);
+									//console.log(entry.title);
 									
 									var link = document.createElement("a");
 									link.setAttribute('href', entry.link);
@@ -61,7 +61,7 @@
 									
 									var content = document.createElement("div");
 									content.setAttribute('class', 'entry-content');
-									content.appendChild(document.createTextNode(entry.content + "..."));
+									content.appendChild(document.createTextNode(entry.contentSnippet));
 									
 									div.appendChild(title);
 									div.appendChild(content);
@@ -81,7 +81,7 @@
 		$(document).ready(function(){
 			$('.list').show();
 			$('#list').bcList({
-				'list_id' : '153499881'
+				'list_id' : '157439301'
 			}, function(){
 				$('#list').cycle({ 
 							fx:     'scrollVert', 
