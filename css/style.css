@@ -452,14 +452,14 @@ ul.tight li{
  }
 
 #header #tools{
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  width: 61.53846153em;;
   height: 2.307692308em;
   line-height: 2.307692308em;
   z-index: 1000;
   border-bottom: 1px solid #c8c8c8;
+  background-color: #fff;
   vertical-align: middle;
 }
 
@@ -605,7 +605,7 @@ font-size : 18px;
 
 
 
-#search-form #search-type{border: 0;}
+#search-form #search-type{border: 0; background-color: #fff;}
 
 #search-form input#search-text{
   width: 15.5em;
