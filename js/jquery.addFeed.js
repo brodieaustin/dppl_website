@@ -18,8 +18,8 @@
 	
 		var $this = $(this);
 	
-		$.getJSON('http://dppl.org/tools/feed.php?jsoncallback=?', {url: settings.url}, function(data){
-		console.log(data);
+		$.get('/tools/feedtojson.php?jsoncallback=?', {url: settings.url, type: settings.feed_type}, function(data){
+		    console.log(data);
 			if (settings.feed_type == 'blog'){
 				data = data.channel;
 			}

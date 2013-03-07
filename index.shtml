@@ -19,8 +19,8 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<script  src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
-	<script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"></script>
+	<!--<script  src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
+	<script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"></script>-->
 	<!--functions for slider-->
 	<script src="/js/cycle/jquery.cycle.all.js"></script>
 	<script src="/js/jquery.addFeed.js"></script>
