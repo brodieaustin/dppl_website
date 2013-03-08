@@ -1,7 +1,7 @@
 <?php
 
 	//require key and list class
-	require('keys.php');
+	require('config.php');
 	require('helpers.php');
 	require('class.BCList.php');
 	
