@@ -19,8 +19,6 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<!--<script  src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
-	<script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"></script>-->
 	<!--functions for slider-->
 	<script src="/js/cycle/jquery.cycle.all.js"></script>
 	<script src="/js/jquery.addFeed.js"></script>
@@ -38,33 +36,38 @@
 				    prev:   '#prev2'
 			});
 			
-			$('#events').addFeed({url: 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=10&fe=1'}).fadeIn(500);
-			$('#rss-blogs').addFeed({url: 'http://dpplplaintalk.blogspot.com/feeds/posts/default?alt=rss', num_items : 1, feed_type : 'blog', show_title : true, show_summary : true}).fadeIn(500);
+			$('#events').addFeed({
+			    url: 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=10&fe=1'
+			}).fadeIn(500);
 			
+			$('#plaintalk').addFeed({
+			    url: 'http://dpplplaintalk.blogspot.com/feeds/posts/default?alt=rss', 
+			    num_items: 1, 
+			    feed_type: 'blog', 
+			    show_thumbnail: true, 
+			    show_summary: true, 
+			    feed_title: 'PlainTalk'
+			}).fadeIn(500);
+			
+			$('#ellinwood').addFeed({
+			    url: 'http://positivelyestreet.blogspot.com/feeds/posts/default?alt=rss', 
+			    num_items: 1, 
+			    feed_type: 'blog', 
+			    show_thumbnail: true, 
+			    show_summary: true, 
+			    feed_title: 'Positively Ellinwood Street'
+            }).fadeIn(500);
+			
+			$('#kiddingaround').addFeed({
+			    url: 'http://kidding-around.blogspot.com/feeds/posts/default?alt=rss', 
+			    num_items: 1, 
+			    feed_type: 'blog', 
+			    show_thumbnail: true, 
+			    show_summary: true, 
+			    feed_title: 'Kidding Around'
+			 }).fadeIn(500);
 			
 		});
-		
 	</script>
-	<!--<script>
-		//Google Feeds API script to display RSS feeds as test
-		google.load("feeds", "1");
-	
-		function OnLoad() {
-		  // Create a feed control
-		var feedControl = new google.feeds.FeedControl();
-	
-		  // Add two feeds.
-		feedControl.addFeed("http://dpplplaintalk.blogspot.com/feeds/posts/default?alt=rss", "PlainTalk");
-		feedControl.addFeed("http://positivelyestreet.blogspot.com/feeds/posts/default?alt=rss", "Positively Ellinwood St");
-		feedControl.addFeed("http://kidding-around.blogspot.com/feeds/posts/default?alt=rss", "Kidding Around");
-
-		feedControl.setNumEntries(1)
-	
-		  // Draw it.
-		  feedControl.draw(document.getElementById("rss-blogs"));
-		}
-	
-		google.setOnLoadCallback(OnLoad);
-	</script>-->
 </body>
 </html>

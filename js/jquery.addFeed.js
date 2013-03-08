@@ -6,27 +6,24 @@
 	var settings = $.extend({
 		'feed_type' : 'events',
 		'num_items' : 10,
-		'show_title' : false,
+		'feed_title' : '',
 		'show_thumbnail' : false,
 		'show_summary' : false,
 		'url' : 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=5&fe=1'
 	}, options);
 	
-	var div = '';
+	var div = '<div class="feed-items ' + settings.feed_type + '">';
 	
 	return this.each(function() {
 	
 		var $this = $(this);
 	
-		$.get('/tools/feedtojson.php?jsoncallback=?', {url: settings.url, type: settings.feed_type}, function(data){
-		    console.log(data);
-			if (settings.feed_type == 'blog'){
-				data = data.channel;
-			}
-			
-			if (settings.show_title == true){
-				div = div + '<div class="feed-title">' + data.title + '</div>';
-			}
+		$.getJSON('/tools/feed.php?jsoncallback=?', {url: settings.url, feed_type: settings.feed_type, num_items: settings.num_items}, function(data){
+		    //console.log(data);
+		    
+		    if (settings.feed_title.length > 0){
+		        div = div + '<div class="feed-title ' + settings.feed_title.toLowerCase().replace(/ /g, '-') + '">' + settings.feed_title + '</div>';
+		    }
 					
 			$.each(data.item, function(i) {
 				if (settings.feed_type == 'events'){
@@ -39,19 +36,21 @@
 					}
 				}
 				else if (settings.feed_type == 'blog'){
-					console.log(data.item[i]);
 					if (i < settings.num_items){
+					    console.log(data.item[i].thumbnail == undefined);
 						div = div + '<div class="feed-item blog-post" id="' + data.item[i].guid + '">'
+    						+ ((settings.show_thumbnail == true)?((data.item[i].thumbnail != undefined)?'<div class="feed-item-thumbnail"><img src="' + data.item[i].thumbnail + '" /></div>':''):'')
 							+ '<div class="feed-item-title"><a href="' + data.item[i].link + '">' + data.item[i].title + '</a></div>'
-							/*+ ((settings.show_thumbnail == true)?'<div class="feed-item-thumbnail"><img src="' + data.item[i].media:thumbnail + '" /></div>':'')*/
-							+ ((settings.show_summary == true)?'<div class="feed-item-summary">' + data.item[i].atom + '...</div>':'')
+							+ ((settings.show_summary == true)?'<div class="feed-item-summary">' + data.item[i].summary + '</div>':'')
 							+'</div>';
 					}
 				}
 			});
 			
-			$('.load').fadeOut(500);
-			$this.append(div);
+			div = div + '</div><!--closing div for feed items-->';
+			
+			//$('.load').fadeOut(500);
+			$this.html(div);
 			
 		});
 	

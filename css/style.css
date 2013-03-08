@@ -337,7 +337,7 @@ input[type=checkbox]{
 }
 
 .hidden{
-  display: none;
+  display: none !important;
 }
 
 .first{margin-top: 0;}
@@ -454,12 +454,13 @@ ul.tight li{
 #header #tools{
   position: absolute;
   top: 0;
-  left: 0;
+  left:0;
   width: 100%;
   height: 2.307692308em;
   line-height: 2.307692308em;
   z-index: 1000;
   border-bottom: 1px solid #c8c8c8;
+  background-color: #fff;
   vertical-align: middle;
 }
 
@@ -605,7 +606,7 @@ font-size : 18px;
 
 
 
-#search-form #search-type{border: 0;}
+#search-form #search-type{border: 0; background-color: #fff;}
 
 #search-form input#search-text{
   width: 15.5em;
@@ -971,27 +972,6 @@ ul.dropdown li:hover > ul{
   width: 20%;
 }
 
-#content .blogs-container{
-  position: relative; 
-  width: 28em; 
-  height: 25.285714em; 
-  float: left;
-  margin-left: 8px; 
-  margin-right: 20px; 
-  margin-bottom: 10px;
-}
-
-div#rss-blogs{height: 19.230769em;}
-
-#content .events-container{
-  position: relative; 
-  float: left;
-  width: 18em; 
-  margin-right: 10px;
-  margin-bottom: 10px; 
-  
-}
-
 div.main{
   float: left;
   width: 32.615384em;
@@ -1021,6 +1001,14 @@ div.inset .container img{
   width: 100%;
   margin: 0 !important;
 }
+div.inset .container .feed-item-thumbnail{
+  float: none;
+  margin: .5em;
+  text-align: center;
+}
+div.inset .container .feed-item-thumbnail img{
+  width: auto !important;
+}
 div.inset .container #events{
   width: 100% !important;
 }
@@ -1041,25 +1029,7 @@ div.listen{
   background-position: right -300px;
   height: 150px;
 }
-div.entry{
-  padding: 0;
-}
-div.feed-title{
-  font-weight: bold;
-}
-div.entry-title{
-  font-weight: normal;
-  margin-top: .5em;
-  margin-bottom: .5em;
-  padding: 0 0 1em 0;
-}
-div.entry-title a{
-  text-decoration: none;
-  color: #000;
-}
-div.entry-content{
-  display: none;
-}
+
 
 div#list{
   min-height: 270px;
@@ -1205,46 +1175,53 @@ a#next2{
   
 }
 
-/*blog feed styles*/
-#rss-blogs .gfc-resultsRoot{
-  margin-bottom: .5em; !important;
+/*feeds*/
+
+div.feed-items{clear: both; margin-bottom: 1em; padding: 0;}
+
+div.feed-title{
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+div.feed-item-title{
+  padding-bottom: 2px;
+  font-weight: normal;
 }
 
-.gfc-resultsHeader{
-  border: 0 !important;
+div.feed-item-thumbnail{
+  float: left;
 }
 
-.gfc-title{
-  color: #000 !important;
-  font-size: 1em;
+div.feed-item-thumbnail img{
+   margin: 0 1em 1em 0 !important;
 }
 
-.gf-author, .gf-spacer, .gf-relativePublishedDate{
-  display:none !important;
+#content .blogs-container{
+  position: relative; 
+  width: 28em; 
+  height: 34em; 
+  float: left;
+  margin-left: 8px; 
+  margin-right: 20px; 
+  margin-bottom: 10px;
 }
 
-.gf-title{
-  height: auto !important;
+div#rss-blogs{height: 26em; padding-bottom: 1em;
+  overflow: hidden;}
+
+#content .events-container{
+  position: relative; 
+  float: left;
+  width: 18em; 
+  margin-right: 10px;
+  margin-bottom: 10px; 
+  
 }
 
-.gf-title a{
-  color: #003366 !important;
-}
-
-.gf-title a:hover{
-  color: #555 !important;
-}
-
-#rss-blogs .gf-snippet{
-  display: none !important;
-}
-
-/*styling for jquery feed box*/
-/*events*/
 #events{
-width: 17.85em;
-  height: 21.4285714em;
-  overflow-x: hide;
+  width: 17.85em;
+  height: 28em;
+  overflow-x: hidden;
   overflow-y: scroll;
   border: 1px solid #c8c8c8;
 
@@ -1257,12 +1234,6 @@ width: 17.85em;
 
 #events .feed-item:nth-child(odd){
   background-color: #f8f8f8 !important;
-}
-
-#events .feed-title a{
-  margin-top: 2px;
-  margin-bottom: 2px;
-  font-weight: normal;
 }
 
 #events .feed-times{
