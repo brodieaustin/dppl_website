@@ -3,24 +3,16 @@
     class Form{
         var $id;
         var $config;
-        var $config_dir;
         var $fields;
         var $sender;
         var $recipients;
         var $subject;
         var $template;
-        var $template_dir;
         var $body;
         
         
-        public function __construct($id, $config_dir='configs/', $template_dir='templates/'){
+        public function __construct($id){
             $this->id = $id;
-            if($config_dir){
-                $this->config_dir = $config_dir;
-            }
-            if($template_dir){
-                $this->template_dir = $template_dir;
-            }
         }
         
         public function __toString(){
@@ -28,7 +20,7 @@
 		}
 		
 		public function set_config(){
-		    $fh = file_get_contents($this->config_dir . $this->id . '.json');
+		    $fh = file_get_contents('fs/' . $this->id . '/config.json');
 		    $json = json_decode($fh, true);
 		    
 		    if ($json){
@@ -114,7 +106,7 @@
 		
 		public function set_template(){
 		    if ($this->has_fields() == true){
-		        $this->template = file_get_contents($this->template_dir . $this->config['template']);
+		        $this->template = file_get_contents('fs/' . $this->id . '/template.txt');
 		    }
 		}
 		

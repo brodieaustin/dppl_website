@@ -1,0 +1,14 @@
+{
+	"id": "library-card-adult",
+	"subject": "Library Card Application for {name}",
+	"sender": {
+	    "name": "Library Cards",
+	    "email": "librarycards@dppl.org"
+	},
+	"recipients": [{
+		"name": "Library Cards",
+		"email": "librarycards@dppl.org"
+	}],
+	"fields": {	
+	}
+}
