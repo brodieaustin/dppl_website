@@ -37,7 +37,6 @@
 				}
 				else if (settings.feed_type == 'blog'){
 					if (i < settings.num_items){
-					    console.log(data.item[i].thumbnail == undefined);
 						div = div + '<div class="feed-item blog-post" id="' + data.item[i].guid + '">'
     						+ ((settings.show_thumbnail == true)?((data.item[i].thumbnail != undefined)?'<div class="feed-item-thumbnail"><img src="' + data.item[i].thumbnail + '" /></div>':''):'')
 							+ '<div class="feed-item-title"><a href="' + data.item[i].link + '">' + data.item[i].title + '</a></div>'
