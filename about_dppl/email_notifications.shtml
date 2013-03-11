@@ -3,16 +3,7 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-	<style>
-		#email-notification{margin-top: 2em;}
-		#email-notification div{clear: both; margin-bottom: 1em; margin-left: 1em;}
-		label{display: block; float: left; width: 15em;}
-		label.checkbox{width: 100%; padding-bottom: 1em;}
-		.buttons{margin-top: 2em; margin-left: 3em !important; text-align: center;}
-		.buttons input{margin-right: 6em;}
-		.load{display: none; width: 2em; height: 2em;}
-		.response{display: none;}
-	</style>
+	<link rel="stylesheet" href="/css/form.css" />
 </head>
 <body>
 	<!--header-->
@@ -59,7 +50,7 @@
 				<p>You may change your decision about how you wish to receive notification of a hold (email or phone) at any time by contacting Circulation. If your email address changes, please update your record as soon as possible by repeating this process or contacting the Circulation Desk.</p>
 			</div>
 			<div><p>By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p></div>
-			<div class="buttons">
+			<div class="buttons right">
 				<input type="reset" value="Clear Form" />
 				<input type="submit" value="Submit" />  
 			</div>
@@ -76,7 +67,7 @@
 				$('.load').show();
 				console.log($(this).serialize());
 				$.post('/tools/ccs/email_notifications.php', $(this).serialize(), function(data){
-					$('#email-notification')[0].reset()
+					$('#email-notification')[0].reset();
 					$('.response-message').html(data);
 					$('.response').show();
 					$('.load').hide();

@@ -4,7 +4,7 @@
 	var marker;
 	var counter = 0;
 		
-		$(document).ready(function(){
+		$(function(){
 		
 			initializeMap();
 			
@@ -42,15 +42,19 @@
 				submitHandler: function(form){
 					$(form).ajaxSubmit({
 						success: function(data){
+						    console.log(data);
+						    console.log(data.search("Thank"));
+						    
 								$('div.errors').hide();
 								$('.card-application').hide();
 								
 								if (data.search("Thank") == 0 ){
-									$('#application-response').html(data).css({color: 'black'}).fadeIn(600);
+								    $('#application')[0].reset();
+									$('#application-response').html(data).removeClass('failure').addClass('success').fadeIn(600);
 								}
 								else{
 									$('.card-application').fadeIn(1000);
-									$('#application-response').html(data).css({color: 'red'}).fadeIn(800).delay(5000).fadeOut(800);
+									$('#application-response').html(data).removeClass('success').addClass('failure').fadeIn(800).delay(5000).fadeOut(800);
 								}	
 							
 							},

@@ -1,13 +1,7 @@
+	
+#content form{margin: 1em 0; padding: .5em;}
 
-/*general form bits*/
-#content form p{
-  margin-top: .5em;
-  font-size: 100%;
-}
-
-#content form em{
-  color: red;
-}
+#content form div{position: relative; clear: left; margin-bottom: 1.5em;}
 
 #content form fieldset{
   margin: 0;
@@ -16,47 +10,28 @@
   background-color: #fff;
 }
 
-#content form fieldset legend{
-  margin: 0;
-  margin-bottom: .5em;
-  padding: 0;
-  font-style: oblique;
+#content form fieldset.callout{margin: 1em 0 2em 0; padding: 2em 1em; background-color: #eee; border: 0; overflow: hidden;}
+
+#content form fieldset legend{width: 100%; margin-left: -1em; padding: 1em 1em 0 1em; background-color: #eee; font-weight: bold;}
+
+
+/*general form bits*/
+#content form p{
+  margin-top: .5em;
+  font-size: 100%;
 }
 
-#content form div{
-  position: relative;
-  clear: left;
-  margin-bottom: .5em;
+#content form em{
+  font-weight: bold;
+  color: red;
 }
 
-#content form div.challenge-image{
-    margin-bottom: 1.25em;
-   background-color: #fff;
-   padding: 10px 0;
-}
 
-#content form div.challenge-image img{
-  width: 60%;
-}
+#content form #challenge-image{width: 300px; height: 80px; margin-top: -1em; margin-bottom: 1em; padding: .5em; border: 0; background-color: #fff;}
 
-#content label, #content input[type=text], #content textarea, #content select{
-  height: 1.5em;
-  line-height: 1.5em;
-  vertical-align: middle;
-  outline: 0;
-  border: 0;
-  border: 1px solid #c8c8c8;
-}
+#content form label{display: block; width: 100%; margin-bottom: 3px; }
 
-#content label{
-  display: block;
-  padding-right: .5em;
-  border: 0;
-}
-
-#content input[type=text]{
-  width: 99%;
-}
+#content form input[type=text]{width: 50%}
 
 #content input[type=radio]{
   margin-top: 0;
@@ -64,18 +39,21 @@
   height: 1em !important;
 }
 
-#content #application div{
-  padding: 0 6px;
-}
+#content form input.small{width: 25%;}
+#content form input.wide{width: 96.190476%;}
 
-#content #application fieldset{
-  margin-bottom: 2em !important;
-}
+#content form textarea{width: 99%; min-height: 100px; border: 1px solid #ccc; font-family: inherit; resize: none;}
+
 
 /*eligibility check and map*/
 
 .no-js .eligibility{
   display: none;
+}
+
+#eligibility-form fieldset legend{
+ background-color: #fff !important;
+ padding: 0 0 1em 1em !important;
 }
 
 .eligibility-check{
@@ -163,15 +141,8 @@ ul.instructions li{
   margin: 0;
 }
 
-div.errors{
-   color: red;
-   margin-bottom: 1em;
-}
-
-label.error{
-  float: right;
-  color: red;
-}
+#content form .errors, #content form label.error{display: block; margin: 2px 0; color: red;}
+#content form input.error, #content form textarea.error, form select.error{border-color: #333;}
 
 /*fallbacks for no-js*/
 .no-js .eligibility-question{display: none;}
