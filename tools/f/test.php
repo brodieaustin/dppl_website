@@ -10,9 +10,6 @@
     $form->process_form($_POST);  
     
      //set the send TO address
-     //var_dump($form->recipients);
-     
-     echo $form->sender['email'];
-     echo $form->sender['name'];
+     var_dump($form->messages['submit']);
 
 ?>

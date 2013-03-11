@@ -9,6 +9,28 @@
 		"name": "Library Cards",
 		"email": "librarycards@dppl.org"
 	}],
-	"fields": {	
+	"fields": {
+	    "application-type": true,
+        "application-eligibility": false,
+        "last-name": true,
+        "first-name": true,
+        "middle-initial": false,
+        "gender": true,
+        "address": true,
+        "city": false,
+        "zipcode": true,
+        "home-phone": true,
+        "email-address": false,
+        "employer": false,
+        "employer-address": false,
+        "employer-city": false,
+        "employer-zip": false,
+        "work-phone": false,
+        "drivers-license": false,
+        "date-of-birth": true,
+        "primary-language": false	
+	},
+	"messages": {
+	    "submit" : "Thank you! Your form has been submitted. Give us <strong>3 days</strong> before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring your photo ID and proof of current address when you come. We're excited to meet you!"
 	}
 }

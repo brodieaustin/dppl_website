@@ -9,6 +9,7 @@
         var $subject;
         var $template;
         var $body;
+        var $messages;
         
         
         public function __construct($id){
@@ -38,6 +39,7 @@
                 $this->set_subject();     
                 $this->set_template();
                 $this->set_body();
+                $this->set_messages();
             }
             else{
                 die('There were no form fields to process. Please try again.');
@@ -100,7 +102,7 @@
 		
 		public function set_subject(){
 		    if ($this->has_fields() == true){
-		        $this->subject = str_replace('{name}', $this->sender_name, $this->config['subject']);
+		        $this->subject = str_replace('{name}', $this->sender['name'], $this->config['subject']);
 		    }
 		}
 		
@@ -117,6 +119,14 @@
 			        $this->body = str_replace('{' . $key . '}', $val, $this->body);
 			    }
 		    }    
+		}
+		
+		public function set_messages(){
+		    if ($this->has_fields() == true){
+		        if (!empty($this->config['messages'])){
+		            $this->messages = $this->config['messages'];
+		        }
+            }
 		}
     
     }
