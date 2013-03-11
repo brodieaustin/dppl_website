@@ -1,0 +1,33 @@
+{
+	"id": "library-card-adult",
+	"subject": "Library Card Application for {name}",
+	"sender": {
+	    "name": "Library Cards",
+	    "email": "librarycards@dppl.org"
+	},
+	"recipients": [{
+		"name": "Library Cards",
+		"email": "librarycards@dppl.org"
+	}],
+	"fields": {
+	    "application-type": false,
+        "application-eligibility": false,
+        "last-name": true,
+        "first-name": true,
+        "middle-initial": false,
+        "gender": false,
+        "gender": false,
+        "address": true,
+        "city": false,
+        "zipcode": false,
+        "home-phone": true,
+        "email-address": false,
+        "school": false,
+        "grade": false,
+        "date-of-birth": false,
+        "primary-language": false,
+        "parent-name": true,
+        "drivers-license": true,
+        "parent-signature": false	
+	}
+}
