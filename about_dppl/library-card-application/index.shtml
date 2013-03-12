@@ -186,9 +186,9 @@
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB_a837CV5vqZjRzW3ErJIV2fWiWSl8Txw&sensor=false"></script>
-	<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="/js/jquery.form.js"></script>
-	<script type="text/javascript" src="/js/jquery.gaEvents.js"></script>
+	<script src="/js/jquery.validate.min.js"></script>
+	<script src="/js/jquery.form.js"></script>
+	<script src="/js/jquery.gaEvents.js"></script>
 	<script src="js/scripts.js"></script>
 </body>
 </html>
