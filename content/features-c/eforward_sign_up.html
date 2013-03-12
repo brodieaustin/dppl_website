@@ -20,9 +20,11 @@
 	  </div>
 	  <div class="load"></div>
       <form action="/tools/cc/newsletter.php" method="post" id="newsletter">
-       <label>Enter your Email address:</label>
-          <input type="text" name="email_address" id="email-address" />
-          <input type="submit" value="Sign up" />
+      <div>
+            <label for="email-address">Enter your Email address:</label>
+            <input type="text" name="email_address" id="email-address" tabindex="1" />
+            <input type="submit" value="Sign up" class="inline" tabindex="2" />
+       </div>
       </form>
       <div class="callout">
 		<p>Privacy is important to us; therefore, the Des Plaines Public Library will not sell, rent, or give anyone your email address or any other information you may provide.&nbsp; You must be 13 or older to subscribe to the E-newsletter.</p>

@@ -3,10 +3,7 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-    <style>
-        .load{display: none; width: 2em; height: 2em;}
-		.response{display: none;}
-    </style>
+	<link rel="stylesheet" href="/css/form.css" />
 </head>
 <body>
 	<!--header-->
