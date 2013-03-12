@@ -1,4 +1,5 @@
 <?php
+    
     session_start();
    
     require_once('class.Challenge.php');
@@ -66,10 +67,20 @@
 		
 	    //send the mail and test if it happened
 	    if ($mail->Send()){
-		    echo  "Thank you! Your form has been submitted.";
+	        if (!empty($form->messages['success'])){
+	            echo $form->messages['success'];
+	        }
+	        else{
+		        echo  "Thank you! Your form has been submitted.";
+		    }
 	    }
 	    else{
-		    echo "I'm sorry. Your message could not be sent due to an internal error. Please try again later.";
+	        if (!empty($form->messages['error'])){
+	            echo $form->messages['error'];
+	        }
+	        else{
+		        echo "I'm sorry. Your message could not be sent due to an internal error. Please try again later.";
+		    }
 	    }
     }//closes post if	    
     else{

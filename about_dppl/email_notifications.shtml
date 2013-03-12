@@ -3,16 +3,7 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-	<style>
-		#email-notification{margin-top: 2em;}
-		#email-notification div{clear: both; margin-bottom: 1em; margin-left: 1em;}
-		label{display: block; float: left; width: 15em;}
-		label.checkbox{width: 100%; padding-bottom: 1em;}
-		.buttons{margin-top: 2em; margin-left: 3em !important; text-align: center;}
-		.buttons input{margin-right: 6em;}
-		.load{display: none; width: 2em; height: 2em;}
-		.response{display: none;}
-	</style>
+	<link rel="stylesheet" href="/css/form.css" />
 </head>
 <body>
 	<!--header-->
@@ -36,22 +27,22 @@
 		<form method="POST" action="/tools/ccs/email_notifications.php" id="email-notification">
 			<div>
 				<label>Card Number:</label>
-				<input type="text" name="BARCODE" size="25" maxlength="25" value="" autocomplete="off" />
+				<input type="text" name="BARCODE" size="25" maxlength="25" value="" autocomplete="off" tabindex="1" />
 			</div>
 			<div>
 				<label>Password:</label>
-				<input type="password" name="PASSWORD" size="25" maxlength="25" value="" />
+				<input type="password" name="PASSWORD" size="25" maxlength="25" value="" tabindex="2" />
 			</div>
 			<div>
 				<label>Email Address:</label>
-				<input type="text" name="EMAIL1" size="25" maxlength="100" value="" autocomplete="off" />
+				<input type="text" name="EMAIL1" size="25" maxlength="100" value="" autocomplete="off" tabindex="3" />
 			</div>
 			<div>
 			  <label>Re-enter Email Address:</label>
-			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" autocomplete="off" />
+			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" autocomplete="off" tabindex=4" />
 			 </div>
 			<div>
-			 	<label class="checkbox"><input type="checkbox" name="newsletter" checked="checked" />I would like to receive the library's weekly newsletter</label>
+			 	<label class="checkbox"><input type="checkbox" name="newsletter" checked="checked" tabindex="5" />I would like to receive the library's weekly newsletter</label>
 			 </div>
 			<div class="callout">
 				<p>The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account, and inform you of upcoming library events and services. If requested, receipts will also be sent to your email address. <em>Email addresses are kept confidential.</em></p>
@@ -59,9 +50,9 @@
 				<p>You may change your decision about how you wish to receive notification of a hold (email or phone) at any time by contacting Circulation. If your email address changes, please update your record as soon as possible by repeating this process or contacting the Circulation Desk.</p>
 			</div>
 			<div><p>By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p></div>
-			<div class="buttons">
-				<input type="reset" value="Clear Form" />
-				<input type="submit" value="Submit" />  
+			<div class="buttons right">
+				<input type="reset" value="Reset" tabindex="6" />
+				<input type="submit" value="Submit" tabindex="7" />  
 			</div>
 		</form>
 	</div>
@@ -76,7 +67,7 @@
 				$('.load').show();
 				console.log($(this).serialize());
 				$.post('/tools/ccs/email_notifications.php', $(this).serialize(), function(data){
-					$('#email-notification')[0].reset()
+					$('#email-notification')[0].reset();
 					$('.response-message').html(data);
 					$('.response').show();
 					$('.load').hide();

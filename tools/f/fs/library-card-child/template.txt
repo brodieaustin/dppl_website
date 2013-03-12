@@ -1,0 +1,76 @@
+<table>
+<tbody>
+<tr>
+<td>Application Type:</td>
+<td>{application-type}</td>
+</tr>
+<tr>
+<td>Application Eligibility:</td>
+<td>{application-eligibility}</td>
+</tr>
+<tr>
+<td>Last Name:</td>
+<td>{last-name}</td>
+</tr>
+<tr>
+<td>First Name:</td>
+<td>{first-name}</td>
+</tr>
+<tr>
+<td>Middle Initial:</td>
+<td>{middle-initial}</td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td>{gender}</td>
+</tr>
+<tr>
+<td>Address:</td>
+<td>{address}</td>
+</tr>
+<tr>
+<td>City:</td>
+<td>{city}</td>
+</tr>
+<tr>
+<td>Zip Code:</td>
+<td>{zip-code}</td>
+</tr>
+<tr>
+<td>Home Phone:</td>
+<td>{home-phone}</td>
+</tr>
+<tr>
+<td>Email Address:</td>
+<td>{email}</td>
+</tr>
+<tr>
+<td>School:</td>
+<td>{school}</td>
+</tr>
+<tr>
+<td>Grade:</td>
+<td>{grade}</td>
+</tr>
+<tr>
+<td>Date Of Birth:</td>
+<td>{date-of-birth}</td>
+</tr>
+<tr>
+<td>Primary Language:</td>
+<td>{primary-language}</td>
+</tr>
+<tr>
+<td>Parent Name:</td>
+<td>{parent-name}</td>
+</tr>
+<tr>
+<td>Driver's License:</td>
+<td>{drivers-license}</td>
+</tr>
+<tr>
+<td>Parent Signature:</td>
+<td></td>
+</tr>
+</tbody>
+</table>

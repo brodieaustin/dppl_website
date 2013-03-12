@@ -2,9 +2,10 @@
 	var geocoder;
 	var dp;
 	var marker;
-	var counter = 0;
+	var map_counter = 0;
+	var app_counter = 0;
 		
-		$(document).ready(function(){
+		$(function(){
 		
 			initializeMap();
 			
@@ -40,22 +41,31 @@
 					  }
 				},
 				submitHandler: function(form){
+				    app_counter = app_counter + 1;
+				    $('div.errors').hide();
+					$('.card-application').hide();
+					$('#application-load').show();
 					$(form).ajaxSubmit({
 						success: function(data){
-								$('div.errors').hide();
-								$('.card-application').hide();
-								
-								if (data.search("Thank") == 0 ){
-									$('#application-response').html(data).css({color: 'black'}).fadeIn(600);
+								if (data.search("Thank") == 1 ){
+								    $('#application-load').hide();
+								    $('#application')[0].reset();
+									$('#application-response').html(data).removeClass('failure').addClass('success').show();
 								}
 								else{
-									$('.card-application').fadeIn(1000);
-									$('#application-response').html(data).css({color: 'red'}).fadeIn(800).delay(5000).fadeOut(800);
+								    if (app_counter > 6){
+								        data = 'You have unsucessfully submitted the form too many times. The form will now reset.';
+								        $('#application')[0].reset();
+								    }
+								    $('#application-load').hide();
+									$('#application-response').html(data).removeClass('success').addClass('failure').fadeIn().delay(3000).fadeOut();
+									$('.card-application').delay(3500).fadeIn();
 								}	
-							
 							},
 							failure: function(){
-								$('#application-response').html("Something went wrong. Please check your form and try again.").css({backgroundColor: 'red'}).fadeIn(800).delay(5000).fadeOut(800);
+								$('#application-response').html("Something went wrong. Please check your form and try again later.").removeClass('success').addClass('failure').fadeIn().delay(3000).fadeOut();
+								$('#application')[0].reset();
+								$('.card-application').delay(3500).fadeIn();
 							}
 					});
 				}
@@ -211,9 +221,9 @@
       		}
       		
       		function codeAddress(address, response_div) {
-      			counter = counter + 1;
+      			map_counter = map_counter + 1;
       			
-      			if (counter > 10){
+      			if (map_counter > 10){
       				$(response_div).html('I\'m sorry. You can\'t search for any more addresses at this time.').show();
       			}
       			else{

@@ -21,65 +21,20 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-N4rvgg6pZtrWDSbpXsRvxTBS8MxIhNICIY_IiQU03t84hMAfhTVPCpmInsD-YoiY55PSjmjcoNf_Q"></script>
-	<script type="text/javascript" src="/js/jquery.bcLists.js"></script>
-	<script type="text/javascript" src="/js/cycle/jquery.cycle.all.js"></script>
-	<script type="text/javascript">
-			google.load("feeds", "1");
-		
-			function drawBlogs(){
-				var container = document.getElementById("blog");
-				var feeds = ['http://positivelyestreet.blogspot.com/feeds/posts/default'];
-				
-				for (i = 0; i < feeds.length; i ++){
-						var feed = new google.feeds.Feed(feeds[i]);
-						feed.setNumEntries(1);
-						feed.load(function(result){
-							if (!result.error){
-								//console.log(result.feed.title);
-								for (var i = 0; i < result.feed.entries.length; i++){
-									var entry = result.feed.entries[i];
-									
-									var div = document.createElement("div");
-									div.setAttribute('class', 'entry');
-									
-									var feedtitle = document.createElement("div");
-									feedtitle.setAttribute('class', 'feed-title');
-									feedtitle.appendChild(document.createTextNode(result.feed.title));
-									
-									div.appendChild(feedtitle);
-									
-									var title = document.createElement("div");
-									title.setAttribute('class', 'entry-title');
-									
-									console.log(entry.title);
-									
-									var link = document.createElement("a");
-									link.setAttribute('href', entry.link);
-									link.appendChild(document.createTextNode(entry.title));
-									
-									title.appendChild(link);
-									
-									var content = document.createElement("div");
-									content.setAttribute('class', 'entry-content');
-									content.appendChild(document.createTextNode(entry.content + "..."));
-									
-									div.appendChild(title);
-									div.appendChild(content);
-									container.appendChild(div);
-								}
-							}
-							else{
-								container.appendChild(document.createTextNode("No entries were returned. Sorry."));
-							}
-						});
-					}
-				}
-					
-				google.setOnLoadCallback(drawBlogs);
-	</script>
-	<script type="text/javascript">
+	<script src="/js/jquery.bcLists.js"></script>
+	<script src="/js/cycle/jquery.cycle.all.js"></script>
+	<script src="/js/jquery.addFeed.js"></script>
+	<script>
 		$(document).ready(function(){
+		     $('#ellinwood').addFeed({
+			        url: 'http://positivelyestreet.blogspot.com/feeds/posts/default?alt=rss', 
+			        num_items: 1, 
+			        feed_type: 'blog', 
+			        show_summary: true, 
+			        show_thumbnail: true,
+			        feed_title: 'Positively Ellinwood Street'
+			     }).fadeIn(500);
+		    
 			$('.list').show();
 			$('#list').bcList({
 				'list_id' : '151388047'

@@ -84,14 +84,14 @@ span.block{display: block;}
 }
 
 #header .nav{
-  display: none;
+  display: block;
 }
 
 #header .nav-button{
+  display: none;
   position: absolute;
   top: 15px;
-  right: 10px;
-  display: block;
+  right: 3%;
   width: 70px
   height: 50px;
   padding: .2em;
@@ -114,14 +114,20 @@ span.block{display: block;}
 #header ul.nav{
   width: 100%;
   margin: 0;
-  padding: 1em 0;
+  padding: 0;
   background-color: #333;
-  text-align: left;
+  text-align: center;
+  list-style: none;
+  overflow: hidden;
 }
 
 #header ul.nav li a{
-  color: #fff;
+  display: block;
+  width: auto;
+  float: left;
   padding: .5em 1em;
+  text-align: center;
+  color: #fff;
 }
 
 #header ul.nav li a:hover{
@@ -129,7 +135,7 @@ span.block{display: block;}
   border: 0;
 }
 
-#content{margin: 2% 3%; background: #fff; padding: 5%; border: 1px solid #ccc; border-radius: .6em; position: relative; overflow: hidden; z-index: 50;}
+#content{margin: 2% 3%; margin-top: 150px; background: #fff; padding: 5%; border: 1px solid #ccc; border-radius: .6em; position: relative; overflow: hidden; z-index: 50;}
 
 #content h2{font-size: 200%;}
 #content h4{color: #aaa;}
@@ -148,7 +154,7 @@ span.block{display: block;}
   padding: .15em;
 }
 
-#content .ad {min-height: 400px; padding: 0; background:  url('/images/edppl/zinio-ipad.jpg') no-repeat right .5em;}
+#content .ad {padding: 0; background:  url('http://dppl.org/images/edppl/new-world-cinema-banner.jpg') no-repeat right .5em;}
 #content .ad .text{width: 60%;}
 
 #content ol{
@@ -207,10 +213,14 @@ span.block{display: block;}
  body{margin-top: 80px;}
  a.button{width: 90% !important; margin: 0 auto;}
  blockquote{margin-left: 0; margin-right: 0;}
- div#header a.banner{width: 90%; margin: 0; padding-bottom: 0;}
+ #header .nav-button{display: block;}
+ #header ul.nav{display: none;}
+ #header ul.nav li a{width: auto; float: none; text-align: left;}
+ #header a.banner{width: 90%; margin: 0; padding-bottom: 0;}
  div.hero h2{text-align: center;}
  div.hero .image{float: none !important; width: 50% !important; margin-left: auto !important; margin-right: auto !important;}
  div.hero .text{width: 100% !important; float: none !important; margin-top: 10%; }
+ #content{margin-top: 2%;}
  #content dl dt, #content dl dd{display: block; width: 100%; margin-left: 0;}
  #content ul.icons {width: 100%;}
  #content ul.icons li{ line-height: 120%;}

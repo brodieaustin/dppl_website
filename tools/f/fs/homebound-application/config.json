@@ -1,7 +1,6 @@
 {
 	"id": "homebound-application",
 	"subject": "Homebound Application",
-	"template": "homebound-application.txt",
 	"sender": {
 	    "name": "Forms",
 	    "email": "forms@dppl.org"

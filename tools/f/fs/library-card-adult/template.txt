@@ -1,0 +1,80 @@
+<table>
+<tbody>
+<tr>
+<td>Application Type:</td>
+<td>{application-type}</td>
+</tr>
+<tr>
+<td>Application Eligibility:</td>
+<td>{application-eligibility}</td>
+</tr>
+<tr>
+<td>Last Name:</td>
+<td>{last-name}</td>
+</tr>
+<tr>
+<td>First Name:</td>
+<td>{first-name}</td>
+</tr>
+<tr>
+<td>Middle Initial:</td>
+<td>{middle-initial}</td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td>{gender}</td>
+</tr>
+<tr>
+<td>Address:</td>
+<td>{address}</td>
+</tr>
+<tr>
+<td>City:</td>
+<td>{city}</td>
+</tr>
+<tr>
+<td>Zip Code:</td>
+<td>{zip-code}</td>
+</tr>
+<tr>
+<td>Home Phone:</td>
+<td>{home-phone}</td>
+</tr>
+<tr>
+<td>Email Address:</td>
+<td>{email}</td>
+</tr>
+<tr>
+<td>Employer:</td>
+<td>{employer}</td>
+</tr>
+<tr>
+<td>Employer Address:</td>
+<td>{employer-address}</td>
+</tr>
+<tr>
+<td>Employer City:</td>
+<td>{employer-city}</td>
+</tr>
+<tr>
+<td>Employer Zip:</td>
+<td>{employer-zip}</td>
+</tr>
+<tr>
+<td>Work Phone:</td>
+<td>{work-phone}</td>
+</tr>
+<tr>
+<td>Driver's License:</td>
+<td>{drivers-license}</td>
+</tr>
+<tr>
+<td>Date Of Birth:</td>
+<td>{date-of-birth}</td>
+</tr>
+<tr>
+<td>Primary Language:</td>
+<td>{primary-language}</td>
+</tr>
+</tbody>
+</table>

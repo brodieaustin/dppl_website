@@ -3,24 +3,17 @@
     class Form{
         var $id;
         var $config;
-        var $config_dir;
         var $fields;
         var $sender;
         var $recipients;
         var $subject;
         var $template;
-        var $template_dir;
         var $body;
+        var $messages;
         
         
-        public function __construct($id, $config_dir='configs/', $template_dir='templates/'){
+        public function __construct($id){
             $this->id = $id;
-            if($config_dir){
-                $this->config_dir = $config_dir;
-            }
-            if($template_dir){
-                $this->template_dir = $template_dir;
-            }
         }
         
         public function __toString(){
@@ -28,7 +21,7 @@
 		}
 		
 		public function set_config(){
-		    $fh = file_get_contents($this->config_dir . $this->id . '.json');
+		    $fh = file_get_contents('fs/' . $this->id . '/config.json');
 		    $json = json_decode($fh, true);
 		    
 		    if ($json){
@@ -46,6 +39,7 @@
                 $this->set_subject();     
                 $this->set_template();
                 $this->set_body();
+                $this->set_messages();
             }
             else{
                 die('There were no form fields to process. Please try again.');
@@ -60,7 +54,7 @@
 		}
 		
 		public function check_required_field($key, $val){
-		    if ($this->config['fields'][$key] !== false){
+		    if ($this->config['fields'][$key] == true){
 	                if (empty($val)){
 	                    die('You did not complete a required field. Please double check the form and resubmit.');
 	                }
@@ -108,13 +102,13 @@
 		
 		public function set_subject(){
 		    if ($this->has_fields() == true){
-		        $this->subject = str_replace('{name}', $this->sender_name, $this->config['subject']);
+		        $this->subject = str_replace('{name}', $this->sender['name'], $this->config['subject']);
 		    }
 		}
 		
 		public function set_template(){
 		    if ($this->has_fields() == true){
-		        $this->template = file_get_contents($this->template_dir . $this->config['template']);
+		        $this->template = file_get_contents('fs/' . $this->id . '/template.txt');
 		    }
 		}
 		
@@ -125,6 +119,14 @@
 			        $this->body = str_replace('{' . $key . '}', $val, $this->body);
 			    }
 		    }    
+		}
+		
+		public function set_messages(){
+		    if ($this->has_fields() == true){
+		        if (!empty($this->config['messages'])){
+		            $this->messages = $this->config['messages'];
+		        }
+            }
 		}
     
     }
