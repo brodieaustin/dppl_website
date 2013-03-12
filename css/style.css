@@ -191,9 +191,10 @@ input, select{
   outline: 0;
   overflow: hidden;
   border: 1px solid #ccc;
+  background-color: #fff;
 }
 
-select{height: auto; line-height: auto;}
+/*select{height: auto; line-height: auto;}*/
 
 
 input[type=text], input[type=password]{

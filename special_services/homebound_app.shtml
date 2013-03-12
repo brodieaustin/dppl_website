@@ -20,7 +20,8 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<!--<script src="/js/jquery.validate.min.js"></script>-->
+	<script src="/js/jquery.validate.min.js"></script>
+	<script src="/js/jquery.form.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#homebound-application').validate({
@@ -35,7 +36,7 @@
 					  }
 				},
 				submitHandler: function(form){
-					$('.load').show();
+					$('.response').show();
 					$(form).hide();
 					$.post($(form).attr('action'), $(form).serialize(), function(data){
 					    $('.response').html(data);
