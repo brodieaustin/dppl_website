@@ -1,0 +1,160 @@
+	
+#content form{margin: 1em 0; padding: .5em;}
+
+#content form div{position: relative; clear: left; margin-bottom: 1.5em;}
+
+#content form fieldset{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+}
+
+#content form fieldset legend{width: 100%; margin-left: -1em; padding: 1em; font-weight: bold;}
+
+#content form fieldset.callout{margin: 1em 0 2em 0; padding: 2em 1em; background-color: #eee; border: 0; overflow: hidden;}
+#content form fieldset.callout legend{background-color: #eee;}
+
+
+
+/*general form bits*/
+#content form p{
+  margin-top: .5em;
+  font-size: 100%;
+}
+
+#content form em{
+  font-weight: bold;
+  color: red;
+}
+
+
+#content form #challenge-image{width: 300px; height: 80px; margin-top: -1em; margin-bottom: 1em; padding: .5em; border: 0; background-color: #fff;}
+
+#content form label{display: block; width: 100%; margin-bottom: 3px; }
+
+#content form input[type=text]{width: 50%}
+
+#content input[type=radio]{
+  margin-top: 0;
+  margin-right: .5em;
+  height: 1em !important;
+}
+
+#content input[type=submit]{background-color: #8ABC4F;}
+#content input[type=submit]:hover{background-color: #aaa;;}
+
+#content form input.small{width: 25%;}
+#content form input.wide{width: 96.190476%;}
+
+#content form textarea{width: 99%; min-height: 100px; border: 1px solid #ccc; font-family: inherit; resize: none;}
+
+#content form .buttons input{margin-left: 1em;}
+
+/*eligibility check and map*/
+
+.no-js .eligibility{
+  display: none;
+}
+
+.eligibility-check{
+  background-color: #fff;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.eligibility-check h4{
+  margin: .5em 0;
+}
+
+.eligibility-check p{
+  line-height: 1.5em !important;
+}
+
+.eligibility-check .callout{
+	margin: 1em 0;
+}
+
+#eligibility-form{margin-top: 0 !important; padding-top: 0 !important;}
+
+#map-wrapper{
+  position: relative;
+  float: left;
+  width: 54%;
+  min-height: 400px;
+  margin: .5em 0 1em 0;
+  padding: 0;
+  border: 5px solid #eee;
+  background-color: transparent;
+}
+
+#map{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+#map img{
+  margin: 0 !important;
+}
+
+/*general use classes*/
+
+ul.instructions li{
+  margin-bottom: .5em;
+}
+
+.load{
+  display: none;
+  width: 2em;
+  height: 2em;
+  background: #fff url('/images/ajax-loader.gif') no-repeat center center;
+}
+
+.right{
+  float: right;
+}
+
+.response{
+  display: none;
+  min-height: 2em;
+  padding: .5em;
+}
+
+.response.success{
+    color: green;
+}
+
+.response.failure{
+  color: red;
+}
+
+.close-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 4px;
+  font-size: 150%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+.big{
+  font-size: 180%;
+  margin: 0;
+}
+
+#content form .errors, #content form label.error{display: block; margin: 2px 0; color: red;}
+#content form input.error, #content form textarea.error, form select.error{border-color: #333;}
+
+/*fallbacks for no-js*/
+.no-js .eligibility-question{display: none;}
+
