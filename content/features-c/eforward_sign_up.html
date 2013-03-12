@@ -22,14 +22,18 @@
       <form action="/tools/cc/newsletter.php" method="post" id="newsletter">
       <div>
             <label for="email-address">Enter your Email address:</label>
-            <input type="text" name="email_address" id="email-address" tabindex="1" />
-            <input type="submit" value="Sign up" class="inline" tabindex="2" />
+            <input type="text" name="email_address" id="email-address" class="wide" autocomplete="off" tabindex="1" />
        </div>
-      </form>
-      <div class="callout">
-		<p>Privacy is important to us; therefore, the Des Plaines Public Library will not sell, rent, or give anyone your email address or any other information you may provide.&nbsp; You must be 13 or older to subscribe to the E-newsletter.</p>
-	  </div>
-	  <h2>Need help?</h2>
+        <div class="callout">
+            <p>Privacy is important to us; therefore, the Des Plaines Public Library will not sell, rent, or give anyone your email address or any other information you may provide.&nbsp; You must be 13 or older to subscribe to the E-newsletter.</p>
+        </div>
+        <div class="buttons right">
+            <input type="reset" value="Reset" tabindex="2" />
+            <input type="submit" value="Submit" class="inline" tabindex="3" />
+        </div>
+	  </form>
+	  <hr />
+	  <h3>Need help?</h3>
 	  <ol>
 		<li>Enter your email address above and click Go.</li>
 		<li>Then, follow the instructions and click Submit.</li>

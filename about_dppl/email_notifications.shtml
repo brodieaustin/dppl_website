@@ -27,22 +27,22 @@
 		<form method="POST" action="/tools/ccs/email_notifications.php" id="email-notification">
 			<div>
 				<label>Card Number:</label>
-				<input type="text" name="BARCODE" size="25" maxlength="25" value="" autocomplete="off" />
+				<input type="text" name="BARCODE" size="25" maxlength="25" value="" autocomplete="off" tabindex="1" />
 			</div>
 			<div>
 				<label>Password:</label>
-				<input type="password" name="PASSWORD" size="25" maxlength="25" value="" />
+				<input type="password" name="PASSWORD" size="25" maxlength="25" value="" tabindex="2" />
 			</div>
 			<div>
 				<label>Email Address:</label>
-				<input type="text" name="EMAIL1" size="25" maxlength="100" value="" autocomplete="off" />
+				<input type="text" name="EMAIL1" size="25" maxlength="100" value="" autocomplete="off" tabindex="3" />
 			</div>
 			<div>
 			  <label>Re-enter Email Address:</label>
-			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" autocomplete="off" />
+			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" autocomplete="off" tabindex=4" />
 			 </div>
 			<div>
-			 	<label class="checkbox"><input type="checkbox" name="newsletter" checked="checked" />I would like to receive the library's weekly newsletter</label>
+			 	<label class="checkbox"><input type="checkbox" name="newsletter" checked="checked" tabindex="5" />I would like to receive the library's weekly newsletter</label>
 			 </div>
 			<div class="callout">
 				<p>The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account, and inform you of upcoming library events and services. If requested, receipts will also be sent to your email address. <em>Email addresses are kept confidential.</em></p>
@@ -51,8 +51,8 @@
 			</div>
 			<div><p>By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p></div>
 			<div class="buttons right">
-				<input type="reset" value="Clear Form" />
-				<input type="submit" value="Submit" />  
+				<input type="reset" value="Reset" tabindex="6" />
+				<input type="submit" value="Submit" tabindex="7" />  
 			</div>
 		</form>
 	</div>

@@ -153,7 +153,7 @@
 				<fieldset>
 					<div>
 						<label for="drivers-license">Driver's License #:</label>
-						<input type="text" id="drivers-license" name="drivers-license" tabindex="16" />
+						<input type="text" id="drivers-license" name="drivers-license" autocomplete="off" tabindex="16" />
 					</div>
 					<div>
 						<label for="date-of-birth">Date of Birth: <em>*</em></label>
@@ -164,17 +164,15 @@
 						<input type="text" id="primary-language" name="primary-language" tabindex="18" />
 					</div>
 				</fieldset>
-				<fieldset>
 				<fieldset class="callout">
 			            <iframe id="challenge-image" src="/tools/sc/captcha.php"></iframe>
 			            <label>Enter the text that you see in the image above:<em>*</em></label>
 			            <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="19" />
 	            </fieldset>
-				<fieldset>
-					<div>
-						<input type="submit" value="Submit" class="button right track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="20" />
-					</div>
-				</fieldset>
+				<div class="buttons right">
+				    <input type="reset" value="Reset" tabindex="20" />
+					<input type="submit" value="Submit" class="track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="21" />
+				</div>
 			</form>
 		</div><!--closing div for card application-->
 		<div class="load" id="application-load"></div>

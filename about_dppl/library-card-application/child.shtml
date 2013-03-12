@@ -155,7 +155,7 @@
 					</div>
 					<div>
 						<label for="parent-drivers-license" class="wide">Driver's License #: <em>*</em></label>
-						<input type="text" id="drivers-license" name="drivers-license" class="required" tabindex="16" />
+						<input type="text" id="drivers-license" name="drivers-license" class="required" autocomplete="off" tabindex="16" />
 					</div>
 					<input type="hidden" id="parent-signature" name="parent-signature" value="" />
 				</fieldset>
@@ -164,11 +164,10 @@
 			            <label>Enter the text that you see in the image above: <em>*</em></label>
 			            <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="19" />
 	            </fieldset>
-				<fieldset>
-					<div>
-						<input type="submit" value="Submit" class="button right track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" />
-					</div>
-				</fieldset>
+				<div class="buttons right">
+				    <input type="reset" value="Reset" tabindex="20" />
+					<input type="submit" value="Submit" class="track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="21" />
+				</div>
 			</form>
 		</div><!--closing div for card application-->
 		<div class="load" id="application-load"></div>

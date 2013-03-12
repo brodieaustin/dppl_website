@@ -42,7 +42,7 @@
 }
 
 #content input[type=submit]{background-color: #8ABC4F;}
-#content input[type=submit]:hover{background-color: #aaa;;}
+#content input[type=submit]:hover{background-color: #aaa;}
 
 #content form input.small{width: 25%;}
 #content form input.wide{width: 96.190476%;}
