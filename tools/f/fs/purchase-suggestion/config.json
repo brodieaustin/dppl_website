@@ -1,0 +1,31 @@
+{
+    "id": "purchase-suggestion",
+    "fields": {
+        "city": true, 
+        "purchase-explanation": true, 
+        "name": true, 
+        "zip-code": false, 
+        "item-type": true, 
+        "communication-preference": true, 
+        "item-author": false, 
+        "state": true, 
+        "address": true, 
+        "item-title": true, 
+        "library-card-number": true, 
+        "phone-number": false, 
+        "place-hold": true, 
+        "email": false, 
+        "item-isbn": false
+    }, 
+    "sender": {
+        "name": "Forms", 
+        "email": "forms@dppl.org"
+    },  
+    "recipients": [
+        {
+            "name": "Readers Services Desk", 
+            "email": "readersservicesdesk@dppl.org"
+        }
+    ], 
+    "subject": "Purchase Suggestion"
+}

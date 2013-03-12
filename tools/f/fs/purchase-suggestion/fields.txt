@@ -1,0 +1,21 @@
+---
+id: purchase-suggestion
+subject: Purchase Suggestion
+sender: Forms,forms@dppl.org
+recipients: Readers Services Desk,readersservicesdesk@dppl.org
+---
+name,text,Name,true,1
+address,text,Address,false,2
+city,text,City,false,3
+state,text,State,false,4
+zip-code,text,Zip Code,false,5
+phone-number,text,Phone Number,false,6
+email,text,Email Address,false,7
+preferred-contact,radio,Preferred Contact,true,8
+place-hold,select,Should we place a hold on this item for you?,true,9
+library-card-number,text,Library card number,false,10
+item-type,select,Type of Item,true,11
+item-title,text,Title,true,12
+item-author,text,Author,false,13
+item-isbn,text,ISBN,false,14
+purchase-explanation,textarea,Why should we purchase this item?,true,15

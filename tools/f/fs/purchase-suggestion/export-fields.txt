@@ -1,0 +1,65 @@
+<form id="purchase-suggestion" method=""  action="">
+<div>
+	<label for="name">Name <em>*</em></label>
+	<input type="text" id="name" name="name" class="required" tabindex="1" />
+</div>
+<div>
+	<label for="address">Address <em>*</em></label>
+	<input type="text" id="address" name="address" class="required" tabindex="2" />
+</div>
+<div>
+	<label for="city">City <em>*</em></label>
+	<input type="text" id="city" name="city" class="required" tabindex="3" />
+</div>
+<div>
+	<label for="state">State <em>*</em></label>
+	<input type="text" id="state" name="state" class="required" tabindex="4" />
+</div>
+<div>
+	<label for="zip-code">Zip Code <em>*</em></label>
+	<input type="text" id="zip-code" name="zip-code" class="required" tabindex="5" />
+</div>
+<div>
+	<label for="phone-number">Phone Number <em>*</em></label>
+	<input type="text" id="phone-number" name="phone-number" class="required" tabindex="6" />
+</div>
+<div>
+	<label for="email">Email Address <em>*</em></label>
+	<input type="text" id="email" name="email" class="required" tabindex="7" />
+</div>
+<div>
+	<label for="preferred-contact"><input type="radio" id="preferred-contact" name="preferred-contact" class="required" tabindex="8" />Preferred Contact <em>*</em></label>
+</div>
+<div>
+	<label for="place-hold">Should we place a hold on this item for you? <em>*</em></label>
+	<select id="place-hold" name="place-hold" class="required" tabindex="9">
+		<option></option>
+	</select>
+</div>
+<div>
+	<label for="library-card-number">Library card number <em>*</em></label>
+	<input type="text" id="library-card-number" name="library-card-number" class="required" tabindex="10" />
+</div>
+<div>
+	<label for="item-type">Type of Item <em>*</em></label>
+	<select id="item-type" name="item-type" class="required" tabindex="11">
+		<option></option>
+	</select>
+</div>
+<div>
+	<label for="item-title">Title <em>*</em></label>
+	<input type="text" id="item-title" name="item-title" class="required" tabindex="12" />
+</div>
+<div>
+	<label for="item-author">Author <em>*</em></label>
+	<input type="text" id="item-author" name="item-author" class="required" tabindex="13" />
+</div>
+<div>
+	<label for="item-isbn">ISBN <em>*</em></label>
+	<input type="text" id="item-isbn" name="item-isbn" class="required" tabindex="14" />
+</div>
+<div>
+	<label for="purchase-explanation">Why should we purchase this item? <em>*</em></label>
+	<textarea id="purchase-explanation" name="purchase-explanation" class="required" tabindex="15"></textarea>
+</div>
+</form>

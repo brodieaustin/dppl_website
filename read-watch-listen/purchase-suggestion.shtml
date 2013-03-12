@@ -1,0 +1,143 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>Purchase Suggesion | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+	<link rel="stylesheet" href="/css/form.css" />
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+	    <h1>Purchase Suggestions</h1>
+	    <p>Looking for a book we don't have? Read something great you think should be in the library? Tell us about it.</p>
+		<form id="purchase-suggestion" method="post"  action="/tools/f/send.php">
+		    <div class="errors"></div>
+		    <input type="hidden" name="form-id" id="form-id" value="purchase-suggestion" />
+            <div>
+	            <label for="name">Name <em>*</em></label>
+	            <input type="text" id="name" name="name" class="required" tabindex="1" />
+            </div>
+            <div>
+	            <label for="address">Address <em>*</em></label>
+	            <input type="text" id="address" name="address" class="required wide" tabindex="2" />
+            </div>
+            <div>
+	            <label for="city">City <em>*</em></label>
+	            <input type="text" id="city" name="city" class="required" tabindex="3" />
+            </div>
+            <div>
+	            <label for="state">State <em>*</em></label>
+	            <input type="text" id="state" name="state" class="required small" tabindex="4" />
+            </div>
+            <div>
+	            <label for="zip-code">Zip Code <em>*</em></label>
+	            <input type="text" id="zip-code" name="zip-code" class="required small" tabindex="5" />
+            </div>
+            <div>
+	            <label for="phone-number">Phone Number <em>*</em></label>
+	            <input type="text" id="phone-number" name="phone-number" class="required" tabindex="6" />
+            </div>
+            <div>
+	            <label for="email">Email Address <em>*</em></label>
+	            <input type="text" id="email" name="email" class="required" tabindex="7" />
+            </div>
+            <div>
+	            <label for="communication-preference">What is your preferred method of communication? <em>*</em></label>
+		        <select id="communication-preference" name="communication-preference" class="required" tabindex="8">
+		            <option>Choose one</option>
+			        <option>Phone</option>
+			        <option>Email</option>
+		        </select>
+            </div>
+            <div>
+	            <label for="place-hold">Should we place a hold on this item for you? <em>*</em></label>
+	            <select id="place-hold" name="place-hold" class="required" tabindex="10">
+		            <option value="Yes">Yes</option>
+		            <option value="No">No</option>
+	            </select>
+            </div>
+            <div>
+	            <label for="library-card-number">Library card number <em>*</em></label>
+	            <input type="text" id="library-card-number" name="library-card-number" class="required" tabindex="11" />
+            </div>
+            <fieldset>
+                <legend>Tell us about the item:</legend>
+                <div>
+	                <label for="item-type">Type of Item <em>*</em></label>
+	                <select id="item-type" name="item-type" class="required" tabindex="12">
+		                <option value="Type 1">Type 1</option>
+	                </select>
+                </div>
+                <div>
+	                <label for="item-title">Title <em>*</em></label>
+	                <input type="text" id="item-title" name="item-title" class="required wide" tabindex="13" />
+                </div>
+                <div>
+	                <label for="item-author">Author</label>
+	                <input type="text" id="item-author" name="item-author" tabindex="14" />
+                </div>
+                <div>
+	                <label for="item-isbn">ISBN</label>
+	                <input type="text" id="item-isbn" name="item-isbn" tabindex="15" />
+                </div>
+                <div>
+	                <label for="purchase-explanation">Why should we purchase this item? <em>*</em></label>
+	                <textarea id="purchase-explanation" name="purchase-explanation" class="required" tabindex="16"></textarea>
+                </div>
+            </fieldset>
+            <fieldset class="callout">
+			    <iframe id="challenge-image" src="/tools/sc/captcha.php"></iframe>
+			    <label>Enter the text that you see in the image above:<em>*</em></label>
+			    <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="15" />
+	    </fieldset>
+            <div class="buttons right">
+                <input type="reset" value="Reset" />
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+        <div class="response"><div class="load"></div></div>
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+	<script src="/js/jquery.validate.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#purchase-suggestion').validate({
+				invalidHandler: function(form, validator) {
+					  var errors = validator.numberOfInvalids();
+					  if (errors) {
+						var message = errors == 1 ? 'You missed 1 field. It has been highlighted': 'You missed ' + errors + ' fields. They have been highlighted';
+						$('div.errors').html(message);
+						$('div.errors').show();
+					  } else {
+						$('div.errors').hide();
+					  }
+				},
+				submitHandler: function(form){
+					$('.response').show();
+					$(form).hide();
+					$.post($(form).attr('action'), $(form).serialize(), function(data){
+					    if (data.search("Thank") == 1 ){
+					        $('.response').html(data).removeClass('failure').addClass('success');
+					        $('#purchase-suggestion')[0].reset();
+					    }
+					    else{
+					        $('.response').html(data).removeClass('success').addClass('failure').delay(10000).hide();
+					        $(form).delay(12000).show();
+					    }
+					    
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>
