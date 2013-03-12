@@ -79,7 +79,7 @@
 					</div><!--end of eligiblity check-->
 				</div><!--end of eligibility-wrapper"-->
 			<hr />
-			<form id="application" method="post"  action="mail.php">
+			<form id="application" method="post"  action="/tools/f/send.php">
 				<h3>Complete the application</h3>
 				<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
 				<p><strong>The child's parent or guardian must be present to pick up the completed library card.</strong></p>
@@ -103,8 +103,8 @@
 					</div>
 					<div>
 						<label>Gender: <em>*</em></label>
-						<label for="gender-male"><input type="radio" id="gender-male" name="gender" tabindex="4" />Male</label>
-						<label for="gender-female"><input type="radio" id="gender-female" name="gender" tabindex="5" />Female</label>
+						<label for="gender-male"><input type="radio" id="gender-male" name="gender" value="Male" tabindex="4" />Male</label>
+						<label for="gender-female"><input type="radio" id="gender-female" name="gender" value="Female" tabindex="5" />Female</label>
 					</div>
 				</fieldset>
 				<fieldset>
@@ -117,16 +117,16 @@
 						<input type="text" id="city" name="city" tabindex="7" />
 					</div>
 					<div>
-						<label for="zipcode">Zip: <em>*</em></label>
-						<input type="text" id="zipcode" name="zipcode" tabindex="8" />
+						<label for="zip-code">Zip Code: <em>*</em></label>
+						<input type="text" id="zip-code" name="zip-code" tabindex="8" />
 					</div>
 					<div>
 						<label for="home-phone">Phone: <em>*</em></label>
 						<input type="text" id="home-phone" name="home-phone" class="required" tabindex="9" />
 					</div>
 					<div>
-						<label for="email-address">Email Address:</em></label>
-						<input type="text" id="email-address" name="email-address" tabindex="10" />
+						<label for="email">Email Address:</em></label>
+						<input type="text" id="email" name="email" tabindex="10" />
 					</div>
 				</fieldset>
 				<fieldset>
@@ -140,7 +140,7 @@
 					</div>
 					<div>
 						<label for="date-of-birth">Date of Birth: <em>*</em></label>
-						<input type="text" id="date-of-birth" name="date-of-birth" tabindex="13" />
+						<input type="text" id="date-of-birth" name="date-of-birth" class="required" tabindex="13" />
 					</div>
 					<div>
 						<label for="primary-language" class="wide">Primary Language Spoken at Home:</label>
@@ -171,7 +171,8 @@
 				</fieldset>
 			</form>
 		</div><!--closing div for card application-->
-		<div class="response"><div class="load"></div></div>
+		<div class="load" id="application-load"></div>
+		<div class="response" id="application-response"></div>
 		<hr />
 		<h3>Questions?</h3>
 			<p>If you have questions about applying for a library card or are having problems using the application, please send an email to <a href="mailto:librarycards@dppl.org">librarycards@dppl.org</a>.</p>

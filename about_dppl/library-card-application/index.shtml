@@ -79,7 +79,7 @@
 					</div><!--end of eligiblity check-->
 				</div><!--end of eligibility-wrapper"-->
 			<hr />
-			<form id="application" method="post"  action="/tools/f/send.php">
+			<form id="application" method="post"  action="/tools/f/test.php">
 				<h3>Complete the Application</h3>
 				<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
 				<p class="note"><em>*</em> Required field</em></p>
@@ -116,16 +116,16 @@
 						<input type="text" id="city" name="city" tabindex="7" />
 					</div>
 					<div>
-						<label for="zipcode">Zip: <em>*</em></label>
-						<input type="text" id="zipcode" name="zipcode" class="required" tabindex="8" />
+						<label for="zip-code">Zip Code: <em>*</em></label>
+						<input type="text" id="zip-code" name="zip-code" class="required" tabindex="8" />
 					</div>
 					<div>
 						<label for="home-phone">Phone: <em>*</em></label>
 						<input type="text" id="home-phone" name="home-phone" class="required" tabindex="9" />
 					</div>	
 					<div>
-						<label for="email-address">Email Address:</em></label>
-						<input type="text" id="email-address" name="email-address" tabindex="10" />
+						<label for="email">Email Address:</em></label>
+						<input type="text" id="email" name="email" tabindex="10" />
 					</div>			
 				</fieldset>
 				<fieldset>
@@ -177,7 +177,8 @@
 				</fieldset>
 			</form>
 		</div><!--closing div for card application-->
-		<div class="response" id="application-response"><div class="load"></div></div>
+		<div class="load" id="application-load"></div>
+		<div class="response" id="application-response"></div>
 		<hr />
 		<h3>Questions?</h3>
 			<p>If you have questions about applying for a library card or are having problems using the application, please send an email to <a href="mailto:librarycards@dppl.org">librarycards@dppl.org</a>.</p>
