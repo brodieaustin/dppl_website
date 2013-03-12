@@ -1177,7 +1177,7 @@ a#next2{
 
 /*feeds*/
 
-div.feed-items{clear: both; margin-bottom: 1em; padding: 0;}
+div.feed-items{clear: both; margin-bottom: 1em; padding: 0; overflow: hidden;}
 
 div.feed-title{
   font-weight: bold;
@@ -1190,10 +1190,17 @@ div.feed-item-title{
 
 div.feed-item-thumbnail{
   float: left;
+  width: 25%;
 }
 
 div.feed-item-thumbnail img{
    margin: 0 1em 1em 0 !important;
+}
+
+div.feed-item-summary{
+  float: left;
+  width: 75%;
+  line-height: 1.35em;
 }
 
 #content .blogs-container{
