@@ -18,9 +18,9 @@
         "gender": true,
         "address": true,
         "city": false,
-        "zipcode": true,
+        "zip-code": true,
         "home-phone": true,
-        "email-address": false,
+        "email": false,
         "employer": false,
         "employer-address": false,
         "employer-city": false,
@@ -31,6 +31,6 @@
         "primary-language": false	
 	},
 	"messages": {
-	    "submit" : "Thank you! Your form has been submitted. Give us <strong>3 days</strong> before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring your photo ID and proof of current address when you come. We're excited to meet you!"
+	    "success" : "Thank you! Your form has been submitted. Give us <strong>3 days</strong> before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring your photo ID and proof of current address when you come. We're excited to meet you!"
 	}
 }

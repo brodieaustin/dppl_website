@@ -34,34 +34,36 @@
 </tr>
 <tr>
 	<td colspan="4" style="width: 80%%; padding-bottom: 12px;"><strong>Name</strong>&nbsp;<em>Last Name:</em>&nbsp;{last-name}&nbsp;&nbsp;&nbsp;&nbsp;<em>First Name:</em>&nbsp;{first-name}&nbsp;&nbsp;&nbsp;&nbsp;<em>MI:</em>&nbsp;{middle-initial}</td>
-	<td>{gender}</td>
+	<td style="width: 20%; padding-bottom: 12px;">{gender}</td>
 </tr>
 <tr>
 	<td colspan="5" style="width: 100%; padding-bottom: 12px;"><strong>Address</strong>&nbsp;{address}</td>
 </tr>
 <tr>
 	<td colspan="3" style="width: 60%; padding-bottom: 12px;"><strong>City</strong>&nbsp;{city}</td>
-	<td colspan="2 style="width: 40%; padding-bottom: 12px;""><strong>Zip Code</strong>&nbsp;{zip-code}</td>
+	<td colspan="2" style="width: 40%; padding-bottom: 12px;"><strong>Zip Code</strong>&nbsp;{zip-code}</td>
 </tr>
 <tr>
 	<td colspan="2" style="width: 40%; padding-bottom: 12px;"><strong>Phone</strong>&nbsp;{home-phone}</td>
 	<td colspan="3" style="width: 60%; padding-bottom: 12px;"><strong>Email</strong>&nbsp;{email-address}</td>
 </tr>
 <tr>
-	<td colspan="5" style="width: 100%; padding-bottom: 12px;"><strong>Employed by</strong>&nbsp;{employer}</td>
-</tr>
-<tr>
-	<td colspan="2" style="width: 40%; padding-bottom: 12px;"><strong>Address</strong>&nbsp;{employer-address}</td>
-	<td style="width: 20%; padding-bottom: 12px;"><strong>City</strong>&nbsp;{employer-city}</td>
-	<td style="width: 20%; padding-bottom: 12px;"><strong>Zip</strong>&nbsp;{employer-zip}</td>
-	<td style="width: 20%; padding-bottom: 12px;"><strong>Work Phone</strong>&nbsp;{work-phone}</td>
-</tr>
-<tr>
-	<td colspan="3" style="width: 60%; padding-bottom: 12px;"><strong>Driver's License #</strong>&nbsp;{drivers-license}</td>
-	<td colspan="2" style="width: 40%; padding-bottom: 12px;"><strong>Date of Birth</strong>&nbsp;{date-of-birth}</td>
+	<td colspan="3" style="width: 60%; padding-bottom: 12px;"><strong>School</strong>&nbsp;{school}</td>
+	<td style="width: 20%; padding-bottom: 12px;"><strong>Grade</strong>&nbsp;{grade}</td>
+	<td style="width: 20%; padding-bottom: 12px;"><strong>Date of Birth</strong>&nbsp;{date-of-birth}</td>
 </tr>
 <tr>
 	<td colspan="5" style="width: 100%; padding-bottom: 12px;"><strong>Primary Language Spoken at Home</strong>&nbsp;{primary-language}</td>
+</tr>
+<tr>
+	<td colspan="5" style="width: 100%; padding-top: 12px; padding-bottom: 12px; border-top: 2px dashed #000;">I am aware there are no age restrictions on borrowing library material and I accept the responsibility for my child's selection of materials</td>
+<tr>
+	<td style="width: 25%; padding-bottom: 12px;"><strong>PARENT'S WRITTEN SIGNATURE</strong></td>
+	<td colspan="4" style="width: 75%; padding-bottom: 12px; border-bottom: 1px solid #000;">&nbsp;</td>
+</tr>
+<tr>
+	<td colspan="3" style="width: 60%; padding-top: 12px;"><strong>PARENT'S PRINTED NAME</strong>&nbsp;{parent-name}</td>
+	<td colspan="2" style="width: 40%; padding-top: 12px;"><strong>DRIVER'S LICENSE #</strong>&nbsp;{drivers-license}</td>
 </tr>
 </tbody>
 </table>

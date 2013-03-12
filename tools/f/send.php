@@ -1,4 +1,5 @@
 <?php
+    
     session_start();
    
     require_once('class.Challenge.php');
@@ -66,8 +67,8 @@
 		
 	    //send the mail and test if it happened
 	    if ($mail->Send()){
-	        if (!empty($form->messages['submit'])){
-	            echo $form->messages['submit'];
+	        if (!empty($form->messages['success'])){
+	            echo $form->messages['success'];
 	        }
 	        else{
 		        echo  "Thank you! Your form has been submitted.";

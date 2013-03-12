@@ -30,11 +30,11 @@
 </tr>
 <tr>
 <td>City:</td>
-<td>{des-plaines}</td>
+<td>{city}</td>
 </tr>
 <tr>
-<td>Zipcode:</td>
-<td>{zipcode}</td>
+<td>Zip Code:</td>
+<td>{zip-code}</td>
 </tr>
 <tr>
 <td>Home Phone:</td>
@@ -42,7 +42,7 @@
 </tr>
 <tr>
 <td>Email Address:</td>
-<td>{email-address}</td>
+<td>{email}</td>
 </tr>
 <tr>
 <td>Employer:</td>

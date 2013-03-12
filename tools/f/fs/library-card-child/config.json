@@ -1,5 +1,5 @@
 {
-	"id": "library-card-adult",
+	"id": "library-card-child",
 	"subject": "Library Card Application for {name}",
 	"sender": {
 	    "name": "Library Cards",
@@ -10,24 +10,25 @@
 		"email": "librarycards@dppl.org"
 	}],
 	"fields": {
-	    "application-type": false,
+	    "application-type": true,
         "application-eligibility": false,
         "last-name": true,
         "first-name": true,
         "middle-initial": false,
         "gender": false,
-        "gender": false,
         "address": true,
         "city": false,
-        "zipcode": false,
+        "zip-code": false,
         "home-phone": true,
-        "email-address": false,
+        "email": false,
         "school": false,
         "grade": false,
         "date-of-birth": false,
         "primary-language": false,
         "parent-name": true,
-        "drivers-license": true,
-        "parent-signature": false	
+        "drivers-license": true
+	},
+	"messages": {
+	    "success" : "Thank you! Your form has been submitted. Give us <strong>3 days</strong> before you come to pick up your library card. Cards will be held for 1 month. Be sure to bring a photo ID and proof of current address when you come. Remember that the child's parent or guardian must be present to get the card. We're excited to meet you!"
 	}
 }

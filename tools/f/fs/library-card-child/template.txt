@@ -1,69 +1,76 @@
-<table style="width: 100%; margin-bottom: 24px; padding: 10px; border: 4px double #000; font-size: 100%; font-family: Optima, 'Times New Roman', serif;">
-<thead>
-<tr>
-	<th colspan="10" style="width: 100%; padding-bottom: 12px;">FOR LIBRARY USE ONLY</th>
-</tr>
-</thead>
+<table>
 <tbody>
 <tr>
-	<td style="width: 10%; padding-bottom: 12px;">USER ID</td>
-	<td colspan="3" style="width: 30%; border-bottom: 1px solid #000;">&nbsp;</td>
-	<td style="width: 10%; padding-bottom: 12px;">EXDATE</td>
-	<td colspan="3" style="width: 10%; border-bottom: 1px solid #000;">&nbsp;</td>
-	<td style="width: 10%; padding-bottom: 12px;">USER CAT 1</td>
-	<td style="width: 10%; border-bottom: 1px solid #000;">&nbsp;</td>
+<td>Application Type:</td>
+<td>{application-type}</td>
 </tr>
 <tr>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px;">NEW</td>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px;">&nbsp;</td>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px;">RENEWAL</td>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px;">&nbsp;</td>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px;">LOST/STOLEN</td>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px;">&nbsp;</td>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px;">FEE CARD $</td>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px; border-bottom: 1px solid #000;">&nbsp;</td>
-	<td style="width: 10%; padding-top: 12px; padding-bottom: 12px;">USER CAT 2</td>
-	<td style="width: 10%; padding-top: 12px; border-bottom: 1px solid #000;">&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<table style="width: 100%; font-size: 100%; font-family: Optima, 'Times New Roman', serif;">
-<tbody>
-<tr>
-	<td colspan="5" style="width: 100%; padding-bottom: 12px;">I apply for the right to use the library, and agree to comply with all its rules and regulation, to give immediate notice of any change of address or phone number and to abide by the rules of other libraries where I may use my library card.</td>
+<td>Application Eligibility:</td>
+<td>{application-eligibility}</td>
 </tr>
 <tr>
-	<td colspan="4" style="width: 80%%; padding-bottom: 12px;"><strong>Name</strong>&nbsp;<em>Last Name:</em>&nbsp;{last-name}&nbsp;&nbsp;&nbsp;&nbsp;<em>First Name:</em>&nbsp;{first-name}&nbsp;&nbsp;&nbsp;&nbsp;<em>MI:</em>&nbsp;{middle-initial}</td>
-	<td style="width: 20%; padding-bottom: 12px;">{gender}</td>
+<td>Last Name:</td>
+<td>{last-name}</td>
 </tr>
 <tr>
-	<td colspan="5" style="width: 100%; padding-bottom: 12px;"><strong>Address</strong>&nbsp;{address}</td>
+<td>First Name:</td>
+<td>{first-name}</td>
 </tr>
 <tr>
-	<td colspan="3" style="width: 60%; padding-bottom: 12px;"><strong>City</strong>&nbsp;{city}</td>
-	<td colspan="2" style="width: 40%; padding-bottom: 12px;"><strong>Zip</strong>&nbsp;{zipcode}</td>
+<td>Middle Initial:</td>
+<td>{middle-initial}</td>
 </tr>
 <tr>
-	<td colspan="2" style="width: 40%; padding-bottom: 12px;"><strong>Phone</strong>&nbsp;{home-phone}</td>
-	<td colspan="3" style="width: 60%; padding-bottom: 12px;"><strong>Email</strong>&nbsp;{email-address}</td>
+<td>Gender:</td>
+<td>{gender}</td>
 </tr>
 <tr>
-	<td colspan="3" style="width: 60%; padding-bottom: 12px;"><strong>School</strong>&nbsp;{school}</td>
-	<td style="width: 20%; padding-bottom: 12px;"><strong>Grade</strong>&nbsp;{grade}</td>
-	<td style="width: 20%; padding-bottom: 12px;"><strong>Date of Birth</strong>&nbsp;{date-of-birth}</td>
+<td>Address:</td>
+<td>{address}</td>
 </tr>
 <tr>
-	<td colspan="5" style="width: 100%; padding-bottom: 12px;"><strong>Primary Language Spoken at Home</strong>&nbsp;{primary-language}</td>
+<td>City:</td>
+<td>{city}</td>
 </tr>
 <tr>
-	<td colspan="5" style="width: 100%; padding-top: 12px; padding-bottom: 12px; border-top: 2px dashed #000;">I am aware there are no age restrictions on borrowing library material and I accept the responsibility for my child's selection of materials</td>
-<tr>
-	<td style="width: 25%; padding-bottom: 12px;"><strong>PARENT'S WRITTEN SIGNATURE</strong></td>
-	<td colspan="4" style="width: 75%; padding-bottom: 12px; border-bottom: 1px solid #000;">&nbsp;</td>
+<td>Zip Code:</td>
+<td>{zip-code}</td>
 </tr>
 <tr>
-	<td colspan="3" style="width: 60%; padding-top: 12px;"><strong>PARENT'S PRINTED NAME</strong>&nbsp;{parent-name}</td>
-	<td colspan="2" style="width: 40%; padding-top: 12px;"><strong>DRIVER'S LICENSE #</strong>&nbsp;{drivers-license}</td>
+<td>Home Phone:</td>
+<td>{home-phone}</td>
+</tr>
+<tr>
+<td>Email Address:</td>
+<td>{email}</td>
+</tr>
+<tr>
+<td>School:</td>
+<td>{school}</td>
+</tr>
+<tr>
+<td>Grade:</td>
+<td>{grade}</td>
+</tr>
+<tr>
+<td>Date Of Birth:</td>
+<td>{date-of-birth}</td>
+</tr>
+<tr>
+<td>Primary Language:</td>
+<td>{primary-language}</td>
+</tr>
+<tr>
+<td>Parent Name:</td>
+<td>{parent-name}</td>
+</tr>
+<tr>
+<td>Driver's License:</td>
+<td>{drivers-license}</td>
+</tr>
+<tr>
+<td>Parent Signature:</td>
+<td></td>
 </tr>
 </tbody>
 </table>

@@ -54,7 +54,7 @@
 		}
 		
 		public function check_required_field($key, $val){
-		    if ($this->config['fields'][$key] !== false){
+		    if ($this->config['fields'][$key] == true){
 	                if (empty($val)){
 	                    die('You did not complete a required field. Please double check the form and resubmit.');
 	                }
