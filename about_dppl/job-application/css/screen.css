@@ -1,0 +1,336 @@
+/*generic stuff*/
+body {
+  width: 740px;
+  margin: 1em auto;
+  padding: 1em;
+  line-height: 140%;
+  font-size: 90%;
+  font-family: sans-serif;
+  color: #000;
+  position: relative;
+}
+
+i {
+  font-style: oblique;
+}
+
+b {
+  font-weight: bold;
+}
+
+strong{
+  font-weight: bold;
+}
+
+input[type=submit], input[type=button]{
+  padding: .7em 1.75em;
+  margin: 1em 0 1em 1.5em;
+  background-color: #009899;
+  color: #fff;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+}
+
+input[type=button]:hover, input[type=submit]:hover{
+  background-color: #dfdfdf;
+  color: #000;
+}
+
+/*header*/
+div#header-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 96.83%;
+  padding: 0 1.42em;
+  background-color: #000;
+  color: #009899;
+  z-index: 10;
+}
+
+div#header{
+  width: 740px;
+  margin: 0 auto;
+}
+
+div#header h1{
+  float: left;
+  width: 73%;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: normal;
+  font-size: 1.2em;
+  margin: .6em 0;
+  padding: .5em 0;
+}
+
+div#header input[type=button]{
+  float: left;
+}
+
+/*main body*/
+div#main{
+  margin-top: 5em;
+  z-index: 5;
+}
+
+div#main h1 {
+  clear: both;
+  padding-bottom: .4em;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+  color: #000;
+}
+
+div#main h2{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+div#main img#logo{
+  width: 40%;
+  float: left;
+}
+
+div#main div#address {
+  float: right;
+  width: 40%;
+  margin-bottom: 3em;
+  font-size: .9em;
+  text-align: right;
+}
+  
+.note{
+   margin-top: .5em;
+   margin-bottom: 1em;
+   font-style: oblique;
+ }
+
+/*form*/
+form {
+  width: 100%;
+  position: relative;
+}
+
+/*generic classes*/
+.full{
+  width: 99% !important;
+  clear: left;
+}
+
+.float{
+  float: left;
+}
+
+/*structural bits for form*/
+form fieldset {
+  border: 1px solid #000;;
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+form legend {
+  width: 98%;
+  padding: .6em;
+  background-color: #000;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+form fieldset fieldset{
+  width: 100%;
+  border: 0;
+  margin: .5em 0 1em 0;
+  padding: 0;
+}
+
+form fieldset fieldset legend{
+  border: 0;
+  margin: 0;
+  padding: 0 0 .25em 0;
+  background-color: #fff;
+  color: #000;
+  text-transform: none;
+}
+
+form fieldset div{
+  margin: .5em 0 2em 0;
+ }
+ 
+form fieldset div.last{
+  margin-bottom: 0;
+}
+
+form div.challenge-image{
+  margin-bottom: 1.25em;
+}
+
+form div.challenge-image img{
+  width: 60%;
+}
+
+/*special classes for divs*/
+div.callout{
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid #000;
+}
+
+div.errors{
+  color: red;
+  margin-bottom: 1em;
+}
+
+div.response{
+  display: none;
+  margin-top: 2.5em;
+  padding: 1em;
+  color: #fff;
+}
+
+div.clear{
+  clear: both;
+  padding-top: 1em;
+}
+
+/*form elements*/
+form p{
+  margin-top: .5em;
+  margin-bottom: 1.25em;
+  line-height: 1.5em;
+}
+
+form em{
+  color: red;
+}
+
+form input[type=submit]{
+  float: right;
+  margin-right: 0;
+  background-color: #009900;
+}
+
+/*labels*/
+form label{
+  display: block;
+  float: left;
+  width: 20%;
+  padding-top: .25em;
+}
+
+form label.small{
+  padding-left: 1em;
+  width: 20%;
+}
+
+form label.error{
+  color: red;
+  padding-left: .15em; 
+  vertical-align: center;
+}
+
+/*input*/
+form input[type=text], form select, form textarea{
+  border: 1px solid #000;
+  padding: .35em .25em;
+}
+
+form input[type=text], form textarea{
+  width: 78.8%;
+}
+
+form textarea{
+  height: 5em;
+  overflow: hidden;
+  resize: none;
+  font-family: inherit;
+}
+
+form textarea.tall{
+  height: 10em;
+}
+
+form input.small{
+  width: 19% !important
+ }
+
+form select{
+  width: 79.85%;
+  background-color: #fff;
+}
+  
+form select.small{
+  width: 19%;
+}
+
+form input:focus, form textarea:focus, form select:focus{
+  background-color: #daeee5;
+}
+
+/*simple media query for small screens*/
+@media screen and (max-width: 780px){
+
+  body{
+    width: 92%;
+   }
+   
+   #header-wrapper{
+     padding: 0 .71em !important;
+   }
+   
+   #header{
+     width: 98% !important;
+   }
+   
+   #header h1{
+     width: 50% !important;
+	}
+   
+   div.response{
+     margin-top: 9em;
+   }
+   
+   form{
+     margin-top: 5em;
+   }
+   
+   form label{
+     width: 50%;
+     float: none;
+     margin-bottom: .5em;
+   }
+   
+   form input[type=text], form select, form textarea{
+     width: 98.65% !important;
+   }
+   
+   form input[type=radio]{
+     position: absolute;
+     right: 68%;
+   }
+   
+   form label.small{
+     width: 98.65% !important;
+     padding: 0;
+     padding-top: 1em;
+   }
+   
+   form input.small{
+     width: 98.65% !important;
+   }
+   
+   .float{
+     float: none;
+   }
+
+}
+
+@media screen and (max-width: 500px){
+	#header h1{
+	  width: 34% !important;
+	}
+}

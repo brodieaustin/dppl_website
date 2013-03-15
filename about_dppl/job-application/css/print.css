@@ -1,0 +1,46 @@
+@import url('screen.css');
+
+body{
+  width: 95%;
+  font-size: 70%;
+  line-height: 110%;
+}
+
+/*.break{
+  page-break-before: always;
+}*/
+
+#tools{
+  display: none;
+}
+
+#main{
+  margin-top: 1em;
+}
+
+form ol{
+  list-style: none;
+}
+
+form ol li{
+  margin: 0 !important;
+  padding: 0;
+}
+
+fieldset{
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend{
+  padding-left: 0;
+}
+
+label, input{
+  padding: 0;
+}
+
+form input[type=submit]{
+  display: none;
+}

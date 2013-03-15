@@ -97,7 +97,7 @@ a.no-style{
  text-decoration: none;
 }
 
-a.button{
+.button{
   display: inline-block !important;
   width: auto;
   height: 2em;
@@ -113,7 +113,7 @@ a.button{
   text-decoration: none;
 }
 
-a.button:hover{
+.button:hover{
   background-color: #aaa !important;
   text-decoration: none;
  }
@@ -277,6 +277,8 @@ img{
   border: 0;
 }
 
+button{height: 2em; line-height: 2em;}
+
 input, select{
   display: inline-block;
   width: auto;
@@ -301,7 +303,7 @@ input[type=text], input[type=password]{
   height: 1.9em;
 }
 
-input[type=submit], input[type=button], input[type=reset]{
+input[type=submit], input[type=button], input[type=reset], button{
   padding: 0 4px;
   cursor: pointer;
   background-color: #e6e6e6;
@@ -311,7 +313,7 @@ input[type=submit], input[type=button], input[type=reset]{
   -moz-border-radius: 4px;
 }
 
-input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover{
+input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover, button:hover{
   background-color: #aaa;
 }
 

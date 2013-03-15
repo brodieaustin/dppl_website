@@ -44,8 +44,9 @@
 #content input[type=submit]{background-color: #8ABC4F;}
 #content input[type=submit]:hover{background-color: #aaa;}
 
-#content form input.small{width: 25%;}
-#content form input.wide{width: 96.190476%;}
+.small{width: 25% !important;}
+.medium{width: 50% !important;}
+.wide{width: 98.4% !important;}
 
 #content form textarea{width: 99%; min-height: 100px; border: 1px solid #ccc; font-family: inherit; resize: none;}
 

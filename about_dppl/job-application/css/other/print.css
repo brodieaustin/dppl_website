@@ -1,0 +1,91 @@
+@import url('screen.css');
+
+body{
+  width: 95%;
+  font-size: 12px;
+  line-height: 110%;
+  font-family: Optima, 'Times New Roman', serif;
+  margin-top: 0!important;
+}
+
+
+.break{
+  page-break-after: always;
+}
+
+#header-wrapper, #address, #required-note{
+  display: none;
+}
+
+div#main{
+  margin-top: 0 !important;
+}
+
+div#main h1{
+  text-align: center;
+  font-size: 200%;
+  border-bottom: 0;
+}
+
+div#main img#logo{
+  width: 200px;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  margin-left: -15%;
+}
+
+
+#challenge, #copy{
+  display: none;
+}
+
+form ol{
+  list-style: none;
+}
+
+form ol li{
+  margin: 0 !important;
+  padding: 0;
+}
+
+fieldset{
+  border: 0 !important;
+  margin: 0;
+  padding: 0;
+}
+
+form fieldset div{
+  margin: 0 !important;
+ }
+ 
+ form input[type=text], form select, form textarea{
+  border: 0;
+}
+
+form select{
+  visibility: hidden;
+}
+
+form input[type=text]{
+  border-bottom: 1px solid #000;
+}
+
+form textarea{
+  height: 1em;
+}
+  
+legend{
+  padding-left: 0;
+  padding-bottom: 0;
+  font-size: 14px;
+  line-height: 1.2em;
+}
+
+label, input{
+  padding: 0;
+}
+
+form input[type=submit]{
+  display: none;
+}
