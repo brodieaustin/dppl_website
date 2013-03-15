@@ -7,6 +7,8 @@
 		
 		$(function(){
 		
+			$('.load').hide();
+		
 			initializeMap();
 			
 			$('#eligibility-street').focus(function(){

@@ -103,8 +103,8 @@
 					</div>
 					<div>
 						<label>Gender: <em>*</em></label>
-						<label for="gender-male"><input type="radio" id="gender-male" name="gender" value="Male" tabindex="4" />Male</label>
-						<label for="gender-female"><input type="radio" id="gender-female" name="gender" value="Female" tabindex="5" />Female</label>
+						<label for="gender-male"><input type="radio" id="gender-male" name="gender" value="Male" class="required" tabindex="4"  />Male</label>
+						<label for="gender-female"><input type="radio" id="gender-female" name="gender" value="Female" class="required" tabindex="5" />Female</label>
 					</div>
 				</fieldset>
 				<fieldset>
@@ -113,12 +113,12 @@
 						<input type="text" id="address" name="address" class="required wide" tabindex="6" />
 					</div>
 					<div>
-						<label for="city">City:</label>
-						<input type="text" id="city" name="city" tabindex="7" />
+						<label for="city">City: <em>*</em></label>
+						<input type="text" id="city" name="city" class="required" tabindex="7" />
 					</div>
 					<div>
 						<label for="zip-code">Zip Code: <em>*</em></label>
-						<input type="text" id="zip-code" name="zip-code" tabindex="8" />
+						<input type="text" id="zip-code" name="zip-code" class="required" tabindex="8" />
 					</div>
 					<div>
 						<label for="home-phone">Phone: <em>*</em></label>
@@ -165,8 +165,7 @@
 			            <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="19" />
 	            </fieldset>
 				<div class="buttons right">
-				    <input type="reset" value="Reset" tabindex="20" />
-					<input type="submit" value="Submit" class="track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="21" />
+					<input type="submit" value="Submit" class="track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="20" />
 				</div>
 			</form>
 		</div><!--closing div for card application-->

@@ -17,7 +17,7 @@
         "middle-initial": false,
         "gender": true,
         "address": true,
-        "city": false,
+        "city": true,
         "zip-code": true,
         "home-phone": true,
         "email": false,

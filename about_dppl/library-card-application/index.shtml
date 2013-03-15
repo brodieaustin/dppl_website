@@ -79,7 +79,7 @@
 					</div><!--end of eligiblity check-->
 				</div><!--end of eligibility-wrapper"-->
 			<hr />
-			<form id="application" method="post"  action="/tools/f/test.php">
+			<form id="application" method="post"  action="/tools/f/send.php">
 				<h3>Complete the Application</h3>
 				<p>I apply for the right to use the library with all its rules and regulations, to give immediate notice of any changes of address or phone number and to abide by the rules of other libraries where I may use my library card.</p>
 				<p class="note"><em>*</em> Required field</em></p>
@@ -112,8 +112,8 @@
 						<input type="text" id="address" name="address" class="required wide" tabindex="6" />
 					</div>
 					<div>
-						<label for="city">City:</label>
-						<input type="text" id="city" name="city" tabindex="7" />
+						<label for="city">City: <em>*</em></label>
+						<input type="text" id="city" name="city" class="required" tabindex="7" />
 					</div>
 					<div>
 						<label for="zip-code">Zip Code: <em>*</em></label>
@@ -170,8 +170,7 @@
 			            <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="19" />
 	            </fieldset>
 				<div class="buttons right">
-				    <input type="reset" value="Reset" tabindex="20" />
-					<input type="submit" value="Submit" class="track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="21" />
+					<input type="submit" value="Submit" class="track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="20" />
 				</div>
 			</form>
 		</div><!--closing div for card application-->
