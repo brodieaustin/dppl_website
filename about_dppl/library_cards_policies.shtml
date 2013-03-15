@@ -3,6 +3,9 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
+	<style>
+		.period:hover{cursor: pointer;}
+	</style>
 </head>
 <body>
 	<!--header-->
@@ -19,5 +22,41 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<script>
+		$(document).ready(function(){
+			var val, period, new_val, new_period, m;
+			var p = /(\d+) (\D+)/
+			$('.period').click(function(){
+				$('#content').find('.period').each(function(){
+					m = p.exec($(this).html());
+					val = m[1];
+					period = m[2];
+					
+					if (period == 'week' || period == 'weeks'){
+						new_val = val*7;
+						new_period = 'days';
+					}
+					else if (period == 'day' || period == 'days'){
+						new_val = val*24;
+						new_period = 'hours';
+					}
+					else if (period == 'hour' || period == 'hours'){
+						new_val = val*60;
+						new_period = 'minutes';
+					}
+					else if (period == 'minute' || period == 'minutes'){
+						new_val = val*60;
+						new_period = 'seconds';
+					}
+					else if (period == 'second' || period == 'seconds'){
+						new_val = Math.floor((val / 604800));
+						new_period = new_val == 1?'week':'weeks';
+					}
+					
+					$(this).html(new_val + ' ' + new_period);
+				});
+			});
+		});
+	</script>
 </body>
 </html>
