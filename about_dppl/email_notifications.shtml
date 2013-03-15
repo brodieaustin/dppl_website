@@ -51,8 +51,7 @@
 			</div>
 			<div><p>By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p></div>
 			<div class="buttons right">
-				<input type="reset" value="Reset" tabindex="6" />
-				<input type="submit" value="Submit" tabindex="7" />  
+				<input type="submit" value="Submit" tabindex="6" />  
 			</div>
 		</form>
 	</div>
