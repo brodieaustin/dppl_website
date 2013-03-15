@@ -24,6 +24,8 @@ header h1 img{width: 30%; max-width: 426px; margin: 6px; }
 header .hidden{margin-left: -99999px;}
 header small{display: block; color: #888;}
 article blockquote.callout{padding-left: 0;font-size: 28px;line-height: 30px;color: #01a89e;border: 0;}
+.questions dt{font-weight: bold; margin-bottom: 7px;}
+.questions dd{margin-bottom: 28px;}
 .links h5{font-size: 17px; margin-bottom: 14px; border-bottom: 1px solid #ddd;}
 aside h4{border-bottom: 2px solid #ddd}
 footer{margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;}
