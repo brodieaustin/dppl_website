@@ -71,12 +71,17 @@
                 <div>
 	                <label for="item-type">Type of Item <em>*</em></label>
 	                <select id="item-type" name="item-type" class="required" tabindex="12">
-		                <option value="Type 1">Type 1</option>
+		                <option value="Book">Book</option>
+		                <option value="DVD">DVD</option>
 	                </select>
                 </div>
                 <div>
+                    
 	                <label for="item-title">Title <em>*</em></label>
-	                <input type="text" id="item-title" name="item-title" class="required wide" tabindex="13" />
+	                <input type="text" id="item-title" name="item-title" class="required wide" tabindex="13" /></span>
+                </div>
+                <div id="catalog-check">
+                    <div id="catalog-check-response" class="response callout"><span class="load inline"></span>Double checking catalog</div>
                 </div>
                 <div>
 	                <label for="item-author">Author</label>
@@ -97,11 +102,10 @@
 			    <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="15" />
 	    </fieldset>
             <div class="buttons right">
-                <input type="reset" value="Reset" />
                 <input type="submit" value="Submit" />
             </div>
         </form>
-        <div class="response"><div class="load"></div></div>
+        <div class="response" id="form-response"><div class="load"></div></div>
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
@@ -110,6 +114,42 @@
 	<script src="/js/jquery.validate.min.js"></script>
 	<script>
 		$(document).ready(function(){
+		    //var key = 'jftsyvbcseb47a93cczz3uvk';
+		    var key = '6vuvh66tx8evnz9b3r768gfh';
+		    var base_url = 'https://api.bibliocommons.com/v1/titles';
+		    var catalog_url = 'http://dppl.bibliocommons.com/search?t=smart&search_category=keyword&q={q}&commit=Search';
+		    var library = 'dppl';
+		    
+		    $('#item-title').change(function(){
+		        var url, query, type
+		        var results = [];
+		        
+		        $('#catalog-check-response').slideDown();
+		        
+		        type = $('#item-type').val();
+		        query = encodeURI($(this).val());
+		        url = base_url + '?library=' + library + '&q=' + query + '&api_key=' + key;
+		        console.log(url);
+		        catalog_url = catalog_url.replace('{q}', query);
+
+		        $.getJSON('/tools/data.php?jsoncallback=?', {url: url, format: 'json'}, function(data){
+		            $.each(data.titles, function(i){
+		                if (data.titles[i].format.name == type){
+		                    results.push(data.titles[i]);
+		                }
+		            });
+		            
+		            console.log(results);
+		            if (data['count'] != 0){
+		                $('#catalog-check-response').html('Were you looking for <a href="' + results[0].details_url + '" targe="_blank">' + results[0].title  + '&nbsp;(' + results[0].publication_date + ')</a>?&nbsp;There were <a href="' + catalog_url + '&formats=' + results[0].format.id + '" target="_blank">' + (results.length - 1) + ' other potential matches</a>.');
+		            }
+		            else{
+		                $('#catalog-check-response').html('No matching items found.').delay(4000).html('<span class="load inline"></span>Double checking catalog').slideUp();
+		            }
+		        });
+		        
+		    });
+		    
 			$('#purchase-suggestion').validate({
 				invalidHandler: function(form, validator) {
 					  var errors = validator.numberOfInvalids();
@@ -122,16 +162,15 @@
 					  }
 				},
 				submitHandler: function(form){
-					$('.response').show();
+					$('#form-response').show();
 					$(form).hide();
 					$.post($(form).attr('action'), $(form).serialize(), function(data){
 					    if (data.search("Thank") == 1 ){
-					        $('.response').html(data).removeClass('failure').addClass('success');
+					        $('#form-response').html(data).removeClass('failure').addClass('success');
 					        $('#purchase-suggestion')[0].reset();
 					    }
 					    else{
-					        $('.response').html(data).removeClass('success').addClass('failure').delay(10000).hide();
-					        $(form).delay(12000).show();
+					        $('#form-response').html(data).removeClass('success').addClass('failure');
 					    }
 					    
 					});

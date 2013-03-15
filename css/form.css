@@ -45,7 +45,7 @@
 #content input[type=submit]:hover{background-color: #aaa;}
 
 #content form input.small{width: 25%;}
-#content form input.wide{width: 96.190476%;}
+#content form input.wide{width: 98.4%;}
 
 #content form textarea{width: 99%; min-height: 100px; border: 1px solid #ccc; font-family: inherit; resize: none;}
 
@@ -108,11 +108,12 @@ ul.instructions li{
 }
 
 .load{
-  display: none;
   width: 2em;
   height: 2em;
-  background: #fff url('/images/ajax-loader.gif') no-repeat center center;
+  background: url('/images/ajax-loader.gif') no-repeat center center;
 }
+
+.inline{display: inline-block; height: 1.5em; width:1.5em; margin-right: 1em; vertical-align: top;}
 
 .right{
   float: right;
