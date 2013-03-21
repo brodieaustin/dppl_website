@@ -1,8 +1,4 @@
-	var RecaptchaOptions = {
-		theme : 'clean'
-	};
-	
-	$(document).ready(function(){
+    $(document).ready(function(){
 	
 		var storage = resumeForm();
 		
@@ -19,15 +15,6 @@
 		}
 		
 		$('#name').focus();
-		
-		$('#reset').click(function(){
-			$(':input', 'form')
-				.not(':button, :submit, :reset, input[name="app-date"], select[name="position"]')
-				.val('')
-				.removeAttr('checked')
-				.removeAttr('selected');
-			localStorage.clear();
-		});
 			
 		$('#save').click(saveForm);
 			
@@ -43,23 +30,24 @@
 				  }
 			},
 			submitHandler: function(form){
+			    $('.form').hide();
+			    $('.load').show();
+			    $('.response').hide();
+			    $('.response-message').html('').removeClass('success').removeClass('failure');
 				$(form).ajaxSubmit({
 					success: function(data){
-							$('div.errors').hide();
-							$('#application').hide();
+					    console.log(data);
+					    $('.load').hide();
+					    if (data.status == 'success'){
+					        $(form)[0].reset();
+					    }
+						$('.response-message').addClass(data.status).html(data.message).parent().fadeIn();
+						$('.form').show();
 							
-							if (data.search("Thank") == 1 ){
-								$('div.response').html(data).css({backgroundColor: 'green'}).slideDown(800);
-							}
-							else{
-								$('#application').fadeIn(1000);
-								$('div.response').html(data).css({backgroundColor: 'red'}).slideDown(800).delay(5000).slideUp(800);
-							}	
+					},
+					failure: function(){
 							
-						},
-						failure: function(){
-							$('div.response').html("Something went wrong. Please check your form and try again.").css({backgroundColor: 'red'}).slideDown(800).delay(4000).slideUp(800);
-						}
+					}
 				});
 			}
 			});

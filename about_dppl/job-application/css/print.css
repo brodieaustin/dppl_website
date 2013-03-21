@@ -1,45 +1,98 @@
-@import url('screen.css');
+* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
+
+@page{margin: 1cm;}
 
 body{
-  width: 95%;
-  font-size: 70%;
-  line-height: 110%;
+  width: 100%;
+  font-size: 11px;
+  line-height: 120%;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-/*.break{
-  page-break-before: always;
-}*/
+.form-header{margin-bottom: 2em; overflow: hidden;}
+.form-header div{border: 0 !important;}
+.hcard, address{font-style: normal !important; font-size: 100%;}
 
-#tools{
-  display: none;
+.hcard h1{width: 100%;}
+.hcard address, .hcard .tel{float: left; margin-right: 1em;}
+
+a {text-decoration: none;}
+abbr{border-bottom: 0;}
+
+.break{
+  page-break-after: always;
 }
 
-#main{
-  margin-top: 1em;
+.errors, .navbar, #files, #challenge, #copy, hr, .add, .buttons, .response, .load{
+  display: none !important;
 }
 
-form ol{
-  list-style: none;
-}
+.add-section{display: block !important;}
 
-form ol li{
-  margin: 0 !important;
-  padding: 0;
-}
+article{clear: both;}
 
-fieldset{
-  border: 0;
-  margin: 0;
+fieldset, .sub-section{
+  border: 0 !important;
+  margin-bottom: 2em;
   padding: 0;
 }
 
 legend{
+  width: 100%;
+  margin-bottom: .5em;
   padding-left: 0;
+  padding-bottom: 0;
+  border-bottom: 2px solid #000;
+  line-height: 1.2em;
+  font-weight: bold;
 }
+
+.sub-section legend{border: 0 !important;}
+
+form div{margin-bottom: 1em; padding-bottom: 4px; border-bottom: 1px solid #000;}
+form div.other{margin-bottom: 0 !important; padding-top: .5em !important; padding-bottom: 0 !important; border-bottom: 0 !important; }
+form div.print-float{float: left; width: 50% !important; height: 2em; }
+ 
+form input[type=text], form select, form textarea{
+  border: 0;
+  font-size: 100%;
+}
+
+form input[type=radio]{
+  height: 1em;
+  width: 1em;
+  border: 1px solid #000;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+form select{
+  outline: 0 !important;
+  background-color: #fff;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+form textarea{
+  width: 100% !important;
+  height: 1.5em;
+  resize: none;
+}
+ 
 
 label, input{
   padding: 0;
 }
+
+input.wide{width: 70% !important;}
+
+label{display: inline-block; min-width: 20%;}
+
+label.wide{width: 100% !important;}
+label.inline{ display: inline !important;}
+form em{display: none;}
 
 form input[type=submit]{
   display: none;
