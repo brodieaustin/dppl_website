@@ -1,5 +1,5 @@
 /*form bits in content section*/
-#content form{margin: 1em 0; padding: .5em; overflow: hidden;}
+#content form{margin: 1em 0; padding: .5em 0; overflow: hidden;}
 
 #content form div{position: relative; clear: left; margin-bottom: 1.5em;}
 #content form div.group{overflow: hidden;}
@@ -53,8 +53,9 @@
 
 /*general use classes*/
 
-.form-header{height: 10em; background-image: url('/images/themes/River/logo.jpg'); background-repeat: no-repeat; background-position: top left; background-size: 400px 117px; overflow: hidden;}
-.form-header .hcard{float: right;}
+.form-header{height: 10em; margin-top: 1em; background-image: url('/images/themes/River/logo.jpg'); background-repeat: no-repeat; background-position: top left; background-size: 400px 117px; overflow: hidden;}
+.form-header .hcard{float: right; margin-top: 1em;}
+.form-header .fn{font-weight: bold;}
 
 .load{
   display: none;
@@ -78,11 +79,12 @@
   right: 0;
   width: 100%;
   min-height: 2em;
-  background-color: #fff;
+  margin: 0 0 .5em 0;
+  background-color: #eee;
 }
 
 .response-message{
-  padding: 1em 3em 1em 1em;
+  padding: 1em 2em 1em 1em;
 }
 .success{
   background-color: #d0e4b9;
@@ -113,6 +115,8 @@ input.error, textarea.error, select.error{border-color: #333;}
 ul.instructions li{
   margin-bottom: .5em;
 }
+
+.print-only{display: none;}
 
 /*fallbacks for no-js*/
 .no-js #print{display: none;}
