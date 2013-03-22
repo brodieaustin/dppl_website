@@ -3,18 +3,27 @@
 @page{margin: 1cm;}
 
 body{
-  width: 100%;
-  font-size: 11px;
+  width: 99%;
+  font-size: 12px;
   line-height: 120%;
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.print-only{display: block;}
+span.print-only{display: inline !important;}
+.no-print{display: none;}
+
+.note{clear: both; padding-top: .5em; font-style: oblique;}
+
 .form-header{margin-bottom: 2em; overflow: hidden;}
 .form-header div{border: 0 !important;}
+.hcard .fn{font-weight: bold;}
 .hcard, address{font-style: normal !important; font-size: 100%;}
 
 .hcard h1{width: 100%;}
 .hcard address, .hcard .tel{float: left; margin-right: 1em;}
+.hcard .print-logo{float: right; width: 20%;}
+.print-logo img{width: 100%;}
 
 a {text-decoration: none;}
 abbr{border-bottom: 0;}
@@ -27,31 +36,33 @@ abbr{border-bottom: 0;}
   display: none !important;
 }
 
-.add-section{display: block !important;}
-
 article{clear: both;}
 
 fieldset, .sub-section{
   border: 0 !important;
-  margin-bottom: 2em;
   padding: 0;
+  margin-left: 0 !important;
 }
+
+fieldset{margin-bottom: 2em;}
+.sub-section{margin-bottom: .5em;}
 
 legend{
   width: 100%;
-  margin-bottom: .5em;
+  margin-bottom: 0;
   padding-left: 0;
-  padding-bottom: 0;
+  padding-bottom: .5em;
   border-bottom: 2px solid #000;
   line-height: 1.2em;
   font-weight: bold;
 }
 
-.sub-section legend{border: 0 !important;}
+.sub-section legend{padding-top: .5em !important; padding-bottom: 0 !important; border: 0 !important;}
 
-form div{margin-bottom: 1em; padding-bottom: 4px; border-bottom: 1px solid #000;}
+form div{clear: both; margin-bottom: 0; padding: .5em 0; border-bottom: 1px solid #000;}
+form div.group{clear:both;}
 form div.other{margin-bottom: 0 !important; padding-top: .5em !important; padding-bottom: 0 !important; border-bottom: 0 !important; }
-form div.print-float{float: left; width: 50% !important; height: 2em; }
+form div.print-float{clear: none !important; float: left; width: 50% !important; height: 1.5em;}
  
 form input[type=text], form select, form textarea{
   border: 0;
@@ -59,9 +70,10 @@ form input[type=text], form select, form textarea{
 }
 
 form input[type=radio]{
-  height: 1em;
-  width: 1em;
+  height: 11px;
+  width: 11px;
   border: 1px solid #000;
+  margin-top: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -77,8 +89,13 @@ form select{
 
 form textarea{
   width: 100% !important;
-  height: 1.5em;
+  height: 1em;
   resize: none;
+  overflow: hidden;
+}
+
+form textarea.tall{
+  height: 3em;
 }
  
 

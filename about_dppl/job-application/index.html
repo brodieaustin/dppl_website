@@ -11,33 +11,48 @@
 	<link rel="profile" href="http://microformats.org/profile/hcard" />
 	<!--<link rel="stylesheet" href="css/normalize.css" media="screen" />-->
     <!--<link rel="stylesheet" href="css/screen.css" media="screen" />-->
-    <link rel=stylesheet href="css/style.css" media="screen" />
-    <link rel=stylesheet href="css/form.css" media="screen" />
+    <link rel=stylesheet href="/css/style.css" media="screen" />
+    <link rel=stylesheet href="/css/form.css" media="screen" />
 	<link rel="stylesheet" href="css/print.css" media="print" />
 	<script src="/js/modernizr-2.5.3.min.js"></script>
+	<style>
+	    address{margin-bottom: 0;}
+	</style>
 </head>
 <body class="fixed-nav no-chrome">
-    <noscript><div class="warning"><strong>Warning!</strong>&nbsp;&nbsp; You don't have JavaScript enabled. Some features of this application may not work. <a href="http://enable-javascript.com/">Learn how to activate JavaScript</a>.</div></noscript>
 	<div class="navbar top" id="navbar-top">
 		<div class="nav">
 			<a class="brand" href="/">Des Plaines Public Library</a>
 			<div class="buttons right">
-			    <a href="mailto:help@dppl.org" class="help">help@dppl.org</a>
+			    <a href="mailto:jobs@dppl.org" class="help">jobs@dppl.org</a>
 			    <button id="save">Save</button>
-			    <button id="print">Print</button>
 			</div>
 		</div><!--closing div for nav-->
 	</div><!--closing div for top navbar-->
 	<div id="content">
+	    <noscript>
+	        <div class="warning"><strong>Warning!</strong>&nbsp;&nbsp; You don't have JavaScript enabled. Some features of this application may not work. <a href="http://enable-javascript.com/">Learn how to activate JavaScript</a>.</div>
+	    </noscript>
     	<div class="load">Processing Form</div>
 	    <div class="response">
-            <div class="response-message">Thank you! Your form has been submitted.</div>
+            <div class="response-message"></div>
             <span class="close">&times;</span>
 	    </div>
 	    <div class="form">
+	        <div class="warning no-print with-close" id="print-message">
+	            <p><strong>Prefer to download and complete the application?</strong></p>
+	            <p>You can email the completed form to jobs@dppl.org, mail it to the library, or drop it off on the 2nd floor.</p>
+	            <div>
+	                <a href="downloads/DPPL-Application-Print.pdf" class="button">Download now</a>
+	            </div>
+	            <span class="close">&times;</span>
+	        </div>
 	        <div class="form-header">
 	            <div class="hcard">
-	                <h1 class="fn org">Des Plaines Public Library</h1>
+	                <span class="print-only print-logo">
+	                    <img src="dppl-logo-black.png" />
+	                </span>
+	                <span class="fn org">Des Plaines Public Library</span>
 	                <address class="adr">
 					    <span class="street-address">1501 Ellinwood Street</span>
 					    <span class="locality">Des Plaines</span>,  
@@ -46,7 +61,7 @@
 				    </address>
 				    <span class="tel">
 					    <span class="type">Tel:</span>
-					    <span class="value"><a href="tel:8478275551">(847) 827-5551</a></span>
+					    <span class="value">(847) 827-5551</span>
 				    </span>
 				    <span class="tel">
 					    <span class="type">Fax:</span>
@@ -55,122 +70,100 @@
 			    </div>
 		    </div>          
 			<h1>Employment Application</h1>
-			<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>
-			<p class="note"><em>*</em> Required field</p>
+			<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection. <span class="print-only">Send your completed application by mail or by email to jobs@dppl.org.</span></p>
 			<div class="errors"></div>
-			<form action="mail.php" method="post" id="application" enctype="multipart/form-data">
+			<form action="/tools/f/send.php" method="post" id="application" enctype="multipart/form-data">
+			    <p class="note no-print"><em>*</em> Required field</p>
 			    <input type="hidden" name="form-id" id="form-id" value="job-application" />
 				    <fieldset id="personal" class="section">
 					    <legend>Personal Information</legend>
 					    <div class="print-float">
 						    <label for="name">Full Name: <em>*</em></label>
-						    <input tabindex="4" type="text" name="name" id="name" class="required" />
+						    <input type="text" name="name" id="name" class="required" tabindex="1" />
 					    </div>
 					    <div class="print-float">
-						    <label for="app-date">Application Date:</label>
-						    <input tabindex="3" type="text" name="app-date" id="app-date" class="small" />
+						    <label for="app-date">Application Date: <em>*</em></label>
+						    <input type="text" name="app-date" id="app-date" class="required small" tabindex="2" />
 					    </div>
 					    <div class="print-float">
-						    <label for="address-street">Street Address:</label>
-						    <input tabindex="5" type="text" name="address-street" id="address-street" class="wide" />
+						    <label for="address-street">Street Address: <em>*</em></label>
+						    <input type="text" name="address-street" id="address-street" class="required wide" tabindex="3" />
 					    </div>
 					    <div class="print-float">
-						    <label for="address-city">City:</label>
-						    <input tabindex="6" type="text" name="address-city" id="address-city" />
+						    <label for="address-city">City: <em>*</em></label>
+						    <input type="text" name="address-city" id="address-city" class="required" tabindex="4" />
 					    </div>
 					    <div class="print-float">
-						    <label for="address-state">State:</label>
-						    <input tabindex="7" type="text" name="address-state" id="address-state" class="small" />
+						    <label for="address-state">State: <em>*</em></label>
+						    <input type="text" name="address-state" id="address-state" class="required small" tabindex="5" />
 					    </div>
 					    <div class="print-float">
-						    <label for="address-zip">Zip Code:</label>
-						    <input tabindex="8" type="text" name="address-zip" id="address-zip" class="small" />
+						    <label for="address-zip">Zip Code: <em>*</em></label>
+						    <input type="text" name="address-zip" id="address-zip" class="required small" tabindex="6" />
 					    </div>
 					    <div class="print-float">
 						    <label for="phone">Primary Phone: <em>*</em></label>
-						    <input tabindex="9" type="text" name="phone" id="phone" class="required small" />
+						    <input type="text" name="phone" id="phone" class="required small" tabindex="7" />
 					    </div>
 					    <div class="print-float">
 						    <label for="email">Email Address: <em>*</em></label>
-						    <input tabindex="10" type="text" name="email" id="email" class="email required small"/>
+						    <input type="text" name="email" id="email" class="email required small" tabindex="8" />
 					    </div>
-					    <hr />
 				    </fieldset><!--closing tag for personal info fieldset-->
+				    <hr />
 				    <fieldset id="background" class="section">
 					    <legend>Background Information</legend>
-					    <div>
+					    <div class="print-float">
 						    <label for="position">Position applying for: <em>*</em></label>
-						    <select tabindex="11" name="position" id="position" class="required medium">
+						    <select name="position" id="position" class="required" tabindex="9">
 							    <!--update positions with <option value="Job Name">Job Name</option>-->
 							    <option></option>
-							    <option value="Web Services Librarian">Web Services Librarian</option>
+							    <option value="Manager of Creative Services">Manager of Creative Services</option>
 							    <option value="Page">Page</option>
 						    </select>
 					    </div>
-					    <div class="group print-float">
-						    <label>Are you seeking?</label>
-						    <label class="inline tiny"><input tabindex="12" type="radio" name="worktype" id="worktype1" value="Full Time" />Full Time</label>
-						    <label class="inline tiny"><input tabindex="13" type="radio" name="worktype" id="worktype2" value="Part Time" />Part Time</label>
-					    </div>
 					    <div class="print-float">
-						    <label for="date-avail">Date available:</label>
-						    <input tabindex="14" type="text" name="date-avail" id="date-avail" />
+						    <label for="date-avail">Date available: <em>*</em></label>
+						    <input type="text" name="date-avail" id="date-avail" class="required" tabindex="10" />
 					    </div>
 					    <div class="group">
-						    <label>How were you referred to the Library?</label>
-						    <label class="inline small"><input tabindex="15" type="radio" name="refer-type" id="refer-type1" value="Library Web Site" />Library Web Site</label>
-						    <label class="inline small"><input tabindex="16" type="radio" name="refer-type" id="refer-type2" value="Newspaper" />Newspaper List</label>
-						    <label class="inline small"><input tabindex="17" type="radio" name="refer-type" id="refer-type3" value="Other" />Other</label>
+						    <label>How were you referred to the Library? <em>*</em></label>
+						    <label for="refer-type1" class="inline small"><input type="radio" name="refer-type" id="refer-type1" class="required" value="Library Web Site" tabindex="11" />Library Web Site</label>
+						    <label for="refer-type2" class="inline small"><input type="radio" name="refer-type" id="refer-type2" class="required" value="RAILS Web Site" tabindex="12" />RAILS Web Site</label>
+						    <label for="refer-type3" class="inline small"><input type="radio" name="refer-type" id="refer-type3" class="required" value="Other" tabindex="13" />Other</label>
 						    <div class="other">
-							    <label for="refer-other" class="wide"><i>If "other", please specify:</i></label>
-							    <input tabindex="18" type="text" name="refer-other" id="refer-other" class="wide" />
+							    <label for="refer-other" class="wide"><i>If &ldquo;other&rdquo;, please specify:</i></label>
+							    <input type="text" name="refer-other" id="refer-other" class="wide" tabindex="14" />
 						    </div>
 					    </div>
 					    <div class="group">
-						    <label>Are you at least 18 years of age?</label>
-						    <label class="inline tiny"><input tabindex="19" type="radio" name="age" id="age1" value="Yes" />Yes</label>
-						    <label class="inline tiny"><input tabindex="20" type="radio" name="age" id="age2" value="No" />No</label>
+						    <label>Are you at least 16 years of age? <em>*</em></label>
+						    <label for="age1" class="inline tiny"><input type="radio" name="age" id="age1" class="required" value="Yes" tabindex="15" />Yes</label>
+						    <label for="age2" class="inline tiny"><input type="radio" name="age" id="age2" class="required" value="No" tabindex="16" />No</label>
 					    </div>
 					    <div class="group">
-						    <label>Are you legally eligible for employment in the U.S.?</label>
-						    <label class="inline tiny"><input tabindex="21" type="radio" name="legal" id="legal1" value="Yes"/>Yes</label>
-						    <label class="inline tiny"><input tabindex="22" type="radio" name="legal" id="legal2" value="No"/>No</label>
+						    <label>Are you legally eligible for employment in the U.S.? <em>*</em></label>
+						    <label for="legal1" class="inline tiny"><input type="radio" name="legal" id="legal1" class="required" value="Yes" tabindex="17" />Yes</label>
+						    <label for="legal2" class="inline tiny"><input type="radio" name="legal" id="legal2" class="required" value="No" tabindex="18" />No</label>
 					    </div>
 					    <div class="group">
-						    <label>If the position you are applying for requires a driver's license, please advise if you have a valid driver's license:</label>
-						    <label class="inline tiny"><input tabindex="23" type="radio" name="driver" id="driver1" value="Yes"/>Yes</label>
-						    <label class="inline tiny"><input tabindex="24" type="radio" name="driver" id="driver2" value="No"/>No</label>
+						    <label>If this position requires a driver's license, do you have a valid driver's license?</label>
+						    <label for="driver1" class="inline tiny"><input type="radio" name="driver" id="driver1" value="Yes" tabindex="19" />Yes</label>
+						    <label for="driver2" class="inline tiny"><input type="radio" name="driver" id="driver2" value="No" tabindex="20" />No</label>
+					    </div>
+					    <div class="group">
+						    <label>Were you previously employed by the Des Plaines Public Library? <em>*</em></label>
+						    <label for="prev-employed1" class="inline tiny"><input type="radio" name="prev-employed" id="prev-employed1" class="required" value="Yes" tabindex="21" />Yes</label>
+						    <label for="prev-employed2" class="inline tiny"><input type="radio" name="prev-employed" id="prev-employed2" class="required" value="No" tabindex="22" />No</label>
 						    <div class="other">
-							    <label for="license-class" class="inline medium">License Class:
-							        <input tabindex="25" type="text" name="license-class" id="license-class" />
+							    <label for="prev-department" class="inline small" >Department:
+							        <input type="text" name="prev-department" id="prev-department" tabindex="23" />
 							    </label>
-							    <label for="issue-state" class="inline medium">Issuing State:
-							        <input tabindex="26" type="text" name="issue-state" id="issue-state" />
+						        <label for="prev-from" class="inline small">From: <abbr title="Month/Year">(m/y)</abbr>
+						            <input type="text" name="prev-from" id="prev-from" tabindex="24" />
 						        </label>
-						    </div>
-					    </div>
-					    <!--<div class="group">
-						    <label>Have you ever been convicted of any violations of the law other than minor traffic violations?</label>
-						    <label class="inline tiny"><input tabindex="27" type="radio" name="violations" id="violations1" value="Yes"/>Yes</label>
-						    <label class="inline tiny"><input tabindex="28" type="radio" name="violations" id="violations2" value="No"/>No</label>
-						    <div class="other">
-							    <label for="violations-explain"><i>If you answered yes to the above, please explain:</i></label>
-							    <input tabindex="29" type="text" class="wide" name="violations-explain" id="violations-explain" />
-						    </div>
-					    </div>-->
-					    <div class="group">
-						    <label>Were you previously employed by the Des Plaines Public Library?</label>
-						    <label class="inline tiny"><input tabindex="30" type="radio" name="prev-employed" id="prev-employed1" value="Yes"/>Yes</label>
-						    <label class="inline tiny"><input tabindex="31" type="radio" name="prev-employed" id="prev-employed2" value="No"/>No</label>
-						    <div class="other">
-							    <label class="inline small" for="prev-department">Department:
-							        <input tabindex="32" type="text" name="prev-department" id="prev-department" />
-							    </label>
-						        <label class="inline small">From: <abbr title="Month/Year">(m/y)</abbr>
-						            <input tabindex="33" type="text" name="prev-from" id="prev-from" />
-						        </label>
-						        <label class="inline small">To: <abbr title="Month/Year">(m/y)</abbr>:
-						            <input tabindex="34" type="text" name="prev-to" id="prev-to" />
+						        <label for="prev-to" class="inline small">To: <abbr title="Month/Year">(m/y)</abbr>:
+						            <input type="text" name="prev-to" id="prev-to" tabindex="25" />
 						        </label>
 						    </div>
 					    </div>
@@ -180,406 +173,366 @@
 					    <legend>Education</legend>
 					    <fieldset class="sub-section">
 						    <legend>High School</legend>
-						    <div>
-							    <label for="high-school" class="wide">Name, address, city, state:</label>
-							    <textarea tabindex="35" name="high-school" id="high-school" rows="1" cols="1"></textarea>
+						    <div class="print-float">
+							    <label for="high-school" class="wide">School: <em>*</em></label>
+							    <input type="text" name="high-school" id="high-school" class="required wide" tabindex="26" />
+							</div>
+							<div class="print-float">
+							    <label for="hs-citystate">City, State: <em>*</em></label>   
+							    <input type="text" name="hs-citystate" id="hs-citystate" class="required" tabindex="27" />
 						    </div>
-						    <!--<div>
-							    <label for="hs-study">Course of Study:</label>
-							    <input tabindex="36" type="text" name="hs-study" id="hs-study" />
-						    </div>-->
-						    <div class="group">
-							    <label>Last year completed</label>
-							    <label class="inline tiny"><input tabindex="37" type="radio" name="hs-years" id="hs-years1" value="1" />1</label>
-							    <label class="inline tiny"><input tabindex="38" type="radio" name="hs-years" id="hs-years2" value="2" />2</label>
-							    <label class="inline tiny"><input tabindex="39" type="radio" name="hs-years" id="hs-years3" value="3" />3</label>
-							    <label class="inline tiny"><input tabindex="40" type="radio" name="hs-years" id="hs-years4" value="4" />4</label>
+						    <div>
+							    <label for="hs-years">Last year completed: <em>*</em></label>
+							    <input type="text" name="hs-years" id="hs-years" class="required small" tabindex="28" />
 						    </div>
 						    <div class="group print-float">
-							    <label>Did you graduate?</label>
-							    <label class="inline tiny"><input tabindex="41" type="radio" name="hs-graduate" id="hs-graduate1" value="Yes"/>Yes</label>
-							    <label class="inline tiny"><input tabindex="42" type="radio" name="hs-graduate" id="hs-graduate2" value="No"/>No</label>
+							    <label>Did you graduate? <em>*</em></label>
+							    <label for="hs-graduate1" class="inline tiny"><input type="radio" name="hs-graduate" id="hs-graduate1" class="required" value="Yes" tabindex="29" />Yes</label>
+							    <label for="hs-graduate2" class="inline tiny"><input type="radio" name="hs-graduate" id="hs-graduate2" class="required" value="No" tabindex="30" />No</label>
 						    </div>
 						    <div class="print-float">	
-							    <label for="hs-degree" class="no-display">List degree received:</label>
-							    <input tabindex="43" type="text" name="hs-degree" id="hs-degree" />
+							    <label for="hs-degree" class="no-display">Degree received: <em>*</em></label>
+							    <input type="text" name="hs-degree" id="hs-degree" class="required" tabindex="31" />
 						    </div>
-						    <button id="add-education-college" class="add">Add College/University Education</button>
 					    </fieldset><!--closing fieldset for high school-->
-					    <fieldset id="education-college" class="add-section sub-section">
+					    <fieldset id="education-college" class="sub-section">
 						    <legend>College/University</legend>
-						    <div>
-							    <label for="college" class="wide">Name, address, city, state</label>
-							    <textarea tabindex="44" name="college" id="college" rows="1" cols="1"></textarea>
+						    <div class="print-float">
+							    <label for="college">School: <em>*</em></label>
+							    <input type="text" name="college" id="college" class="required wide" tabindex="32" />
 						    </div>
 						    <div class="print-float">
-							    <label for="col-study">Course of study:</label>
-							    <input tabindex="45" type="text" name="col-study" id="col-study" />
+						        <label for="college-citystate">City, State:</label>
+							    <input type="text" name="college-citystate" id="college-citystate" tabindex="33" />
 						    </div>
-						    <div class="group print-float">
-							    <label>Last year completed</label>
-							    <label class="inline tiny"><input tabindex="46" type="radio" name="col-years" id="col-years1" value="1" />1</label>
-							    <label class="inline tiny"><input tabindex="47" type="radio" name="col-years" id="col-years2" value="2" />2</label>
-							    <label class="inline tiny"><input tabindex="48" type="radio" name="col-years" id="col-years3" value="3" />3</label>
-							    <label class="inline tiny"><input tabindex="49" type="radio" name="col-years" id="col-years4" value="4" />4</label>
+						    <div class="print-float">
+							    <label for="college-study">Course of study:</label>
+							    <input type="text" name="college-study" id="college-study" tabindex="34" />
+						    </div>
+						    <div class="print-float">
+							    <label for="college-years">Last year completed:</label>
+							    <input type="text" name="college-years" id="college-years" class="small" tabindex="35" />
 						    </div>
 						    <div class="group print-float">
 							    <label>Did you graduate?</label>
-							    <label class="inline tiny"><input tabindex="50" type="radio" name="col-graduate" id="col-graduate1" value="Yes"/>Yes</label>
-							    <label class="inline tiny"><input tabindex="51" type="radio" name="col-graduate" id="col-graduate2" value="No"/>No</label>
+							    <label for="college-graduate1" class="inline tiny"><input type="radio" name="college-graduate" id="college-graduate1" value="Yes" tabindex="36" />Yes</label>
+							    <label for="college-graduate2" class="inline tiny"><input type="radio" name="college-graduate" id="college-graduate2" value="No" tabindex="37" />No</label>
 						    </div>
 						    <div class="print-float">
-							    <label for="col-degree" class="no-display">Degree received:</label>
-							    <input tabindex="52" type="text" name="col-degree" id="col-degree" />
+							    <label for="college-degree" class="no-display">Degree received:</label>
+							    <input type="text" name="college-degree" id="college-degree" tabindex="38" />
 						    </div>
-						    <button id="add-education-graduate" class="add">Add Graduate Education</button>
 					    </fieldset><!--closing fieldset for college-->
-					    <fieldset id="education-graduate" class="add-section sub-section">
+					    <fieldset id="education-graduate" class="sub-section">
 						    <legend>Graduate School</legend>
-						    <div>
-							    <label for="grad-school" class="wide">Name, address, city, and state:</label>
-							    <textarea tabindex="53" name="grad-school" id="grad-school" rows="1" cols="1"></textarea>
+						    <div class="print-float">
+							    <label for="graduate-school">School: <em>*</em></label>
+							    <input type="text" name="graduate-school" id="graduate-school" class="required wide" tabindex="39" />
 						    </div>
 						    <div class="print-float">
-							    <label for="grad-study" class="no-display">Course of study:</label>
-							    <input tabindex="54" type="text" name="grad-study" id="grad-study" />
+						        <label for="graduate-citystate">City, State:</label>
+							    <input type="text" name="graduate-citystate" id="graduate-citystate" tabindex="40" />
 						    </div>
-						    <div class="group print-float">
-							    <label>Last year completed</label>
-							    <label class="inline tiny"><input tabindex="55" type="radio" name="grad-years" id="grad-years1" value="1" />1</label>
-							    <label class="inline tiny"><input tabindex="56" type="radio" name="grad-years" id="grad-years2" value="2" />2</label>
-							    <label class="inline tiny"><input tabindex="57" type="radio" name="grad-years" id="grad-years3" value="3" />3</label>
-							    <label class="inline tiny"><input tabindex="58" type="radio" name="grad-years" id="grad-years4" value="4" />4</label>
+						    <div class="print-float">
+							    <label for="graduate-study" class="no-display">Course of study:</label>
+							    <input type="text" name="graduate-study" id="graduate-study" tabindex="41" />
+						    </div>
+						    <div class="print-float">
+							    <label for="graduate-years">Last year completed:</label>
+							    <input type="text" name="graduate-years" id="graduate-years" class="small" tabindex="42" />
 						    </div>
 						    <div class="group print-float">
 							    <label>Did you graduate?</label>
-							    <label class="inline tiny"><input tabindex="59" type="radio" name="grad-graduate" id="grad-graduate1" value="Yes"/>Yes</label>
-							    <label class="inline tiny"><input tabindex="60" type="radio" name="grad-graduate" id="grad-graduate2" value="No"/>No</label>
+							    <label for="graduate-graduate1" class="inline tiny"><input type="radio" name="graduate-graduate" id="graduate-graduate1" value="Yes" tabindex="43" />Yes</label>
+							    <label for="graduate-graduate2" class="inline tiny"><input type="radio" name="graduate-graduate" id="graduate-graduate2" value="No" tabindex="44" />No</label>
 						    </div>
 						    <div class="print-float">
-							    <label for="grad-degree" class="no-display">Degree received:</label>
-							    <input tabindex="61" type="text" name="grad-degree" id="grad-degree" />
+							    <label for="graduate-degree" class="no-display">Degree received:</label>
+							    <input type="text" name="graduate-degree" id="graduate-degree" tabindex="45" />
 						    </div>
 					    </fieldset><!--closing fieldset for grad school-->
-					    <!--<div class="last">
-						    <fieldset>
-							    <legend><b>Other (Specify)</b></legend>
-							    <div>
-								    <label for="other-school">Other (Specify) <i>(include name and address, city, state)</i>:</label>
-									    <textarea tabindex="62" name="other-school" id="other-school" rows="1" cols="1"></textarea>
-							    </div>
-							    <div>
-								    <label for="other-study">Course of Study:</label>
-								    <input tabindex="63" type="text" name="other-study" id="other-study" />
-							    </div>
-							    <div>
-								    <fieldset>
-									    <legend>Last year completed</legend>
-									    <label class="inline tiny"><input tabindex="64" type="radio" name="other-years" id="other-years1" value="1" />1</label>
-									    <label class="inline tiny"><input tabindex="65" type="radio" name="other-years" id="other-years2" value="2" />2</label>
-									    <label class="inline tiny"><input tabindex="66" type="radio" name="other-years" id="other-years3" value="3" />3</label>
-									    <label class="inline tiny"><input tabindex="67" type="radio" name="other-years" id="other-years4" value="4" />4</label>
-								    </fieldset>
-							    </div>
-							    <div>
-								    <fieldset>
-									    <legend>Did you graduate?</legend>
-									    <label class="inline tiny"><input tabindex="68" type="radio" name="other-graduate" id="other-graduate1" value="Yes"/>Yes</label>
-									    <label class="inline tiny"><input tabindex="69" type="radio" name="other-graduate" id="other-graduate2" value="No"/>No</label>
-								    </fieldset>
-							    </div>
-							    <div>
-								    <label for="other-degree" class="no-display">Other Degree:</label>
-								    <input tabindex="70" type="text" name="other-degree" id="other-degree" />
-							    </div>
-						    </fieldset>
-					    </div>-->
 					    <hr />
 				    </fieldset><!--closing tag for education fieldset-->
 				    <fieldset id="other-qualifications" class="section">
 					    <legend>Other Qualifications</legend>
-					    <div class="group">
-						    <label>Do you hold any certifcations and/or licenses?</label>
-						    <label class="inline tiny"><input tabindex="71" type="radio" name="license" id="license1" value="Yes"/>Yes</label>
-						    <label class="inline tiny"><input tabindex="72" type="radio" name="license" id="license2" value="No"/>No</label>
-						    <div class="other">
-							    <label for="license-list" class="wide"><i>If you answered yes to the above, please list:</i></label>
-							    <textarea tabindex="73" name="license-list" id="license-list" class="wide" rows="1" cols="1"></textarea>
-						    </div>
+					    <div>
+					        <label for="licenses" class="wide">Please list any certifications or licenses:</label>
+							<textarea name="licenses" id="licenses" class="wide tall" rows="1" cols="1"  tabindex="46"></textarea>
 					    </div>
 					    <div>
-						    <label for="qualification" class="wide">Please use this space to summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, and/or experience which you feel should be considered in reviewing your application:</label>
-						    <textarea tabindex="74" name="qualification" id="qualification" class="wide tall" rows="1" cols="1"></textarea>
+						    <label for="qualifications" class="wide">Please summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, language proficiencies, and/or experience which you feel should be considered in reviewing your application:</label>
+						    <textarea name="qualifications" id="qualifications" class="wide tall" rows="1" cols="1" tabindex="47"></textarea>
 					    </div>
 					    <hr />
 				    </fieldset><!--closing tag for job skills fieldset-->
 				    <fieldset id="employment" class="section">
 					    <legend>Employment History</legend>
-					    <div class="group">
-						    <label>Are you presently employed?</label>
-						    <label class="inline tiny"><input tabindex="75" type="radio" name="employed" id="employed1" value="Yes"/>Yes</label>
-						    <label class="inline tiny"><input tabindex="76" type="radio" name="employed" id="employed2" value="No"/>No</label>
+					    <div class="group print-float">
+						    <label>Are you presently employed? <em>*</em></label>
+						    <label for="employed1" class="inline tiny"><input type="radio" name="employed" id="employed1" class="required" value="Yes" tabindex="48" />Yes</label>
+						    <label for="employed2" class="inline tiny"><input type="radio" name="employed" id="employed2" class="required" value="No" tabindex="49" />No</label>
 					    </div>
-					    <div class="group">
-						    <label>If yes, may we contact your employer?</label>
-						    <label class="inline tiny"><input tabindex="77" type="radio" name="contact-employer" id="contact-employer1" value="Yes"/>Yes</label>
-						    <label class="inline tiny"><input tabindex="78" type="radio" name="contact-employer" id="contact-employer2" value="No"/>No</label>
+					    <div class="group print-float">
+						    <label>If yes, may we contact your current employer?</label>
+						    <label for="contact-employer1" class="inline tiny"><input type="radio" name="contact-employer" id="contact-employer1" value="Yes" tabindex="50" />Yes</label>
+						    <label for="contact-employer2" class="inline tiny"><input type="radio" name="contact-employer" id="contact-employer2" value="No" tabindex="51" />No</label>
 					    </div>
 					    <p class="note">List your present or most recent employer first. A resume will not substitute for completion of this portion of the application.</p>
 					    <fieldset class="sub-section">
 						    <legend>Employer One</legend>
-						    <div>
-							    <label for="employer-one">Employer:</label>
-							    <input tabindex="79" type="text" name="employer-one" id="employer-one" />
+						    <div class="print-float">
+							    <label for="employer-one">Employer: <em>*</em></label>
+							    <input type="text" name="employer-one" id="employer-one" class="required wide" tabindex="52" />
 						    </div>
-						    <div>
-							    <label for="employer-one-add">Address:</label>
-							    <textarea tabindex="80" name="employer-one-add" id="employer-one-add" rows="1" cols="1"></textarea>
+						    <div class="print-float">
+							    <label for="employer-one-citystate">City, State:</label>
+							    <input type="text" name="employer-one-citystate" id="employer-one-citystate" tabindex="53" />
 						    </div>
-						    <div>
+						    <div class="print-float">
 							    <label for="employer-one-tel">Telephone:</label>
-							    <input tabindex="81" type="text" name="employer-one-tel" id="employer-one-tel" class="small" />
+							    <input type="text" name="employer-one-tel" id="employer-one-tel" class="small" tabindex="54" />
 						    </div>
-						    <div>
+						    <div class="print-float">
 							    <label for="employer-one-title">Your title:</label>
-							    <input tabindex="82" type="text" name="employer-one-title" id="employer-one-title" />
+							    <input type="text" name="employer-one-title" id="employer-one-title" tabindex="55" />
 						    </div>
 						    <div class="print-float">
 							    <label for="employer-one-super">Supervisor:</label>
-							    <input tabindex="83" type="text" name="employer-one-super" id="employer-one-super" />
+							    <input type="text" name="employer-one-super" id="employer-one-super" tabindex="56" />
 						    </div>
 						    <div class="print-float">
 							    <label for="employer-one-supertitle">Supervisor's Title:</label>
-							    <input tabindex="84" type="text" name="employer-one-supertitle" id="employer-one-supertitle" />
+							    <input type="text" name="employer-one-supertitle" id="employer-one-supertitle" tabindex="57" />
 						    </div>
 						    <div>
 							    <label for="employer-one-duties" class="wide">Description of duties:</label>
-							    <textarea tabindex="85" name="employer-one-duties" class="wide" id="employer-one-duties" class="wide" rows="1" cols="1"></textarea>
+							    <textarea name="employer-one-duties" class="wide" id="employer-one-duties" class="wide" rows="1" cols="1" tabindex="58"></textarea>
 						    </div>
 						    <div class="group">
 							    <label class="wide">Employed</label>
 							    <label for="employer-one-from" class="inline medium"><span class="block-label">From <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
-							        <input tabindex="86" type="text" name="employer-one-from" id="employer-one-from" />
+							        <input type="text" name="employer-one-from" id="employer-one-from" tabindex="59" />
 							    </label>
 							    <label for="employer-one-to" class="inline medium"><span class="block-label">To <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
-							        <input tabindex="87" type="text" name="employer-one-to" id="employer-one-to" />
+							        <input type="text" name="employer-one-to" id="employer-one-to" tabindex="60" />
 							    </label>
-							    <label for="employer-one-salary" class="inline medium "><span class="block-label">Last Salary:</span>
-							        <input tabindex="88" type="text" name="employer-one-salary" id="employer-one-salary" />
+							    <label for="employer-one-hours" class="inline medium "><span class="block-label">Hours per week:</span>
+							        <input type="text" name="employer-one-hours" id="employer-one-hours" tabindex="61" />
 							    </label>
-							    <label for="employer-one-hours" class="inline medium "><span class="block-label">Hours worked:</span>
-							        <input tabindex="88" type="text" name="employer-one-hours" id="employer-one-hours" />
-							    </label>
+							</div>
+							<div class="print-float">
+							    <label for="employer-one-salary">Last Salary:</label>
+							    <input type="text" name="employer-one-salary" id="employer-one-salary" class="small" tabindex="62" />
 						    </div>
-						    <div>
+						    <div class="print-float">
 							    <label for="employer-one-leaving">Reason for leaving:</label>
-							    <input tabindex="89" type="text" name="employer-one-leaving" id="employer-one-leaving" class="wide" />
+							    <input type="text" name="employer-one-leaving" id="employer-one-leaving" class="wide" tabindex="63" />
 						    </div>
-						    <button id="add-employment-two" class="add">Add Employer Two</button>
 					    </fieldset><!--closing fieldset for employer one-->
-					    <fieldset id="employment-two" class="add-section sub-section">
+					    <fieldset id="employment-two" class="sub-section">
 						    <legend>Employer Two</legend>
-						    <div>
-							    <label for="employer-two">Employer:</label>
-							    <input tabindex="79" type="text" name="employer-two" id="employer-two" />
+						    <div class="print-float">
+							    <label for="employer-two">Employer: <em>*</em></label>
+							    <input type="text" name="employer-two" id="employer-two" class="required wide" tabindex="64" />
 						    </div>
-						    <div>
-							    <label for="employer-two-add">Address:</label>
-							    <textarea tabindex="80" name="employer-two-add" id="employer-two-add" rows="1" cols="1"></textarea>
+						    <div class="print-float">
+							    <label for="employer-two-citystate">City, State:</label>
+							    <input type="text" name="employer-two-citystate" id="employer-two-citystate" tabindex="65" />
 						    </div>
-						    <div>
+						    <div class="print-float">
 							    <label for="employer-two-tel">Telephone:</label>
-							    <input tabindex="81" type="text" name="employer-two-tel" id="employer-two-tel" class="small" />
+							    <input type="text" name="employer-two-tel" id="employer-two-tel" class="small" tabindex="66" />
 						    </div>
-						    <div>
+						    <div class="print-float">
 							    <label for="employer-two-title">Your title:</label>
-							    <input tabindex="82" type="text" name="employer-two-title" id="employer-two-title" />
+							    <input type="text" name="employer-two-title" id="employer-two-title" tabindex="67" />
 						    </div>
 						    <div class="print-float">
 							    <label for="employer-two-super">Supervisor:</label>
-							    <input tabindex="83" type="text" name="employer-two-super" id="employer-two-super" />
+							    <input type="text" name="employer-two-super" id="employer-two-super" tabindex="68" />
 						    </div>
 						    <div class="print-float">
 							    <label for="employer-two-supertitle">Supervisor's Title:</label>
-							    <input tabindex="84" type="text" name="employer-two-supertitle" id="employer-two-supertitle" />
+							    <input type="text" name="employer-two-supertitle" id="employer-two-supertitle" tabindex="69" />
 						    </div>
 						    <div>
 							    <label for="employer-two-duties" class="wide">Description of duties:</label>
-							    <textarea tabindex="85" name="employer-two-duties" class="wide" id="employer-two-duties" class="wide" rows="1" cols="1"></textarea>
+							    <textarea name="employer-two-duties" class="wide" id="employer-two-duties" rows="1" cols="1" tabindex="70"></textarea>
 						    </div>
 						    <div class="group">
 							    <label class="wide">Employed</label>
 							    <label for="employer-two-from" class="inline medium"><span class="block-label">From <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
-							        <input tabindex="86" type="text" name="employer-two-from" id="employer-two-from" />
+							        <input type="text" name="employer-two-from" id="employer-two-from" tabindex="71" />
 							    </label>
 							    <label for="employer-two-to" class="inline medium"><span class="block-label">To <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
-							        <input tabindex="87" type="text" name="employer-two-to" id="employer-two-to" />
+							        <input type="text" name="employer-two-to" id="employer-two-to" tabindex="72" />
 							    </label>
-							    <label for="employer-two-salary" class="inline medium "><span class="block-label">Last Salary:</span>
-							        <input tabindex="88" type="text" name="employer-two-salary" id="employer-two-salary" />
-							    </label>
-							    <label for="employer-two-hours" class="inline medium "><span class="block-label">Hours worked:</span>
-							        <input tabindex="88" type="text" name="employer-two-hours" id="employer-two-hours" />
+							    <label for="employer-two-hours" class="inline medium "><span class="block-label">Hours per week:</span>
+							        <input type="text" name="employer-two-hours" id="employer-two-hours" tabindex="73" />
 							    </label>
 						    </div>
-						    <div>
+						    <div class="print-float">
+						        <label for="employer-two-salary">Last Salary:</label>
+							    <input type="text" name="employer-two-salary" id="employer-two-salary" class="small" tabindex="74" />
+							</div>
+						    <div class="print-float">
 							    <label for="employer-two-leaving">Reason for leaving:</label>
-							    <input tabindex="89" type="text" name="employer-two-leaving" id="employer-two-leaving" class="wide" />
+							    <input type="text" name="employer-two-leaving" id="employer-two-leaving" class="wide" tabindex="75" />
 						    </div>
-						    <button id="add-employment-three" class="add">Add Employer Three</button>
 					    </fieldset><!--closing fieldset for employer two-->
-					    <fieldset id="employment-three" class="add-section sub-section">
+					    <fieldset id="employment-three" class="sub-section">
 							    <legend>Employer Three</legend>
-							    <div>
-								    <label for="employer-three">Employer:</label>
-								    <input tabindex="79" type="text" name="employer-three" id="employer-three" />
+							    <div class="print-float">
+								    <label for="employer-three">Employer: <em>*</em></label>
+								    <input type="text" name="employer-three" id="employer-three" class="required wide" tabindex="76" />
 							    </div>
-							    <div>
-								    <label for="employer-three-add">Address:</label>
-								    <textarea tabindex="80" name="employer-three-add" id="employer-three-add" rows="1" cols="1"></textarea>
+							    <div class="print-float">
+								    <label for="employer-three-citystate">City, State:</label>
+								    <input type="text" name="employer-three-citystate" id="employer-three-citystate" tabindex="77" />
 							    </div>
-							    <div>
+							    <div class="print-float">
 								    <label for="employer-three-tel">Telephone:</label>
-								    <input tabindex="81" type="text" name="employer-three-tel" id="employer-three-tel" class="small" />
+								    <input type="text" name="employer-three-tel" id="employer-three-tel" class="small" tabindex="78" />
 							    </div>
-							    <div>
+							    <div class="print-float">
 								    <label for="employer-three-title">Your title:</label>
-								    <input tabindex="82" type="text" name="employer-three-title" id="employer-three-title" />
+								    <input type="text" name="employer-three-title" id="employer-three-title" tabindex="79" />
 							    </div>
 							    <div class="print-float">
 								    <label for="employer-three-super">Supervisor:</label>
-								    <input tabindex="83" type="text" name="employer-three-super" id="employer-three-super" />
+								    <input type="text" name="employer-three-super" id="employer-three-super" tabindex="80" />
 							    </div>
 							    <div class="print-float">
 								    <label for="employer-three-supertitle">Supervisor's Title:</label>
-								    <input tabindex="84" type="text" name="employer-three-supertitle" id="employer-three-supertitle" />
+								    <input type="text" name="employer-three-supertitle" id="employer-three-supertitle" tabindex="81" />
 							    </div>
 							    <div>
 								    <label for="employer-three-duties" class="wide">Description of duties:</label>
-								    <textarea tabindex="85" name="employer-three-duties" class="wide" id="employer-three-duties" class="wide" rows="1" cols="1"></textarea>
+								    <textarea name="employer-three-duties" class="wide" id="employer-three-duties" class="wide" rows="1" cols="1" tabindex="82"></textarea>
 							    </div>
 							    <div class="group">
 								    <label class="wide">Employed</label>
 								    <label for="employer-three-from" class="inline medium"><span class="block-label">From <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
-								        <input tabindex="86" type="text" name="employer-three-from" id="employer-three-from" />
+								        <input type="text" name="employer-three-from" id="employer-three-from" tabindex="83" />
 								    </label>
 								    <label for="employer-three-to" class="inline medium"><span class="block-label">To <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
-								        <input tabindex="87" type="text" name="employer-three-to" id="employer-three-to" />
+								        <input type="text" name="employer-three-to" id="employer-three-to" tabindex="84" />
 								    </label>
-								    <label for="employer-three-salary" class="inline medium "><span class="block-label">Last Salary:</span>
-								        <input tabindex="88" type="text" name="employer-three-salary" id="employer-three-salary" />
-								    </label>
-								    <label for="employer-three-hours" class="inline medium "><span class="block-label">Hours worked:</span>
-								        <input tabindex="88" type="text" name="employer-three-hours" id="employer-three-hours" />
+								    <label for="employer-three-hours" class="inline medium "><span class="block-label">Hours per week:</span>
+								        <input type="text" name="employer-three-hours" id="employer-three-hours" tabindex="85" />
 								    </label>
 							    </div>
-							    <div>
+							    <div class="print-float">
+							        <label for="employer-three-salary">Last Salary:</label>
+								    <input type="text" name="employer-three-salary" id="employer-three-salary" class="small" tabindex="86" />
+								</div>
+							    <div class="print-float">
 								    <label for="employer-three-leaving">Reason for leaving:</label>
-								    <input tabindex="89" type="text" name="employer-three-leaving" id="employer-three-leaving" class="wide" />
+								    <input type="text" name="employer-three-leaving" id="employer-three-leaving" class="wide" tabindex="87" />
 							    </div>
-							    <button id="add-employment-four" class="add">Add Employer Four</button>
 						    </fieldset><!--closing fieldset for employer three-->
-						    <fieldset id="employment-four" class="add-section sub-section">
+						    <fieldset id="employment-four" class="sub-section">
 							    <legend>Employer Four</legend>
-							    <div>
-								    <label for="employer-four">Employer:</label>
-								    <input tabindex="79" type="text" name="employer-four" id="employer-four" />
+							    <div class="print-float">
+								    <label for="employer-four">Employer: <em>*</em></label>
+								    <input type="text" name="employer-four" id="employer-four" class="required" tabindex="88" />
 							    </div>
-							    <div>
-								    <label for="employer-four-add">Address:</label>
-								    <textarea tabindex="80" name="employer-four-add" id="employer-four-add" rows="1" cols="1"></textarea>
+							    <div class="print-float">
+								    <label for="employer-four-citystate">City, State:</label>
+								    <input type="text" name="employer-four-citystate" id="employer-four-citystate" tabindex="89" />
 							    </div>
-							    <div>
+							    <div class="print-float">
 								    <label for="employer-four-tel">Telephone:</label>
-								    <input tabindex="81" type="text" name="employer-four-tel" id="employer-four-tel" class="small" />
+								    <input type="text" name="employer-four-tel" id="employer-four-tel" class="small" tabindex="90" />
 							    </div>
-							    <div>
+							    <div class="print-float">
 								    <label for="employer-four-title">Your title:</label>
-								    <input tabindex="82" type="text" name="employer-four-title" id="employer-four-title" />
+								    <input type="text" name="employer-four-title" id="employer-four-title" tabindex="91" />
 							    </div>
 							    <div class="print-float">
 								    <label for="employer-four-super">Supervisor:</label>
-								    <input tabindex="83" type="text" name="employer-four-super" id="employer-four-super" />
+								    <input type="text" name="employer-four-super" id="employer-four-super" tabindex="92" />
 							    </div>
 							    <div class="print-float">
 								    <label for="employer-four-supertitle">Supervisor's Title:</label>
-								    <input tabindex="84" type="text" name="employer-four-supertitle" id="employer-four-supertitle" />
+								    <input type="text" name="employer-four-supertitle" id="employer-four-supertitle" tabindex="93" />
 							    </div>
 							    <div>
 								    <label for="employer-four-duties" class="wide">Description of duties:</label>
-								    <textarea tabindex="85" name="employer-four-duties" class="wide" id="employer-four-duties" class="wide" rows="1" cols="1"></textarea>
+								    <textarea name="employer-four-duties" class="wide" id="employer-four-duties" class="wide" rows="1" cols="1" tabindex="94"></textarea>
 							    </div>
 							    <div class="group">
 								    <label class="wide">Employed</label>
 								    <label for="employer-four-from" class="inline medium"><span class="block-label">From <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
-								        <input tabindex="86" type="text" name="employer-four-from" id="employer-four-from" />
+								        <input type="text" name="employer-four-from" id="employer-four-from" tabindex="95" />
 								    </label>
 								    <label for="employer-four-to" class="inline medium"><span class="block-label">To <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
-								        <input tabindex="87" type="text" name="employer-four-to" id="employer-four-to" />
+								        <input type="text" name="employer-four-to" id="employer-four-to" tabindex="96" />
 								    </label>
-								    <label for="employer-four-salary" class="inline medium "><span class="block-label">Last Salary:</span>
-								        <input tabindex="88" type="text" name="employer-four-salary" id="employer-four-salary" />
-								    </label>
-								    <label for="employer-four-hours" class="inline medium "><span class="block-label">Hours worked:</span>
-								        <input tabindex="88" type="text" name="employer-four-hours" id="employer-four-hours" />
+								    <label for="employer-four-hours" class="inline medium "><span class="block-label">Hours per week:</span>
+								        <input type="text" name="employer-four-hours" id="employer-four-hours" tabindex="97" />
 								    </label>
 							    </div>
-							    <div>
+							    <div class="print-float">
+							        <label for="employer-four-salary">Last Salary:</label>
+								    <input type="text" name="employer-four-salary" id="employer-four-salary" class="small" tabindex="98" />
+							    </div>
+							    <div class="print-float">
 								    <label for="employer-four-leaving">Reason for leaving:</label>
-								    <input tabindex="89" type="text" name="employer-four-leaving" id="employer-four-leaving" class="wide" />
+								    <input type="text" name="employer-four-leaving" id="employer-four-leaving" class="wide" tabindex="99" />
 							    </div>
 						    </fieldset><!--closing fieldset for employer 4-->
-					    <hr />
 				    </fieldset><!--closing tag for employment history fieldset-->
+				    <hr />
 				    <fieldset id="files" class="section">
-					    <legend>Attach your files</legend>
+					    <legend>If the position requires it, attach your cover letter, resum&eacute;, and other supporting files.</legend>
 					    <div>
 						    <label for="coverfile">Cover Letter:</label>
-						    <input tabindex="123" type="file" id="coverfile" name="formfiles[]" class="medium" />
+						    <input type="file" id="coverfile" name="formfiles[]" class="medium" tabindex="100" />
 					    </div>
 					    <div>
-						    <label for="resumefile">Resume:</label>
-						    <input tabindex="124" type="file" id="resumefile" name="formfiles[]" class="medium" />
+						    <label for="resumefile">Resum&eacute;:</label>
+						    <input type="file" id="resumefile" name="formfiles[]" class="medium" tabindex="101" />
 					    </div>
 					    <div>
 						    <label for="otherfile">Other File:</label>
-						    <input tabindex="125" type="file" id="otherfile" name="formfiles[]" class="medium" />
+						    <input type="file" id="otherfile" name="formfiles[]" class="medium" tabindex="102" />
 					    </div>
 					    <ul class="note no-style">
 						    <li>Attached files must be in one of the following formats: .doc, .docx, .pdf, .txt, and .rtf.</li>
 						    <li>Files also must be less than 1mb.</li>
 					    </ul>
-					    <hr />
 			    </fieldset><!--closing for for files fieldset-->
+			    <hr />
 			    <fieldset id="finish" class="section callout">
 				    <p><strong>Please read the following carefully before agreeing below:</strong></p>
 				    <p>I hereby certify that the facts set forth in the above employment application are true and complete to the best of my knowledge. I understand that falsified statements, misrepresentation or omission of facts, as stated or implied, on this application shall be considered sufficient cause for cancellation of my application or termination of employment. </p>
-				    <p>I understand and agree that the Des Plaines Public Library is hereby authorized to make inquiries concerning my character, employment record and other matters concerning my possible employment. I further understand that such inquiries will include checking police records for convictions. I understand that I may request reasonable accommodations if needed, due to disability, in order to participate in the overall application process.</p>
+				    <p>I understand and agree that the Des Plaines Public Library is hereby authorized to make inquiries concerning my character, employment record and other matters concerning my possible employment. I further understand that such inquiries will include checking police records.</p>
 				    <p>I understand the filing of this application or participation in an interview in no way constitutes an employment contract between the Des Plaines Public Library and me. I acknowledge the right of the Des Plaines Public Library to make changes in policy and benefits, where such policy and benefits are not specified, without notice and I understand that only written conditions as contained in an offer made to me by an authorized official will be honored by this organization. </p>
-				    <p>I understand that any offer of employment, approved by the Library Director, either verbal or written, may be conditional upon the satisfactory completion of a drug screen, background check and physical exam. Should I become employed, I agree to conform to all rules and regulations of the Des Plaines Public Library. I understand that my employment with the Des Plaines Public Library will be at will and that I have the right to terminate my employment at any time and the Des Plaines Public Library retains the same right</p>
+				    <p>I understand that any offer of employment, approved by the Library Director, either verbal or written, may be conditional upon the satisfactory completion of a drug screen, background check and physical exam. Should I become employed, I agree to conform to all rules and regulations of the Des Plaines Public Library. I understand that my employment with the Des Plaines Public Library will be at will and that I have the right to terminate my employment at any time and the Des Plaines Public Library retains the same right.</p>
 				    <div class="group">
-				        <label for="agreement"><i>Do you agree?</i> <em>*</em></label>
-				        <label for="agreement-yes" class="inline tiny"><input type="radio" name="agreement" id="agreement-yes" value="Yes" class="required" tabindex="" />Yes</label>
-			            <label for="agreement-no" class="inline tiny"><input type="radio" name="agreement" id="agreement-no" value="No" class="required" tabindex="" />No</label>
+				        <label class="inline wide"><i>Do you agree?</i> <em>*</em></label>
+				        <label for="agreement-yes" class="inline tiny"><input type="radio" name="agreement" id="agreement-yes" class="required" value="Yes" tabindex="103" />Yes</label>
+			            <label for="agreement-no" class="inline tiny"><input type="radio" name="agreement" id="agreement-no" class="required" value="No" tabindex="104" />No</label>
+			        </div>
+			         <div class="print-only print-float">
+			            <label>Signature:</label>
+			        </div>
+			        <div class="print-only print-float">
+			            <label>Date:</label>
 			        </div>
 			    </fieldset>
 			    <hr />
 			    <fieldset class="callout" id="challenge">
 	                <iframe id="challenge-image" src="/tools/sc/captcha.php"></iframe>
-	                <label>Enter the text that you see in the image above:<em>*</em></label>
-	                <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="19" />
+	                <label>Enter the text that you see in the image above: <em>*</em></label>
+	                <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="105" />
 	            </fieldset>
 			    <div id="copy">
-				    <label for="send-copy" class="full"><input tabindex="129" type="checkbox" name="send-copy" id="send-copy" value="true" />Send yourself a copy of this application</label>
-			    </div>
-			    <div class="signature print-float">
-			        <label>Signature:</label>
-			    </div>
-			    <div class="signature print-float">
-			        <label>Date:</label>
+				    <label for="send-copy" class="full"><input type="checkbox" name="send-copy" id="send-copy" value="true" tabindex="106" />Send yourself a copy of this application</label>
 			    </div>
 			    <div class="buttons right">
-				    <input tabindex="130" type="submit" value="Submit" />
+				    <input type="submit" value="Submit" tabindex="107" />
 			    </div>
 	        </form>
 	    </div><!--closing div for form-->
@@ -592,7 +545,7 @@
                     <li><a href="#background">Background</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#other-qualifications">Other Qualifications</a></li>
-                    <li><a href="#employment">Employment</a><li>
+                    <li><a href="#employment">Employment</a></li>
                     <li><a href="#files">Files</a></li>
                     <li><a href="#finish">Finish</a></li>
                </ul>
@@ -602,39 +555,11 @@
 	<script src="/js/jquery-1.8.2.min.js"></script>
 	<script src="/js/jquery.validate.min.js"></script>
 	<script src="/js/jquery.form.js"></script>
-	<!--<script src="/js/jquery.scrollspy.js"></script>-->
+	<script src="/js/jquery.scrollspy.js"></script>
 	<script src="js/scripts.js" ></script>
 	<script>
 	    $(document).ready(function(){
-	        var requires_files = ['Web Services Librarian'];
-	        $('.add').show();
-	        $('.add-section, #files').hide();
-	        $('#position').change(function(){
-	            var p = $(this).val();
-	            if (requires_files.indexOf(p) != -1){
-	                $('#files').show();
-	                if ($(this).next('p')){
-	                    $(this).next('p').remove();
-	                }
-	                $(this).after('<p class="note">Don\'t forget to attach your cover letter, resume, and writing samples below.</p>');
-	            }
-	            else{
-	                $('#files').hide();
-	                $(this).next('p').remove();
-	            }
-	        });
-	        $('.add').click(function(){
-	            var id = $(this).attr('id');
-	            id = id.replace('add-', '');
-	            $('#' + id).slideDown();
-	            return false;
-	        });
-	        $('#print').click(function(){
-	            $('#app-date').val('');
-	            window.print();
-	            return false;
-	        });
-	        /*$('.section').each(function(i){
+	        $('.section').each(function(i){
 	            var section_id = $(this).attr('id');
 	            var position = $(this).position();
         		$(this).scrollspy({
@@ -647,7 +572,11 @@
     					    $('#form-nav').find('a[href=#' + section_id + ']').removeClass('active');
     					}
         		});
-	        });*/
+	        });
+	        
+	        $('#application').change(function(){
+	            
+	        });
 	        
 	        $('.close').click(function(){
 	            $(this).parent().hide();

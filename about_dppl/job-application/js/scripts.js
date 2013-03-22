@@ -7,11 +7,14 @@
 			var y = today.getFullYear();
 			var m = today.getMonth() + 1;
 			var d = today.getDate();
+			
+			$('#app-date').val(m + '/' + d + '/' + y);
 		
 			var param = window.location.search.substring(1).split('=');
-			var pos = param[1]
-			$('#app-date').val(m + '/' + d + '/' + y);
-			$('#position').val(pos);
+			if (param[0] == 'p'){
+			    var pos = param[1].replace(/\+/g, ' ')
+			    $('#position').val(pos);
+			}
 		}
 		
 		$('#name').focus();
@@ -30,18 +33,20 @@
 				  }
 			},
 			submitHandler: function(form){
-			    $('.form').hide();
+			    $('html, body').animate({ scrollTop: 0 }, 0);
+			    //$('.form').hide();
 			    $('.load').show();
+			    $('#name').focus();
 			    $('.response').hide();
+			    $('#print-message').hide();
 			    $('.response-message').html('').removeClass('success').removeClass('failure');
 				$(form).ajaxSubmit({
 					success: function(data){
-					    console.log(data);
 					    $('.load').hide();
 					    if (data.status == 'success'){
 					        $(form)[0].reset();
 					    }
-						$('.response-message').addClass(data.status).html(data.message).parent().fadeIn();
+						$('.response-message').addClass(data.status).html(data.message).parent().fadeIn().delay(10000).fadeOut();
 						$('.form').show();
 							
 					},
@@ -92,7 +97,7 @@
 			var elems = document.getElementById("application").elements;
 			
 			for (i = 0; i < elems.length; i++){
-				if (elems[i].id=="recaptcha_challenge_field"){
+				if (elems[i].id=="challenge-response"){
 					i++;
 				}
 				else if ((elems[i].type=="radio") && (elems[i].checked == true)){
