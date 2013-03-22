@@ -10,10 +10,16 @@
         var $template;
         var $body;
         var $messages;
+        var $ajax;
+        var $response;
         
         
-        public function __construct($id){
+        public function __construct($id, $ajax){
             $this->id = $id;
+            if ($ajax){
+                $this->ajax = $ajax;
+            }
+            $this->response = array();
         }
         
         public function __toString(){
@@ -42,7 +48,10 @@
                 $this->set_messages();
             }
             else{
-                die('There were no form fields to process. Please try again.');
+                $this->response['status'] = 'failure';
+                $this->response['message'] = 'There were no form fields to process. Please try again.';
+                
+                $this->render_response();
             }
 		}
         
@@ -56,7 +65,10 @@
 		public function check_required_field($key, $val){
 		    if ($this->config['fields'][$key] == true){
 	                if (empty($val)){
-	                    die('You did not complete a required field. Please double check the form and resubmit.');
+	                    $this->response['status'] = 'failure';
+	                    $this->response['message'] = 'You did not complete a required field. Please double check the form and resubmit.';
+	                    
+	                    $this->render_response();
 	                }
 	            }
 		}
@@ -89,7 +101,10 @@
 	            }
 
 	            if (!filter_var($this->sender['email'], FILTER_VALIDATE_EMAIL)){
-	                die('Please provide a valid email address (example@example.com)');
+	                $this->response['status'] = 'failure';
+	                $this->response['message'] = 'Please provide a valid email address (example@example.com)';
+	                
+	                $this->render_response();
 	            }
 	        }
 		}
@@ -128,6 +143,29 @@
 		        }
             }
 		}
+		
+		public function set_response($status, $message){
+		    //pass a status and message
+		    $this->response['status'] = $status;
+		    $this->response['message'] = $message;
+		}
+		
+		public function render_response(){
+            if ($this->ajax == true){
+                header('Content-Type: application/json; charset=UTF-8');
+                $out = json_encode($this->response);
+            }
+            else{
+                $out = $this->response['message'];
+            }
+            
+            if ($this->response['status'] == 'success'){
+                echo $out;
+            }
+            else{
+                die($out);
+            }
+        }
     
     }
     
