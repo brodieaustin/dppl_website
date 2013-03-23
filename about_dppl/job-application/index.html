@@ -11,8 +11,8 @@
 	<link rel="profile" href="http://microformats.org/profile/hcard" />
 	<!--<link rel="stylesheet" href="css/normalize.css" media="screen" />-->
     <!--<link rel="stylesheet" href="css/screen.css" media="screen" />-->
-    <link rel=stylesheet href="/css/style.css" media="screen" />
-    <link rel=stylesheet href="/css/form.css" media="screen" />
+    <link rel=stylesheet href="css/style.css" media="screen" />
+    <link rel=stylesheet href="css/form.css" media="screen" />
 	<link rel="stylesheet" href="css/print.css" media="print" />
 	<script src="/js/modernizr-2.5.3.min.js"></script>
 	<style>
@@ -71,9 +71,9 @@
 		    </div>          
 			<h1>Employment Application</h1>
 			<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection. <span class="print-only">Send your completed application by mail or by email to jobs@dppl.org.</span></p>
-			<div class="errors"></div>
-			<form action="/tools/f/send.php" method="post" id="application" enctype="multipart/form-data">
+			<form action="f/send.php" method="post" id="application" enctype="multipart/form-data">
 			    <p class="note no-print"><em>*</em> Required field</p>
+			    <div class="errors"></div>
 			    <input type="hidden" name="form-id" id="form-id" value="job-application" />
 				    <fieldset id="personal" class="section">
 					    <legend>Personal Information</legend>
