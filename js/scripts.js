@@ -79,6 +79,13 @@ $(function(){
 		return false;
 	});
 });
+//handler for close buttons on warning messages
+$(function(){
+    $('.close').click(function(){
+        $(this).parent().hide();
+        return false;
+    });
+});
 $(function(){
 	//try to detect if mobile browser is being used using isMobile function (see below)
 	if (isMobile.any() == true){

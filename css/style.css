@@ -261,11 +261,9 @@ textarea{width: 99%; min-height: 7em; border: 1px solid #ccc; font-family: inher
 
 .load{
   display: block;
-  min-width: 16px;
-  width: 100%;
-  min-height: 16px;
-  height: 100%;
-  background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
+  width: 1.5em;
+  height: 1.5em;
+  background: url('/images/ajax-loader.gif') no-repeat center left;
 }
 
 .warning{position: relative; background-color: #FCF8E3; margin-bottom: 1em; padding: 1em; overflow: hidden;}
