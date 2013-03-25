@@ -15,6 +15,11 @@
 	<!--main content-->
 	<div id="content">
 		<h1>Library Card Application</h1>
+		<div class="load" id="application-load">Processing form&hellip;</div>
+		<div class="response" id="application-response">
+		    <div class="response-message"></div>
+            <span class="close">&times;</span>
+		</div>
 		<div class="card-application">
 			<h2>Child's Card</h2>
 				<p>You are about to fill out an application for a new child's library card. Use this application for children in 8th grade or younger. To get your new library card, we just need you to do the following:</p>
@@ -165,8 +170,7 @@
 			            <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="19" />
 	            </fieldset>
 				<div class="buttons right">
-				    <input type="reset" value="Reset" tabindex="20" />
-					<input type="submit" value="Submit" class="track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="21" />
+					<input type="submit" value="Submit" class="track" data-ga-category="Form-Submission" data-ga-action="Library-Card-Application" tabindex="20" />
 				</div>
 			</form>
 		</div><!--closing div for card application-->
