@@ -142,7 +142,7 @@
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor: {employer-one-super}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor's Title: {employer-one-supertitle}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor's title: {employer-one-supertitle}</p></td>
 </tr>
 <tr>
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Description of duties:<br>{employer-one-duties}</p></td>
@@ -162,14 +162,14 @@
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">City, State: {employer-two-citystate}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephtwo: {employer-two-tel}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-two-tel}</p></td>
 </tr>
 <tr>
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Your title: {employer-two-title}</p></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor: {employer-two-super}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor's Title: {employer-two-supertitle}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor's title: {employer-two-supertitle}</p></td>
 </tr>
 <tr>
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Description of duties:<br>{employer-two-duties}</p></td>
@@ -196,7 +196,7 @@
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor: {employer-three-super}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor's Title: {employer-three-supertitle}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor's title: {employer-three-supertitle}</p></td>
 </tr>
 <tr>
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Description of duties:<br>{employer-three-duties}</p></td>
@@ -223,7 +223,7 @@
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor: {employer-four-super}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor's Title: {employer-four-supertitle}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor's title: {employer-four-supertitle}</p></td>
 </tr>
 <tr>
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Description of duties:<br>{employer-four-duties}</p></td>

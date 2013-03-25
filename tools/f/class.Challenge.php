@@ -23,7 +23,7 @@
             elseif ($response != $this->challenge) {
             	//What happens when the challenge was entered incorrectly
             	$this->response['status'] = 'failure';
-            	$this->response['message'] = "I'm sorry. Your response did not match the text in the image. Please try it again.";
+            	$this->response['message'] = "I'm sorry. The text you entered did not match the image below. Please try it again.";
             }
             $this->render_response();
         }
