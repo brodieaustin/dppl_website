@@ -1,7 +1,12 @@
     $(document).ready(function(){
-	
+        //json formatted list of current jobs, used for pretty urls params below
+        var current_jobs = {"manager-of-creative-services":"Manager of Creative Services", "page" : "Page"};
+        var param, pos;
+        
+        //test for local storage
 		var storage = resumeForm();
 		
+		//if no storage, add today's date to form and check for url params (or pretty url)
 		if (storage == false){
 			var today = new Date();
 			var y = today.getFullYear();
@@ -9,16 +14,30 @@
 			var d = today.getDate();
 			
 			$('#app-date').val(m + '/' + d + '/' + y);
-		
-			var param = window.location.search.substring(1).split('=');
-			if (param[0] == 'p'){
-			    var pos = param[1].replace(/\+/g, ' ')
+			
+		    
+		    //check for params or do regex search for position in url
+			if (window.location.search != ""){
+			    param = window.location.search.substring(1).split('=');
+			    if (param[0] == 'p'){
+			        pos = param[1].replace(/\+/g, ' ')
+			    }
+			}
+			else{
+			    var p = /job-application\/([a-z-]+)/;
+			    param = p.exec(window.location.href);
+			    
+			    if (param){
+			        pos = current_jobs[param[1]];
+			    }
+			}
+			
+			if (pos){
 			    $('#position').val(pos);
 			}
 		}
 		
-		$('#name').focus();
-			
+		$('#name').focus();	
 		$('#save').click(saveForm);
 			
 		$('#application').validate({
@@ -46,12 +65,16 @@
 					    if (data.status == 'success'){
 					        $(form)[0].reset();
 					    }
-						$('.response-message').addClass(data.status).html(data.message).parent().fadeIn().delay(10000).fadeOut();
-						$('.form').show();
+					    else{
+					        $('.form').show();
+					    }
+						$('.response-message').addClass(data.status).html(data.message).parent().fadeIn();
 							
 					},
 					failure: function(){
-							
+						$('.load').hide();
+						$('.form').show();
+						$('.response-message').addClass('failure').html("Something went wrong and your application cannot be submitted at this time. Click Save to save your progress or print the form out.").parent().fadeIn();
 					}
 				});
 			}
@@ -112,4 +135,9 @@
 		else{
 			alert("I'm sorry. Local storage is not avaible for your browser");
 		}
+	}
+	
+	function getJobTitle(pos){
+	    
+	    return current_jobs[pos];
 	}

@@ -7,17 +7,24 @@
 <head>
     <meta charset="utf-8" />
     <title>Job Application &#124; Des Plaines Public Library</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="author" content="Des Plaines Public Library" />
+    <meta name="description" content="Online job application for the Des Plaines Public Library. For information about current openings visit http://dppl.org/about_dppl/jobs.shtml" />
 	<link rel="profile" href="http://microformats.org/profile/hcard" />
-	<!--<link rel="stylesheet" href="css/normalize.css" media="screen" />-->
-    <!--<link rel="stylesheet" href="css/screen.css" media="screen" />-->
-    <link rel=stylesheet href="css/style.css" media="screen" />
-    <link rel=stylesheet href="css/form.css" media="screen" />
+	<!--shortcut icons-->
+	<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png">
+    <!--stylesheets, including one for print only-->
+    <link rel=stylesheet href="/css/style.css" media="screen" />
+    <link rel=stylesheet href="/css/form.css" media="screen" />
+    <link rel="stylesheet" href="css/responsive.css" media="screen" />
 	<link rel="stylesheet" href="css/print.css" media="print" />
+	<!--modernizer to detect js and localstorage-->
 	<script src="/js/modernizr-2.5.3.min.js"></script>
-	<style>
-	    address{margin-bottom: 0;}
-	</style>
 </head>
 <body class="fixed-nav no-chrome">
 	<div class="navbar top" id="navbar-top">
@@ -33,7 +40,7 @@
 	    <noscript>
 	        <div class="warning"><strong>Warning!</strong>&nbsp;&nbsp; You don't have JavaScript enabled. Some features of this application may not work. <a href="http://enable-javascript.com/">Learn how to activate JavaScript</a>.</div>
 	    </noscript>
-    	<div class="load">Processing Form</div>
+    	<div class="load">Processing form&hellip;</div>
 	    <div class="response">
             <div class="response-message"></div>
             <span class="close">&times;</span>
@@ -156,10 +163,10 @@
 						    <label for="prev-employed1" class="inline tiny"><input type="radio" name="prev-employed" id="prev-employed1" class="required" value="Yes" tabindex="21" />Yes</label>
 						    <label for="prev-employed2" class="inline tiny"><input type="radio" name="prev-employed" id="prev-employed2" class="required" value="No" tabindex="22" />No</label>
 						    <div class="other">
-							    <label for="prev-department" class="inline small" >Department:
+							    <label for="prev-department" class="inline medium" >Department:
 							        <input type="text" name="prev-department" id="prev-department" tabindex="23" />
 							    </label>
-						        <label for="prev-from" class="inline small">From: <abbr title="Month/Year">(m/y)</abbr>
+						        <label for="prev-from" class="inline small">From <abbr title="Month/Year">(m/y)</abbr>:
 						            <input type="text" name="prev-from" id="prev-from" tabindex="24" />
 						        </label>
 						        <label for="prev-to" class="inline small">To: <abbr title="Month/Year">(m/y)</abbr>:
@@ -301,7 +308,7 @@
 							    <input type="text" name="employer-one-super" id="employer-one-super" tabindex="56" />
 						    </div>
 						    <div class="print-float">
-							    <label for="employer-one-supertitle">Supervisor's Title:</label>
+							    <label for="employer-one-supertitle">Supervisor's title:</label>
 							    <input type="text" name="employer-one-supertitle" id="employer-one-supertitle" tabindex="57" />
 						    </div>
 						    <div>
@@ -352,7 +359,7 @@
 							    <input type="text" name="employer-two-super" id="employer-two-super" tabindex="68" />
 						    </div>
 						    <div class="print-float">
-							    <label for="employer-two-supertitle">Supervisor's Title:</label>
+							    <label for="employer-two-supertitle">Supervisor's title:</label>
 							    <input type="text" name="employer-two-supertitle" id="employer-two-supertitle" tabindex="69" />
 						    </div>
 						    <div>
@@ -403,7 +410,7 @@
 								    <input type="text" name="employer-three-super" id="employer-three-super" tabindex="80" />
 							    </div>
 							    <div class="print-float">
-								    <label for="employer-three-supertitle">Supervisor's Title:</label>
+								    <label for="employer-three-supertitle">Supervisor's title:</label>
 								    <input type="text" name="employer-three-supertitle" id="employer-three-supertitle" tabindex="81" />
 							    </div>
 							    <div>
@@ -454,7 +461,7 @@
 								    <input type="text" name="employer-four-super" id="employer-four-super" tabindex="92" />
 							    </div>
 							    <div class="print-float">
-								    <label for="employer-four-supertitle">Supervisor's Title:</label>
+								    <label for="employer-four-supertitle">Supervisor's title:</label>
 								    <input type="text" name="employer-four-supertitle" id="employer-four-supertitle" tabindex="93" />
 							    </div>
 							    <div>
@@ -552,13 +559,17 @@
              </div>
 	    </div><!--closing div for bottom navbar-->
 	</div>
-	<script src="/js/jquery-1.8.2.min.js"></script>
+	<!--load jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.8.2.min.js"><\/script>')</script>
+	<!--form specific plugins-->
 	<script src="/js/jquery.validate.min.js"></script>
 	<script src="/js/jquery.form.js"></script>
 	<script src="/js/jquery.scrollspy.js"></script>
 	<script src="js/scripts.js" ></script>
 	<script>
 	    $(document).ready(function(){
+	        //highlight foot navigation with current section
 	        $('.section').each(function(i){
 	            var section_id = $(this).attr('id');
 	            var position = $(this).position();
@@ -574,15 +585,20 @@
         		});
 	        });
 	        
-	        $('#application').change(function(){
-	            
-	        });
-	        
+	        //handler for close buttons on warning messages
 	        $('.close').click(function(){
 	            $(this).parent().hide();
 	            return false;
 	        });
 	    });
 	</script>
+	    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+    <script>
+	    var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	    s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
 </body>
 </html>
