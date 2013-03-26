@@ -6,8 +6,8 @@
 	    "email": "forms@dppl.org"
 	},
 	"recipients": [{
-		"name": "Brodie Austin",
-		"email": "baustin@dppl.org"
+		"name": "Jobs",
+		"email": "jobs@dppl.org"
 	}],
     "fields": {
         "name": true,
@@ -47,8 +47,8 @@
         "graduate-years": false,
         "graduate-graduate": false,
         "graduate-degree": false,
-        "license-list": false,
-        "qualification": false,
+        "licenses": false,
+        "qualifications": false,
         "employed": true,
         "contact-employer": false,
         "employer-one": true,

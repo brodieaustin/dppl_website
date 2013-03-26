@@ -1,13 +1,12 @@
 <table style="width: 100%; padding: 6px 0;margin: 0; padding: 0; border-collapse: collapse; border-bottom:0; font-family: sans-serif; font-size: 12px;">
 <tr>
-  <td style="width: 80%;"><strong>Des Plaines Public Library</strong><br>1501 Ellinwood Street Des Plaines, IL 60016&nbsp;&nbsp;Tel: (847) 827-5551&nbsp;Fax: (847) 827-7974</td>
-  <td style="width: 20%;"><img src="dppl-logo-black.png" align="right" width="160" /></td>
+  <td><img src="http://dppl.org/about_dppl/job-application/img/dppl-logo-black.png" align="right" width="160" /><strong>Des Plaines Public Library</strong><br>1501 Ellinwood Street Des Plaines, IL 60016&nbsp;&nbsp;Tel: (847) 827-5551&nbsp;Fax: (847) 827-7974</td>
 </tr>
 <tr>
 	<td style="padding-top: 24px;" colspan="2">
 <h1 style="font-size: 24px; padding-bottom: 6px;">Employment Application</h1>
 <p style="margin-bottom: 10px;">It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-family: sans-serif; font-size: 12px; line-height: 14px;">
+<table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px; line-height: 14px;">
 <tr>
 <td style="width: 100%; padding: 6px 0;border-bottom: 2px solid #000; vertical-align: text-bottom; text-align: left;" colspan="2"><h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Personal Information</h2></td>
 </tr>
@@ -28,9 +27,9 @@
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Email Address: {email}</p></td>
 </tr>
 </table>
-<table style="width: 100%; border-collapse: collapse; border-bottom:1px solid #000; margin-bottom: 24px; font-family: sans-serif;font-size: 12px;">
+<table style="width: 100%; border-collapse: collapse; border-bottom:1px solid #000; font-family: sans-serif;font-size: 12px;">
 <tr>
-<td style="width: 100%; padding: 6px 0;border-bottom: 2px solid #000; vertical-align: text-bottom; text-align: left;" colspan="2"><h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Background Information</h2></td>
+<td style="width: 100%; padding: 24px 0 6px 0;;border-bottom: 2px solid #000; vertical-align: text-bottom; text-align: left;" colspan="2"><h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Background Information</h2></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Position applying for: {position}</p></td>
@@ -56,13 +55,13 @@
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Department: {prev-department}&nbsp;&nbsp;&nbsp;&nbsp;From: {prev-from}&nbsp;&nbsp;&nbsp;&nbsp;To: {prev-to}</p></td>
 </tr>
 </table>
-<table style="width:100%; border-collapse: collapse; border-bottom:1px solid #000; margin-bottom: 24px; font-family: sans-serif;font-size: 12px;">
+<table style="width:100%; border-collapse: collapse; border-bottom:1px solid #000; font-family: sans-serif;font-size: 12px;">
 <tr>
-<td style="width: 100%; padding: 6px 0;border-bottom: 2px solid #000; text-align: left;"  colspan="2"><h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Education</h2></td>
+<td style="width: 100%; padding: 24px 0 6px 0;border-bottom: 2px solid #000; text-align: left;"  colspan="2"><h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Education</h2></td>
 </tr>
 <tr>
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; text-align: left;" colspan="2"><h3 style="margin: 0; padding: 0; font-size: 12px; font-weight: bold;">High School</h3></td>
-<tr/>
+</tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">School: {high-school}</p></td>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">City, State: {hs-citystate}</p></td>
@@ -105,9 +104,9 @@
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Degree received: {graduate-degree}</p></td>
 </tr>
 </table>
-<table style="width: 100%; border-collapse: collapse; border-bottom:1px solid #000; margin-bottom: 24px; font-family: sans-serif;font-size: 12px;">
+<table style="width: 100%; border-collapse: collapse; border-bottom:1px solid #000; font-family: sans-serif;font-size: 12px;">
 <tr>
-<td style="width: 100%; padding: 6px 0;text-align: left;" ><h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Additional Job Related Qualifications</h2></td>
+<td style="width: 100%; padding: 24px 0 6px 0;text-align: left;" ><h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Additional Job Related Qualifications</h2></td>
 </tr>
 <tr>
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Please list any certifications or licenses: <br><br>{licenses}</p></td>
@@ -118,7 +117,7 @@
 </table>
 <table style="width: 100%; border-collapse: collapse; border-bottom:1px solid #000; margin-bottom: 20px; font-family: sans-serif;font-size: 12px;">
 <tr>
-<td style="width: 100%; padding: 6px 0;text-align: left;" colspan="2"><h2 style="margin: 0; padding: 0; font-size: 12px; font-weight: bold;">Employment History</h2></td>
+<td style="width: 100%; padding: 24px 0 6px 0; text-align: left;" colspan="2"><h2 style="margin: 0; padding: 0; font-size: 12px; font-weight: bold;">Employment History</h2></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Are you presently employed?{employed}</p></td>
@@ -128,17 +127,15 @@
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; font-style: oblique;" colspan="2"><p style="margin: 0; padding: 0;">List your present or most recent employer first. A resume will not substitute for completion of this portion of the application</td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom;" colspan="2"><h3 style="margin: 0; padding: 0; font-weight: bold;"">Employer One</h3></td>
+	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; font-weight: bold;" colspan="2">Employer One</td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Employer: {employer-one}</p></td>
-</tr>
-<tr>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Employer: {employer-one}</p></td>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">City, State: {employer-one-citystate}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-one-tel}</p></td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Your title: {employer-one-title}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-one-tel}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Your title: {employer-one-title}</p></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor: {employer-one-super}</p></td>
@@ -158,14 +155,12 @@
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; padding: 24px 0 6px 0; font-weight: bold;" colspan="2">Employer Two</td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Employer: {employer-two}</p></td>
-</tr>
-<tr>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Employer: {employer-two}</p></td>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">City, State: {employer-two-citystate}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-two-tel}</p></td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Your title: {employer-two-title}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-two-tel}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Your title: {employer-two-title}</p></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor: {employer-two-super}</p></td>
@@ -185,14 +180,12 @@
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; padding: 24px 0 6px 0; font-weight: bold;" colspan="2">Employer Three</td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Employer: {employer-three}</p></td>
-</tr>
-<tr>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Employer: {employer-three}</p></td>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">City, State: {employer-three-citystate}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-three-tel}</p></td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Your title: {employer-three-title}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-three-tel}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Your title: {employer-three-title}</p></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor: {employer-three-super}</p></td>
@@ -212,14 +205,12 @@
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; padding: 24px 0 6px 0; font-weight: bold;" colspan="2">Employer Four</td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Employer: {employer-four}</p></td>
-</tr>
-<tr>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Employer: {employer-four}</p></td>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">City, State: {employer-four-citystate}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-four-tel}</p></td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Your title: {employer-four-title}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Telephone: {employer-four-tel}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Your title: {employer-four-title}</p></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Supervisor: {employer-four-super}</p></td>
