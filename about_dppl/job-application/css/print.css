@@ -15,15 +15,14 @@ span.print-only{display: inline !important;}
 
 .note{clear: both; padding-top: .5em; font-style: oblique;}
 
-.form-header{margin-bottom: 2em; overflow: hidden;}
+.form-header{margin-bottom: 1.5em; overflow: hidden;}
 .form-header div{border: 0 !important;}
 .hcard .fn{font-weight: bold;}
 .hcard, address{font-style: normal !important; font-size: 100%;}
 
 .hcard h1{width: 100%;}
 .hcard address, .hcard .tel{float: left; margin-right: 1em;}
-.hcard .print-logo{float: right; width: 20%;}
-.print-logo img{width: 100%;}
+.hcard .print-logo{float: right; margin-top: 0;}
 
 a {text-decoration: none;}
 abbr{border-bottom: 0;}

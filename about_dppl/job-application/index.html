@@ -50,14 +50,14 @@
 	            <p><strong>Prefer to download and complete the application?</strong></p>
 	            <p>You can email the completed form to jobs@dppl.org, mail it to the library, or drop it off on the 2nd floor.</p>
 	            <div>
-	                <a href="downloads/DPPL-Application-Print.pdf" class="button">Download now</a>
+	                <a href="download/DPPL-Application-Print.pdf" target="_blank" class="button">Download now</a>
 	            </div>
 	            <span class="close">&times;</span>
 	        </div>
 	        <div class="form-header">
 	            <div class="hcard">
 	                <span class="print-only print-logo">
-	                    <img src="dppl-logo-black.png" />
+	                    <img src="img/dppl-logo-black.png" width=160" />
 	                </span>
 	                <span class="fn org">Des Plaines Public Library</span>
 	                <address class="adr">
@@ -78,7 +78,7 @@
 		    </div>          
 			<h1>Employment Application</h1>
 			<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection. <span class="print-only">Send your completed application by mail or by email to jobs@dppl.org.</span></p>
-			<form action="f/send.php" method="post" id="application" enctype="multipart/form-data">
+			<form action="/tools/f/send.php" method="post" id="application" enctype="multipart/form-data">
 			    <p class="note no-print"><em>*</em> Required field</p>
 			    <div class="errors"></div>
 			    <input type="hidden" name="form-id" id="form-id" value="job-application" />
@@ -126,7 +126,6 @@
 							    <!--update positions with <option value="Job Name">Job Name</option>-->
 							    <option></option>
 							    <option value="Manager of Creative Services">Manager of Creative Services</option>
-							    <option value="Page">Page</option>
 						    </select>
 					    </div>
 					    <div class="print-float">
