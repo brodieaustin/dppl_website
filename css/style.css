@@ -1145,6 +1145,8 @@ div.feed-item-summary{
   line-height: 1.35em;
 }
 
+.no-thumbnail div.feed-item-summary{width: 100%;}
+
 #content .blogs-container{
   position: relative; 
   width: 28em; 

@@ -13,12 +13,13 @@
 	}, options);
 	
 	var div = '<div class="feed-items ' + settings.feed_type + '">';
+	var has_image, has_summary;
 	
 	return this.each(function() {
 	
 		var $this = $(this);
 	
-		$.getJSON('/tools/feed.php?jsoncallback=?', {url: settings.url, feed_type: settings.feed_type, num_items: settings.num_items}, function(data){
+		$.getJSON('http://dppl.org/tools/feed.php?jsoncallback=?', {url: settings.url, feed_type: settings.feed_type, num_items: settings.num_items}, function(data){
 		    //console.log(data);
 		    
 		    if (settings.feed_title.length > 0){
@@ -37,8 +38,15 @@
 				}
 				else if (settings.feed_type == 'blog'){
 					if (i < settings.num_items){
-						div = div + '<div class="feed-item blog-post" id="' + data.item[i].guid + '">'
-    						+ ((settings.show_thumbnail == true)?((data.item[i].thumbnail != undefined)?'<div class="feed-item-thumbnail"><img src="' + data.item[i].thumbnail + '" /></div>':''):'')
+						if (settings.show_thumbnail == true){
+							has_image = (data.item[i].thumbnail != undefined?true:false);
+						}
+						else{
+							has_image = false;
+						}
+						console.log(has_image);
+						div = div + '<div class="feed-item blog-post' + ((has_image == false)?' no-thumbnail':'') + '" id="' + data.item[i].guid + '">'
+    						+ ((has_image == true)?'<div class="feed-item-thumbnail"><img src="' + data.item[i].thumbnail + '" /></div>':'')
 							+ '<div class="feed-item-title"><a href="' + data.item[i].link + '">' + data.item[i].title + '</a></div>'
 							+ ((settings.show_summary == true)?'<div class="feed-item-summary">' + data.item[i].summary + '</div>':'')
 							+'</div>';
