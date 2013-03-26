@@ -1192,7 +1192,7 @@ div#rss-blogs{height: 26em; padding-bottom: 1em;
 
 div#db-list h3{
   clear: both;
-  background-color: #eee;
+  border-bottom: 1px solid #eee;
   padding: 4px;
 }
 
