@@ -1,4 +1,9 @@
 /*basic changes for small tablet and smartphone breakpoints*/
+
+@media screen and (min-width: 769px){
+	.navbar #form-nav{display: block;}
+}
+
 @media screen and (max-width: 768px){
     body{width: 97%; padding: 0 1%;}
     .navbar .nav{width: 100%;}
@@ -9,6 +14,12 @@
 @media screen and (max-width: 480px){
     .form-header{background: transparent;}
     .form-header .hcard{float: none; width: 100%; text-align: left;}
-    .form-footer{display: none;}
+    .navbar #form-nav{display: none;}
+	.nav ul li a{float: none;}
+	.nav-button{float: right; display: block; height: 2em; width: auto; line-height: 2em; padding: 0 1em; cursor: pointer;}
+	a.nav-button{text-decoration: none !important;}
+	.icon-circle{display: inline-block; height: 4px; width: 4px; border-radius: 4px; background-color: #888;}
+	.nav-button:hover .icon-circle{background-color:#aaa;}
+	.nav-button:visited .icon-circle{background-color:#888 !important;}
     .help{margin-right: .5em;}
 }

@@ -546,6 +546,11 @@
 	<div class="form-footer">
 	    <div class="navbar bottom" id="navbar-bottom">
 	        <div class="nav">
+				<a class="nav-button" href="javascript:void(0);" id="footer-nav-button">
+					<span class="icon-circle"></span>
+					<span class="icon-circle"></span>
+					<span class="icon-circle"></span>
+				</a>
                 <ul class="no-style" id="form-nav">
                     <li><a href="#personal">Personal</a></li>
                     <li><a href="#background">Background</a></li>
@@ -589,6 +594,27 @@
 	            $(this).parent().hide();
 	            return false;
 	        });
+			
+			$('#footer-nav-button').click(function(){
+				if ($('#form-nav').is(':visible')){
+					$('#form-nav').slideUp();
+				}
+				else{
+					$('#form-nav').slideDown();
+				}
+				return false;
+			});
+			
+			if ($('#footer-nav-button:visible').is(':visible')){
+				$('#form-nav li a').click(function(){
+					if ($('#form-nav').is(':visible')){
+						$('#form-nav').slideUp();
+					}
+					else{
+						$('#form-nav').slideDown();
+					}
+				});
+			}
 	    });
 	</script>
 	    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
