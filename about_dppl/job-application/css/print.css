@@ -1,0 +1,115 @@
+* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
+
+@page{margin: 1cm;}
+
+body{
+  width: 99%;
+  font-size: 12px;
+  line-height: 120%;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.print-only{display: block;}
+span.print-only{display: inline !important;}
+.no-print{display: none;}
+
+.note{clear: both; padding-top: .5em; font-style: oblique;}
+
+.form-header{margin-bottom: 1.5em; overflow: hidden;}
+.form-header div{border: 0 !important;}
+.hcard .fn{font-weight: bold;}
+.hcard, address{font-style: normal !important; font-size: 100%;}
+
+.hcard h1{width: 100%;}
+.hcard address, .hcard .tel{float: left; margin-right: 1em;}
+.hcard .print-logo{float: right; margin-top: 0;}
+
+a {text-decoration: none;}
+abbr{border-bottom: 0;}
+
+.break{
+  page-break-after: always;
+}
+
+.errors, .navbar, #files, #challenge, #copy, hr, .add, .buttons, .response, .load{
+  display: none !important;
+}
+
+article{clear: both;}
+
+fieldset, .sub-section{
+  border: 0 !important;
+  padding: 0;
+  margin-left: 0 !important;
+}
+
+fieldset{margin-bottom: 2em;}
+.sub-section{margin-bottom: .5em;}
+
+legend{
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-bottom: .5em;
+  border-bottom: 2px solid #000;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+.sub-section legend{padding-top: .5em !important; padding-bottom: 0 !important; border: 0 !important;}
+
+form div{clear: both; margin-bottom: 0; padding: .5em 0; border-bottom: 1px solid #000;}
+form div.group{clear:both;}
+form div.other{margin-bottom: 0 !important; padding-top: .5em !important; padding-bottom: 0 !important; border-bottom: 0 !important; }
+form div.print-float{clear: none !important; float: left; width: 50% !important; height: 1.5em;}
+ 
+form input[type=text], form select, form textarea{
+  border: 0;
+  font-size: 100%;
+}
+
+form input[type=radio]{
+  height: 11px;
+  width: 11px;
+  border: 1px solid #000;
+  margin-top: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+form select{
+  outline: 0 !important;
+  background-color: #fff;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+form textarea{
+  width: 100% !important;
+  height: 1em;
+  resize: none;
+  overflow: hidden;
+}
+
+form textarea.tall{
+  height: 3em;
+}
+ 
+
+label, input{
+  padding: 0;
+}
+
+input.wide{width: 70% !important;}
+
+label{display: inline-block; min-width: 20%;}
+
+label.wide{width: 100% !important;}
+label.inline{ display: inline !important;}
+form em{display: none;}
+
+form input[type=submit]{
+  display: none;
+}

@@ -1,5 +1,4 @@
 <?php
-    
     session_start();
    
     require_once('class.Challenge.php');
@@ -7,15 +6,24 @@
 	require_once('class.phpmailer.php');
     require_once('files.php');
 	
-    $response = '';
-	$fresponse = '';
+    $status;
+    $message;
+	$fresponse;
+	$ajax;
+	
+	if ($_SERVER["HTTP_X_REQUESTED_WITH"]){
+	    $ajax = true;
+    }
+    else{
+        $ajax = false;
+    }
 	
 	if (!empty($_POST)){
 	
-	    $form = new Form($_POST['form-id']);
+	    $form = new Form($_POST['form-id'], $ajax);
         $form->process_form($_POST);
 	
-	    $challenge = new Challenge($_SESSION['captcha']['code']);
+	    $challenge = new Challenge($_SESSION['captcha']['code'], $ajax);
 	    $challenge->verify($form->fields['challenge-response']);
             
 	
@@ -37,7 +45,7 @@
         $mail->FromName = $form->sender['name'];
 		
         if ($_POST['send-copy'] == 'true'){
-            $mail->AddBCC($form->sender);
+            $mail->AddBCC($form->sender['email']);
         }
 		
         //add a subject
@@ -61,29 +69,35 @@
 			    }
 		    }
 
-		    $fresponse = handleFiles($mail, $files);
-		    $fresponse = strlen($fresponse) > 0 ? '<br />' . $fresponse : '';
+		    $fresponse = handleFiles($mail, $files, $ajax);
 	    }//closes file if
 		
 	    //send the mail and test if it happened
-	    if ($mail->Send()){
-	        if (!empty($form->messages['success'])){
-	            echo $form->messages['success'];
+	  if ($mail->Send()){
+	       $status = 'success';
+	       if (!empty($form->messages['success'])){
+	            $message = $form->messages['success'] . $fresponse;
 	        }
 	        else{
-		        echo  "Thank you! Your form has been submitted.";
+		        $message = "Thank you! Your form has been submitted." . $fresponse;
 		    }
 	    }
 	    else{
-	        if (!empty($form->messages['error'])){
-	            echo $form->messages['error'];
+	        $status = 'failure';
+	        if (!empty($form->messages['failure'])){
+	            $message = $form->messages['failure'];
 	        }
 	        else{
-		        echo "I'm sorry. Your message could not be sent due to an internal error. Please try again later.";
+		        $message = "I'm sorry. Your form could not be sent due to an internal error. Please try again later.";
 		    }
 	    }
     }//closes post if	    
     else{
-        die('Please complete the form before submitting.');
+        $status = 'failure';
+        $message = 'Please complete the form before submitting.';
     }
+    
+    $form->set_response($status, $message);
+    $form->render_response();
+    
 ?>

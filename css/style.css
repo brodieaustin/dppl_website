@@ -1,5 +1,5 @@
 
-BODY {
+body {
   width: 61.53846153em;
   position: relative;
   margin: 0 auto;
@@ -9,6 +9,8 @@ BODY {
   color: #333;
   background-color: #fff;
 }
+
+body.fixed-nav{margin-top: 3.5em; }
 
 /*hide old table visual stuff*/
 td{vertical-align: top; background-image: none !important;}
@@ -100,7 +102,7 @@ a.no-style{
  text-decoration: none;
 }
 
-a.button{
+.button{
   display: inline-block !important;
   width: auto;
   height: 2em;
@@ -113,13 +115,16 @@ a.button{
   text-align: center;
   border-radius: .5em;
   box-shadow: 1px 1px 1px 0px #ddd;
-  text-decoration: none;
+  text-decoration: none !important;
+  font-size: 100%;
 }
 
-a.button:hover{
+.button:hover{
   background-color: #aaa !important;
   text-decoration: none;
  }
+ 
+a.button:visited{text-decoration: none !important;}
  
  a.filter{display: none; background-color: #fcaf3f;}
  
@@ -159,6 +164,8 @@ a.info:hover span  {
   text-decoration: none;
   text-align: left
 }
+
+abbr{border: 0 !important;}
 
 address{
   font-style: normal;
@@ -205,23 +212,31 @@ input[type=text], input[type=password]{
   height: 1.9em;
 }
 
-input[type=submit], input[type=button], input[type=reset]{
-  padding: 0 4px;
+input[type=submit], input[type=button], input[type=reset], button{
+  height: 2em; 
+  line-height: 2em;
+  padding: 0 .5em;
   cursor: pointer;
   background-color: #e6e6e6;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+  font-size: 100% !important; 
+  font-family: inherit;
 }
 
-input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover{
+input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover, button:hover{
   background-color: #aaa;
 }
 
 input[type=checkbox]{
   margin: 0 4px;
 }
+
+input[type=radio],input[type=checkbox]{border: 0;}
+
+textarea{width: 99%; min-height: 7em; border: 1px solid #ccc; font-family: inherit; resize: none;}
 
 /*reusable classes*/
 .note{font-style: oblique;}
@@ -251,14 +266,14 @@ input[type=checkbox]{
 
 .load{
   display: block;
-  min-width: 16px;
-  width: 100%;
-  min-height: 16px;
-  height: 100%;
-  background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
+  width: 1.5em;
+  height: 1.5em;
+  background: url('/images/ajax-loader.gif') no-repeat center left;
 }
 
-.warning{background-color: #FCF8E3; margin-bottom: 2px; padding: 4px 6px;}
+.warning{position: relative; background-color: #FCF8E3; margin-bottom: 1em; padding: 1em; overflow: hidden;}
+.warning.with-close{padding: 1em 3em 1em 1em;}
+.warning p{padding: 0 !important; margin: 0 0 4px 0 !important;}
 
 .favorite{display: inline-block; width: 1em; height: 1em; background: url('/images/icons/star.png') no-repeat right top; padding: 0 2px;}
 
@@ -282,6 +297,8 @@ input[type=checkbox]{
 .locality, .region, .postal-code{
   display: inline-block !important;
 }
+.tel{display: block;}
+.hcard h1{margin-bottom: 0 !important; font-size: 100%; color: #333; }
 
 ul.no-style{
   list-style: none; padding-left: 0;
@@ -541,7 +558,8 @@ display: none; position: relative; top: 0; left: 0; width: 100%;background-color
 
 #mobile-alert p {margin: 0 0 0 10px;}
 
-#mobile-alert .close{display: block; position: absolute; top: .5em; right: 1em; padding: 0 4px 4px; font-size: 1.5em; font-weight: bold; color: #888; text-align: right;  cursor: pointer; z-index: 5050; }
+.close{display: block; position: absolute; top: .5em; right: .5em; height:1em; width:1em; line-height: 1em; font-size: 1.5em; font-weight: bold; color: #333; vertical-align: middle; text-align: center;  cursor: pointer; }
+.close:hover{background-color: #aaa; border-radius: 2em;}
 
 /*navigation*/
 /*adapted from http://css-tricks.com/simple-jquery-dropdowns/*/
@@ -786,6 +804,8 @@ ul.dropdown li:hover > ul{
   overflow: hidden;
   background: #fff;
 }
+
+.no-chrome #content{width: 100%; padding: 0; border: 0;}
 
 #content table{
   width: 100% !important;
@@ -1083,6 +1103,19 @@ a#next2{
    outline: none;
   
 }
+/*styles for fixed nav-bar*/
+
+.navbar{position: fixed; left: 0; width: 100%; padding: .5em 0; background-color: #fff; z-index: 100;}
+.navbar.top{top: 0; border-bottom: 1px solid #c8c8c8;}
+.navbar.bottom{bottom: 0; border-top: 1px solid #c8c8c8; padding: 0; background-color: #eee;}
+.navbar .nav{width: 61.53846153em; margin: 0 auto; overflow: hidden;}
+.nav .brand{float: left; height: 2em; line-height: 2em; text-decoration: none; color: #888;}
+.nav .buttons{height: 2em; line-height: 2em;}
+.nav button{margin-left: .8em;}
+.nav ul{margin: 0; overflow: hidden;}
+.nav ul li a{display: block; float: left; height: 2em; line-height: 2em; padding: 0 1em ; background-color: #eee; color: #333 !important; text-decoration: none !important;}
+.nav ul li a:hover{background-color: #888;}
+.nav .active{background-color: #c8c8c8;}
 
 /*feeds*/
 
@@ -1327,7 +1360,6 @@ dl.resources-list dt{margin-top: 2em; font-weight: normal;}
   height: 140px;
   margin: 1em 0 2em 0;
   padding: 1em 0 0 0;
-  font-size: .9em;
 }
 
 #footer #copyright{

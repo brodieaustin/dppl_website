@@ -43,31 +43,30 @@
 					  }
 				},
 				submitHandler: function(form){
+				    $('html, body').animate({ scrollTop: 0 }, 0);
 				    app_counter = app_counter + 1;
 				    $('div.errors').hide();
-					$('.card-application').hide();
 					$('#application-load').show();
+					$('#application-response > .response-message').html('').removeClass('success').removeClass('failure');
 					$(form).ajaxSubmit({
-						success: function(data){
-								if (data.search("Thank") == 1 ){
-								    $('#application-load').hide();
+						success: function(data){    
+						        $('#application-load').hide();
+								if (data.status == 'success' ){
 								    $('#application')[0].reset();
-									$('#application-response').html(data).removeClass('failure').addClass('success').show();
+								    $('.card-application').hide();
 								}
 								else{
 								    if (app_counter > 6){
-								        data = 'You have unsucessfully submitted the form too many times. The form will now reset.';
+								        data.message = 'You have unsucessfully submitted the form too many times. The form will now reset.';
 								        $('#application')[0].reset();
 								    }
-								    $('#application-load').hide();
-									$('#application-response').html(data).removeClass('success').addClass('failure').fadeIn().delay(3000).fadeOut();
-									$('.card-application').delay(3500).fadeIn();
-								}	
+								}
+								$('#application-response > .response-message').html(data.message).addClass(data.status).parent().fadeIn();	
 							},
 							failure: function(){
-								$('#application-response').html("Something went wrong. Please check your form and try again later.").removeClass('success').addClass('failure').fadeIn().delay(3000).fadeOut();
+								$('#application-response >.response-message').html("Something went wrong. Please check your form and try again later.").removeClass('success').addClass('failure').parent().fadeIn();
 								$('#application')[0].reset();
-								$('.card-application').delay(3500).fadeIn();
+								$('.card-application').show();
 							}
 					});
 				}

@@ -36,10 +36,20 @@
 					  }
 				},
 				submitHandler: function(form){
-					$('.response').show();
-					$(form).hide();
+				    $('html, body').animate({ scrollTop: 0 }, 0);
+					$('.load').show();
+					$('.response').hide();
+					$('.response-message').html('').removeClass('success').removeClass('failure');
 					$.post($(form).attr('action'), $(form).serialize(), function(data){
-					    $('.response').html(data);
+					    $('.load').hide();
+					    if (data.status == 'success'){
+					        $('#homebound-application')[0].reset();
+					        $(form).hide();
+					    }
+					    else{
+					        $(form).show();
+					    }
+					    $('.response-message').html(data.message).addClass(data.status).parent().fadeIn();
 					});
 				}
 			});

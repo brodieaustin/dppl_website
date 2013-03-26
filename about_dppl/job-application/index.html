@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>		<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>		<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Job Application &#124; Des Plaines Public Library</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="author" content="Des Plaines Public Library" />
+    <meta name="description" content="Online job application for the Des Plaines Public Library. For information about current openings visit http://dppl.org/about_dppl/jobs.shtml" />
+	<link rel="profile" href="http://microformats.org/profile/hcard" />
+	<!--shortcut icons-->
+	<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png">
+    <!--stylesheets, including one for print only-->
+    <link rel=stylesheet href="/css/style.css" media="screen" />
+    <link rel=stylesheet href="/css/form.css" media="screen" />
+    <link rel="stylesheet" href="css/responsive.css" media="screen" />
+	<link rel="stylesheet" href="css/print.css" media="print" />
+	<!--modernizer to detect js and localstorage-->
+	<script src="/js/modernizr-2.5.3.min.js"></script>
+</head>
+<body class="fixed-nav no-chrome">
+	<div class="navbar top" id="navbar-top">
+		<div class="nav">
+			<a class="brand" href="/">Des Plaines Public Library</a>
+			<div class="buttons right">
+			    <a href="mailto:jobs@dppl.org" class="help">jobs@dppl.org</a>
+			    <button id="save">Save</button>
+			</div>
+		</div><!--closing div for nav-->
+	</div><!--closing div for top navbar-->
+	<div id="content">
+	    <noscript>
+	        <div class="warning"><strong>Warning!</strong>&nbsp;&nbsp; You don't have JavaScript enabled. Some features of this application may not work. <a href="http://enable-javascript.com/">Learn how to activate JavaScript</a>.</div>
+	    </noscript>
+    	<div class="load">Processing form&hellip;</div>
+	    <div class="response">
+            <div class="response-message"></div>
+            <span class="close">&times;</span>
+	    </div>
+	    <div class="form">
+	        <div class="warning no-print with-close" id="print-message">
+	            <p><strong>Prefer to download and complete the application?</strong></p>
+	            <p>You can email the completed form to jobs@dppl.org, mail it to the library, or drop it off on the 2nd floor.</p>
+	            <div>
+	                <a href="download/DPPL-Application-Print.pdf" target="_blank" class="button">Download now</a>
+	            </div>
+	            <span class="close">&times;</span>
+	        </div>
+	        <div class="form-header">
+	            <div class="hcard">
+	                <span class="print-only print-logo">
+	                    <img src="img/dppl-logo-black.png" width=160" />
+	                </span>
+	                <span class="fn org">Des Plaines Public Library</span>
+	                <address class="adr">
+					    <span class="street-address">1501 Ellinwood Street</span>
+					    <span class="locality">Des Plaines</span>,  
+					    <abbr class="region" title="Illinois">IL</abbr>
+					    <span class="postal-code">60016</span>
+				    </address>
+				    <span class="tel">
+					    <span class="type">Tel:</span>
+					    <span class="value">(847) 827-5551</span>
+				    </span>
+				    <span class="tel">
+					    <span class="type">Fax:</span>
+					    <span class="value">(847) 827-7974</span>
+				    </span>
+			    </div>
+		    </div>          
+			<h1>Employment Application</h1>
+			<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection. <span class="print-only">Send your completed application by mail or by email to jobs@dppl.org.</span></p>
+			<form action="/tools/f/send.php" method="post" id="application" enctype="multipart/form-data">
+			    <p class="note no-print"><em>*</em> Required field</p>
+			    <div class="errors"></div>
+			    <input type="hidden" name="form-id" id="form-id" value="job-application" />
+				    <fieldset id="personal" class="section">
+					    <legend>Personal Information</legend>
+					    <div class="print-float">
+						    <label for="name">Full Name: <em>*</em></label>
+						    <input type="text" name="name" id="name" class="required" tabindex="1" />
+					    </div>
+					    <div class="print-float">
+						    <label for="app-date">Application Date: <em>*</em></label>
+						    <input type="text" name="app-date" id="app-date" class="required small" tabindex="2" />
+					    </div>
+					    <div class="print-float">
+						    <label for="address-street">Street Address: <em>*</em></label>
+						    <input type="text" name="address-street" id="address-street" class="required wide" tabindex="3" />
+					    </div>
+					    <div class="print-float">
+						    <label for="address-city">City: <em>*</em></label>
+						    <input type="text" name="address-city" id="address-city" class="required" tabindex="4" />
+					    </div>
+					    <div class="print-float">
+						    <label for="address-state">State: <em>*</em></label>
+						    <input type="text" name="address-state" id="address-state" class="required small" tabindex="5" />
+					    </div>
+					    <div class="print-float">
+						    <label for="address-zip">Zip Code: <em>*</em></label>
+						    <input type="text" name="address-zip" id="address-zip" class="required small" tabindex="6" />
+					    </div>
+					    <div class="print-float">
+						    <label for="phone">Primary Phone: <em>*</em></label>
+						    <input type="text" name="phone" id="phone" class="required small" tabindex="7" />
+					    </div>
+					    <div class="print-float">
+						    <label for="email">Email Address: <em>*</em></label>
+						    <input type="text" name="email" id="email" class="email required small" tabindex="8" />
+					    </div>
+				    </fieldset><!--closing tag for personal info fieldset-->
+				    <hr />
+				    <fieldset id="background" class="section">
+					    <legend>Background Information</legend>
+					    <div class="print-float">
+						    <label for="position">Position applying for: <em>*</em></label>
+						    <select name="position" id="position" class="required" tabindex="9">
+							    <!--update positions with <option value="Job Name">Job Name</option>-->
+							    <option></option>
+							    <option value="Manager of Creative Services">Manager of Creative Services</option>
+						    </select>
+					    </div>
+					    <div class="print-float">
+						    <label for="date-avail">Date available: <em>*</em></label>
+						    <input type="text" name="date-avail" id="date-avail" class="required" tabindex="10" />
+					    </div>
+					    <div class="group">
+						    <label>How were you referred to the Library? <em>*</em></label>
+						    <label for="refer-type1" class="inline small"><input type="radio" name="refer-type" id="refer-type1" class="required" value="Library Web Site" tabindex="11" />Library Web Site</label>
+						    <label for="refer-type2" class="inline small"><input type="radio" name="refer-type" id="refer-type2" class="required" value="RAILS Web Site" tabindex="12" />RAILS Web Site</label>
+						    <label for="refer-type3" class="inline small"><input type="radio" name="refer-type" id="refer-type3" class="required" value="Other" tabindex="13" />Other</label>
+						    <div class="other">
+							    <label for="refer-other" class="wide"><i>If &ldquo;other&rdquo;, please specify:</i></label>
+							    <input type="text" name="refer-other" id="refer-other" class="wide" tabindex="14" />
+						    </div>
+					    </div>
+					    <div class="group">
+						    <label>Are you at least 16 years of age? <em>*</em></label>
+						    <label for="age1" class="inline tiny"><input type="radio" name="age" id="age1" class="required" value="Yes" tabindex="15" />Yes</label>
+						    <label for="age2" class="inline tiny"><input type="radio" name="age" id="age2" class="required" value="No" tabindex="16" />No</label>
+					    </div>
+					    <div class="group">
+						    <label>Are you legally eligible for employment in the U.S.? <em>*</em></label>
+						    <label for="legal1" class="inline tiny"><input type="radio" name="legal" id="legal1" class="required" value="Yes" tabindex="17" />Yes</label>
+						    <label for="legal2" class="inline tiny"><input type="radio" name="legal" id="legal2" class="required" value="No" tabindex="18" />No</label>
+					    </div>
+					    <div class="group">
+						    <label>If this position requires a driver's license, do you have a valid driver's license?</label>
+						    <label for="driver1" class="inline tiny"><input type="radio" name="driver" id="driver1" value="Yes" tabindex="19" />Yes</label>
+						    <label for="driver2" class="inline tiny"><input type="radio" name="driver" id="driver2" value="No" tabindex="20" />No</label>
+					    </div>
+					    <div class="group">
+						    <label>Were you previously employed by the Des Plaines Public Library? <em>*</em></label>
+						    <label for="prev-employed1" class="inline tiny"><input type="radio" name="prev-employed" id="prev-employed1" class="required" value="Yes" tabindex="21" />Yes</label>
+						    <label for="prev-employed2" class="inline tiny"><input type="radio" name="prev-employed" id="prev-employed2" class="required" value="No" tabindex="22" />No</label>
+						    <div class="other">
+							    <label for="prev-department" class="inline medium" >Department:
+							        <input type="text" name="prev-department" id="prev-department" tabindex="23" />
+							    </label>
+						        <label for="prev-from" class="inline small">From <abbr title="Month/Year">(m/y)</abbr>:
+						            <input type="text" name="prev-from" id="prev-from" tabindex="24" />
+						        </label>
+						        <label for="prev-to" class="inline small">To: <abbr title="Month/Year">(m/y)</abbr>:
+						            <input type="text" name="prev-to" id="prev-to" tabindex="25" />
+						        </label>
+						    </div>
+					    </div>
+				    </fieldset><!--clsoing tag for background info fieldset-->
+				    <hr />
+				    <fieldset id="education" class="section">
+					    <legend>Education</legend>
+					    <fieldset class="sub-section">
+						    <legend>High School</legend>
+						    <div class="print-float">
+							    <label for="high-school" class="wide">School: <em>*</em></label>
+							    <input type="text" name="high-school" id="high-school" class="required wide" tabindex="26" />
+							</div>
+							<div class="print-float">
+							    <label for="hs-citystate">City, State: <em>*</em></label>   
+							    <input type="text" name="hs-citystate" id="hs-citystate" class="required" tabindex="27" />
+						    </div>
+						    <div>
+							    <label for="hs-years">Last year completed: <em>*</em></label>
+							    <input type="text" name="hs-years" id="hs-years" class="required small" tabindex="28" />
+						    </div>
+						    <div class="group print-float">
+							    <label>Did you graduate? <em>*</em></label>
+							    <label for="hs-graduate1" class="inline tiny"><input type="radio" name="hs-graduate" id="hs-graduate1" class="required" value="Yes" tabindex="29" />Yes</label>
+							    <label for="hs-graduate2" class="inline tiny"><input type="radio" name="hs-graduate" id="hs-graduate2" class="required" value="No" tabindex="30" />No</label>
+						    </div>
+						    <div class="print-float">	
+							    <label for="hs-degree" class="no-display">Degree received: <em>*</em></label>
+							    <input type="text" name="hs-degree" id="hs-degree" class="required" tabindex="31" />
+						    </div>
+					    </fieldset><!--closing fieldset for high school-->
+					    <fieldset id="education-college" class="sub-section">
+						    <legend>College/University</legend>
+						    <div class="print-float">
+							    <label for="college">School: <em>*</em></label>
+							    <input type="text" name="college" id="college" class="required wide" tabindex="32" />
+						    </div>
+						    <div class="print-float">
+						        <label for="college-citystate">City, State:</label>
+							    <input type="text" name="college-citystate" id="college-citystate" tabindex="33" />
+						    </div>
+						    <div class="print-float">
+							    <label for="college-study">Course of study:</label>
+							    <input type="text" name="college-study" id="college-study" tabindex="34" />
+						    </div>
+						    <div class="print-float">
+							    <label for="college-years">Last year completed:</label>
+							    <input type="text" name="college-years" id="college-years" class="small" tabindex="35" />
+						    </div>
+						    <div class="group print-float">
+							    <label>Did you graduate?</label>
+							    <label for="college-graduate1" class="inline tiny"><input type="radio" name="college-graduate" id="college-graduate1" value="Yes" tabindex="36" />Yes</label>
+							    <label for="college-graduate2" class="inline tiny"><input type="radio" name="college-graduate" id="college-graduate2" value="No" tabindex="37" />No</label>
+						    </div>
+						    <div class="print-float">
+							    <label for="college-degree" class="no-display">Degree received:</label>
+							    <input type="text" name="college-degree" id="college-degree" tabindex="38" />
+						    </div>
+					    </fieldset><!--closing fieldset for college-->
+					    <fieldset id="education-graduate" class="sub-section">
+						    <legend>Graduate School</legend>
+						    <div class="print-float">
+							    <label for="graduate-school">School: <em>*</em></label>
+							    <input type="text" name="graduate-school" id="graduate-school" class="required wide" tabindex="39" />
+						    </div>
+						    <div class="print-float">
+						        <label for="graduate-citystate">City, State:</label>
+							    <input type="text" name="graduate-citystate" id="graduate-citystate" tabindex="40" />
+						    </div>
+						    <div class="print-float">
+							    <label for="graduate-study" class="no-display">Course of study:</label>
+							    <input type="text" name="graduate-study" id="graduate-study" tabindex="41" />
+						    </div>
+						    <div class="print-float">
+							    <label for="graduate-years">Last year completed:</label>
+							    <input type="text" name="graduate-years" id="graduate-years" class="small" tabindex="42" />
+						    </div>
+						    <div class="group print-float">
+							    <label>Did you graduate?</label>
+							    <label for="graduate-graduate1" class="inline tiny"><input type="radio" name="graduate-graduate" id="graduate-graduate1" value="Yes" tabindex="43" />Yes</label>
+							    <label for="graduate-graduate2" class="inline tiny"><input type="radio" name="graduate-graduate" id="graduate-graduate2" value="No" tabindex="44" />No</label>
+						    </div>
+						    <div class="print-float">
+							    <label for="graduate-degree" class="no-display">Degree received:</label>
+							    <input type="text" name="graduate-degree" id="graduate-degree" tabindex="45" />
+						    </div>
+					    </fieldset><!--closing fieldset for grad school-->
+					    <hr />
+				    </fieldset><!--closing tag for education fieldset-->
+				    <fieldset id="other-qualifications" class="section">
+					    <legend>Other Qualifications</legend>
+					    <div>
+					        <label for="licenses" class="wide">Please list any certifications or licenses:</label>
+							<textarea name="licenses" id="licenses" class="wide tall" rows="1" cols="1"  tabindex="46"></textarea>
+					    </div>
+					    <div>
+						    <label for="qualifications" class="wide">Please summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, language proficiencies, and/or experience which you feel should be considered in reviewing your application:</label>
+						    <textarea name="qualifications" id="qualifications" class="wide tall" rows="1" cols="1" tabindex="47"></textarea>
+					    </div>
+					    <hr />
+				    </fieldset><!--closing tag for job skills fieldset-->
+				    <fieldset id="employment" class="section">
+					    <legend>Employment History</legend>
+					    <div class="group print-float">
+						    <label>Are you presently employed? <em>*</em></label>
+						    <label for="employed1" class="inline tiny"><input type="radio" name="employed" id="employed1" class="required" value="Yes" tabindex="48" />Yes</label>
+						    <label for="employed2" class="inline tiny"><input type="radio" name="employed" id="employed2" class="required" value="No" tabindex="49" />No</label>
+					    </div>
+					    <div class="group print-float">
+						    <label>If yes, may we contact your current employer?</label>
+						    <label for="contact-employer1" class="inline tiny"><input type="radio" name="contact-employer" id="contact-employer1" value="Yes" tabindex="50" />Yes</label>
+						    <label for="contact-employer2" class="inline tiny"><input type="radio" name="contact-employer" id="contact-employer2" value="No" tabindex="51" />No</label>
+					    </div>
+					    <p class="note">List your present or most recent employer first. A resume will not substitute for completion of this portion of the application.</p>
+					    <fieldset class="sub-section">
+						    <legend>Employer One</legend>
+						    <div class="print-float">
+							    <label for="employer-one">Employer: <em>*</em></label>
+							    <input type="text" name="employer-one" id="employer-one" class="required wide" tabindex="52" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-one-citystate">City, State:</label>
+							    <input type="text" name="employer-one-citystate" id="employer-one-citystate" tabindex="53" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-one-tel">Telephone:</label>
+							    <input type="text" name="employer-one-tel" id="employer-one-tel" class="small" tabindex="54" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-one-title">Your title:</label>
+							    <input type="text" name="employer-one-title" id="employer-one-title" tabindex="55" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-one-super">Supervisor:</label>
+							    <input type="text" name="employer-one-super" id="employer-one-super" tabindex="56" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-one-supertitle">Supervisor's title:</label>
+							    <input type="text" name="employer-one-supertitle" id="employer-one-supertitle" tabindex="57" />
+						    </div>
+						    <div>
+							    <label for="employer-one-duties" class="wide">Description of duties:</label>
+							    <textarea name="employer-one-duties" class="wide" id="employer-one-duties" class="wide" rows="1" cols="1" tabindex="58"></textarea>
+						    </div>
+						    <div class="group">
+							    <label class="wide">Employed</label>
+							    <label for="employer-one-from" class="inline medium"><span class="block-label">From <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
+							        <input type="text" name="employer-one-from" id="employer-one-from" tabindex="59" />
+							    </label>
+							    <label for="employer-one-to" class="inline medium"><span class="block-label">To <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
+							        <input type="text" name="employer-one-to" id="employer-one-to" tabindex="60" />
+							    </label>
+							    <label for="employer-one-hours" class="inline medium "><span class="block-label">Hours per week:</span>
+							        <input type="text" name="employer-one-hours" id="employer-one-hours" tabindex="61" />
+							    </label>
+							</div>
+							<div class="print-float">
+							    <label for="employer-one-salary">Last Salary:</label>
+							    <input type="text" name="employer-one-salary" id="employer-one-salary" class="small" tabindex="62" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-one-leaving">Reason for leaving:</label>
+							    <input type="text" name="employer-one-leaving" id="employer-one-leaving" class="wide" tabindex="63" />
+						    </div>
+					    </fieldset><!--closing fieldset for employer one-->
+					    <fieldset id="employment-two" class="sub-section">
+						    <legend>Employer Two</legend>
+						    <div class="print-float">
+							    <label for="employer-two">Employer: <em>*</em></label>
+							    <input type="text" name="employer-two" id="employer-two" class="required wide" tabindex="64" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-two-citystate">City, State:</label>
+							    <input type="text" name="employer-two-citystate" id="employer-two-citystate" tabindex="65" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-two-tel">Telephone:</label>
+							    <input type="text" name="employer-two-tel" id="employer-two-tel" class="small" tabindex="66" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-two-title">Your title:</label>
+							    <input type="text" name="employer-two-title" id="employer-two-title" tabindex="67" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-two-super">Supervisor:</label>
+							    <input type="text" name="employer-two-super" id="employer-two-super" tabindex="68" />
+						    </div>
+						    <div class="print-float">
+							    <label for="employer-two-supertitle">Supervisor's title:</label>
+							    <input type="text" name="employer-two-supertitle" id="employer-two-supertitle" tabindex="69" />
+						    </div>
+						    <div>
+							    <label for="employer-two-duties" class="wide">Description of duties:</label>
+							    <textarea name="employer-two-duties" class="wide" id="employer-two-duties" rows="1" cols="1" tabindex="70"></textarea>
+						    </div>
+						    <div class="group">
+							    <label class="wide">Employed</label>
+							    <label for="employer-two-from" class="inline medium"><span class="block-label">From <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
+							        <input type="text" name="employer-two-from" id="employer-two-from" tabindex="71" />
+							    </label>
+							    <label for="employer-two-to" class="inline medium"><span class="block-label">To <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
+							        <input type="text" name="employer-two-to" id="employer-two-to" tabindex="72" />
+							    </label>
+							    <label for="employer-two-hours" class="inline medium "><span class="block-label">Hours per week:</span>
+							        <input type="text" name="employer-two-hours" id="employer-two-hours" tabindex="73" />
+							    </label>
+						    </div>
+						    <div class="print-float">
+						        <label for="employer-two-salary">Last Salary:</label>
+							    <input type="text" name="employer-two-salary" id="employer-two-salary" class="small" tabindex="74" />
+							</div>
+						    <div class="print-float">
+							    <label for="employer-two-leaving">Reason for leaving:</label>
+							    <input type="text" name="employer-two-leaving" id="employer-two-leaving" class="wide" tabindex="75" />
+						    </div>
+					    </fieldset><!--closing fieldset for employer two-->
+					    <fieldset id="employment-three" class="sub-section">
+							    <legend>Employer Three</legend>
+							    <div class="print-float">
+								    <label for="employer-three">Employer: <em>*</em></label>
+								    <input type="text" name="employer-three" id="employer-three" class="required wide" tabindex="76" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-three-citystate">City, State:</label>
+								    <input type="text" name="employer-three-citystate" id="employer-three-citystate" tabindex="77" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-three-tel">Telephone:</label>
+								    <input type="text" name="employer-three-tel" id="employer-three-tel" class="small" tabindex="78" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-three-title">Your title:</label>
+								    <input type="text" name="employer-three-title" id="employer-three-title" tabindex="79" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-three-super">Supervisor:</label>
+								    <input type="text" name="employer-three-super" id="employer-three-super" tabindex="80" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-three-supertitle">Supervisor's title:</label>
+								    <input type="text" name="employer-three-supertitle" id="employer-three-supertitle" tabindex="81" />
+							    </div>
+							    <div>
+								    <label for="employer-three-duties" class="wide">Description of duties:</label>
+								    <textarea name="employer-three-duties" class="wide" id="employer-three-duties" class="wide" rows="1" cols="1" tabindex="82"></textarea>
+							    </div>
+							    <div class="group">
+								    <label class="wide">Employed</label>
+								    <label for="employer-three-from" class="inline medium"><span class="block-label">From <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
+								        <input type="text" name="employer-three-from" id="employer-three-from" tabindex="83" />
+								    </label>
+								    <label for="employer-three-to" class="inline medium"><span class="block-label">To <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
+								        <input type="text" name="employer-three-to" id="employer-three-to" tabindex="84" />
+								    </label>
+								    <label for="employer-three-hours" class="inline medium "><span class="block-label">Hours per week:</span>
+								        <input type="text" name="employer-three-hours" id="employer-three-hours" tabindex="85" />
+								    </label>
+							    </div>
+							    <div class="print-float">
+							        <label for="employer-three-salary">Last Salary:</label>
+								    <input type="text" name="employer-three-salary" id="employer-three-salary" class="small" tabindex="86" />
+								</div>
+							    <div class="print-float">
+								    <label for="employer-three-leaving">Reason for leaving:</label>
+								    <input type="text" name="employer-three-leaving" id="employer-three-leaving" class="wide" tabindex="87" />
+							    </div>
+						    </fieldset><!--closing fieldset for employer three-->
+						    <fieldset id="employment-four" class="sub-section">
+							    <legend>Employer Four</legend>
+							    <div class="print-float">
+								    <label for="employer-four">Employer: <em>*</em></label>
+								    <input type="text" name="employer-four" id="employer-four" class="required" tabindex="88" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-four-citystate">City, State:</label>
+								    <input type="text" name="employer-four-citystate" id="employer-four-citystate" tabindex="89" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-four-tel">Telephone:</label>
+								    <input type="text" name="employer-four-tel" id="employer-four-tel" class="small" tabindex="90" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-four-title">Your title:</label>
+								    <input type="text" name="employer-four-title" id="employer-four-title" tabindex="91" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-four-super">Supervisor:</label>
+								    <input type="text" name="employer-four-super" id="employer-four-super" tabindex="92" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-four-supertitle">Supervisor's title:</label>
+								    <input type="text" name="employer-four-supertitle" id="employer-four-supertitle" tabindex="93" />
+							    </div>
+							    <div>
+								    <label for="employer-four-duties" class="wide">Description of duties:</label>
+								    <textarea name="employer-four-duties" class="wide" id="employer-four-duties" class="wide" rows="1" cols="1" tabindex="94"></textarea>
+							    </div>
+							    <div class="group">
+								    <label class="wide">Employed</label>
+								    <label for="employer-four-from" class="inline medium"><span class="block-label">From <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
+								        <input type="text" name="employer-four-from" id="employer-four-from" tabindex="95" />
+								    </label>
+								    <label for="employer-four-to" class="inline medium"><span class="block-label">To <abbr title="Month/Year"><abbr title="Month/Year">(m/y)</abbr></abbr>:</span>
+								        <input type="text" name="employer-four-to" id="employer-four-to" tabindex="96" />
+								    </label>
+								    <label for="employer-four-hours" class="inline medium "><span class="block-label">Hours per week:</span>
+								        <input type="text" name="employer-four-hours" id="employer-four-hours" tabindex="97" />
+								    </label>
+							    </div>
+							    <div class="print-float">
+							        <label for="employer-four-salary">Last Salary:</label>
+								    <input type="text" name="employer-four-salary" id="employer-four-salary" class="small" tabindex="98" />
+							    </div>
+							    <div class="print-float">
+								    <label for="employer-four-leaving">Reason for leaving:</label>
+								    <input type="text" name="employer-four-leaving" id="employer-four-leaving" class="wide" tabindex="99" />
+							    </div>
+						    </fieldset><!--closing fieldset for employer 4-->
+				    </fieldset><!--closing tag for employment history fieldset-->
+				    <hr />
+				    <fieldset id="files" class="section">
+					    <legend>If the position requires it, attach your cover letter, resum&eacute;, and other supporting files.</legend>
+					    <div>
+						    <label for="coverfile">Cover Letter:</label>
+						    <input type="file" id="coverfile" name="formfiles[]" class="medium" tabindex="100" />
+					    </div>
+					    <div>
+						    <label for="resumefile">Resum&eacute;:</label>
+						    <input type="file" id="resumefile" name="formfiles[]" class="medium" tabindex="101" />
+					    </div>
+					    <div>
+						    <label for="otherfile">Other File:</label>
+						    <input type="file" id="otherfile" name="formfiles[]" class="medium" tabindex="102" />
+					    </div>
+					    <ul class="note no-style">
+						    <li>Attached files must be in one of the following formats: .doc, .docx, .pdf, .txt, and .rtf.</li>
+						    <li>Files also must be less than 1mb.</li>
+					    </ul>
+			    </fieldset><!--closing for for files fieldset-->
+			    <hr />
+			    <fieldset id="finish" class="section callout">
+				    <p><strong>Please read the following carefully before agreeing below:</strong></p>
+				    <p>I hereby certify that the facts set forth in the above employment application are true and complete to the best of my knowledge. I understand that falsified statements, misrepresentation or omission of facts, as stated or implied, on this application shall be considered sufficient cause for cancellation of my application or termination of employment. </p>
+				    <p>I understand and agree that the Des Plaines Public Library is hereby authorized to make inquiries concerning my character, employment record and other matters concerning my possible employment. I further understand that such inquiries will include checking police records.</p>
+				    <p>I understand the filing of this application or participation in an interview in no way constitutes an employment contract between the Des Plaines Public Library and me. I acknowledge the right of the Des Plaines Public Library to make changes in policy and benefits, where such policy and benefits are not specified, without notice and I understand that only written conditions as contained in an offer made to me by an authorized official will be honored by this organization. </p>
+				    <p>I understand that any offer of employment, approved by the Library Director, either verbal or written, may be conditional upon the satisfactory completion of a drug screen, background check and physical exam. Should I become employed, I agree to conform to all rules and regulations of the Des Plaines Public Library. I understand that my employment with the Des Plaines Public Library will be at will and that I have the right to terminate my employment at any time and the Des Plaines Public Library retains the same right.</p>
+				    <div class="group">
+				        <label class="inline wide"><i>Do you agree?</i> <em>*</em></label>
+				        <label for="agreement-yes" class="inline tiny"><input type="radio" name="agreement" id="agreement-yes" class="required" value="Yes" tabindex="103" />Yes</label>
+			            <label for="agreement-no" class="inline tiny"><input type="radio" name="agreement" id="agreement-no" class="required" value="No" tabindex="104" />No</label>
+			        </div>
+			         <div class="print-only print-float">
+			            <label>Signature:</label>
+			        </div>
+			        <div class="print-only print-float">
+			            <label>Date:</label>
+			        </div>
+			    </fieldset>
+			    <hr />
+			    <fieldset class="callout" id="challenge">
+	                <iframe id="challenge-image" src="/tools/sc/captcha.php"></iframe>
+	                <label>Enter the text that you see in the image above: <em>*</em></label>
+	                <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="105" />
+	            </fieldset>
+			    <div id="copy">
+				    <label for="send-copy" class="full"><input type="checkbox" name="send-copy" id="send-copy" value="true" tabindex="106" />Send yourself a copy of this application</label>
+			    </div>
+			    <div class="buttons right">
+				    <input type="submit" value="Submit" tabindex="107" />
+			    </div>
+	        </form>
+	    </div><!--closing div for form-->
+	</div><!--closing div for content-->
+	<div class="form-footer">
+	    <div class="navbar bottom" id="navbar-bottom">
+	        <div class="nav">
+                <ul class="no-style" id="form-nav">
+                    <li><a href="#personal">Personal</a></li>
+                    <li><a href="#background">Background</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#other-qualifications">Other Qualifications</a></li>
+                    <li><a href="#employment">Employment</a></li>
+                    <li><a href="#files">Files</a></li>
+                    <li><a href="#finish">Finish</a></li>
+               </ul>
+             </div>
+	    </div><!--closing div for bottom navbar-->
+	</div>
+	<!--load jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.8.2.min.js"><\/script>')</script>
+	<!--form specific plugins-->
+	<script src="/js/jquery.validate.min.js"></script>
+	<script src="/js/jquery.form.js"></script>
+	<script src="/js/jquery.scrollspy.js"></script>
+	<script src="js/scripts.js" ></script>
+	<script>
+	    $(document).ready(function(){
+	        //highlight foot navigation with current section
+	        $('.section').each(function(i){
+	            var section_id = $(this).attr('id');
+	            var position = $(this).position();
+        		$(this).scrollspy({
+    					min: position.top,
+    					max: position.top + $(this).height(),
+    					onEnter: function(element, position) {
+    					    $('#form-nav').find('a[href=#' + section_id + ']').addClass('active');
+    					},
+    					onLeave: function(element, position) {
+    					    $('#form-nav').find('a[href=#' + section_id + ']').removeClass('active');
+    					}
+        		});
+	        });
+	        
+	        //handler for close buttons on warning messages
+	        $('.close').click(function(){
+	            $(this).parent().hide();
+	            return false;
+	        });
+	    });
+	</script>
+	    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+    <script>
+	    var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	    s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>

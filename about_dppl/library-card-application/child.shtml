@@ -15,6 +15,11 @@
 	<!--main content-->
 	<div id="content">
 		<h1>Library Card Application</h1>
+		<div class="load" id="application-load">Processing form&hellip;</div>
+		<div class="response" id="application-response">
+		    <div class="response-message"></div>
+            <span class="close">&times;</span>
+		</div>
 		<div class="card-application">
 			<h2>Child's Card</h2>
 				<p>You are about to fill out an application for a new child's library card. Use this application for children in 8th grade or younger. To get your new library card, we just need you to do the following:</p>

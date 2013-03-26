@@ -15,6 +15,11 @@
 	<!--main content-->
 	<div id="content">
 		<h1>Library Card Application</h1>
+		<div class="load" id="application-load">Processing form&hellip;</div>
+		<div class="response" id="application-response">
+		    <div class="response-message"></div>
+            <span class="close">&times;</span>
+		</div>
 		<div class="card-application">
 			<h2>Adult Card</h2>
 				<p>Thank you for applying for a new DPPL library card. This form will help jump start your application process. To get your new library card, we just need you to do the following:</p>
@@ -174,8 +179,6 @@
 				</div>
 			</form>
 		</div><!--closing div for card application-->
-		<div class="load" id="application-load"></div>
-		<div class="response" id="application-response"></div>
 		<hr />
 		<h3>Questions?</h3>
 			<p>If you have questions about applying for a library card or are having problems using the application, please send an email to <a href="mailto:librarycards@dppl.org">librarycards@dppl.org</a>.</p>

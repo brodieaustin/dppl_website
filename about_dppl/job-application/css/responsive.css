@@ -1,0 +1,14 @@
+/*basic changes for small tablet and smartphone breakpoints*/
+@media screen and (max-width: 768px){
+    body{width: 97%; padding: 0 1%;}
+    .navbar .nav{width: 100%;}
+    .inline{float: none !important;}
+    #content form div.other label.inline{margin-top: .5em;}
+    .wide, .medium, .small{width: 100% !important;}
+}
+@media screen and (max-width: 480px){
+    .form-header{background: transparent;}
+    .form-header .hcard{float: none; width: 100%; text-align: left;}
+    .form-footer{display: none;}
+    .help{margin-right: .5em;}
+}
