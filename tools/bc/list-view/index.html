@@ -38,8 +38,8 @@
 				<input type="text" id="list-id" style="width: 100%;" />
 			</fieldset>
 			<fieldset>
-				<label for="background">Select a background color (default is white):</label>
-				<input type="text" id="background" name="background" class="color" value="#fff" />
+				<label for="background">Select a background color (default is whitesmoke):</label>
+				<input type="text" id="background" name="background" class="color" value="#f5f5f5" />
 			</fieldset>
 			<input type="submit" value="Get the code" class="button" />
 		</form>
@@ -80,7 +80,7 @@
 			$('#list-id').val((params['page'] ? params['page'] : ''));
 			
 			$('.color').spectrum({
-				color: '#ffffff',
+				color: '#f5f5f5',
 				showInput: true
 			});
 			
@@ -111,7 +111,7 @@
 				
 						lid  = m[1];
 					
-						var text = '<code>&lt;script type="text/javascript" src="http://dppl.org/tools/bc/list-view/js/list-view.js"&gt;&lt;/script&gt;&lt;div class="bc-list" id="bc-list-' + lid + '" style="background-color: ' + background + ';"&gt;&lt;/div&gt;</code>'
+						var text = '<code>&lt;div class="bc-list" id="bc-list-' + lid + '" style="background-color: ' + background + ';"&gt;&lt;span class="load"&gt;&lt;/span&gt;&lt;/div&gt;</code>'
 					
 						$('.result').empty().append(text);
 						
