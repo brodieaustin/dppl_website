@@ -95,7 +95,7 @@ $(function(){
 		
 		//if the cookie does not exist, show message
 		if (!(mobile_cookie)){
-			$('#mobile-alert').slideDown();
+			$('#mobile-alert').show();
 		}
 	};
 	
