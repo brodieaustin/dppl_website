@@ -44,7 +44,7 @@
 						else{
 							has_image = false;
 						}
-						console.log(has_image);
+						//console.log(has_image);
 						div = div + '<div class="feed-item blog-post' + ((has_image == false)?' no-thumbnail':'') + '" id="' + data.item[i].guid + '">'
     						+ ((has_image == true)?'<div class="feed-item-thumbnail"><img src="' + data.item[i].thumbnail + '" /></div>':'')
 							+ '<div class="feed-item-title"><a href="' + data.item[i].link + '">' + data.item[i].title + '</a></div>'
