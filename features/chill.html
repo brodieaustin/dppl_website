@@ -28,17 +28,16 @@
 		</div>
 		<div class="content">
 			<div class="idea">
-				<img src="/images/features/2013/spring-trees.png" />
-				<h2>Find spring in National Geographic</h2>
-				<p>Tired of the cold? Ready for blooming trees and warm weather? Dive into National Geographic and explore spring around the world.</p>
-				<p class="last"><a href="http://bit.ly/12Auv3E" class="button">Learn how</a></p>
+				<h2>No more snow</h2>
+				<p>In act of wishful thinking, we have turned off the snow effect on this page. Let's hope we can "chill" in the sun and warm weather soon!</p>
 			</div>
 			<div class="idea">
-				<img src="/images/features/2013/national-geographic.png" />
-				<h2>Explore the world...</h2>
-				One page at a time with National Geographic Online. Search 100+ years of articles and images. 
-				<p class="last"><a href="http://bit.ly/MarNatGeo" class="track button" data-ga-category="Database-Promotions" data-ga-action="2013-March">Try it now</a></p>
+				<img src="/images/features/2013/friends-logo.png" />
+				<h2>Friends' Used Book Sale</h2>
+				<p>Find gently used books on April 6th and 7th at the Friends of the Library Used Book Sale. Shop and support the library!</p>
+				<p class="last"><a href="/about_dppl/book_sale.shtml" class="button">More info</a></p>
 			</div>
+
 		</div>
 		<div class="footer">
 		</div>
@@ -51,14 +50,40 @@
 	<script src="/js/jquery.gaEvents.js"></script>
 	<script>
 		$(document).ready(function(){
-			var b = navigator.userAgent;
+			/*var b = navigator.userAgent;
 			
 			if (b.search('MSIE') == -1){
 				$(document).snowfall({flakeCount : 250, round : true, minSize: 2, maxSize:7});
-			}
-			$('.content').imagesLoaded(function(){
-				$(this).masonry();
+			}*/
+			
+			$.ajax({
+			    type : 'GET',
+			    url : '/tools/poems/?url=' + encodeURIComponent('http://feeds.poetryfoundation.org/PoetryFoundation/PoemOfTheDayText?format=xml'),
+			    dataType : 'xml',
+			    success : function(data){
+			        var img;
+			        var poem = $(data).find('item')[0];
+			        var title = $(poem).find('title').text();
+			        var link = $(poem).find('guid').text();
+			        var text = $(poem).find('description').text();
+			        $(text).each(function(){
+			            if ($(this).hasClass('bio-image')){
+			                img = $(this).html();
+			            }
+			        });
+			        var div = '<div class="idea" id="poem-of-the-day">' + img + '<h2>Celebrate National Poetry Month</h2><p>Read the Poetry Foundation\'s ' + title + '</p><p class="last"><a href="' + link + '" class="button">Read it</a></p></div>';
+			        $('.content').prepend(div);
+			        $('.content').imagesLoaded(function(){
+				        $(this).masonry();
+			        });
+			    },
+			    error : function(){
+			        $('.content').imagesLoaded(function(){
+				        $(this).masonry();
+			        });
+			    }
 			});
+		
 		});
 	</script>
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
