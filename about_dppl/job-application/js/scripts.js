@@ -1,6 +1,6 @@
     $(document).ready(function(){
         //json formatted list of current jobs, used for pretty urls params below
-        var current_jobs = {"manager-of-creative-services":"Manager of Creative Services", "page" : "Page"};
+        var current_jobs = {"manager-of-creative-services":"Manager of Creative Services", "summer-reading-club-intern" : "Summer Reading Club Intern"};
         var param, pos;
         
         //test for local storage
