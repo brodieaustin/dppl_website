@@ -2,29 +2,142 @@
 <head>
 	<meta charset="utf-8">
 	<title>Des Plaines Public Library | Money Smart Week</title>
-	<link rel="shortcut icon" href="http://www.dppl.org/images/logos/DPfavicon.gif" type="image/x-icon" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<meta name="description" content="Celebrate Money Smart Week at the Des Plaines Public Library.">
+	<meta name="author" content="Des Plaines Public Library" />
+	
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png">
 	<style>
-		body{background: #95adad; font-family: Georgia, serif;}
-		a{color: #024a32; border-bottom: 1px dotted #015835; text-decoration: none;}
-		a:hover{color: #888; border-bottom: 1px dotted #015835; text-decoration: none;}
-		a.up{display: block; height: 32px; background: url('glyphicons_218_circle_arrow_right.png') no-repeat center left; padding-left: 30px; border: 0; }
-		div#container{width: 80%; margin: 2em auto; padding: 1em; background-color: #f8f8f8; border: 1px solid #024a32;}
-		div#header{text-align: center; color: #024a32; font-size: 200%;}
-		div#header h1{text-shadow: 0 1px 1px #fff; margin-bottom: 0; text-transform: uppercase;}
-		div#header p{text-shadow: 0 1px 1px #fff;}
-		div#main, div#header{ width: 90%; margin: 0 auto;}
-		div#calendar{position: relative; float: left; width: 100%; margin: 1em 0 0 0 ; padding: 1em 0; border-top: 3px solid #3e8269; font-family: sans-serif;}
+		html{background: #b8d1c4; }
+		body{width: 80%; max-width: 960px; margin: 2em auto; font-family: Georgia, serif;}
+		a{color: #0d793d; border-bottom: 1px solid #015835; text-decoration: none;}
+		a:hover{color: #888; border-bottom: 1px dotted #888; text-decoration: none;}
+		a.button{display: inline-block; height: 2em; line-height: 2em; padding: 0 .5em; cursor: pointer; background-color: #e0e0e0; border: 1px solid #ddd; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; font-size: 100% !important; font-family: inherit; color: #333 !important;}
+		a.button:hover{background-color: #aaa;}
+		a.up{display: block; float: right; height: 32px; background: url('/images/icons/up-arrow-in-circle.png') no-repeat center left; margin-top: -3em; padding-left: 30px; border: 0; }
+		div#container{padding: 5%; background-color: #f8f8f8; border: 1px solid #0d793d;}
+		div#header{text-align: center; color: #0d793d; font-size: 200%;}
+		div#header h1{text-shadow: 0 1px 1px #fff; margin-top: .5em;margin-bottom: 0; text-transform: uppercase;}
+		div#header p{ margin: .2em 0; text-shadow: 0 1px 1px #fff;}
+		div#calendar{position: relative; float: left; width: 100%; margin: 1em 0 0 0 ; padding: 1em 0; border-top: 5px solid #0d793d; font-family: sans-serif;}
 		div#calendar .calendar-cell{position: relative; height: 7em; float: left; width: 10.99439%; margin-right: .9%; margin-bottom: 1em; padding: 1.25195%; background-color: #fff;}
 		div#calendar .last-cell{margin-right: 0;}
 		div#calendar p.calendar-date{margin-top: 0; margin-bottom: 1.25195%; font-size: .6em;}
 		div#calendar p.calendar-event{font-size: .7em; }
-		div.event{clear: both; margin-top: 2em; border-top: 3px solid #3e8269; line-height: 1.5em}
+		div.event{clear: both; margin-top: 2em; border-top: 2px solid #0d793d; line-height: 1.5em; overflow: hidden;}
 		div.event h2{text-shadow: 0 1px 1px #fff;}
 		div.event ul.details{list-style: none; padding-left: 0;}
-		div.event .photo {float: right; margin: 1em 0 1em 1em;}
-		div#footer{width: 90%; clear: both; margin: 2em auto 0 auto; border-top: 3px solid #3e8269; line-height: 1.5em}
+		div.event .photo {float: right; margin: 1em 0 1em 1em; text-align: center;}
+		div.special{background-color: #fff; margin-top: 1em; padding: 1em 1em .5em 1em; border-top: 0; }
+		div.special .photo{margin: 1em;}
+		div#footer{clear: both; margin: 2em auto 0 auto; border-top: 5px solid #0d793d; line-height: 1.5em}
+		@media screen and (max-width: 800px){
+			body{width: 99%; margin:0 auto;}
+			div#container{border: 1px solid #0d793d;}
+			div#calendar .calendar-cell{float: none; width: 97.5%; height: auto;}
+			div#calendar p.calendar-date, div#calendar p.calendar-event{font-size: .9em;}
+			.photo{float: none !important; margin: 1em 0 !important;}
+		}
 	</style>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="top"></div>
+		<div id="header">
+			<h1>Money Smart Week</h1>
+			<p>Des Plaines Public Library</p>
+			<p>April 20&ndash;27, 2013</p>
+		</div>
+		<div id="main">
+			<div id="calendar">
+				<div class="calendar-cell">
+					<p class="calendar-date">21 - Sun</p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">22 - Mon</p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">23 - Tues</p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">24 - Wed</p>
+					<p class="calendar-event"><a href="#foundations-of-investing">Foundations of Investing</a></p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">25 - Thurs</p>
+				</div>
+				<div class="calendar-cell">
+					<p class="calendar-date">26 - Fri</p>
+				</div>
+				<div class="calendar-cell last-cell">
+					<p class="calendar-date">27 - Sat</p>
+					<p class="calendar-event"><a href="#your-money-matters">Your Money Matters&hellip; </a></p>
+				</div>
+			</div>
+			<div class="event" id="foundations-of-investing">
+				<h2>Foundations of Investing</h2>
+				<ul class="details">
+					<li>Presented by Nancy Reiser, Edward Jones Financial Advisor</li>
+					<li>Wednesday, April 24</li>
+					<li>7 - 9:00 p.m.</li>
+				</ul>
+				<p>This seminar covers the key features of bonds, stocks and mutual funds as well as the importance of proper asset allocation.</p>
+				<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=19612" class="button" class="button">Register here</a></p>
+				<p><a href="#top" class="up"></a></p>
+			</div>
+			<div class="event" id="your-money-matters">
+				<h2>Your Money Matters&hellip;</h2>
+				<ul class="details">
+					<li>Presented by Dedra Thomas MBA, CEPF, Consumer & Family Economics Educator</li>
+					<li>Saturday, April 27</li>
+					<li>10 &ndash; 11:30 a.m.</li>
+				</ul>
+				<p>Program will cover money management topics including:</p>
+				<ul>
+					<li>setting financial goals</li>
+					<li>tracking daily spending habits</li>
+					<li>creating a monthly spending plan</li>
+					<li>identifying ways to decrease spending and increasing income</li>
+					<li>identifying spending plan tools</li>
+				</ul>
+				<p>Co-sponsored by the <a href="http://cfe.ace.illinois.edu/">University of Illinois Consumer & Family Economics</a></p>
+				<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=19610" class="button">Register here</a></p>
+				<p><a href="#top" class="up"></a></p>
+			</div>
+			<div class="event special">
+				<div class="photo">
+					<img src="/images/features/2013/weiss-ratings.png" />
+				</div>
+				<h2>Is your money safe?</h2>
+				<p>Check out your bank with Weiss Ratings today.</p>
+				<p><a href="http://bit.ly/10zC6Zo" class="button track" data-ga-category="Database-Promotions" data-ga-action="2013-April">Get started</a></p>
+			</div>
+			<!--<div class="event">
+				<div class="photo"><img src="/images/reference/money-smart.png" /></div>
+				<h2>Money Smart Week Training Sessions</h2>
+				<p>Looking for more?</p>
+				<p>Morningstar Investment Research Center will present two training sessions to help you be a better investor. The sessions can be viewed directly from home!</p>
+				<p><a href="/reference/downloads/Morningstar%20Money%20Smart%20Week.pdf">Click here for details</a></p>
+			</div>-->
+		</div>
+		<div id="footer">
+			<p>For more information, please call the reference desk at 847-376-2841.</p>
+			<p>Des Plaines Public Library, 2013</p>
+		</div>
+	</div>
+	<!--load jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.8.2.min.js"><\/script>')</script>
+	<script src="/js/jquery.gaEvents.js"></script>
 	<script>
 		/*from http://css-tricks.com/snippets/jquery/smooth-scrolling/*/
 		$(document).ready(function() {
@@ -76,105 +189,14 @@
 
 		});
 	</script>
-</head>
-<body>
-	<div id="container">
-		<div id="top"></div>
-		<div id="header">
-			<h1>Money Smart Week</h1>
-			<p>Des Plaines Public Library</p>
-			<p>April 21&ndash;28, 2012</p>
-		</div>
-		<div id="main">
-			<div id="calendar">
-				<div class="calendar-cell">
-					<p class="calendar-date">22 - Sun</p>
-				</div>
-				<div class="calendar-cell">
-					<p class="calendar-date">23 - Mon</p>
-				</div>
-				<div class="calendar-cell">
-					<p class="calendar-date">24 - Tues</p>
-				</div>
-				<div class="calendar-cell">
-					<p class="calendar-date">25 - Wed</p>
-					<p class="calendar-event"><a href="#financial-exploitation">The Warning Signs of Financial Exploitation</a></p>
-				</div>
-				<div class="calendar-cell">
-					<p class="calendar-date">26 - Thurs</p>
-					<p class="calendar-event"><a href="#identity-theft">Identity Theft and Fraud</a></p>
-				</div>
-				<div class="calendar-cell">
-					<p class="calendar-date">27 - Fri</p>
-				</div>
-				<div class="calendar-cell last-cell">
-					<p class="calendar-date">28 - Sat</p>
-					<p class="calendar-event"><a href="#money-smart-kid">How to Raise a Money Smart Kid</a></p>
-					<p class="calendar-event"><a href="#angry-wallets">Angry Wallets</a></p>
-				</div>
-			</div>
-			<div class="event" id="financial-exploitation">
-				<div class="photo"><img src="http://www.peckbloom.com/images/ronald_webb.jpg" /></div>
-				<h2>The Warning Signs of Financial Exploitation</h2>
-				<ul class="details">
-					<li>Presented by Attorney Ron Webb</li>
-					<li>Wednesday, April 25</li>
-					<li>7 - 8:30 p.m.</li>
-				</ul>
-				<p>Financial exploitation was the leading type of elder abuse in 2011. What are the red flags to alert you someone may be preying on an older adult's accounts? Learn how you can report elder abuse to the proper authorities and the advanced planning techniques available to protect your older adult loved one from devastating financial exploitation. Peck Bloom, LLC was hired by the City of Chicago's Department on Aging to help re-write the Elder Abuse and Neglect Act and has years of experience combating elder abuse in the courtroom and training the public to protect themselves against abusers.</p>
-				<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=16191">Register here</a></p>
-				<p><a href="#top" class="up"></a></p>
-			</div>
-			<div class="event" id="identity-theft">
-				<h2>Identity Theft and Fraud</h2>
-				<ul class="details">
-					<li>Presented by Robert Dulski</li>
-					<li>Thursday, April 26</li>
-					<li>7 &ndash; 9 p.m.</li>
-				</ul>
-				<p>With residents struggling to make ends meet, Take Charge Illinois offers a Financial Workshop on Identity Theft and Fraud. Learn how to:</p>
-				<ul>
-					<li>Identify potential scams and frauds
-					<li>Protect and prepare yourself against Identity Theft</li>
-					<li>Address concerns if you have been a victim of Identity Theft</li>
-				</ul>
-				<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=16193">Register here</a></p>
-				<p><a href="#top" class="up"></a></p>
-			</div>
-			<div class="event" id="money-smart-kid">
-				<h2>How to Raise a Money Smart Kid</h2>
-				<ul class="details">
-					<li>Presented by Nancy Reiser</li>
-					<li>Saturday, April 28</li>
-					<li>10 &ndash; 11:30 a.m.</li>
-				</ul>
-				<p>A Piggy Bank Is Just The First Step - Giving your children or grandchildren a primer on money management skills can have a positive effect their entire lives. Invest your time today to benefit your family's future. During this seminar, you'll learn how to start teaching your child or grandchild about financial goal-setting, self-discipline and the basics of making wise money choices.</p>
-				<p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=16190">Register here</a></p>
-				<p><a href="#top" class="up"></a></p>
-			</div>
-			<div class="event" id="angry-wallets">
-				<h2>Angry Wallets</h2>
-				<ul class="details">
-					<li>Presented by Adam Vernola</li>
-					<li>Saturday, April 28</li>
-					<li>2 &ndash; 4 p.m.</li>
-				<p>The Angry Wallets are here, and they hate careless spending! In a world of credit cards, e-checks, and online payments, it can be difficult to teach your kids the true value of spending money. Fear not, our Angry Wallets program is a real-life smartphone app inspired event for families with children grades 2-6.</p>
-				<p>You and your children will help the angry wallets solve real-life money puzzles, collect achievements, and win a special prize (while supplies last)!</p>
-				<p style="font-style: oblique;">This is a drop-in event, no registration is required.</p>
-				<p><a href="#top" class="up"></a></p>
-			</div>
-			<div class="event">
-				<div class="photo"><img src="/images/reference/money-smart.png" /></div>
-				<h2>Money Smart Week Training Sessions</h2>
-				<p>Looking for more?</p>
-				<p>Morningstar Investment Research Center will present two training sessions to help you be a better investor. The sessions can be viewed directly from home!</p>
-				<p><a href="/reference/downloads/Morningstar%20Money%20Smart%20Week.pdf">Click here for details</a></p>
-			</div>
-		</div>
-		<div id="footer">
-			<p>For more information, please call the reference desk at 847-376-2841.</p>
-			<p>Des Plaines Public Library, 2012</p>
-		</div>
-	</div>
+	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+   mathiasbynens.be/notes/async-analytics-snippet -->
+<script>
+	var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
 </body>
 	
