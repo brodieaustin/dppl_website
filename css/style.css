@@ -125,6 +125,8 @@ a.no-style{
  }
  
 a.button:visited{text-decoration: none !important;}
+
+.button-gray{background-color: #e6e6e6; box-shadow: 0; color: #333 !important;}
  
  a.filter{display: none; background-color: #fcaf3f;}
  
