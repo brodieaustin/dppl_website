@@ -23,6 +23,11 @@ td{vertical-align: top; background-image: none !important;}
   display: none;
 }
 
+small{
+  font-size: .7em;
+  color: #888;
+}
+
 /*basic page elments*/
 h1 {
   font-size : 2em;
@@ -32,8 +37,6 @@ h1 {
 
 h1 small{
   display: block;
-  font-size: .7em;
-  color: #888;
 }
 
 h2 {
