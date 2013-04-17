@@ -117,7 +117,15 @@
 		
 		public function set_subject(){
 		    if ($this->has_fields() == true){
-		        $this->subject = str_replace('{name}', $this->sender['name'], $this->config['subject']);
+				if (strpos($this->config['subject'], '{name}') !== false){
+					$this->subject = str_replace('{name}', $this->sender['name'], $this->config['subject']);
+				}
+				elseif (strpos($this->config['subject'], '{position}') !== false){
+					$this->subject = str_replace('{position}', $this->fields['position'], $this->config['subject']);
+				}
+				else{
+					$this->subject = $this->config['subject'];
+				}
 		    }
 		}
 		

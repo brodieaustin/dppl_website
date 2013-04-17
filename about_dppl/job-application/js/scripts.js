@@ -1,6 +1,6 @@
     $(document).ready(function(){
         //json formatted list of current jobs, used for pretty urls params below
-        var current_jobs = {"manager-of-creative-services":"Manager of Creative Services", "summer-reading-club-intern" : "Summer Reading Club Intern"};
+        var current_jobs = {"shelvers-12-3" : "Shelvers (M-F, 12-3)", "shelvers-6-9" : "Shelvers (T & F, 6-9, every other weekend)", "reference-librarian-ii" : "Reference Librarian II"};
         var param, pos;
         
         //test for local storage
@@ -20,11 +20,11 @@
 			if (window.location.search != ""){
 			    param = window.location.search.substring(1).split('=');
 			    if (param[0] == 'p'){
-			        pos = param[1].replace(/\+/g, ' ')
+			        pos = param[1].replace(/\+/g, ' ');
 			    }
 			}
 			else{
-			    var p = /job-application\/([a-z-]+)/;
+			    var p = /job-application\/([a-z0-9-]+)/;
 			    param = p.exec(window.location.href);
 			    
 			    if (param){
@@ -33,6 +33,10 @@
 			}
 			
 			if (pos){
+				//console.log(pos);
+				if ($('#position option[value="' + pos + '"]').length == 0){
+					$('#position').append('<option value="' + pos + '">' + pos + '</option>');
+				}
 			    $('#position').val(pos);
 			}
 		}
