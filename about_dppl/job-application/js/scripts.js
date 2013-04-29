@@ -1,6 +1,6 @@
     $(document).ready(function(){
         //json formatted list of current jobs, used for pretty urls params below
-        var current_jobs = {"shelvers-12-3" : "Shelvers (M-F, 12-3)", "shelvers-6-9" : "Shelvers (T & F, 6-9, every other weekend)", "reference-librarian-ii" : "Reference Librarian II"};
+        var current_jobs = {"shelvers-12-3" : "Shelvers (M-F, 12-3)", "shelvers-6-9" : "Shelvers (T & F, 6-9, every other weekend)", "part-time-reference-librarian" : "Part-time Reference Librarian"};
         var param, pos;
         
         //test for local storage
