@@ -15,7 +15,6 @@
 	<!--main content-->
 	<div id="content">
 		<!--#include virtual="../content/reference-c/alphabetical_list_online_resources.html"-->
-		<!--#include virtual="../content/reference-c/inset.html"-->
 	</div>
 	<!--footer-->
 	<!--#include virtual="/includes/footer.html"-->
