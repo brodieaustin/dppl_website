@@ -371,7 +371,7 @@ ul.tight li{
 }
 
 #header .theme:hover{
- background-color: #d4de25;
+ background-color: #eee;
 }
 
 #header .theme ul{
@@ -388,11 +388,11 @@ ul.tight li{
 
 #header .theme .wlp{
   font-weight: bold; 
-  color: #00a99f;
+  color: #00afd6;
 }
 
 #header .theme .word{
-  color: #f05163;
+  color: #f36a26;
   font-weight: bold;
  }
 
@@ -1006,9 +1006,7 @@ div#list{
   margin: 0 auto;
   padding-top: .5em;
   position: relative;
-  background: #00aba3 url('/images/themes/chill/chill-snowflake-slide-back.png') no-repeat right bottom;
-  border: 11px solid #d3de25;
-  border-image: url('/images/themes/chill/chill-border.png') 11 repeat;
+  background: #00aba3 url('/images/themes/go/go-striped-background.png');
 }
 
 #slides{
@@ -1027,7 +1025,7 @@ div#list{
   margin-bottom: .5em;
   padding-bottom: 0;
   font-size: 1.6em;
-  color: #62472d;
+  color: #00afd6;
   text-shadow: 1px 1px 1px #fff;
   border: 0;
 }
@@ -1061,7 +1059,7 @@ div#list{
 #nav{
   position: absolute;
   width: 7.142em;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   margin-left: -50px;
   text-align: center;
@@ -1087,22 +1085,28 @@ a#next2{
 }
 
 #nav a{
+  display: inline-block;
+  height: 1.5em;
+  width: 1.5em;
+  line-height: 1.5em;
   text-decoration: none;
   font-weight: normal;
   margin: 0 5px;
-  padding: 3px 5px;
+  padding: 0;
   color: #111;
   *margin: 1px 5px;
   text-shadow: 1px 1px 1px #aaa;
+  vertical-align: middle;
+  text-align: center;
 }
 
 #nav a.activeSlide {
-  background-color: #d3de25;
+  background-color: #f36a26;
   color: #fff;
   text-shadow: 0;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
 }
 
 #nav a:focus {
