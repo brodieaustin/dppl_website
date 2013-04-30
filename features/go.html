@@ -6,10 +6,19 @@
 	<meta name="viewport" content="width=device-width">
 	<style>
 		html{width: 100%; height: 100%; background: url('/images/themes/go/go-striped-background.png');}
-		body{width: 100%; height: 100%; overflow: hidden; font-family: 'Optima LT Std', Optima, Helvetica, Arial, sans-serif; font-size: 13px;}
-		canvas{position: absolute; top: 0; left: 0;}
-		.headline{margin-left: 5em;}
+		body{width: 80%; max-width: 1024px; height: 100%; margin: auto; overflow-x: hidden; overflow-y: auto; font-family: 'Optima LT Std', Optima, Helvetica, Arial, sans-serif; font-size: 18px; color: #333;}
+		canvas{position: absolute; top: 0; left: 0; z-index: 50;}
+		.headline{margin: 0 1%;}
+		.content{position: relative; width: 100%; overflow: hidden; z-index: 100;}
+		.box{float: left; margin: 1%; padding: 1% 2%; background-color: rgba(255,255,255, .8);}
+		.wide{clear: both; width: 94%;}
+		.medium{width: 44%;}
+		.narrow{width: 19%;}
 		h1{color: white; text-transform: uppercase; font-weight: normal; font-size: 76px;}
+		.image {width: 104%;  margin-left: -2%;}
+		.image img{width: 100%;}
+		.text{float: left; width: 48%; margin-right: 2%;}
+		#map-canvas{float: left; width: 50%; height: 400px;}
 	</style>
 </head>
 <body>
@@ -17,6 +26,35 @@
 	<div class="headline">
 		<h1>Work Learn Play <b>Go</b></h1>
 	</div>
+	<div class="content">
+	    <div class="box wide">
+	        <h2>Summer Reading Clubs</h2>
+	        <p>Stay tuned for news about our summer reading clubs. Our kids and teen programs being on June 6th. </p>
+	    </div>
+	    <div class="box medium">
+	        <h3>Ready to go?</h3>
+	        <div class="image">
+	            <img src="http://dppl.org/images/features/2013/alldata.png" />
+	        </div>
+	        <p>Tune up and save with AllDATA car repair database.</p>
+            <p>Ask on the 4th floor.</p>
+	    </div>
+	    <div class="box medium">
+	        <h3>To the Ends of the Earth with Photographer Todd Gustafson</h3>
+	        <p>Tour the world from North America to Tanzania, from India to Brazil, with award winning international wildlife photographer Todd Gustafson on May 15th at 7:00 p.m.</p>
+	        <p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=20500">Register now</a></p>
+	    </div>
+	    <!--<div class="box wide">
+	        <div class="text">
+	            <h2>A favorite place...</h2>
+	            <p>What's your favorite place?</p>
+	        </div>
+	        <div id="map-canvas"></div>
+	    <div>-->
+	</div>
+	<!--<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYKRjKZNtIdST9HxtQgtFfUxBgdHYEWbk&sensor=false">
+    </script>-->
 	<script>
 		window.onload = function(){
 			//adapted from http://stackoverflow.com/questions/9791904/animating-images-in-html5-and-canvas and http://jsfiddle.net/bDQ6b/2/

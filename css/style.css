@@ -1006,7 +1006,7 @@ div#list{
   margin: 0 auto;
   padding-top: .5em;
   position: relative;
-  background: #00aba3 url('/images/themes/go/go-striped-background.png');
+  background: #00afd6; url('/images/themes/go/go-striped-background.png');
 }
 
 #slides{
