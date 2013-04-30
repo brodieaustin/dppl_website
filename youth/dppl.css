@@ -132,9 +132,8 @@ background-repeat:no-repeat;
 	}
 
 .databaselinks a:hover {
-	text-decoration: none;
 	color: #003366;
-	font-weight: bold;
+	font-weight: inherit;
 	}
 	
 .no-style{list-style: none; padding:0;}

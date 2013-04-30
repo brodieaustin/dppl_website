@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<style>
+		html{width: 100%; height: 100%; background: url('/images/themes/go/go-striped-background.png');}
+		body{width: 100%; height: 100%; overflow: hidden; font-family: 'Optima LT Std', Optima, Helvetica, Arial, sans-serif; font-size: 13px;}
+		canvas{position: absolute; top: 0; left: 0;}
+		.headline{margin-left: 5em;}
+		h1{color: white; text-transform: uppercase; font-weight: normal; font-size: 76px;}
+	</style>
+</head>
+<body>
+	<canvas id="plane" width="1000" height="900"></canvas>
+	<div class="headline">
+		<h1>Work Learn Play <b>Go</b></h1>
+	</div>
+	<script>
+		window.onload = function(){
+			//adapted from http://stackoverflow.com/questions/9791904/animating-images-in-html5-and-canvas and http://jsfiddle.net/bDQ6b/2/
+			//make image object and get plane image
+			var img = new Image();
+			img.src = '/images/themes/go/plane.png';
+			img.width = '225';
+			img.height = '122';
+	
+			//get and set the canvas element
+			var c = document.getElementById('plane').getContext('2d');
+			//resize the canvas to fit width of screen
+			c.canvas.width = window.outerWidth;
+			
+			//once image is loaded set a timed function that animates place
+			//across the screen and draws dashed line after it.
+			//after each iteration, y value is randomized
+			img.addEventListener('load', function(){
+				var interval = setInterval(function(){
+					var x = 0;
+					var y = Math.floor(Math.random() * (400 - 100 + 1)) + 100;
+					
+					return function() {
+						c.clearRect(0, 0, c.canvas.width, c.canvas.height);
+						c.drawImage(img, x, y);
+						c.beginPath();
+						c.strokeStyle = 'white';
+						//c.setLineDash([20, 5]);
+						c.lineWidth = 3;
+						c.moveTo(0,y + 61); //y + .5 of image sets line to center of the image
+						c.lineTo(x,y + 61);
+						c.stroke();
+						
+						x += 1;
+						
+						if (x > c.canvas.width){
+							x = 0
+							y = Math.floor(Math.random() * (400 - 100 + 1)) + 100;
+						}
+					};
+				}(), 500/40);
+			}, false);
+			
+		}
+	</script>
+</body>
+</html>

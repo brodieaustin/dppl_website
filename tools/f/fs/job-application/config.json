@@ -1,6 +1,6 @@
 {
 	"id": "job-application",
-	"subject": "Job Application for {name}",
+	"subject": "Job Application for {position}",
 	"sender": {
 	    "name": "Forms",
 	    "email": "forms@dppl.org"
@@ -22,7 +22,6 @@
         "date-avail": true,
         "refer-type": true,
         "refer-other": false,
-        "age": true,
         "age": true,
         "legal": true,
         "driver": false,
