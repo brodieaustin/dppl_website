@@ -110,7 +110,7 @@
 .wide{width: 98.4% !important;}
 .tall{10em !important;}
 
-.errors, label.error{display: block; margin: 2px 0; color: red;}
+.errors, label.error{display: block; margin: 2px 0; background-color: transparent; color: red;}
 input.error, textarea.error, select.error{border-color: #333;}
 
 ul.instructions li{
