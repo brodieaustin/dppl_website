@@ -2,11 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>Go | DPPL</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width">
 	<style>
 		html{width: 100%; height: 100%; background: url('/images/themes/go/go-striped-background.png');}
-		body{width: 80%; max-width: 1024px; height: 100%; margin: auto; overflow-x: hidden; overflow-y: auto; font-family: 'Optima LT Std', Optima, Helvetica, Arial, sans-serif; font-size: 18px; color: #333;}
+		body{width: 90%; max-width: 1024px; height: 100%; margin: auto; overflow-x: hidden; overflow-y: auto; font-family: 'Optima LT Std', Optima, Helvetica, Arial, sans-serif; font-size: 18px; color: #333;}
+		p{line-height: 1.4em;}
+		a.button{font-size: 16px; display: inline-block; width: auto; height: 2em; line-height: 2em; margin: .5em 0; padding: 0 .5em; background-color: #adb1a2; color: white !important; vertical-align: middle; text-align: center; border-radius: .5em; box-shadow: 1px 1px 1px 0px #DDD; text-decoration: none;}
 		canvas{position: absolute; top: 0; left: 0; z-index: 50;}
 		.headline{margin: 0 1%;}
 		.content{position: relative; width: 100%; overflow: hidden; z-index: 100;}
@@ -14,11 +17,22 @@
 		.wide{clear: both; width: 94%;}
 		.medium{width: 44%;}
 		.narrow{width: 19%;}
-		h1{color: white; text-transform: uppercase; font-weight: normal; font-size: 76px;}
+		.three-quarter{width: 69%;}
+		h1{color: white; text-transform: uppercase; font-weight: normal; font-size: 54px;}
 		.image {width: 104%;  margin-left: -2%;}
 		.image img{width: 100%;}
 		.text{float: left; width: 48%; margin-right: 2%;}
-		#map-canvas{float: left; width: 50%; height: 400px;}
+		.instructions{width: 44%; position: absolute; bottom: 1%; font-size: 80%; z-index: 500;}
+		#places{position: relative;}
+		#streetview{float: left; width: 50%; height: 400px;}
+		.footer{clear: both; margin-top: 1%; padding: 1%;}
+		.footer a{text-decoration: none; color: #fff;}
+		@media (max-width: 800px){
+			body{width: 100%;}
+			.medium, .narrow{width: 94%;}
+			#places .text, #streetview{ float: none; width: 100%;}
+			.instructions{position: static; width: 100%;}
+		}
 	</style>
 </head>
 <body>
@@ -31,30 +45,39 @@
 	        <h2>Summer Reading Clubs</h2>
 	        <p>Stay tuned for news about our summer reading clubs. Our kids and teen programs being on June 6th. </p>
 	    </div>
-	    <div class="box medium">
+		<div class="box narrow">
+			<h3>Planes from Des Plaines</h3>
+			<div class="image">
+				<img src="/images/themes/go/page/douglas-plane.jpg" />
+			</div>
+			<p>We've got some amazing photographs of airplanes and the Douglas Aircraft factory that was located in Des Plaines on Des Plaines Memory.</p>
+			<p><a href="http://www.desplainesmemory.org/cdm/search/collection/p15770coll1/searchterm/douglas%20aircraft/field/projec/mode/all/conn/and/order/title/ad/asc" class="button">Check them out</a></p>
+		</div>
+	   
+		<div class="box three-quarter">
+			<h3>Go to our favorite places</h3>
+			<p>We're sharing some of our favorite places this summer. Explore these places with the magic of Google Streetview. Maybe you'll be inspired to Go too!</p>
+			<p><a href="go-places.html" class="button">Start exploring</a></p>
+		</div>
+		 <div class="box narrow">
 	        <h3>Ready to go?</h3>
 	        <div class="image">
-	            <img src="http://dppl.org/images/features/2013/alldata.png" />
+	            <img src="/images/features/2013/alldata.png" />
 	        </div>
-	        <p>Tune up and save with AllDATA car repair database.</p>
+	        <p>Tune up and save with ALLDATA car repair database.</p>
             <p>Ask on the 4th floor.</p>
 	    </div>
 	    <div class="box medium">
 	        <h3>To the Ends of the Earth with Photographer Todd Gustafson</h3>
 	        <p>Tour the world from North America to Tanzania, from India to Brazil, with award winning international wildlife photographer Todd Gustafson on May 15th at 7:00 p.m.</p>
-	        <p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=20500">Register now</a></p>
+	        <p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=20500" class="button">Register now</a></p>
 	    </div>
-	    <!--<div class="box wide">
-	        <div class="text">
-	            <h2>A favorite place...</h2>
-	            <p>What's your favorite place?</p>
-	        </div>
-	        <div id="map-canvas"></div>
-	    <div>-->
+		
 	</div>
-	<!--<script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYKRjKZNtIdST9HxtQgtFfUxBgdHYEWbk&sensor=false">
-    </script>-->
+	<div class="footer">
+		<p><a href="/">Des Plaines Public Library</a></p>
+	</div>
+	
 	<script>
 		window.onload = function(){
 			//adapted from http://stackoverflow.com/questions/9791904/animating-images-in-html5-and-canvas and http://jsfiddle.net/bDQ6b/2/
@@ -75,7 +98,7 @@
 			img.addEventListener('load', function(){
 				var interval = setInterval(function(){
 					var x = 0;
-					var y = Math.floor(Math.random() * (400 - 100 + 1)) + 100;
+					var y = Math.floor(Math.random() * (600 - 100 + 1)) + 100;
 					
 					return function() {
 						c.clearRect(0, 0, c.canvas.width, c.canvas.height);
@@ -92,7 +115,7 @@
 						
 						if (x > c.canvas.width){
 							x = 0
-							y = Math.floor(Math.random() * (400 - 100 + 1)) + 100;
+							y = Math.floor(Math.random() * (600 - 100 + 1)) + 100;
 						}
 					};
 				}(), 500/40);
@@ -100,5 +123,14 @@
 			
 		}
 	</script>
+	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+   mathiasbynens.be/notes/async-analytics-snippet -->
+	<script>
+		var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+
 </body>
 </html>
