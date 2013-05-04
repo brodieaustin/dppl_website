@@ -77,7 +77,7 @@
 			    </div>
 		    </div>          
 			<h1>Employment Application</h1>
-			<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection. <span class="print-only">Send your completed application by mail or by email to jobs@dppl.org.</span></p>
+			<p>It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. <strong>Please complete all required fields or indicate "not applicable (N/A)." Incomplete applications may be subject to rejection.</strong> <span class="print-only">Send your completed application by mail or by email to jobs@dppl.org.</span></p>
 			<form action="/tools/f/send.php" method="post" id="application" enctype="multipart/form-data">
 			    <p class="note no-print"><em>*</em> Required field</p>
 			    <div class="errors"></div>
@@ -114,7 +114,7 @@
 					    </div>
 					    <div class="print-float">
 						    <label for="email">Email Address: <em>*</em></label>
-						    <input type="text" name="email" id="email" class="email required small" tabindex="8" />
+						    <input type="text" name="email" id="email" class="required small" tabindex="8" />
 					    </div>
 				    </fieldset><!--closing tag for personal info fieldset-->
 				    <hr />
@@ -125,6 +125,7 @@
 						    <select name="position" id="position" class="required" tabindex="9">
 							    <!--update positions with <option value="Job Name">Job Name</option>-->
 							    <option></option>
+							    <option value="test">test</option>
 						    </select>
 					    </div>
 					    <div class="print-float">

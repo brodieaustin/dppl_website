@@ -41,8 +41,7 @@
 			    $('#position').val(pos);
 			}
 		}
-		
-		$('#name').focus();	
+
 		$('#save').click(saveForm);
 			
 		$('#application').validate({
@@ -50,17 +49,17 @@
 				  var errors = validator.numberOfInvalids();
 				  if (errors) {
 					var message = errors == 1 ? 'You missed 1 field. It has been highlighted': 'You missed ' + errors + ' fields. They have been highlighted';
-					$('div.errors').html(message);
-					$('div.errors').show();
+					$('html, body').animate({ scrollTop: 0 }, 0);
+					$('div.errors').html(message).show();
 				  } else {
-					$('div.errors').hide();
+					$('div.errors').html('').hide();
 				  }
 			},
 			submitHandler: function(form){
 			    $('html, body').animate({ scrollTop: 0 }, 0);
-			    //$('.form').hide();
+			    $('.form').hide();
 			    $('.load').show();
-			    $('#name').focus();
+			    $('div.errors').html('').hide();
 			    $('.response').hide();
 			    $('#print-message').hide();
 			    $('.response-message').html('').removeClass('success').removeClass('failure');
