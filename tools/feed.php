@@ -79,7 +79,7 @@
 	    $cleaninput = trim(str_replace('\n', ' ', $cleaninput));
 	    
 	    //break into sentences 
-	    $pieces = explode('.', $cleaninput);
+	    $pieces = preg_split("/[.|!|?]/", $cleaninput);
 	    
 	    //return the first sentece with ellipsis after it
 	    if ($pieces){
