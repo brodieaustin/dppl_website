@@ -5,7 +5,7 @@
 <tr>
 	<td style="padding-top: 24px;" colspan="2">
 <h1 style="font-size: 24px; padding-bottom: 6px;">Employment Application</h1>
-<p style="margin-bottom: 10px;">It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. Please complete all blanks or indicate "not applicable." Incomplete applications may be subject to rejection.</p>
+<p style="margin-bottom: 10px;">It is the policy of the Des Plaines Public Library to ensure equal opportunity for all individuals without regard to race, color, religion, sex, age, national origin, marital/veteran status/ disability or any other legally protected status in accordance with the requirements of local, state and federal law. <strong>Please complete all required fields or indicate "not applicable (N/A)." Incomplete applications may be subject to rejection.</strong></p>
 <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px; line-height: 14px;">
 <tr>
 <td style="width: 100%; padding: 6px 0;border-bottom: 2px solid #000; vertical-align: text-bottom; text-align: left;" colspan="2"><h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Personal Information</h2></td>
@@ -42,7 +42,7 @@
   <td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;"><em>If &ldquo;other&rdquo;, please specify:</em><br />{refer-other}</p></td>
 </tr>
 <tr>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Are you at last 16 years of age? {age}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Are you at least 16 years of age? {age}</p></td>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Are you legally eligible for employment in the U.S.? {legal}</p></td>
 </tr>
 <tr>
@@ -67,7 +67,7 @@
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">City, State: {hs-citystate}</p></td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Last year completed:  {hs-years}</p></td>
+	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2"><p style="margin: 0; padding: 0;">Number of years completed:  {hs-years}</p></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Did you graduate? {hs-graduate}</p></td>
@@ -82,7 +82,7 @@
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Course of study: {college-study}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Last year completed: {college-years}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Number of years completed: {college-years}</p></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Did you graduate? {college-graduate}</p></td>
@@ -97,7 +97,7 @@
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Course of study: {graduate-study}</p></td>
-	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Last year completed: {graduate-years}</p></td>
+	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Number of years completed: {graduate-years}</p></td>
 </tr>
 <tr>
 	<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Did you graduate? {graduate-graduate}</p></td>
@@ -112,7 +112,7 @@
 	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Please list any certifications or licenses: <br><br>{licenses}</p></td>
 </tr>
 <tr>
-	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Please use this space to summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, langauge proficiences, and/or experience which you feel should be considred in reviewing your application:<br><br>{qualifications}</p></td>
+	<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;"><p style="margin: 0; padding: 0;">Please use this space to summarize any special job-related qualifications, training (including military or apprenticeship), computer skills, language proficiences, and/or experience which you feel should be considered in reviewing your application:<br><br>{qualifications}</p></td>
 </tr>
 </table>
 <table style="width: 100%; border-collapse: collapse; border-bottom:1px solid #000; margin-bottom: 20px; font-family: sans-serif;font-size: 12px;">

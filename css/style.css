@@ -1123,9 +1123,14 @@ a#next2{
 .nav .buttons{height: 2em; line-height: 2em;}
 .nav button{margin-left: .8em;}
 .nav ul{margin: 0; overflow: hidden;}
-.nav ul li a{display: block; float: left; height: 2em; line-height: 2em; padding: 0 1em ; background-color: #eee; color: #333 !important; text-decoration: none !important;}
+.nav ul li{float: left; zoom: 1;}
+.nav ul li a{display: block; width: auto; height: 2em; line-height: 2em; padding: 0 1em ; background-color: #eee; color: #333 !important; text-decoration: none !important;}
 .nav ul li a:hover{background-color: #888;}
 .nav .active{background-color: #c8c8c8;}
+
+/*hiding bottom nav from ie 7*/
+/*.lt-ie8 #navbar-bottom{display: none;}*/
+
 
 /*feeds*/
 
