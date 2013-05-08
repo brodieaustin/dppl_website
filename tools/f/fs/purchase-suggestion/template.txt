@@ -29,7 +29,7 @@
 </tr>
 <tr>
     <td><strong>Preferred Contact</strong></td>
-	<td>{preferred-contact}</td>
+	<td>{communication-preference}</td>
 </tr>
 <tr>
 	<td><strong>Should we place a hold on this item for you?</strong></td>
