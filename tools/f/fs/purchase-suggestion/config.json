@@ -21,7 +21,10 @@
         "name": "Forms", 
         "email": "forms@dppl.org"
     },  
-    "recipients": [
+    "recipients": [{
+		    "name": "Brodie Austin",
+		    "email": "baustin@dppl.org"
+        },
         {
             "name": "Readers Services Desk", 
             "email": "readersservicesdesk@dppl.org"

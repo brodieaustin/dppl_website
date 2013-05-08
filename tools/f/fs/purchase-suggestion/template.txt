@@ -1,0 +1,62 @@
+<table style="width: 100%; font-family: sans-serif; font-size: 13px;">
+<tr>
+	<td><strong>Name</strong></td>
+	<td>{name}</td>
+</tr>
+<tr>
+	<td><strong>Address</strong></td>
+	<td>{address}</td>
+</tr>
+<tr>
+	<td><strong>City</strong></td>
+	<td>{city}</td>
+</tr>
+<tr>
+	<td><strong>State</strong></td>
+	<td>{state}</td>
+</tr>
+<tr>
+	<td><strong>Zip Code</strong></td>
+	<td>{zip-code}</td>
+</tr>
+<tr>
+	<td><strong>Phone Number</strong></td>
+	<td>{phone-number}</td>
+</tr>
+<tr>
+	<td><strong>Email Address</strong></td>
+	<td>{email}</td>
+</tr>
+<tr>
+    <td><strong>Preferred Contact</strong></td>
+	<td>{preferred-contact}</td>
+</tr>
+<tr>
+	<td><strong>Should we place a hold on this item for you?</strong></td>
+	<td>{place-hold}</td>
+</tr>
+<tr>
+	<td><strong>Library card number</strong></td>
+	<td>{library-card-number}</td>
+</tr>
+<tr>
+	<td><strong>Type of Item</strong></td>
+	<td>{item-type}</td>
+</tr>
+<tr>
+	<td><strong>Title</strong></td>
+	<td>{item-title}</td>
+</tr>
+<tr>
+	<td><strong>Author</strong></td>
+	<td>{item-author}</td>
+</tr>
+<tr>
+	<td><strong>ISBN</strong></td>
+	<td>{item-isbn}</td>
+</tr>
+<tr>
+	<td><strong>Why should we purchase this item?</strong></td>
+	<td>{purchase-explanation}</td>
+</tr>
+</table>
