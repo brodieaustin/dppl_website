@@ -1006,7 +1006,7 @@ div#list{
   margin: 0 auto;
   padding-top: .5em;
   position: relative;
-  background: #00afd6; url('/images/themes/go/go-striped-background.png');
+  background: #00afd6 url('/images/themes/go/go-striped-background.png');
 }
 
 #slides{
@@ -1058,7 +1058,7 @@ div#list{
 
 #nav{
   position: absolute;
-  width: 7.142em;
+  width: 10em;
   bottom: 10px;
   left: 50%;
   margin-left: -50px;
@@ -1095,7 +1095,6 @@ a#next2{
   padding: 0;
   color: #111;
   *margin: 1px 5px;
-  text-shadow: 1px 1px 1px #aaa;
   vertical-align: middle;
   text-align: center;
 }
@@ -1103,7 +1102,6 @@ a#next2{
 #nav a.activeSlide {
   background-color: #f36a26;
   color: #fff;
-  text-shadow: 0;
   border-radius: 1em;
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
