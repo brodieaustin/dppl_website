@@ -1,0 +1,20 @@
+{
+    "edo-tokyo": {
+        "description": "&ldquo;One of my favorite places is the <a href='http://tatemonoen.jp/english/'>Edo-Tokyo Open-air Architectural Museum</a> located just outside of Tokyo in Japan. The outdoor museum &lsquo;collects&rsquo; and reassembles buildings that represent different periods in Japan's history. The park inspired the bath house in Hayao Miyazaki's wonderful film, <i><a href='http://dppl.bibliocommons.com/item/show/2161903035_spirited_away'>Spirited Away</a></i>.&rdquo;",
+        "person": "Brodie, Web Services Librarian",
+        "lat": "35.715822",
+		"lng" : "139.512614"
+    },
+    "muir-woods": {
+        "description": "&ldquo;The Dipsea Trail is a 4 to 5 mile hike through <a href='http://www.nps.gov/muwo/index.htm'>Muir Woods</a> that leads to Stinson Beach. The drive to get there is daunting and it is a workout, but this is an unforgettable sensory experience! Light filtering through giant coastal redwoods, grand vistas on Mount Tamalpais, and waves crashing onto rocky beaches are breathtaking to see. It's a great day trip from <a href='http://dppl.bibliocommons.com/search?t=smart&search_category=keyword&q=san+francisco+travel&commit=Search&formats=DVD|BK|EBOOK|MAG&audience=adult&region=San%20Francisco%20%28Calif%29&fictype=NONFICTION'>San Francisco</a>!&rdquo;",
+        "person": "Lynne, Readers&lsquo; Services Supervisor",
+        "lat": "37.903396",
+		"lng" : "-122.643889"
+    },
+	"milwaukee": {
+        "description": "&ldquo;Milwaukee is one of my favorite cities, to the point that I consider it as a surrogate hometown. It has beer, brats, baseball, cheese, history, and the same access to Lake Michigan as Chicago. Brewers fans at Miller Park tailgate the best of any fan group I've ever encountered. The Milwaukee Public Museum and the Miklwaukee Art Museum (pictured) are standouts in their own regard.&rdquo;",
+        "person": "Joel, Readers&lsquo; Services Assistant",
+        "lat": "43.039292",
+		"lng" : "-87.897254"
+    }
+}
