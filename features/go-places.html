@@ -15,8 +15,8 @@
 		.content{position: relative; width: 100%; min-height: 70%;}
 		.box{padding: 1% 2%; background-color: rgba(255,255,255, .9);}
 		.text h2{margin-top: .5em;}
-		#place{position: absolute; bottom: 0; right: 0; width: 20%; height: 97%; overflow-y: scroll; overflow-x: hidden; z-index: 500;}
-		#streetview{position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 200;}
+		#place{position: absolute; bottom: 0; right: 0; width: 20%; height: 97%; z-index: 50;}
+		#streetview{position: absolute; top: 0; left: 0; width: 76%; height: 100%; z-index: 100;}
 		.instructions{font-size: 70%;}
 		.footer{clear: both; margin-top: 1%; padding: 1%;}
 		.footer a{text-decoration: none; color: #fff;}
@@ -28,8 +28,8 @@
 		@media (max-width: 800px){
 			body{width: 100%;}
 			.content{min-height: 100%;}
-			#streetview{height: 50%;}
-			#place{width: 96%; bottom: 0 !important; height: 44%;}
+			#streetview{width: 100%; height: 50%;}
+			#place{width: 96%; bottom: 0 !important; height: 49%;}
 			.close{display: none;}
 		}
 	</style>
@@ -41,20 +41,21 @@
 		<div id="streetview" style=""></div>
 		<div class="box" id="place">
 			<span class="close">×</span>
-			<div class="text" id="place-text">
+			<div class="text">
 	            <h2>Go to a favorite place...</h2>
-	            <p>&ldquo;The Dipsea Trail is a 4 to 5 mile hike through <a href="http://www.nps.gov/muwo/index.htm">Muir Woods</a> that leads to Stinson Beach. The drive to get there is daunting and it is a workout, but this is an unforgettable sensory experience! Light filtering through giant coastal redwoods, grand vistas on Mount Tamalpais, and waves crashing onto rocky beaches are breathtaking to see. It's a great day trip from <a href="http://dppl.bibliocommons.com/search?t=smart&search_category=keyword&q=san+francisco+travel&commit=Search&formats=DVD|BK|EBOOK|MAG&audience=adult&region=San%20Francisco%20%28Calif%29&fictype=NONFICTION">San Francisco</a>!&rdquo;</p>
-				<p>-Lynne, Readers&lsquo; Services Supervisor </p>
+	            <p id="place-text">&ldquo;Milwaukee is one of my favorite cities, to the point that I consider it as a surrogate hometown. It has beer, brats, baseball, cheese, history, and the same access to Lake Michigan as Chicago. Brewers fans at Miller Park tailgate the best of any fan group I've ever encountered. The Milwaukee Public Museum and the Miklwaukee Art Museum (pictured) are standouts in their own regard.&rdquo;</p>
+				<p id="place-person">-Joel, Readers&lsquo; Services Assistant </p>
 	        </div>
 		</div>
 	</div>
-	<!--<div class="nav">
+	<div class="nav">
 		<h3>Have you visited these favorite places?</h3>
 		<ul class="places">
-			<li><a href="javascript:void(0);" class="button place-nav">Edo-Tokyo Open-air Architectural Museum</a></li>
-			<li><a href="javascript:void(0);" class="button place-nav">Muir Woods National Monument</a></li>
+			<li><a href="javascript:void(0);" class="button place-nav" data-place="edo-tokyo">Edo-Tokyo Open-air Architectural Museum</a></li>
+			<li><a href="javascript:void(0);" class="button place-nav" data-place="muir-woods">Muir Woods National Monument</a></li>
+			<li><a href="javascript:void(0);" class="button place-nav" data-place="milwaukee">Milwaukee</a></li>
 		</ul>
-	</div>-->
+	</div>
 	<div class="footer">
 		<p><a href="/">Des Plaines Public Library</a></p>
 	</div>
@@ -63,24 +64,43 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYKRjKZNtIdST9HxtQgtFfUxBgdHYEWbk&sensor=false">
     </script>
 	<script>
+		var panorama, place, panoramaOptions;
 		function initialize() {
-		  var place = new google.maps.LatLng(37.903396,-122.643889);
-		  var panoramaOptions = {
+		  place = new google.maps.LatLng(43.039292, -87.897254);
+		  panoramaOptions = {
 			position: place,
 			pov: {
 			  heading: 260,
 			  pitch: 10
 			}
 		  };
-		  var panorama = new  google.maps.StreetViewPanorama(document.getElementById('streetview'),panoramaOptions);
+		  panorama = new  google.maps.StreetViewPanorama(document.getElementById('streetview'),panoramaOptions);
 		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-	<script>
+		
 		$(document).ready(function(){
+			var place_name;
 			$('.close').click(function(){
 				$(this).parent().hide();
+			});
+			
+			$('.place-nav').click(function(){
+				place_name = $(this).attr('data-place');
+				$.getJSON('places.json', function(data){
+					console.log(data[place_name]);
+					$('#place-text').html(data[place_name]['description']);
+					$('#place-person').html(data[place_name]['person']);
+					place = new google.maps.LatLng(parseFloat(data[place_name]['lat']),parseFloat(data[place_name]['lng']));
+					panoramaOptions = {
+						position: place,
+						pov: {
+						  heading: 260,
+						  pitch: 10
+						}
+					  };
+					  panorama = new  google.maps.StreetViewPanorama(document.getElementById('streetview'),panoramaOptions);
+				});
 			});
 		});
 	</script>
