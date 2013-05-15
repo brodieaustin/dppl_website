@@ -15,13 +15,11 @@
 		.content{position: relative; width: 100%; min-height: 70%;}
 		.box{padding: 1% 2%; background-color: rgba(255,255,255, .9);}
 		.text h2{margin-top: .5em;}
-		#place{position: absolute; bottom: 0; right: 0; width: 20%; height: 97%; z-index: 50;}
+		#place{position: absolute; bottom: 0; right: 0; width: 20%; height: 97%; overflow-y: scroll; z-index: 50;}
 		#streetview{position: absolute; top: 0; left: 0; width: 76%; height: 100%; z-index: 100;}
 		.instructions{font-size: 70%;}
 		.footer{clear: both; margin-top: 1%; padding: 1%;}
 		.footer a{text-decoration: none; color: #fff;}
-		.close{display: block; position: absolute; top: 5px; right: 5px; height:1em; width:1em; line-height: 1em; font-size: 1em; font-weight: bold; color: #333; vertical-align: middle; text-align: center;  cursor: pointer; }
-		.close:hover{background-color: #aaa; border-radius: 2em;}
 		.nav{padding-top: 2em;}
 		.places{list-style: none; padding: 0;}
 		.places li{display: inline-block;}
@@ -29,8 +27,7 @@
 			body{width: 100%;}
 			.content{min-height: 100%;}
 			#streetview{width: 100%; height: 50%;}
-			#place{width: 96%; bottom: 0 !important; height: 49%;}
-			.close{display: none;}
+			#place{width: 96%; bottom: 0 !important; height: auto;}
 		}
 	</style>
 <body>
@@ -40,7 +37,6 @@
 	<div class="content">
 		<div id="streetview" style=""></div>
 		<div class="box" id="place">
-			<span class="close">×</span>
 			<div class="text">
 	            <h2>Go to a favorite place...</h2>
 	            <p id="place-text">&ldquo;Milwaukee is one of my favorite cities, to the point that I consider it as a surrogate hometown. It has beer, brats, baseball, cheese, history, and the same access to Lake Michigan as Chicago. Brewers fans at Miller Park tailgate the best of any fan group I've ever encountered. The Milwaukee Public Museum and the Miklwaukee Art Museum (pictured) are standouts in their own regard.&rdquo;</p>
@@ -59,12 +55,13 @@
 	<div class="footer">
 		<p><a href="/">Des Plaines Public Library</a></p>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYKRjKZNtIdST9HxtQgtFfUxBgdHYEWbk&sensor=false">
     </script>
 	<script>
 		var panorama, place, panoramaOptions;
+		
 		function initialize() {
 		  place = new google.maps.LatLng(43.039292, -87.897254);
 		  panoramaOptions = {
@@ -81,9 +78,6 @@
 		
 		$(document).ready(function(){
 			var place_name;
-			$('.close').click(function(){
-				$(this).parent().hide();
-			});
 			
 			$('.place-nav').click(function(){
 				place_name = $(this).attr('data-place');
