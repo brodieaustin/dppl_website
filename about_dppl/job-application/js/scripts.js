@@ -1,7 +1,7 @@
     $(document).ready(function(){
         //json formatted list of current jobs, used for pretty urls params below
         //{"job-title" : "Job Title"}
-        var current_jobs = {"part-time-reference-librarian" : "Part-time Reference Librarian"};
+        var current_jobs = {"part-time-reference-librarian" : "Part-time Reference Librarian", "shelver" : "Shelver", "part-time-monitor" : "Part-time Monitor", "reference-librarian" : "Reference Librarian"};
         var param, pos;
         
         //test for local storage
@@ -65,6 +65,7 @@
 			    $('.response-message').html('').removeClass('success').removeClass('failure');
 				$(form).ajaxSubmit({
 					success: function(data){
+						//console.log(data);
 					    $('.load').hide();
 					    if (data.status == 'success'){
 					        $(form)[0].reset();

@@ -104,5 +104,8 @@
         "employer-four-leaving": false,
         "agreement": true,
         "send-copy": false
-    }
+    },
+	"messages": {
+	    "success" : "Thank you for submitting your job application. You will receive an email confirmation shortly."
+	}
 }
