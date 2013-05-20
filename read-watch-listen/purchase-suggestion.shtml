@@ -1,0 +1,180 @@
+<!--#include virtual="/includes/html.html"-->
+	<title>Purchase Suggesion | DPPL</title>
+
+	<!--meta, link, styles, and modernizer link in head file-->
+	<!--#include virtual="/includes/head.html"-->
+	<link rel="stylesheet" href="/css/form.css" />
+</head>
+<body>
+	<!--header-->
+	<!--#include virtual="/includes/header.html"-->
+	<!--navigation-->
+	<!--#include virtual="/includes/navigation.html"-->
+	<!--sidebar-->
+	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--main content-->
+	<div id="content">
+	    <div class="load">Processing form&hellip;</div>
+	    <div class="response">
+            <div class="response-message"></div>
+            <span class="close">&times;</span>
+	    </div>
+	    <h1>Purchase Suggestion</h1>
+	    <p>Looking for something we don't have? Read something great you think should be in the library? Tell us about it.</p>
+		<form id="purchase-suggestion" method="post"  action="/tools/f/send.php">
+		    <div class="errors"></div>
+		    <input type="hidden" name="form-id" id="form-id" value="purchase-suggestion" />
+            <fieldset>
+                <legend>Tell us about the item:</legend>
+                <div>
+	                <label for="item-type">Type of Item <em>*</em></label>
+	                <select id="item-type" name="item-type" class="required" tabindex="1">
+		                <option value="Book">Book</option>
+		                <option value="CD">CD</option>
+		                <option value="DVD">DVD</option>
+		                <option value="Other">Other</option>
+	                </select>
+                </div>
+                <div>
+                    
+	                <label for="item-title">Title <em>*</em></label>
+	                <input type="text" id="item-title" name="item-title" class="required wide" tabindex="2" /></span>
+                </div>
+                <div id="catalog-check">
+                    <div id="catalog-check-response" class="response callout"><span class="load inline"></span>Double checking catalog</div>
+                </div>
+                <div>
+	                <label for="item-author">Author</label>
+	                <input type="text" id="item-author" name="item-author" tabindex="3" />
+                </div>
+                <div>
+	                <label for="item-isbn">ISBN</label>
+	                <input type="text" id="item-isbn" name="item-isbn" tabindex="4" />
+                </div>
+                <div>
+	                <label for="purchase-explanation">Why should we purchase this item?</label>
+	                <textarea id="purchase-explanation" name="purchase-explanation" tabindex="5"></textarea>
+                </div>
+            </fieldset>
+			<fieldset>
+				<legend>Tell us about you:</legend>
+				<div>
+					<label for="name">Name <em>*</em></label>
+					<input type="text" id="name" name="name" class="required" tabindex="6" />
+				</div>
+				<div>
+					<label for="phone-number">Phone Number <em>*</em></label>
+					<input type="text" id="phone-number" name="phone-number" class="required" tabindex="7" />
+				</div>
+				<div>
+					<label for="email">Email Address <em>*</em></label>
+					<input type="text" id="email" name="email" class="required" tabindex="8" />
+				</div>
+				<div>
+					<label for="communication-preference">What is your preferred method of communication? <em>*</em></label>
+					<select id="communication-preference" name="communication-preference" class="required" tabindex="9">
+						<option>Choose one</option>
+						<option value="Phone">Phone</option>
+						<option value="Email">Email</option>
+					</select>
+				</div>
+				<div>
+					<label for="place-hold">Should we place a hold on this item for you?</label>
+					<select id="place-hold" name="place-hold" tabindex="10">
+						<option value="No">No</option>
+						<option value="Yes">Yes</option>
+					</select>
+				</div>
+				<div>
+					<label for="library-card-number">Library card number</label>
+					<input type="text" id="library-card-number" name="library-card-number" tabindex="11" />
+				</div>
+			</fieldset>
+            <fieldset class="callout">
+			    <iframe id="challenge-image" src="/tools/sc/captcha.php"></iframe>
+			    <label>Enter the text that you see in the image above:<em>*</em></label>
+			    <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="12" />
+	    </fieldset>
+            <div class="buttons right">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+	</div>
+	<!--footer-->
+	<!--#include virtual="/includes/footer.html"-->
+	<!--scripts-->
+	<!--#include virtual="/includes/scripts.html"-->
+	<script src="/js/jquery.validate.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		    //var key = 'jftsyvbcseb47a93cczz3uvk';
+		    var key = '6vuvh66tx8evnz9b3r768gfh';
+		    var base_url = 'https://api.bibliocommons.com/v1/titles';
+		    var catalog_url = 'http://dppl.bibliocommons.com/search?t=smart&search_category=keyword&q={q}&commit=Search';
+		    var library = 'dppl';
+		    
+		    $('#item-title').change(function(){
+		        var url, query, type
+		        var results = [];
+		        
+		        $('#catalog-check-response').slideDown();
+		        
+		        type = $('#item-type').val();
+		        query = encodeURI($(this).val());
+		        url = base_url + '?library=' + library + '&q=' + query + '&api_key=' + key;
+		        //console.log(url);
+		        catalog_url = catalog_url.replace('{q}', query);
+
+		        $.getJSON('/tools/data.php?jsoncallback=?', {url: url, format: 'json'}, function(data){
+		            $.each(data.titles, function(i){
+		                if (data.titles[i].format.name == type){
+		                    results.push(data.titles[i]);
+		                }
+		            });
+		            
+		            //console.log(results);
+		            if (data['count'] != 0){
+		                $('#catalog-check-response').html('Were you looking for <a href="' + results[0].details_url + '" targe="_blank">' + results[0].title  + '&nbsp;(' + results[0].publication_date + ')</a>?&nbsp;There were <a href="' + catalog_url + '&formats=' + results[0].format.id + '" target="_blank">' + (results.length - 1) + ' other potential matches</a>.');
+		            }
+		            else{
+		                $('#catalog-check-response').html('No matching items found.').delay(4000).html('<span class="load inline"></span>Double checking catalog').slideUp();
+		            }
+		        });
+		        
+		    });
+		    
+			$('#purchase-suggestion').validate({
+				invalidHandler: function(form, validator) {
+					  var errors = validator.numberOfInvalids();
+					  if (errors) {
+						var message = errors == 1 ? 'You missed 1 field. It has been highlighted': 'You missed ' + errors + ' fields. They have been highlighted';
+						$('div.errors').html(message).show();
+					  } else {
+						$('div.errors').html('').hide();
+					  }
+				},
+				submitHandler: function(form){
+				    $('html, body').animate({ scrollTop: 0 }, 0);
+			        $(form).hide();
+			        $('.load').show();
+			        $('div.errors').html('').hide();
+			        $('.response').hide();
+			        $('.response-message').html('').removeClass('success').removeClass('failure');
+					$.post($(form).attr('action'), $(form).serialize(), function(data){
+					    if (data.status == 'success'){
+					        $(form)[0].reset();
+					        $(form).hide();
+					    }
+					    else{
+					        $(form).show();
+					    }
+					    $('.load').hide();
+						$('.response-message').addClass(data.status).html(data.message).parent().fadeIn();
+					    
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>

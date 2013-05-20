@@ -1,0 +1,30 @@
+{
+    "id": "purchase-suggestion",
+    "fields": { 
+		"item-type": true, 
+		"item-title": true, 
+		"item-author": false,
+		"item-isbn": false,
+        "purchase-explanation": false, 
+        "name": true, "phone-number": false, 
+		"phone-number" : true,
+        "email": false, 
+		"communication-preference": true, 
+		"place-hold": false,
+        "library-card-number": false
+    }, 
+    "sender": {
+        "name": "Forms", 
+        "email": "forms@dppl.org"
+    },  
+    "recipients": [{
+		    "name": "Brodie Austin",
+		    "email": "baustin@dppl.org"
+        },
+        {
+            "name": "Readers Services Desk", 
+            "email": "readersservicesdesk@dppl.org"
+        }
+    ], 
+    "subject": "Purchase Suggestion"
+}

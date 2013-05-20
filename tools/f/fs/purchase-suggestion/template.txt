@@ -1,0 +1,35 @@
+<table style="width: 100%; font-family: sans-serif; font-size: 13px;">
+<tr>
+	<td><strong>Type of Item</strong><br>{item-type}<br></td>
+</tr>
+<tr>
+	<td><strong>Title</strong><br>{item-title}<br></td>
+</tr>
+<tr>
+	<td><strong>Author</strong><br>{item-author}<br></td>
+</tr>
+<tr>
+	<td><strong>ISBN</strong><br>{item-isbn}<br></td>
+</tr>
+<tr>
+	<td><strong>Why should we purchase this item?</strong><br>{purchase-explanation}<br></td>
+</tr>
+<tr>
+	<td><strong>Name</strong><br>{name}<br></td>
+</tr>
+<tr>
+	<td><strong>Phone Number</strong><br>{phone-number}<br></td>
+</tr>
+<tr>
+	<td><strong>Email Address</strong><br>{email}<br></td>
+</tr>
+<tr>
+    <td><strong>Preferred Contact</strong><br>{communication-preference}<br></td>
+</tr>
+<tr>
+	<td><strong>Should we place a hold on this item for you?</strong><br>{place-hold}<br></td>
+</tr>
+<tr>
+	<td><strong>Library card number</strong><br>{library-card-number}<br></td>
+</tr>
+</table>
