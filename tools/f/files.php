@@ -46,7 +46,7 @@
 		elseif (!in_array($f['type'], $filetypes)){
 		    //if it's not too big make sure it is a valid filetype
 			$response['status'] = 'failure';
-		    $response['message'] = 'The file (' . $f['name'] .  ') is not a valid type! Only doc, docx, pdf, txt, or rtf accepted.';
+		    $response['message'] = 'The file (' . $f['name'] .  ') is not a valid type! Only doc, docx, pdf, txt, or rtf accepted. If you use OpenOffice, try resaving as a RTF file or PDF.';
         }
         else{
             $response['status'] = 'success';

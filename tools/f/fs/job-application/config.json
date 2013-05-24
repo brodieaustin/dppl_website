@@ -8,10 +8,6 @@
 	"recipients": [{
 		"name": "Jobs",
 		"email": "jobs@dppl.org"
-	},
-	{
-		"name": "Brodie Austin",
-		"email": "baustin@dppl.org"
 	}],
     "fields": {
         "name": true,
