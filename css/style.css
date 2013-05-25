@@ -719,7 +719,7 @@ ul.dropdown li:hover > ul{
   margin: 0;
   padding: 0 6px;
   text-align: center;
-  background: url('/images/edppl/new-world-cinema-banner.jpg') no-repeat right center;
+  background: url('') no-repeat right center;
   overflow: hidden;
 }
 
@@ -967,7 +967,7 @@ div.listen{
 
 
 div#list{
-  min-height: 270px;
+  min-height: 226px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -979,23 +979,35 @@ div#list{
   margin-bottom: 1em;
 }
 .list-item{
+  position: relative;
   float: left;
   width: 12.692307em;
-  height: 240px;
+  height: 220px;
   padding: .5em;
   text-align: center;
   display: none;
   font-size: 90%;
 }
+
 .list-item a{
   display: block;
   margin-top: 3%;
   text-decoration: none;
 }
 .list-item img{
+  position: relative;
   height: 200px;
   border: 3px solid #fff;
   margin: 0 !important;
+  z-index: 100;
+}
+
+.list-item p{
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 0;
+  z-index: 50;
 }
 
 /*slides*/

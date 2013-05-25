@@ -86,7 +86,14 @@ $(function(){
         return false;
     });
 });
-$(function(){
+$(function(){ 
+    $.smartbanner({
+        title : 'Get the library on the go!',
+        button : 'Download',
+        scale : 1
+    });  
+});
+/*$(function(){
 	//try to detect if mobile browser is being used using isMobile function (see below)
 	if (isMobile.any() == true){
 		//look for mobile_banner cookie, if user closes message we don't want it appearing again
@@ -110,7 +117,7 @@ $(function(){
 		createCookie('mobile_alert','closed');
 	});
 	
-});
+});*/
 
 function createCookie(name,value,days) {
 		if (days) {

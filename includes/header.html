@@ -3,7 +3,7 @@
 		<strong>Warning!</strong>&nbsp;&nbsp; You don't have JavaScript enabled. This site may not function properly without it. <a href="http://enable-javascript.com/">Learn how to activate JavaScript</a>.
 		</div>
 </noscript>
-<!--mobile alert message to use app-->
+<!--mobile alert message to use app
 	<div class="message mobile-alert" id="mobile-alert" style="">
 		<div class="text">
 			<a href="/mobile/app.html" class="banner track" data-ga-category="Mobile-Alert" data-ga-action="">
@@ -12,13 +12,13 @@
 			</a>
 		</div>
 		<span class="close">&times;</span>
-	</div>
+	</div>-->
 <!--site wide message-->
-<!--<div class="message">
+<div class="message">
 	<div class="text">
-		<p>{message}</p>
+		<p>The library will be closed on Sunday, May 26th and Monday, May 27th for Memorial Day.</p>
 	</div>
-</div>-->
+</div>
 <!--header-->
 <div id="header">
 	<h1><a href="/"><span class="hidden">Des Plaines Public Library</span><img src="/images/themes/River/logo.jpg" alt="Des Plaines Public Library [logo]" /></a></h1>
@@ -40,8 +40,8 @@
 			</ul>
 		</div><!--closing div for font-size-->
 		<ul class="tools">
-			<li><a href="http://dppl.bibliocommons.com/">myCatalog</a></li>
-			<li><a href="https://dppl.bibliocommons.com/user/login">Account</a></li>
+			<li><a href="http://dppl.bibliocommons.com/" class="track" data-ga-category="Catalog-Links" data-ga-action="myCatalog-Link">myCatalog</a></li>
+			<li><a href="https://dppl.bibliocommons.com/user/login" class="track" data-ga-category="Catalog-Links" data-ga-action="Account-Link">Account</a></li>
 			<li class="how-do-i dropdown"><a href="#">How Do I?</a>
 				<ul class="how-do-i-links">
 					<li><a href="/about_dppl/jobs.shtml">Apply for jobs at the Library</a></li>
@@ -58,7 +58,6 @@
 					<li><a href="/features/eforward_sign_up.shtml">Sign up for the newsletter</a></li>
 					<li><a href="/read-watch-listen/purchase-suggestion.shtml">Suggest a purchase</a></li>
 					<li><a href="/about_dppl/computers_and_wifi.shtml">Use the computers/Wi-Fi</a></li>
-					<li><a href="https://dppl.bibliocommons.com/user/login">View My Account</a></li>
 					<li><a href="/about_dppl/volunteer.shtml">Volunteer at the library</a></li>
 				</ul>
 			</li>
@@ -73,7 +72,7 @@
 				<option value="site">Site</option>
 			</select>
 			<input type="text" name="search-text" placeholder="for books, movies, etc..." id="search-text" />
-			<input type="submit" value="Go" class="submit-button" />
+			<input type="submit" value="Go" class="submit-button track" data-ga-category="Catalog-Links" data-ga-action="Search-Button" />
 		</fieldset>
 	</form>
 </div><!--closing div for search-->

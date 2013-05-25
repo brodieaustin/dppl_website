@@ -8,10 +8,6 @@
 	"recipients": [{
 		"name": "Jobs",
 		"email": "jobs@dppl.org"
-	},
-	{
-		"name": "Brodie Austin",
-		"email": "baustin@dppl.org"
 	}],
     "fields": {
         "name": true,
@@ -104,5 +100,8 @@
         "employer-four-leaving": false,
         "agreement": true,
         "send-copy": false
-    }
+    },
+	"messages": {
+	    "success" : "Thank you for submitting your job application. You will receive an email confirmation shortly."
+	}
 }

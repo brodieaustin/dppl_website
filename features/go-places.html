@@ -15,7 +15,7 @@
 		.content{position: relative; width: 100%; min-height: 70%;}
 		.box{padding: 1% 2%; background-color: rgba(255,255,255, .9);}
 		.text h2{margin-top: .5em;}
-		#place{position: absolute; bottom: 0; right: 0; width: 20%; height: 97%; overflow-y: scroll; z-index: 50;}
+		#place{position: absolute; bottom: 0; right: 0; width: 20%; height: 97%; z-index: 50; overflow-y: auto; overflow-x: hide;}
 		#streetview{position: absolute; top: 0; left: 0; width: 76%; height: 100%; z-index: 100;}
 		.instructions{font-size: 70%;}
 		.footer{clear: both; margin-top: 1%; padding: 1%;}
@@ -33,14 +33,15 @@
 <body>
 	<div class="headline">
 		<h1>Work Learn Play <b>Go</b></h1>
+		<h2>Go to a favorite place...</h2>
 	</div>
 	<div class="content">
 		<div id="streetview" style=""></div>
 		<div class="box" id="place">
 			<div class="text">
-	            <h2>Go to a favorite place...</h2>
-	            <p id="place-text">&ldquo;Milwaukee is one of my favorite cities, to the point that I consider it as a surrogate hometown. It has beer, brats, baseball, cheese, history, and the same access to Lake Michigan as Chicago. Brewers fans at Miller Park tailgate the best of any fan group I've ever encountered. The Milwaukee Public Museum and the Miklwaukee Art Museum (pictured) are standouts in their own regard.&rdquo;</p>
-				<p id="place-person">-Joel, Readers&lsquo; Services Assistant </p>
+	            <h3 id="place-header">Providence</h3>
+	            <p id="place-text">&ldquo;Proving that home really is where the heart is, my current favorite place is Providence, Rhode Island. Now that my son lives there, I&rsquo;m visiting regularly, and spending time in its fantastic restaurants, museums, libraries and green spaces. I know that I haven&rsquo;t even begun to explore the history of this almost 400-year-old city, and its more recent history of corruption and creativity (it’s the setting for Showtime&rsquo;s <i><a href="http://dppl.bibliocommons.com/search?q=Brothers+--+Rhode+Island+--+Providence+--+Drama&t=subject">Brotherhood</a></i>).&rdquo;</p>
+				<p id="place-person">-Roberta, Assistant Director </p>
 	        </div>
 		</div>
 	</div>
@@ -50,6 +51,7 @@
 			<li><a href="javascript:void(0);" class="button place-nav" data-place="edo-tokyo">Edo-Tokyo Open-air Architectural Museum</a></li>
 			<li><a href="javascript:void(0);" class="button place-nav" data-place="muir-woods">Muir Woods National Monument</a></li>
 			<li><a href="javascript:void(0);" class="button place-nav" data-place="milwaukee">Milwaukee</a></li>
+			<li><a href="javascript:void(0);" class="button place-nav" data-place="providence">Providence</a></li>
 		</ul>
 	</div>
 	<div class="footer">
@@ -63,7 +65,7 @@
 		var panorama, place, panoramaOptions;
 		
 		function initialize() {
-		  place = new google.maps.LatLng(43.039292, -87.897254);
+		  place = new google.maps.LatLng(41.825833, -71.407778);
 		  panoramaOptions = {
 			position: place,
 			pov: {
@@ -82,7 +84,8 @@
 			$('.place-nav').click(function(){
 				place_name = $(this).attr('data-place');
 				$.getJSON('places.json', function(data){
-					console.log(data[place_name]);
+					//console.log(data[place_name]);
+					$('#place-header').html(data[place_name]['header']);
 					$('#place-text').html(data[place_name]['description']);
 					$('#place-person').html(data[place_name]['person']);
 					place = new google.maps.LatLng(parseFloat(data[place_name]['lat']),parseFloat(data[place_name]['lng']));

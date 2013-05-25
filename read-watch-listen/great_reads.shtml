@@ -36,7 +36,7 @@
 		    
 			$('.list').show();
 			$('#list').bcList({
-				'list_id' : '163068391'
+				'list_id' : '172093351'
 			}, function(){
 				$('#list').cycle({ 
 							fx:     'scrollVert', 

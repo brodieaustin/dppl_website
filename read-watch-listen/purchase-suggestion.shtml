@@ -20,62 +20,15 @@
             <span class="close">&times;</span>
 	    </div>
 	    <h1>Purchase Suggestion</h1>
-	    <p>Looking for a book we don't have? Read something great you think should be in the library? Tell us about it.</p>
+	    <p>Looking for something we don't have? Read something great you think should be in the library? Tell us about it.</p>
 		<form id="purchase-suggestion" method="post"  action="/tools/f/send.php">
 		    <div class="errors"></div>
 		    <input type="hidden" name="form-id" id="form-id" value="purchase-suggestion" />
-            <div>
-	            <label for="name">Name <em>*</em></label>
-	            <input type="text" id="name" name="name" class="required" tabindex="1" />
-            </div>
-            <div>
-	            <label for="address">Address <em>*</em></label>
-	            <input type="text" id="address" name="address" class="required wide" tabindex="2" />
-            </div>
-            <div>
-	            <label for="city">City <em>*</em></label>
-	            <input type="text" id="city" name="city" class="required" tabindex="3" />
-            </div>
-            <div>
-	            <label for="state">State <em>*</em></label>
-	            <input type="text" id="state" name="state" class="required small" tabindex="4" />
-            </div>
-            <div>
-	            <label for="zip-code">Zip Code <em>*</em></label>
-	            <input type="text" id="zip-code" name="zip-code" class="required small" tabindex="5" />
-            </div>
-            <div>
-	            <label for="phone-number">Phone Number <em>*</em></label>
-	            <input type="text" id="phone-number" name="phone-number" class="required" tabindex="6" />
-            </div>
-            <div>
-	            <label for="email">Email Address <em>*</em></label>
-	            <input type="text" id="email" name="email" class="required" tabindex="7" />
-            </div>
-            <div>
-	            <label for="communication-preference">What is your preferred method of communication? <em>*</em></label>
-		        <select id="communication-preference" name="communication-preference" class="required" tabindex="8">
-		            <option>Choose one</option>
-			        <option value="Phone">Phone</option>
-			        <option value="Email">Email</option>
-		        </select>
-            </div>
-            <div>
-	            <label for="place-hold">Should we place a hold on this item for you? <em>*</em></label>
-	            <select id="place-hold" name="place-hold" class="required" tabindex="10">
-		            <option value="Yes">Yes</option>
-		            <option value="No">No</option>
-	            </select>
-            </div>
-            <div>
-	            <label for="library-card-number">Library card number <em>*</em></label>
-	            <input type="text" id="library-card-number" name="library-card-number" class="required" tabindex="11" />
-            </div>
             <fieldset>
                 <legend>Tell us about the item:</legend>
                 <div>
 	                <label for="item-type">Type of Item <em>*</em></label>
-	                <select id="item-type" name="item-type" class="required" tabindex="12">
+	                <select id="item-type" name="item-type" class="required" tabindex="1">
 		                <option value="Book">Book</option>
 		                <option value="CD">CD</option>
 		                <option value="DVD">DVD</option>
@@ -85,28 +38,62 @@
                 <div>
                     
 	                <label for="item-title">Title <em>*</em></label>
-	                <input type="text" id="item-title" name="item-title" class="required wide" tabindex="13" /></span>
+	                <input type="text" id="item-title" name="item-title" class="required wide" tabindex="2" /></span>
                 </div>
                 <div id="catalog-check">
                     <div id="catalog-check-response" class="response callout"><span class="load inline"></span>Double checking catalog</div>
                 </div>
                 <div>
 	                <label for="item-author">Author</label>
-	                <input type="text" id="item-author" name="item-author" tabindex="14" />
+	                <input type="text" id="item-author" name="item-author" tabindex="3" />
                 </div>
                 <div>
 	                <label for="item-isbn">ISBN</label>
-	                <input type="text" id="item-isbn" name="item-isbn" tabindex="15" />
+	                <input type="text" id="item-isbn" name="item-isbn" tabindex="4" />
                 </div>
                 <div>
-	                <label for="purchase-explanation">Why should we purchase this item? <em>*</em></label>
-	                <textarea id="purchase-explanation" name="purchase-explanation" class="required" tabindex="16"></textarea>
+	                <label for="purchase-explanation">Why should we purchase this item?</label>
+	                <textarea id="purchase-explanation" name="purchase-explanation" tabindex="5"></textarea>
                 </div>
             </fieldset>
+			<fieldset>
+				<legend>Tell us about you:</legend>
+				<div>
+					<label for="name">Name <em>*</em></label>
+					<input type="text" id="name" name="name" class="required" tabindex="6" />
+				</div>
+				<div>
+					<label for="phone-number">Phone Number <em>*</em></label>
+					<input type="text" id="phone-number" name="phone-number" class="required" tabindex="7" />
+				</div>
+				<div>
+					<label for="email">Email Address <em>*</em></label>
+					<input type="text" id="email" name="email" class="required" tabindex="8" />
+				</div>
+				<div>
+					<label for="communication-preference">What is your preferred method of communication? <em>*</em></label>
+					<select id="communication-preference" name="communication-preference" class="required" tabindex="9">
+						<option>Choose one</option>
+						<option value="Phone">Phone</option>
+						<option value="Email">Email</option>
+					</select>
+				</div>
+				<div>
+					<label for="place-hold">Should we place a hold on this item for you?</label>
+					<select id="place-hold" name="place-hold" tabindex="10">
+						<option value="No">No</option>
+						<option value="Yes">Yes</option>
+					</select>
+				</div>
+				<div>
+					<label for="library-card-number">Library card number</label>
+					<input type="text" id="library-card-number" name="library-card-number" tabindex="11" />
+				</div>
+			</fieldset>
             <fieldset class="callout">
 			    <iframe id="challenge-image" src="/tools/sc/captcha.php"></iframe>
 			    <label>Enter the text that you see in the image above:<em>*</em></label>
-			    <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="15" />
+			    <input type="text" id="challenge-response" name="challenge-response" class="required" autocomplete="off" tabindex="12" />
 	    </fieldset>
             <div class="buttons right">
                 <input type="submit" value="Submit" />
