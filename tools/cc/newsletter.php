@@ -43,6 +43,7 @@
 			    else{
 			        echo 'You are already signed up for the newsletter.';
 			    }
+	        }
 		}
 		else{
 			echo 'No data to post!';

@@ -18,13 +18,8 @@
         "email": "forms@dppl.org"
     },  
     "recipients": [{
-		    "name": "Brodie Austin",
-		    "email": "baustin@dppl.org"
-        },
-        {
-            "name": "Readers Services Desk", 
-            "email": "readersservicesdesk@dppl.org"
-        }
-    ], 
+        "name": "Readers Services Desk", 
+        "email": "readersservicesdesk@dppl.org"
+    }], 
     "subject": "Purchase Suggestion"
 }

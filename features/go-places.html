@@ -20,8 +20,6 @@
 		.instructions{font-size: 70%;}
 		.footer{clear: both; margin-top: 1%; padding: 1%;}
 		.footer a{text-decoration: none; color: #fff;}
-		.close{display: block; position: absolute; top: 5px; right: 5px; height:1em; width:1em; line-height: 1em; font-size: 1em; font-weight: bold; color: #333; vertical-align: middle; text-align: center;  cursor: pointer; }
-		.close:hover{background-color: #aaa; border-radius: 2em;}
 		.nav{padding-top: 2em;}
 		.places{list-style: none; padding: 0;}
 		.places li{display: inline-block;}
@@ -29,8 +27,7 @@
 			body{width: 100%;}
 			.content{min-height: 100%;}
 			#streetview{width: 100%; height: 50%;}
-			#place{width: 96%; bottom: 0 !important; height: 49%;}
-			.close{display: none;}
+			#place{width: 96%; bottom: 0 !important; height: auto;}
 		}
 	</style>
 <body>
@@ -41,7 +38,6 @@
 	<div class="content">
 		<div id="streetview" style=""></div>
 		<div class="box" id="place">
-			<span class="close">×</span>
 			<div class="text">
 	            <h3 id="place-header">Providence</h3>
 	            <p id="place-text">&ldquo;Proving that home really is where the heart is, my current favorite place is Providence, Rhode Island. Now that my son lives there, I&rsquo;m visiting regularly, and spending time in its fantastic restaurants, museums, libraries and green spaces. I know that I haven&rsquo;t even begun to explore the history of this almost 400-year-old city, and its more recent history of corruption and creativity (it’s the setting for Showtime&rsquo;s <i><a href="http://dppl.bibliocommons.com/search?q=Brothers+--+Rhode+Island+--+Providence+--+Drama&t=subject">Brotherhood</a></i>).&rdquo;</p>
@@ -67,6 +63,7 @@
     </script>
 	<script>
 		var panorama, place, panoramaOptions;
+		
 		function initialize() {
 		  place = new google.maps.LatLng(41.825833, -71.407778);
 		  panoramaOptions = {
@@ -83,9 +80,6 @@
 		
 		$(document).ready(function(){
 			var place_name;
-			$('.close').click(function(){
-				$(this).parent().hide();
-			});
 			
 			$('.place-nav').click(function(){
 				place_name = $(this).attr('data-place');
