@@ -2,6 +2,7 @@
 test/
 images/
 teen/images/
+youth/*.jpg
 
 #Ignore robots.txt file
 robots.txt
@@ -27,3 +28,4 @@ $RECYCLE.BIN/
 *.bak
 *.temp
 *.tmp
+*.swf
