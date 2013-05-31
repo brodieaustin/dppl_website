@@ -26,5 +26,12 @@
 		"person" : "Roberta, Assistant Director",
 		"lat" : "41.825833",
 		"lng" : "-71.407778"
-	}
+	},
+    "guanajuato" : {
+        "header" : "Guanajuato, Mexico",
+		"description" : "Right now my favorite place is Guanajuato, Mexico since I&lsquo;m going to be spending a month there during June. It&lsquo;s a rustic, colonial city in the mountains of central Mexico that was was originally a silver mining city. There is an article in our <a href='http://ezproxy.dppl.org/login?url=http://infotrac.galegroup.com/itweb/des87360?db=NGMA'>National Geographic</a> archive about a program similar to the one I&lsquo;m going from the 1950s complete with <a href='http://tinyurl.galegroup.com/tinyurl/6VQB4'a vintage picture of the small mountain city</a> where I'll be living",
+		"person" : "Claire, Readers&lsquo; Services Assistant",
+		"lat" : "21.0172534",
+		"lng" : "-101.25310760000002"
+    }
 }
