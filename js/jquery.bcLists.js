@@ -26,7 +26,6 @@
 		var $this = $(this);
 	
 		$.getJSON(url + '?jsoncallback=?', function(data){
-			console.log(settings.show_title);
 			if (settings.show_title == true){
 				$this.before('<div class="list-title">' + data.list.name + '</div>');
 			}
@@ -40,7 +39,7 @@
 					});
 			
 					item = data.list.list_items[i].title;
-					//console.log(item);
+					console.log(item);
 					
 					if (item){
 						item_url = item['details_url'];
@@ -61,6 +60,14 @@
 										image_src = 'http://cdn.bibliocommons.com/images/default_covers/icon-book.png';
 									}
 									break;
+                                case 'BOOK_CD':
+                                    if (item['isbns']){
+										image_src = 'http://www.syndetics.com/index.aspx?isbn=' + item['isbns'][0] + '/MC.GIF&client=847-342-5300&type=xw12&oclc=';
+									}
+									else{
+										image_src = 'http://cdn.bibliocommons.com/images/default_covers/icon-audio-cd.png';
+									}
+                                    break;
 								case 'MUSIC_CD':
 									if (item['upcs']){
 										image_src = 'http://www.syndetics.com/index.aspx?isbn=/MC.GIF&client=847-342-5300&type=xw12&oclc=&upc=' + item['upcs'][0];

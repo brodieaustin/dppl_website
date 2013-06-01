@@ -39,9 +39,9 @@
 		<div id="streetview" style=""></div>
 		<div class="box" id="place">
 			<div class="text">
-	            <h3 id="place-header">Providence</h3>
-	            <p id="place-text">&ldquo;Proving that home really is where the heart is, my current favorite place is Providence, Rhode Island. Now that my son lives there, I&rsquo;m visiting regularly, and spending time in its fantastic restaurants, museums, libraries and green spaces. I know that I haven&rsquo;t even begun to explore the history of this almost 400-year-old city, and its more recent history of corruption and creativity (it’s the setting for Showtime&rsquo;s <i><a href="http://dppl.bibliocommons.com/search?q=Brothers+--+Rhode+Island+--+Providence+--+Drama&t=subject">Brotherhood</a></i>).&rdquo;</p>
-				<p id="place-person">-Roberta, Assistant Director </p>
+	            <h3 id="place-header">Guanajuato, Mexico</h3>
+	            <p id="place-text">&ldquo;Right now my favorite place is Guanajuato, Mexico since I&lsquo;m going to be spending a month there during June. It&lsquo;s a rustic, colonial city in the mountains of central Mexico that was was originally a silver mining city. There is an article in our <a href="http://ezproxy.dppl.org/login?url=http://infotrac.galegroup.com/itweb/des87360?db=NGMA">National Geographic</a> archive about a program similar to the one I&lsquo;m going from the 1950s complete with <a href="http://tinyurl.galegroup.com/tinyurl/6VQB4">a vintage picture of the small mountain city</a> where I'll be living&rdquo;</p>
+				<p id="place-person">-Claire, Readers&lsquo; Services Assistant </p>
 	        </div>
 		</div>
 	</div>
@@ -52,6 +52,7 @@
 			<li><a href="javascript:void(0);" class="button place-nav" data-place="muir-woods">Muir Woods National Monument</a></li>
 			<li><a href="javascript:void(0);" class="button place-nav" data-place="milwaukee">Milwaukee</a></li>
 			<li><a href="javascript:void(0);" class="button place-nav" data-place="providence">Providence</a></li>
+            <li><a href="javascript:void(0);" class="button place-nav" data-place="guanajuato">Guanajuato, Mexico</a></li>
 		</ul>
 	</div>
 	<div class="footer">
@@ -65,11 +66,11 @@
 		var panorama, place, panoramaOptions;
 		
 		function initialize() {
-		  place = new google.maps.LatLng(41.825833, -71.407778);
+		  place = new google.maps.LatLng(21.0172534, -101.25310760000002);
 		  panoramaOptions = {
 			position: place,
 			pov: {
-			  heading: 260,
+			  heading: 90,
 			  pitch: 10
 			}
 		  };
