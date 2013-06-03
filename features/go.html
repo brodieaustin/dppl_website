@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width">
 	<style>
 		html{width: 100%; height: 100%; background: url('/images/themes/go/go-striped-background.png');}
-		body{width: 90%; max-width: 1024px; height: 100%; margin: auto; overflow-x: hidden; overflow-y: auto; font-family: 'Optima LT Std', Optima, Helvetica, Arial, sans-serif; font-size: 18px; color: #333;}
+		body{width: 90%; max-width: 1024px; height: 100%; margin: auto; overflow-x: hidden; overflow-y: auto; font-family: 'Optima LT Std', Optima, Helvetica, Arial, sans-serif; font-size: 18px; color: #333; text-rendering: optimizeLegibility;}
 		p{line-height: 1.4em;}
 		a.button{font-size: 16px; display: inline-block; width: auto; height: 2em; line-height: 2em; margin: .5em 0; padding: 0 .5em; background-color: #adb1a2; color: white !important; vertical-align: middle; text-align: center; border-radius: .5em; box-shadow: 1px 1px 1px 0px #DDD; text-decoration: none;}
 		canvas{position: absolute; top: 0; left: 0; z-index: 50;}
@@ -43,7 +43,7 @@
 	<div class="headline">
 		<h1>Work Learn Play <b>Go</b></h1>
 	</div>
-	<div class="content">
+	<div id ="content" class="content">
 	    <div class="box three-quarter">
             <img src="/images/features/2013/src/ys-logo.png" class="image image-float" />
 	        <h2>Have Book Will Travel</h2>
@@ -85,32 +85,37 @@
 	<div class="footer">
 		<p><a href="/">Des Plaines Public Library</a></p>
 	</div>
-	
-	<script>
-		window.onload = function(){
+    <script>
+        window.onload = function(){
+            //note: bug in chrome 27 and not working properly
 			//adapted from http://stackoverflow.com/questions/9791904/animating-images-in-html5-and-canvas and http://jsfiddle.net/bDQ6b/2/
 			//make image object and get plane image
 			var img = new Image();
 			img.src = '/images/themes/go/plane.png';
 			img.width = '225';
 			img.height = '122';
-	
+
 			//get and set the canvas element
 			var c = document.getElementById('plane').getContext('2d');
 			//resize the canvas to fit width of screen
 			c.canvas.width = window.outerWidth;
-			
+
 			//once image is loaded set a timed function that animates place
 			//across the screen and draws dashed line after it.
 			//after each iteration, y value is randomized
-			img.addEventListener('load', function(){
+			img.onload = function(){
 				var interval = setInterval(function(){
 					var x = 0;
 					var y = Math.floor(Math.random() * (600 - 100 + 1)) + 100;
 					
 					return function() {
 						c.clearRect(0, 0, c.canvas.width, c.canvas.height);
-						c.drawImage(img, x, y);
+                        try{
+                            c.drawImage(img, x, y);
+                        }
+                        catch(e){
+                            clearInterval(interval);
+                        }
 						c.beginPath();
 						c.strokeStyle = 'white';
 						//c.setLineDash([20, 5]);
@@ -127,8 +132,7 @@
 						}
 					};
 				}(), 500/40);
-			}, false);
-			
+			}
 		}
 	</script>
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
