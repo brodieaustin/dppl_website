@@ -14,11 +14,12 @@
 		hr{margin-top: 2em; margin-bottom: 2em; border-bottom: 0; border-top: 1px solid #ddd;}
 		label{display: block; margin-bottom: .5em;}
 		input {display: inline-block; font-size: 90%; line-height: 1em; margin-bottom: 1em; }
-		.advice{display: block;  padding: .5em; background-color: #eee; font-style: oblique; font-size: .8em;}
+		.advice{display: inline-block;  padding: .5em; font-style: oblique; font-size: .8em;}
+        .instructions{margin-bottom: 2em;}
 		fieldset{border: 0; margin-left: 0; margin-bottom: 1.5em; padding: 0;}
 		fieldset legend{margin: 0; margin-bottom: .5em; padding-left: 0;font-weight: bold;}
 		ol li{margin-bottom: 1em;}
-		.result{width: 96%; margin-top: 2em; padding: 2%; background-color: #eee;}
+		.result{width: 96%; margin-top: 1em; padding: 2%; background-color: #eee;}
 		.error{margin-top: 0; color: red;}
 		#code{display: none;}
 		.button{display: inline-block; height: auto; width: auto; line-height: 1em; padding: 8px 10px; background-color: #c8c8c8; border: 0; font-size: 90%; text-decoration: none; color: #333; border-radius: 5px; cursor: pointer;}
@@ -45,13 +46,12 @@
 				<label for="background">Select a background color (default is whitesmoke):</label>
 				<input type="text" id="background" name="background" class="color" value="#f5f5f5" />
 				<label for="show-title">
-					<input type="checkbox" id="show-title" name="show-title" checked="checked" /> 
+					<input type="checkbox" id="show-title" name="show-title" /> 
 					Show list title
 				</label>
-				<label for="show-title">
+				<label for="show-thumbs">
 					<input type="checkbox" id="show-thumbs" name="show-thumbs" checked="checked" /> 
 					Show thumbnails
-					<span class="advice">Sometimes movies and music lists will only display a generic thumbnail. So, turn off thumbnails if you don't want that.</span>
 				</label>
 			</fieldset>
 			<input type="submit" value="Get the code" class="button" />
@@ -60,12 +60,13 @@
 			<a href="javascript:void(0);" id="edit" class="button right">Edit</a>
 			<h2>Now what?</h2>
 			<div class="image right"><img src="img/blogger-html-button.png" /><span class="caption">The Blogger HTML button</span></div>
-			<ol>
-				<li>Copy the code that appears below</li>
+			<ol class="instructions">
+				<li>Copy the code that appears below using the "Copy the Code" button.</li>
 				<li>Paste it (all of it!) into the HTML pane when you are writing your post.</li>
 				<li>If you switch back to the Compose View, don't worry if the list looks unformatted. Publish it and all will be well!</li>
 			</ol>
-			<div class="result"></div>
+            <button id="copy-button" class="button" data-clipboard-target="result" title="Click to copy me">Copy the Code</button>
+			<div class="result" id="result"></div>
 		</div>
 	</section>
 	<hr/>
@@ -76,8 +77,15 @@
 	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="js/spectrum/spectrum.js"></script>
+    <script src="/js/jquery.bcLists.js"></script>
+    <script src="/js/zeroclipboard/ZeroClipboard.min.js"></script>
 	<script>
 		$(document).ready(function(){
+            var clip = new ZeroClipboard($("#copy-button"), {moviePath: "/js/zeroclipboard/ZeroClipboard.swf"});
+            clip.on('complete' , function(client, args){
+                alert('Copied and ready to paste!');
+            });
+        
 			var params = new Array();
 			var param = decodeURIComponent(window.location.search.substring(1));
 			param = param.split('&');
@@ -119,16 +127,20 @@
 					}
 					else{
 						var m = p.exec(lid);
+                        lid  = m[1];
 						
 						var background = $('#background').val();
-						var show_title =  $('#show-title').is(':checked')?'':' data-bc-show-title="false" ';
-						var show_thumbs = $('#show-thumbs').is(':checked')?'':' data-bc-show-thumbs="false" ';
+						var show_title =  $('#show-title').is(':checked')?true:false;
+						var show_thumbs = $('#show-thumbs').is(':checked')?true:false;
 				
-						lid  = m[1];
-					
-						var text = '<code>&lt;div class="bc-list" id="bc-list-' + lid + '"' + show_title + show_thumbs + ' style="background-color: ' + background + ';"&gt;&lt;span class="load"&gt;&lt;/span&gt;&lt;/div&gt;</code>'
-					
-						$('.result').empty().append(text);
+                        $('#result').append('<code>&lt;div class=&quot;bc-list&quot; id=&quot;bc-list-' + lid + '&quot; style=&quot;background-color: ' + background + ';&quot&gt;<span id="list"></span>&lt;/div&gt;</code>');
+ 
+						$('#list').empty().bcList({
+                            list_id : lid,
+                            show_title : show_title,
+                            show_thumbs : show_thumbs,
+                            output : 'text'
+                        });
 						
 						$(this).hide();
 						$('#code').show();
