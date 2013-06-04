@@ -12,7 +12,6 @@
 		'output' : 'html',
 		'list_id' : '113135461',
 		'library' : 'dppl'
-		
 	}, options);
 	
 	var baseurl = (window.location.host == 'dppl.org'?'/tools/bc/list/':'http://dppl.org/tools/bc/list/');
@@ -27,7 +26,15 @@
 	
 		$.getJSON(url + '?jsoncallback=?', function(data){
 			if (settings.show_title == true){
-				$this.before('<div class="list-title">' + data.list.name + '</div>');
+                switch (settings.output){
+                    case 'html':
+                        $this.before('<div class="list-title">' + data.list.name + '</div>');
+                        break;
+                    case 'text':
+                        $this.before('&lt;div class=&quot;list-title&quot;&gt;' + data.list.name + '&lt;/div&gt;');
+                        break;
+                }
+				
 			}
 			var items = data.list.list_items;
 			var len = ((settings.num_items == 0)?data.list.item_count:settings.num_items);
@@ -39,7 +46,7 @@
 					});
 			
 					item = data.list.list_items[i].title;
-					console.log(item);
+					//console.log(item);
 					
 					if (item){
 						item_url = item['details_url'];
@@ -87,7 +94,7 @@
 									break;
 							}
 							
-							console.log(image_src)
+							//console.log(image_src)
 							
 							img = $('<img>',{
 								'class': 'bookjacket',
@@ -105,7 +112,7 @@
 								$this.append(div);
 								break;
 							case 'text':
-								console.log(div[0].outerHTML);
+								//console.log(div[0].outerHTML);
 								$this.text($this.text() + div[0].outerHTML);
 								break;
 						}
