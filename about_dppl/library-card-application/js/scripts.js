@@ -51,17 +51,18 @@
 					$(form).ajaxSubmit({
 						success: function(data){    
 						        $('#application-load').hide();
-								if (data.status == 'success' ){
+						        var response = $.parseJSON(data);
+								if (response.status == 'success' ){
 								    $('#application')[0].reset();
 								    $('.card-application').hide();
 								}
 								else{
 								    if (app_counter > 6){
-								        data.message = 'You have unsucessfully submitted the form too many times. The form will now reset.';
+								        response.message = 'You have unsucessfully submitted the form too many times. The form will now reset.';
 								        $('#application')[0].reset();
 								    }
 								}
-								$('#application-response > .response-message').html(data.message).addClass(data.status).parent().fadeIn();	
+								$('#application-response > .response-message').html(response.message).addClass(response.status).parent().fadeIn();	
 							},
 							failure: function(){
 								$('#application-response >.response-message').html("Something went wrong. Please check your form and try again later.").removeClass('success').addClass('failure').parent().fadeIn();

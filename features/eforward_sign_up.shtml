@@ -26,7 +26,7 @@
 				$(this).hide();
 				$('.load').show();
 				$.post('/tools/cc/newsletter.php', $(this).serialize(), function(data){
-					console.log(data);
+					//console.log(data);
 					$('#newsletter')[0].reset()
 					$('.response-message').html(data);
 					$('.response').show();

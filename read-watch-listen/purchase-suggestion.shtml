@@ -161,7 +161,9 @@
 			        $('.response').hide();
 			        $('.response-message').html('').removeClass('success').removeClass('failure');
 					$.post($(form).attr('action'), $(form).serialize(), function(data){
-					    if (data.status == 'success'){
+					    var response = $.parseJSON(data);
+					    
+					    if (response.status == 'success'){
 					        $(form)[0].reset();
 					        $(form).hide();
 					    }
@@ -169,7 +171,7 @@
 					        $(form).show();
 					    }
 					    $('.load').hide();
-						$('.response-message').addClass(data.status).html(data.message).parent().fadeIn();
+						$('.response-message').addClass(response.status).html(response.message).parent().fadeIn();
 					    
 					});
 				}
