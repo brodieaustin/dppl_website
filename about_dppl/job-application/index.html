@@ -32,7 +32,7 @@
 			<a class="brand" href="/">Des Plaines Public Library</a>
 			<div class="buttons right">
 			    <a href="mailto:jobs@dppl.org" class="help">jobs@dppl.org</a>
-			    <button id="save">Save</button>
+			    <button id="save" class="track" data-ga-category="Job-Application" data-ga-action="Save-Application">Save</button>
 			</div>
 		</div><!--closing div for nav-->
 	</div><!--closing div for top navbar-->
@@ -50,7 +50,7 @@
 	            <p><strong>Prefer to download and complete the application?</strong></p>
 	            <p>You can email the completed form to jobs@dppl.org, mail it to the library, or drop it off on the 2nd floor.</p>
 	            <div>
-	                <a href="download/DPPL-Application-Print.pdf" target="_blank" class="button">Download now</a>
+	                <a href="download/DPPL-Application-Print.pdf" target="_blank" class="button track" data-ga-category="Job-Application" data-ga-action="Download-Application"">Download now</a>
 	            </div>
 	            <span class="close">&times;</span>
 	        </div>
@@ -124,9 +124,7 @@
 						    <label for="position">Position applying for: <em>*</em></label>
 						    <select name="position" id="position" class="required" tabindex="9">
 							    <!--update positions with <option value="Job Name">Job Name</option>-->
-							    <option></option>
-								<option value="Shelver">Shelver</option>
-								<option value="Part-time Monitor">Part-time Monitor</option>
+							    <option>No open positions</option>
 						    </select>
 					    </div>
 					    <div class="print-float">
@@ -571,6 +569,7 @@
 	<script src="/js/jquery.validate.min.js"></script>
 	<script src="/js/jquery.form.js"></script>
 	<script src="/js/jquery.scrollspy.js"></script>
+	<script src="/js/jquery.gaEvents.js"></script>
 	<script src="js/scripts.js" ></script>
 	<script>
 	    $(document).ready(function(){

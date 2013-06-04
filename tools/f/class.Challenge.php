@@ -31,10 +31,11 @@
         public function render_response(){
             if ($this->response['status'] == 'failure'){
                 if ($this->ajax == true){
-                    header('Content-Type: application/json; charset=UTF-8');
+                    header('Content-Type: text/html; charset=UTF-8');
                     die(json_encode($this->response));
                 }
                 else{
+                    
                     die($this->response['message']);
                 }
             }

@@ -160,7 +160,7 @@
 		
 		public function render_response(){
             if ($this->ajax == true){
-                header('Content-Type: application/json; charset=UTF-8');
+                header('Content-Type: text/html; charset=UTF-8');
                 $out = json_encode($this->response);
             }
             else{

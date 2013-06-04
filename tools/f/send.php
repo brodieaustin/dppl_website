@@ -11,12 +11,14 @@
 	$fresponse;
 	$ajax;
 	
-	if ($_SERVER["HTTP_X_REQUESTED_WITH"]){
+	/*if ($_SERVER["HTTP_X_REQUESTED_WITH"]){
 	    $ajax = true;
     }
     else{
         $ajax = false;
-    }
+    }*/
+    
+    $ajax = true;
 	
 	if (!empty($_POST)){
 	
