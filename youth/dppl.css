@@ -4,7 +4,7 @@
 html{background-color: #DDCB96; overflow-x: hidden;}
 
 body{
-  width: 860px !important;
+  width: 840px !important;
   margin: 20px auto !important;
   background-color: transparent !important;
   font-family: Helvetica, Arial, sans-serif;
@@ -145,7 +145,9 @@ background-repeat:no-repeat;
 dl.book-list{margin-top: 0;}
 dl.book-list dd{margin-left: 0; margin-bottom: 1.5em;}
 	
-	
+#banner{width: 620px; background: #fff url('src-2013-suitcase-noback.png') no-repeat 0 0; height: 100px; margin: 10px 0; padding: 10px; padding-left: 190px; border-radius: 5px;}
+
+#banner h3{margin-bottom: 0;}
 	
 	
 	
