@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
-html{background-color: #E2E2E2;}
+html{background: #E2E2E2 url('images/stripe-bg.png');}
 
 body {
   width:900px !important;
@@ -16,8 +16,14 @@ body a {
   color: #003366;
   }
 
+  hr{
+    height: 6px;
+    border: 0;
+    background-image: url('images/stripe-bg.png');
+  }
+  
 .sitenav {
-  text-align: center; border-top: 2px solid #E2E2E2; margin: 1em; padding: 1em 0;
+  text-align: center; margin: 1em 0; padding: 1em 0; background-image: url('images/stripe-bg.png');
   }
   
 .sitenavaddy {
@@ -171,29 +177,6 @@ body a {
   font-weight: bold;
   }
   
-/* Twitter */
-
-.twitter_box {
-  position: absolute;
-  left: 390px;
-  top: 6px;
-  width: 294px;
-  height: 87px;
-}
-
-.twitter_title {
-  font-family: "Comic Sans MS", helvetica;
-  
-  font-weight: bold;
-}
-  
-#twitter_update_list {
-  font-family: "Verdana", helvetica;
-  font-size: 13px;
-  list-style-type: none;
-  padding: 0;
-  margin: 7;
-}
 
 /*special style sheet for database listings*/
 
@@ -205,8 +188,8 @@ body a {
 
 div#db-list h3{
   clear: both;
-  border-bottom: 3px solid #eee;
-  padding: 4px;
+  background-image: url('images/stripe-bg.png');
+  padding: 4px 8px;
 }
 
 div#db-list h4{
@@ -263,5 +246,14 @@ div#db-list .no-style{
 .ad .image img{width: 100%; max-width: 290px; }
 .ad .text{float: left; width: 45%;}
 
-a.button{display: inline-block; padding: 4px 8px; background-color: #339999; color: #fff; text-decoration: none;}
+a.button{display: inline-block; padding: 4px 8px; border-radius: 5px; background-color: #aaa; color: #fff; text-decoration: none;}
 a.button:hover{background-color: #888;}
+
+#banner{height: 120px; background: #fff url('images/plane.png') no-repeat 10px 10px; padding: 10px 4px; padding-left: 220px; font-size: 13px;}
+
+#banner h3{margin-bottom: .5em;}
+#banner p{margin-top: 0;}
+
+.story{clear: both; margin-bottom: 1em; padding-bottom: 1em; overflow: hidden;}
+.story:last-child{border-bottom: 0;}
+.story img{float: right; margin-left: 1em; }

@@ -19,8 +19,15 @@
 		.style10 {font-size: 16px}
 		#list{overflow: auto; width: 613px; margin: 0; display: none;}
 		h2{margin-bottom: 0;}
-		.list-item{float: left; width: 140.333px; margin: 16px; height: 250px; padding: 16px; text-align: center;}
+		.list-item{float: left; width: 140.333px; margin: 16px 32px 0 0; height: 250px; padding: 16px; text-align: center;}
 		.list-item a{display: block; margin-top: 16px; color: #333; text-decoration: none;}
+        .big-button{padding: 1em !important; margin-right: 1em;}
+        .load{
+          display: none;
+          width: 1.5em;
+          height: 1.5em;
+          background: url('/images/ajax-loader.gif') no-repeat center left;
+        }
 	</style>
 <!--[if lte IE 6]>
 <script type="text/javascript" src="supersleight-min.js"></script>
@@ -50,18 +57,12 @@
          </td>
 	<td valign="top" class="contentbody">
 	<h1>Reading Lists</h1>
-	<p>Select a list from the list below and click "Go":</p>
-	<form id="get-list">
-		<select id="list-id" name="list-id">
-			<option value="None">Select a list to start</option>
-			<option value="http://dppl.bibliocommons.com/list/show/84339150_desplainesreaders/113135461_2012_maine_east_summer_reading_fiction">Maine East Fiction</option>
-			<option value="http://dppl.bibliocommons.com/list/show/84339150_desplainesreaders/113143781_2012_maine_east_summer_reading_nonfiction">Maine East NonFiction</option>
-			<option value="http://dppl.bibliocommons.com/list/show/84339150_desplainesreaders/111775091_2012_maine_west_summer_reading_fiction">Maine West Fiction</option>
-			<option value="http://dppl.bibliocommons.com/list/show/84339150_desplainesreaders/111779394_2012_maine_west_summer_reading_nonfiction">Maine West NonFiction</option>
-		</select>
-		<input type="button" value="Go" id="go" />
-	</form>
+    <div>
+        <a href="http://dppl.bibliocommons.com/list/show/84339150_desplainesreaders/176155123_2013_maine_east_summer_reading"class="list button big-button">Maine East</a>
+        <a href="http://dppl.bibliocommons.com/list/show/84339150_desplainesreaders/176088833_2013_maine_west_summer_reading"class="list button big-button">Maine West</a>
+    </div>
 	<hr />
+    <div class="load"></div>
 	<div id="list"></div>
 <!-- delete this row for the last Content Box -->
 <tr>
@@ -96,16 +97,17 @@
 	pageTracker._initData();
 	pageTracker._trackPageview();
 	</script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
 		
-			$('#go').click(function(){
+			$('.list').click(function(){
+                $('.load').show();
 				
 				var key = '6vuvh66tx8evnz9b3r768gfh';
 				var uid= '84339150';
 				
-				var lid = $('#list-id').val();
+				var lid = $(this).attr('href');
 				
 				if (lid == 'None'){
 					alert("Sorry, but you didn't select a list. Please try again");
@@ -155,9 +157,12 @@
 								
 								$('#list').append(div);
 								$('#list').fadeIn(800);
+                                $('.load').hide();
 							}
 					});
 				}
+                
+                return false;
 			
 			});
 			
