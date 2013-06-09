@@ -79,11 +79,11 @@
 	    $cleaninput = trim(str_replace('\n', ' ', $cleaninput));
 	    
 	    //break into sentences 
-	    $pieces = preg_split("/[.|!|?]/", $cleaninput);
+	    $pieces = preg_split("/([.|!|?])/", $cleaninput, -1, PREG_SPLIT_DELIM_CAPTURE);
 	    
 	    //return the first sentece with ellipsis after it
 	    if ($pieces){
-	        $output = $pieces[0] . '&hellip;';
+	        $output = $pieces[0] . $pieces[1] . ' Read more&hellip;';
 	    }
 	    else{
 	        $output = $cleaninput;

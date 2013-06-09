@@ -19,7 +19,7 @@
 	
 		var $this = $(this);
 	
-		$.getJSON('http://dppl.org/tools/feed.php?jsoncallback=?', {url: settings.url, feed_type: settings.feed_type, num_items: settings.num_items}, function(data){
+		$.getJSON('/tools/feed.php?jsoncallback=?', {url: settings.url, feed_type: settings.feed_type, num_items: settings.num_items}, function(data){
 		    //console.log(data);
 		    
 		    if (settings.feed_title.length > 0){
