@@ -124,7 +124,8 @@
 						    <label for="position">Position applying for: <em>*</em></label>
 						    <select name="position" id="position" class="required" tabindex="9">
 							    <!--update positions with <option value="Job Name">Job Name</option>-->
-							    <option>No open positions</option>
+							    <option></option>
+								<option value="Part-time Building and Security Services Assistant">Part-time Building And Security Services Assistant</option>
 						    </select>
 					    </div>
 					    <div class="print-float">
@@ -537,7 +538,7 @@
 				    <label for="send-copy" class="full"><input type="checkbox" name="send-copy" id="send-copy" value="true" tabindex="106" />Send yourself a copy of this application</label>
 			    </div>
 			    <div class="buttons right">
-				    <input type="submit" value="Submit" tabindex="107" />
+				    <input type="submit" value="Submit" tabindex="107" class="track" data-ga-category="Job-Application" data-ga-action="Submit-Application" />
 			    </div>
 	        </form>
 	    </div><!--closing div for form-->
@@ -569,8 +570,8 @@
 	<script src="/js/jquery.validate.min.js"></script>
 	<script src="/js/jquery.form.js"></script>
 	<script src="/js/jquery.scrollspy.js"></script>
-	<script src="/js/jquery.gaEvents.js"></script>
-	<script src="js/scripts.js" ></script>
+    <script src="/js/jquery.gaEvents.js"></script>
+	<script src="js/scripts.js"></script>
 	<script>
 	    $(document).ready(function(){
 	        //highlight foot navigation with current section

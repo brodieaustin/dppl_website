@@ -1,7 +1,7 @@
     $(document).ready(function(){
         //json formatted list of current jobs, used for pretty urls params below
         //{"job-title" : "Job Title"}
-        var current_jobs = {"youth-services-assistant" : "Youth Services Assistant", "circulation-services-clerk" : "Circulation Services Clerk"};
+        var current_jobs = {"part-time-building-security-assistant" : "Part-time Building and Security Services Assistant"};
         var param, pos;
         
         //test for local storage
@@ -65,7 +65,8 @@
 			    $('.response-message').html('').removeClass('success').removeClass('failure');
 				$(form).ajaxSubmit({
 					success: function(data){
-						var response = $.parseJSON(data);
+                        var response = $.parseJSON(data);
+						//console.log(data);
 					    $('.load').hide();
 					    if (response.status == 'success'){
 					        $(form)[0].reset();
