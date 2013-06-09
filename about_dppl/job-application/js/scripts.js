@@ -66,7 +66,6 @@
 				$(form).ajaxSubmit({
 					success: function(data){
 						var response = $.parseJSON(data);
-						console.log(response);
 					    $('.load').hide();
 					    if (response.status == 'success'){
 					        $(form)[0].reset();
