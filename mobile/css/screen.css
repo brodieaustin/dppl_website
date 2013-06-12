@@ -92,21 +92,23 @@ span.block{display: block;}
   position: absolute;
   top: 15px;
   right: 3%;
-  width: 70px
-  height: 50px;
-  padding: .2em;
-  border: 1px solid #000;
-  border-radius: 4px;
-  background-color: #333;
+  padding: .2em;;
   cursor: pointer;
+  text-decoration: none;
+}
+
+#header .nav-button:hover{
+  border: 0 !important;
+  background-color: #333;
+  border-radius: 5px;
 }
 
 #header .nav-button .icon-bar{
   display: block;
-  width: 18px;
-  height: 2px;
-  margin: 3px 5px;
-  background-color: #ddd;
+  width: 22px;
+  height: 3px;
+  margin: 4px 5px;
+  background-color: #fff;
   border-radius: 1px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -121,10 +123,11 @@ span.block{display: block;}
   overflow: hidden;
 }
 
+#header ul.nav li{display: inline-block;}
+
 #header ul.nav li a{
   display: block;
   width: auto;
-  float: left;
   padding: .5em 1em;
   text-align: center;
   color: #fff;
@@ -132,6 +135,7 @@ span.block{display: block;}
 
 #header ul.nav li a:hover{
   background-color: #ddd;
+  color: #333;
   border: 0;
 }
 
@@ -215,6 +219,7 @@ span.block{display: block;}
  blockquote{margin-left: 0; margin-right: 0;}
  #header .nav-button{display: block;}
  #header ul.nav{display: none;}
+ #header ul.nav li{display: block;}
  #header ul.nav li a{width: auto; float: none; text-align: left;}
  #header a.banner{width: 90%; margin: 0; padding-bottom: 0;}
  div.hero h2{text-align: center;}
