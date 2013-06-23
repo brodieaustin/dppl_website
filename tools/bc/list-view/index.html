@@ -4,49 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>List View | BC | DPPL</title>
+	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="js/spectrum/spectrum.css" />
-	<link rel="stylesheet" href="css/list.css" />
-	<style>
-		html{background-color: #eee;}
-		body{width: 80%; max-width: 1024px; margin: 3% auto; background-color: #fff; padding: 4%; font-size: 100%; font-family: sans-serif; overflow-y: scroll;}
-		h1{margin-top: 0;}
-		h3{font-size: 100%;}
-		hr{margin-top: 2em; margin-bottom: 2em; border-bottom: 0; border-top: 1px solid #ddd;}
-		label{display: block; margin-bottom: .5em;}
-	    .inline{display: inline-block; margin-right: 2em; margin-bottom: 0;}
-		input {display: inline-block; font-size: 90%; line-height: 1em; margin-bottom: 1em; border: 1px solid #aaa;}
-		.advice{display: inline-block;  padding: .5em; font-style: oblique; font-size: .8em;}
-        .instructions{margin-bottom: 2em;}
-		fieldset{border: 0; margin-left: 0; margin-bottom: 1em; padding: 0;}
-		fieldset legend{margin: 0; margin-bottom: .5em; padding-left: 0;font-weight: bold;}
-		ol li{margin-bottom: 1em;}
-		.result{width: 96%; margin-top: .5em; padding: 2%; background-color: #eee;}
-		.error{margin-top: 0; color: red;}
-		#code{display: none;}
-		.button{display: inline-block; height: auto; width: auto; line-height: 1em; padding: 8px 10px; background-color: #c8c8c8; border: 0; font-size: 90%; text-decoration: none; color: #333; border-radius: 5px; cursor: pointer;}
-		.button:hover{background-color: #eee;}
-		.right{float: right; margin: 0 0 .5em .5em;}
-		.image{background-color: #eee; padding: .5em;}
-		.image .caption{display: block; width: 100%; margin-top: 4px; font-size: 70%; color: #888; text-align: center;}
-		.image img{border: 5px solid #fff;}
-		.sp-replacer{width: 2.8em;}
-		.icon{display: inline-block; height: 16px; width: 16px;}
-		.icon-list{background: url('img/16_list.png') no-repeat center center;}
-		.icon-grid{background: url('img/16_thumbnail.png') no-repeat center center;}
-		.preview{display: none; position: absolute; width: 100%; min-height: 100%; top: 0; left: 0; padding: 1em 0 20% 0; background-color: #fff; overflow: hidden;}
-		.buttons{margin: 0 1em;}
-		.preview-div{width: 586px; margin: auto;}
-		.close{display: inline-block; float: right;font-weight: bold; cursor: pointer}
-        .delete{position: absolute; top: 0; left: 0; background-color: red; border-radius: 50%; color: white; font-weight: bold;}
-        .editing{background-color: #eee;}
-        /*bc list*/
-        .bc-list-items{overflow: hidden;}
-        .bc-list-item{position: relative;}
-        .bc-layout-grid .bc-list-item{float: left; width: 195.3333px; height: 220px; margin: 0; text-align: center;}
-        .bc-item-thumb{position: relative; display: block; width: auto; height: 204px; margin: 4px; padding: 4px; background-color: #fff; text-align: center;}
-        .bc-item-thumb img{max-width: 100%;}
-        .bc-item-thumb .bc-item-title{position: absolute; top: 40%; left: 0; right: 0;}
-	</style>
+	<link rel="stylesheet" href="/js/bclists/bclists.css" />
 </head>
 <body>
 	<header>
@@ -67,6 +27,10 @@
 			    <label for="layout-list" class="inline">
 					<input type="radio" id="layout-list" name="layout" value="bc-layout-list" /> 
 					 <i class="icon icon-list"></i>
+				</label>
+				 <label for="layout-carousel" class="inline">
+					<input type="radio" id="layout-carousel" name="layout" value="bc-layout-carousel" /> 
+					<i class="icon icon-carousel"></i> 
 				</label>
 			</fieldset>	
 			<fieldset>
@@ -127,7 +91,7 @@
 	<!--scripts-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/spectrum/spectrum.js"></script>
-    <script src="/js/jquery.bcLists.js"></script>
+    <script src="/js/bclists/jquery.bclists.js"></script>
     <script src="/js/zeroclipboard/ZeroClipboard.min.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -152,7 +116,6 @@
 			
 			$('#list-id').val((params['page'] ? params['page'] : ''));
 			
-			$('#list-id').val('http://dppl.bibliocommons.com/list/show/84339150_desplainesreaders/176651973_audie_award_audiobook_winners_2013');
 			
 			$('.color').spectrum({
 				color: '#f5f5f5',
@@ -193,7 +156,7 @@
 				
                         //$('#result').empty().append('<code>&lt;div class=&quot;bc-list ' + layout + '&quot; id=&quot;bc-list-' + lid + '&quot; style=&quot;background-color: ' + background + ';&quot&gt;<span id="list"></span>&lt;/div&gt;</code>');
  
-						$('#result').empty().bcList({
+						$('#result').empty().bclist({
                             list_id : lid,
                             layout_class : layout,
                             inline_styles : 'background-color: ' + background,
