@@ -3,7 +3,7 @@
 
 	<!--meta, link, styles, and modernizer link in head file-->
 	<!--#include virtual="/includes/head.html"-->
-
+	<link rel="stylesheet" href="/js/bclists/bclists.css" />
 </head>
 <body>
 	<!--header-->
@@ -21,7 +21,7 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
-	<script src="/js/jquery.bcLists.js"></script>
+	<script src="/js/bclists/jquery.bclists.js"></script>
 	<script src="/js/cycle/jquery.cycle.all.js"></script>
 	<script src="/js/jquery.addFeed.js"></script>
 	<script>
@@ -36,10 +36,10 @@
 			     }).fadeIn(500);
 		    
 			$('.list').show();
-			$('#list').bcList({
+			$('#list').bclist({
 				'list_id' : '176552974'
 			}, function(){
-				$('#list').cycle({ 
+				$('#list .bc-list-items').cycle({ 
 							fx:     'scrollVert', 
 							speed:  '1000',
 							timeout: '4000',

@@ -4,32 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>List View | BC | DPPL</title>
+	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="js/spectrum/spectrum.css" />
-	<link rel="stylesheet" href="css/list.css" />
-	<style>
-		html{background-color: #eee;}
-		body{width: 80%; margin: 3% auto; background-color: #fff; padding: 4%; font-size: 100%; font-family: sans-serif; overflow-y: scroll;}
-		h1{margin-top: 0;}
-		h3{font-size: 100%;}
-		hr{margin-top: 2em; margin-bottom: 2em; border-bottom: 0; border-top: 1px solid #ddd;}
-		label{display: block; margin-bottom: .5em;}
-		input {display: inline-block; font-size: 90%; line-height: 1em; margin-bottom: 1em; }
-		.advice{display: inline-block;  padding: .5em; font-style: oblique; font-size: .8em;}
-        .instructions{margin-bottom: 2em;}
-		fieldset{border: 0; margin-left: 0; margin-bottom: 1.5em; padding: 0;}
-		fieldset legend{margin: 0; margin-bottom: .5em; padding-left: 0;font-weight: bold;}
-		ol li{margin-bottom: 1em;}
-		.result{width: 96%; margin-top: 1em; padding: 2%; background-color: #eee;}
-		.error{margin-top: 0; color: red;}
-		#code{display: none;}
-		.button{display: inline-block; height: auto; width: auto; line-height: 1em; padding: 8px 10px; background-color: #c8c8c8; border: 0; font-size: 90%; text-decoration: none; color: #333; border-radius: 5px; cursor: pointer;}
-		.button:hover{background-color: #eee;}
-		.right{float: right; margin: 0 0 .5em .5em;}
-		.image{background-color: #eee; padding: .5em;}
-		.image .caption{display: block; width: 100%; margin-top: 4px; font-size: 70%; color: #888; text-align: center;}
-		.image img{border: 5px solid #fff;}
-		.sp-replacer{margin-bottom: 1em;}
-	</style>
+	<link rel="stylesheet" href="/js/bclists/bclists.css" />
 </head>
 <body>
 	<header>
@@ -42,31 +19,59 @@
 				<input type="text" id="list-id" style="width: 100%;" />
 			</fieldset>
 			<fieldset>
-				<legend>Options</legend>
-				<label for="background">Select a background color (default is whitesmoke):</label>
-				<input type="text" id="background" name="background" class="color" value="#f5f5f5" />
-				<label for="show-title">
-					<input type="checkbox" id="show-title" name="show-title" /> 
-					Show list title
+			    <legend>Layout</legend>
+			    <label for="layout-grid" class="inline">
+					<input type="radio" id="layout-grid" name="layout" value="bc-layout-grid" checked="checked" /> 
+					<i class="icon icon-grid"></i> 
 				</label>
-				<label for="show-thumbs">
-					<input type="checkbox" id="show-thumbs" name="show-thumbs" checked="checked" /> 
-					Show thumbnails
+			    <label for="layout-list" class="inline">
+					<input type="radio" id="layout-list" name="layout" value="bc-layout-list" /> 
+					 <i class="icon icon-list"></i>
+				</label>
+				 <label for="layout-carousel" class="inline">
+					<input type="radio" id="layout-carousel" name="layout" value="bc-layout-carousel" /> 
+					<i class="icon icon-carousel"></i> 
+				</label>
+			</fieldset>	
+			<fieldset>
+			    <legend>Style</legend>
+			    <label for="background">Select a background color (default is whitesmoke):
+				    <input type="text" id="background" name="background" class="color full" value="#f5f5f5" />
 				</label>
 			</fieldset>
-			<input type="submit" value="Get the code" class="button" />
+			<fieldset>
+				<legend>Options</legend>
+		        <label for="show-title" class="inline">
+			        <input type="checkbox" id="show-title" name="show-title" /> 
+			        Show list title
+		        </label>
+		        <label for="show-description" class="inline">
+			        <input type="checkbox" id="show-description" name="show-description" /> 
+			        Show list description
+		        </label>
+			    <label for="show-thumbs" class="inline">
+				    <input type="checkbox" id="show-thumbs" name="show-thumbs" checked="checked" /> 
+				    Show thumbnails
+			    </label>
+			    <label for="show-annotations" class="inline">
+				    <input type="checkbox" id="show-annotations" name="show-annotations" /> 
+				    Show annotation
+			    </label>
+			</fieldset>
+			<button type="submit" class="button">Get the Code</button>
 		</form>
 		<div id="code">
-			<a href="javascript:void(0);" id="edit" class="button right">Edit</a>
+		    <div class="image right"><img src="img/blogger-html-button.png" /><span class="caption">The Blogger HTML button</span></div>
 			<h2>Now what?</h2>
-			<div class="image right"><img src="img/blogger-html-button.png" /><span class="caption">The Blogger HTML button</span></div>
 			<ol class="instructions">
 				<li>Copy the code that appears below using the "Copy the Code" button.</li>
 				<li>Paste it (all of it!) into the HTML pane when you are writing your post.</li>
 				<li>If you switch back to the Compose View, don't worry if the list looks unformatted. Publish it and all will be well!</li>
 			</ol>
             <button id="copy-button" class="button" data-clipboard-target="result" title="Click to copy me">Copy the Code</button>
-			<div class="result" id="result"></div>
+            <button id="preview-button" class="button">Preview</button>
+            <button id="edit" class="button right">Edit</button>
+			<div class="result"><code id="result"></code></div>
 		</div>
 	</section>
 	<hr/>
@@ -75,12 +80,23 @@
 		<p>Just add the list view bookmarklet to your toolbar (click and drag it to browser's bookmark bar). View a list in Bibliocommons, click the bookmarklet and you're on your way!</p>
 		<a href="javascript:q=encodeURIComponent(location.href);void(open('http://dppl.org/tools/bc/list-view/index.html?page=' + q,'List View','toolbar=no,width=800,height=800'));" class="button">BC List Bookmarklet</a>
 	</footer>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!--list preview-->
+	<div class="preview">
+	    <div class="buttons">
+	        <button type="button" class="button" id="edit-list">Edit</button>
+	        <button type="button" class="button close">&times;</button>
+	    </div>
+	    <div class="preview-div"></div>
+	</div>
+	<!--scripts-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/spectrum/spectrum.js"></script>
-    <script src="/js/jquery.bcLists.js"></script>
+    <script src="/js/bclists/jquery.bclists.js"></script>
     <script src="/js/zeroclipboard/ZeroClipboard.min.js"></script>
 	<script>
 		$(document).ready(function(){
+		    var edited;
+		    
             var clip = new ZeroClipboard($("#copy-button"), {moviePath: "/js/zeroclipboard/ZeroClipboard.swf"});
             clip.on('complete' , function(client, args){
                 alert('Copied and ready to paste!');
@@ -99,6 +115,7 @@
 			}
 			
 			$('#list-id').val((params['page'] ? params['page'] : ''));
+			
 			
 			$('.color').spectrum({
 				color: '#f5f5f5',
@@ -130,15 +147,23 @@
                         lid  = m[1];
 						
 						var background = $('#background').val();
+						var layout = $('input[name=layout]:checked').val();
+						//console.log(layout);
 						var show_title =  $('#show-title').is(':checked')?true:false;
+						var show_description = $('#show-description').is(':checked')?true:false;
 						var show_thumbs = $('#show-thumbs').is(':checked')?true:false;
+						var show_annotations = $('#show-annotations').is(':checked')?true:false;
 				
-                        $('#result').append('<code>&lt;div class=&quot;bc-list&quot; id=&quot;bc-list-' + lid + '&quot; style=&quot;background-color: ' + background + ';&quot&gt;<span id="list"></span>&lt;/div&gt;</code>');
+                        //$('#result').empty().append('<code>&lt;div class=&quot;bc-list ' + layout + '&quot; id=&quot;bc-list-' + lid + '&quot; style=&quot;background-color: ' + background + ';&quot&gt;<span id="list"></span>&lt;/div&gt;</code>');
  
-						$('#list').empty().bcList({
+						$('#result').empty().bclist({
                             list_id : lid,
+                            layout_class : layout,
+                            inline_styles : 'background-color: ' + background,
                             show_title : show_title,
+                            show_description : show_description,
                             show_thumbs : show_thumbs,
+                            show_annotations : show_annotations,
                             output : 'text'
                         });
 						
@@ -149,7 +174,32 @@
 				
 					return false;
 				});
-			
+		    $('#preview-button').click(function(){
+		        $('.preview-div').empty().append($('<div>').html($('#result').html()).text()).parent().show()
+		    });	
+		    
+		    $('.close').click(function(){
+		        if (edited == true){
+		            $('.preview-div').find('.delete').remove();
+		            $('#result').empty().text($('.preview-div').html());
+		        } 
+		        $(this).parents('.preview').hide();
+		    });
+		    
+		    $('#edit-list').click(function(){
+		        if ($(this).hasClass('editing')){
+		            $('.preview-div').find('.delete').remove();
+		        }
+		        else{
+		            $('.preview-div').find('.bc-list-item').append('<button class="button delete">&times;</button>').click(function(){
+		                $(this).remove();
+		                console.log('delete');
+		                edited = true;
+		            });
+		        }
+		        $(this).toggleClass('editing').html(($(this).hasClass('editing')?'Editing':'Edit'));
+		    });
+		    
 		});
 	</script>
 </body>
