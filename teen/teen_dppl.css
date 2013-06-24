@@ -256,4 +256,5 @@ a.button:hover{background-color: #888;}
 
 .story{clear: both; margin-bottom: 1em; padding-bottom: 1em; overflow: hidden;}
 .story:last-child{border-bottom: 0;}
-.story img{float: right; margin-left: 1em; }
+.story .image{float: right; width: 40%; margin-left: 1em; padding: 1%;}
+.story img{width: 100%;}
