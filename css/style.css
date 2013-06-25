@@ -573,8 +573,8 @@ font-size : 18px;
 div#navigation{
   width: 100%;
   height: 2.5em;
-  /*margin: 0 0 1em 0;*/
-  margin: 0;
+  margin: 0 0 1em 0;
+  /*margin: 0; use for ad banner*/
   padding: 0;
   text-align: left;
   overflow: visible;
@@ -720,7 +720,7 @@ ul.dropdown li:hover > ul{
   margin: 0;
   padding: 0 6px;
   text-align: center;
-  background: url('/images/features/2013/ravinia-ticket.png') no-repeat right center;
+  background: url('') no-repeat right center;
   overflow: hidden;
 }
 
