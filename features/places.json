@@ -33,5 +33,12 @@
 		"person" : "Claire, Readers&lsquo; Services Assistant",
 		"lat" : "21.0172534",
 		"lng" : "-101.25310760000002"
+    },
+    "port-townsend" : {
+        "header" : "Port Townsend",
+        "description" : "One of my favorite places is the Union Wharf in Port Townsend, Washington. Residents call Port Townsend &lsquo;the last stop&rsquo; but the wharf is a busy little transportation hub with people coming and going all day. Seattle, beautiful Bainbridge Island and Victoria, Canada are all accessible by ferry. Bicycles are available to rent for trips to Fort Worden State Park (where <cite>An Officer and a Gentleman</cite> was filmed). If you're hitchhiking you'll find a ride into town. Day trippers crowd the fish stands for fresh caught salmon burgers.",
+        "person" : "Steven, Reference Librarian",
+        "lat" : "48.116521",
+        "lgn" : "-122.751594"
     }
 }
