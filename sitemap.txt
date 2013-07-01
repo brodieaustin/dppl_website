@@ -16,6 +16,7 @@ http://dppl.org/about_dppl/library-card-application/
 http://dppl.org/about_dppl/library_cards_policies.shtml
 http://dppl.org/about_dppl/locations.shtml
 http://dppl.org/about_dppl/public_meeting_rooms.shtml
+http://dppl.org/about_dppl/rfps.shtml
 http://dppl.org/about_dppl/sister_library.shtml
 http://dppl.org/about_dppl/vision_and_belief_statements.shtml
 http://dppl.org/about_dppl/volunteer.shtml
