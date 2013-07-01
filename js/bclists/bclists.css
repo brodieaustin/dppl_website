@@ -1,16 +1,16 @@
 /*bc list*/
-.bc-list-items{list-style: none; padding: 0; overflow: hidden; vertical-align: top;}
+.bc-list-items{list-style: none; padding: 0 !important; overflow: hidden; vertical-align: top;}
 .bc-list-title{font-weight: bold; margin-bottom: 1em; padding-top: .5em;}
 .bc-list-description{margin-bottom: 1em; line-height: 1.2;}
 .bc-list-item{position: relative; margin: 0;}
 .bc-layout-carousel{margin: 0 auto 8px auto;}
 .bc-layout-grid .bc-list-item, .bc-layout-carousel .bc-list-item{display: inline-block; width: 160px; height: 230px; vertical-align: top;} 
-.bc-layout-grid .bc-list-item{margin: 3%;}
+.bc-layout-grid .bc-list-item{margin: 2.7%;}
 .bc-layout-carousel .bc-list-item{display: block; margin: 0;}
 .bc-layout-list .bc-list-item{height: auto; margin-bottom: 1em;}
 .bc-layout-list .bc-list-item:first-child{margin-top: 1em;}
 .bc-item-thumb{position: relative; display: block; width: 140px; height: 202px; margin: 4px; padding: 4px; background-color: #fff; border: 1px solid #eee; text-align: center;}
-.bc-item-thumb img{position: relative; max-width: 100%; max-height: 100%; z-index: 100;}
+.bc-item-thumb img{position: relative; max-width: 100%; max-height: 100%; padding: 0; z-index: 100;}
 .bc-item-thumb .bc-item-title{position: absolute; top: 40%; left: 2px; right: 2px; color: #aaa; z-index: 50;}
 .bc-item-no-thumb{text-decoration: none;}
 .bc-item-no-thumb .bc-item-title{margin: 8px 8px 0 8px; color: #333;}
