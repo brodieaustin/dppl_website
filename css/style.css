@@ -1383,6 +1383,9 @@ dl.resources-list dt{margin-top: 2em; font-weight: normal;}
 
 .gsc-result:hover{border-bottom: 1px solid #ebebeb !important;}
 
+.gsc-webResult.gsc-result.gsc-promotion{margin-top: 1em; margin-bottom: 1em; border-color: #eee !important;}
+.gs-promotion-image{margin: 0 3px !important;}
+
 /*footer*/
 
 #footer{
