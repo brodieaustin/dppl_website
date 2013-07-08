@@ -3,6 +3,7 @@ test/
 images/
 teen/images/
 youth/*.jpg
+youth/*.png
 
 #Ignore robots.txt file
 robots.txt
