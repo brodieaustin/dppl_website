@@ -7,7 +7,6 @@ html{
 body{
   width: 100%; 
   margin: 0;
-  margin-top: 100px; 
   padding: 0;
   font-size: 125%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
@@ -53,54 +52,35 @@ hr{clear: both; margin: 5% auto; border-top: 1px solid #ccc; border-bottom: 0;}
 span.block{display: block;}
 
 #header{
-  width: 100%; 
-  position: fixed;
-  top: 0;
-  left: 0;
-  text-align: center; 
+  width: 94%;
+  min-height: 42px;
+  padding: 0 3%;
   background-color: #00a89e;
   z-index: 100;
   border-bottom: 1px solid #aaa;
+  overflow: hidden;
 }
 
-#header a{
+a.brand{
   display: block;
-  margin: 0 auto;  
+  float: left;
+  line-height: 42px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
 }
 
-#header a.banner{
-  width: 50%;
-  min-height: 60px;
-  padding-bottom: 1em;
-  background: url('../images/banner_640x80.png') no-repeat center; 
-  background-size: 90%;
-}
-
-#header a.banner:hover{border: 0;}
-
-#header h1{
-  margin: 0; 
-  padding: 0;
-}
-
-#header .nav{
-  display: block;
-}
+a.brand:hover{border: 0;}
 
 #header .nav-button{
-  display: none;
-  position: absolute;
-  top: 15px;
-  right: 3%;
-  padding: .2em;;
+  display: block;
+  float: right;
+  height: 40px;
+  padding: 4px;
+  border: 0;
+  background: transparent;
   cursor: pointer;
   text-decoration: none;
-}
-
-#header .nav-button:hover{
-  border: 0 !important;
-  background-color: #333;
-  border-radius: 5px;
 }
 
 #header .nav-button .icon-bar{
@@ -113,23 +93,29 @@ span.block{display: block;}
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 
+.navbar{
+  clear: both;
+  position: relative;
+}
+
 #header ul.nav{
+  display: none;
+  position: fixed;
+  top: 42px;
+  left: 0;
   width: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
   background-color: #333;
-  text-align: center;
+  text-align: left;
   list-style: none;
-  overflow: hidden;
+  z-index: 2000;
 }
-
-#header ul.nav li{display: inline-block;}
 
 #header ul.nav li a{
   display: block;
-  width: auto;
-  padding: .5em 1em;
-  text-align: center;
+  padding: .5em 3%;
   color: #fff;
 }
 
@@ -139,7 +125,7 @@ span.block{display: block;}
   border: 0;
 }
 
-#content{margin: 2% 3%; margin-top: 150px; background: #fff; padding: 5%; border: 1px solid #ccc; border-radius: .6em; position: relative; overflow: hidden; z-index: 50;}
+#content{margin: 2% 3%; background: #fff; padding: 5%; border: 1px solid #ccc; border-radius: .6em; position: relative; overflow: hidden; z-index: 50;}
 
 #content h2{font-size: 200%;}
 #content h4{color: #aaa;}
@@ -210,18 +196,15 @@ span.block{display: block;}
 
 #footer p a{
   color: #666;
-  font-size: .8em;
+  font-size: 13px;
 }
 
 @media screen and (max-width: 700px){
- body{margin-top: 80px;}
  a.button{width: 90% !important; margin: 0 auto;}
  blockquote{margin-left: 0; margin-right: 0;}
- #header .nav-button{display: block;}
  #header ul.nav{display: none;}
  #header ul.nav li{display: block;}
  #header ul.nav li a{width: auto; float: none; text-align: left;}
- #header a.banner{width: 90%; margin: 0; padding-bottom: 0;}
  div.hero h2{text-align: center;}
  div.hero .image{float: none !important; width: 50% !important; margin-left: auto !important; margin-right: auto !important;}
  div.hero .text{width: 100% !important; float: none !important; margin-top: 10%; }
