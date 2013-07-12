@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Email &#124; Mobile &#124; Des Plaines Public Library</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="author" content="Des Plaines Public Library" />
+	<link rel="stylesheet" href="css/screen.css" media="screen">
+	<link rel="stylesheet" href="/css/form.css" />
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+<body>
+	<div id="header">
+        <button class="nav-button" id="nav-button"><!--shamelessly stolen from Twitter bootstrap-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+		<a href="index.html" class="brand">Des Plaines Public Library</a>
+        <div class="navbar">
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="app.html">Mobile App</a></li>
+                <li><a href="card-scanning.html">Card Scanning</a></li>
+                <li><a href="email.html">Email</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+            </ul>
+        </div>
+	</div><!--closing div for header-->
+	<div id="content">
+		<div class="hero">
+			<h2>Email Notifications</h2>
+			<p>Enter your library card, password, and email adddress to get notifications about your library card sent to you. While you're at it, sign up for our newsletter too!</p>
+		</div>
+		<hr />
+		<div class="response">
+		    <div class="response-message"></div>
+		    <p style="padding: 0 1em 1em;"><a href="javascript:void(0);" id="edit-form" class="button">Edit the form</a></p>
+		</div>
+		<div class="load"></div>
+		<form method="POST" action="/tools/ccs/email_notifications.php" id="email-notification">
+			<div>
+				<label>Card Number:</label>
+				<input type="text" name="BARCODE" size="25" maxlength="25" value="" autocomplete="off" tabindex="1" class="wide" />
+			</div>
+			<div>
+				<label>Password:</label>
+				<input type="password" name="PASSWORD" size="25" maxlength="25" value="" tabindex="2" class="wide" />
+			</div>
+			<div>
+				<label>Email Address:</label>
+				<input type="text" name="EMAIL1" size="25" maxlength="100" value="" autocomplete="off" tabindex="3" class="wide" />
+			</div>
+			<div>
+			  <label>Re-enter Email Address:</label>
+			  <input type="text" name="EMAIL2" size="25" maxlength="100" value="" autocomplete="off" tabindex=4" class="wide" />
+			 </div>
+			<div>
+			 	<label class="checkbox"><input type="checkbox" name="newsletter" checked="checked" tabindex="5" />I would like to receive the library's weekly newsletter</label>
+			 </div>
+			<div class="callout">
+				<p>The Des Plaines Public Library will use the submitted email address to alert you of holds, overdue and coming due items on your account, and inform you of upcoming library events and services. If requested, receipts will also be sent to your email address. <em>Email addresses are kept confidential.</em></p>
+				<p> Please be aware that information in the messages will be viewable by all individuals who have access to this email account.</p>
+				<p>You may change your decision about how you wish to receive notification of a hold (email or phone) at any time by contacting Circulation. If your email address changes, please update your record as soon as possible by repeating this process or contacting the Circulation Desk.</p>
+			</div>
+			<div><p>By clicking on the Submit Button you acknowledge that you have read and accepted the above terms and conditions.</p></div>
+				<input type="submit" value="Submit" tabindex="6" class="wide" />  
+		</form>
+	</div><!-- end of content-->
+	<div id="footer">
+		<p><a href="/">Des Plaines Public Library</a></p>
+	</div>
+	<!--load scripts here, including jquery from Google cdn, with local fallback-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		if(typeof jQuery === 'undefined') {
+		    document.write(unescape('%3Cscript src="../js/jquery-1.9.1.min.js" %3E%3C/script%3E'));
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('#email-notification').submit(function(e){
+				$(this).hide();
+				$('.load').show();
+				//console.log($(this).serialize());
+				$.post('/tools/ccs/email_notifications.php', $(this).serialize(), function(data){
+					$('#email-notification')[0].reset();
+					$('.response-message').html(data);
+					$('.response').show();
+					$('.load').hide();
+				});
+				return false;
+			});
+			$('#edit-form').click(function(){
+			    $('.response-message').html('');
+				$('.response').hide();
+				$('#email-notification').show();
+			});
+			
+		});
+		
+	</script>
+	<script src="js/jquery.nav.js"></script>
+		<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+   mathiasbynens.be/notes/async-analytics-snippet -->
+    <script>
+	    var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	    s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
