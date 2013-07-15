@@ -532,6 +532,19 @@ font-size : 18px;
   color: #333;
 }
 
+/*google search widget*/
+
+#google_translate_element{
+  position: absolute;
+  top: 2.4em;
+  right: 0;
+  z-index: 1000;
+}
+
+.goog-te-gadget-simple{border: 0 !important;}
+
+.goog-te-menu-value{text-decoration: none !important;}
+
 /*Search*/
 
 #search{
