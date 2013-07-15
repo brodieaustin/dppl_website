@@ -12,6 +12,7 @@ body{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
   color: #333;}
 
+  
 li, p, blockquote, dt, dd{line-height: 1.45em;}
 
 blockquote{padding: 1em; background-color: #333; color: #fff;}
@@ -158,6 +159,8 @@ a.brand:hover{border: 0;}
 #content ol li{
   padding-bottom: 1em;
 }
+
+#content ul.no-style{list-style: none; padding: 0;}
 
 #content ul li{
   padding-bottom: 1em;
