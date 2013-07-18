@@ -209,14 +209,14 @@ a.brand:hover{border: 0;}
 /*specific styles for content area*/
 
 /*icon list on app page*/
-#content ul.icons{list-style: none; width: 80%; margin-left: auto; margin-right: auto; margin-top: 2em; padding: 0; }
-#content ul.icons li{height: 70px; margin-bottom: 1em; padding-bottom: 0; padding-left: 100px; line-height: 70px;vertical-align: middle; background-image: url('../images/app-icons.png'); background-repeat: repeat-y;}
-#content ul.icons li.account{background-position: 0px 0px;}
-#content ul.icons li.search{background-position: 0px -70px;}
-#content ul.icons li.edppl{background-position: 0px -140px;}
-#content ul.icons li.events{background-position: 0px -210px;}
-#content ul.icons li.connect{background-position: 0px -280px;}
-#content ul.icons p{display: inline-block; vertical-align: middle;}
+#content ul.icons{list-style: none; margin-top: 2em; padding: 0; }
+#content ul.icons li{min-height: 70px; margin-bottom: 1em; line-height: 70px; vertical-align: middle; overflow: hidden; }
+.feature-icon{clear: left; display: block; float: left; width: 74px; height: 70px; padding-right: 20px; background: url('../images/app-icons.png') no-repeat center center;}
+.account{background-position: 0px 0px;}
+.search{background-position: 0px -70px;}
+.edppl{background-position: 0px -140px;}
+.events{background-position: 0px -210px;}
+.connect{background-position: 0px -280px;}
 
 /*list with download links*/
 #content ul.downloads{list-style: none; padding: 0; padding-bottom: 5%;}
@@ -250,8 +250,7 @@ a.brand:hover{border: 0;}
  div.hero .text{width: 100% !important; float: none !important; margin-top: 10%; }
  #content{margin-top: 2%;}
  #content dl dt, #content dl dd{display: block; width: 100%; margin-left: 0;}
- #content ul.icons {width: 100%;}
- #content ul.icons li{ line-height: 120%;}
  #content .ad{background: transparent;}
  #content .ad .text{width: 100%;}
+ #content ul.icons li{line-height: 1.5;}
 }

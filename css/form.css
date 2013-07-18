@@ -109,6 +109,7 @@
 .small{width: 25% !important;}
 .medium{width: 50% !important;}
 .wide{width: 98.4% !important;}
+.full{width: 100% !important;}
 .tall{10em !important;}
 
 .errors, label.error{display: block; margin: 2px 0; background-color: transparent; color: red;}
