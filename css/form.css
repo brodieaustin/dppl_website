@@ -1,5 +1,5 @@
 /*form bits in content section*/
-#content form{margin: 1em 0; padding: .5em 0; overflow: hidden;}
+#content form{margin: 1em 0; padding: .5em 0 1em 0; overflow: hidden;}
 
 #content form div{position: relative; clear: left; margin-bottom: 1.5em;}
 #content form div.group{overflow: hidden;}
