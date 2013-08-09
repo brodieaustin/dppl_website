@@ -4,6 +4,7 @@ images/
 teen/images/
 youth/*.jpg
 youth/*.png
+youth/*.js
 
 #Ignore robots.txt file
 robots.txt
