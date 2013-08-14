@@ -1,0 +1,70 @@
+<table style="width: 100%; padding: 6px 0;margin: 0; padding: 0; border-collapse: collapse; border-bottom:0; font-family: sans-serif; font-size: 12px;">
+<tr>
+<td><img src="http://dppl.org/about_dppl/job-application/img/dppl-logo-black.png" align="right" width="160" /><strong>Des Plaines Public Library</strong><br>1501 Ellinwood Street Des Plaines, IL 60016&nbsp;&nbsp;Tel: (847) 827-5551&nbsp;Fax: (847) 827-7974</td>
+</tr>
+<tr>
+<td colspan="2">
+<h1 style="font-size: 24px; padding-bottom: 6px;">2013 Family Science Expo Registration Form</h1>
+<p>Thank you for agreeing to participate in the 2013 Family Science Expo to be held Saturday, September 28, 2013 from noon&ndash;4 p.m. at the Des Plaines Public Library. Please complete the following form and submit it by Monday, September 16, 2013.</p>
+</td>
+</tr>
+<tr>
+<td style="padding-top: 24px;" colspan="2">
+<h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Please provide the best contact information for event organizers to reach you with questions or updates:&nbsp;</h2>
+</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Name:&nbsp;{name}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">E-mail:&nbsp;{email}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Phone #1:&nbsp;{phone-one}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Phone #2:&nbsp;{phone-two}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Names of other participants from your organization attending:&nbsp;<br />{other-participants}</td>
+</tr>
+<td style="padding-top: 24px;" colspan="2">
+<h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Please provide the following information as you would like it to appear in the printed participant directory, available the day of the event: </h2>
+</td>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Organization:&nbsp;{organization}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Organization Website:&nbsp;{organization-website}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Contact:&nbsp;{contact}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Contact Phone/Email:&nbsp;{contact-phone-email}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Description of Organization:&nbsp;<br />{organization-description}</td>
+</tr>
+<tr>
+<td style="width: 100%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;" colspan="2">Desciption of what you will be doing at the expo:&nbsp;<br />{description}</td>
+</tr>
+<tr>
+<td style="padding-top: 24px;" colspan="2">
+<h2 style="margin:0; padding: 0; font-size: 12px; font-weight: bold;">Please indicate your display needs: </h2>
+</td>
+</tr>
+<tr>
+<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;">Number of 6 foot tables:&nbsp;{number-of-tables}</td>
+<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;">Electrical Needed?&nbsp;{electrical-needed}</td>
+</tr>
+<tr>
+<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;">Number of Chairs&nbsp;{number-of-chairs}</td>
+<td style="width: 50%; padding: 6px 0;vertical-align: text-bottom; border-bottom:1px solid #000;">Back Wall Needed?&nbsp;{back-wall-needed}</td>
+</tr>
+<tr>
+<td style="padding-top: 24px;" colspan="2">
+<p style="font-weight: bold; margin:0; padding: 0; font-size: 12px; font-weight: bold; text-align: center;">We are looking forward to a wonderful event. Thank you again for your participation!</p>
+</td>
+</tr>
+</table>
