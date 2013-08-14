@@ -93,7 +93,8 @@ form textarea{
   overflow: hidden;
 }
 
-form textarea.tall{
+.tall{
+   display: block;
   height: 3em;
 }
  
