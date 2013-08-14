@@ -15,23 +15,31 @@
 				  }
 			},
 			submitHandler: function(form){
+				$('html, body').animate({ scrollTop: 0 }, 0);
+			    $('.form').hide();
+			    $('.load').show();
+			    $('div.errors').html('').hide();
+			    $('.response').hide();
+			    $('.response-message').html('').removeClass('success').removeClass('failure');
 				$(form).ajaxSubmit({
 					success: function(data){
-							$('div.errors').hide();
-							$('#application').hide();
+                        var response = $.parseJSON(data);
+						//console.log(data);
+					    $('.load').hide();
+					    if (response.status == 'success'){
+					        $(form)[0].reset();
+					    }
+					    else{
+					        $('.form').show();
+					    }
+						$('.response-message').addClass(response.status).html(response.message).parent().fadeIn();
 							
-							if (data.search("Thank") == 0 ){
-								$('div.response').html(data).css({color: 'green'}).fadeIn(600);
-							}
-							else{
-								$('#application').fadeIn(1000);
-								$('div.response').html(data).css({color: 'red'}).fadeIn(800).delay(5000).fadeOut(800);
-							}	
-							
-						},
-						failure: function(){
-							$('div.response').html("Something went wrong. Please check your form and try again.").css({backgroundColor: 'red'}).fadeIn(800).delay(5000).fadeOut(800);
-						}
+					},
+					failure: function(){
+						$('.load').hide();
+						$('.form').show();
+						$('.response-message').addClass('failure').html("Something went wrong and your application cannot be submitted at this time. Click Save to save your progress or print the form out.").parent().fadeIn();
+					}
 				});
 			}
 			});
