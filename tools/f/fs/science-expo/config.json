@@ -1,0 +1,35 @@
+{
+    "id": "science-expo",
+    "subject": "2013 Family Science Expo Registration Form",
+    "sender": {
+	    "name": "Forms",
+	    "email": "forms@dppl.org"
+	},
+    "fields" : {
+        "name": true,
+        "email": true,
+        "phone-one": true,
+        "phone-two": false,
+        "other-participants": false,
+        "organization": true,
+        "organization-website": false,
+        "contact": false,
+        "contact-phone-email": false,
+        "organization-description": true,
+        "description": true,
+        "number-of-tables": false,
+        "number-of-chairs": false,
+        "electrical-needed": false,
+        "back-wall-needed": false
+    },
+    "recipients": [
+        {
+            "name": "Stephanie Spetter",
+            "email": "sspetter@dppl.org"
+        },
+        {
+            "name": "Brodie Austin",
+            "email": "baustin@dppl.org"
+        }
+    ], 
+}
