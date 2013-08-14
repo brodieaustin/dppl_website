@@ -193,6 +193,8 @@ img{
   border: 0;
 }
 
+input, textarea, select{-moz-box-sizing: border-box; box-sizing: border-box;}
+
 input, select{
   display: inline-block;
   width: auto;
