@@ -1,5 +1,0 @@
-.bc-list{overflow: hidden; width: 100%; margin: 0;}
-.bc-list .list-item{float: left; width: 25.3333%; margin: 2%; height: 270px; background-color: #fff; padding: 2%; text-align: center;}
-.bc-list .list-item a{display: block; margin-top: 3%; color: #333; text-decoration: none;}
-.bc-list .list-item img{padding: 0;}
-.bc-list .load{display: block; height: 2em; width: 2em; background: url('http://dppl.org/tools/bc/list-view/img/ajax-loader.gif') no-repeat center center;}
