@@ -141,9 +141,9 @@
 						
 						//if user wants annotation display that
 						if (settings.show_annotations == true){
-						    console.log(data.list.list_items[i].annotation);
+						    //console.log(data.list.list_items[i].annotation);
 						    if (data.list.list_items[i].annotation.length != 0){
-						        a.after('<div class="bc-item-annotation">' + data.list.list_items[i].annotation + '</div>');
+						        a.after('<div class="bc-item-annotation">' + (settings.layout_class == 'bc-layout-list' && settings.show_thumbs == true?'<div class="bc-item-title">' + item['title'] + '</div>':'') + data.list.list_items[i].annotation + '</div>');
 						    }
 						}
 						
