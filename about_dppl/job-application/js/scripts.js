@@ -1,7 +1,7 @@
     $(document).ready(function(){
         //json formatted list of current jobs, used for pretty urls params below
         //{"job-title" : "Job Title"}
-        var current_jobs = {"part-time-reference-librarian" : "Part-time Reference Librarian", "part-time-building-monitor" : "Part-Time Building Monitor", "readers-services-assistant" : "Readers Services Assistant", "circulation-services-clerk" : "Circulation Services Clerk", "part-time-building-monitor-mf-5-930" : "Part-Time Building Monitor M-F, 5-930", "part-time-building-and-security-services-assistant" : "Part-Time Building and Security Services Assistant"};
+        var current_jobs = {"part-time-reference-librarian" : "Part-time Reference Librarian", "part-time-building-monitor" : "Part-Time Building Monitor", "readers-services-assistant" : "Readers Services Assistant", "circulation-services-clerk" : "Circulation Services Clerk", "part-time-building-and-security-services-assistant" : "Part-Time Building and Security Services Assistant"};
         var param, pos;
         
         //test for local storage
