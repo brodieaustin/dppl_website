@@ -42,13 +42,13 @@
 	    for ($i = 0; $i < count($form->recipients); $i++){
 	        $mail->AddAddress($form->recipients[$i]['email'], $form->recipients[$i]['name']);
 	    }
+        
+        if ($_POST['send-copy'] == 'true'){
+            $mail->AddCC($form->sender['email']);
+        }
 		    
         $mail->From = $form->sender['email'];
         $mail->FromName = $form->sender['name'];
-		
-        if ($_POST['send-copy'] == 'true'){
-            $mail->AddBCC($form->sender['email']);
-        }
 		
         //add a subject
        $mail->Subject = $form->subject;
