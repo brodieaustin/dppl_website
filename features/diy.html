@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>DIY | Features | DPPL</title>
+	<style>
+        *{box-sizing: border-box;}
+        html,body{width: 100%; height: 100%; margin: 0; padding: 0;}
+        body{font-family: sans-serif;}
+        .page{max-width: 2000px;}
+        .intro{max-height: 746px;}
+        .intro img{width: 100%;}
+        .tagline{background-color: #333; color: #fff; font-size: 300%; text-align: center;}
+        .tagline p{padding: 5%;}
+	</style>
+	<!--<script src="/js/modernizr-2.5.3.min.js"></script>-->
+</head>
+<body>
+	<div class="page">
+        <div class="intro">
+            <img src="/images/themes/diy/diy-page-header.png" alt="Work Learn Play: DIY" />
+        </div>
+		<div class="tagline">
+			<p>The Library: The original <span class="callout">DIY</span> destination</p>
+		</div>
+		<div class="content">
+			<div class="idea">
+				<h2>No more snow</h2>
+				<p>In act of wishful thinking, we have turned off the snow effect on this page. Let's hope we can "chill" in the sun and warm weather soon!</p>
+			</div>
+			<div class="idea">
+				<img src="/images/features/2013/mountains-echoed-cover.jpg" />
+				<h2>Coming Attractions for May 2013</h2>
+				<p>Put holds now on the hottest titles for May!</p>
+				<p class="last"><a href="http://dppl.bibliocommons.com/list/show/84339150_desplainesreaders/163068391_coming_attractions_for_may_2013" class="button">Get started</a></p>
+			</div>
+
+		</div>
+		<div class="footer">
+		</div>
+	</div>
+	<!--load jquery from Google cdn, with local fallback
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="/js/snowfall.min.jquery.js"></script>
+	<script src="/js/jquery.masonry.min.js"></script>
+	<script src="/js/jquery.gaEvents.js"></script>-->
+	<script>
+		$(document).ready(function(){
+			/*var b = navigator.userAgent;
+			
+			if (b.search('MSIE') == -1){
+				$(document).snowfall({flakeCount : 250, round : true, minSize: 2, maxSize:7});
+			}*/
+			
+			$.ajax({
+			    type : 'GET',
+			    url : '/tools/poems/?url=' + encodeURIComponent('http://feeds.poetryfoundation.org/PoetryFoundation/PoemOfTheDayText?format=xml'),
+			    dataType : 'xml',
+			    success : function(data){
+			        var img;
+			        var poem = $(data).find('item')[0];
+			        var title = $(poem).find('title').text();
+			        var link = $(poem).find('guid').text();
+			        var text = $(poem).find('description').text();
+			        $(text).each(function(){
+			            if ($(this).hasClass('bio-image')){
+			                img = $(this).html();
+			            }
+			        });
+			        var div = '<div class="idea" id="poem-of-the-day">' + img + '<h2>Celebrate National Poetry Month</h2><p>Read the Poetry Foundation\'s ' + title + '</p><p class="last"><a href="' + link + '" class="button">Read it</a></p></div>';
+			        $('.content').prepend(div);
+			        $('.content').imagesLoaded(function(){
+				        $(this).masonry();
+			        });
+			    },
+			    error : function(){
+			        $('.content').imagesLoaded(function(){
+				        $(this).masonry();
+			        });
+			    }
+			});
+		
+		});
+	</script>
+	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+   mathiasbynens.be/notes/async-analytics-snippet 
+	<script>
+		var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>-->
+</body>
+</html>
