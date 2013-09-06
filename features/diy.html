@@ -3,12 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>DIY | Features | DPPL</title>
+	<title>DIY | DPPL</title>
+    <meta name="description" content="We are celebrating all things DIY this fall at the library. Learn somethign new at the library, your original DIY destination.">
+	<meta name="author" content="Des Plaines Public Library" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	<link rel="stylesheet" href="/css/normalize.css" />
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<style>
-        section, article, div{box-sizing: border-box;}
+        section, article, div{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
         html,body{width: 100%; height: 100%; margin: 0; padding: 0;}
         body{font-family: 'Raleway', sans-serif;}
         h1, h2{color: #199754;}
@@ -16,6 +19,8 @@
         .page{max-width: 2000px; height: 100%; margin: 0 auto;}
         section{position: relative; width: 100%; min-height: 100%; margin: 0; padding: 2%; overflow: hidden;}
         .intro{background: url('/images/themes/diy/diy-page-header.png') no-repeat center center; background-size: cover;}
+        .tagline{margin: 0; padding: 5%; background-color: #080808; color: #fff; text-align: center; font-size: 200%;}
+        .tagline p{margin: 0; padding-bottom: 2%; }
         .content{background: url('/images/themes/diy/diy-page-background.png') no-repeat center center fixed; background-size: cover;}
         .content .row{clear: both;}
         article{width: 29%; float: left; margin: 2%; margin-bottom: 1%; padding: 1% 2%; background-color: #fff;}
@@ -24,18 +29,22 @@
         article header h1{margin-bottom: 0; font-size: 150%;}
         article p, article li, article blockquote{line-height: 1.5em;}
         .feed{background: url('/images/themes/diy/chalkboard.jpg') no-repeat center center fixed; background-size: cover;}
-        .feed header{padding-bottom: .5em; border-bottom: 4px solid #ddd; }
-        .feed h1{margin-bottom: 0; font-size: 300%; font-family: 'Pacifico', cursive; text-align: center; color: #e3262e; text-shadow: 1px 1px 0 #333;}
-        .feed-items{min-height: 100%; overflow: hidden;}
+        .feed header{padding-bottom: 2em; border-bottom: 4px solid #ddd; }
+        .feed h1{margin-bottom: 0; line-height: 1.2; font-size: 300%; font-family: 'Pacifico', cursive; text-align: center; color: #e3262e; text-shadow: 1px 1px 0 #333;}
+        .feed-items{overflow: hidden;}
         .feed-item{float: left; width: 23%; margin: 1em 1%; padding: 1%; background-color: #fff;}
-        .feed-item p:first-child{text-align: center;}
+        .feed-item a{display: block; text-align: center;}
         .feed-item-title{display: none;}
         .feed-item-summary{line-height: 1.5em; word-wrap: break-word; overflow: hidden; }
-        .tagline{margin: 0; padding: 5%; background-color: #080808; color: #fff; text-align: center; font-size: 200%;}
-        .tagline p{margin: 0; padding-bottom: 2%; }
         .follow-pinterest{margin-top: 2em; padding-top: 1em; border-top: 2px solid #ddd; text-align: center;}
         .follow-pinterest a{height: 36px; line-height: 36px;color: #fff; vertical-align: top; text-decoration: none;}
         .pinterest-badge{display: inline-block; width: 36px; height: 36px; margin-right: 6px; background: url('/images/themes/diy/pinterest_badge_red.png') no-repeat left center;}
+        @media screen and (max-width: 800px){
+            .tagline p{padding-bottom: 1em;}
+            .tagline .icons{width: 100%; max-width: 360px;}
+            article{width: 96%; float: none;}
+            .feed-item{width: 96%; margin: 2%;}
+        }
 	</style>
 </head>
 <body>
@@ -44,7 +53,7 @@
         </section>
         <div class="tagline">
         	<p>The library. Your original DIY destination.</p>
-        	<img src="/images/themes/diy/diy-icons.png" />
+        	<img class="icons" src="/images/themes/diy/diy-icons.png" alt="Icons of a book, roller brush, chef's hat, tools, and a pallette" />
         	<!--<div class="logo">
         		<img src="/images/themes/diy/new-logo-full-color-horiz.jpg" />
         	</div>-->
@@ -137,8 +146,8 @@
 		}
 		$(document).ready(function(){
 			$('#pinterest-feed').addFeed({
-				url : 'http://pinterest.com/dpplib/feed.rss',
-				num_items: 10,
+				url : 'http://pinterest.com/dpplib/work-learn-play-diy.rss',
+				num_items: 8,
 				feed_type: 'blog',
 				show_summary : true
 			}, function(){
