@@ -93,31 +93,6 @@ $(function(){
         scale : 1
     });  
 });
-/*$(function(){
-	//try to detect if mobile browser is being used using isMobile function (see below)
-	if (isMobile.any() == true){
-		//look for mobile_banner cookie, if user closes message we don't want it appearing again
-		//during that session
-		var mobile_cookie = readCookie('mobile_alert');
-		
-		//if the cookie does not exist, show message
-		if (!(mobile_cookie)){
-			$('#mobile-alert').show();
-		}
-	};
-	
-	$('#mobile-alert a').click(function(){
-		createCookie('mobile_alert','clicked', 60);
-	});
-	
-	//handler for the close button
-	$('#mobile-alert .close').click(function(){
-		$(this).parent().hide();
-		$('body').css('paddingTop', '0');
-		createCookie('mobile_alert','closed');
-	});
-	
-});*/
 
 function createCookie(name,value,days) {
 		if (days) {
@@ -141,23 +116,5 @@ function readCookie(name) {
 		
 	return null;
 }
-
-var isMobile = {
-		Android: function() {
-			return navigator.userAgent.match(/Android/i) ? true : false;
-		},
-		BlackBerry: function() {
-			return navigator.userAgent.match(/BlackBerry/i) ? true : false;
-		},
-		iOS: function() {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
-		},
-		Windows: function() {
-			return navigator.userAgent.match(/IEMobile/i) ? true : false;
-		},
-		any: function() {
-			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
-		}
-	};
 	
 	
