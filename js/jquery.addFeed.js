@@ -1,5 +1,5 @@
 (function( $ ) {
-  $.fn.addFeed = function(options) {
+  $.fn.addFeed = function(options, callback) {
   
     // Do your awesome plugin stuff here
 	
@@ -39,16 +39,16 @@
 				else if (settings.feed_type == 'blog'){
 					if (i < settings.num_items){
 						if (settings.show_thumbnail == true){
-							has_image = (data.item[i].thumbnail != undefined?true:false);
+							has_image = (data.item[i].thumbnail != undefined ? true : false);
 						}
 						else{
 							has_image = false;
 						}
 						//console.log(has_image);
 						div = div + '<div class="feed-item blog-post' + ((has_image == false)?' no-thumbnail':'') + '" id="' + data.item[i].guid + '">'
-    						+ ((has_image == true)?'<div class="feed-item-thumbnail"><img src="' + data.item[i].thumbnail + '" /></div>':'')
+    						+ ((has_image == true) ? '<div class="feed-item-thumbnail"><img src="' + data.item[i].thumbnail + '" /></div>' : '')
 							+ '<div class="feed-item-title"><a href="' + data.item[i].link + '">' + data.item[i].title + '</a></div>'
-							+ ((settings.show_summary == true)?'<div class="feed-item-summary">' + data.item[i].summary + '</div>':'')
+							+ ((settings.show_summary == true)?'<div class="feed-item-summary">' + (data.item[i].description == undefined ? data.item[i].summary : data.item[i].description) + '</div>' : '')
 							+'</div>';
 					}
 				}
@@ -58,6 +58,8 @@
 			
 			//$('.load').fadeOut(500);
 			$this.html(div);
+			
+			if(callback) callback();
 			
 		});
 	
