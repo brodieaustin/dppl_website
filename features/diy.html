@@ -18,7 +18,7 @@
         a{color: #199754;}
         .page{max-width: 2000px; height: 100%; margin: 0 auto;}
         section{position: relative; width: 100%; min-height: 100%; margin: 0; padding: 2%; overflow: hidden;}
-        .intro{background: url('/images/themes/diy/diy-page-header.png') no-repeat center center; background-size: cover;}
+        .intro{display: none; background: url('/images/themes/diy/diy-page-header.png') no-repeat center center; background-size: cover;}
         .tagline{margin: 0; padding: 5%; background-color: #080808; color: #fff; text-align: center; font-size: 200%;}
         .tagline p{margin: 0; padding-bottom: 2%; }
         .content{background: url('/images/themes/diy/diy-page-background.png') no-repeat center center fixed; background-size: cover;}
@@ -138,13 +138,11 @@
 	<script src="/js/jquery.masonry.min.js"></script>
 	<!--<script src="/js/jquery.gaEvents.js"></script>-->
 	<script>
-		if (!$.cookie('visitor')){
-			$.cookie('visitor', 'returning');
-		}
-		else{
-			$('.intro').hide();
-		}
 		$(document).ready(function(){
+            if (!$.cookie('visitor')){
+                $.cookie('visitor', 'returning');
+                $('.intro').show();
+            }
 			$('#pinterest-feed').addFeed({
 				url : 'http://pinterest.com/dpplib/work-learn-play-diy.rss',
 				num_items: 8,
@@ -152,7 +150,9 @@
 				show_summary : true
 			}, function(){
 				$(this).imagesLoaded(function(){
-					$('.feed-items').masonry().masonry('reloadItems');
+                    if ($(window).width() > 801){
+                        $('.feed-items').masonry().masonry('reloadItems');
+                    }
 				});
 			});
 		});
