@@ -391,11 +391,11 @@ ul.tight li{
 
 #header .theme .wlp{
   font-weight: bold; 
-  color: #00afd6;
+  color: #199754;
 }
 
 #header .theme .word{
-  color: #f36a26;
+  color: #d7436c;
   font-weight: bold;
  }
 
@@ -1037,7 +1037,8 @@ div#list{
   margin: 0 auto;
   padding-top: .5em;
   position: relative;
-  background: #00afd6 url('/images/themes/go/go-striped-background.png');
+  background: #fff url('/images/themes/diy/diy-slides-background.png') no-repeat center center;
+  background-size: 100%;
 }
 
 #slides{
@@ -1056,7 +1057,7 @@ div#list{
   margin-bottom: .5em;
   padding-bottom: 0;
   font-size: 1.6em;
-  color: #00afd6;
+  color: #199754;
   text-shadow: 1px 1px 1px #fff;
   border: 0;
 }
@@ -1131,7 +1132,7 @@ a#next2{
 }
 
 #nav a.activeSlide {
-  background-color: #f36a26;
+  background-color: #199754;
   color: #fff;
   border-radius: 1em;
   -webkit-border-radius: 1em;
