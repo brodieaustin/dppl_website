@@ -291,6 +291,7 @@ textarea{width: 99%; min-height: 7em; border: 1px solid #ccc; font-family: inher
 .message p{padding: 0 !important; margin: 0 0 4px 0 !important;}
 .close{display: block; position: absolute; top: .5em; right: .5em; height:1em; width:1em; line-height: 1em; font-size: 1.5em; font-weight: bold; color: #333; vertical-align: middle; text-align: center;  cursor: pointer; }
 .close:hover{background-color: #aaa; border-radius: 2em;}
+.reminder{background-color: #bce8f1;}
 .error{background-color: #ebadaf;}
 .mobile-alert{display: none; top: 0; left: 0; background-color: #eee; z-index: 5000;}
 

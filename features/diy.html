@@ -11,52 +11,54 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<style>
-        section, article, div{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+        header, footer, section, article, div{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
         html,body{width: 100%; height: 100%; margin: 0; padding: 0;}
         body{font-family: 'Raleway', sans-serif;}
         h1, h2{color: #199754;}
         a{color: #199754;}
         .page{max-width: 2000px; height: 100%; margin: 0 auto;}
-        section{position: relative; width: 100%; min-height: 100%; margin: 0; padding: 2%; overflow: hidden;}
+        header, section{position: relative; width: 100%; min-height: 100%; margin: 0; padding: 2%; overflow: hidden;}
         .intro{display: none; background: url('/images/themes/diy/diy-page-header.png') no-repeat center center; background-size: cover;}
         .tagline{margin: 0; padding: 5%; background-color: #080808; color: #fff; text-align: center; font-size: 200%;}
         .tagline p{margin: 0; padding-bottom: 2%; }
         .content{background: url('/images/themes/diy/diy-page-background.png') no-repeat center center fixed; background-size: cover;}
-        .content .row{clear: both;}
+        .row{clear: both; overflow: hidden;}
         article{width: 29%; float: left; margin: 2%; margin-bottom: 1%; padding: 1% 2%; background-color: #fff;}
-        article .more-info{border-top: 2px solid #ddd; margin-top: 1em;}
-        article header{padding-bottom: 1em; border-bottom: 4px solid #ddd;}
+        article .more-info{margin-top: 1em; border-top: 2px solid #ddd;}
+        article header{padding-bottom: .5em; border-bottom: 4px solid #ddd;}
         article header h1{margin-bottom: 0; font-size: 150%;}
         article p, article li, article blockquote{line-height: 1.5em;}
-        .feed{background: url('/images/themes/diy/chalkboard.jpg') no-repeat center center fixed; background-size: cover;}
-        .feed header{padding-bottom: 2em; border-bottom: 4px solid #ddd; }
+        .feed{background: url('/images/themes/diy/chalkboard.jpg') no-repeat center center fixed; background-size: cover; text-align: center;}
+        .feed header{padding-bottom: 1.5em; border-bottom: 4px solid #ddd; }
         .feed h1{margin-bottom: 0; line-height: 1.2; font-size: 300%; font-family: 'Pacifico', cursive; text-align: center; color: #e3262e; text-shadow: 1px 1px 0 #333;}
         .feed-items{overflow: hidden;}
         .feed-item{float: left; width: 23%; margin: 1em 1%; padding: 1%; background-color: #fff;}
-        .feed-item a{display: block; text-align: center;}
+        .feed-item a{display: block;  margin-bottom: 1em; padding-bottom: .5em; border-bottom: 2px solid #eee; text-align: center;}
         .feed-item-title{display: none;}
-        .feed-item-summary{line-height: 1.5em; word-wrap: break-word; overflow: hidden; }
+        .feed-item-summary{line-height: 1.5em; word-wrap: break-word; overflow: hidden;text-align: left; }
         .follow-pinterest{margin-top: 2em; padding-top: 1em; border-top: 2px solid #ddd; text-align: center;}
         .follow-pinterest a{height: 36px; line-height: 36px;color: #fff; vertical-align: top; text-decoration: none;}
         .pinterest-badge{display: inline-block; width: 36px; height: 36px; margin-right: 6px; background: url('/images/themes/diy/pinterest_badge_red.png') no-repeat left center;}
+        .footer{text-align: center;}
         @media screen and (max-width: 800px){
+        	.content, .feed{background-attachment: scroll;}
             .tagline p{padding-bottom: 1em;}
             .tagline .icons{width: 100%; max-width: 360px;}
             article{width: 96%; float: none;}
-            .feed-item{width: 96%; margin: 2%;}
+            .feed-item{width: 46%; margin: 2%;}
+        }
+        @media screen and (max-width : 486px){
+        	.feed-item{width: 96%; margin: 2%;}
         }
 	</style>
 </head>
 <body>
 	<div class="page">
-        <section class="intro">
-        </section>
+        <header class="intro">
+        </header>
         <div class="tagline">
         	<p>The library. Your original DIY destination.</p>
         	<img class="icons" src="/images/themes/diy/diy-icons.png" alt="Icons of a book, roller brush, chef's hat, tools, and a pallette" />
-        	<!--<div class="logo">
-        		<img src="/images/themes/diy/new-logo-full-color-horiz.jpg" />
-        	</div>-->
         </div>
 		<section class="content">
 			<div class="row">
@@ -128,6 +130,11 @@
 			</footer>
 			
 		</section>
+		<footer class="footer">
+			<div class="logo">
+        		<a href="/"><img src="/images/dppl-logo-new.png" alt="Des Plaines Public Library" /></a>
+        	</div>
+		</footer>
 		
 	</div>
 	<!--load jquery from Google cdn, with local fallback-->
@@ -135,7 +142,6 @@
 	<script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
 	<script src="/js/jquery.addFeed.js"></script>
 	<script src="/js/jquery.cookie.js"></script>
-	<script src="/js/jquery.masonry.min.js"></script>
 	<!--<script src="/js/jquery.gaEvents.js"></script>-->
 	<script>
 		$(document).ready(function(){
@@ -149,10 +155,21 @@
 				feed_type: 'blog',
 				show_summary : true
 			}, function(){
-				$(this).imagesLoaded(function(){
-                    if ($(window).width() > 801){
-                        $('.feed-items').masonry().masonry('reloadItems');
-                    }
+				//callback for formatting feed items
+				//check if window width is greater than 486px
+				if ($(window).width() > 487){
+					//set variables for number of items and row length
+					var num_items = $('.feed-items').children().length;
+					var row_length = ($(window).width() > 801 ? 4 : 2);
+					//loop through items, slice out chunks and wrap in row
+					for (i = 0 ; i < num_items ; i+=row_length){
+						var items = $('.feed-item').slice(i, (i + row_length))
+						items.wrapAll('<div class="row" />')
+					}
+				}
+				//pinterest links are relative, make absolute
+				$.each($('.feed-item-summary a'), function(){
+					$(this).attr('href', 'http://pinterest.com' + $(this).attr('href'));
 				});
 			});
 		});
