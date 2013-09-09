@@ -28,18 +28,19 @@
         article header{padding-bottom: 1em; border-bottom: 4px solid #ddd;}
         article header h1{margin-bottom: 0; font-size: 150%;}
         article p, article li, article blockquote{line-height: 1.5em;}
-        .feed{background: url('/images/themes/diy/chalkboard.jpg') no-repeat center center fixed; background-size: cover;}
+        .feed{background: url('/images/themes/diy/chalkboard.jpg') no-repeat center center fixed; background-size: cover; text-align: center;}
         .feed header{padding-bottom: 2em; border-bottom: 4px solid #ddd; }
         .feed h1{margin-bottom: 0; line-height: 1.2; font-size: 300%; font-family: 'Pacifico', cursive; text-align: center; color: #e3262e; text-shadow: 1px 1px 0 #333;}
         .feed-items{overflow: hidden;}
         .feed-item{float: left; width: 23%; margin: 1em 1%; padding: 1%; background-color: #fff;}
         .feed-item a{display: block; text-align: center;}
         .feed-item-title{display: none;}
-        .feed-item-summary{line-height: 1.5em; word-wrap: break-word; overflow: hidden; }
+        .feed-item-summary{line-height: 1.5em; word-wrap: break-word; overflow: hidden;text-align: left; }
         .follow-pinterest{margin-top: 2em; padding-top: 1em; border-top: 2px solid #ddd; text-align: center;}
         .follow-pinterest a{height: 36px; line-height: 36px;color: #fff; vertical-align: top; text-decoration: none;}
         .pinterest-badge{display: inline-block; width: 36px; height: 36px; margin-right: 6px; background: url('/images/themes/diy/pinterest_badge_red.png') no-repeat left center;}
         @media screen and (max-width: 800px){
+        	.content, .feed{background-attachment: scroll;}
             .tagline p{padding-bottom: 1em;}
             .tagline .icons{width: 100%; max-width: 360px;}
             article{width: 96%; float: none;}
@@ -153,6 +154,9 @@
                     if ($(window).width() > 801){
                         $('.feed-items').masonry().masonry('reloadItems');
                     }
+                    $.each($('.feed-item-summary a'), function(){
+                    	$(this).attr('href', 'http://pinterest.com' + $(this).attr('href'));
+                    });
 				});
 			});
 		});
