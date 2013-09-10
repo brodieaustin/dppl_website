@@ -25,13 +25,14 @@
         .row{clear: both; overflow: hidden;}
         article{width: 29%; float: left; margin: 2%; margin-bottom: 1%; padding: 1% 2%; background-color: #fff;}
         article .more-info{margin-top: 1em; border-top: 2px solid #ddd;}
-        article header{padding-bottom: .5em; border-bottom: 4px solid #ddd;}
+        article header{padding: 2% 0 .5em 0; border-bottom: 4px solid #ddd;}
         article header h1{margin-bottom: 0; font-size: 150%;}
         article p, article li, article blockquote{line-height: 1.5em;}
         .feed{background: url('/images/themes/diy/chalkboard.jpg') no-repeat center center fixed; background-size: cover; text-align: center;}
         .feed header{padding-bottom: 1.5em; border-bottom: 4px solid #ddd; }
         .feed h1{margin-bottom: 0; line-height: 1.2; font-size: 300%; font-family: 'Pacifico', cursive; text-align: center; color: #e3262e; text-shadow: 1px 1px 0 #333;}
         .feed-items{overflow: hidden;}
+        .feed-items hr{clear: both; border: 0; height: 0;}
         .feed-item{float: left; width: 23%; margin: 1em 1%; padding: 1%; background-color: #fff;}
         .feed-item a{display: block;  margin-bottom: 1em; padding-bottom: .5em; border-bottom: 2px solid #eee; text-align: center;}
         .feed-item-title{display: none;}
@@ -40,7 +41,7 @@
         .follow-pinterest a{height: 36px; line-height: 36px;color: #fff; vertical-align: top; text-decoration: none;}
         .pinterest-badge{display: inline-block; width: 36px; height: 36px; margin-right: 6px; background: url('/images/themes/diy/pinterest_badge_red.png') no-repeat left center;}
         .footer{text-align: center;}
-        @media screen and (max-width: 800px){
+        @media screen and (max-width: 900px){
         	.content, .feed{background-attachment: scroll;}
             .tagline p{padding-bottom: 1em;}
             .tagline .icons{width: 100%; max-width: 360px;}
@@ -146,7 +147,7 @@
 	<script>
 		$(document).ready(function(){
             if (!$.cookie('visitor')){
-                $.cookie('visitor', 'returning');
+                $.cookie('visitor', 'returning', {expires : 120});
                 $('.intro').show();
             }
 			$('#pinterest-feed').addFeed({
@@ -159,20 +160,31 @@
 				//check if window width is greater than 486px
 				if ($(window).width() > 487){
 					//set variables for number of items and row length
-					var num_items = $('.feed-items').children().length;
-					var row_length = ($(window).width() > 801 ? 4 : 2);
-					//loop through items, slice out chunks and wrap in row
-					for (i = 0 ; i < num_items ; i+=row_length){
-						var items = $('.feed-item').slice(i, (i + row_length))
-						items.wrapAll('<div class="row" />')
-					}
+					$('.feed-items').make_rows('.feed-item');
 				}
 				//pinterest links are relative, make absolute
 				$.each($('.feed-item-summary a'), function(){
 					$(this).attr('href', 'http://pinterest.com' + $(this).attr('href'));
 				});
 			});
+
+            $(window).resize(function(){
+                $('.feed-items').make_rows('.feed-item');
+            })
 		});
+        $.fn.make_rows = function(item_class){
+            $(this).find('hr').remove();
+            var items = $(this).children();
+            var num_items = items.length;
+            var row_length = Math.floor($(this).width() / $(items[0]).width());
+            //loop through items, slice out chunks and wrap in row
+            for (i = 0 ; i < num_items ; i++){
+                console.log(i % row_length);
+                if (i % row_length == 0){
+                    $(items[i]).before('<hr>');
+                }
+            }
+        };
 	</script>
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
    mathiasbynens.be/notes/async-analytics-snippet -->
