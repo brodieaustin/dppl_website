@@ -37,7 +37,7 @@
 			});
 			
 			$('#events').addFeed({
-			    url: 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=10&fe=1'
+			    url: 'http://calendar.dppl.org/evanced/lib/eventsxml.asp?dm=exml&nd=10&fe=1', num_items : 6
 			}).fadeIn(500);
 			
 			$('#plaintalk').addFeed({
