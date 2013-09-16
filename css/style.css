@@ -542,7 +542,7 @@ font-size : 18px;
 
 #google_translate_element{
   position: absolute;
-  top: -1px;
+  top: -2px;
   right: 28em;
   z-index: 1000;
 }
