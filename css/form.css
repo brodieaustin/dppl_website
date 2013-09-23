@@ -150,6 +150,7 @@ ul.instructions li{
 }
 
 .eligibility-check .callout{
+   width: 94% !important;
 	margin: 1em 0;
 }
 

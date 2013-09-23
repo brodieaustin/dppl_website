@@ -23,13 +23,12 @@
 		<div class="card-application">
 			<h2>Child's Card</h2>
 				<p>You are about to fill out an application for a new child's library card. Use this application for children in 8th grade or younger. To get your new library card, we just need you to do the following:</p>
-				<ul class="instructions">
+				<ol class="instructions">
 					<li>Determine if you are eligible for a card.</li>
 					<li>Fill out and submit the application.</li>
-					<li>Come to the library <strong>3 days later</strong> with a valid ID and pick up your card.</li>
-					<li>Cards will be held for <strong>1 month</strong>.</li>
-					<li><em>The child's parent or guardian must be present to pick up the completed library card.</em></li>
-				</ul>
+					<li>Come to the library <strong>3 days later</strong> with a valid ID and pick up your card. Cards will be held for <strong>1 month</strong>.</li>
+				</ol>
+                <p><em>The child's parent or guardian must be present to pick up the completed library card.</em></p>
 				<div class="callout">
 					<h4>Do you have a lost or expired card?</h4>
 					<p>Please come to the library to replace or renew your card.</p>

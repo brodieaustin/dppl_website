@@ -246,7 +246,7 @@
 							markerOptions.title = "You are eligible!";
 							markerOptions.icon = 'https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=home|008000';
 							
-					    	$(response_div).html('<h4 class="big">Inside</h4><p>Your address appears to be <strong>inside</strong> the blue area on the map. You should be eligible for a card. Library staff will review your application to be sure.</p><p><a href="#application" class="scroll">Proceed to the application</a></p>');
+					    	$(response_div).html('<h4 class="big">Inside</h4><p>Your address appears to be <strong>inside</strong> the blue area on the map.</p><p>You should be eligible for a card. Library staff will review your application to be sure.</p><p><a href="#application" class="scroll">Proceed to the application</a></p>');
 							$('#application').show();
 					    	$('#application-eligibility').val('Eligible');
 					    	$('#address').val($('#eligibility-street').val());
@@ -256,7 +256,7 @@
 					    	markerOptions.title = "You are not eligible!";
 					    	markerOptions.icon = 'https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=home|FF0000';
 					    	
-					    	$(response_div).html('<h4 class="big">Outside</h4><p>Your address appears to be <strong>outside</strong> the blue area. Please call 847-376-2788 to confirm your eligibility <em>before</em> applying for a library card.</p>');
+					    	$(response_div).html('<h4 class="big">Outside</h4><p>Your address appears to be <strong>outside</strong> the blue area.</p><p>Please call 847-376-2788 to confirm your eligibility <em>before</em> applying for a library card.</p>');
 					    	$('#application').hide();
 					    }
 					    
