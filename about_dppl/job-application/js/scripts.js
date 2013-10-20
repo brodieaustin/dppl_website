@@ -1,7 +1,7 @@
     $(document).ready(function(){
         //json formatted list of current jobs, used for pretty urls params below
         //{"job-title" : "Job Title"}
-        var current_jobs = {"part-time-building-monitor" : "Part-Time Building Monitor", "part-time-building-services-assistant" : "Part-Time Building Services Assistant", "part-time-reference-librarian" : "Part-time Reference Librarian", "readers-services-assistant" : "Readers' Services Assistant"};
+        var current_jobs = {"part-time-building-monitor" : "Part-Time Building Monitor", "part-time-building-services-assistant" : "Part-Time Building Services Assistant", "shelver" : "Shelver"};
         var param, pos;
         
         //test for local storage
