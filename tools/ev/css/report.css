@@ -1,0 +1,11 @@
+body{width: 100%; margin: 0;}
+b{font-weight: normal;}
+i{font-style: normal;}
+table, thead, tbody{border: 0;}
+td{padding-top: 1em; padding-bottom: 1em; vertical-align: top; text-align: left !important;}
+td:last-child{width: 60%;}
+.entryform{width: 100%; margin-left: 0 !important; border-bottom: 1px solid #000; font-family: Arial, sans-serif; font-size: 14px !important; page-break-after: always;}
+.list_title{font-size: 18px; font-weight: bold;}
+.entryformlabel{padding-bottom: 4px;}
+.entryformdata{border-top: 1px solid #000;}
+.entryformdata:last-child{width: 60%;}
