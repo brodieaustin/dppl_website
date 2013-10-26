@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Evanced Formatting</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Evanced Formatting</h1>
+    <p>Need to tweak the way your Evanced program or report looks. Use these bookmarklets to do just that!</p>
+    <p>To reformat reports:</p>
+    <div>
+        <a href="javascript:(function() %7B var s = document.createElement('script'); s.setAttribute('id', 'dppl-report-formatter');s.setAttribute('src', '//dppl.org/tools/ev/js/report.js'); (top.document.body %7C%7C top.document.getElementsByTagName('head')[0]).appendChild(s); %7D)();" id="report-bookmarklet" class="button">Report Formatter</a>
+    </div>
+    <p>To reformat program listings:</p>
+    <div>
+        <a href="javascript:(function() %7B var s = document.createElement('script'); s.setAttribute('id', 'dppl-program-formatter');s.setAttribute('src', '//dppl.org/tools/ev/js/program.js'); (top.document.body %7C%7C top.document.getElementsByTagName('head')[0]).appendChild(s); %7D)();" id="report-bookmarklet" class="button">Program Formatter</a>
+    </div>
+    <hr />
+    <h2>Help</h2>
+        <ol>
+            <li>Click and drag the button up to your browser's bookmark or favorites bar.</li>
+            <li>A bookmark will appear there called Report Formatter or Program Formatter.</li>
+            <li>Run an Evenaced report or go to edit a program listing.</li>
+            <li>Click the bookmark and viola!</li>
+        </ol>
+        <h3>What is it doing?</h3>
+            <p>The bookmarklet is doing a very simple thing. It is injected a new set of rules for how the page should look into the page. That's it!</p>
+</body>
+</html>
