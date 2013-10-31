@@ -74,14 +74,16 @@ body {
 				
 		<div class="db">
 			<h4><a href="http://ezproxy.dppl.org/login?url=http://ama.grolier.com/" title="Amazing Animals of the World"
- target="_blank">Amazing Animals of the World</a></h4>
+ target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="Amazing Animals of the
+World">Amazing Animals of the World</a></h4>
 			<p>Information about animals for elementary students and older.</p>
 			<img src="/youth/DatabaseLogos/AMANI.jpg" alt="Amazing Animals of the World [logo] " />
 		</div>
 		<div class="db">
 			<h4><a
 href="http://ezproxy.dppl.org/login?url=http://www.pebblego.com/login.php?sqs=dsHhmm4WWk@JINO7b9kjWQ&sit
-e=1" title="PebbleGo Animals" target="_blank">PebbleGo Animals</a></h4>
+e=1" title="PebbleGo Animals" target="_blank" class="track" data-ga-category="Database Usage" data-ga-
+action="PebbleGo Animals">PebbleGo Animals</a></h4>
 			<p>Information and educational games on over 200 animals especially for K-2 emergent readers.</p>
 			<img src="/youth/DatabaseLogos/pebble-go.png" alt="PebbleGo Animals [logo] " />
 		</div>
@@ -106,14 +108,14 @@ e=1" title="PebbleGo Animals" target="_blank">PebbleGo Animals</a></h4>
     Copyright 2007-2011. <a href="/">dppl.org</a> Des Plaines Public Library</span><br /><br />
     	</div>
 </div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2123354-11");
-pageTracker._initData();
-pageTracker._trackPageview();
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="/js/jquery.gaEvents.js"></script>
+	<script>
+	var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
 </body>
 </html>

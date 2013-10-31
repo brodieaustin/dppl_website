@@ -93,27 +93,30 @@ body {
 	
 		<div class="db">
 			<h4><a href="http://ezproxy.dppl.org/login?url=http://gme.grolier.com/" title="Grolier Multimedia
-Encyclopedia" target="_blank">Grolier Multimedia Encyclopedia</a></h4>
+Encyclopedia" target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="Grolier
+Multimedia Encyclopedia">Grolier Multimedia Encyclopedia</a></h4>
 			<p>Articles, pictures, maps, interactive atlas, timelines, dictionary, and thesaurus.</p>
 			<img src="/youth/DatabaseLogos/grolier-online.png" alt="Grolier Multimedia Encyclopedia [logo] " />
 		</div>
 		<div class="db">
-			<h4><a href="http://www.nlm.nih.gov/medlineplus/" title="Medline Plus" target="_blank">Medline
-Plus</a></h4>
+			<h4><a href="http://www.nlm.nih.gov/medlineplus/" title="Medline Plus" target="_blank" class="track" data-
+ga-category="Database Usage" data-ga-action="Medline Plus">Medline Plus</a></h4>
 			<p>Consumer health information from the National Library of Medicine and the National Institutes of
 Health.</p>
 			<img src="/images/reference/online_resources/MedLinePlusLogo.jpg" alt="Medline Plus [logo] " />
-<p>Free Web site</p>
+<p><em>Free Web site</em></p>
 		</div>
 		<div class="db">
 			<h4><a href="http://ezproxy.dppl.org/login?url=http://nbps.grolier.com/" title="New Book of Popular Science"
-target="_blank">New Book of Popular Science</a></h4>
+target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="New Book of Popular
+Science">New Book of Popular Science</a></h4>
 			<p>Encyclopedia articles and activities on science and mathematics.</p>
 			<img src="/youth/DatabaseLogos/NBPOPSCI.jpg" alt="New Book of Popular Science [logo] " />
 		</div>
 		<div class="db">
 			<h4><a href="http://ezproxy.dppl.org/login?url=http://www.worldbookonline.com?subacct=7322" title="World
-Book Encyclopedia" target="_blank">World Book Encyclopedia</a></h4>
+Book Encyclopedia" target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="World Book
+Encyclopedia">World Book Encyclopedia</a></h4>
 			<p>Multimedia version of the print encyclopedia.</p>
 			<img src="/images/reference/online_resources/WorldBookLogo.jpg" alt="World Book Encyclopedia [logo] " />
 		</div>
@@ -203,14 +206,14 @@ Book Encyclopedia" target="_blank">World Book Encyclopedia</a></h4>
    	</div>
 </div>
 </div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2123354-11");
-pageTracker._initData();
-pageTracker._trackPageview();
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="/js/jquery.gaEvents.js"></script>
+	<script>
+	var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
 </body>
 </html>

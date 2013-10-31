@@ -93,21 +93,24 @@ body {
 	
 		<div class="db">
 			<h4><a href="http://ezproxy.dppl.org/login?url=http://www.atoztheusa.com/states1.asp?c=dppl" title="A to Z
-The USA" target="_blank">A to Z The USA</a></h4>
+The USA" target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="A to Z The USA">A to
+ Z The USA</a></h4>
 			<p>Detailed information and histories of the 50 states and 5 territories. Includes maps, flags, photos and
 more.</p>
 			<img src="/images/reference/online_resources/ATOZUSA.jpg" alt="A to Z The USA [logo] " />
 		</div>
 		<div class="db">
 			<h4><a href="http://ezproxy.dppl.org/login?url=http://atb.grolier.com/" title="America the Beautiful"
-target="_blank">America the Beautiful</a></h4>
+target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="America the Beautiful">America
+ the Beautiful</a></h4>
 			<p>U.S. states and territories explored through essays, photographs, illustrations, maps, games, and
 more.</p>
 			<img src="/youth/DatabaseLogos/AMBEAU.jpg" alt="America the Beautiful [logo] " />
 		</div>
 		<div class="db">
 			<h4><a href="http://ezproxy.dppl.org/login?url=http://www.worldbookonline.com?subacct=7322" title="World
-Book Encyclopedia" target="_blank">World Book Encyclopedia</a></h4>
+Book Encyclopedia" target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="World Book
+Encyclopedia">World Book Encyclopedia</a></h4>
 			<p>Multimedia version of the print encyclopedia.</p>
 			<img src="/images/reference/online_resources/WorldBookLogo.jpg" alt="World Book Encyclopedia [logo] " />
 		</div>
@@ -142,14 +145,14 @@ Book Encyclopedia" target="_blank">World Book Encyclopedia</a></h4>
    	</div>
 </div>
 </div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2123354-11");
-pageTracker._initData();
-pageTracker._trackPageview();
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="/js/jquery.gaEvents.js"></script>
+	<script>
+	var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
 </body>
 </html>

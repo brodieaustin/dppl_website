@@ -78,7 +78,8 @@ body {
 		<div class="db">
 			<h4><a
 href="http://ezproxy.dppl.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ks"
-title="Kids Search" target="_blank">Kids Search</a></h4>
+title="Kids Search" target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="Kids
+Search">Kids Search</a></h4>
 			<p>An easy way to find stories about everything from animals to current events. Perfect for research
 projects!</p>
 			<img src="/youth/DatabaseLogos/KIDSSEARCH.jpg" alt="Kids Search [logo] " />
@@ -86,14 +87,16 @@ projects!</p>
 		<div class="db">
 			<h4><a
 href="http://ezproxy.dppl.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621
-&profile=ehost&defaultdb=mih" title="Middle Search Plus" target="_blank">Middle Search Plus</a></h4>
+&profile=ehost&defaultdb=mih" title="Middle Search Plus" target="_blank" class="track" data-ga-
+category="Database Usage" data-ga-action="Middle Search Plus">Middle Search Plus</a></h4>
 			<p>Full text articles and biographies for middle-school students.</p>
 			<img src="/images/reference/online_resources/ebscohost.png" alt="Middle Search Plus [logo] " />
 		</div>
 		<div class="db">
 			<h4><a
 href="http://ezproxy.dppl.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=search"
-title="Searchasaurus" target="_blank">Searchasaurus</a></h4>
+title="Searchasaurus" target="_blank" class="track" data-ga-category="Database Usage" data-ga-
+action="Searchasaurus">Searchasaurus</a></h4>
 			<p>Searchasaurus makes it easy for students to search by keyword or by topic to find the most useful search
 results. Geared to younger students.</p>
 			<img src="/youth/DatabaseLogos/SEARCHASAURUS.jpg" alt="Searchasaurus [logo] " />
@@ -124,14 +127,14 @@ results. Geared to younger students.</p>
         <span class="sitenavaddy">1501 Ellinwood St., Des Plaines, IL 60016   -   (847) 827 - 5551<br>
     Copyright 2007-2011. <a href="/">dppl.org</a> Des Plaines Public Library </span><br /><br />
     	</div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2123354-11");
-pageTracker._initData();
-pageTracker._trackPageview();
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="/js/jquery.gaEvents.js"></script>
+	<script>
+	var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
 </body>
 </html>
