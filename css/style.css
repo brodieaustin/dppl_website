@@ -3,7 +3,7 @@ body {
   width: 61.53846153em;
   position: relative;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 10px 1em 10px;
   font-family: Helvetica, Arial, sans-serif;
   font-size : 13px;
   color: #333;
@@ -369,11 +369,11 @@ ul.tight li{
   position: absolute; 
   top: 0; 
   left: 0;
-  width: 203px;
+  width: 230px;
   height: 30px;
   color: #333;
   font-weight: normal;
-  background: url('/images/themes/diy/diy-header-image.png') no-repeat center center;
+  /*background: url('/images/themes/diy/diy-header-image.png') no-repeat center center;*/
 }
 
 #header .theme:hover{
@@ -394,11 +394,11 @@ ul.tight li{
 
 #header .theme .wlp{
   font-weight: bold; 
-  color: #199754;
+  color: #333;
 }
 
 #header .theme .word{
-  color: #d7436c;
+  color: #de3971;
   font-weight: bold;
  }
 
@@ -1211,7 +1211,7 @@ div.feed-item-summary{
   margin-bottom: 10px;
 }
 
-div#rss-blogs{height: auto;
+div#rss-blogs{height: auto; min-height: 360px;
   overflow: hidden;}
 
 div#rss-blogs .feed-items{border-bottom: 1px solid #ccc;}
@@ -1227,6 +1227,7 @@ div#rss-blogs .feed-items{border-bottom: 1px solid #ccc;}
 
 #events{
   width: 17.85em;
+  min-height: 360px;
   overflow-x: hidden;
 }
 
