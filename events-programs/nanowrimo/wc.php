@@ -12,17 +12,21 @@
 		
 	for ($i = 0; $i < count($users); $i++){
 		$url = $baseurl . $users[$i];
+
+		echo $users[$i];
 		
 		$fh = simplexml_load_file($url);
 		$count = $count +  $fh->user_wordcount;
+		echo $count;
+		echo '<br>';
 	}
 	
 	$data =  '{"wordcount": "' . $count . '"}';
 	
-	#echo $data;
+	echo $data;
 	
-	$fh = fopen(dirname(__FILE__) . '/wordcount.json', 'w');
-	fwrite($fh, $data);
-	fclose($fh);
+	//$fh = fopen(dirname(__FILE__) . '/wordcount.json', 'w');
+	//fwrite($fh, $data);
+	//fclose($fh);
 
 ?>
