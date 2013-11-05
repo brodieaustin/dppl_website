@@ -74,22 +74,25 @@ body {
 	
 		<div class="db">
 			<h4><a href="http://www.audiobookcloud.com/auto_login.asp?U=desplaines&P=login"
-title="AudioBookCloud (TumbleBooks)" target="_blank">AudioBookCloud (TumbleBooks)</a></h4>
+title="AudioBookCloud (TumbleBooks)" target="_blank" class="track" data-ga-category="Database Usage" data-ga-
+action="AudioBookCloud (TumbleBooks)">AudioBookCloud (TumbleBooks)</a></h4>
 			<p>Listen online to audio books in many different categories: fiction, non-fiction, classics and even Spanish
 language audio books! These books are always available, never on hold, and no need to download.</p>
 			<img src="/images/reference/online_resources/AudioBookCloud_Logo.png" alt="AudioBookCloud
 (TumbleBooks) [logo] " />
 		</div>
 		<div class="db">
-			<h4><a href="http://ezproxy.dppl.org/login?url=http://bkflix.grolier.com/" title="BookFLIX"
-target="_blank">BookFLIX</a><span class="favorite"></span></h4>
+			<h4><a href="http://ezproxy.dppl.org/login?url=http://bkflix.grolier.com/" title="BookFLIX" target="_blank"
+class="track" data-ga-category="Database Usage" data-ga-action="BookFLIX">BookFLIX</a><span
+class="favorite"></span></h4>
 			<p>Explore animated versions of favorite children's picture books and related nonfiction ebooks in one of nine
  learning categories. Also includes Spanish titles and educational games.</p>
 			<img src="/images/reference/online_resources/BookFLIX.gif" alt="BookFLIX [logo] " />
 		</div>
 		<div class="db">
 			<h4><a href="http://ezproxy.dppl.org/login?url=http://infotrac.galegroup.com/itweb/des87360?db=GLD"
-title="Contemporary Authors" target="_blank">Contemporary Authors</a></h4>
+title="Contemporary Authors" target="_blank" class="track" data-ga-category="Database Usage" data-ga-
+action="Contemporary Authors">Contemporary Authors</a></h4>
 			<p>Full text articles on over 100,000 authors.</p>
 			<img src="/images/reference/online_resources/contemporary_authors_lg.jpg" alt="Contemporary Authors
 [logo] " />
@@ -97,7 +100,8 @@ title="Contemporary Authors" target="_blank">Contemporary Authors</a></h4>
 		<div class="db">
 			<h4><a
 href="http://ezproxy.dppl.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s8506621
-&profile=novpk8" title="NoveList Plus K-8" target="_blank">NoveList Plus K-8</a></h4>
+&profile=novpk8" title="NoveList Plus K-8" target="_blank" class="track" data-ga-category="Database Usage" data-
+ga-action="NoveList Plus K-8">NoveList Plus K-8</a></h4>
 			<p>Allows readers of all ages to search for new books to read by favorite title, author, subject, keywords.
 Includes popularity ratings.</p>
 			<img src="/youth/DatabaseLogos/NOVK8.jpg" alt="NoveList Plus K-8 [logo] " />
@@ -105,14 +109,16 @@ Includes popularity ratings.</p>
 		<div class="db">
 			<h4><a
 href="http://ezproxy.dppl.org/login?url=http://www.tumblebooks.com/library/auto_login.asp?U=desplaines&P=libra"
- title="TumbleBook Library" target="_blank">TumbleBook Library</a></h4>
+ title="TumbleBook Library" target="_blank" class="track" data-ga-category="Database Usage" data-ga-
+action="TumbleBook Library">TumbleBook Library</a></h4>
 			<p>A collection of animated, talking picture books, puzzles and games. Includes books in Spanish and
 French.</p>
 			<img src="/youth/DatabaseLogos/tumblebooks.jpg" alt="TumbleBook Library [logo] " />
 		</div>
 		<div class="db">
 			<h4><a href="http://www.tumblebookcloud.com/autologin.aspx?U=desplaines&P=login"
-title="TumbleBookCloud" target="_blank">TumbleBookCloud</a></h4>
+title="TumbleBookCloud" target="_blank" class="track" data-ga-category="Database Usage" data-ga-
+action="TumbleBookCloud">TumbleBookCloud</a></h4>
 			<p>An online collection of ebooks and read-along chapter, graphic novels, National Geographic videos, and
 audio books. Over 500 titles for middle/high school students including content to support the Common Core
 Curriculum.</p>
@@ -120,7 +126,8 @@ Curriculum.</p>
 		</div>
 		<div class="db">
 			<h4><a href="http://www.tbcjr.com/autologin.aspx?U=desplaines2&P=login" title="TumbleBookCloud Junior"
-target="_blank">TumbleBookCloud Junior</a></h4>
+target="_blank" class="track" data-ga-category="Database Usage" data-ga-action="TumbleBookCloud
+Junior">TumbleBookCloud Junior</a></h4>
 			<p>An online collection of ebooks and read-along chapter, graphic novels, National Geographic videos, and
 audio books. For grades two to six.</p>
 			<img src="/images/reference/online_resources/tbcJ_logo.png" alt="TumbleBookCloud Junior [logo] " />
@@ -151,14 +158,14 @@ audio books. For grades two to six.</p>
         <span class="sitenavaddy">1501 Ellinwood St., Des Plaines, IL 60016   -   (847) 827 - 5551<br>
     Copyright 2007-2011. <a href="/">dppl.org</a> Des Plaines Public Library </span><br /><br />
     	</div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2123354-11");
-pageTracker._initData();
-pageTracker._trackPageview();
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="/js/jquery.gaEvents.js"></script>
+	<script>
+	var _gaq=[['_setAccount','UA-2123354-11'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
 </body>
 </html>
