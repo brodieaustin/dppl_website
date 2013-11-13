@@ -24,7 +24,6 @@
 	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
 			 More info: h5bp.com/i/378 -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
 	<title>Home | DPPL</title>
 
 	<!--meta, link, styles, and modernizer link in head file-->
@@ -34,9 +33,9 @@
 	<!--header-->
 	<!--#include virtual="/includes/header.html"-->
 	<!--navigation-->
-	<!--#include virtual="/includes/navigation.html"-->
+	<!--#include virtual="/includes/navigation-c.html"-->
 	<!--sidebar-->
-	<!--#include virtual="/includes/side-navigation.html"-->
+	<!--#include virtual="/includes/side-navigation-c.html"-->
 	<!--main content-->
 	<div id="content">
 		<!--#include virtual="/content/home.html"-->
