@@ -116,6 +116,7 @@
 									break;
 								case 'DVD':
 								case 'BLURAY':
+								case 'VIDEO_GAME':
 									if (item['upcs']){
 										image_src = 'http://www.syndetics.com/index.aspx?isbn=/MC.GIF&client=847-342-5300&type=xw12&oclc=&upc=' + item['upcs'][0];
 									}
