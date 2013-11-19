@@ -2,41 +2,163 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our Card Helps You Save&mdash;Not Spend&mdash;Your Dollars">
+    <meta name="author" content="Des Plaines Public Library">
     <title>Save | DPPL</title>
-    <link rel="stylehsheet" href="/styles/normalize.css">
-    <!--<script type="text/javascript" src="//use.typekit.net/szn8uol.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+    <link rel="stylesheet" href="/css/bootstrap/3.0.2/bootstrap.min.css">
+    <script type="text/javascript" src="//use.typekit.net/szn8uol.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <style>
-        html,body{margin:0; padding: 0; height: 100%;}
-        html{}
-        body{padding: 0 5%; font-family: "futura-pt",sans-serif;}
-        header{padding: 0 10%;color: #95285c; text-align: center;}
-        header h1{font-size: 56px;}
-        .card{width: 60%; max-width: 800px; height: 60%; max-height: 600px; margin: auto; background-color: #9ed1b4; border-radius: 10px; text-align: center;}
+        body{font-size: 18px; font-family: serif;}
+        h1, h2, h3, h4, h5, h6{font-family: "futura-pt",sans-serif; color: #94285b;}
+        a{color: #94285b;}
+        a:hover{color: #808080;}
+        .section{margin: 0; padding: 60px 0 0 0; text-align: center;}
+        .section h2, .section h3{margin-top: 0;}
+        #site-header{padding-bottom: 0;}
+        #site-header h1{margin-top: 0; font-size: 48px;}
+        #site-footer{padding-bottom: 60px; background-color: #231f20; color: #fff;}
+        #site-footer h2{color: #fff;}
+        .card{width: 60%; max-width: 560px; margin: 40px auto 0 auto; background-color: #9ed1b4; border-radius: 10px 10px 0 0; text-align: center; border-bottom: 10px solid rgba(255,255,255,.5);}
         .card-inner{position: relative; height: 100%; background: url(img/logo-pattern.png);}
         .card-content{padding: 2%;}
-        .card-content h1{font-size: 72px; color: #fff; text-shadow: 1px 1px 10px #333; text-transform: uppercase;}
+        .card-content h2{font-size: 56px; color: #fff; text-shadow: 1px 1px 10px #333; text-transform: uppercase;}
         .larger{display: block; font-size: 120%;}
         .card-meta{position: absolute; bottom: 0; width: 100%; background-color: rgba(255,255,255,.5);}
+        #start-saving{background: #f1f1f1 url(img/background.png);}
+        #start-saving h2{color: #333;}
+        #start-saving h3{margin-top: 20px;}
+        #devices{margin-top: 60px; padding: 20px 40px; background: rgba(255,255,255,.8) url(img/nexus7.png) no-repeat right 60px; text-align: left;overflow: hidden;}
+        #devices h3{font-size: 24px;}
+        .devices-text{width: 70%;}
+        #need-card{padding-bottom: 0; background-color: #94285b;}
+        #need-card h3{color: #fff;}
+        #need-card a{color:#fff; text-decoration: underline;}
+        #need-card a:hover{color: #aaa;}
+        .logo{margin-top: 20px;}
+        .library-info{margin-bottom: 4px; overflow: hidden; text-align: center;}
+        .library-info dt, .library-info dd{display: inline-block; margin: auto 5px; font-weight: normal; font-family: "futura-pt", sans-serif; font-size: 100%;}
+        #hours-message{padding-top: 0; color: #aaa;}
+        @media screen and (max-width: 1024px){
+            #devices{background: rgba(255,255,255,.8) url(img/nexus7.png) no-repeat 130% 60px;}
+            .devices-text{width: 80%;}
+        }
+        @media screen and (max-width: 740px){
+            .card{width: 90%;}
+            .card-content h1{font-size: 36px;}
+            #devices{background: rgba(255,255,255,.8) url(img/nexus7.png) no-repeat 180% 60px;}
+        }
+        @media screen and (max-width: 500px){
+            #devices{background: rgba(255,255,255,.8) url();}
+            .devices-text{width: 100%;}
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Our card helps you save, not spend your dollars</h1>
-    </header>
-    <div class="card">
-        <div class="card-inner">
-            <div class="card-content">
-                <h1><span class="larger">Des Plaines</span> Public Library</h1>
-            </div>
-            <div class="card-meta">
-                <div class="card-content">
-                    <p class="library-location">1510 Ellinwood St, Des Plaines, IL 60016, dppl.org</p>
+    <header class="section" id="site-header">
+        <div class="container">
+            <h1>Our Card Helps You Save&mdash;Not Spend&mdash;Your Dollars</h1>
+             <div class="card">
+                <div class="card-inner">
+                    <div class="card-content">
+                        <h2><span class="larger">Des Plaines</span> Public Library</h2>
+                    </div>
                 </div>
             </div>
+        </div>
+    </header>
+    <section class="section" id="start-saving">
+        <div class="container">
+            <h2>Start using the most valuable card in your wallet to:</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3><a href="/edppl/#ebooks">Download eBooks & Audiobooks</a></h3>
+                    <p>Select from 60,000 titles and download to your device or computer using MyMediaMall.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3><a href="/edppl#magazines">Download Magazines</a></h3>
+                    <p>Read complete digital editions of popular magazines with Zinio. No hold or late fess!</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3><a href="/edppl#music">Download Music</a></h3>
+                    <p>Download and keep three songs per week with Freegal. Over 7 million songs to choose.</p> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12" id="devices">
+                    <div class="devices-text">
+                        <h3>Planning on purchasing a device this holiday season?</h3>
+                        <p>We have eReaders and tablets to try, including:</p>
+                        <ul>
+                            <li><a href="http://dppl.bibliocommons.com/item/show/2240916035_nexus_7_tablet">Nexus 7 (2012)</a></li>
+                            <li><a href="http://dppl.bibliocommons.com/item/show/1866748035_kindle">Kindle eReader</a></li>
+                            <li><a href="http://dppl.bibliocommons.com/item/show/1904745035_nook">Nook eReader</a></li>
+                        </ul>
+                        <p>View our <a href="http://dppl.bibliocommons.com/search?custom_query=(title%3A(dpk%20sony%20reader)%20OR%20title%3A(dpk%20nook)%20OR%20title%3A(dpk%20kindle)%20OR%20title%3A(dpk%20nexus%207))%20%20branch%3A%22Des%20Plaines%20Public%20Library%22&suppress=true&custom_edit=false&search_scope=DPKANDDBK">complete list of devices</a> for more options.</p>
+                        <hr />
+                        <h4>Android vs. iOS</h4>
+                        <p>Confused about the difference between Android and iOS? Come to our Android vs. iOS program on December 17th to learn about the two most popular smartphone and tablet operative systems.</p>
+                        <p><a href="http://calendar.dppl.org/evanced/lib/eventsignup.asp?ID=22256">Sign up today!</a></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="section" id="need-card">
+            <div class="container">
+                <h3>Need a card? You can apply <a href="/about_dppl/library_cards_policies.shtml">in person</a> or <a href="/about_dppl/library-card-application/">online</a>!</h3>
+                <img src="img/pig.png" alt="Piggy bank with library card" />
+            </div>
+    </section>
+    <footer class="section" id="site-footer">
+        <dl class="library-info">
+            <dt>Des Plaines Public Library</dt>
+            <dd>1501 Ellinwood St.</dd>
+            <dd>Des Plaines, IL 60016</dd>
+        </dl>
+        <p id="hours-message"></p>
+        <img src="img/dppl-logo-reversed.png" alt="Library logo reversed" class="logo" />
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script>
 
+        $(document).ready(function(){
+            var library_hours, current_day, tomrrow_day, current_hours, curren_open, current_close, is_open, open_message;
+
+            library_hours = {"Monday": {"opening_time": "9:00 a.m.", "closing_time": "9:00 p.m."}, "Tuesday": {"opening_time": "9:00 a.m.", "closing_time": "9:00 p.m."}, "Wednesday": {"opening_time": "9:00 a.m.", "closing_time": "9:00 p.m."}, "Thursday": {"opening_time": "9:00 a.m.", "closing_time": "9:00 p.m."}, "Friday": {"opening_time": "9:00 a.m.", "closing_time": "5:00 p.m."}, "Saturday": {"opening_time": "9:00 a.m.", "closing_time": "5:00 p.m."}, "Sunday": {"opening_time": "1:00 p.m.", "closing_time": "5:00 p.m."}};
+
+
+            current_day = moment().format('dddd');
+            tomorrow_day = moment().add('days', 1).format('dddd');
+            //console.log(tomorrow_day);
+            current_hours = library_hours[current_day];
+
+            current_open = moment(current_hours.opening_time, "h:mm a");
+            current_close = moment(current_hours.closing, "h:mm a");
+
+            if (moment().isBefore(current_open) || moment().isAfter(current_close)){
+                is_open = false;
+            }
+            else{
+                is_open = true;
+            }
+
+            console.log(is_open);
+
+            switch (is_open){
+                case false:
+                    open_message = 'Sorry, we\'re not open right now. We\'ll open on ' + tomorrow_day + ' at ' + library_hours[tomorrow_day].opening_time;
+                    console.log(open_message);
+                    break;
+                case true:
+                    open_message = "We\'re open, so come on by to save money!";
+                    break;
+            }
+            $('#hours-message').html(open_message);
+        })
+    </script>
 </body>
 </html>
