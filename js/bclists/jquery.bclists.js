@@ -85,43 +85,26 @@
 						a_div  = $('<div>');
 						
 						image_src = '';
+                        
+                        console.log(item['format']['id']);
 						
 						/*figure out if user wants thumbnails or not and proceed if so. switch statements just try to figure out the item
 						type and make slot in the approprirate thumbnail or fallback*/
 						if (settings.show_thumbs == true){
 							switch (item['format']['id']){
 								case 'BK':
+                                case 'BOOK_CD':
+                                case 'EBOOK':
 									if (item['isbns']){
 										image_src = 'http://www.syndetics.com/index.aspx?isbn=' + item['isbns'][0] + '/MC.GIF&client=847-342-5300&type=xw12&oclc=';
 									}
-									else{
-										//image_src = 'http://cdn.bibliocommons.com/images/default_covers/icon-book.png';
-									}
 									break;
-                                case 'BOOK_CD':
-                                    if (item['isbns']){
-										image_src = 'http://www.syndetics.com/index.aspx?isbn=' + item['isbns'][0] + '/MC.GIF&client=847-342-5300&type=xw12&oclc=';
-									}
-									else{
-										//image_src = 'http://cdn.bibliocommons.com/images/default_covers/icon-audio-cd.png';
-									}
-                                    break;
-								case 'MUSIC_CD':
-									if (item['upcs']){
-										image_src = 'http://www.syndetics.com/index.aspx?isbn=/MC.GIF&client=847-342-5300&type=xw12&oclc=&upc=' + item['upcs'][0];
-									}
-									else{
-										//image_src = 'http://cdn.bibliocommons.com/images/default_covers/icon-music-cd.png';
-									}
-									break;
+                                case 'MUSIC_CD':
 								case 'DVD':
 								case 'BLURAY':
 								case 'VIDEO_GAME':
 									if (item['upcs']){
 										image_src = 'http://www.syndetics.com/index.aspx?isbn=/MC.GIF&client=847-342-5300&type=xw12&oclc=&upc=' + item['upcs'][0];
-									}
-									else{
-										//image_src = 'http://cdn.bibliocommons.com/images/default_covers/icon-movie-alldiscs.png';
 									}
 									break;
 							}
