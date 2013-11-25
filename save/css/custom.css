@@ -1,0 +1,38 @@
+body{font-size: 18px; font-family: serif;}
+h1, h2, h3, h4, h5, h6{font-family: "futura-pt",sans-serif; color: #94285b;}
+a{color: #94285b; text-decoration: underline;}
+a:hover{color: #808080;}
+.section{margin: 0; padding: 60px 0 0 0; text-align: center;}
+.section h2, .section h3{margin-top: 0;}
+#site-header{padding-bottom: 0;}
+#site-header h1{margin-top: 0; font-size: 48px;}
+.card{margin-top: 40px;}
+#site-footer{padding-bottom: 60px; background-color: #231f20; color: #fff;}
+#site-footer h2{color: #fff;}
+#start-saving{background: #f1f1f1;}
+#start-saving h2{color: #333;}
+#start-saving h3{margin-top: 20px;}
+#devices{margin-top: 60px; padding: 20px 40px; background-color: rgba(255,255,255,.8); background-image: url(../img/nexus7.png); background-repeat: no-repeat; background-position: right 90px; text-align: left;overflow: hidden;}
+#devices h3{font-size: 24px;}
+.devices-text{width: 70%;}
+#need-card{padding-bottom: 0; background-color: #94285b;}
+#need-card h3{color: #fff;}
+#need-card a{color:#fff; text-decoration: underline;}
+#need-card a:hover{color: #aaa;}
+.logo{margin-top: 20px;}
+.library-info{margin-bottom: 4px; overflow: hidden; text-align: center;}
+.library-info dt, .library-info dd{display: inline-block; margin: auto 5px; font-weight: normal; font-family: "futura-pt", sans-serif; font-size: 100%;}
+#hours-message{padding-top: 0; color: #aaa;}
+@media screen and (max-width: 1024px){
+    #devices{background: rgba(255,255,255,.8) url(../img/nexus7.png) no-repeat 130% 60px;}
+    .devices-text{width: 80%;}
+}
+@media screen and (max-width: 740px){
+    .card{width: 90%;}
+    #devices{background-position: 180% 60px;}
+}
+@media screen and (max-width: 500px){
+    #devices{background-image: url();}
+    .devices-text{width: 100%;}
+    .save-pig{width: 90%;}
+}
