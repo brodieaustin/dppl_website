@@ -1,131 +1,124 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Come write in the library for National Novel Writing Month (NaNoWriMo) and keep track of much we've written along the way!">
+    <meta name="author" content="Des Plaines Public Library">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>NaNoWriMo | DPPL</title>
-	<meta name="description" content="Come write in the library for National Novel Writing Month (NaNoWriMo) and keep track of much we've written along the way!">
-	<meta name="author" content="Des Plaines Public Library">
+    <title>NaNoWriMo | DPPL</title>
 
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap/3.0.2/bootstrap.min.css" rel="stylesheet">
 
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="stylesheets/base.css">
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
-	<link rel="stylesheet" href="stylesheets/layout.css">
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/js/html5shiv.js"></script>
+      <script src="/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-	<style>
-		body{margin-top: 2em; background-color: #a3dce6; font: 20px/28px Georgia, "Droid Serif", serif;; color:  #54301a;}
-		header{margin-top: 1em;}
-		h1, h2, h3, h4, h5, h6 {color: #54301a; font-weight: bold;}
-		blockquote, blockquote p{font-style: normal; border: 0;}
-		blockquote cite:before { content: ""; }
-		img{width: 100%;}
-		small{display: block;}
-		hr{border: 0; background-color: white; height: 5px;}
-		.columns hr{height: 2px;}
-		.badge{margin-bottom: 40px; text-align: center; background-color: #f8f6c6; padding: 10px 0;}
-		.badge img{width: 180px !important;}
-		.sidebar{background-color: #f8f6c6; padding: 10px;}
-		.words{margin-bottom: 40px;}
-		.word-count{display: block; font-size: 60px; font-weight: bold; color: #fff;line-height: 1.1em; }
-		.large {font-size: 120px;}
-		.button{background: white !important;}
-		.load{width: 1em; height: 1em; background: url('/images/ajax-loader.gif') no-repeat center center ; z-index: 200; border-radius: 5px; }
-	</style>
-</head>
-<body>
-
-
-
-	<!-- Primary Page Layout
-	================================================== -->
-
-	<!-- Delete everything in this .container and get started on your own site! -->
-
-	<div class="container">
-		<div class="row">
-			<div class="five columns logo">
-				<img src="images/nano_logo.png" />
-			</div>
-			<div class="ten columns offset-by-one">
-				<header>
-					<h1><abbr title="National Novel Writing Month">NaNoWriMo</abbr> Write-Ins <small class="subheader">Come write with us!</small></h1>
-					<p>Every Tuesday evening in November from 6:00 p.m. to 9:00 p.m.</p>
-					<p>Bring your laptop and the urge to write.</p>
-					<p>We'll provide a place to write, snacks, and prizes.</p>
-					<p><small><a href="#what-is-nanowrimo">Learn more about NaNoWriMo</a></small></p>
-				</header>
-			</div>
+  <body>
+    <div class="wrapper" id="banner">
+        <div class="container">
+            <blockquote>
+                <span id="quote"> Tell the truth or trump--but get the trick. -- Mark Twain, "Pudd'nhead Wilson's Calendar"</span>
+                <cite><a href="http://www.iheartquotes.com/">I <em>♥</em> Quotes</a></cite>
+            </blockquote>
+        </div>
+    </div>
+    <div class="wrapper" id="intro">
+        <div class="container">
+            <header>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="img/nano_logo.png" class="nano-logo" />
+                        <h1><abbr title="National Novel Writing Month">NaNoWriMo</abbr> <small class="subheader">at the Des Plaines Public Library </small></h1>
+                        <p>Get inspired to write a novel&hellip;in 30 days! NaNoWriMo gives you permission to crank out a 50,000 word draft of the novel you've always wanted to write.</p>
+                        <a href="#what-is-nanowrimo" class="btn btn-default">Learn more</a>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="wrapper" id="events">
+        <div class="container">
+            <h2>Events</h2>
+            <div class="row">
+                <div class="col-lg-4 event">
+                    <h3>Kickoff Party</h3>
+                    <p class="event-date">Tuesday, October 29 from 6 - 8 p.m.</p>
+                    <p>Every November, thousands of aspiring writers participate in National Novel Writing Month (NaNoWriMo). Come to our NaNoWriMo kickoff party to learn how the library can help you write your 50,000 word novel. Setup your NaNoWriMo profile, meet past participants, and get ready for November.</p>
+                </div>
+                <div class="col-lg-4 event">
+                    <h3>NaNoWriMo Write Ins</h3>
+                    <p class="event-date">Every Tuesday night in November</p>
+                    <p>Racing to write 50,000 words for National Novel Writing Month? Come to the library for a NaNoWriMo write in! Bring your laptop for writing sprints, refeshments, and prizes!</p>
+                </div>
+                <div class="col-lg-4 event">
+                    <h3>NaNo at Oakton</h3>
+                    <p>Need more motivation, inspiration, and write-in-ification? Oakton's Des Plaines campus has weekly write-ins and great resources too.</p>
+                    <p><a href="http://researchguides.oakton.edu/content.php?pid=159452&sid=1349246">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper" id="word-counts">
+        <div class="container">
+            <div class="row">
+                <div class="sixteen columns stats">
+                    <h2>So far we've written:</h2>
+                    <div class="words"><span class="word-count large" id="group-word-count"><div class="load"></div></span> words</div>
+                    <h2>Chicagoland has written:</h2>
+                    <div class="words"><span class="word-count" id="region-word-count"><div class="load"></div></span> words</div>
+                    <h2>All of <abbr title="National Novel Writing Month">NaNoWriMo</abbr> has written:</h2>
+                    <div class="words"><span class="word-count" id="nano-word-count"><div class="load"></div></span> words</div>
+                </div>
+            </div>	
 		</div>
-		<hr />
-		<div class="row">
-			<div class="eleven columns">
-				<h2>So far we've written:</h2>
-				<div class="words"><span class="word-count large" id="group-word-count"><div class="load"></div></span> words</div>
-				<h3>Chicagoland has written:</h3>
-				<div class="words"><span class="word-count" id="region-word-count"><div class="load"></div></span> words</div>
-				<h3>All of <abbr title="National Novel Writing Month">NaNoWriMo</abbr> has written:</h3>
-				<div class="words"><span class="word-count" id="nano-word-count"><div class="load"></div></span> words</div>
-			</div>
-			<div class="five columns">
-				<div class="badge">
-					<img src="images/participant-180x180-2.jpg" />
-				</div>
-				<div class="sidebar">
-					<img src="images/mystery-novel.jpg" />
-					<h4>Need to read more!?</h4>
-					<p>The library staff is writing a group mystery novel in honor of NaNoWriMo. You can read along as we write.</p>
-					<p><a href="http://bit.ly/libmystery">Read it now</a></p>
-				</div>
-			</div>
-		</div>
-		<hr />	
-		<div class="row">
-			<div class="sixteen columns" id="what-is-nanowrimo">
-				<h3>Wait! What is <abbr title="National Novel Writing Month">NaNoWriMo</abbr>?</h3>
-				<p><abbr title="National Novel Writing Month">NaNoWriMo</abbr> stand for National Novel Writing Month. Every November, <abbr title="National Novel Writing Month">NaNoWriMo</abbr> encourages writers and aspiring writers to draft a 50,000 word novel in one month. Yep, that's about 1600 words a day.</p>
-				<p>Can you write a good novel in a month? Not really, but that's not the point of <abbr title="National Novel Writing Month">NaNoWriMo</abbr>. The point is to set aside your inhibitions and just write with that deadline staring you in the face. It's also an excuse to meet up with other people writing their novels and write together.</p>
-				<p>Does this sound like fun? Good, so <a href="http://nanowrimo.org">go to their website, sign up</a>, and come to the library for our write-ins. And don't forget to have fun!</p>
-			</div>
-		</div>
-		<hr />
-		<div class="row">
-			<div class="sixteen columns">
-				<blockquote>
-					<p id="quote"></p>
-					<cite>Quotation from <a href="http://www.iheartquotes.com/">I <em>♥</em> Quotes</a></cite>
-				</blockquote>
-			</div>
-		</div>
-		<hr />
-		<div class="row">
-			<footer>
-				<div class="six columns offset-by-five">
-					<img src="images/dppl-logo-reversed.png" />
-				</div>
-			</footer>
-		</div>
-
-	</div><!-- container -->
+    </div>
+    <div class="wrapper" id="what-is-nanowrimo">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="img/nano-2013-start.png" class="nano-start" />
+                    <h3>Wait! What is <abbr title="National Novel Writing Month">NaNoWriMo</abbr>?</h3>
+                    <p><abbr title="National Novel Writing Month">NaNoWriMo</abbr> stand for National Novel Writing Month. Every November, <abbr title="National Novel Writing Month">NaNoWriMo</abbr> encourages writers and aspiring writers to draft a 50,000 word novel in one month. Yep, that's about 1600 words a day.</p>
+                    <p>Can you write a good novel in a month? Not really, but that's not the point of <abbr title="National Novel Writing Month">NaNoWriMo</abbr>. The point is to set aside your inhibitions and just write with that deadline staring you in the face. It's also an excuse to meet up with other people writing their novels and write together.</p>
+                    <p>Does this sound like fun? Good, so <a href="http://nanowrimo.org">go to their website, sign up</a>, and come to the library for our write-ins. And don't forget to have fun!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper" id="footer">
+        <div class="container">
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12 nano-badges">
+                        <div class="nano-badge">
+                            <img src="img/participant-2012.jpg" class="img-circle" />
+                        </div>
+                        <div class="nano-badge">
+                            <img src="img/participant-2013.png" class="img-circle" />
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-12 library-logo">
+                        <a href="/">
+                            <img src="/images/dppl-logo-new.png" alt="Des Plaines Public Library logo" />
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+	</div>
 
 
 <!-- End Document
@@ -135,7 +128,6 @@
 	<script>
 		$(document).ready(function(){
 			$.getJSON('wordcount.json', function(data){
-				console.log(data);
 				$('#group-word-count').html(numberWithCommas(data.wordcount));
 			});
 		
@@ -159,7 +151,7 @@
 				}
 			});
 		
-			$.getJSON('data.php?url=' + encodeURIComponent('http://www.iheartquotes.com/api/v1/random?source=literature&max_lines=4&format=json'), function(data){
+			$.getJSON('data.php?url=' + encodeURIComponent('http://www.iheartquotes.com/api/v1/random?source=literature&max_lines=2&format=json'), function(data){
 				$('#quote').html(data.quote);
 			});
 			
@@ -176,5 +168,5 @@
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
-</body>
+  </body>
 </html>

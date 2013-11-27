@@ -1,0 +1,49 @@
+body{background-color: #fff; font: 20px/28px Georgia, "Droid Serif", serif; color:  #54301a;}
+header{margin-top: 1em;}
+h1, h2, h3, h4, h5, h6 {color: #54301a; font-weight: bold;font-family: inherit;}
+.btn{font-size: inherit;}
+.btn-default{border-color:#fff;}
+blockquote, blockquote p{font-style: normal; border: 0;}
+blockquote cite:before { content: ""; }
+img{width: 100%;}
+small{display: block;}
+abbr[title]{border-bottom: 0;}
+hr{border: 0; background-color: #fff; height: 1px;}
+.wrapper{padding: 40px 0; overflow: hidden;}
+#banner{min-height: 42px; height: auto; padding: 0; background-color: #E2EFF3;}
+#banner blockquote{margin: 0;}
+#quote{margin: 0;}
+#banner cite{float: right;}
+#banner a{color: #aaa;}
+#intro{background-color: #A3DCE6;}
+.nano-logo{float: left; width: 30%; margin-top: -20px; margin-right: 60px; }
+header{padding: 0 60px;}
+header h1{font-size: 66px;}
+header small{color: #fff;}
+#events h2{border-bottom: 2px solid #a3dce6;}
+.event-date{font-style: oblique;}
+#word-counts{background-color: #54301a; color: #a3dce6;}
+#word-counts h2{color: #a3dce6;}
+.columns hr{height: 2px;}
+.nano-badges{text-align: center; padding: 10px 0;}
+.nano-badge{display: inline-block; max-width: 120px; margin: 0 .5em 1em .5em; border: 8px solid #E6E19A; border-radius: 50%; }
+.sidebar{background-color: #f8f6c6; padding: 10px;}
+.stats{text-align: center;}
+.words{margin-bottom: 40px;}
+.word-count{display: block; margin-bottom: 20px; font-size: 60px; font-weight: bold; color: #fff; line-height: 1.1em; }
+#footer{background-color: #f8f6c6;}
+.large {font-size: 120px;}
+.button{background: white !important;}
+.nano-start{float: right; width: 30%; margin-left: 60px;}
+.load{display: inline-block; width: 60px; height: 60px; background: #fff url('/images/ajax-loader.gif') no-repeat center center ; z-index: 200; border-radius: 5px; }
+.library-logo{text-align: center;}
+.library-logo img{max-width: 252px;}
+footer hr{background-color: #e6e19a;}
+
+@media screen and (max-width: 480px){
+    header{padding: 0; text-align: center;}
+    header h1{font-size: 32px;}
+    .nano-logo{float: none; margin-right: 0; width: 50%;}
+    .nano-start{float: none; width: 100%; margin-left: auto;}
+    .nano-badges{margin-bottom: 1em; text-align: center;}
+}

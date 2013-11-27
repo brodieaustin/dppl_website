@@ -2,7 +2,7 @@
 	#get user counts then save to wordcount.json. run as chron every hour
 	
 	$users = array('brodieaustin', 'miriya-martell', 'grampaajt99', 'julia-christina', 'lorienquin', 
-		'noemad', 'jennyjenn', 'ellieo', 'danae-maridakis', 'blossoming-bookworm', 'sinister-infant', 'catb');
+		'noemad', 'jennyjenn', 'ellieo', 'danae-maridakis', 'blossoming-bookworm', 'sinister-infant', 'catb', 'lookinprettypushin50', 'chromas');
 		
 	$baseurl = 'http://www.nanowrimo.org/wordcount_api/wc/';
 	$url = '';
@@ -12,21 +12,17 @@
 		
 	for ($i = 0; $i < count($users); $i++){
 		$url = $baseurl . $users[$i];
-
-		echo $users[$i];
 		
 		$fh = simplexml_load_file($url);
 		$count = $count +  $fh->user_wordcount;
-		echo $count;
-		echo '<br>';
 	}
 	
 	$data =  '{"wordcount": "' . $count . '"}';
 	
-	echo $data;
+	#echo $data;
 	
-	//$fh = fopen(dirname(__FILE__) . '/wordcount.json', 'w');
-	//fwrite($fh, $data);
-	//fclose($fh);
+	$fh = fopen(dirname(__FILE__) . '/wordcount.json', 'w');
+	fwrite($fh, $data);
+	fclose($fh);
 
 ?>
