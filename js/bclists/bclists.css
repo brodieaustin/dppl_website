@@ -13,10 +13,10 @@
 .bc-layout-list .bc-item-thumb{float: left;}
 .bc-item-thumb img{position: relative; max-width: 100%; max-height: 100%; padding: 0; z-index: 100;}
 .bc-item-thumb .bc-item-title{position: absolute; top: 40%; left: 4px; right: 4px; color: #aaa; z-index: 50;}
-.bc-item-annotation .bc-item-title{font-weight: bold; margin-bottom: 4px;}
+.bc-item-annotation .bc-item-title{font-style: oblique; margin-bottom: 4px;}
 .bc-item-no-thumb{text-decoration: none;}
 .bc-item-no-thumb .bc-item-title{margin: 8px 8px 0 8px; color: #333;}
-.bc-item-annotation{margin: 4px; padding: 4px; font-size: 80%; overflow: hidden;}
+.bc-item-annotation{margin: 4px; padding: 4px; overflow: hidden;}
 .bc-layout-grid .bc-item-annotation, .bc-layout-carousel .bc-item-annotation{display: none; position: absolute; bottom: 12px; left: 1px; width: 88%; height: 50%; background-color: #fff; z-index: 200; overflow-y: auto;}
 .bc-list-item:hover .bc-item-annotation{display: block;}
 /*.bc-layout-list .bc-item-annotation{margin-top: 0; padding-top: 0;}*/
