@@ -11,6 +11,7 @@ robots.txt
 
 #ignore htaccess files
 .htaccess
+dir.htaccess
 
 #ingnore php config files
 config.php
