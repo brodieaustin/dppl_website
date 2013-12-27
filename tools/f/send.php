@@ -1,11 +1,12 @@
 <?php
+
     session_start();
 
     date_default_timezone_set('America/Chicago');
    
     require_once('class.Challenge.php');
     require_once('class.Form.php');
-	require_once('phpmailer/PHPMailerAutoload.php');
+    require_once('class.phpmailer.php');
     require_once('files.php');
 	
     $status;
@@ -37,6 +38,7 @@
 	    //make mail object an html mail object
 	    $mail->Mailer = 'sendmail';
 	    $mail->CharSet="utf-8";
+        $mail->isHTML(true);
 		
 
 	    //set the send TO address
@@ -57,7 +59,7 @@
        $mail->Subject = $form->subject;
         
         //set mail body from form body
-       $mail->msgHTML = $form->body;
+       $mail->Body = $form->body;
 			
 		//deal with attachments here
 	   if (!empty($_FILES['formfiles'])){
@@ -78,7 +80,7 @@
 	    }//closes file if
 		
 	    //send the mail and test if it happened
-	  if ($mail->Send()){
+	  if ($mail->send()){
 	       $status = 'success';
 	       if (!empty($form->messages['success'])){
 	            $message = $form->messages['success'] . (isset($fresponse)?$fresponse:'');
