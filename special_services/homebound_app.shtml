@@ -49,6 +49,7 @@
 					    }
 					    else{
 					        $(form).show();
+					        $('#challenge-image').attr('src', $('#challenge-image').attr('src'));
 					    }
 					    $('.response-message').html(response.message).addClass(response.status).parent().fadeIn();
 					});

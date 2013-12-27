@@ -62,7 +62,8 @@
 								        $('#application')[0].reset();
 								    }
 								}
-								$('#application-response > .response-message').html(response.message).addClass(response.status).parent().fadeIn();	
+								$('#application-response > .response-message').html(response.message).addClass(response.status).parent().fadeIn();
+								$('#challenge-image').attr('src', $('#challenge-image').attr('src'));	
 							},
 							failure: function(){
 								$('#application-response >.response-message').html("Something went wrong. Please check your form and try again later.").removeClass('success').addClass('failure').parent().fadeIn();
