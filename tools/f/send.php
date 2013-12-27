@@ -1,9 +1,11 @@
 <?php
     session_start();
+
+    date_default_timezone_set('America/Chicago');
    
     require_once('class.Challenge.php');
     require_once('class.Form.php');
-	require_once('class.phpmailer.php');
+	require_once('phpmailer/PHPMailerAutoload.php');
     require_once('files.php');
 	
     $status;
@@ -33,9 +35,8 @@
 	    $mail = new PHPMailer();
 
 	    //make mail object an html mail object
-	    $mail->IsMail();
+	    $mail->Mailer = 'sendmail';
 	    $mail->CharSet="utf-8";
-	    $mail->IsHTML(true);
 		
 
 	    //set the send TO address
@@ -43,8 +44,10 @@
 	        $mail->AddAddress($form->recipients[$i]['email'], $form->recipients[$i]['name']);
 	    }
         
-        if ($_POST['send-copy'] == 'true'){
-            $mail->AddCC($form->sender['email']);
+        if (isset($_POST['send-copy'])){
+            if ($_POST['send-copy'] == 'true'){
+                $mail->AddCC($form->sender['email']);
+            }
         }
 		    
         $mail->From = $form->sender['email'];
@@ -54,7 +57,7 @@
        $mail->Subject = $form->subject;
         
         //set mail body from form body
-       $mail->Body = $form->body;
+       $mail->msgHTML = $form->body;
 			
 		//deal with attachments here
 	   if (!empty($_FILES['formfiles'])){
@@ -78,10 +81,10 @@
 	  if ($mail->Send()){
 	       $status = 'success';
 	       if (!empty($form->messages['success'])){
-	            $message = $form->messages['success'] . $fresponse;
+	            $message = $form->messages['success'] . (isset($fresponse)?$fresponse:'');
 	        }
 	        else{
-		        $message = "Thank you! Your form has been submitted." . $fresponse;
+		        $message = "Thank you! Your form has been submitted." . (isset($fresponse)?$fresponse:'');
 		    }
 	    }
 	    else{
