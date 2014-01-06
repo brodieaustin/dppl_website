@@ -286,6 +286,7 @@ textarea{width: 99%; min-height: 7em; border: 1px solid #ccc; font-family: inher
 
 /*trying to consolidate alerts and message classes*/
 .message{position: relative; background-color: #FCF8E3; margin-bottom: .5em; padding: 1em; overflow: hidden;}
+.site-message{text-align: center;}
 .message.with-close{padding: 1em 3em 1em 1em;}
 .message a.banner{display: block; width: 100%; display: relative; text-decoration: none;}
 .message p{padding: 0 !important; margin: 0 0 4px 0 !important;}
