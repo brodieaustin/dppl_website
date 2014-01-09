@@ -20,5 +20,6 @@
 	<!--#include virtual="/includes/footer.html"-->
 	<!--scripts-->
 	<!--#include virtual="/includes/scripts.html"-->
+	<p><a href="test.html">test</a></p>
 </body>
 </html>
