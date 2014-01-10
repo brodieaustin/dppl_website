@@ -26,10 +26,10 @@
 			$('.filter').css('display', 'inline-block');
 			
 			$('.filter').click(function(){
-				console.log('clicked');
+				//console.log('clicked');
 				var filter_type = $(this).attr('id');
-				console.log(filter_type);
-				console.log($(this).hasClass('active'));
+				//console.log(filter_type);
+				//console.log($(this).hasClass('active'));
 				
 				if ($(this).hasClass('active') == false){
 					$('#db-list ul li').hide();
